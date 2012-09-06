@@ -1,0 +1,13 @@
+<matches xmlns="http://www.dspin.de/data/textcorpus">
+   <query type="cqp">tb_lemma=&quot;Peter&quot; | tb_lemma=&quot;schmecken&quot;</query>
+   <corpus name="wcorp-1" pid="some-pid">
+    <item tokenIDs="t1" srcIDs="5-1023">
+     <target name="tname" value="t1"></target>
+     <category name="cname" value="cval"></category>
+    </item>
+    <item tokenIDs="t7" srcIDs="16-117">
+     <target name="tname" value="t7"></target>
+     <category name="cname" value="cval"></category>
+    </item>
+   </corpus>
+</matches>

@@ -1,0 +1,11 @@
+<lemmas xmlns="http://www.dspin.de/data/textcorpus">
+   <lemma ID="l1" tokenIDs="t1">Peter</lemma>
+   <lemma ID="l2" tokenIDs="t2">essen</lemma>
+   <lemma ID="l3" tokenIDs="t3">ein</lemma>
+   <lemma ID="l4" tokenIDs="t4">Käsepizza</lemma>
+   <lemma ID="l5" tokenIDs="t5">.</lemma>
+   <lemma ID="l6" tokenIDs="t6">sie</lemma>
+   <lemma ID="l7" tokenIDs="t7">schmecken</lemma>
+   <lemma ID="l8" tokenIDs="t8">er</lemma>
+   <lemma ID="l9" tokenIDs="t9">.</lemma>
+</lemmas>

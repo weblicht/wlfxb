@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<o name="o1">
+	<elo eloname="elo1">
+		<o name="o2">
+			<elo eloname="elo2">
+				<o name="o3">
+					<elo eloname="elo3">blah</elo>
+				</o>
+			</elo>
+		</o>
+	</elo>
+</o>

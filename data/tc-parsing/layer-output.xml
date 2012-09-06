@@ -1,0 +1,34 @@
+
+<parsing xmlns="http://www.dspin.de/data/textcorpus" tagset="Tiger">
+    <parse>
+        <constituent cat="TOP" ID="c1">
+            <constituent cat="S-TOP" ID="c2">
+                <constituent cat="NP-SB" ID="c3">
+                    <constituent cat="PN-HD-Nom.Sg" ID="c4">
+                        <constituent tokenIDs="t1" cat="NE-HD-Nom.Sg" ID="c5"/>
+                    </constituent>
+                </constituent>
+                <constituent tokenIDs="t2" cat="VVFIN-HD" ID="c6"/>
+                <constituent cat="NP-OA" ID="c7">
+                    <constituent tokenIDs="t3" cat="ART-NK-Acc.Sg" ID="c8"/>
+                    <constituent tokenIDs="t4" cat="NN-NK-Acc.Sg" ID="c9"/>
+                </constituent>
+            </constituent>
+            <constituent tokenIDs="t5" cat="\$." ID="c10"/>
+        </constituent>
+    </parse>
+    <parse>
+        <constituent cat="TOP" ID="c11">
+            <constituent cat="S-TOP" ID="c12">
+                <constituent cat="NP-SB" ID="c13">
+                    <constituent tokenIDs="t6" cat="PPER-HD-Nom" ID="c14"/>
+                </constituent>
+                <constituent tokenIDs="t7" cat="VVFIN-HD" ID="c15"/>
+                <constituent cat="NP-DA" ID="c16">
+                    <constituent tokenIDs="t8" cat="PPER-HD-Dat" ID="c17"/>
+                </constituent>
+            </constituent>
+            <constituent tokenIDs="t9" cat="\$." ID="c18"/>
+        </constituent>
+    </parse>
+</parsing>

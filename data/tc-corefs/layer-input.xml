@@ -1,0 +1,11 @@
+<coreferences tagset="BART" extrefs="Wikipedia" xmlns="http://www.dspin.de/data/textcorpus">
+  	<referent ID="cr1" type="ORG">
+  		<extref refid="http://de.wikipedia.org/wiki/Wahre_Finnen"/>
+  		<coreference tokenIDs="t1" mintokIDs="t1" type="pro.per3"/>
+  		<coreference tokenIDs="t18 t19 t20 t21 t22" mintokIDs="t20 t21" type="nam"/>
+  	</referent>
+  	<referent ID="cr2" type="CURRENCY">
+  		<extref refid="http://en.wikipedia.org/wiki/Euro"/>
+  		<coreference tokenIDs="t4 t5" mintokIDs="t5" type="nom.indef"/>
+  	</referent>
+</coreferences>
