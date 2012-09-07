@@ -1,0 +1,4 @@
+
+<namedEntities xmlns="http://www.dspin.de/data/textcorpus" type="MUC1990">
+    <entity tokenIDs="t1" class="PERSON"/>
+</namedEntities>

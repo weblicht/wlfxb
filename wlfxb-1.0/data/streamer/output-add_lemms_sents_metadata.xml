@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/2012-01-27/d-spin_0_4.rnc" type="application/relax-ng-compact-syntax"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+  <MetaData xmlns="http://www.dspin.de/data/metadata">
+    <source>IMS, Uni Stuttgart</source>
+    <md name="source" value="Tuebingen Uni"></md>
+    <md name="sentences-boundary-detector" value="Tuebingen Uni"></md>
+    <md name="lemmatizer" value="Tuebingen Uni"></md>
+  </MetaData>
+  <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+    <text>Peter aß eine Käsepizza. Sie schmeckte ihm.</text>
+    <tokens charOffsets="true"><token ID="t1" start="0" end="5">Peter</token><token ID="t2" start="6" end="8">aß</token><token ID="t3" start="9" end="13">eine</token><token ID="t4" start="14" end="23">Käsepizza</token><token ID="t5" start="23" end="24">.</token><token ID="t6" start="25" end="28">Sie</token><token ID="t7" start="29" end="38">schmeckte</token><token ID="t8" start="39" end="42">ihm</token><token ID="t9" start="42" end="43">.</token></tokens>
+    <POStags tagset="STTS">
+      <tag tokenIDs="t1">NE</tag>
+      <tag tokenIDs="t2">VVFIN</tag>
+      <tag tokenIDs="t3">ART</tag>
+      <tag tokenIDs="t4">NE</tag>
+      <tag tokenIDs="t5">$.</tag>
+      <tag tokenIDs="t6">PPER</tag>
+      <tag tokenIDs="t7">VVFIN</tag>
+      <tag tokenIDs="t8">PPER</tag>
+      <tag tokenIDs="t9">$.</tag>
+    </POStags>
+    <sentences charOffsets="true"><sentence start="0" end="15" tokenIDs="t1 t2 t3 t4 t5"></sentence><sentence start="16" end="44" tokenIDs="t6 t7 t8 t9"></sentence></sentences>
+    <lemmas><lemma tokenIDs="t1" ID="l_0">_Peter_</lemma><lemma tokenIDs="t2" ID="l_1">_aß_</lemma><lemma tokenIDs="t3" ID="l_2">_eine_</lemma><lemma tokenIDs="t4" ID="l_3">_Käsepizza_</lemma><lemma tokenIDs="t5" ID="l_4">_._</lemma><lemma tokenIDs="t6" ID="l_5">_Sie_</lemma><lemma tokenIDs="t7" ID="l_6">_schmeckte_</lemma><lemma tokenIDs="t8" ID="l_7">_ihm_</lemma><lemma tokenIDs="t9" ID="l_8">_._</lemma></lemmas>
+  </TextCorpus>
+</D-Spin>

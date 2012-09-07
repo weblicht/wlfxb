@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.3">
+    <MetaData xmlns="http://www.dspin.de/data/metadata">
+        <source>
+            some source metadata
+        </source>
+    </MetaData>
+    <TextCorpus lang="en" xmlns="http://www.dspin.de/data/textcorpus">
+        <text>some text</text>
+        <tokens charOffsets="true">
+            <token ID="t1" start="0" end="4">some</token>
+            <token ID="t2" start="5" end="9">text</token>
+        </tokens>
+        <POStags tagset="someTagsetName">
+            <tag tokID="t1">DET</tag>
+            <tag tokID="t2">NN</tag>
+        </POStags>
+        <morphology tagset="someMorphTagsetName">
+            <analysis tokID="t1">a|s|n</analysis>
+            <analysis tokID="t2">n|sg|3</analysis>
+        </morphology>
+        <!--
+        <sentences charOffsets="true">
+            <sentence ID="s1" start="0" end="9"/>
+        </sentences>
+        -->
+        <!--
+        <sentences tokRef="true">
+            <sentence ID="s1">
+                <tokenRef tokID="t1"/>
+                <tokenRef tokID="t2"/>
+            </sentence>
+        </sentences>
+        -->
+        
+        <sentences tokRef="true" charOffsets="true">
+            <sentence ID="s1" start="0" end="9">
+                <tokenRef tokID="t1"/>
+                <tokenRef tokID="t2"/>
+            </sentence>
+        </sentences>
+        <lemmas>
+            <lemma tokID="t1">some</lemma>
+            <lemma tokID="t2">text</lemma>
+        </lemmas>
+        <parsing tagset="TigerTB">
+            <parse>
+                <constituent cat="TOP">
+                    <constituent cat="S-TOP">
+                        <constituent cat="NP-SB">
+                            <constituent cat="PPER-HD-Nom">
+                                <tokenRef tokID="t2"/>
+                            </constituent>
+                            <constituent cat="VAFIN-HD">
+                                <tokenRef tokID="t3"/>
+                            </constituent>
+                            <constituent cat="VP-OC/pp">
+                                <constituent cat="PP-MO/V">
+                                    <constituent cat="APPRART-AC-Dat.Sg/in">
+                                        <tokenRef tokID="t4"/>
+                                    </constituent>
+                                    <constituent cat="NN-NK-Dat.Sg">
+                                        <tokenRef tokID="t5"/>
+                                    </constituent>
+                                </constituent>
+                                <constituent cat="VVPP-HD">
+                                    <tokenRef tokID="t6"/>
+                                </constituent>
+                            </constituent>
+                        </constituent>
+                        <constituent cat="\$.">
+                            <tokenRef tokID="t7"/>
+                        </constituent>
+                    </constituent>
+                </constituent>
+            </parse>
+        </parsing>
+        <depparsing tagset="someFuncTagset">
+            <parse>
+                <dependency func="SUBJ" depID="t1" govID="t2"/>
+                <dependency func="ROOT" depID="t2"/>
+                <dependency func="SPEC" depID="t3" govID="t4"/>
+                <dependency func="OBJ" depID="t4" govID="t2"/>
+            </parse>
+            <parse>
+                <dependency func="SUBJ" depID="t6" govID="t7"/>
+                <dependency func="ROOT" depID="t7"/>
+                <dependency func="OBJ" depID="t8" govID="t7"/>
+            </parse>
+        </depparsing>
+        <coreferences>
+            <coreference>
+                <referent constID="c3"/>
+                <referent constID="c17"/>
+            </coreference>
+            <coreference>
+                <referent constID="c7"/>
+                <referent constID="c13"/>
+            </coreference>
+        </coreferences>
+        <namedEntities tokRef="true">
+            <entity class="Person">
+                <tokenRef tokID="t1"/>
+            </entity>
+            <entity class="Location">
+                <tokenRef tokID="t7"/>
+            </entity>
+        </namedEntities>
+        <sem_lex_rels src="WordNet">
+            <synonymy>
+                <orthform refID="t1">orthform0, orthform1</orthform>
+                <orthform refID="t2">orthform2</orthform>
+            </synonymy>
+            <hyperonymy>
+                <orthform refID="t1">orthform3, orthform4</orthform>
+                <orthform refID="t4">orthform5</orthform>
+            </hyperonymy>
+        </sem_lex_rels>
+    </TextCorpus>
+</D-Spin>

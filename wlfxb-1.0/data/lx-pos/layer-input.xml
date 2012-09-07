@@ -1,0 +1,12 @@
+<POStags tagset="STTS"  xmlns="http://www.dspin.de/data/lexicon">
+	    <tag lemID="l1">NE</tag>
+	    <tag lemID="l2">VVFIN</tag>
+	    <tag lemID="l3">ART</tag>
+	    <tag lemID="l4">NE</tag>
+	    <tag lemID="l4">NN</tag>
+	    <tag lemID="l5">$.</tag>
+	    <tag lemID="l6">PPER</tag>
+	    <tag lemID="l7">VVFIN</tag>
+	    <tag lemID="l8">PPER</tag>
+	    <tag lemID="l9">$.</tag>
+</POStags>

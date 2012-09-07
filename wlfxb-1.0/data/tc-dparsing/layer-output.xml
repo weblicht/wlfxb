@@ -1,0 +1,17 @@
+
+<depparsing xmlns="http://www.dspin.de/data/textcorpus" emptytoks="true" multigovs="false" tagset="Tiger">
+    <parse>
+        <dependency depIDs="t2" func="ROOT"/>
+        <dependency govIDs="t2" depIDs="t1" func="SUBJ"/>
+        <dependency govIDs="t4" depIDs="t3" func="SPEC"/>
+        <dependency govIDs="t2" depIDs="t4" func="OBJ"/>
+    </parse>
+    <parse>
+        <dependency govIDs="et_0" depIDs="t7" func="ROOT"/>
+        <dependency govIDs="t7" depIDs="t6" func="SUBJ"/>
+        <dependency govIDs="t7" depIDs="t8" func="OBJ"/>
+        <emptytoks>
+            <emptytok ID="et_0"></emptytok>
+        </emptytoks>
+    </parse>
+</depparsing>

@@ -1,0 +1,15 @@
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+
+<MetaData xmlns="http://www.dspin.de/data/metadata">
+    <md name="source" value="Tuebingen Uni"/>
+    <md name="author" value="Yana"/>
+</MetaData>
+
+<TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="en">
+    <text>blah blah blah...</text>
+    <tokens>
+        <token ID="t_1">a</token>
+        <token ID="t_2">test</token>
+    </tokens>
+</TextCorpus>
+</D-Spin>
