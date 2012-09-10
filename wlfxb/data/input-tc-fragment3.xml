@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<fs>
-	<f name="f1">
-		<fs>
-			<f name="f2">v2</f>
-		</fs>
-	</f>
-	<f name="f3">v3</f>
-</fs>

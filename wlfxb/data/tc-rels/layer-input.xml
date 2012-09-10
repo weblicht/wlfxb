@@ -1,6 +1,0 @@
-<relations type="verb-arg" xmlns="http://www.dspin.de/data/textcorpus">
-	<relation func="subj" refIDs="t1"/>
-    <relation func="obj" refIDs="t4"/>
-    <relation func="subj" refIDs="t6"/>
-    <relation func="obj" refIDs="t8"/>
-</relations>

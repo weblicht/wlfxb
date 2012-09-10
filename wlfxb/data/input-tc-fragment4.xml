@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<fs xmlns="http://www.dspin.de/data/textcorpus">
-     <f name="test">
-     		<fs>
-     			<f name="cat">noun</f>
-   			</fs>
-     </f>
-     <f name="test2">obj</f>
-</fs>
