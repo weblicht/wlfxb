@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/2012-01-27/d-spin_0_4.rnc" type="application/relax-ng-compact-syntax"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+
+<MetaData xmlns="http://www.dspin.de/data/metadata">
+    <md name="title" value="binding test"/>
+    <md name="author" value="Yana"/>
+</MetaData>
+
+<TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="en">
+    <text>This is a test. This is the second sentence.</text>
+    <tokens>
+        <token ID="t_0">This</token>
+        <token ID="t_1">is</token>
+        <token ID="t_2">a</token>
+        <token ID="t_3">test</token>
+        <token ID="t_4">.</token>
+        <token ID="t_5">This</token>
+        <token ID="t_6">is</token>
+        <token ID="t_7">the</token>
+        <token ID="t_8">second</token>
+        <token ID="t_9">sentence</token>
+        <token ID="t_10">.</token>
+    </tokens>
+    <sentences charOffsets="true">
+        <sentence start="0" end="15" tokenIDs="t_0 t_1 t_2 t_3 t_4"/>
+        <sentence start="16" end="44" tokenIDs="t_5 t_6 t_7 t_8 t_9 t_10"/>
+    </sentences>
+</TextCorpus>
+</D-Spin>

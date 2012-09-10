@@ -1,0 +1,13 @@
+
+<ns4:D-Spin xmlns="http://www.dspin.de/data/metadata" xmlns:ns2="http://www.dspin.de/data/textcorpus" xmlns:ns3="http://www.dspin.de/data/lexicon" xmlns:ns4="http://www.dspin.de/data" version="0.4">
+    <MetaData>
+        <md name="title" value="binding test"/>
+        <md name="author" value="Yana"/>
+    </MetaData>
+    <ns2:TextCorpus lang="en">
+        <ns2:text></ns2:text>
+        <ns2:tokens/>
+        <ns2:sentences/>
+        <ns2:POStags tagset="Tiger"/>
+    </ns2:TextCorpus>
+</ns4:D-Spin>

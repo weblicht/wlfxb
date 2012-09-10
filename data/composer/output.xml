@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/2012-01-27/d-spin_0_4.rnc" type="application/relax-ng-compact-syntax"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+
+<MetaData xmlns="http://www.dspin.de/data/metadata"/>
+
+<TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+    <text>Peter aß eine Käsepizza. Sie schmeckte ihm.</text>
+    <tokens charOffsets="true">
+        <token ID="t1" start="0" end="5">Peter</token>
+        <token ID="t2" start="6" end="8">aß</token>
+        <token ID="t3" start="9" end="13">eine</token>
+        <token ID="t4" start="14" end="23">Käsepizza</token>
+        <token ID="t5" start="23" end="24">.</token>
+        <token ID="t6" start="25" end="28">Sie</token>
+        <token ID="t7" start="29" end="38">schmeckte</token>
+        <token ID="t8" start="39" end="42">ihm</token>
+        <token ID="t9" start="42" end="43">.</token>
+    </tokens>
+    <sentences charOffsets="true">
+        <sentence ID="s1" start="0" end="24" tokenIDs="t1 t2 t3 t4 t5"/>
+        <sentence ID="s2" start="25" end="43" tokenIDs="t6 t7 t8 t9"/>
+    </sentences>
+    <lemmas>
+        <lemma tokenIDs="t1" ID="l1">Peter</lemma>
+        <lemma tokenIDs="t2" ID="l2">essen</lemma>
+        <lemma tokenIDs="t3" ID="l3">ein</lemma>
+        <lemma tokenIDs="t4" ID="l4">Käsepizza</lemma>
+        <lemma tokenIDs="t5" ID="l5">.</lemma>
+        <lemma tokenIDs="t6" ID="l6">sie</lemma>
+        <lemma tokenIDs="t7" ID="l7">schmecken</lemma>
+        <lemma tokenIDs="t8" ID="l8">er</lemma>
+        <lemma tokenIDs="t9" ID="l9">.</lemma>
+    </lemmas>
+    <parsing tagset="Tiger">
+        <parse>
+            <constituent cat="TOP" ID="c1">
+                <constituent cat="S-TOP" ID="c2">
+                    <constituent cat="NP-SB" ID="c3">
+                        <constituent cat="PN-HD-Nom.Sg" ID="c4">
+                            <constituent tokenIDs="t1" cat="NE-HD-Nom.Sg" ID="c5"/>
+                        </constituent>
+                    </constituent>
+                    <constituent tokenIDs="t2" cat="VVFIN-HD" ID="c6"/>
+                    <constituent cat="NP-OA" ID="c7">
+                        <constituent tokenIDs="t3" cat="ART-NK-Acc.Sg" ID="c8"/>
+                        <constituent tokenIDs="t4" cat="NN-NK-Acc.Sg" ID="c9"/>
+                    </constituent>
+                </constituent>
+                <constituent tokenIDs="t5" cat="\$." ID="c10"/>
+            </constituent>
+        </parse>
+        <parse>
+            <constituent cat="TOP" ID="c11">
+                <constituent cat="S-TOP" ID="c12">
+                    <constituent cat="NP-SB" ID="c13">
+                        <constituent tokenIDs="t6" cat="PPER-HD-Nom" ID="c14"/>
+                    </constituent>
+                    <constituent tokenIDs="t7" cat="VVFIN-HD" ID="c15"/>
+                    <constituent cat="NP-DA" ID="c16">
+                        <constituent tokenIDs="t8" cat="PPER-HD-Dat" ID="c17"/>
+                    </constituent>
+                </constituent>
+                <constituent tokenIDs="t9" cat="\$." ID="c18"/>
+            </constituent>
+        </parse>
+    </parsing>
+</TextCorpus>
+</D-Spin>
