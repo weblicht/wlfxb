@@ -8,35 +8,32 @@ import de.tuebingen.uni.sfs.wlf1.tc.api.Lemma;
 import de.tuebingen.uni.sfs.wlf1.tc.api.LexicalSemanticsLayer;
 import de.tuebingen.uni.sfs.wlf1.tc.api.TextCorpus;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.TextCorpusLayerTag;
-import de.tuebingen.uni.sfs.wlf1.test.utils.TestUtils;
-import java.io.*;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertEquals;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * @author Yana Panchenko
  *
  */
-public class TextCorpusLexicalSemanticsTest {
+public class TextCorpusLexicalSemanticsTest extends AbstractTextCorpusTest {
 
-    private static final String INPUT_FILE_WITHOUT_LAYER = "data/tc-lexsem/tcf-before.xml";
-    private static final String INPUT_FILE_WITH_LAYER = "data/tc-lexsem/tcf-after.xml";
-    private static final String OUTPUT_FILE = "data/tc-lexsem/output.xml";
-    private static final String EXPECTED_OUTPUT_FILE = "data/tc-lexsem/output-expected.xml";
+    private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-lexsem/tcf-before.xml";
+    private static final String INPUT_FILE_WITH_LAYER = "/data/tc-lexsem/tcf-after.xml";
+    private static final String EXPECTED_OUTPUT_FILE = "/data/tc-lexsem/output-expected.xml";
+    private static final String OUTPUT_FILE = "/tmp/output.xml";
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeLexSemAnnotation =
             EnumSet.of(TextCorpusLayerTag.LEMMAS);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterLexSemAnnotation =
             EnumSet.of(TextCorpusLayerTag.LEMMAS,
             TextCorpusLayerTag.SYNONYMY, TextCorpusLayerTag.ANTONYMY,
             TextCorpusLayerTag.HYPONYMY, TextCorpusLayerTag.HYPERONYMY);
-    public static Map<String, String[]> syno = new HashMap<String, String[]>();
-    public static Map<String, String[]> anto = new HashMap<String, String[]>();
-    public static Map<String, String[]> hypo = new HashMap<String, String[]>();
-    public static Map<String, String[]> hyper = new HashMap<String, String[]>();
+    public static final Map<String, String[]> syno = new HashMap<String, String[]>();
+    public static final Map<String, String[]> anto = new HashMap<String, String[]>();
+    public static final Map<String, String[]> hypo = new HashMap<String, String[]>();
+    public static final Map<String, String[]> hyper = new HashMap<String, String[]>();
 
     static {
         syno.put("essen", new String[]{"futtern", "nehmen"});
@@ -52,48 +49,36 @@ public class TextCorpusLexicalSemanticsTest {
     @Test
     public void testRead() throws Exception {
         TextCorpus tc = read(INPUT_FILE_WITH_LAYER, layersToReadAfterLexSemAnnotation);
-        LexicalSemanticsLayer layer = null;
+        LexicalSemanticsLayer layer;
 
         layer = tc.getSynonymyLayer();
-        assertEquals(1, layer.size());
-        assertEquals("GermaNet", layer.getSource());
-        assertEquals(tc.getLemmasLayer().getLemma(1), layer.getLemmas(layer.getOrthform(0))[0]);
-        assertEquals(layer.getOrthform(0), layer.getOrthform(tc.getLemmasLayer().getLemma(1)));
+        Assert.assertEquals(1, layer.size());
+        Assert.assertEquals("GermaNet", layer.getSource());
+        Assert.assertEquals(tc.getLemmasLayer().getLemma(1), layer.getLemmas(layer.getOrthform(0))[0]);
+        Assert.assertEquals(layer.getOrthform(0), layer.getOrthform(tc.getLemmasLayer().getLemma(1)));
 
         layer = tc.getAntonymyLayer();
-        assertEquals(1, layer.size());
-        assertEquals("GermaNet", layer.getSource());
-        assertEquals(tc.getLemmasLayer().getLemma(1), layer.getLemmas(layer.getOrthform(0))[0]);
-        assertEquals(layer.getOrthform(0), layer.getOrthform(tc.getLemmasLayer().getLemma(1)));
+        Assert.assertEquals(1, layer.size());
+        Assert.assertEquals("GermaNet", layer.getSource());
+        Assert.assertEquals(tc.getLemmasLayer().getLemma(1), layer.getLemmas(layer.getOrthform(0))[0]);
+        Assert.assertEquals(layer.getOrthform(0), layer.getOrthform(tc.getLemmasLayer().getLemma(1)));
 
         layer = tc.getHyponymyLayer();
-        assertEquals(2, layer.size());
-        assertEquals("GermaNet", layer.getSource());
-        assertEquals(tc.getLemmasLayer().getLemma(1), layer.getLemmas(layer.getOrthform(0))[0]);
-        assertEquals(layer.getOrthform(0), layer.getOrthform(tc.getLemmasLayer().getLemma(1)));
+        Assert.assertEquals(2, layer.size());
+        Assert.assertEquals("GermaNet", layer.getSource());
+        Assert.assertEquals(tc.getLemmasLayer().getLemma(1), layer.getLemmas(layer.getOrthform(0))[0]);
+        Assert.assertEquals(layer.getOrthform(0), layer.getOrthform(tc.getLemmasLayer().getLemma(1)));
 
         layer = tc.getHyperonymyLayer();
-        assertEquals(2, layer.size());
-        assertEquals("GermaNet", layer.getSource());
-        assertEquals(tc.getLemmasLayer().getLemma(1), layer.getLemmas(layer.getOrthform(0))[0]);
-        assertEquals(layer.getOrthform(0), layer.getOrthform(tc.getLemmasLayer().getLemma(1)));
-    }
-
-    private TextCorpus read(String file, EnumSet<TextCorpusLayerTag> layersToRead) throws Exception {
-        InputStream is = new FileInputStream(INPUT_FILE_WITH_LAYER);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToRead);
-        tc.close();
-        System.out.println(tc);
-        return tc;
+        Assert.assertEquals(2, layer.size());
+        Assert.assertEquals("GermaNet", layer.getSource());
+        Assert.assertEquals(tc.getLemmasLayer().getLemma(1), layer.getLemmas(layer.getOrthform(0))[0]);
+        Assert.assertEquals(layer.getOrthform(0), layer.getOrthform(tc.getLemmasLayer().getLemma(1)));
     }
 
     @Test
     public void testReadWrite() throws Exception {
-        File file = new File(INPUT_FILE_WITHOUT_LAYER);
-        InputStream is = new FileInputStream(file);
-        File ofile = new File(OUTPUT_FILE);
-        OutputStream os = new FileOutputStream(ofile);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToReadBeforeLexSemAnnotation, os, false);
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeLexSemAnnotation);
         System.out.println(tc);
         // create lexical semantics layers, empty at first
         String source = "GermaNet";
@@ -128,7 +113,7 @@ public class TextCorpusLexicalSemanticsTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        TestUtils.assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
     }
 
     private String[] getSynonyms(String lemmaString) {

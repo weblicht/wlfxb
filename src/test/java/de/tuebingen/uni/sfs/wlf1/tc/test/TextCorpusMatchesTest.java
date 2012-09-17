@@ -3,35 +3,27 @@
  */
 package de.tuebingen.uni.sfs.wlf1.tc.test;
 
-import de.tuebingen.uni.sfs.wlf1.io.TextCorpusStreamed;
 import de.tuebingen.uni.sfs.wlf1.io.WLDObjector;
 import de.tuebingen.uni.sfs.wlf1.md.xb.MetaData;
 import de.tuebingen.uni.sfs.wlf1.tc.api.*;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.TextCorpusLayerTag;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.TextCorpusStored;
-import de.tuebingen.uni.sfs.wlf1.test.utils.TestUtils;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.*;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertEquals;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * @author Yana Panchenko
  *
  */
-public class TextCorpusMatchesTest {
+public class TextCorpusMatchesTest extends AbstractTextCorpusTest {
 
-    //private static final String INPUT_FILE_WITHOUT_LAYER = "data/tc-matches/tcf-before.xml";
-    private static final String INPUT_FILE_WITH_LAYER = "data/tc-matches/tcf-after.xml";
-    private static final String OUTPUT_FILE = "data/tc-matches/output.xml";
-    private static final String EXPECTED_OUTPUT_FILE = "data/tc-matches/output-expected.xml";
-//    
-//    private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeLemmatization = 
-//    	EnumSet.of(TextCorpusLayerTag.TOKENS);
+    private static final String INPUT_FILE_WITH_LAYER = "/data/tc-matches/tcf-after.xml";
+    private static final String EXPECTED_OUTPUT_FILE = "/data/tc-matches/output-expected.xml";
+    private static final String OUTPUT_FILE = "/tmp/output.xml";
+
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterQuery =
             EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.CORPUS_MATCHES);
 
@@ -39,17 +31,9 @@ public class TextCorpusMatchesTest {
     public void testRead() throws Exception {
         TextCorpus tc = read(INPUT_FILE_WITH_LAYER, layersToReadAfterQuery);
         MatchesLayer layer = tc.getMatchesLayer();
-        assertEquals(1, layer.size());
+        Assert.assertEquals(1, layer.size());
         Token token = layer.getTokens(layer.getCorpus(0).getMatchedItems()[0])[0];
-        assertEquals(tc.getTokensLayer().getToken(0), token);
-    }
-
-    private TextCorpus read(String file, EnumSet<TextCorpusLayerTag> layersToRead) throws Exception {
-        InputStream is = new FileInputStream(INPUT_FILE_WITH_LAYER);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToRead);
-        tc.close();
-        System.out.println(tc);
-        return tc;
+        Assert.assertEquals(tc.getTokensLayer().getToken(0), token);
     }
 
     @Test
@@ -64,7 +48,7 @@ public class TextCorpusMatchesTest {
 
         System.out.println(tc);
         // compare output xml with expected xml
-        TestUtils.assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
     }
 
     private void queryCorporaAndAddMatchesToTextCorpus(TextCorpusStored tc) {

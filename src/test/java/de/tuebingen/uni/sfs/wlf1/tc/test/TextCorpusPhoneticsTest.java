@@ -10,8 +10,6 @@ import de.tuebingen.uni.sfs.wlf1.tc.api.TextCorpus;
 import de.tuebingen.uni.sfs.wlf1.tc.api.TokensLayer;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.PronunciationType;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.TextCorpusLayerTag;
-import de.tuebingen.uni.sfs.wlf1.test.utils.TestUtils;
-import java.io.*;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
@@ -22,12 +20,12 @@ import org.junit.Test;
  * @author Yana Panchenko
  *
  */
-public class TextCorpusPhoneticsTest {
+public class TextCorpusPhoneticsTest extends AbstractTextCorpusTest {
 
-    private static final String INPUT_FILE_WITHOUT_PARSING = "data/tc-phon/tcf-before.xml";
-    private static final String INPUT_FILE_WITH_PARSING = "data/tc-phon/tcf-after.xml";
-    private static final String OUTPUT_FILE = "data/tc-phon/output.xml";
-    private static final String EXPECTED_OUTPUT_FILE = "data/tc-phon/output-expected.xml";
+    private static final String INPUT_FILE_WITHOUT_PARSING = "/data/tc-phon/tcf-before.xml";
+    private static final String INPUT_FILE_WITH_PARSING = "/data/tc-phon/tcf-after.xml";
+    private static final String EXPECTED_OUTPUT_FILE = "/data/tc-phon/output-expected.xml";
+    private static final String OUTPUT_FILE = "/tmp/output.xml";
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforePhoneticsAnnotation =
             EnumSet.of(TextCorpusLayerTag.TOKENS);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterPhoneticsAnnotation =
@@ -51,21 +49,9 @@ public class TextCorpusPhoneticsTest {
         assertEquals(tc.getTokensLayer().getToken(6), layer.getToken(layer.getSegment(0)));
     }
 
-    private TextCorpus read(String file, EnumSet<TextCorpusLayerTag> layersToRead) throws Exception {
-        InputStream is = new FileInputStream(INPUT_FILE_WITH_PARSING);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToRead);
-        tc.close();
-        System.out.println(tc);
-        return tc;
-    }
-
     @Test
     public void testReadWrite() throws Exception {
-        File file = new File(INPUT_FILE_WITHOUT_PARSING);
-        InputStream is = new FileInputStream(file);
-        File ofile = new File(OUTPUT_FILE);
-        OutputStream os = new FileOutputStream(ofile);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToReadBeforePhoneticsAnnotation, os, false);
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_PARSING, OUTPUT_FILE, layersToReadBeforePhoneticsAnnotation);
         System.out.println(tc);
         TokensLayer tokensLayer = tc.getTokensLayer();
         PhoneticsLayer phoneticsLayer = tc.createPhotenicsLayer("SAMPA");
@@ -79,7 +65,7 @@ public class TextCorpusPhoneticsTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        TestUtils.assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
     }
 
     private Pronunciation pronunciationForSchmeckte(PhoneticsLayer phoneticsLayer) {

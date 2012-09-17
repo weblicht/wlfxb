@@ -6,25 +6,22 @@ package de.tuebingen.uni.sfs.wlf1.tc.test;
 import de.tuebingen.uni.sfs.wlf1.io.TextCorpusStreamed;
 import de.tuebingen.uni.sfs.wlf1.tc.api.*;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.TextCorpusLayerTag;
-import de.tuebingen.uni.sfs.wlf1.test.utils.TestUtils;
-import java.io.*;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertEquals;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * @author Yana Panchenko
  *
  */
-public class TextCorpusDependencyParsingTest {
+public class TextCorpusDependencyParsingTest extends AbstractTextCorpusTest {
 
-    private static final String INPUT_FILE_WITHOUT_PARSING = "data/tc-dparsing/tcf-before.xml";
-    private static final String INPUT_FILE_WITH_PARSING = "data/tc-dparsing/tcf-after.xml";
-    private static final String OUTPUT_FILE = "data/tc-dparsing/output.xml";
-    private static final String EXPECTED_OUTPUT_FILE = "data/tc-dparsing/output-expected.xml";
+    private static final String INPUT_FILE_WITHOUT_PARSING = "/data/tc-dparsing/tcf-before.xml";
+    private static final String INPUT_FILE_WITH_PARSING = "/data/tc-dparsing/tcf-after.xml";
+    private static final String EXPECTED_OUTPUT_FILE = "/data/tc-dparsing/output-expected.xml";
+    private static final String OUTPUT_FILE = "/tmp/output.xml";
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeParsing =
             EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.SENTENCES);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterParsing =
@@ -34,31 +31,19 @@ public class TextCorpusDependencyParsingTest {
     public void testRead() throws Exception {
         TextCorpus tc = read(INPUT_FILE_WITH_PARSING, layersToReadAfterParsing);
         DependencyParsingLayer layer = tc.getDependencyParsingLayer();
-        assertEquals("Tiger", layer.getTagset());
-        assertEquals(true, layer.hasEmptyTokens());
-        assertEquals(false, layer.hasMultipleGovernors());
-        assertEquals(2, layer.size());
-        assertEquals(4, layer.getParse(0).getDependencies().length);
-        assertEquals("SUBJ", layer.getParse(0).getDependencies()[1].getFunction());
-        assertEquals(tc.getTokensLayer().getToken(1), layer.getDependentTokens(layer.getParse(0).getDependencies()[0])[0]);
-        assertEquals("", layer.getGovernorTokens(layer.getParse(1).getDependencies()[0])[0].getString());
-    }
-
-    private TextCorpus read(String file, EnumSet<TextCorpusLayerTag> layersToRead) throws Exception {
-        InputStream is = new FileInputStream(INPUT_FILE_WITH_PARSING);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToRead);
-        tc.close();
-        System.out.println(tc);
-        return tc;
+        Assert.assertEquals("Tiger", layer.getTagset());
+        Assert.assertEquals(true, layer.hasEmptyTokens());
+        Assert.assertEquals(false, layer.hasMultipleGovernors());
+        Assert.assertEquals(2, layer.size());
+        Assert.assertEquals(4, layer.getParse(0).getDependencies().length);
+        Assert.assertEquals("SUBJ", layer.getParse(0).getDependencies()[1].getFunction());
+        Assert.assertEquals(tc.getTokensLayer().getToken(1), layer.getDependentTokens(layer.getParse(0).getDependencies()[0])[0]);
+        Assert.assertEquals("", layer.getGovernorTokens(layer.getParse(1).getDependencies()[0])[0].getString());
     }
 
     @Test
     public void testReadWrite() throws Exception {
-        File file = new File(INPUT_FILE_WITHOUT_PARSING);
-        InputStream is = new FileInputStream(file);
-        File ofile = new File(OUTPUT_FILE);
-        OutputStream os = new FileOutputStream(ofile);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToReadBeforeParsing, os, false);
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_PARSING, OUTPUT_FILE, layersToReadBeforeParsing);
         System.out.println(tc);
         SentencesLayer sentences = tc.getSentencesLayer();
         DependencyParsingLayer parses = tc.createDependencyParsingLayer("Tiger", false, true);
@@ -71,7 +56,7 @@ public class TextCorpusDependencyParsingTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        TestUtils.assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
     }
 
     private List<Dependency> parse(Token[] sentenceTokens, DependencyParsingLayer parses) {

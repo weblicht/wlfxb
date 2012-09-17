@@ -4,11 +4,11 @@
 package de.tuebingen.uni.sfs.wlf1.tc.test;
 
 import de.tuebingen.uni.sfs.wlf1.io.WLDObjector;
+import de.tuebingen.uni.sfs.wlf1.lx.test.AbstractLexiconTest;
 import de.tuebingen.uni.sfs.wlf1.md.xb.MetaData;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.*;
 import de.tuebingen.uni.sfs.wlf1.test.utils.TestUtils;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
 import org.junit.Test;
 
@@ -16,14 +16,14 @@ import org.junit.Test;
  * @author Yana Panchenko
  *
  */
-public class ComposeFromLayersTest {
+public class ComposeFromLayersTest extends AbstractLexiconTest{
 
-    private static final String INPUT_TEXT = "data/tc-text/layer-input.xml";
-    private static final String INPUT_TOKENS = "data/tc-tokens/layer-input.xml";
-    private static final String INPUT_PARSING = "data/tc-parsing/layer-input.xml";
-    private static final String INPUT_SENTENCES = "data/tc-sents/layer-input.xml";
-    private static final String INPUT_LEMMAS = "data/tc-lemmas/layer-input.xml";
-    private static final String OUTPUT_FILE = "data/composer/output.xml";
+    private static final String INPUT_TEXT = "/data/tc-text/layer-input.xml";
+    private static final String INPUT_TOKENS = "/data/tc-tokens/layer-input.xml";
+    private static final String INPUT_PARSING = "/data/tc-parsing/layer-input.xml";
+    private static final String INPUT_SENTENCES = "/data/tc-sents/layer-input.xml";
+    private static final String INPUT_LEMMAS = "/data/tc-lemmas/layer-input.xml";
+    private static final String OUTPUT_FILE = "/tmp/output.xml";
 
     public ComposeFromLayersTest() {
     }
@@ -33,23 +33,23 @@ public class ComposeFromLayersTest {
 
         InputStream is;
 
-        is = new FileInputStream(INPUT_TEXT);
+        is = this.getClass().getResourceAsStream(INPUT_TEXT);
         TextLayerStored textLayer = TestUtils.read(TextLayerStored.class, is);
         is.close();
 
-        is = new FileInputStream(INPUT_TOKENS);
+        is = this.getClass().getResourceAsStream(INPUT_TOKENS);
         TokensLayerStored tokensLayer = TestUtils.read(TokensLayerStored.class, is);
         is.close();
 
-        is = new FileInputStream(INPUT_PARSING);
+        is = this.getClass().getResourceAsStream(INPUT_PARSING);
         ConstituentParsingLayerStored parsingLayer = TestUtils.read(ConstituentParsingLayerStored.class, is);
         is.close();
 
-        is = new FileInputStream(INPUT_SENTENCES);
+        is = this.getClass().getResourceAsStream(INPUT_SENTENCES);
         SentencesLayerStored sentsLayer = TestUtils.read(SentencesLayerStored.class, is);
         is.close();
 
-        is = new FileInputStream(INPUT_LEMMAS);
+        is = this.getClass().getResourceAsStream(INPUT_LEMMAS);
         LemmasLayerStored lemmasLayer = TestUtils.read(LemmasLayerStored.class, is);
         is.close();
 

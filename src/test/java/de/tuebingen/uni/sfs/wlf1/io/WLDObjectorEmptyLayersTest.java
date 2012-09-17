@@ -5,7 +5,6 @@ import de.tuebingen.uni.sfs.wlf1.md.xb.MetaDataItem;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.TextCorpusStored;
 import de.tuebingen.uni.sfs.wlf1.xb.WLData;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
 import org.junit.Test;
 
@@ -16,25 +15,23 @@ import org.junit.Test;
 //TODO so that it tests all layers, and so that all layers be in separate tests
 public class WLDObjectorEmptyLayersTest {
 
-    private static final String INPUT_FILE_Textcorpus = "data/input2.xml";
-    private static final String INPUT_FILE_Lexicon = "data/input_lexicon.xml";
-    private static final String OUTPUT_FILE_1 = "data/wld-objector-output-empty.xml";
-    private static final String OUTPUT_FILE_2 = "data/wld-objector-min-prefix-output-empty.xml";
+    private static final String INPUT_FILE_Textcorpus = "/data/input2.xml";
+    private static final String INPUT_FILE_Lexicon = "/data/input_lexicon.xml";
+    private static final String OUTPUT_FILE_1 = "/tmp/wld-objector-output-empty.xml";
+    private static final String OUTPUT_FILE_2 = "/tmp/wld-objector-min-prefix-output-empty.xml";
 
     public WLDObjectorEmptyLayersTest() {
     }
 
     @Test
     public void testRead_Textcorpus() throws Exception {
-        File file = new File(INPUT_FILE_Textcorpus);
-        InputStream is = new FileInputStream(file);
+        InputStream is = this.getClass().getResourceAsStream(INPUT_FILE_Textcorpus);
         testRead(is);
     }
 
     @Test
     public void testRead_Lexicon() throws Exception {
-        File file = new File(INPUT_FILE_Lexicon);
-        InputStream is = new FileInputStream(file);
+        InputStream is = this.getClass().getResourceAsStream(INPUT_FILE_Lexicon);
         testRead(is);
     }
 

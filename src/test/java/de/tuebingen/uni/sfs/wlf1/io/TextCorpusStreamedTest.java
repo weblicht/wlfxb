@@ -7,7 +7,10 @@ import de.tuebingen.uni.sfs.wlf1.tc.api.SentencesLayer;
 import de.tuebingen.uni.sfs.wlf1.tc.api.TextCorpus;
 import de.tuebingen.uni.sfs.wlf1.tc.api.Token;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.TextCorpusLayerTag;
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
@@ -16,17 +19,16 @@ import org.junit.Test;
 
 public class TextCorpusStreamedTest {
 
-    private static final String INPUT_FILE_FOR_READ = "data/streamer/tcf-text_toks_sents_pos_lem.xml";
-    private static final String INPUT_FILE_FOR_REWRITE = "data/streamer/tcf-text_tok_pos.xml";
-    private static final String OUTPUT_FILE_ADD_LEMMS_SENTS = "data/streamer/output-add_lemms_sents.xml";
-    private static final String OUTPUT_FILE_ADD_LEMMS_SENTS_METADATA = "data/streamer/output-add_lemms_sents_metadata.xml";
+    private static final String INPUT_FILE_FOR_READ = "/data/streamer/tcf-text_toks_sents_pos_lem.xml";
+    private static final String INPUT_FILE_FOR_REWRITE = "/data/streamer/tcf-text_tok_pos.xml";
+    private static final String OUTPUT_FILE_ADD_LEMMS_SENTS = "/tmp/output-add_lemms_sents.xml";
+    private static final String OUTPUT_FILE_ADD_LEMMS_SENTS_METADATA = "/tmp/output-add_lemms_sents_metadata.xml";
 
     @Test
     public void testRead() throws Exception {
         System.out.println();
         System.out.println("--- READ TEST START ---");
-        File file = new File(INPUT_FILE_FOR_READ);
-        InputStream is = new FileInputStream(file);
+        InputStream is =this.getClass().getResourceAsStream(INPUT_FILE_FOR_READ);
         testRead(is, EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.SENTENCES, TextCorpusLayerTag.LEMMAS));
         System.out.println("--- READ TEST END ---");
         System.out.println();
@@ -46,8 +48,7 @@ public class TextCorpusStreamedTest {
     public void testReadWriteAddingSentsLemms() throws Exception {
         System.out.println();
         System.out.println("--- WRITE TEST START ---");
-        File file = new File(INPUT_FILE_FOR_REWRITE);
-        InputStream is = new FileInputStream(file);
+        InputStream is = this.getClass().getResourceAsStream(INPUT_FILE_FOR_REWRITE);
         File ofile = new File(OUTPUT_FILE_ADD_LEMMS_SENTS);
         OutputStream os = new FileOutputStream(ofile);
         testReadWrite(is, EnumSet.of(TextCorpusLayerTag.TOKENS),
@@ -67,8 +68,7 @@ public class TextCorpusStreamedTest {
     public void testReadWriteAddingSentsLemmsMetadata() throws Exception {
         System.out.println();
         System.out.println("--- WRITE TEST START ---");
-        File file = new File(INPUT_FILE_FOR_REWRITE);
-        InputStream is = new FileInputStream(file);
+        InputStream is = this.getClass().getResourceAsStream(INPUT_FILE_FOR_REWRITE);
         File ofile = new File(OUTPUT_FILE_ADD_LEMMS_SENTS_METADATA);
         OutputStream os = new FileOutputStream(ofile);
         testReadWriteAddingMetadata(is, EnumSet.of(TextCorpusLayerTag.TOKENS),

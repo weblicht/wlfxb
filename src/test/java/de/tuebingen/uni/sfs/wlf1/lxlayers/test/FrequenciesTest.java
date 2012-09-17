@@ -6,7 +6,6 @@ package de.tuebingen.uni.sfs.wlf1.lxlayers.test;
 import de.tuebingen.uni.sfs.wlf1.lx.api.FrequenciesLayer;
 import de.tuebingen.uni.sfs.wlf1.lx.xb.FrequenciesLayerStored;
 import de.tuebingen.uni.sfs.wlf1.test.utils.TestUtils;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -19,13 +18,13 @@ import org.junit.Test;
  */
 public class FrequenciesTest {
 
-    private static final String INPUT = "data/lx-freq/layer-input.xml";
-    private static final String OUTPUT = "data/lx-freq/layer-output.xml";
+    private static final String INPUT = "/data/lx-freq/layer-input.xml";
+    private static final String OUTPUT = "/tmp/layer-output.xml";
 
     @Test
     public void testReadAndWriteBack() throws Exception {
 
-        InputStream is = new FileInputStream(INPUT);
+        InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(OUTPUT);
 
 

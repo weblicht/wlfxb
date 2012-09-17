@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+
+ <MetaData xmlns="http://www.dspin.de/data/metadata">
+  <source>IMS, Uni Stuttgart</source>
+  <md name="source" value="Tuebingen Uni"></md>
+ <md name="source" value="Tuebingen Uni"></md>
+<md name="author" value="Yana"></md>
+</MetaData>
+
+ <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+  <text>Peter aß eine Käsepizza. Sie schmeckte ihm.</text>
+ </TextCorpus>
+</D-Spin>

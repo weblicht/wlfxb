@@ -6,25 +6,22 @@ package de.tuebingen.uni.sfs.wlf1.tc.test;
 import de.tuebingen.uni.sfs.wlf1.io.TextCorpusStreamed;
 import de.tuebingen.uni.sfs.wlf1.tc.api.*;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.TextCorpusLayerTag;
-import de.tuebingen.uni.sfs.wlf1.test.utils.TestUtils;
-import java.io.*;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertEquals;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * @author Yana Panchenko
  *
  */
-public class TextCorpusMorphologyTest {
+public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
 
-    private static final String INPUT_FILE_WITHOUT_LAYER = "data/tc-morph/tcf-before.xml";
-    private static final String INPUT_FILE_WITH_LAYER = "data/tc-morph/tcf-after.xml";
-    private static final String OUTPUT_FILE = "data/tc-morph/output.xml";
-    private static final String EXPECTED_OUTPUT_FILE = "data/tc-morph/output-expected.xml";
+    private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-morph/tcf-before.xml";
+    private static final String INPUT_FILE_WITH_LAYER = "/data/tc-morph/tcf-after.xml";
+    private static final String EXPECTED_OUTPUT_FILE = "/data/tc-morph/output-expected.xml";
+    private static final String OUTPUT_FILE = "/tmp/output.xml";
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeMorphologyAnnotation =
             EnumSet.of(TextCorpusLayerTag.TOKENS);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterMorphologyAnnotation =
@@ -34,33 +31,21 @@ public class TextCorpusMorphologyTest {
     public void testRead() throws Exception {
         TextCorpus tc = read(INPUT_FILE_WITH_LAYER, layersToReadAfterMorphologyAnnotation);
         MorphologyLayer layer = tc.getMorphologyLayer();
-        assertEquals(true, layer.hasCharoffsets());
-        assertEquals(true, layer.hasSegmentation());
-        assertEquals(tc.getTokensLayer().getToken(3), layer.getTokens(layer.getAnalysis(0))[0]);
-        assertEquals(true, layer.getAnalysis(0).getFeatures()[0].isTerminal());
-        assertEquals("cat", layer.getAnalysis(0).getFeatures()[0].getName());
-        assertEquals("noun", layer.getAnalysis(0).getFeatures()[0].getValue());
-        assertEquals(false, layer.getAnalysis(0).getFeatures()[4].isTerminal());
-        assertEquals("test", layer.getAnalysis(0).getFeatures()[4].getName());
-        assertEquals("noun", layer.getAnalysis(0).getFeatures()[4].getSubfeatures()[0].getValue());
-        assertEquals(1, layer.size());
-    }
-
-    private TextCorpus read(String file, EnumSet<TextCorpusLayerTag> layersToRead) throws Exception {
-        InputStream is = new FileInputStream(INPUT_FILE_WITH_LAYER);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToRead);
-        tc.close();
-        System.out.println(tc);
-        return tc;
+        Assert.assertEquals(true, layer.hasCharoffsets());
+        Assert.assertEquals(true, layer.hasSegmentation());
+        Assert.assertEquals(tc.getTokensLayer().getToken(3), layer.getTokens(layer.getAnalysis(0))[0]);
+        Assert.assertEquals(true, layer.getAnalysis(0).getFeatures()[0].isTerminal());
+        Assert.assertEquals("cat", layer.getAnalysis(0).getFeatures()[0].getName());
+        Assert.assertEquals("noun", layer.getAnalysis(0).getFeatures()[0].getValue());
+        Assert.assertEquals(false, layer.getAnalysis(0).getFeatures()[4].isTerminal());
+        Assert.assertEquals("test", layer.getAnalysis(0).getFeatures()[4].getName());
+        Assert.assertEquals("noun", layer.getAnalysis(0).getFeatures()[4].getSubfeatures()[0].getValue());
+        Assert.assertEquals(1, layer.size());
     }
 
     @Test
     public void testReadWrite() throws Exception {
-        File file = new File(INPUT_FILE_WITHOUT_LAYER);
-        InputStream is = new FileInputStream(file);
-        File ofile = new File(OUTPUT_FILE);
-        OutputStream os = new FileOutputStream(ofile);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToReadBeforeMorphologyAnnotation, os, false);
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeMorphologyAnnotation);
         System.out.println(tc);
         MorphologyLayer morphology = tc.createMorphologyLayer(true, true);
         for (int i = 0; i < tc.getTokensLayer().size(); i++) {
@@ -73,7 +58,7 @@ public class TextCorpusMorphologyTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        TestUtils.assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
     }
 
     private void addAnalysis(Token token, MorphologyLayer morphology) {

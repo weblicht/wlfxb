@@ -7,7 +7,6 @@ import de.tuebingen.uni.sfs.wlf1.lx.api.Relation;
 import de.tuebingen.uni.sfs.wlf1.lx.api.RelationsLayer;
 import de.tuebingen.uni.sfs.wlf1.lx.xb.RelationsLayerStored;
 import de.tuebingen.uni.sfs.wlf1.test.utils.TestUtils;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -20,13 +19,13 @@ import org.junit.Test;
  */
 public class RelationsTest {
 
-    private static final String INPUT = "data/lx-rel/layer-input.xml";
-    private static final String OUTPUT = "data/lx-rel/layer-output.xml";
+    private static final String INPUT = "/data/lx-rel/layer-input.xml";
+    private static final String OUTPUT = "/tmp/layer-output.xml";
 
     @Test
     public void testReadAndWriteBack() throws Exception {
 
-        InputStream is = new FileInputStream(INPUT);
+        InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(OUTPUT);
 
 
@@ -43,7 +42,7 @@ public class RelationsTest {
         assertEquals("Adj-Noun", r0.getFunction());
         assertEquals(Integer.valueOf(100), r0.getFrequency());
         assertEquals("smt", r0.getSig().getMeasure());
-        assertEquals((double) 3.1, r0.getSig().getValue(), 0.001);
+        assertEquals(3.1, r0.getSig().getValue(), 0.001);
         assertEquals("steife", layer.getWords(r0)[0]);
         assertEquals("Brise", layer.getWords(r0)[1]);
     }

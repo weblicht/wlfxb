@@ -6,12 +6,10 @@ package de.tuebingen.uni.sfs.wlf1.tclayers.test;
 import de.tuebingen.uni.sfs.wlf1.tc.api.CoreferencesLayer;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.CoreferencesLayerStored;
 import de.tuebingen.uni.sfs.wlf1.test.utils.TestUtils;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertEquals;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -20,13 +18,13 @@ import org.junit.Test;
  */
 public class CoreferencesTest {
 
-    private static final String INPUT = "data/tc-corefs/layer-input.xml";
-    private static final String OUTPUT = "data/tc-corefs/layer-output.xml";
+    private static final String INPUT = "/data/tc-corefs/layer-input.xml";
+    private static final String OUTPUT = "/tmp/layer-output.xml";
 
     @Test
     public void testReadAndWriteBack() throws Exception {
 
-        InputStream is = new FileInputStream(INPUT);
+        InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(OUTPUT);
 
 
@@ -37,14 +35,14 @@ public class CoreferencesTest {
         is.close();
         os.close();
 
-        assertEquals("BART", layer.getTagset());
-        assertEquals(true, layer.hasExternalReferences());
-        assertEquals("Wikipedia", layer.getExternalReferenceSource());
-        assertEquals(2, layer.size());
-        assertEquals("ORG", layer.getReferent(0).getType());
-        assertEquals("http://de.wikipedia.org/wiki/Wahre_Finnen", layer.getReferent(0).getExternalId());
-        assertEquals(2, layer.getReferent(0).getCoreferences().length);
-        assertEquals(null, layer.getReferent(0).getCoreferences()[0].getSemanticRole());
-        assertEquals("pro.per3", layer.getReferent(0).getCoreferences()[0].getType());
+        Assert.assertEquals("BART", layer.getTagset());
+        Assert.assertEquals(true, layer.hasExternalReferences());
+        Assert.assertEquals("Wikipedia", layer.getExternalReferenceSource());
+        Assert.assertEquals(2, layer.size());
+        Assert.assertEquals("ORG", layer.getReferent(0).getType());
+        Assert.assertEquals("http://de.wikipedia.org/wiki/Wahre_Finnen", layer.getReferent(0).getExternalId());
+        Assert.assertEquals(2, layer.getReferent(0).getCoreferences().length);
+        Assert.assertEquals(null, layer.getReferent(0).getCoreferences()[0].getSemanticRole());
+        Assert.assertEquals("pro.per3", layer.getReferent(0).getCoreferences()[0].getType());
     }
 }

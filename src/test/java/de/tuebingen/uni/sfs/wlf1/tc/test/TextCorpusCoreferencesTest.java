@@ -6,25 +6,22 @@ package de.tuebingen.uni.sfs.wlf1.tc.test;
 import de.tuebingen.uni.sfs.wlf1.io.TextCorpusStreamed;
 import de.tuebingen.uni.sfs.wlf1.tc.api.*;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.TextCorpusLayerTag;
-import de.tuebingen.uni.sfs.wlf1.test.utils.TestUtils;
-import java.io.*;
 import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.List;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertEquals;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * @author Yana Panchenko
  *
  */
-public class TextCorpusCoreferencesTest {
+public class TextCorpusCoreferencesTest extends AbstractTextCorpusTest {
 
-    private static final String INPUT_FILE_WITHOUT_LAYER = "data/tc-corefs/tcf-before.xml";
-    private static final String INPUT_FILE_WITH_LAYER = "data/tc-corefs/tcf-after.xml";
-    private static final String OUTPUT_FILE = "data/tc-corefs/output.xml";
-    private static final String EXPECTED_OUTPUT_FILE = "data/tc-corefs/output-expected.xml";
+    private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-corefs/tcf-before.xml";
+    private static final String INPUT_FILE_WITH_LAYER = "/data/tc-corefs/tcf-after.xml";
+    private static final String EXPECTED_OUTPUT_FILE = "/data/tc-corefs/output-expected.xml";
+    private static final String OUTPUT_FILE = "/tmp/output.xml";
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeCoreferenceAnnotation =
             EnumSet.of(TextCorpusLayerTag.TOKENS);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterCoreferenceAnnotation =
@@ -34,30 +31,18 @@ public class TextCorpusCoreferencesTest {
     public void testRead() throws Exception {
         TextCorpus tc = read(INPUT_FILE_WITH_LAYER, layersToReadAfterCoreferenceAnnotation);
         CoreferencesLayer layer = tc.getCoreferencesLayer();
-        assertEquals(2, layer.size());
-        assertEquals("BART", layer.getTagset());
-        assertEquals(false, layer.hasExternalReferences());
-        assertEquals("ORG", layer.getReferent(0).getType());
-        assertEquals(tc.getTokensLayer().getToken(0), layer.getTokens(layer.getReferent(0).getCoreferences()[0])[0]);
-        assertEquals(tc.getTokensLayer().getToken(0), layer.getMinimumTokens(layer.getReferent(0).getCoreferences()[0])[0]);
-        assertEquals(tc.getTokensLayer().getToken(17), layer.getTokens(layer.getReferent(0).getCoreferences()[1])[0]);
-    }
-
-    private TextCorpus read(String file, EnumSet<TextCorpusLayerTag> layersToRead) throws Exception {
-        InputStream is = new FileInputStream(INPUT_FILE_WITH_LAYER);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToRead);
-        tc.close();
-        System.out.println(tc);
-        return tc;
+        Assert.assertEquals(2, layer.size());
+        Assert.assertEquals("BART", layer.getTagset());
+        Assert.assertEquals(false, layer.hasExternalReferences());
+        Assert.assertEquals("ORG", layer.getReferent(0).getType());
+        Assert.assertEquals(tc.getTokensLayer().getToken(0), layer.getTokens(layer.getReferent(0).getCoreferences()[0])[0]);
+        Assert.assertEquals(tc.getTokensLayer().getToken(0), layer.getMinimumTokens(layer.getReferent(0).getCoreferences()[0])[0]);
+        Assert.assertEquals(tc.getTokensLayer().getToken(17), layer.getTokens(layer.getReferent(0).getCoreferences()[1])[0]);
     }
 
     @Test
     public void testReadWrite() throws Exception {
-        File file = new File(INPUT_FILE_WITHOUT_LAYER);
-        InputStream is = new FileInputStream(file);
-        File ofile = new File(OUTPUT_FILE);
-        OutputStream os = new FileOutputStream(ofile);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToReadBeforeCoreferenceAnnotation, os, false);
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeCoreferenceAnnotation);
         System.out.println(tc);
         // get tokens layer
         TokensLayer tokensLayer = tc.getTokensLayer();
@@ -69,7 +54,7 @@ public class TextCorpusCoreferencesTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        TestUtils.assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
     }
 
     private void addCoreferenceAnnotations(TokensLayer tokensLayer,

@@ -7,7 +7,6 @@ import de.tuebingen.uni.sfs.wlf1.tc.api.PhoneticsLayer;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.PhoneticsLayerStored;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.PronunciationType;
 import de.tuebingen.uni.sfs.wlf1.test.utils.TestUtils;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -20,13 +19,13 @@ import org.junit.Test;
  */
 public class PhoneticsTest {
 
-    private static final String INPUT = "data/tc-phon/layer-input.xml";
-    private static final String OUTPUT = "data/tc-phon/layer-output.xml";
+    private static final String INPUT = "/data/tc-phon/layer-input.xml";
+    private static final String OUTPUT = "/tmp/layer-output.xml";
 
     @Test
     public void testReadAndWriteBack() throws Exception {
 
-        InputStream is = new FileInputStream(INPUT);
+        InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(OUTPUT);
 
 

@@ -4,6 +4,7 @@
 package de.tuebingen.uni.sfs.wlf1.test.utils;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import javax.xml.bind.JAXBContext;
@@ -12,8 +13,10 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import org.junit.Assert;
 import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 /**
  * @author Yana Panchenko
@@ -26,16 +29,16 @@ public class TestUtils {
      * @param outputFile
      * @throws Exception
      */
-    public static void assertEqualXml(String expectedFile, String realFile) throws Exception {
+    public static void assertEqualXml(InputStream expectedFile, InputStream realFile) throws ParserConfigurationException, SAXException, IOException {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setNamespaceAware(true);
         dbf.setCoalescing(true);
         dbf.setIgnoringElementContentWhitespace(true);
         dbf.setIgnoringComments(true);
         DocumentBuilder db = dbf.newDocumentBuilder();
-        Document doc1 = db.parse(new File(expectedFile));
+        Document doc1 = db.parse(expectedFile);
         doc1.normalizeDocument();
-        Document doc2 = db.parse(new File(realFile));
+        Document doc2 = db.parse(realFile);
         doc2.normalizeDocument();
         Assert.assertTrue(doc1.isEqualNode(doc2));
     }

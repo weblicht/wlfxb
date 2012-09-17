@@ -9,13 +9,11 @@ import de.tuebingen.uni.sfs.wlf1.tc.xb.HyperonymyLayerStored;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.HyponymyLayerStored;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.SynonymyLayerStored;
 import de.tuebingen.uni.sfs.wlf1.test.utils.TestUtils;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import org.junit.Assert;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 /**
@@ -24,19 +22,19 @@ import org.junit.Test;
  */
 public class LexicalSemanticsTest {
 
-    private static final String INPUT_SYN = "data/tc-lexsem/layer-input-syn.xml";
-    private static final String OUTPUT_SYN = "data/tc-lexsem/layer-output-syn.xml";
-    private static final String INPUT_ANT = "data/tc-lexsem/layer-input-ant.xml";
-    private static final String OUTPUT_ANT = "data/tc-lexsem/layer-output-ant.xml";
-    private static final String INPUT_HYPO = "data/tc-lexsem/layer-input-hypo.xml";
-    private static final String OUTPUT_HYPO = "data/tc-lexsem/layer-output-hypo.xml";
-    private static final String INPUT_HYPER = "data/tc-lexsem/layer-input-hyper.xml";
-    private static final String OUTPUT_HYPER = "data/tc-lexsem/layer-output-hyper.xml";
+    private static final String INPUT_SYN = "/data/tc-lexsem/layer-input-syn.xml";
+    private static final String OUTPUT_SYN = "/tmp/layer-output-syn.xml";
+    private static final String INPUT_ANT = "/data/tc-lexsem/layer-input-ant.xml";
+    private static final String OUTPUT_ANT = "/tmp/layer-output-ant.xml";
+    private static final String INPUT_HYPO = "/data/tc-lexsem/layer-input-hypo.xml";
+    private static final String OUTPUT_HYPO = "/tmp/layer-output-hypo.xml";
+    private static final String INPUT_HYPER = "/data/tc-lexsem/layer-input-hyper.xml";
+    private static final String OUTPUT_HYPER = "/tmp/layer-output-hyper.xml";
 
     @Test
     public void testReadAndWriteBackSyn() throws Exception {
 
-        InputStream is = new FileInputStream(INPUT_SYN);
+        InputStream is = this.getClass().getResourceAsStream(INPUT_SYN);
         OutputStream os = new FileOutputStream(OUTPUT_SYN);
 
 
@@ -56,7 +54,7 @@ public class LexicalSemanticsTest {
     @Test
     public void testReadAndWriteBackAnt() throws Exception {
 
-        InputStream is = new FileInputStream(INPUT_ANT);
+        InputStream is = this.getClass().getResourceAsStream(INPUT_ANT);
         OutputStream os = new FileOutputStream(OUTPUT_ANT);
 
 
@@ -76,7 +74,7 @@ public class LexicalSemanticsTest {
     @Test
     public void testReadAndWriteBackHypo() throws Exception {
 
-        InputStream is = new FileInputStream(INPUT_HYPO);
+        InputStream is = this.getClass().getResourceAsStream(INPUT_HYPO);
         OutputStream os = new FileOutputStream(OUTPUT_HYPO);
 
 
@@ -89,7 +87,7 @@ public class LexicalSemanticsTest {
 
         assertEquals(2, layer.size());
         assertEquals("GermaNet", layer.getSource());
-        Assert.assertArrayEquals(
+        assertArrayEquals(
                 new String[]{"Art essen", "EssensOrt spezifiziert", "EssensZeit spezifiziert", "acheln", "aufessen", "aufnehmen", "einverleiben", "essen mit Instrument", "hermachen",
                     "stärken", "vertilgen", "wegessen"},
                 layer.getOrthform(0).getValue());
@@ -98,7 +96,7 @@ public class LexicalSemanticsTest {
     @Test
     public void testReadAndWriteBackHyper() throws Exception {
 
-        InputStream is = new FileInputStream(INPUT_HYPER);
+        InputStream is = this.getClass().getResourceAsStream(INPUT_HYPER);
         OutputStream os = new FileOutputStream(OUTPUT_HYPER);
 
 

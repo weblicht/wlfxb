@@ -6,24 +6,21 @@ package de.tuebingen.uni.sfs.wlf1.tc.test;
 import de.tuebingen.uni.sfs.wlf1.io.TextCorpusStreamed;
 import de.tuebingen.uni.sfs.wlf1.tc.api.*;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.TextCorpusLayerTag;
-import de.tuebingen.uni.sfs.wlf1.test.utils.TestUtils;
-import java.io.*;
 import java.util.Arrays;
 import java.util.EnumSet;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertEquals;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * @author Yana Panchenko
  *
  */
-public class TextCorpusConstituentParsingTest {
+public class TextCorpusConstituentParsingTest extends AbstractTextCorpusTest {
 
-    private static final String INPUT_FILE_WITHOUT_PARSING = "data/tc-parsing/tcf-before.xml";
-    private static final String INPUT_FILE_WITH_PARSING = "data/tc-parsing/tcf-after.xml";
-    private static final String OUTPUT_FILE = "data/tc-parsing/output.xml";
-    private static final String EXPECTED_OUTPUT_FILE = "data/tc-parsing/output-expected.xml";
+    private static final String INPUT_FILE_WITHOUT_PARSING = "/data/tc-parsing/tcf-before.xml";
+    private static final String INPUT_FILE_WITH_PARSING = "/data/tc-parsing/tcf-after.xml";
+    private static final String EXPECTED_OUTPUT_FILE = "/data/tc-parsing/output-expected.xml";
+    private static final String OUTPUT_FILE = "/tmp/output.xml";
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeParsing =
             EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.SENTENCES);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterParsing =
@@ -33,30 +30,18 @@ public class TextCorpusConstituentParsingTest {
     public void testRead() throws Exception {
         TextCorpus tc = read(INPUT_FILE_WITH_PARSING, layersToReadAfterParsing);
         ConstituentParsingLayer parsingLayer = tc.getConstituentParsingLayer();
-        assertEquals("Tiger", parsingLayer.getTagset());
-        assertEquals("TOP", parsingLayer.getParseRoot(0).getCategory());
-        assertEquals("TOP", parsingLayer.getParseRoot(1).getCategory());
-        assertEquals(5, parsingLayer.getTokens(parsingLayer.getParse(0)).length);
-        assertEquals(4, parsingLayer.getTokens(parsingLayer.getParse(1)).length);
-        assertEquals(tc.getTokensLayer().getToken(0), parsingLayer.getTokens(parsingLayer.getParse(0))[0]);
-        assertEquals(tc.getTokensLayer().getToken(5), parsingLayer.getTokens(parsingLayer.getParse(1))[0]);
-    }
-
-    private TextCorpus read(String file, EnumSet<TextCorpusLayerTag> layersToRead) throws Exception {
-        InputStream is = new FileInputStream(INPUT_FILE_WITH_PARSING);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToRead);
-        tc.close();
-        System.out.println(tc);
-        return tc;
+        Assert.assertEquals("Tiger", parsingLayer.getTagset());
+        Assert.assertEquals("TOP", parsingLayer.getParseRoot(0).getCategory());
+        Assert.assertEquals("TOP", parsingLayer.getParseRoot(1).getCategory());
+        Assert.assertEquals(5, parsingLayer.getTokens(parsingLayer.getParse(0)).length);
+        Assert.assertEquals(4, parsingLayer.getTokens(parsingLayer.getParse(1)).length);
+        Assert.assertEquals(tc.getTokensLayer().getToken(0), parsingLayer.getTokens(parsingLayer.getParse(0))[0]);
+        Assert.assertEquals(tc.getTokensLayer().getToken(5), parsingLayer.getTokens(parsingLayer.getParse(1))[0]);
     }
 
     @Test
     public void testReadWrite() throws Exception {
-        File file = new File(INPUT_FILE_WITHOUT_PARSING);
-        InputStream is = new FileInputStream(file);
-        File ofile = new File(OUTPUT_FILE);
-        OutputStream os = new FileOutputStream(ofile);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToReadBeforeParsing, os, false);
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_PARSING, OUTPUT_FILE, layersToReadBeforeParsing);
         System.out.println(tc);
         SentencesLayer sentences = tc.getSentencesLayer();
         ConstituentParsingLayer parses = tc.createConstituentParsingLayer("Tiger");
@@ -69,7 +54,7 @@ public class TextCorpusConstituentParsingTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        TestUtils.assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
     }
 
     private Constituent parse(Token[] sentenceTokens, ConstituentParsingLayer parses) {

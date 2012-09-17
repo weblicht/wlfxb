@@ -21,25 +21,23 @@ import org.junit.Test;
 //TODO so that it tests all layers, and so that all layers be in separate tests
 public class WLDObjectorTest {
 
-    private static final String INPUT_FILE_Textcorpus = "data/input2.xml";
-    private static final String INPUT_FILE_Lexicon = "data/input_lexicon.xml";
-    private static final String OUTPUT_FILE_1 = "data/wld-objector-output.xml";
-    private static final String OUTPUT_FILE_2 = "data/wld-objector-min-prefix-output.xml";
+    private static final String INPUT_FILE_Textcorpus = "/data/input2.xml";
+    private static final String INPUT_FILE_Lexicon = "/data/input_lexicon.xml";
+    private static final String OUTPUT_FILE_1 = "/tmp/wld-objector-output.xml";
+    private static final String OUTPUT_FILE_2 = "/tmp/wld-objector-min-prefix-output.xml";
 
     public WLDObjectorTest() {
     }
 
     @Test
     public void testRead_Textcorpus() throws Exception {
-        File file = new File(INPUT_FILE_Textcorpus);
-        InputStream is = new FileInputStream(file);
+        InputStream is = this.getClass().getResourceAsStream(INPUT_FILE_Textcorpus);
         testRead(is);
     }
 
     @Test
     public void testRead_Lexicon() throws Exception {
-        File file = new File(INPUT_FILE_Lexicon);
-        InputStream is = new FileInputStream(file);
+        InputStream is = this.getClass().getResourceAsStream(INPUT_FILE_Lexicon);
         testRead(is);
     }
 

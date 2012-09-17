@@ -7,25 +7,22 @@ import de.tuebingen.uni.sfs.wlf1.io.TextCorpusStreamed;
 import de.tuebingen.uni.sfs.wlf1.tc.api.TextCorpus;
 import de.tuebingen.uni.sfs.wlf1.tc.api.TokensLayer;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.TextCorpusLayerTag;
-import de.tuebingen.uni.sfs.wlf1.test.utils.TestUtils;
-import java.io.*;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertEquals;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * @author Yana Panchenko
  *
  */
-public class TextCorpusTokensTest {
+public class TextCorpusTokensTest extends AbstractTextCorpusTest {
 
-    private static final String INPUT_FILE_WITHOUT_LAYER = "data/tc-tokens/tcf-before.xml";
-    private static final String INPUT_FILE_WITH_LAYER = "data/tc-tokens/tcf-after.xml";
-    private static final String OUTPUT_FILE = "data/tc-tokens/output.xml";
-    private static final String EXPECTED_OUTPUT_FILE = "data/tc-tokens/output-expected.xml";
+    private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-tokens/tcf-before.xml";
+    private static final String INPUT_FILE_WITH_LAYER = "/data/tc-tokens/tcf-after.xml";
+    private static final String EXPECTED_OUTPUT_FILE = "/data/tc-tokens/output-expected.xml";
+    private static final String OUTPUT_FILE = "/tmp/output.xml";
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeTokenization =
             EnumSet.of(TextCorpusLayerTag.TEXT);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterTokenization =
@@ -35,25 +32,13 @@ public class TextCorpusTokensTest {
     public void testRead() throws Exception {
         TextCorpus tc = read(INPUT_FILE_WITH_LAYER, layersToReadAfterTokenization);
         TokensLayer layer = tc.getTokensLayer();
-        assertEquals(9, layer.size());
-        assertEquals("Peter", layer.getToken(0).getString());
-    }
-
-    private TextCorpus read(String file, EnumSet<TextCorpusLayerTag> layersToRead) throws Exception {
-        InputStream is = new FileInputStream(INPUT_FILE_WITH_LAYER);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToRead);
-        tc.close();
-        System.out.println(tc);
-        return tc;
+        Assert.assertEquals(9, layer.size());
+        Assert.assertEquals("Peter", layer.getToken(0).getString());
     }
 
     @Test
     public void testReadWrite() throws Exception {
-        File file = new File(INPUT_FILE_WITHOUT_LAYER);
-        InputStream is = new FileInputStream(file);
-        File ofile = new File(OUTPUT_FILE);
-        OutputStream os = new FileOutputStream(ofile);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToReadBeforeTokenization, os, false);
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeTokenization);
         System.out.println(tc);
         List<String> tokenstrings = tokenize(tc.getTextLayer().getText());
         // create tokens layer, it is empty first
@@ -66,7 +51,7 @@ public class TextCorpusTokensTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        TestUtils.assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
     }
 
     private List<String> tokenize(String text) {

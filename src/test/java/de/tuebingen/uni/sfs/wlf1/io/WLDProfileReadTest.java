@@ -4,7 +4,6 @@
 package de.tuebingen.uni.sfs.wlf1.io;
 
 import de.tuebingen.uni.sfs.wlf1.xb.WLDProfile;
-import java.io.FileInputStream;
 import java.io.InputStream;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
@@ -15,9 +14,9 @@ import org.junit.Test;
  */
 public class WLDProfileReadTest {
 
-    private static final String INPUT_FILE_Textcorpus04 = "data/profiler/input_tcf04.xml";
-    private static final String INPUT_FILE_Textcorpus03 = "data/profiler/input_tcf03.xml";
-    private static final String INPUT_FILE_Lexicon04 = "data/profiler/input_lex04.xml";
+    private static final String INPUT_FILE_Textcorpus04 = "/data/profiler/input_tcf04.xml";
+    private static final String INPUT_FILE_Textcorpus03 = "/data/profiler/input_tcf03.xml";
+    private static final String INPUT_FILE_Lexicon04 = "/data/profiler/input_lex04.xml";
 
     public WLDProfileReadTest() {
     }
@@ -49,7 +48,7 @@ public class WLDProfileReadTest {
     private WLDProfile test(String file) throws Exception {
         System.out.println();
         System.out.println("--- READ TEST START ---");
-        InputStream is = new FileInputStream(file);
+        InputStream is = this.getClass().getResourceAsStream(file);
         WLDProfile wldProfile = WLDProfiler.read(is);
         System.out.println(wldProfile);
         System.out.println("--- READ TEST END ---");
