@@ -1,0 +1,4 @@
+<discourseconnectives tagset="TuebaDZ" xmlns="http://www.dspin.de/data/textcorpus">
+	<connective tokenIDs="t4" type="expansion"/>
+	<connective tokenIDs="t6" type="temporal"/>
+</discourseconnectives>

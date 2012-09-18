@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/d-spin_0_4.rnc" type="application/relax-ng-compact-syntax"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+ <MetaData xmlns="http://www.dspin.de/data/metadata">
+  <source>IMS, Uni Stuttgart</source>
+ </MetaData>
+ <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+  <tokens>
+   <token ID="t1">Peter</token>
+   <token ID="t2">aß</token>
+   <token ID="t3">eine</token>
+   <token ID="t4">Käsepizza</token>
+   <token ID="t5">.</token>
+   <token ID="t6">Sie</token>
+   <token ID="t7">schmeckte</token>
+   <token ID="t8">ihm</token>
+   <token ID="t9">.</token>
+  </tokens>
+  <sentences>
+   <sentence ID="s1" tokenIDs="t1 t2 t3 t4 t5"/>
+   <sentence ID="s2" tokenIDs="t6 t7 t8 t9"/>
+  </sentences>
+  
+  <phonetics alphabet="SAMPA">
+  	<phonseg  tokID="t7">
+  	  <pron type="word" cp="Sm'E.k@n" rp="Sm'E.kN">
+  		<pron type="syllable" onset="0" offset="0.0002" rp="SmE">
+  		   <pron type="phone" onset="0" offset="0.0001" rp="S"/>
+           <pron type="phone" onset="0.0001" offset="0.00015" rp="m"/>
+           <pron type="phone" onset="0.00015" offset="0.0002" rp="E"/>
+  		</pron>
+        <pron type="syllable" onset="0.0002" offset="0.0003" rp="kN">
+  		   <pron type="phone" onset="0.0002" offset="0.00025" rp="k"/>
+           <pron type="phone" onset="0.00025" offset="0.0003" rp="N"/>
+        </pron>
+     </pron>
+  	</phonseg>
+ </phonetics>
+  
+ </TextCorpus>
+</D-Spin>

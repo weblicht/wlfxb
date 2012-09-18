@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/d-spin_0_4.rnc" type="application/relax-ng-compact-syntax"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+ <MetaData xmlns="http://www.dspin.de/data/metadata"/>
+ <ExternalData xmlns="http://www.dspin.de/data/extdata">
+    <speechsignal type="audio/wav" numberchannels="1">http://arc:8080/drop-off/storage/g046acn1_037_AFI.wav</speechsignal>
+  </ExternalData>
+  <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+    <text>&lt;ähm&gt; ich würde diesmal sagen Theater das ist dann immer so aufge in letzter Minute so was spielt man heute abend ich wäre eher dafür daß wir vielleicht ins Kino gehen und nachher irgendwo in eine nette Kneipe</text>
+    <tokens><token ID="t_0">&lt;ähm&gt;</token><token ID="t_1">ich</token><token ID="t_2">würde</token><token ID="t_3">diesmal</token><token ID="t_4">sagen</token><token ID="t_5">Theater</token><token ID="t_6">das</token><token ID="t_7">ist</token><token ID="t_8">dann</token><token ID="t_9">immer</token><token ID="t_10">so</token><token ID="t_11">aufge</token><token ID="t_12">in</token><token ID="t_13">letzter</token><token ID="t_14">Minute</token><token ID="t_15">so</token><token ID="t_16">was</token><token ID="t_17">spielt</token><token ID="t_18">man</token><token ID="t_19">heute</token><token ID="t_20">abend</token><token ID="t_21">ich</token><token ID="t_22">wäre</token><token ID="t_23">eher</token><token ID="t_24">dafür</token><token ID="t_25">daß</token><token ID="t_26">wir</token><token ID="t_27">vielleicht</token><token ID="t_28">ins</token><token ID="t_29">Kino</token><token ID="t_30">gehen</token><token ID="t_31">und</token><token ID="t_32">nachher</token><token ID="t_33">irgendwo</token><token ID="t_34">in</token><token ID="t_35">eine</token><token ID="t_36">nette</token><token ID="t_37">Kneipe</token></tokens>
+ </TextCorpus>
+</D-Spin>

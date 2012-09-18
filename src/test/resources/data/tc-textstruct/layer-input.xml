@@ -1,0 +1,11 @@
+<textstructure xmlns="http://www.dspin.de/data/textcorpus">
+   <textspan start="t1" end="t5" type="page"/>
+   <textspan type="line"/>
+   <textspan start="t1" end="t9" type="paragraph"/>
+   <textspan start="t1" end="t3" type="line"/>
+   <textspan start="t4" end="t5" type="line"/>
+   <textspan start="t6" end="t9" type="page"/>
+   <textspan start="t6" end="t7" type="line"/>
+   <textspan start="t8" end="t9" type="line"/>
+   <textspan type="line"/>
+</textstructure>

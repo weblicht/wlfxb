@@ -1,0 +1,2093 @@
+<?xml version="1.0" encoding="UTF-8"?><D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+  <MetaData xmlns="http://www.dspin.de/data/metadata">
+    <source></source>
+    <Services>
+      <CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.clarin.eu/cmd/" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd">
+        <Header></Header>
+        <Resources>
+          <ResourceProxyList></ResourceProxyList>
+          <JournalFileProxyList></JournalFileProxyList>
+          <ResourceRelationList></ResourceRelationList>
+        </Resources>
+        <Components>
+          <WebServiceToolChain>
+            <GeneralInfo>
+              <ResourceName>Custom chain</ResourceName>
+              <ResourceClass>Toolchain</ResourceClass>
+              <Descriptions>
+                <Description></Description>
+              </Descriptions>
+            </GeneralInfo>
+            <Toolchain>
+              <ToolInChain>
+                <PID>11858/00-1778-0000-0004-BA56-7</PID>
+                <Parameter name="version" value="0.4"></Parameter>
+              </ToolInChain>
+              <ToolInChain>
+                <PID>11858/00-1778-0000-0004-BA7B-4</PID>
+              </ToolInChain>
+              <ToolInChain>
+                <PID>227</PID>
+              </ToolInChain>
+            <ToolInChain><PID>11858/00-1778-0000-0004-BA29-D</PID></ToolInChain></Toolchain>
+          </WebServiceToolChain>
+        </Components>
+      </CMD>
+    </Services>
+  </MetaData>
+  <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+    <text>Geiger studierte ab 1902 Physik und Mathematik  in Erlangen, wo er Mitglied der Burschenschaft der Bubenreuther Erlangen war und in den ersten beiden Semestern nebenbei seinen einjährigen Militärdienst ableistete. 1904 verbrachte er auch ein Semester an der Ludwig-Maximilians-Universität München. 1906 legte er sein zweites Staatsexamen ab und wurde promoviert in Erlangen bei Eilhard Wiedemann mit der Arbeit Strahlungs-, Temperatur- und Potentialmessungen in Entladungsröhren mit starken Strömen. Nach dem Studium wechselte er als Assistent zu Arthur Schuster nach Manchester  und blieb dies auch ab 1907 unter dessen Nachfolger Ernest Rutherford, dessen 1911 aufgestelltes Atommodell zum Teil auf Geigers Entdeckungen beruhte (siehe Rutherfordstreuung). Er arbeitete dabei neben Rutherford unter anderem auch mit Ernest Marsden. Am Ende seiner Zeit in Manchester 1912 galt Geiger als internationale Autorität für Messungen der Radioaktivität, was sich auch in einem Buch mit Wilhelm Makower niederschlug.
+1912 ging Geiger zurück nach Deutschland zur Physikalisch-Technischen Reichsanstalt in Berlin-Charlottenburg, wo er ein Labor für Radioaktivität aufbaute und mit James Chadwick zusammenarbeitete, der ihm aus Manchester gefolgt war und den er auch in der Zeit seiner Internierung während des Ersten Weltkriegs unterstützte, sowie mit Walther Bothe. Während des Ersten Weltkriegs diente er als Artillerie-Offizier. Nachdem er sich 1924 in Berlin habilitiert hatte, wechselte Geiger 1925 als Professor an die Christian-Albrechts-Universität Kiel. 1924/25 führte er mit Bothe die Methode der Koinzidenzmessung ein, die sie bei Untersuchung des Comptoneffekts benutzten. Für dieses Experiment erhielt Bothe später – nach dem Tod von Geiger- den Nobelpreis. Unter anderem zeigten sie mit ihrem Experiment auch die Gültigkeit der Erhaltungssätze von Energie und Impuls auf atomarer Ebene, was damals zeitweise (unter anderem von Niels Bohr) bezweifelt wurde. Zusammen mit seinem Doktoranden Walther Müller entwickelte er dort 1928 das Geiger-Müllersche-Zählrohr (landläufig als „Geigerzähler“ bekannt), welches 1929 der Öffentlichkeit vorgestellt wurde.
+1929 wechselte Geiger an die Eberhard Karls Universität Tübingen und wurde schließlich 1936 Direktor des Physikalischen Instituts der Technischen Hochschule Berlin als Nachfolger des von den Nationalsozialisten aus dem Amt gedrängten Gustav Hertz. Dort befasste er sich insbesondere mit Kosmischer Strahlung.
+Geiger war 1920 mit Karl Scheel Gründungs-Herausgeber der Zeitschrift für Physik und bis 1945 einer der Herausgeber. Nach dem Tod von Scheel hatte er ab 1936 die Schriftleitung. 1926 war er Herausgeber des Handbuchs der Physik im Springer Verlag.
+1939 nahm er an den Gründungssitzungen des Uranvereins teil und sein Rat, die Forschungen zur Kernenergie zu intensivieren hatte mit ausschlaggebendes Gewicht bei deren Sitzung im September.[1] Auf der Sitzung des Reichsforschungsrats 1942 über die weitere Unterstützung der Kernenergieforschung sprach er sich gegen eine weitere Fortführung der Arbeiten aus.[2]
+Hans Geiger starb am 24. September 1945, kurz nach der Räumung seines Hauses in Potsdam (es lag im Sperrkreis der Konferenz der alliierten Siegermächte in Potsdam) in einem Krankenhaus. Schon seit 1942 hatte er sich aus seinen wissenschaftlichen Ämtern zurückgezogen aufgrund einer schweren rheumatischen Erkrankung.
+Hans Geiger wurde auf dem Neuen Friedhof Potsdam beigesetzt. Sein Grab hat sich erhalten. Die nach West-Berlin übergesiedelte Familie ließ auf dem Friedhof Grunewald einen zweiten Grabstein aufstellen, der sich ebenfalls erhalten hat.
+1929 erhielt er die Hughes-Medaille der Royal Socity, 1937 die Duddell -Medaille der London Physical Society und 1934 den Arrhenius Preis der Akademischen Verlagsgemeinschaft Leipzig. Seit 1932 war er korrespondierendes Mitglied der Sächsischen Akademie der Wissenschaften und seit 1936 Mitglied der Berliner Akademie der Wissenschaften. Seit 1936 war er Beisitzer im Vorstand der Deutschen Physikalischen Gesellschaft.
+Zu seinen Doktoranden zählt Otto Haxel, der auch Assistent bei ihm an der TH Berlin war.
+Das Hans-Geiger-Gymnasium in Kiel-Ellerbek ist nach ihm benannt, ebenso wie eine Grundschule und eine Straße in seinem Geburtsort Neustadt an der Weinstraße.</text>
+    <tokens>
+      <token ID="t_0">Geiger</token>
+      <token ID="t_1">studierte</token>
+      <token ID="t_2">ab</token>
+      <token ID="t_3">1902</token>
+      <token ID="t_4">Physik</token>
+      <token ID="t_5">und</token>
+      <token ID="t_6">Mathematik</token>
+      <token ID="t_7">in</token>
+      <token ID="t_8">Erlangen</token>
+      <token ID="t_9">,</token>
+      <token ID="t_10">wo</token>
+      <token ID="t_11">er</token>
+      <token ID="t_12">Mitglied</token>
+      <token ID="t_13">der</token>
+      <token ID="t_14">Burschenschaft</token>
+      <token ID="t_15">der</token>
+      <token ID="t_16">Bubenreuther</token>
+      <token ID="t_17">Erlangen</token>
+      <token ID="t_18">war</token>
+      <token ID="t_19">und</token>
+      <token ID="t_20">in</token>
+      <token ID="t_21">den</token>
+      <token ID="t_22">ersten</token>
+      <token ID="t_23">beiden</token>
+      <token ID="t_24">Semestern</token>
+      <token ID="t_25">nebenbei</token>
+      <token ID="t_26">seinen</token>
+      <token ID="t_27">einjährigen</token>
+      <token ID="t_28">Militärdienst</token>
+      <token ID="t_29">ableistete</token>
+      <token ID="t_30">.</token>
+      <token ID="t_31">1904</token>
+      <token ID="t_32">verbrachte</token>
+      <token ID="t_33">er</token>
+      <token ID="t_34">auch</token>
+      <token ID="t_35">ein</token>
+      <token ID="t_36">Semester</token>
+      <token ID="t_37">an</token>
+      <token ID="t_38">der</token>
+      <token ID="t_39">Ludwig-Maximilians-Universität</token>
+      <token ID="t_40">München</token>
+      <token ID="t_41">.</token>
+      <token ID="t_42">1906</token>
+      <token ID="t_43">legte</token>
+      <token ID="t_44">er</token>
+      <token ID="t_45">sein</token>
+      <token ID="t_46">zweites</token>
+      <token ID="t_47">Staatsexamen</token>
+      <token ID="t_48">ab</token>
+      <token ID="t_49">und</token>
+      <token ID="t_50">wurde</token>
+      <token ID="t_51">promoviert</token>
+      <token ID="t_52">in</token>
+      <token ID="t_53">Erlangen</token>
+      <token ID="t_54">bei</token>
+      <token ID="t_55">Eilhard</token>
+      <token ID="t_56">Wiedemann</token>
+      <token ID="t_57">mit</token>
+      <token ID="t_58">der</token>
+      <token ID="t_59">Arbeit</token>
+      <token ID="t_60">Strahlungs-</token>
+      <token ID="t_61">,</token>
+      <token ID="t_62">Temperatur-</token>
+      <token ID="t_63">und</token>
+      <token ID="t_64">Potentialmessungen</token>
+      <token ID="t_65">in</token>
+      <token ID="t_66">Entladungsröhren</token>
+      <token ID="t_67">mit</token>
+      <token ID="t_68">starken</token>
+      <token ID="t_69">Strömen</token>
+      <token ID="t_70">.</token>
+      <token ID="t_71">Nach</token>
+      <token ID="t_72">dem</token>
+      <token ID="t_73">Studium</token>
+      <token ID="t_74">wechselte</token>
+      <token ID="t_75">er</token>
+      <token ID="t_76">als</token>
+      <token ID="t_77">Assistent</token>
+      <token ID="t_78">zu</token>
+      <token ID="t_79">Arthur</token>
+      <token ID="t_80">Schuster</token>
+      <token ID="t_81">nach</token>
+      <token ID="t_82">Manchester</token>
+      <token ID="t_83">und</token>
+      <token ID="t_84">blieb</token>
+      <token ID="t_85">dies</token>
+      <token ID="t_86">auch</token>
+      <token ID="t_87">ab</token>
+      <token ID="t_88">1907</token>
+      <token ID="t_89">unter</token>
+      <token ID="t_90">dessen</token>
+      <token ID="t_91">Nachfolger</token>
+      <token ID="t_92">Ernest</token>
+      <token ID="t_93">Rutherford</token>
+      <token ID="t_94">,</token>
+      <token ID="t_95">dessen</token>
+      <token ID="t_96">1911</token>
+      <token ID="t_97">aufgestelltes</token>
+      <token ID="t_98">Atommodell</token>
+      <token ID="t_99">zum</token>
+      <token ID="t_100">Teil</token>
+      <token ID="t_101">auf</token>
+      <token ID="t_102">Geigers</token>
+      <token ID="t_103">Entdeckungen</token>
+      <token ID="t_104">beruhte</token>
+      <token ID="t_105">(</token>
+      <token ID="t_106">siehe</token>
+      <token ID="t_107">Rutherfordstreuung</token>
+      <token ID="t_108">)</token>
+      <token ID="t_109">.</token>
+      <token ID="t_110">Er</token>
+      <token ID="t_111">arbeitete</token>
+      <token ID="t_112">dabei</token>
+      <token ID="t_113">neben</token>
+      <token ID="t_114">Rutherford</token>
+      <token ID="t_115">unter</token>
+      <token ID="t_116">anderem</token>
+      <token ID="t_117">auch</token>
+      <token ID="t_118">mit</token>
+      <token ID="t_119">Ernest</token>
+      <token ID="t_120">Marsden</token>
+      <token ID="t_121">.</token>
+      <token ID="t_122">Am</token>
+      <token ID="t_123">Ende</token>
+      <token ID="t_124">seiner</token>
+      <token ID="t_125">Zeit</token>
+      <token ID="t_126">in</token>
+      <token ID="t_127">Manchester</token>
+      <token ID="t_128">1912</token>
+      <token ID="t_129">galt</token>
+      <token ID="t_130">Geiger</token>
+      <token ID="t_131">als</token>
+      <token ID="t_132">internationale</token>
+      <token ID="t_133">Autorität</token>
+      <token ID="t_134">für</token>
+      <token ID="t_135">Messungen</token>
+      <token ID="t_136">der</token>
+      <token ID="t_137">Radioaktivität</token>
+      <token ID="t_138">,</token>
+      <token ID="t_139">was</token>
+      <token ID="t_140">sich</token>
+      <token ID="t_141">auch</token>
+      <token ID="t_142">in</token>
+      <token ID="t_143">einem</token>
+      <token ID="t_144">Buch</token>
+      <token ID="t_145">mit</token>
+      <token ID="t_146">Wilhelm</token>
+      <token ID="t_147">Makower</token>
+      <token ID="t_148">niederschlug</token>
+      <token ID="t_149">.</token>
+      <token ID="t_150">1912</token>
+      <token ID="t_151">ging</token>
+      <token ID="t_152">Geiger</token>
+      <token ID="t_153">zurück</token>
+      <token ID="t_154">nach</token>
+      <token ID="t_155">Deutschland</token>
+      <token ID="t_156">zur</token>
+      <token ID="t_157">Physikalisch-Technischen</token>
+      <token ID="t_158">Reichsanstalt</token>
+      <token ID="t_159">in</token>
+      <token ID="t_160">Berlin-Charlottenburg</token>
+      <token ID="t_161">,</token>
+      <token ID="t_162">wo</token>
+      <token ID="t_163">er</token>
+      <token ID="t_164">ein</token>
+      <token ID="t_165">Labor</token>
+      <token ID="t_166">für</token>
+      <token ID="t_167">Radioaktivität</token>
+      <token ID="t_168">aufbaute</token>
+      <token ID="t_169">und</token>
+      <token ID="t_170">mit</token>
+      <token ID="t_171">James</token>
+      <token ID="t_172">Chadwick</token>
+      <token ID="t_173">zusammenarbeitete</token>
+      <token ID="t_174">,</token>
+      <token ID="t_175">der</token>
+      <token ID="t_176">ihm</token>
+      <token ID="t_177">aus</token>
+      <token ID="t_178">Manchester</token>
+      <token ID="t_179">gefolgt</token>
+      <token ID="t_180">war</token>
+      <token ID="t_181">und</token>
+      <token ID="t_182">den</token>
+      <token ID="t_183">er</token>
+      <token ID="t_184">auch</token>
+      <token ID="t_185">in</token>
+      <token ID="t_186">der</token>
+      <token ID="t_187">Zeit</token>
+      <token ID="t_188">seiner</token>
+      <token ID="t_189">Internierung</token>
+      <token ID="t_190">während</token>
+      <token ID="t_191">des</token>
+      <token ID="t_192">Ersten</token>
+      <token ID="t_193">Weltkriegs</token>
+      <token ID="t_194">unterstützte</token>
+      <token ID="t_195">,</token>
+      <token ID="t_196">sowie</token>
+      <token ID="t_197">mit</token>
+      <token ID="t_198">Walther</token>
+      <token ID="t_199">Bothe</token>
+      <token ID="t_200">.</token>
+      <token ID="t_201">Während</token>
+      <token ID="t_202">des</token>
+      <token ID="t_203">Ersten</token>
+      <token ID="t_204">Weltkriegs</token>
+      <token ID="t_205">diente</token>
+      <token ID="t_206">er</token>
+      <token ID="t_207">als</token>
+      <token ID="t_208">Artillerie-Offizier</token>
+      <token ID="t_209">.</token>
+      <token ID="t_210">Nachdem</token>
+      <token ID="t_211">er</token>
+      <token ID="t_212">sich</token>
+      <token ID="t_213">1924</token>
+      <token ID="t_214">in</token>
+      <token ID="t_215">Berlin</token>
+      <token ID="t_216">habilitiert</token>
+      <token ID="t_217">hatte</token>
+      <token ID="t_218">,</token>
+      <token ID="t_219">wechselte</token>
+      <token ID="t_220">Geiger</token>
+      <token ID="t_221">1925</token>
+      <token ID="t_222">als</token>
+      <token ID="t_223">Professor</token>
+      <token ID="t_224">an</token>
+      <token ID="t_225">die</token>
+      <token ID="t_226">Christian-Albrechts-Universität</token>
+      <token ID="t_227">Kiel</token>
+      <token ID="t_228">.</token>
+      <token ID="t_229">1924/25</token>
+      <token ID="t_230">führte</token>
+      <token ID="t_231">er</token>
+      <token ID="t_232">mit</token>
+      <token ID="t_233">Bothe</token>
+      <token ID="t_234">die</token>
+      <token ID="t_235">Methode</token>
+      <token ID="t_236">der</token>
+      <token ID="t_237">Koinzidenzmessung</token>
+      <token ID="t_238">ein</token>
+      <token ID="t_239">,</token>
+      <token ID="t_240">die</token>
+      <token ID="t_241">sie</token>
+      <token ID="t_242">bei</token>
+      <token ID="t_243">Untersuchung</token>
+      <token ID="t_244">des</token>
+      <token ID="t_245">Comptoneffekts</token>
+      <token ID="t_246">benutzten</token>
+      <token ID="t_247">.</token>
+      <token ID="t_248">Für</token>
+      <token ID="t_249">dieses</token>
+      <token ID="t_250">Experiment</token>
+      <token ID="t_251">erhielt</token>
+      <token ID="t_252">Bothe</token>
+      <token ID="t_253">später</token>
+      <token ID="t_254">–</token>
+      <token ID="t_255">nach</token>
+      <token ID="t_256">dem</token>
+      <token ID="t_257">Tod</token>
+      <token ID="t_258">von</token>
+      <token ID="t_259">Geiger-</token>
+      <token ID="t_260">den</token>
+      <token ID="t_261">Nobelpreis</token>
+      <token ID="t_262">.</token>
+      <token ID="t_263">Unter</token>
+      <token ID="t_264">anderem</token>
+      <token ID="t_265">zeigten</token>
+      <token ID="t_266">sie</token>
+      <token ID="t_267">mit</token>
+      <token ID="t_268">ihrem</token>
+      <token ID="t_269">Experiment</token>
+      <token ID="t_270">auch</token>
+      <token ID="t_271">die</token>
+      <token ID="t_272">Gültigkeit</token>
+      <token ID="t_273">der</token>
+      <token ID="t_274">Erhaltungssätze</token>
+      <token ID="t_275">von</token>
+      <token ID="t_276">Energie</token>
+      <token ID="t_277">und</token>
+      <token ID="t_278">Impuls</token>
+      <token ID="t_279">auf</token>
+      <token ID="t_280">atomarer</token>
+      <token ID="t_281">Ebene</token>
+      <token ID="t_282">,</token>
+      <token ID="t_283">was</token>
+      <token ID="t_284">damals</token>
+      <token ID="t_285">zeitweise</token>
+      <token ID="t_286">(</token>
+      <token ID="t_287">unter</token>
+      <token ID="t_288">anderem</token>
+      <token ID="t_289">von</token>
+      <token ID="t_290">Niels</token>
+      <token ID="t_291">Bohr</token>
+      <token ID="t_292">)</token>
+      <token ID="t_293">bezweifelt</token>
+      <token ID="t_294">wurde</token>
+      <token ID="t_295">.</token>
+      <token ID="t_296">Zusammen</token>
+      <token ID="t_297">mit</token>
+      <token ID="t_298">seinem</token>
+      <token ID="t_299">Doktoranden</token>
+      <token ID="t_300">Walther</token>
+      <token ID="t_301">Müller</token>
+      <token ID="t_302">entwickelte</token>
+      <token ID="t_303">er</token>
+      <token ID="t_304">dort</token>
+      <token ID="t_305">1928</token>
+      <token ID="t_306">das</token>
+      <token ID="t_307">Geiger-Müllersche-Zählrohr</token>
+      <token ID="t_308">(</token>
+      <token ID="t_309">landläufig</token>
+      <token ID="t_310">als</token>
+      <token ID="t_311">„Geigerzähler“</token>
+      <token ID="t_312">bekannt</token>
+      <token ID="t_313">)</token>
+      <token ID="t_314">,</token>
+      <token ID="t_315">welches</token>
+      <token ID="t_316">1929</token>
+      <token ID="t_317">der</token>
+      <token ID="t_318">Öffentlichkeit</token>
+      <token ID="t_319">vorgestellt</token>
+      <token ID="t_320">wurde</token>
+      <token ID="t_321">.</token>
+      <token ID="t_322">1929</token>
+      <token ID="t_323">wechselte</token>
+      <token ID="t_324">Geiger</token>
+      <token ID="t_325">an</token>
+      <token ID="t_326">die</token>
+      <token ID="t_327">Eberhard</token>
+      <token ID="t_328">Karls</token>
+      <token ID="t_329">Universität</token>
+      <token ID="t_330">Tübingen</token>
+      <token ID="t_331">und</token>
+      <token ID="t_332">wurde</token>
+      <token ID="t_333">schließlich</token>
+      <token ID="t_334">1936</token>
+      <token ID="t_335">Direktor</token>
+      <token ID="t_336">des</token>
+      <token ID="t_337">Physikalischen</token>
+      <token ID="t_338">Instituts</token>
+      <token ID="t_339">der</token>
+      <token ID="t_340">Technischen</token>
+      <token ID="t_341">Hochschule</token>
+      <token ID="t_342">Berlin</token>
+      <token ID="t_343">als</token>
+      <token ID="t_344">Nachfolger</token>
+      <token ID="t_345">des</token>
+      <token ID="t_346">von</token>
+      <token ID="t_347">den</token>
+      <token ID="t_348">Nationalsozialisten</token>
+      <token ID="t_349">aus</token>
+      <token ID="t_350">dem</token>
+      <token ID="t_351">Amt</token>
+      <token ID="t_352">gedrängten</token>
+      <token ID="t_353">Gustav</token>
+      <token ID="t_354">Hertz</token>
+      <token ID="t_355">.</token>
+      <token ID="t_356">Dort</token>
+      <token ID="t_357">befasste</token>
+      <token ID="t_358">er</token>
+      <token ID="t_359">sich</token>
+      <token ID="t_360">insbesondere</token>
+      <token ID="t_361">mit</token>
+      <token ID="t_362">Kosmischer</token>
+      <token ID="t_363">Strahlung</token>
+      <token ID="t_364">.</token>
+      <token ID="t_365">Geiger</token>
+      <token ID="t_366">war</token>
+      <token ID="t_367">1920</token>
+      <token ID="t_368">mit</token>
+      <token ID="t_369">Karl</token>
+      <token ID="t_370">Scheel</token>
+      <token ID="t_371">Gründungs-Herausgeber</token>
+      <token ID="t_372">der</token>
+      <token ID="t_373">Zeitschrift</token>
+      <token ID="t_374">für</token>
+      <token ID="t_375">Physik</token>
+      <token ID="t_376">und</token>
+      <token ID="t_377">bis</token>
+      <token ID="t_378">1945</token>
+      <token ID="t_379">einer</token>
+      <token ID="t_380">der</token>
+      <token ID="t_381">Herausgeber</token>
+      <token ID="t_382">.</token>
+      <token ID="t_383">Nach</token>
+      <token ID="t_384">dem</token>
+      <token ID="t_385">Tod</token>
+      <token ID="t_386">von</token>
+      <token ID="t_387">Scheel</token>
+      <token ID="t_388">hatte</token>
+      <token ID="t_389">er</token>
+      <token ID="t_390">ab</token>
+      <token ID="t_391">1936</token>
+      <token ID="t_392">die</token>
+      <token ID="t_393">Schriftleitung</token>
+      <token ID="t_394">.</token>
+      <token ID="t_395">1926</token>
+      <token ID="t_396">war</token>
+      <token ID="t_397">er</token>
+      <token ID="t_398">Herausgeber</token>
+      <token ID="t_399">des</token>
+      <token ID="t_400">Handbuchs</token>
+      <token ID="t_401">der</token>
+      <token ID="t_402">Physik</token>
+      <token ID="t_403">im</token>
+      <token ID="t_404">Springer</token>
+      <token ID="t_405">Verlag</token>
+      <token ID="t_406">.</token>
+      <token ID="t_407">1939</token>
+      <token ID="t_408">nahm</token>
+      <token ID="t_409">er</token>
+      <token ID="t_410">an</token>
+      <token ID="t_411">den</token>
+      <token ID="t_412">Gründungssitzungen</token>
+      <token ID="t_413">des</token>
+      <token ID="t_414">Uranvereins</token>
+      <token ID="t_415">teil</token>
+      <token ID="t_416">und</token>
+      <token ID="t_417">sein</token>
+      <token ID="t_418">Rat</token>
+      <token ID="t_419">,</token>
+      <token ID="t_420">die</token>
+      <token ID="t_421">Forschungen</token>
+      <token ID="t_422">zur</token>
+      <token ID="t_423">Kernenergie</token>
+      <token ID="t_424">zu</token>
+      <token ID="t_425">intensivieren</token>
+      <token ID="t_426">hatte</token>
+      <token ID="t_427">mit</token>
+      <token ID="t_428">ausschlaggebendes</token>
+      <token ID="t_429">Gewicht</token>
+      <token ID="t_430">bei</token>
+      <token ID="t_431">deren</token>
+      <token ID="t_432">Sitzung</token>
+      <token ID="t_433">im</token>
+      <token ID="t_434">September</token>
+      <token ID="t_435">.[1</token>
+      <token ID="t_436">]</token>
+      <token ID="t_437">Auf</token>
+      <token ID="t_438">der</token>
+      <token ID="t_439">Sitzung</token>
+      <token ID="t_440">des</token>
+      <token ID="t_441">Reichsforschungsrats</token>
+      <token ID="t_442">1942</token>
+      <token ID="t_443">über</token>
+      <token ID="t_444">die</token>
+      <token ID="t_445">weitere</token>
+      <token ID="t_446">Unterstützung</token>
+      <token ID="t_447">der</token>
+      <token ID="t_448">Kernenergieforschung</token>
+      <token ID="t_449">sprach</token>
+      <token ID="t_450">er</token>
+      <token ID="t_451">sich</token>
+      <token ID="t_452">gegen</token>
+      <token ID="t_453">eine</token>
+      <token ID="t_454">weitere</token>
+      <token ID="t_455">Fortführung</token>
+      <token ID="t_456">der</token>
+      <token ID="t_457">Arbeiten</token>
+      <token ID="t_458">aus</token>
+      <token ID="t_459">.[2</token>
+      <token ID="t_460">]</token>
+      <token ID="t_461">Hans</token>
+      <token ID="t_462">Geiger</token>
+      <token ID="t_463">starb</token>
+      <token ID="t_464">am</token>
+      <token ID="t_465">24.</token>
+      <token ID="t_466">September</token>
+      <token ID="t_467">1945</token>
+      <token ID="t_468">,</token>
+      <token ID="t_469">kurz</token>
+      <token ID="t_470">nach</token>
+      <token ID="t_471">der</token>
+      <token ID="t_472">Räumung</token>
+      <token ID="t_473">seines</token>
+      <token ID="t_474">Hauses</token>
+      <token ID="t_475">in</token>
+      <token ID="t_476">Potsdam</token>
+      <token ID="t_477">(</token>
+      <token ID="t_478">es</token>
+      <token ID="t_479">lag</token>
+      <token ID="t_480">im</token>
+      <token ID="t_481">Sperrkreis</token>
+      <token ID="t_482">der</token>
+      <token ID="t_483">Konferenz</token>
+      <token ID="t_484">der</token>
+      <token ID="t_485">alliierten</token>
+      <token ID="t_486">Siegermächte</token>
+      <token ID="t_487">in</token>
+      <token ID="t_488">Potsdam</token>
+      <token ID="t_489">)</token>
+      <token ID="t_490">in</token>
+      <token ID="t_491">einem</token>
+      <token ID="t_492">Krankenhaus</token>
+      <token ID="t_493">.</token>
+      <token ID="t_494">Schon</token>
+      <token ID="t_495">seit</token>
+      <token ID="t_496">1942</token>
+      <token ID="t_497">hatte</token>
+      <token ID="t_498">er</token>
+      <token ID="t_499">sich</token>
+      <token ID="t_500">aus</token>
+      <token ID="t_501">seinen</token>
+      <token ID="t_502">wissenschaftlichen</token>
+      <token ID="t_503">Ämtern</token>
+      <token ID="t_504">zurückgezogen</token>
+      <token ID="t_505">aufgrund</token>
+      <token ID="t_506">einer</token>
+      <token ID="t_507">schweren</token>
+      <token ID="t_508">rheumatischen</token>
+      <token ID="t_509">Erkrankung</token>
+      <token ID="t_510">.</token>
+      <token ID="t_511">Hans</token>
+      <token ID="t_512">Geiger</token>
+      <token ID="t_513">wurde</token>
+      <token ID="t_514">auf</token>
+      <token ID="t_515">dem</token>
+      <token ID="t_516">Neuen</token>
+      <token ID="t_517">Friedhof</token>
+      <token ID="t_518">Potsdam</token>
+      <token ID="t_519">beigesetzt</token>
+      <token ID="t_520">.</token>
+      <token ID="t_521">Sein</token>
+      <token ID="t_522">Grab</token>
+      <token ID="t_523">hat</token>
+      <token ID="t_524">sich</token>
+      <token ID="t_525">erhalten</token>
+      <token ID="t_526">.</token>
+      <token ID="t_527">Die</token>
+      <token ID="t_528">nach</token>
+      <token ID="t_529">West-Berlin</token>
+      <token ID="t_530">übergesiedelte</token>
+      <token ID="t_531">Familie</token>
+      <token ID="t_532">ließ</token>
+      <token ID="t_533">auf</token>
+      <token ID="t_534">dem</token>
+      <token ID="t_535">Friedhof</token>
+      <token ID="t_536">Grunewald</token>
+      <token ID="t_537">einen</token>
+      <token ID="t_538">zweiten</token>
+      <token ID="t_539">Grabstein</token>
+      <token ID="t_540">aufstellen</token>
+      <token ID="t_541">,</token>
+      <token ID="t_542">der</token>
+      <token ID="t_543">sich</token>
+      <token ID="t_544">ebenfalls</token>
+      <token ID="t_545">erhalten</token>
+      <token ID="t_546">hat</token>
+      <token ID="t_547">.</token>
+      <token ID="t_548">1929</token>
+      <token ID="t_549">erhielt</token>
+      <token ID="t_550">er</token>
+      <token ID="t_551">die</token>
+      <token ID="t_552">Hughes-Medaille</token>
+      <token ID="t_553">der</token>
+      <token ID="t_554">Royal</token>
+      <token ID="t_555">Socity</token>
+      <token ID="t_556">,</token>
+      <token ID="t_557">1937</token>
+      <token ID="t_558">die</token>
+      <token ID="t_559">Duddell</token>
+      <token ID="t_560">-Medaille</token>
+      <token ID="t_561">der</token>
+      <token ID="t_562">London</token>
+      <token ID="t_563">Physical</token>
+      <token ID="t_564">Society</token>
+      <token ID="t_565">und</token>
+      <token ID="t_566">1934</token>
+      <token ID="t_567">den</token>
+      <token ID="t_568">Arrhenius</token>
+      <token ID="t_569">Preis</token>
+      <token ID="t_570">der</token>
+      <token ID="t_571">Akademischen</token>
+      <token ID="t_572">Verlagsgemeinschaft</token>
+      <token ID="t_573">Leipzig</token>
+      <token ID="t_574">.</token>
+      <token ID="t_575">Seit</token>
+      <token ID="t_576">1932</token>
+      <token ID="t_577">war</token>
+      <token ID="t_578">er</token>
+      <token ID="t_579">korrespondierendes</token>
+      <token ID="t_580">Mitglied</token>
+      <token ID="t_581">der</token>
+      <token ID="t_582">Sächsischen</token>
+      <token ID="t_583">Akademie</token>
+      <token ID="t_584">der</token>
+      <token ID="t_585">Wissenschaften</token>
+      <token ID="t_586">und</token>
+      <token ID="t_587">seit</token>
+      <token ID="t_588">1936</token>
+      <token ID="t_589">Mitglied</token>
+      <token ID="t_590">der</token>
+      <token ID="t_591">Berliner</token>
+      <token ID="t_592">Akademie</token>
+      <token ID="t_593">der</token>
+      <token ID="t_594">Wissenschaften</token>
+      <token ID="t_595">.</token>
+      <token ID="t_596">Seit</token>
+      <token ID="t_597">1936</token>
+      <token ID="t_598">war</token>
+      <token ID="t_599">er</token>
+      <token ID="t_600">Beisitzer</token>
+      <token ID="t_601">im</token>
+      <token ID="t_602">Vorstand</token>
+      <token ID="t_603">der</token>
+      <token ID="t_604">Deutschen</token>
+      <token ID="t_605">Physikalischen</token>
+      <token ID="t_606">Gesellschaft</token>
+      <token ID="t_607">.</token>
+      <token ID="t_608">Zu</token>
+      <token ID="t_609">seinen</token>
+      <token ID="t_610">Doktoranden</token>
+      <token ID="t_611">zählt</token>
+      <token ID="t_612">Otto</token>
+      <token ID="t_613">Haxel</token>
+      <token ID="t_614">,</token>
+      <token ID="t_615">der</token>
+      <token ID="t_616">auch</token>
+      <token ID="t_617">Assistent</token>
+      <token ID="t_618">bei</token>
+      <token ID="t_619">ihm</token>
+      <token ID="t_620">an</token>
+      <token ID="t_621">der</token>
+      <token ID="t_622">TH</token>
+      <token ID="t_623">Berlin</token>
+      <token ID="t_624">war</token>
+      <token ID="t_625">.</token>
+      <token ID="t_626">Das</token>
+      <token ID="t_627">Hans-Geiger-Gymnasium</token>
+      <token ID="t_628">in</token>
+      <token ID="t_629">Kiel-Ellerbek</token>
+      <token ID="t_630">ist</token>
+      <token ID="t_631">nach</token>
+      <token ID="t_632">ihm</token>
+      <token ID="t_633">benannt</token>
+      <token ID="t_634">,</token>
+      <token ID="t_635">ebenso</token>
+      <token ID="t_636">wie</token>
+      <token ID="t_637">eine</token>
+      <token ID="t_638">Grundschule</token>
+      <token ID="t_639">und</token>
+      <token ID="t_640">eine</token>
+      <token ID="t_641">Straße</token>
+      <token ID="t_642">in</token>
+      <token ID="t_643">seinem</token>
+      <token ID="t_644">Geburtsort</token>
+      <token ID="t_645">Neustadt</token>
+      <token ID="t_646">an</token>
+      <token ID="t_647">der</token>
+      <token ID="t_648">Weinstraße</token>
+      <token ID="t_649">.</token>
+    </tokens>
+    <sentences>
+      <sentence ID="s_0" tokenIDs="t_0 t_1 t_2 t_3 t_4 t_5 t_6 t_7 t_8 t_9 t_10 t_11 t_12 t_13 t_14 t_15 t_16 t_17 t_18 t_19 t_20 t_21 t_22 t_23 t_24 t_25 t_26 t_27 t_28 t_29 t_30"></sentence>
+      <sentence ID="s_1" tokenIDs="t_31 t_32 t_33 t_34 t_35 t_36 t_37 t_38 t_39 t_40 t_41"></sentence>
+      <sentence ID="s_2" tokenIDs="t_42 t_43 t_44 t_45 t_46 t_47 t_48 t_49 t_50 t_51 t_52 t_53 t_54 t_55 t_56 t_57 t_58 t_59 t_60 t_61 t_62 t_63 t_64 t_65 t_66 t_67 t_68 t_69 t_70"></sentence>
+      <sentence ID="s_3" tokenIDs="t_71 t_72 t_73 t_74 t_75 t_76 t_77 t_78 t_79 t_80 t_81 t_82 t_83 t_84 t_85 t_86 t_87 t_88 t_89 t_90 t_91 t_92 t_93 t_94 t_95 t_96 t_97 t_98 t_99 t_100 t_101 t_102 t_103 t_104 t_105 t_106 t_107 t_108 t_109"></sentence>
+      <sentence ID="s_4" tokenIDs="t_110 t_111 t_112 t_113 t_114 t_115 t_116 t_117 t_118 t_119 t_120 t_121"></sentence>
+      <sentence ID="s_5" tokenIDs="t_122 t_123 t_124 t_125 t_126 t_127 t_128 t_129 t_130 t_131 t_132 t_133 t_134 t_135 t_136 t_137 t_138 t_139 t_140 t_141 t_142 t_143 t_144 t_145 t_146 t_147 t_148 t_149"></sentence>
+      <sentence ID="s_6" tokenIDs="t_150 t_151 t_152 t_153 t_154 t_155 t_156 t_157 t_158 t_159 t_160 t_161 t_162 t_163 t_164 t_165 t_166 t_167 t_168 t_169 t_170 t_171 t_172 t_173 t_174 t_175 t_176 t_177 t_178 t_179 t_180 t_181 t_182 t_183 t_184 t_185 t_186 t_187 t_188 t_189 t_190 t_191 t_192 t_193 t_194 t_195 t_196 t_197 t_198 t_199 t_200"></sentence>
+      <sentence ID="s_7" tokenIDs="t_201 t_202 t_203 t_204 t_205 t_206 t_207 t_208 t_209"></sentence>
+      <sentence ID="s_8" tokenIDs="t_210 t_211 t_212 t_213 t_214 t_215 t_216 t_217 t_218 t_219 t_220 t_221 t_222 t_223 t_224 t_225 t_226 t_227 t_228"></sentence>
+      <sentence ID="s_9" tokenIDs="t_229 t_230 t_231 t_232 t_233 t_234 t_235 t_236 t_237 t_238 t_239 t_240 t_241 t_242 t_243 t_244 t_245 t_246 t_247"></sentence>
+      <sentence ID="s_10" tokenIDs="t_248 t_249 t_250 t_251 t_252 t_253 t_254 t_255 t_256 t_257 t_258 t_259 t_260 t_261 t_262"></sentence>
+      <sentence ID="s_11" tokenIDs="t_263 t_264 t_265 t_266 t_267 t_268 t_269 t_270 t_271 t_272 t_273 t_274 t_275 t_276 t_277 t_278 t_279 t_280 t_281 t_282 t_283 t_284 t_285 t_286 t_287 t_288 t_289 t_290 t_291 t_292 t_293 t_294 t_295"></sentence>
+      <sentence ID="s_12" tokenIDs="t_296 t_297 t_298 t_299 t_300 t_301 t_302 t_303 t_304 t_305 t_306 t_307 t_308 t_309 t_310 t_311 t_312 t_313 t_314 t_315 t_316 t_317 t_318 t_319 t_320 t_321"></sentence>
+      <sentence ID="s_13" tokenIDs="t_322 t_323 t_324 t_325 t_326 t_327 t_328 t_329 t_330 t_331 t_332 t_333 t_334 t_335 t_336 t_337 t_338 t_339 t_340 t_341 t_342 t_343 t_344 t_345 t_346 t_347 t_348 t_349 t_350 t_351 t_352 t_353 t_354 t_355"></sentence>
+      <sentence ID="s_14" tokenIDs="t_356 t_357 t_358 t_359 t_360 t_361 t_362 t_363 t_364"></sentence>
+      <sentence ID="s_15" tokenIDs="t_365 t_366 t_367 t_368 t_369 t_370 t_371 t_372 t_373 t_374 t_375 t_376 t_377 t_378 t_379 t_380 t_381 t_382"></sentence>
+      <sentence ID="s_16" tokenIDs="t_383 t_384 t_385 t_386 t_387 t_388 t_389 t_390 t_391 t_392 t_393 t_394"></sentence>
+      <sentence ID="s_17" tokenIDs="t_395 t_396 t_397 t_398 t_399 t_400 t_401 t_402 t_403 t_404 t_405 t_406"></sentence>
+      <sentence ID="s_18" tokenIDs="t_407 t_408 t_409 t_410 t_411 t_412 t_413 t_414 t_415 t_416 t_417 t_418 t_419 t_420 t_421 t_422 t_423 t_424 t_425 t_426 t_427 t_428 t_429 t_430 t_431 t_432 t_433 t_434 t_435 t_436"></sentence>
+      <sentence ID="s_19" tokenIDs="t_437 t_438 t_439 t_440 t_441 t_442 t_443 t_444 t_445 t_446 t_447 t_448 t_449 t_450 t_451 t_452 t_453 t_454 t_455 t_456 t_457 t_458 t_459 t_460"></sentence>
+      <sentence ID="s_20" tokenIDs="t_461 t_462 t_463 t_464 t_465 t_466 t_467 t_468 t_469 t_470 t_471 t_472 t_473 t_474 t_475 t_476 t_477 t_478 t_479 t_480 t_481 t_482 t_483 t_484 t_485 t_486 t_487 t_488 t_489 t_490 t_491 t_492 t_493"></sentence>
+      <sentence ID="s_21" tokenIDs="t_494 t_495 t_496 t_497 t_498 t_499 t_500 t_501 t_502 t_503 t_504 t_505 t_506 t_507 t_508 t_509 t_510"></sentence>
+      <sentence ID="s_22" tokenIDs="t_511 t_512 t_513 t_514 t_515 t_516 t_517 t_518 t_519 t_520"></sentence>
+      <sentence ID="s_23" tokenIDs="t_521 t_522 t_523 t_524 t_525 t_526"></sentence>
+      <sentence ID="s_24" tokenIDs="t_527 t_528 t_529 t_530 t_531 t_532 t_533 t_534 t_535 t_536 t_537 t_538 t_539 t_540 t_541 t_542 t_543 t_544 t_545 t_546 t_547"></sentence>
+      <sentence ID="s_25" tokenIDs="t_548 t_549 t_550 t_551 t_552 t_553 t_554 t_555 t_556 t_557 t_558 t_559 t_560 t_561 t_562 t_563 t_564 t_565 t_566 t_567 t_568 t_569 t_570 t_571 t_572 t_573 t_574"></sentence>
+      <sentence ID="s_26" tokenIDs="t_575 t_576 t_577 t_578 t_579 t_580 t_581 t_582 t_583 t_584 t_585 t_586 t_587 t_588 t_589 t_590 t_591 t_592 t_593 t_594 t_595"></sentence>
+      <sentence ID="s_27" tokenIDs="t_596 t_597 t_598 t_599 t_600 t_601 t_602 t_603 t_604 t_605 t_606 t_607"></sentence>
+      <sentence ID="s_28" tokenIDs="t_608 t_609 t_610 t_611 t_612 t_613 t_614 t_615 t_616 t_617 t_618 t_619 t_620 t_621 t_622 t_623 t_624 t_625"></sentence>
+      <sentence ID="s_29" tokenIDs="t_626 t_627 t_628 t_629 t_630 t_631 t_632 t_633 t_634 t_635 t_636 t_637 t_638 t_639 t_640 t_641 t_642 t_643 t_644 t_645 t_646 t_647 t_648 t_649"></sentence>
+    </sentences>
+    <POStags tagset="STTS">
+      <tag ID="pt_0" tokenIDs="t_0">NE</tag>
+      <tag ID="pt_1" tokenIDs="t_1">VVFIN</tag>
+      <tag ID="pt_2" tokenIDs="t_2">APPR</tag>
+      <tag ID="pt_3" tokenIDs="t_3">CARD</tag>
+      <tag ID="pt_4" tokenIDs="t_4">NN</tag>
+      <tag ID="pt_5" tokenIDs="t_5">KON</tag>
+      <tag ID="pt_6" tokenIDs="t_6">NN</tag>
+      <tag ID="pt_7" tokenIDs="t_7">APPR</tag>
+      <tag ID="pt_8" tokenIDs="t_8">NE</tag>
+      <tag ID="pt_9" tokenIDs="t_9">$,</tag>
+      <tag ID="pt_10" tokenIDs="t_10">PWAV</tag>
+      <tag ID="pt_11" tokenIDs="t_11">PPER</tag>
+      <tag ID="pt_12" tokenIDs="t_12">NN</tag>
+      <tag ID="pt_13" tokenIDs="t_13">ART</tag>
+      <tag ID="pt_14" tokenIDs="t_14">NN</tag>
+      <tag ID="pt_15" tokenIDs="t_15">ART</tag>
+      <tag ID="pt_16" tokenIDs="t_16">NN</tag>
+      <tag ID="pt_17" tokenIDs="t_17">NE</tag>
+      <tag ID="pt_18" tokenIDs="t_18">VAFIN</tag>
+      <tag ID="pt_19" tokenIDs="t_19">KON</tag>
+      <tag ID="pt_20" tokenIDs="t_20">APPR</tag>
+      <tag ID="pt_21" tokenIDs="t_21">ART</tag>
+      <tag ID="pt_22" tokenIDs="t_22">ADJA</tag>
+      <tag ID="pt_23" tokenIDs="t_23">PIAT</tag>
+      <tag ID="pt_24" tokenIDs="t_24">NN</tag>
+      <tag ID="pt_25" tokenIDs="t_25">ADV</tag>
+      <tag ID="pt_26" tokenIDs="t_26">PPOSAT</tag>
+      <tag ID="pt_27" tokenIDs="t_27">ADJA</tag>
+      <tag ID="pt_28" tokenIDs="t_28">NN</tag>
+      <tag ID="pt_29" tokenIDs="t_29">VVFIN</tag>
+      <tag ID="pt_30" tokenIDs="t_30">$.</tag>
+      <tag ID="pt_31" tokenIDs="t_31">CARD</tag>
+      <tag ID="pt_32" tokenIDs="t_32">VVFIN</tag>
+      <tag ID="pt_33" tokenIDs="t_33">PPER</tag>
+      <tag ID="pt_34" tokenIDs="t_34">ADV</tag>
+      <tag ID="pt_35" tokenIDs="t_35">ART</tag>
+      <tag ID="pt_36" tokenIDs="t_36">NN</tag>
+      <tag ID="pt_37" tokenIDs="t_37">APPR</tag>
+      <tag ID="pt_38" tokenIDs="t_38">ART</tag>
+      <tag ID="pt_39" tokenIDs="t_39">NN</tag>
+      <tag ID="pt_40" tokenIDs="t_40">NE</tag>
+      <tag ID="pt_41" tokenIDs="t_41">$.</tag>
+      <tag ID="pt_42" tokenIDs="t_42">CARD</tag>
+      <tag ID="pt_43" tokenIDs="t_43">VVFIN</tag>
+      <tag ID="pt_44" tokenIDs="t_44">PPER</tag>
+      <tag ID="pt_45" tokenIDs="t_45">PPOSAT</tag>
+      <tag ID="pt_46" tokenIDs="t_46">ADJA</tag>
+      <tag ID="pt_47" tokenIDs="t_47">NN</tag>
+      <tag ID="pt_48" tokenIDs="t_48">PTKVZ</tag>
+      <tag ID="pt_49" tokenIDs="t_49">KON</tag>
+      <tag ID="pt_50" tokenIDs="t_50">VAFIN</tag>
+      <tag ID="pt_51" tokenIDs="t_51">VVPP</tag>
+      <tag ID="pt_52" tokenIDs="t_52">APPR</tag>
+      <tag ID="pt_53" tokenIDs="t_53">NE</tag>
+      <tag ID="pt_54" tokenIDs="t_54">APPR</tag>
+      <tag ID="pt_55" tokenIDs="t_55">NE</tag>
+      <tag ID="pt_56" tokenIDs="t_56">NE</tag>
+      <tag ID="pt_57" tokenIDs="t_57">APPR</tag>
+      <tag ID="pt_58" tokenIDs="t_58">ART</tag>
+      <tag ID="pt_59" tokenIDs="t_59">NN</tag>
+      <tag ID="pt_60" tokenIDs="t_60">TRUNC</tag>
+      <tag ID="pt_61" tokenIDs="t_61">$,</tag>
+      <tag ID="pt_62" tokenIDs="t_62">TRUNC</tag>
+      <tag ID="pt_63" tokenIDs="t_63">KON</tag>
+      <tag ID="pt_64" tokenIDs="t_64">NN</tag>
+      <tag ID="pt_65" tokenIDs="t_65">APPR</tag>
+      <tag ID="pt_66" tokenIDs="t_66">NN</tag>
+      <tag ID="pt_67" tokenIDs="t_67">APPR</tag>
+      <tag ID="pt_68" tokenIDs="t_68">ADJA</tag>
+      <tag ID="pt_69" tokenIDs="t_69">NN</tag>
+      <tag ID="pt_70" tokenIDs="t_70">$.</tag>
+      <tag ID="pt_71" tokenIDs="t_71">APPR</tag>
+      <tag ID="pt_72" tokenIDs="t_72">ART</tag>
+      <tag ID="pt_73" tokenIDs="t_73">NN</tag>
+      <tag ID="pt_74" tokenIDs="t_74">VVFIN</tag>
+      <tag ID="pt_75" tokenIDs="t_75">PPER</tag>
+      <tag ID="pt_76" tokenIDs="t_76">KOKOM</tag>
+      <tag ID="pt_77" tokenIDs="t_77">NN</tag>
+      <tag ID="pt_78" tokenIDs="t_78">APPR</tag>
+      <tag ID="pt_79" tokenIDs="t_79">NE</tag>
+      <tag ID="pt_80" tokenIDs="t_80">NE</tag>
+      <tag ID="pt_81" tokenIDs="t_81">APPR</tag>
+      <tag ID="pt_82" tokenIDs="t_82">NE</tag>
+      <tag ID="pt_83" tokenIDs="t_83">KON</tag>
+      <tag ID="pt_84" tokenIDs="t_84">VVFIN</tag>
+      <tag ID="pt_85" tokenIDs="t_85">PDS</tag>
+      <tag ID="pt_86" tokenIDs="t_86">ADV</tag>
+      <tag ID="pt_87" tokenIDs="t_87">APPR</tag>
+      <tag ID="pt_88" tokenIDs="t_88">CARD</tag>
+      <tag ID="pt_89" tokenIDs="t_89">APPR</tag>
+      <tag ID="pt_90" tokenIDs="t_90">PDAT</tag>
+      <tag ID="pt_91" tokenIDs="t_91">NN</tag>
+      <tag ID="pt_92" tokenIDs="t_92">NE</tag>
+      <tag ID="pt_93" tokenIDs="t_93">NE</tag>
+      <tag ID="pt_94" tokenIDs="t_94">$,</tag>
+      <tag ID="pt_95" tokenIDs="t_95">PRELAT</tag>
+      <tag ID="pt_96" tokenIDs="t_96">CARD</tag>
+      <tag ID="pt_97" tokenIDs="t_97">ADJA</tag>
+      <tag ID="pt_98" tokenIDs="t_98">NN</tag>
+      <tag ID="pt_99" tokenIDs="t_99">APPRART</tag>
+      <tag ID="pt_100" tokenIDs="t_100">NN</tag>
+      <tag ID="pt_101" tokenIDs="t_101">APPR</tag>
+      <tag ID="pt_102" tokenIDs="t_102">NE</tag>
+      <tag ID="pt_103" tokenIDs="t_103">NN</tag>
+      <tag ID="pt_104" tokenIDs="t_104">VVFIN</tag>
+      <tag ID="pt_105" tokenIDs="t_105">$(</tag>
+      <tag ID="pt_106" tokenIDs="t_106">VVIMP</tag>
+      <tag ID="pt_107" tokenIDs="t_107">NN</tag>
+      <tag ID="pt_108" tokenIDs="t_108">$(</tag>
+      <tag ID="pt_109" tokenIDs="t_109">$.</tag>
+      <tag ID="pt_110" tokenIDs="t_110">PPER</tag>
+      <tag ID="pt_111" tokenIDs="t_111">VVFIN</tag>
+      <tag ID="pt_112" tokenIDs="t_112">PROAV</tag>
+      <tag ID="pt_113" tokenIDs="t_113">APPR</tag>
+      <tag ID="pt_114" tokenIDs="t_114">NE</tag>
+      <tag ID="pt_115" tokenIDs="t_115">APPR</tag>
+      <tag ID="pt_116" tokenIDs="t_116">PIS</tag>
+      <tag ID="pt_117" tokenIDs="t_117">ADV</tag>
+      <tag ID="pt_118" tokenIDs="t_118">APPR</tag>
+      <tag ID="pt_119" tokenIDs="t_119">NE</tag>
+      <tag ID="pt_120" tokenIDs="t_120">NE</tag>
+      <tag ID="pt_121" tokenIDs="t_121">$.</tag>
+      <tag ID="pt_122" tokenIDs="t_122">APPRART</tag>
+      <tag ID="pt_123" tokenIDs="t_123">NN</tag>
+      <tag ID="pt_124" tokenIDs="t_124">PPOSAT</tag>
+      <tag ID="pt_125" tokenIDs="t_125">NN</tag>
+      <tag ID="pt_126" tokenIDs="t_126">APPR</tag>
+      <tag ID="pt_127" tokenIDs="t_127">NE</tag>
+      <tag ID="pt_128" tokenIDs="t_128">CARD</tag>
+      <tag ID="pt_129" tokenIDs="t_129">VVFIN</tag>
+      <tag ID="pt_130" tokenIDs="t_130">NE</tag>
+      <tag ID="pt_131" tokenIDs="t_131">KOKOM</tag>
+      <tag ID="pt_132" tokenIDs="t_132">ADJA</tag>
+      <tag ID="pt_133" tokenIDs="t_133">NN</tag>
+      <tag ID="pt_134" tokenIDs="t_134">APPR</tag>
+      <tag ID="pt_135" tokenIDs="t_135">NN</tag>
+      <tag ID="pt_136" tokenIDs="t_136">ART</tag>
+      <tag ID="pt_137" tokenIDs="t_137">NN</tag>
+      <tag ID="pt_138" tokenIDs="t_138">$,</tag>
+      <tag ID="pt_139" tokenIDs="t_139">PRELS</tag>
+      <tag ID="pt_140" tokenIDs="t_140">PRF</tag>
+      <tag ID="pt_141" tokenIDs="t_141">ADV</tag>
+      <tag ID="pt_142" tokenIDs="t_142">APPR</tag>
+      <tag ID="pt_143" tokenIDs="t_143">ART</tag>
+      <tag ID="pt_144" tokenIDs="t_144">NN</tag>
+      <tag ID="pt_145" tokenIDs="t_145">APPR</tag>
+      <tag ID="pt_146" tokenIDs="t_146">NE</tag>
+      <tag ID="pt_147" tokenIDs="t_147">NE</tag>
+      <tag ID="pt_148" tokenIDs="t_148">VVFIN</tag>
+      <tag ID="pt_149" tokenIDs="t_149">$.</tag>
+      <tag ID="pt_150" tokenIDs="t_150">CARD</tag>
+      <tag ID="pt_151" tokenIDs="t_151">VVFIN</tag>
+      <tag ID="pt_152" tokenIDs="t_152">NE</tag>
+      <tag ID="pt_153" tokenIDs="t_153">PTKVZ</tag>
+      <tag ID="pt_154" tokenIDs="t_154">APPR</tag>
+      <tag ID="pt_155" tokenIDs="t_155">NE</tag>
+      <tag ID="pt_156" tokenIDs="t_156">APPRART</tag>
+      <tag ID="pt_157" tokenIDs="t_157">NN</tag>
+      <tag ID="pt_158" tokenIDs="t_158">NN</tag>
+      <tag ID="pt_159" tokenIDs="t_159">APPR</tag>
+      <tag ID="pt_160" tokenIDs="t_160">NE</tag>
+      <tag ID="pt_161" tokenIDs="t_161">$,</tag>
+      <tag ID="pt_162" tokenIDs="t_162">PWAV</tag>
+      <tag ID="pt_163" tokenIDs="t_163">PPER</tag>
+      <tag ID="pt_164" tokenIDs="t_164">ART</tag>
+      <tag ID="pt_165" tokenIDs="t_165">NN</tag>
+      <tag ID="pt_166" tokenIDs="t_166">APPR</tag>
+      <tag ID="pt_167" tokenIDs="t_167">NN</tag>
+      <tag ID="pt_168" tokenIDs="t_168">VVFIN</tag>
+      <tag ID="pt_169" tokenIDs="t_169">KON</tag>
+      <tag ID="pt_170" tokenIDs="t_170">APPR</tag>
+      <tag ID="pt_171" tokenIDs="t_171">NE</tag>
+      <tag ID="pt_172" tokenIDs="t_172">NE</tag>
+      <tag ID="pt_173" tokenIDs="t_173">VVFIN</tag>
+      <tag ID="pt_174" tokenIDs="t_174">$,</tag>
+      <tag ID="pt_175" tokenIDs="t_175">PRELS</tag>
+      <tag ID="pt_176" tokenIDs="t_176">PPER</tag>
+      <tag ID="pt_177" tokenIDs="t_177">APPR</tag>
+      <tag ID="pt_178" tokenIDs="t_178">NE</tag>
+      <tag ID="pt_179" tokenIDs="t_179">VVPP</tag>
+      <tag ID="pt_180" tokenIDs="t_180">VAFIN</tag>
+      <tag ID="pt_181" tokenIDs="t_181">KON</tag>
+      <tag ID="pt_182" tokenIDs="t_182">PRELS</tag>
+      <tag ID="pt_183" tokenIDs="t_183">PPER</tag>
+      <tag ID="pt_184" tokenIDs="t_184">ADV</tag>
+      <tag ID="pt_185" tokenIDs="t_185">APPR</tag>
+      <tag ID="pt_186" tokenIDs="t_186">ART</tag>
+      <tag ID="pt_187" tokenIDs="t_187">NN</tag>
+      <tag ID="pt_188" tokenIDs="t_188">PPOSAT</tag>
+      <tag ID="pt_189" tokenIDs="t_189">NN</tag>
+      <tag ID="pt_190" tokenIDs="t_190">APPR</tag>
+      <tag ID="pt_191" tokenIDs="t_191">ART</tag>
+      <tag ID="pt_192" tokenIDs="t_192">ADJA</tag>
+      <tag ID="pt_193" tokenIDs="t_193">NN</tag>
+      <tag ID="pt_194" tokenIDs="t_194">VVFIN</tag>
+      <tag ID="pt_195" tokenIDs="t_195">$,</tag>
+      <tag ID="pt_196" tokenIDs="t_196">KON</tag>
+      <tag ID="pt_197" tokenIDs="t_197">APPR</tag>
+      <tag ID="pt_198" tokenIDs="t_198">NE</tag>
+      <tag ID="pt_199" tokenIDs="t_199">NE</tag>
+      <tag ID="pt_200" tokenIDs="t_200">$.</tag>
+      <tag ID="pt_201" tokenIDs="t_201">KOUS</tag>
+      <tag ID="pt_202" tokenIDs="t_202">ART</tag>
+      <tag ID="pt_203" tokenIDs="t_203">ADJA</tag>
+      <tag ID="pt_204" tokenIDs="t_204">NN</tag>
+      <tag ID="pt_205" tokenIDs="t_205">VVFIN</tag>
+      <tag ID="pt_206" tokenIDs="t_206">PPER</tag>
+      <tag ID="pt_207" tokenIDs="t_207">KOKOM</tag>
+      <tag ID="pt_208" tokenIDs="t_208">NN</tag>
+      <tag ID="pt_209" tokenIDs="t_209">$.</tag>
+      <tag ID="pt_210" tokenIDs="t_210">KOUS</tag>
+      <tag ID="pt_211" tokenIDs="t_211">PPER</tag>
+      <tag ID="pt_212" tokenIDs="t_212">PRF</tag>
+      <tag ID="pt_213" tokenIDs="t_213">CARD</tag>
+      <tag ID="pt_214" tokenIDs="t_214">APPR</tag>
+      <tag ID="pt_215" tokenIDs="t_215">NE</tag>
+      <tag ID="pt_216" tokenIDs="t_216">VVPP</tag>
+      <tag ID="pt_217" tokenIDs="t_217">VAFIN</tag>
+      <tag ID="pt_218" tokenIDs="t_218">$,</tag>
+      <tag ID="pt_219" tokenIDs="t_219">VVFIN</tag>
+      <tag ID="pt_220" tokenIDs="t_220">NN</tag>
+      <tag ID="pt_221" tokenIDs="t_221">CARD</tag>
+      <tag ID="pt_222" tokenIDs="t_222">KOKOM</tag>
+      <tag ID="pt_223" tokenIDs="t_223">NN</tag>
+      <tag ID="pt_224" tokenIDs="t_224">APPR</tag>
+      <tag ID="pt_225" tokenIDs="t_225">ART</tag>
+      <tag ID="pt_226" tokenIDs="t_226">NN</tag>
+      <tag ID="pt_227" tokenIDs="t_227">NN</tag>
+      <tag ID="pt_228" tokenIDs="t_228">$.</tag>
+      <tag ID="pt_229" tokenIDs="t_229">CARD</tag>
+      <tag ID="pt_230" tokenIDs="t_230">VVFIN</tag>
+      <tag ID="pt_231" tokenIDs="t_231">PPER</tag>
+      <tag ID="pt_232" tokenIDs="t_232">APPR</tag>
+      <tag ID="pt_233" tokenIDs="t_233">NE</tag>
+      <tag ID="pt_234" tokenIDs="t_234">ART</tag>
+      <tag ID="pt_235" tokenIDs="t_235">NN</tag>
+      <tag ID="pt_236" tokenIDs="t_236">ART</tag>
+      <tag ID="pt_237" tokenIDs="t_237">NN</tag>
+      <tag ID="pt_238" tokenIDs="t_238">PTKVZ</tag>
+      <tag ID="pt_239" tokenIDs="t_239">$,</tag>
+      <tag ID="pt_240" tokenIDs="t_240">PRELS</tag>
+      <tag ID="pt_241" tokenIDs="t_241">PPER</tag>
+      <tag ID="pt_242" tokenIDs="t_242">APPR</tag>
+      <tag ID="pt_243" tokenIDs="t_243">NN</tag>
+      <tag ID="pt_244" tokenIDs="t_244">ART</tag>
+      <tag ID="pt_245" tokenIDs="t_245">NN</tag>
+      <tag ID="pt_246" tokenIDs="t_246">VVFIN</tag>
+      <tag ID="pt_247" tokenIDs="t_247">$.</tag>
+      <tag ID="pt_248" tokenIDs="t_248">APPR</tag>
+      <tag ID="pt_249" tokenIDs="t_249">PDAT</tag>
+      <tag ID="pt_250" tokenIDs="t_250">NN</tag>
+      <tag ID="pt_251" tokenIDs="t_251">VVFIN</tag>
+      <tag ID="pt_252" tokenIDs="t_252">NE</tag>
+      <tag ID="pt_253" tokenIDs="t_253">ADJD</tag>
+      <tag ID="pt_254" tokenIDs="t_254">ADJD</tag>
+      <tag ID="pt_255" tokenIDs="t_255">APPR</tag>
+      <tag ID="pt_256" tokenIDs="t_256">ART</tag>
+      <tag ID="pt_257" tokenIDs="t_257">NN</tag>
+      <tag ID="pt_258" tokenIDs="t_258">APPR</tag>
+      <tag ID="pt_259" tokenIDs="t_259">TRUNC</tag>
+      <tag ID="pt_260" tokenIDs="t_260">ART</tag>
+      <tag ID="pt_261" tokenIDs="t_261">NN</tag>
+      <tag ID="pt_262" tokenIDs="t_262">$.</tag>
+      <tag ID="pt_263" tokenIDs="t_263">APPR</tag>
+      <tag ID="pt_264" tokenIDs="t_264">PIS</tag>
+      <tag ID="pt_265" tokenIDs="t_265">VVFIN</tag>
+      <tag ID="pt_266" tokenIDs="t_266">PPER</tag>
+      <tag ID="pt_267" tokenIDs="t_267">APPR</tag>
+      <tag ID="pt_268" tokenIDs="t_268">PPOSAT</tag>
+      <tag ID="pt_269" tokenIDs="t_269">NN</tag>
+      <tag ID="pt_270" tokenIDs="t_270">ADV</tag>
+      <tag ID="pt_271" tokenIDs="t_271">ART</tag>
+      <tag ID="pt_272" tokenIDs="t_272">NN</tag>
+      <tag ID="pt_273" tokenIDs="t_273">ART</tag>
+      <tag ID="pt_274" tokenIDs="t_274">NN</tag>
+      <tag ID="pt_275" tokenIDs="t_275">APPR</tag>
+      <tag ID="pt_276" tokenIDs="t_276">NN</tag>
+      <tag ID="pt_277" tokenIDs="t_277">KON</tag>
+      <tag ID="pt_278" tokenIDs="t_278">NN</tag>
+      <tag ID="pt_279" tokenIDs="t_279">APPR</tag>
+      <tag ID="pt_280" tokenIDs="t_280">ADJA</tag>
+      <tag ID="pt_281" tokenIDs="t_281">NN</tag>
+      <tag ID="pt_282" tokenIDs="t_282">$,</tag>
+      <tag ID="pt_283" tokenIDs="t_283">PRELS</tag>
+      <tag ID="pt_284" tokenIDs="t_284">ADV</tag>
+      <tag ID="pt_285" tokenIDs="t_285">ADV</tag>
+      <tag ID="pt_286" tokenIDs="t_286">$(</tag>
+      <tag ID="pt_287" tokenIDs="t_287">APPR</tag>
+      <tag ID="pt_288" tokenIDs="t_288">PIS</tag>
+      <tag ID="pt_289" tokenIDs="t_289">APPR</tag>
+      <tag ID="pt_290" tokenIDs="t_290">NE</tag>
+      <tag ID="pt_291" tokenIDs="t_291">NN</tag>
+      <tag ID="pt_292" tokenIDs="t_292">$(</tag>
+      <tag ID="pt_293" tokenIDs="t_293">VVPP</tag>
+      <tag ID="pt_294" tokenIDs="t_294">VAFIN</tag>
+      <tag ID="pt_295" tokenIDs="t_295">$.</tag>
+      <tag ID="pt_296" tokenIDs="t_296">ADV</tag>
+      <tag ID="pt_297" tokenIDs="t_297">APPR</tag>
+      <tag ID="pt_298" tokenIDs="t_298">PPOSAT</tag>
+      <tag ID="pt_299" tokenIDs="t_299">NN</tag>
+      <tag ID="pt_300" tokenIDs="t_300">NE</tag>
+      <tag ID="pt_301" tokenIDs="t_301">NE</tag>
+      <tag ID="pt_302" tokenIDs="t_302">VVFIN</tag>
+      <tag ID="pt_303" tokenIDs="t_303">PPER</tag>
+      <tag ID="pt_304" tokenIDs="t_304">ADV</tag>
+      <tag ID="pt_305" tokenIDs="t_305">CARD</tag>
+      <tag ID="pt_306" tokenIDs="t_306">ART</tag>
+      <tag ID="pt_307" tokenIDs="t_307">NN</tag>
+      <tag ID="pt_308" tokenIDs="t_308">$(</tag>
+      <tag ID="pt_309" tokenIDs="t_309">ADJD</tag>
+      <tag ID="pt_310" tokenIDs="t_310">KOKOM</tag>
+      <tag ID="pt_311" tokenIDs="t_311">NN</tag>
+      <tag ID="pt_312" tokenIDs="t_312">ADJD</tag>
+      <tag ID="pt_313" tokenIDs="t_313">$(</tag>
+      <tag ID="pt_314" tokenIDs="t_314">$,</tag>
+      <tag ID="pt_315" tokenIDs="t_315">PRELS</tag>
+      <tag ID="pt_316" tokenIDs="t_316">CARD</tag>
+      <tag ID="pt_317" tokenIDs="t_317">ART</tag>
+      <tag ID="pt_318" tokenIDs="t_318">NN</tag>
+      <tag ID="pt_319" tokenIDs="t_319">VVPP</tag>
+      <tag ID="pt_320" tokenIDs="t_320">VAFIN</tag>
+      <tag ID="pt_321" tokenIDs="t_321">$.</tag>
+      <tag ID="pt_322" tokenIDs="t_322">CARD</tag>
+      <tag ID="pt_323" tokenIDs="t_323">VVFIN</tag>
+      <tag ID="pt_324" tokenIDs="t_324">NE</tag>
+      <tag ID="pt_325" tokenIDs="t_325">APPR</tag>
+      <tag ID="pt_326" tokenIDs="t_326">ART</tag>
+      <tag ID="pt_327" tokenIDs="t_327">NE</tag>
+      <tag ID="pt_328" tokenIDs="t_328">NE</tag>
+      <tag ID="pt_329" tokenIDs="t_329">NN</tag>
+      <tag ID="pt_330" tokenIDs="t_330">NE</tag>
+      <tag ID="pt_331" tokenIDs="t_331">KON</tag>
+      <tag ID="pt_332" tokenIDs="t_332">VAFIN</tag>
+      <tag ID="pt_333" tokenIDs="t_333">ADV</tag>
+      <tag ID="pt_334" tokenIDs="t_334">CARD</tag>
+      <tag ID="pt_335" tokenIDs="t_335">NN</tag>
+      <tag ID="pt_336" tokenIDs="t_336">ART</tag>
+      <tag ID="pt_337" tokenIDs="t_337">ADJA</tag>
+      <tag ID="pt_338" tokenIDs="t_338">NN</tag>
+      <tag ID="pt_339" tokenIDs="t_339">ART</tag>
+      <tag ID="pt_340" tokenIDs="t_340">ADJA</tag>
+      <tag ID="pt_341" tokenIDs="t_341">NN</tag>
+      <tag ID="pt_342" tokenIDs="t_342">NE</tag>
+      <tag ID="pt_343" tokenIDs="t_343">KOKOM</tag>
+      <tag ID="pt_344" tokenIDs="t_344">NN</tag>
+      <tag ID="pt_345" tokenIDs="t_345">ART</tag>
+      <tag ID="pt_346" tokenIDs="t_346">APPR</tag>
+      <tag ID="pt_347" tokenIDs="t_347">ART</tag>
+      <tag ID="pt_348" tokenIDs="t_348">NN</tag>
+      <tag ID="pt_349" tokenIDs="t_349">APPR</tag>
+      <tag ID="pt_350" tokenIDs="t_350">ART</tag>
+      <tag ID="pt_351" tokenIDs="t_351">NN</tag>
+      <tag ID="pt_352" tokenIDs="t_352">ADJA</tag>
+      <tag ID="pt_353" tokenIDs="t_353">NE</tag>
+      <tag ID="pt_354" tokenIDs="t_354">NE</tag>
+      <tag ID="pt_355" tokenIDs="t_355">$.</tag>
+      <tag ID="pt_356" tokenIDs="t_356">ADV</tag>
+      <tag ID="pt_357" tokenIDs="t_357">VVFIN</tag>
+      <tag ID="pt_358" tokenIDs="t_358">PPER</tag>
+      <tag ID="pt_359" tokenIDs="t_359">PRF</tag>
+      <tag ID="pt_360" tokenIDs="t_360">ADV</tag>
+      <tag ID="pt_361" tokenIDs="t_361">APPR</tag>
+      <tag ID="pt_362" tokenIDs="t_362">ADJA</tag>
+      <tag ID="pt_363" tokenIDs="t_363">NN</tag>
+      <tag ID="pt_364" tokenIDs="t_364">$.</tag>
+      <tag ID="pt_365" tokenIDs="t_365">NE</tag>
+      <tag ID="pt_366" tokenIDs="t_366">VAFIN</tag>
+      <tag ID="pt_367" tokenIDs="t_367">CARD</tag>
+      <tag ID="pt_368" tokenIDs="t_368">APPR</tag>
+      <tag ID="pt_369" tokenIDs="t_369">NE</tag>
+      <tag ID="pt_370" tokenIDs="t_370">NE</tag>
+      <tag ID="pt_371" tokenIDs="t_371">NN</tag>
+      <tag ID="pt_372" tokenIDs="t_372">ART</tag>
+      <tag ID="pt_373" tokenIDs="t_373">NN</tag>
+      <tag ID="pt_374" tokenIDs="t_374">APPR</tag>
+      <tag ID="pt_375" tokenIDs="t_375">NN</tag>
+      <tag ID="pt_376" tokenIDs="t_376">KON</tag>
+      <tag ID="pt_377" tokenIDs="t_377">APPR</tag>
+      <tag ID="pt_378" tokenIDs="t_378">CARD</tag>
+      <tag ID="pt_379" tokenIDs="t_379">ART</tag>
+      <tag ID="pt_380" tokenIDs="t_380">ART</tag>
+      <tag ID="pt_381" tokenIDs="t_381">NN</tag>
+      <tag ID="pt_382" tokenIDs="t_382">$.</tag>
+      <tag ID="pt_383" tokenIDs="t_383">APPR</tag>
+      <tag ID="pt_384" tokenIDs="t_384">ART</tag>
+      <tag ID="pt_385" tokenIDs="t_385">NN</tag>
+      <tag ID="pt_386" tokenIDs="t_386">APPR</tag>
+      <tag ID="pt_387" tokenIDs="t_387">NE</tag>
+      <tag ID="pt_388" tokenIDs="t_388">VAFIN</tag>
+      <tag ID="pt_389" tokenIDs="t_389">PPER</tag>
+      <tag ID="pt_390" tokenIDs="t_390">APPR</tag>
+      <tag ID="pt_391" tokenIDs="t_391">CARD</tag>
+      <tag ID="pt_392" tokenIDs="t_392">ART</tag>
+      <tag ID="pt_393" tokenIDs="t_393">NN</tag>
+      <tag ID="pt_394" tokenIDs="t_394">$.</tag>
+      <tag ID="pt_395" tokenIDs="t_395">CARD</tag>
+      <tag ID="pt_396" tokenIDs="t_396">VAFIN</tag>
+      <tag ID="pt_397" tokenIDs="t_397">PPER</tag>
+      <tag ID="pt_398" tokenIDs="t_398">NN</tag>
+      <tag ID="pt_399" tokenIDs="t_399">ART</tag>
+      <tag ID="pt_400" tokenIDs="t_400">NN</tag>
+      <tag ID="pt_401" tokenIDs="t_401">ART</tag>
+      <tag ID="pt_402" tokenIDs="t_402">NN</tag>
+      <tag ID="pt_403" tokenIDs="t_403">APPRART</tag>
+      <tag ID="pt_404" tokenIDs="t_404">NN</tag>
+      <tag ID="pt_405" tokenIDs="t_405">NN</tag>
+      <tag ID="pt_406" tokenIDs="t_406">$.</tag>
+      <tag ID="pt_407" tokenIDs="t_407">CARD</tag>
+      <tag ID="pt_408" tokenIDs="t_408">VVFIN</tag>
+      <tag ID="pt_409" tokenIDs="t_409">PPER</tag>
+      <tag ID="pt_410" tokenIDs="t_410">APPR</tag>
+      <tag ID="pt_411" tokenIDs="t_411">ART</tag>
+      <tag ID="pt_412" tokenIDs="t_412">NN</tag>
+      <tag ID="pt_413" tokenIDs="t_413">ART</tag>
+      <tag ID="pt_414" tokenIDs="t_414">NN</tag>
+      <tag ID="pt_415" tokenIDs="t_415">PTKVZ</tag>
+      <tag ID="pt_416" tokenIDs="t_416">KON</tag>
+      <tag ID="pt_417" tokenIDs="t_417">PPOSAT</tag>
+      <tag ID="pt_418" tokenIDs="t_418">NN</tag>
+      <tag ID="pt_419" tokenIDs="t_419">$,</tag>
+      <tag ID="pt_420" tokenIDs="t_420">ART</tag>
+      <tag ID="pt_421" tokenIDs="t_421">NN</tag>
+      <tag ID="pt_422" tokenIDs="t_422">APPRART</tag>
+      <tag ID="pt_423" tokenIDs="t_423">NN</tag>
+      <tag ID="pt_424" tokenIDs="t_424">PTKZU</tag>
+      <tag ID="pt_425" tokenIDs="t_425">VVINF</tag>
+      <tag ID="pt_426" tokenIDs="t_426">VAFIN</tag>
+      <tag ID="pt_427" tokenIDs="t_427">APPR</tag>
+      <tag ID="pt_428" tokenIDs="t_428">ADJA</tag>
+      <tag ID="pt_429" tokenIDs="t_429">NN</tag>
+      <tag ID="pt_430" tokenIDs="t_430">APPR</tag>
+      <tag ID="pt_431" tokenIDs="t_431">PDAT</tag>
+      <tag ID="pt_432" tokenIDs="t_432">NN</tag>
+      <tag ID="pt_433" tokenIDs="t_433">APPRART</tag>
+      <tag ID="pt_434" tokenIDs="t_434">NN</tag>
+      <tag ID="pt_435" tokenIDs="t_435">NN</tag>
+      <tag ID="pt_436" tokenIDs="t_436">$(</tag>
+      <tag ID="pt_437" tokenIDs="t_437">APPR</tag>
+      <tag ID="pt_438" tokenIDs="t_438">ART</tag>
+      <tag ID="pt_439" tokenIDs="t_439">NN</tag>
+      <tag ID="pt_440" tokenIDs="t_440">ART</tag>
+      <tag ID="pt_441" tokenIDs="t_441">NN</tag>
+      <tag ID="pt_442" tokenIDs="t_442">CARD</tag>
+      <tag ID="pt_443" tokenIDs="t_443">APPR</tag>
+      <tag ID="pt_444" tokenIDs="t_444">ART</tag>
+      <tag ID="pt_445" tokenIDs="t_445">ADJA</tag>
+      <tag ID="pt_446" tokenIDs="t_446">NN</tag>
+      <tag ID="pt_447" tokenIDs="t_447">ART</tag>
+      <tag ID="pt_448" tokenIDs="t_448">NN</tag>
+      <tag ID="pt_449" tokenIDs="t_449">VVFIN</tag>
+      <tag ID="pt_450" tokenIDs="t_450">PPER</tag>
+      <tag ID="pt_451" tokenIDs="t_451">PRF</tag>
+      <tag ID="pt_452" tokenIDs="t_452">APPR</tag>
+      <tag ID="pt_453" tokenIDs="t_453">ART</tag>
+      <tag ID="pt_454" tokenIDs="t_454">ADJA</tag>
+      <tag ID="pt_455" tokenIDs="t_455">NN</tag>
+      <tag ID="pt_456" tokenIDs="t_456">ART</tag>
+      <tag ID="pt_457" tokenIDs="t_457">NN</tag>
+      <tag ID="pt_458" tokenIDs="t_458">APPR</tag>
+      <tag ID="pt_459" tokenIDs="t_459">NN</tag>
+      <tag ID="pt_460" tokenIDs="t_460">$(</tag>
+      <tag ID="pt_461" tokenIDs="t_461">NE</tag>
+      <tag ID="pt_462" tokenIDs="t_462">NE</tag>
+      <tag ID="pt_463" tokenIDs="t_463">VVFIN</tag>
+      <tag ID="pt_464" tokenIDs="t_464">APPRART</tag>
+      <tag ID="pt_465" tokenIDs="t_465">ADJA</tag>
+      <tag ID="pt_466" tokenIDs="t_466">NN</tag>
+      <tag ID="pt_467" tokenIDs="t_467">CARD</tag>
+      <tag ID="pt_468" tokenIDs="t_468">$,</tag>
+      <tag ID="pt_469" tokenIDs="t_469">ADJD</tag>
+      <tag ID="pt_470" tokenIDs="t_470">APPR</tag>
+      <tag ID="pt_471" tokenIDs="t_471">ART</tag>
+      <tag ID="pt_472" tokenIDs="t_472">NN</tag>
+      <tag ID="pt_473" tokenIDs="t_473">PPOSAT</tag>
+      <tag ID="pt_474" tokenIDs="t_474">NN</tag>
+      <tag ID="pt_475" tokenIDs="t_475">APPR</tag>
+      <tag ID="pt_476" tokenIDs="t_476">NE</tag>
+      <tag ID="pt_477" tokenIDs="t_477">$(</tag>
+      <tag ID="pt_478" tokenIDs="t_478">PPER</tag>
+      <tag ID="pt_479" tokenIDs="t_479">VVFIN</tag>
+      <tag ID="pt_480" tokenIDs="t_480">APPRART</tag>
+      <tag ID="pt_481" tokenIDs="t_481">NN</tag>
+      <tag ID="pt_482" tokenIDs="t_482">ART</tag>
+      <tag ID="pt_483" tokenIDs="t_483">NN</tag>
+      <tag ID="pt_484" tokenIDs="t_484">ART</tag>
+      <tag ID="pt_485" tokenIDs="t_485">ADJA</tag>
+      <tag ID="pt_486" tokenIDs="t_486">NN</tag>
+      <tag ID="pt_487" tokenIDs="t_487">APPR</tag>
+      <tag ID="pt_488" tokenIDs="t_488">NE</tag>
+      <tag ID="pt_489" tokenIDs="t_489">$(</tag>
+      <tag ID="pt_490" tokenIDs="t_490">APPR</tag>
+      <tag ID="pt_491" tokenIDs="t_491">ART</tag>
+      <tag ID="pt_492" tokenIDs="t_492">NN</tag>
+      <tag ID="pt_493" tokenIDs="t_493">$.</tag>
+      <tag ID="pt_494" tokenIDs="t_494">ADV</tag>
+      <tag ID="pt_495" tokenIDs="t_495">APPR</tag>
+      <tag ID="pt_496" tokenIDs="t_496">CARD</tag>
+      <tag ID="pt_497" tokenIDs="t_497">VAFIN</tag>
+      <tag ID="pt_498" tokenIDs="t_498">PPER</tag>
+      <tag ID="pt_499" tokenIDs="t_499">PRF</tag>
+      <tag ID="pt_500" tokenIDs="t_500">APPR</tag>
+      <tag ID="pt_501" tokenIDs="t_501">PPOSAT</tag>
+      <tag ID="pt_502" tokenIDs="t_502">ADJA</tag>
+      <tag ID="pt_503" tokenIDs="t_503">NN</tag>
+      <tag ID="pt_504" tokenIDs="t_504">VVPP</tag>
+      <tag ID="pt_505" tokenIDs="t_505">APPR</tag>
+      <tag ID="pt_506" tokenIDs="t_506">ART</tag>
+      <tag ID="pt_507" tokenIDs="t_507">ADJA</tag>
+      <tag ID="pt_508" tokenIDs="t_508">ADJA</tag>
+      <tag ID="pt_509" tokenIDs="t_509">NN</tag>
+      <tag ID="pt_510" tokenIDs="t_510">$.</tag>
+      <tag ID="pt_511" tokenIDs="t_511">NE</tag>
+      <tag ID="pt_512" tokenIDs="t_512">NE</tag>
+      <tag ID="pt_513" tokenIDs="t_513">VAFIN</tag>
+      <tag ID="pt_514" tokenIDs="t_514">APPR</tag>
+      <tag ID="pt_515" tokenIDs="t_515">ART</tag>
+      <tag ID="pt_516" tokenIDs="t_516">ADJA</tag>
+      <tag ID="pt_517" tokenIDs="t_517">NN</tag>
+      <tag ID="pt_518" tokenIDs="t_518">NE</tag>
+      <tag ID="pt_519" tokenIDs="t_519">VVPP</tag>
+      <tag ID="pt_520" tokenIDs="t_520">$.</tag>
+      <tag ID="pt_521" tokenIDs="t_521">PPOSAT</tag>
+      <tag ID="pt_522" tokenIDs="t_522">NN</tag>
+      <tag ID="pt_523" tokenIDs="t_523">VAFIN</tag>
+      <tag ID="pt_524" tokenIDs="t_524">PRF</tag>
+      <tag ID="pt_525" tokenIDs="t_525">VVPP</tag>
+      <tag ID="pt_526" tokenIDs="t_526">$.</tag>
+      <tag ID="pt_527" tokenIDs="t_527">ART</tag>
+      <tag ID="pt_528" tokenIDs="t_528">APPR</tag>
+      <tag ID="pt_529" tokenIDs="t_529">NE</tag>
+      <tag ID="pt_530" tokenIDs="t_530">ADJA</tag>
+      <tag ID="pt_531" tokenIDs="t_531">NN</tag>
+      <tag ID="pt_532" tokenIDs="t_532">VVFIN</tag>
+      <tag ID="pt_533" tokenIDs="t_533">APPR</tag>
+      <tag ID="pt_534" tokenIDs="t_534">ART</tag>
+      <tag ID="pt_535" tokenIDs="t_535">NN</tag>
+      <tag ID="pt_536" tokenIDs="t_536">NN</tag>
+      <tag ID="pt_537" tokenIDs="t_537">ART</tag>
+      <tag ID="pt_538" tokenIDs="t_538">ADJA</tag>
+      <tag ID="pt_539" tokenIDs="t_539">NN</tag>
+      <tag ID="pt_540" tokenIDs="t_540">VVINF</tag>
+      <tag ID="pt_541" tokenIDs="t_541">$,</tag>
+      <tag ID="pt_542" tokenIDs="t_542">PRELS</tag>
+      <tag ID="pt_543" tokenIDs="t_543">PRF</tag>
+      <tag ID="pt_544" tokenIDs="t_544">ADV</tag>
+      <tag ID="pt_545" tokenIDs="t_545">VVPP</tag>
+      <tag ID="pt_546" tokenIDs="t_546">VAFIN</tag>
+      <tag ID="pt_547" tokenIDs="t_547">$.</tag>
+      <tag ID="pt_548" tokenIDs="t_548">CARD</tag>
+      <tag ID="pt_549" tokenIDs="t_549">VVFIN</tag>
+      <tag ID="pt_550" tokenIDs="t_550">PPER</tag>
+      <tag ID="pt_551" tokenIDs="t_551">ART</tag>
+      <tag ID="pt_552" tokenIDs="t_552">NN</tag>
+      <tag ID="pt_553" tokenIDs="t_553">ART</tag>
+      <tag ID="pt_554" tokenIDs="t_554">ADJD</tag>
+      <tag ID="pt_555" tokenIDs="t_555">NN</tag>
+      <tag ID="pt_556" tokenIDs="t_556">$,</tag>
+      <tag ID="pt_557" tokenIDs="t_557">CARD</tag>
+      <tag ID="pt_558" tokenIDs="t_558">ART</tag>
+      <tag ID="pt_559" tokenIDs="t_559">NN</tag>
+      <tag ID="pt_560" tokenIDs="t_560">NN</tag>
+      <tag ID="pt_561" tokenIDs="t_561">ART</tag>
+      <tag ID="pt_562" tokenIDs="t_562">NE</tag>
+      <tag ID="pt_563" tokenIDs="t_563">NN</tag>
+      <tag ID="pt_564" tokenIDs="t_564">NN</tag>
+      <tag ID="pt_565" tokenIDs="t_565">KON</tag>
+      <tag ID="pt_566" tokenIDs="t_566">CARD</tag>
+      <tag ID="pt_567" tokenIDs="t_567">ART</tag>
+      <tag ID="pt_568" tokenIDs="t_568">NE</tag>
+      <tag ID="pt_569" tokenIDs="t_569">NN</tag>
+      <tag ID="pt_570" tokenIDs="t_570">ART</tag>
+      <tag ID="pt_571" tokenIDs="t_571">ADJA</tag>
+      <tag ID="pt_572" tokenIDs="t_572">NN</tag>
+      <tag ID="pt_573" tokenIDs="t_573">NE</tag>
+      <tag ID="pt_574" tokenIDs="t_574">$.</tag>
+      <tag ID="pt_575" tokenIDs="t_575">APPR</tag>
+      <tag ID="pt_576" tokenIDs="t_576">CARD</tag>
+      <tag ID="pt_577" tokenIDs="t_577">VAFIN</tag>
+      <tag ID="pt_578" tokenIDs="t_578">PPER</tag>
+      <tag ID="pt_579" tokenIDs="t_579">ADJA</tag>
+      <tag ID="pt_580" tokenIDs="t_580">NN</tag>
+      <tag ID="pt_581" tokenIDs="t_581">ART</tag>
+      <tag ID="pt_582" tokenIDs="t_582">ADJA</tag>
+      <tag ID="pt_583" tokenIDs="t_583">NN</tag>
+      <tag ID="pt_584" tokenIDs="t_584">ART</tag>
+      <tag ID="pt_585" tokenIDs="t_585">NN</tag>
+      <tag ID="pt_586" tokenIDs="t_586">KON</tag>
+      <tag ID="pt_587" tokenIDs="t_587">APPR</tag>
+      <tag ID="pt_588" tokenIDs="t_588">CARD</tag>
+      <tag ID="pt_589" tokenIDs="t_589">NN</tag>
+      <tag ID="pt_590" tokenIDs="t_590">ART</tag>
+      <tag ID="pt_591" tokenIDs="t_591">ADJA</tag>
+      <tag ID="pt_592" tokenIDs="t_592">NN</tag>
+      <tag ID="pt_593" tokenIDs="t_593">ART</tag>
+      <tag ID="pt_594" tokenIDs="t_594">NN</tag>
+      <tag ID="pt_595" tokenIDs="t_595">$.</tag>
+      <tag ID="pt_596" tokenIDs="t_596">APPR</tag>
+      <tag ID="pt_597" tokenIDs="t_597">CARD</tag>
+      <tag ID="pt_598" tokenIDs="t_598">VAFIN</tag>
+      <tag ID="pt_599" tokenIDs="t_599">PPER</tag>
+      <tag ID="pt_600" tokenIDs="t_600">NN</tag>
+      <tag ID="pt_601" tokenIDs="t_601">APPRART</tag>
+      <tag ID="pt_602" tokenIDs="t_602">NN</tag>
+      <tag ID="pt_603" tokenIDs="t_603">ART</tag>
+      <tag ID="pt_604" tokenIDs="t_604">ADJA</tag>
+      <tag ID="pt_605" tokenIDs="t_605">ADJA</tag>
+      <tag ID="pt_606" tokenIDs="t_606">NN</tag>
+      <tag ID="pt_607" tokenIDs="t_607">$.</tag>
+      <tag ID="pt_608" tokenIDs="t_608">APPR</tag>
+      <tag ID="pt_609" tokenIDs="t_609">PPOSAT</tag>
+      <tag ID="pt_610" tokenIDs="t_610">NN</tag>
+      <tag ID="pt_611" tokenIDs="t_611">VVFIN</tag>
+      <tag ID="pt_612" tokenIDs="t_612">NE</tag>
+      <tag ID="pt_613" tokenIDs="t_613">NE</tag>
+      <tag ID="pt_614" tokenIDs="t_614">$,</tag>
+      <tag ID="pt_615" tokenIDs="t_615">PRELS</tag>
+      <tag ID="pt_616" tokenIDs="t_616">ADV</tag>
+      <tag ID="pt_617" tokenIDs="t_617">NN</tag>
+      <tag ID="pt_618" tokenIDs="t_618">APPR</tag>
+      <tag ID="pt_619" tokenIDs="t_619">PPER</tag>
+      <tag ID="pt_620" tokenIDs="t_620">APPR</tag>
+      <tag ID="pt_621" tokenIDs="t_621">ART</tag>
+      <tag ID="pt_622" tokenIDs="t_622">NE</tag>
+      <tag ID="pt_623" tokenIDs="t_623">NE</tag>
+      <tag ID="pt_624" tokenIDs="t_624">VAFIN</tag>
+      <tag ID="pt_625" tokenIDs="t_625">$.</tag>
+      <tag ID="pt_626" tokenIDs="t_626">ART</tag>
+      <tag ID="pt_627" tokenIDs="t_627">NN</tag>
+      <tag ID="pt_628" tokenIDs="t_628">APPR</tag>
+      <tag ID="pt_629" tokenIDs="t_629">NE</tag>
+      <tag ID="pt_630" tokenIDs="t_630">VAFIN</tag>
+      <tag ID="pt_631" tokenIDs="t_631">APPR</tag>
+      <tag ID="pt_632" tokenIDs="t_632">PPER</tag>
+      <tag ID="pt_633" tokenIDs="t_633">VVPP</tag>
+      <tag ID="pt_634" tokenIDs="t_634">$,</tag>
+      <tag ID="pt_635" tokenIDs="t_635">ADV</tag>
+      <tag ID="pt_636" tokenIDs="t_636">KOKOM</tag>
+      <tag ID="pt_637" tokenIDs="t_637">ART</tag>
+      <tag ID="pt_638" tokenIDs="t_638">NN</tag>
+      <tag ID="pt_639" tokenIDs="t_639">KON</tag>
+      <tag ID="pt_640" tokenIDs="t_640">ART</tag>
+      <tag ID="pt_641" tokenIDs="t_641">NN</tag>
+      <tag ID="pt_642" tokenIDs="t_642">APPR</tag>
+      <tag ID="pt_643" tokenIDs="t_643">PPOSAT</tag>
+      <tag ID="pt_644" tokenIDs="t_644">NN</tag>
+      <tag ID="pt_645" tokenIDs="t_645">NN</tag>
+      <tag ID="pt_646" tokenIDs="t_646">APPR</tag>
+      <tag ID="pt_647" tokenIDs="t_647">ART</tag>
+      <tag ID="pt_648" tokenIDs="t_648">NN</tag>
+      <tag ID="pt_649" tokenIDs="t_649">$.</tag>
+    </POStags>
+    <lemmas>
+      <lemma ID="le_0" tokenIDs="t_0">Geiger</lemma>
+      <lemma ID="le_1" tokenIDs="t_1">studieren</lemma>
+      <lemma ID="le_2" tokenIDs="t_2">ab</lemma>
+      <lemma ID="le_3" tokenIDs="t_3">1902</lemma>
+      <lemma ID="le_4" tokenIDs="t_4">Physik</lemma>
+      <lemma ID="le_5" tokenIDs="t_5">und</lemma>
+      <lemma ID="le_6" tokenIDs="t_6">Mathematik</lemma>
+      <lemma ID="le_7" tokenIDs="t_7">in</lemma>
+      <lemma ID="le_8" tokenIDs="t_8">Erlangen</lemma>
+      <lemma ID="le_9" tokenIDs="t_9">,</lemma>
+      <lemma ID="le_10" tokenIDs="t_10">wo</lemma>
+      <lemma ID="le_11" tokenIDs="t_11">er</lemma>
+      <lemma ID="le_12" tokenIDs="t_12">Mitglied</lemma>
+      <lemma ID="le_13" tokenIDs="t_13">d</lemma>
+      <lemma ID="le_14" tokenIDs="t_14">&lt;unknown&gt;</lemma>
+      <lemma ID="le_15" tokenIDs="t_15">d</lemma>
+      <lemma ID="le_16" tokenIDs="t_16">&lt;unknown&gt;</lemma>
+      <lemma ID="le_17" tokenIDs="t_17">Erlangen</lemma>
+      <lemma ID="le_18" tokenIDs="t_18">sein</lemma>
+      <lemma ID="le_19" tokenIDs="t_19">und</lemma>
+      <lemma ID="le_20" tokenIDs="t_20">in</lemma>
+      <lemma ID="le_21" tokenIDs="t_21">d</lemma>
+      <lemma ID="le_22" tokenIDs="t_22">erst</lemma>
+      <lemma ID="le_23" tokenIDs="t_23">beide</lemma>
+      <lemma ID="le_24" tokenIDs="t_24">Semester</lemma>
+      <lemma ID="le_25" tokenIDs="t_25">nebenbei</lemma>
+      <lemma ID="le_26" tokenIDs="t_26">sein</lemma>
+      <lemma ID="le_27" tokenIDs="t_27">einjährig</lemma>
+      <lemma ID="le_28" tokenIDs="t_28">Militärdienst</lemma>
+      <lemma ID="le_29" tokenIDs="t_29">ableisten</lemma>
+      <lemma ID="le_30" tokenIDs="t_30">.</lemma>
+      <lemma ID="le_31" tokenIDs="t_31">@card@</lemma>
+      <lemma ID="le_32" tokenIDs="t_32">verbringen</lemma>
+      <lemma ID="le_33" tokenIDs="t_33">er</lemma>
+      <lemma ID="le_34" tokenIDs="t_34">auch</lemma>
+      <lemma ID="le_35" tokenIDs="t_35">ein</lemma>
+      <lemma ID="le_36" tokenIDs="t_36">Semester</lemma>
+      <lemma ID="le_37" tokenIDs="t_37">an</lemma>
+      <lemma ID="le_38" tokenIDs="t_38">d</lemma>
+      <lemma ID="le_39" tokenIDs="t_39">Ludwig-Maximilians-Universität</lemma>
+      <lemma ID="le_40" tokenIDs="t_40">München</lemma>
+      <lemma ID="le_41" tokenIDs="t_41">.</lemma>
+      <lemma ID="le_42" tokenIDs="t_42">@card@</lemma>
+      <lemma ID="le_43" tokenIDs="t_43">legen</lemma>
+      <lemma ID="le_44" tokenIDs="t_44">er</lemma>
+      <lemma ID="le_45" tokenIDs="t_45">sein</lemma>
+      <lemma ID="le_46" tokenIDs="t_46">zweit</lemma>
+      <lemma ID="le_47" tokenIDs="t_47">Staatsexamen</lemma>
+      <lemma ID="le_48" tokenIDs="t_48">ab</lemma>
+      <lemma ID="le_49" tokenIDs="t_49">und</lemma>
+      <lemma ID="le_50" tokenIDs="t_50">werden</lemma>
+      <lemma ID="le_51" tokenIDs="t_51">promovieren</lemma>
+      <lemma ID="le_52" tokenIDs="t_52">in</lemma>
+      <lemma ID="le_53" tokenIDs="t_53">Erlangen</lemma>
+      <lemma ID="le_54" tokenIDs="t_54">bei</lemma>
+      <lemma ID="le_55" tokenIDs="t_55">Eilhard</lemma>
+      <lemma ID="le_56" tokenIDs="t_56">Wiedemann</lemma>
+      <lemma ID="le_57" tokenIDs="t_57">mit</lemma>
+      <lemma ID="le_58" tokenIDs="t_58">d</lemma>
+      <lemma ID="le_59" tokenIDs="t_59">Arbeit</lemma>
+      <lemma ID="le_60" tokenIDs="t_60">&lt;unknown&gt;</lemma>
+      <lemma ID="le_61" tokenIDs="t_61">,</lemma>
+      <lemma ID="le_62" tokenIDs="t_62">Temperatur-</lemma>
+      <lemma ID="le_63" tokenIDs="t_63">und</lemma>
+      <lemma ID="le_64" tokenIDs="t_64">&lt;unknown&gt;</lemma>
+      <lemma ID="le_65" tokenIDs="t_65">in</lemma>
+      <lemma ID="le_66" tokenIDs="t_66">&lt;unknown&gt;</lemma>
+      <lemma ID="le_67" tokenIDs="t_67">mit</lemma>
+      <lemma ID="le_68" tokenIDs="t_68">stark</lemma>
+      <lemma ID="le_69" tokenIDs="t_69">Strom|Strömen</lemma>
+      <lemma ID="le_70" tokenIDs="t_70">.</lemma>
+      <lemma ID="le_71" tokenIDs="t_71">nach</lemma>
+      <lemma ID="le_72" tokenIDs="t_72">d</lemma>
+      <lemma ID="le_73" tokenIDs="t_73">Studium</lemma>
+      <lemma ID="le_74" tokenIDs="t_74">wechseln</lemma>
+      <lemma ID="le_75" tokenIDs="t_75">er</lemma>
+      <lemma ID="le_76" tokenIDs="t_76">als</lemma>
+      <lemma ID="le_77" tokenIDs="t_77">Assistent</lemma>
+      <lemma ID="le_78" tokenIDs="t_78">zu</lemma>
+      <lemma ID="le_79" tokenIDs="t_79">Arthur</lemma>
+      <lemma ID="le_80" tokenIDs="t_80">Schuster</lemma>
+      <lemma ID="le_81" tokenIDs="t_81">nach</lemma>
+      <lemma ID="le_82" tokenIDs="t_82">Manchester</lemma>
+      <lemma ID="le_83" tokenIDs="t_83">und</lemma>
+      <lemma ID="le_84" tokenIDs="t_84">bleiben</lemma>
+      <lemma ID="le_85" tokenIDs="t_85">dies</lemma>
+      <lemma ID="le_86" tokenIDs="t_86">auch</lemma>
+      <lemma ID="le_87" tokenIDs="t_87">ab</lemma>
+      <lemma ID="le_88" tokenIDs="t_88">@card@</lemma>
+      <lemma ID="le_89" tokenIDs="t_89">unter</lemma>
+      <lemma ID="le_90" tokenIDs="t_90">d</lemma>
+      <lemma ID="le_91" tokenIDs="t_91">Nachfolger</lemma>
+      <lemma ID="le_92" tokenIDs="t_92">Ernest</lemma>
+      <lemma ID="le_93" tokenIDs="t_93">&lt;unknown&gt;</lemma>
+      <lemma ID="le_94" tokenIDs="t_94">,</lemma>
+      <lemma ID="le_95" tokenIDs="t_95">d</lemma>
+      <lemma ID="le_96" tokenIDs="t_96">@card@</lemma>
+      <lemma ID="le_97" tokenIDs="t_97">aufgestellt</lemma>
+      <lemma ID="le_98" tokenIDs="t_98">Atommodell</lemma>
+      <lemma ID="le_99" tokenIDs="t_99">zum</lemma>
+      <lemma ID="le_100" tokenIDs="t_100">Teil</lemma>
+      <lemma ID="le_101" tokenIDs="t_101">auf</lemma>
+      <lemma ID="le_102" tokenIDs="t_102">Geiger</lemma>
+      <lemma ID="le_103" tokenIDs="t_103">Entdeckung</lemma>
+      <lemma ID="le_104" tokenIDs="t_104">beruhen</lemma>
+      <lemma ID="le_105" tokenIDs="t_105">(</lemma>
+      <lemma ID="le_106" tokenIDs="t_106">sehen</lemma>
+      <lemma ID="le_107" tokenIDs="t_107">&lt;unknown&gt;</lemma>
+      <lemma ID="le_108" tokenIDs="t_108">)</lemma>
+      <lemma ID="le_109" tokenIDs="t_109">.</lemma>
+      <lemma ID="le_110" tokenIDs="t_110">er</lemma>
+      <lemma ID="le_111" tokenIDs="t_111">arbeiten</lemma>
+      <lemma ID="le_112" tokenIDs="t_112">dabei</lemma>
+      <lemma ID="le_113" tokenIDs="t_113">neben</lemma>
+      <lemma ID="le_114" tokenIDs="t_114">&lt;unknown&gt;</lemma>
+      <lemma ID="le_115" tokenIDs="t_115">unter</lemma>
+      <lemma ID="le_116" tokenIDs="t_116">ander</lemma>
+      <lemma ID="le_117" tokenIDs="t_117">auch</lemma>
+      <lemma ID="le_118" tokenIDs="t_118">mit</lemma>
+      <lemma ID="le_119" tokenIDs="t_119">Ernest</lemma>
+      <lemma ID="le_120" tokenIDs="t_120">&lt;unknown&gt;</lemma>
+      <lemma ID="le_121" tokenIDs="t_121">.</lemma>
+      <lemma ID="le_122" tokenIDs="t_122">am</lemma>
+      <lemma ID="le_123" tokenIDs="t_123">Ende</lemma>
+      <lemma ID="le_124" tokenIDs="t_124">sein</lemma>
+      <lemma ID="le_125" tokenIDs="t_125">Zeit</lemma>
+      <lemma ID="le_126" tokenIDs="t_126">in</lemma>
+      <lemma ID="le_127" tokenIDs="t_127">Manchester</lemma>
+      <lemma ID="le_128" tokenIDs="t_128">@card@</lemma>
+      <lemma ID="le_129" tokenIDs="t_129">gelten</lemma>
+      <lemma ID="le_130" tokenIDs="t_130">Geiger</lemma>
+      <lemma ID="le_131" tokenIDs="t_131">als</lemma>
+      <lemma ID="le_132" tokenIDs="t_132">international</lemma>
+      <lemma ID="le_133" tokenIDs="t_133">Autorität</lemma>
+      <lemma ID="le_134" tokenIDs="t_134">für</lemma>
+      <lemma ID="le_135" tokenIDs="t_135">Messung</lemma>
+      <lemma ID="le_136" tokenIDs="t_136">d</lemma>
+      <lemma ID="le_137" tokenIDs="t_137">Radioaktivität</lemma>
+      <lemma ID="le_138" tokenIDs="t_138">,</lemma>
+      <lemma ID="le_139" tokenIDs="t_139">was</lemma>
+      <lemma ID="le_140" tokenIDs="t_140">er|es|sie</lemma>
+      <lemma ID="le_141" tokenIDs="t_141">auch</lemma>
+      <lemma ID="le_142" tokenIDs="t_142">in</lemma>
+      <lemma ID="le_143" tokenIDs="t_143">ein</lemma>
+      <lemma ID="le_144" tokenIDs="t_144">Buch</lemma>
+      <lemma ID="le_145" tokenIDs="t_145">mit</lemma>
+      <lemma ID="le_146" tokenIDs="t_146">Wilhelm</lemma>
+      <lemma ID="le_147" tokenIDs="t_147">&lt;unknown&gt;</lemma>
+      <lemma ID="le_148" tokenIDs="t_148">niederschlagen</lemma>
+      <lemma ID="le_149" tokenIDs="t_149">.</lemma>
+      <lemma ID="le_150" tokenIDs="t_150">@card@</lemma>
+      <lemma ID="le_151" tokenIDs="t_151">gehen</lemma>
+      <lemma ID="le_152" tokenIDs="t_152">Geiger</lemma>
+      <lemma ID="le_153" tokenIDs="t_153">zurück</lemma>
+      <lemma ID="le_154" tokenIDs="t_154">nach</lemma>
+      <lemma ID="le_155" tokenIDs="t_155">Deutschland</lemma>
+      <lemma ID="le_156" tokenIDs="t_156">zur</lemma>
+      <lemma ID="le_157" tokenIDs="t_157">Physikalisch-Technische</lemma>
+      <lemma ID="le_158" tokenIDs="t_158">Reichsanstalt</lemma>
+      <lemma ID="le_159" tokenIDs="t_159">in</lemma>
+      <lemma ID="le_160" tokenIDs="t_160">Berlin-Charlottenburg</lemma>
+      <lemma ID="le_161" tokenIDs="t_161">,</lemma>
+      <lemma ID="le_162" tokenIDs="t_162">wo</lemma>
+      <lemma ID="le_163" tokenIDs="t_163">er</lemma>
+      <lemma ID="le_164" tokenIDs="t_164">ein</lemma>
+      <lemma ID="le_165" tokenIDs="t_165">Labor</lemma>
+      <lemma ID="le_166" tokenIDs="t_166">für</lemma>
+      <lemma ID="le_167" tokenIDs="t_167">Radioaktivität</lemma>
+      <lemma ID="le_168" tokenIDs="t_168">aufbauen</lemma>
+      <lemma ID="le_169" tokenIDs="t_169">und</lemma>
+      <lemma ID="le_170" tokenIDs="t_170">mit</lemma>
+      <lemma ID="le_171" tokenIDs="t_171">James</lemma>
+      <lemma ID="le_172" tokenIDs="t_172">&lt;unknown&gt;</lemma>
+      <lemma ID="le_173" tokenIDs="t_173">zusammenarbeiten</lemma>
+      <lemma ID="le_174" tokenIDs="t_174">,</lemma>
+      <lemma ID="le_175" tokenIDs="t_175">d</lemma>
+      <lemma ID="le_176" tokenIDs="t_176">er</lemma>
+      <lemma ID="le_177" tokenIDs="t_177">aus</lemma>
+      <lemma ID="le_178" tokenIDs="t_178">Manchester</lemma>
+      <lemma ID="le_179" tokenIDs="t_179">folgen</lemma>
+      <lemma ID="le_180" tokenIDs="t_180">sein</lemma>
+      <lemma ID="le_181" tokenIDs="t_181">und</lemma>
+      <lemma ID="le_182" tokenIDs="t_182">d</lemma>
+      <lemma ID="le_183" tokenIDs="t_183">er</lemma>
+      <lemma ID="le_184" tokenIDs="t_184">auch</lemma>
+      <lemma ID="le_185" tokenIDs="t_185">in</lemma>
+      <lemma ID="le_186" tokenIDs="t_186">d</lemma>
+      <lemma ID="le_187" tokenIDs="t_187">Zeit</lemma>
+      <lemma ID="le_188" tokenIDs="t_188">sein</lemma>
+      <lemma ID="le_189" tokenIDs="t_189">Internierung</lemma>
+      <lemma ID="le_190" tokenIDs="t_190">während</lemma>
+      <lemma ID="le_191" tokenIDs="t_191">d</lemma>
+      <lemma ID="le_192" tokenIDs="t_192">erst</lemma>
+      <lemma ID="le_193" tokenIDs="t_193">Weltkrieg</lemma>
+      <lemma ID="le_194" tokenIDs="t_194">unterstützen</lemma>
+      <lemma ID="le_195" tokenIDs="t_195">,</lemma>
+      <lemma ID="le_196" tokenIDs="t_196">sowie</lemma>
+      <lemma ID="le_197" tokenIDs="t_197">mit</lemma>
+      <lemma ID="le_198" tokenIDs="t_198">Walther</lemma>
+      <lemma ID="le_199" tokenIDs="t_199">&lt;unknown&gt;</lemma>
+      <lemma ID="le_200" tokenIDs="t_200">.</lemma>
+      <lemma ID="le_201" tokenIDs="t_201">während</lemma>
+      <lemma ID="le_202" tokenIDs="t_202">d</lemma>
+      <lemma ID="le_203" tokenIDs="t_203">erst</lemma>
+      <lemma ID="le_204" tokenIDs="t_204">Weltkrieg</lemma>
+      <lemma ID="le_205" tokenIDs="t_205">dienen</lemma>
+      <lemma ID="le_206" tokenIDs="t_206">er</lemma>
+      <lemma ID="le_207" tokenIDs="t_207">als</lemma>
+      <lemma ID="le_208" tokenIDs="t_208">&lt;unknown&gt;</lemma>
+      <lemma ID="le_209" tokenIDs="t_209">.</lemma>
+      <lemma ID="le_210" tokenIDs="t_210">nachdem</lemma>
+      <lemma ID="le_211" tokenIDs="t_211">er</lemma>
+      <lemma ID="le_212" tokenIDs="t_212">er|es|sie</lemma>
+      <lemma ID="le_213" tokenIDs="t_213">@card@</lemma>
+      <lemma ID="le_214" tokenIDs="t_214">in</lemma>
+      <lemma ID="le_215" tokenIDs="t_215">Berlin</lemma>
+      <lemma ID="le_216" tokenIDs="t_216">habilitieren</lemma>
+      <lemma ID="le_217" tokenIDs="t_217">haben</lemma>
+      <lemma ID="le_218" tokenIDs="t_218">,</lemma>
+      <lemma ID="le_219" tokenIDs="t_219">wechseln</lemma>
+      <lemma ID="le_220" tokenIDs="t_220">Geiger</lemma>
+      <lemma ID="le_221" tokenIDs="t_221">@card@</lemma>
+      <lemma ID="le_222" tokenIDs="t_222">als</lemma>
+      <lemma ID="le_223" tokenIDs="t_223">Professor</lemma>
+      <lemma ID="le_224" tokenIDs="t_224">an</lemma>
+      <lemma ID="le_225" tokenIDs="t_225">d</lemma>
+      <lemma ID="le_226" tokenIDs="t_226">Christian-Albrechts-Universität</lemma>
+      <lemma ID="le_227" tokenIDs="t_227">Kiel</lemma>
+      <lemma ID="le_228" tokenIDs="t_228">.</lemma>
+      <lemma ID="le_229" tokenIDs="t_229">1924/25</lemma>
+      <lemma ID="le_230" tokenIDs="t_230">führen</lemma>
+      <lemma ID="le_231" tokenIDs="t_231">er</lemma>
+      <lemma ID="le_232" tokenIDs="t_232">mit</lemma>
+      <lemma ID="le_233" tokenIDs="t_233">&lt;unknown&gt;</lemma>
+      <lemma ID="le_234" tokenIDs="t_234">d</lemma>
+      <lemma ID="le_235" tokenIDs="t_235">Methode</lemma>
+      <lemma ID="le_236" tokenIDs="t_236">d</lemma>
+      <lemma ID="le_237" tokenIDs="t_237">&lt;unknown&gt;</lemma>
+      <lemma ID="le_238" tokenIDs="t_238">ein</lemma>
+      <lemma ID="le_239" tokenIDs="t_239">,</lemma>
+      <lemma ID="le_240" tokenIDs="t_240">d</lemma>
+      <lemma ID="le_241" tokenIDs="t_241">sie</lemma>
+      <lemma ID="le_242" tokenIDs="t_242">bei</lemma>
+      <lemma ID="le_243" tokenIDs="t_243">Untersuchung</lemma>
+      <lemma ID="le_244" tokenIDs="t_244">d</lemma>
+      <lemma ID="le_245" tokenIDs="t_245">&lt;unknown&gt;</lemma>
+      <lemma ID="le_246" tokenIDs="t_246">benutzen</lemma>
+      <lemma ID="le_247" tokenIDs="t_247">.</lemma>
+      <lemma ID="le_248" tokenIDs="t_248">für</lemma>
+      <lemma ID="le_249" tokenIDs="t_249">dies</lemma>
+      <lemma ID="le_250" tokenIDs="t_250">Experiment</lemma>
+      <lemma ID="le_251" tokenIDs="t_251">erhalten</lemma>
+      <lemma ID="le_252" tokenIDs="t_252">&lt;unknown&gt;</lemma>
+      <lemma ID="le_253" tokenIDs="t_253">spät</lemma>
+      <lemma ID="le_254" tokenIDs="t_254">&lt;unknown&gt;</lemma>
+      <lemma ID="le_255" tokenIDs="t_255">nach</lemma>
+      <lemma ID="le_256" tokenIDs="t_256">d</lemma>
+      <lemma ID="le_257" tokenIDs="t_257">Tod</lemma>
+      <lemma ID="le_258" tokenIDs="t_258">von</lemma>
+      <lemma ID="le_259" tokenIDs="t_259">&lt;unknown&gt;</lemma>
+      <lemma ID="le_260" tokenIDs="t_260">d</lemma>
+      <lemma ID="le_261" tokenIDs="t_261">Nobelpreis</lemma>
+      <lemma ID="le_262" tokenIDs="t_262">.</lemma>
+      <lemma ID="le_263" tokenIDs="t_263">unter</lemma>
+      <lemma ID="le_264" tokenIDs="t_264">ander</lemma>
+      <lemma ID="le_265" tokenIDs="t_265">zeigen</lemma>
+      <lemma ID="le_266" tokenIDs="t_266">sie</lemma>
+      <lemma ID="le_267" tokenIDs="t_267">mit</lemma>
+      <lemma ID="le_268" tokenIDs="t_268">ihr</lemma>
+      <lemma ID="le_269" tokenIDs="t_269">Experiment</lemma>
+      <lemma ID="le_270" tokenIDs="t_270">auch</lemma>
+      <lemma ID="le_271" tokenIDs="t_271">d</lemma>
+      <lemma ID="le_272" tokenIDs="t_272">Gültigkeit</lemma>
+      <lemma ID="le_273" tokenIDs="t_273">d</lemma>
+      <lemma ID="le_274" tokenIDs="t_274">&lt;unknown&gt;</lemma>
+      <lemma ID="le_275" tokenIDs="t_275">von</lemma>
+      <lemma ID="le_276" tokenIDs="t_276">Energie</lemma>
+      <lemma ID="le_277" tokenIDs="t_277">und</lemma>
+      <lemma ID="le_278" tokenIDs="t_278">Impuls</lemma>
+      <lemma ID="le_279" tokenIDs="t_279">auf</lemma>
+      <lemma ID="le_280" tokenIDs="t_280">atomar</lemma>
+      <lemma ID="le_281" tokenIDs="t_281">Ebene</lemma>
+      <lemma ID="le_282" tokenIDs="t_282">,</lemma>
+      <lemma ID="le_283" tokenIDs="t_283">was</lemma>
+      <lemma ID="le_284" tokenIDs="t_284">damals</lemma>
+      <lemma ID="le_285" tokenIDs="t_285">zeitweise</lemma>
+      <lemma ID="le_286" tokenIDs="t_286">(</lemma>
+      <lemma ID="le_287" tokenIDs="t_287">unter</lemma>
+      <lemma ID="le_288" tokenIDs="t_288">ander</lemma>
+      <lemma ID="le_289" tokenIDs="t_289">von</lemma>
+      <lemma ID="le_290" tokenIDs="t_290">Niels</lemma>
+      <lemma ID="le_291" tokenIDs="t_291">&lt;unknown&gt;</lemma>
+      <lemma ID="le_292" tokenIDs="t_292">)</lemma>
+      <lemma ID="le_293" tokenIDs="t_293">bezweifeln</lemma>
+      <lemma ID="le_294" tokenIDs="t_294">werden</lemma>
+      <lemma ID="le_295" tokenIDs="t_295">.</lemma>
+      <lemma ID="le_296" tokenIDs="t_296">zusammen</lemma>
+      <lemma ID="le_297" tokenIDs="t_297">mit</lemma>
+      <lemma ID="le_298" tokenIDs="t_298">sein</lemma>
+      <lemma ID="le_299" tokenIDs="t_299">Doktorand</lemma>
+      <lemma ID="le_300" tokenIDs="t_300">Walther</lemma>
+      <lemma ID="le_301" tokenIDs="t_301">Müller</lemma>
+      <lemma ID="le_302" tokenIDs="t_302">entwickeln</lemma>
+      <lemma ID="le_303" tokenIDs="t_303">er</lemma>
+      <lemma ID="le_304" tokenIDs="t_304">dort</lemma>
+      <lemma ID="le_305" tokenIDs="t_305">1928</lemma>
+      <lemma ID="le_306" tokenIDs="t_306">d</lemma>
+      <lemma ID="le_307" tokenIDs="t_307">&lt;unknown&gt;</lemma>
+      <lemma ID="le_308" tokenIDs="t_308">(</lemma>
+      <lemma ID="le_309" tokenIDs="t_309">landläufig</lemma>
+      <lemma ID="le_310" tokenIDs="t_310">als</lemma>
+      <lemma ID="le_311" tokenIDs="t_311">&lt;unknown&gt;</lemma>
+      <lemma ID="le_312" tokenIDs="t_312">bekannt</lemma>
+      <lemma ID="le_313" tokenIDs="t_313">)</lemma>
+      <lemma ID="le_314" tokenIDs="t_314">,</lemma>
+      <lemma ID="le_315" tokenIDs="t_315">welch</lemma>
+      <lemma ID="le_316" tokenIDs="t_316">1929</lemma>
+      <lemma ID="le_317" tokenIDs="t_317">d</lemma>
+      <lemma ID="le_318" tokenIDs="t_318">Öffentlichkeit</lemma>
+      <lemma ID="le_319" tokenIDs="t_319">vorstellen</lemma>
+      <lemma ID="le_320" tokenIDs="t_320">werden</lemma>
+      <lemma ID="le_321" tokenIDs="t_321">.</lemma>
+      <lemma ID="le_322" tokenIDs="t_322">1929</lemma>
+      <lemma ID="le_323" tokenIDs="t_323">wechseln</lemma>
+      <lemma ID="le_324" tokenIDs="t_324">Geiger</lemma>
+      <lemma ID="le_325" tokenIDs="t_325">an</lemma>
+      <lemma ID="le_326" tokenIDs="t_326">d</lemma>
+      <lemma ID="le_327" tokenIDs="t_327">Eberhard</lemma>
+      <lemma ID="le_328" tokenIDs="t_328">Karl</lemma>
+      <lemma ID="le_329" tokenIDs="t_329">Universität</lemma>
+      <lemma ID="le_330" tokenIDs="t_330">Tübingen</lemma>
+      <lemma ID="le_331" tokenIDs="t_331">und</lemma>
+      <lemma ID="le_332" tokenIDs="t_332">werden</lemma>
+      <lemma ID="le_333" tokenIDs="t_333">schließlich</lemma>
+      <lemma ID="le_334" tokenIDs="t_334">@card@</lemma>
+      <lemma ID="le_335" tokenIDs="t_335">Direktor</lemma>
+      <lemma ID="le_336" tokenIDs="t_336">d</lemma>
+      <lemma ID="le_337" tokenIDs="t_337">physikalisch</lemma>
+      <lemma ID="le_338" tokenIDs="t_338">Institut</lemma>
+      <lemma ID="le_339" tokenIDs="t_339">d</lemma>
+      <lemma ID="le_340" tokenIDs="t_340">technisch</lemma>
+      <lemma ID="le_341" tokenIDs="t_341">Hochschule</lemma>
+      <lemma ID="le_342" tokenIDs="t_342">Berlin</lemma>
+      <lemma ID="le_343" tokenIDs="t_343">als</lemma>
+      <lemma ID="le_344" tokenIDs="t_344">Nachfolger</lemma>
+      <lemma ID="le_345" tokenIDs="t_345">d</lemma>
+      <lemma ID="le_346" tokenIDs="t_346">von</lemma>
+      <lemma ID="le_347" tokenIDs="t_347">d</lemma>
+      <lemma ID="le_348" tokenIDs="t_348">Nationalsozialist</lemma>
+      <lemma ID="le_349" tokenIDs="t_349">aus</lemma>
+      <lemma ID="le_350" tokenIDs="t_350">d</lemma>
+      <lemma ID="le_351" tokenIDs="t_351">Amt</lemma>
+      <lemma ID="le_352" tokenIDs="t_352">gedrängt</lemma>
+      <lemma ID="le_353" tokenIDs="t_353">Gustav</lemma>
+      <lemma ID="le_354" tokenIDs="t_354">&lt;unknown&gt;</lemma>
+      <lemma ID="le_355" tokenIDs="t_355">.</lemma>
+      <lemma ID="le_356" tokenIDs="t_356">dort</lemma>
+      <lemma ID="le_357" tokenIDs="t_357">befassen</lemma>
+      <lemma ID="le_358" tokenIDs="t_358">er</lemma>
+      <lemma ID="le_359" tokenIDs="t_359">er|es|sie</lemma>
+      <lemma ID="le_360" tokenIDs="t_360">insbesondere</lemma>
+      <lemma ID="le_361" tokenIDs="t_361">mit</lemma>
+      <lemma ID="le_362" tokenIDs="t_362">kosmisch</lemma>
+      <lemma ID="le_363" tokenIDs="t_363">Strahlung</lemma>
+      <lemma ID="le_364" tokenIDs="t_364">.</lemma>
+      <lemma ID="le_365" tokenIDs="t_365">Geiger</lemma>
+      <lemma ID="le_366" tokenIDs="t_366">sein</lemma>
+      <lemma ID="le_367" tokenIDs="t_367">@card@</lemma>
+      <lemma ID="le_368" tokenIDs="t_368">mit</lemma>
+      <lemma ID="le_369" tokenIDs="t_369">Karl</lemma>
+      <lemma ID="le_370" tokenIDs="t_370">Scheel</lemma>
+      <lemma ID="le_371" tokenIDs="t_371">&lt;unknown&gt;</lemma>
+      <lemma ID="le_372" tokenIDs="t_372">d</lemma>
+      <lemma ID="le_373" tokenIDs="t_373">Zeitschrift</lemma>
+      <lemma ID="le_374" tokenIDs="t_374">für</lemma>
+      <lemma ID="le_375" tokenIDs="t_375">Physik</lemma>
+      <lemma ID="le_376" tokenIDs="t_376">und</lemma>
+      <lemma ID="le_377" tokenIDs="t_377">bis</lemma>
+      <lemma ID="le_378" tokenIDs="t_378">1945</lemma>
+      <lemma ID="le_379" tokenIDs="t_379">ein</lemma>
+      <lemma ID="le_380" tokenIDs="t_380">d</lemma>
+      <lemma ID="le_381" tokenIDs="t_381">Herausgeber</lemma>
+      <lemma ID="le_382" tokenIDs="t_382">.</lemma>
+      <lemma ID="le_383" tokenIDs="t_383">nach</lemma>
+      <lemma ID="le_384" tokenIDs="t_384">d</lemma>
+      <lemma ID="le_385" tokenIDs="t_385">Tod</lemma>
+      <lemma ID="le_386" tokenIDs="t_386">von</lemma>
+      <lemma ID="le_387" tokenIDs="t_387">Scheel</lemma>
+      <lemma ID="le_388" tokenIDs="t_388">haben</lemma>
+      <lemma ID="le_389" tokenIDs="t_389">er</lemma>
+      <lemma ID="le_390" tokenIDs="t_390">ab</lemma>
+      <lemma ID="le_391" tokenIDs="t_391">@card@</lemma>
+      <lemma ID="le_392" tokenIDs="t_392">d</lemma>
+      <lemma ID="le_393" tokenIDs="t_393">Schriftleitung</lemma>
+      <lemma ID="le_394" tokenIDs="t_394">.</lemma>
+      <lemma ID="le_395" tokenIDs="t_395">@card@</lemma>
+      <lemma ID="le_396" tokenIDs="t_396">sein</lemma>
+      <lemma ID="le_397" tokenIDs="t_397">er</lemma>
+      <lemma ID="le_398" tokenIDs="t_398">Herausgeber</lemma>
+      <lemma ID="le_399" tokenIDs="t_399">d</lemma>
+      <lemma ID="le_400" tokenIDs="t_400">Handbuch</lemma>
+      <lemma ID="le_401" tokenIDs="t_401">d</lemma>
+      <lemma ID="le_402" tokenIDs="t_402">Physik</lemma>
+      <lemma ID="le_403" tokenIDs="t_403">im</lemma>
+      <lemma ID="le_404" tokenIDs="t_404">Springer</lemma>
+      <lemma ID="le_405" tokenIDs="t_405">Verlag</lemma>
+      <lemma ID="le_406" tokenIDs="t_406">.</lemma>
+      <lemma ID="le_407" tokenIDs="t_407">1939</lemma>
+      <lemma ID="le_408" tokenIDs="t_408">nehmen</lemma>
+      <lemma ID="le_409" tokenIDs="t_409">er</lemma>
+      <lemma ID="le_410" tokenIDs="t_410">an</lemma>
+      <lemma ID="le_411" tokenIDs="t_411">d</lemma>
+      <lemma ID="le_412" tokenIDs="t_412">&lt;unknown&gt;</lemma>
+      <lemma ID="le_413" tokenIDs="t_413">d</lemma>
+      <lemma ID="le_414" tokenIDs="t_414">&lt;unknown&gt;</lemma>
+      <lemma ID="le_415" tokenIDs="t_415">teil</lemma>
+      <lemma ID="le_416" tokenIDs="t_416">und</lemma>
+      <lemma ID="le_417" tokenIDs="t_417">sein</lemma>
+      <lemma ID="le_418" tokenIDs="t_418">Rat</lemma>
+      <lemma ID="le_419" tokenIDs="t_419">,</lemma>
+      <lemma ID="le_420" tokenIDs="t_420">d</lemma>
+      <lemma ID="le_421" tokenIDs="t_421">Forschung</lemma>
+      <lemma ID="le_422" tokenIDs="t_422">zur</lemma>
+      <lemma ID="le_423" tokenIDs="t_423">Kernenergie</lemma>
+      <lemma ID="le_424" tokenIDs="t_424">zu</lemma>
+      <lemma ID="le_425" tokenIDs="t_425">intensivieren</lemma>
+      <lemma ID="le_426" tokenIDs="t_426">haben</lemma>
+      <lemma ID="le_427" tokenIDs="t_427">mit</lemma>
+      <lemma ID="le_428" tokenIDs="t_428">ausschlaggebend</lemma>
+      <lemma ID="le_429" tokenIDs="t_429">Gewicht</lemma>
+      <lemma ID="le_430" tokenIDs="t_430">bei</lemma>
+      <lemma ID="le_431" tokenIDs="t_431">d</lemma>
+      <lemma ID="le_432" tokenIDs="t_432">Sitzung</lemma>
+      <lemma ID="le_433" tokenIDs="t_433">im</lemma>
+      <lemma ID="le_434" tokenIDs="t_434">September</lemma>
+      <lemma ID="le_435" tokenIDs="t_435">&lt;unknown&gt;</lemma>
+      <lemma ID="le_436" tokenIDs="t_436">]</lemma>
+      <lemma ID="le_437" tokenIDs="t_437">auf</lemma>
+      <lemma ID="le_438" tokenIDs="t_438">d</lemma>
+      <lemma ID="le_439" tokenIDs="t_439">Sitzung</lemma>
+      <lemma ID="le_440" tokenIDs="t_440">d</lemma>
+      <lemma ID="le_441" tokenIDs="t_441">&lt;unknown&gt;</lemma>
+      <lemma ID="le_442" tokenIDs="t_442">1942</lemma>
+      <lemma ID="le_443" tokenIDs="t_443">über</lemma>
+      <lemma ID="le_444" tokenIDs="t_444">d</lemma>
+      <lemma ID="le_445" tokenIDs="t_445">weit</lemma>
+      <lemma ID="le_446" tokenIDs="t_446">Unterstützung</lemma>
+      <lemma ID="le_447" tokenIDs="t_447">d</lemma>
+      <lemma ID="le_448" tokenIDs="t_448">&lt;unknown&gt;</lemma>
+      <lemma ID="le_449" tokenIDs="t_449">sprechen</lemma>
+      <lemma ID="le_450" tokenIDs="t_450">er</lemma>
+      <lemma ID="le_451" tokenIDs="t_451">er|es|sie</lemma>
+      <lemma ID="le_452" tokenIDs="t_452">gegen</lemma>
+      <lemma ID="le_453" tokenIDs="t_453">ein</lemma>
+      <lemma ID="le_454" tokenIDs="t_454">weit</lemma>
+      <lemma ID="le_455" tokenIDs="t_455">Fortführung</lemma>
+      <lemma ID="le_456" tokenIDs="t_456">d</lemma>
+      <lemma ID="le_457" tokenIDs="t_457">Arbeit|Arbeiten</lemma>
+      <lemma ID="le_458" tokenIDs="t_458">aus</lemma>
+      <lemma ID="le_459" tokenIDs="t_459">&lt;unknown&gt;</lemma>
+      <lemma ID="le_460" tokenIDs="t_460">]</lemma>
+      <lemma ID="le_461" tokenIDs="t_461">Hans</lemma>
+      <lemma ID="le_462" tokenIDs="t_462">Geiger</lemma>
+      <lemma ID="le_463" tokenIDs="t_463">sterben</lemma>
+      <lemma ID="le_464" tokenIDs="t_464">am</lemma>
+      <lemma ID="le_465" tokenIDs="t_465">24.</lemma>
+      <lemma ID="le_466" tokenIDs="t_466">September</lemma>
+      <lemma ID="le_467" tokenIDs="t_467">1945</lemma>
+      <lemma ID="le_468" tokenIDs="t_468">,</lemma>
+      <lemma ID="le_469" tokenIDs="t_469">kurz</lemma>
+      <lemma ID="le_470" tokenIDs="t_470">nach</lemma>
+      <lemma ID="le_471" tokenIDs="t_471">d</lemma>
+      <lemma ID="le_472" tokenIDs="t_472">Räumung</lemma>
+      <lemma ID="le_473" tokenIDs="t_473">sein</lemma>
+      <lemma ID="le_474" tokenIDs="t_474">Haus</lemma>
+      <lemma ID="le_475" tokenIDs="t_475">in</lemma>
+      <lemma ID="le_476" tokenIDs="t_476">Potsdam</lemma>
+      <lemma ID="le_477" tokenIDs="t_477">(</lemma>
+      <lemma ID="le_478" tokenIDs="t_478">es</lemma>
+      <lemma ID="le_479" tokenIDs="t_479">liegen</lemma>
+      <lemma ID="le_480" tokenIDs="t_480">im</lemma>
+      <lemma ID="le_481" tokenIDs="t_481">Sperrkreis</lemma>
+      <lemma ID="le_482" tokenIDs="t_482">d</lemma>
+      <lemma ID="le_483" tokenIDs="t_483">Konferenz</lemma>
+      <lemma ID="le_484" tokenIDs="t_484">d</lemma>
+      <lemma ID="le_485" tokenIDs="t_485">alliiert</lemma>
+      <lemma ID="le_486" tokenIDs="t_486">Siegermacht</lemma>
+      <lemma ID="le_487" tokenIDs="t_487">in</lemma>
+      <lemma ID="le_488" tokenIDs="t_488">Potsdam</lemma>
+      <lemma ID="le_489" tokenIDs="t_489">)</lemma>
+      <lemma ID="le_490" tokenIDs="t_490">in</lemma>
+      <lemma ID="le_491" tokenIDs="t_491">ein</lemma>
+      <lemma ID="le_492" tokenIDs="t_492">Krankenhaus</lemma>
+      <lemma ID="le_493" tokenIDs="t_493">.</lemma>
+      <lemma ID="le_494" tokenIDs="t_494">schon</lemma>
+      <lemma ID="le_495" tokenIDs="t_495">seit</lemma>
+      <lemma ID="le_496" tokenIDs="t_496">1942</lemma>
+      <lemma ID="le_497" tokenIDs="t_497">haben</lemma>
+      <lemma ID="le_498" tokenIDs="t_498">er</lemma>
+      <lemma ID="le_499" tokenIDs="t_499">er|es|sie</lemma>
+      <lemma ID="le_500" tokenIDs="t_500">aus</lemma>
+      <lemma ID="le_501" tokenIDs="t_501">sein</lemma>
+      <lemma ID="le_502" tokenIDs="t_502">wissenschaftlich</lemma>
+      <lemma ID="le_503" tokenIDs="t_503">Amt</lemma>
+      <lemma ID="le_504" tokenIDs="t_504">zurückziehen</lemma>
+      <lemma ID="le_505" tokenIDs="t_505">aufgrund</lemma>
+      <lemma ID="le_506" tokenIDs="t_506">ein</lemma>
+      <lemma ID="le_507" tokenIDs="t_507">schwer</lemma>
+      <lemma ID="le_508" tokenIDs="t_508">rheumatisch</lemma>
+      <lemma ID="le_509" tokenIDs="t_509">Erkrankung</lemma>
+      <lemma ID="le_510" tokenIDs="t_510">.</lemma>
+      <lemma ID="le_511" tokenIDs="t_511">Hans</lemma>
+      <lemma ID="le_512" tokenIDs="t_512">Geiger</lemma>
+      <lemma ID="le_513" tokenIDs="t_513">werden</lemma>
+      <lemma ID="le_514" tokenIDs="t_514">auf</lemma>
+      <lemma ID="le_515" tokenIDs="t_515">d</lemma>
+      <lemma ID="le_516" tokenIDs="t_516">neu</lemma>
+      <lemma ID="le_517" tokenIDs="t_517">Friedhof</lemma>
+      <lemma ID="le_518" tokenIDs="t_518">Potsdam</lemma>
+      <lemma ID="le_519" tokenIDs="t_519">beisetzen</lemma>
+      <lemma ID="le_520" tokenIDs="t_520">.</lemma>
+      <lemma ID="le_521" tokenIDs="t_521">sein</lemma>
+      <lemma ID="le_522" tokenIDs="t_522">Grab</lemma>
+      <lemma ID="le_523" tokenIDs="t_523">haben</lemma>
+      <lemma ID="le_524" tokenIDs="t_524">er|es|sie</lemma>
+      <lemma ID="le_525" tokenIDs="t_525">erhalten</lemma>
+      <lemma ID="le_526" tokenIDs="t_526">.</lemma>
+      <lemma ID="le_527" tokenIDs="t_527">d</lemma>
+      <lemma ID="le_528" tokenIDs="t_528">nach</lemma>
+      <lemma ID="le_529" tokenIDs="t_529">West-Berlin</lemma>
+      <lemma ID="le_530" tokenIDs="t_530">übergesiedelt</lemma>
+      <lemma ID="le_531" tokenIDs="t_531">Familie</lemma>
+      <lemma ID="le_532" tokenIDs="t_532">lassen</lemma>
+      <lemma ID="le_533" tokenIDs="t_533">auf</lemma>
+      <lemma ID="le_534" tokenIDs="t_534">d</lemma>
+      <lemma ID="le_535" tokenIDs="t_535">Friedhof</lemma>
+      <lemma ID="le_536" tokenIDs="t_536">&lt;unknown&gt;</lemma>
+      <lemma ID="le_537" tokenIDs="t_537">ein</lemma>
+      <lemma ID="le_538" tokenIDs="t_538">zweit</lemma>
+      <lemma ID="le_539" tokenIDs="t_539">Grabstein</lemma>
+      <lemma ID="le_540" tokenIDs="t_540">aufstellen</lemma>
+      <lemma ID="le_541" tokenIDs="t_541">,</lemma>
+      <lemma ID="le_542" tokenIDs="t_542">d</lemma>
+      <lemma ID="le_543" tokenIDs="t_543">er|es|sie</lemma>
+      <lemma ID="le_544" tokenIDs="t_544">ebenfalls</lemma>
+      <lemma ID="le_545" tokenIDs="t_545">erhalten</lemma>
+      <lemma ID="le_546" tokenIDs="t_546">haben</lemma>
+      <lemma ID="le_547" tokenIDs="t_547">.</lemma>
+      <lemma ID="le_548" tokenIDs="t_548">1929</lemma>
+      <lemma ID="le_549" tokenIDs="t_549">erhalten</lemma>
+      <lemma ID="le_550" tokenIDs="t_550">er</lemma>
+      <lemma ID="le_551" tokenIDs="t_551">d</lemma>
+      <lemma ID="le_552" tokenIDs="t_552">&lt;unknown&gt;</lemma>
+      <lemma ID="le_553" tokenIDs="t_553">d</lemma>
+      <lemma ID="le_554" tokenIDs="t_554">royal</lemma>
+      <lemma ID="le_555" tokenIDs="t_555">&lt;unknown&gt;</lemma>
+      <lemma ID="le_556" tokenIDs="t_556">,</lemma>
+      <lemma ID="le_557" tokenIDs="t_557">1937</lemma>
+      <lemma ID="le_558" tokenIDs="t_558">d</lemma>
+      <lemma ID="le_559" tokenIDs="t_559">&lt;unknown&gt;</lemma>
+      <lemma ID="le_560" tokenIDs="t_560">-Medaille</lemma>
+      <lemma ID="le_561" tokenIDs="t_561">d</lemma>
+      <lemma ID="le_562" tokenIDs="t_562">London</lemma>
+      <lemma ID="le_563" tokenIDs="t_563">&lt;unknown&gt;</lemma>
+      <lemma ID="le_564" tokenIDs="t_564">&lt;unknown&gt;</lemma>
+      <lemma ID="le_565" tokenIDs="t_565">und</lemma>
+      <lemma ID="le_566" tokenIDs="t_566">1934</lemma>
+      <lemma ID="le_567" tokenIDs="t_567">d</lemma>
+      <lemma ID="le_568" tokenIDs="t_568">&lt;unknown&gt;</lemma>
+      <lemma ID="le_569" tokenIDs="t_569">Preis</lemma>
+      <lemma ID="le_570" tokenIDs="t_570">d</lemma>
+      <lemma ID="le_571" tokenIDs="t_571">akademisch</lemma>
+      <lemma ID="le_572" tokenIDs="t_572">Verlagsgemeinschaft</lemma>
+      <lemma ID="le_573" tokenIDs="t_573">Leipzig</lemma>
+      <lemma ID="le_574" tokenIDs="t_574">.</lemma>
+      <lemma ID="le_575" tokenIDs="t_575">seit</lemma>
+      <lemma ID="le_576" tokenIDs="t_576">@card@</lemma>
+      <lemma ID="le_577" tokenIDs="t_577">sein</lemma>
+      <lemma ID="le_578" tokenIDs="t_578">er</lemma>
+      <lemma ID="le_579" tokenIDs="t_579">korrespondierend</lemma>
+      <lemma ID="le_580" tokenIDs="t_580">Mitglied</lemma>
+      <lemma ID="le_581" tokenIDs="t_581">d</lemma>
+      <lemma ID="le_582" tokenIDs="t_582">sächsisch</lemma>
+      <lemma ID="le_583" tokenIDs="t_583">Akademie</lemma>
+      <lemma ID="le_584" tokenIDs="t_584">d</lemma>
+      <lemma ID="le_585" tokenIDs="t_585">Wissenschaft</lemma>
+      <lemma ID="le_586" tokenIDs="t_586">und</lemma>
+      <lemma ID="le_587" tokenIDs="t_587">seit</lemma>
+      <lemma ID="le_588" tokenIDs="t_588">@card@</lemma>
+      <lemma ID="le_589" tokenIDs="t_589">Mitglied</lemma>
+      <lemma ID="le_590" tokenIDs="t_590">d</lemma>
+      <lemma ID="le_591" tokenIDs="t_591">Berliner</lemma>
+      <lemma ID="le_592" tokenIDs="t_592">Akademie</lemma>
+      <lemma ID="le_593" tokenIDs="t_593">d</lemma>
+      <lemma ID="le_594" tokenIDs="t_594">Wissenschaft</lemma>
+      <lemma ID="le_595" tokenIDs="t_595">.</lemma>
+      <lemma ID="le_596" tokenIDs="t_596">seit</lemma>
+      <lemma ID="le_597" tokenIDs="t_597">@card@</lemma>
+      <lemma ID="le_598" tokenIDs="t_598">sein</lemma>
+      <lemma ID="le_599" tokenIDs="t_599">er</lemma>
+      <lemma ID="le_600" tokenIDs="t_600">Beisitzer</lemma>
+      <lemma ID="le_601" tokenIDs="t_601">im</lemma>
+      <lemma ID="le_602" tokenIDs="t_602">Vorstand</lemma>
+      <lemma ID="le_603" tokenIDs="t_603">d</lemma>
+      <lemma ID="le_604" tokenIDs="t_604">deutsch</lemma>
+      <lemma ID="le_605" tokenIDs="t_605">physikalisch</lemma>
+      <lemma ID="le_606" tokenIDs="t_606">Gesellschaft</lemma>
+      <lemma ID="le_607" tokenIDs="t_607">.</lemma>
+      <lemma ID="le_608" tokenIDs="t_608">zu</lemma>
+      <lemma ID="le_609" tokenIDs="t_609">sein</lemma>
+      <lemma ID="le_610" tokenIDs="t_610">Doktorand</lemma>
+      <lemma ID="le_611" tokenIDs="t_611">zählen</lemma>
+      <lemma ID="le_612" tokenIDs="t_612">Otto</lemma>
+      <lemma ID="le_613" tokenIDs="t_613">&lt;unknown&gt;</lemma>
+      <lemma ID="le_614" tokenIDs="t_614">,</lemma>
+      <lemma ID="le_615" tokenIDs="t_615">d</lemma>
+      <lemma ID="le_616" tokenIDs="t_616">auch</lemma>
+      <lemma ID="le_617" tokenIDs="t_617">Assistent</lemma>
+      <lemma ID="le_618" tokenIDs="t_618">bei</lemma>
+      <lemma ID="le_619" tokenIDs="t_619">er</lemma>
+      <lemma ID="le_620" tokenIDs="t_620">an</lemma>
+      <lemma ID="le_621" tokenIDs="t_621">d</lemma>
+      <lemma ID="le_622" tokenIDs="t_622">TH</lemma>
+      <lemma ID="le_623" tokenIDs="t_623">Berlin</lemma>
+      <lemma ID="le_624" tokenIDs="t_624">sein</lemma>
+      <lemma ID="le_625" tokenIDs="t_625">.</lemma>
+      <lemma ID="le_626" tokenIDs="t_626">d</lemma>
+      <lemma ID="le_627" tokenIDs="t_627">&lt;unknown&gt;</lemma>
+      <lemma ID="le_628" tokenIDs="t_628">in</lemma>
+      <lemma ID="le_629" tokenIDs="t_629">&lt;unknown&gt;</lemma>
+      <lemma ID="le_630" tokenIDs="t_630">sein</lemma>
+      <lemma ID="le_631" tokenIDs="t_631">nach</lemma>
+      <lemma ID="le_632" tokenIDs="t_632">er</lemma>
+      <lemma ID="le_633" tokenIDs="t_633">benennen</lemma>
+      <lemma ID="le_634" tokenIDs="t_634">,</lemma>
+      <lemma ID="le_635" tokenIDs="t_635">ebenso</lemma>
+      <lemma ID="le_636" tokenIDs="t_636">wie</lemma>
+      <lemma ID="le_637" tokenIDs="t_637">ein</lemma>
+      <lemma ID="le_638" tokenIDs="t_638">Grundschule</lemma>
+      <lemma ID="le_639" tokenIDs="t_639">und</lemma>
+      <lemma ID="le_640" tokenIDs="t_640">ein</lemma>
+      <lemma ID="le_641" tokenIDs="t_641">Straße</lemma>
+      <lemma ID="le_642" tokenIDs="t_642">in</lemma>
+      <lemma ID="le_643" tokenIDs="t_643">sein</lemma>
+      <lemma ID="le_644" tokenIDs="t_644">Geburtsort</lemma>
+      <lemma ID="le_645" tokenIDs="t_645">Neustadt</lemma>
+      <lemma ID="le_646" tokenIDs="t_646">an</lemma>
+      <lemma ID="le_647" tokenIDs="t_647">d</lemma>
+      <lemma ID="le_648" tokenIDs="t_648">Weinstraße</lemma>
+      <lemma ID="le_649" tokenIDs="t_649">.</lemma>
+    </lemmas>
+    <namedEntities type="CoNLL2002">
+      <entity ID="ne_0" class="PER" tokenIDs="t_0"></entity>
+      <entity ID="ne_1" class="LOC" tokenIDs="t_8"></entity>
+      <entity ID="ne_2" class="LOC" tokenIDs="t_17"></entity>
+      <entity ID="ne_3" class="ORG" tokenIDs="t_39 t_40"></entity>
+      <entity ID="ne_4" class="LOC" tokenIDs="t_53"></entity>
+      <entity ID="ne_5" class="PER" tokenIDs="t_55 t_56"></entity>
+      <entity ID="ne_6" class="PER" tokenIDs="t_79 t_80"></entity>
+      <entity ID="ne_7" class="LOC" tokenIDs="t_82"></entity>
+      <entity ID="ne_8" class="PER" tokenIDs="t_92 t_93"></entity>
+      <entity ID="ne_9" class="PER" tokenIDs="t_114"></entity>
+      <entity ID="ne_10" class="PER" tokenIDs="t_119 t_120"></entity>
+      <entity ID="ne_11" class="LOC" tokenIDs="t_127"></entity>
+      <entity ID="ne_12" class="PER" tokenIDs="t_130"></entity>
+      <entity ID="ne_13" class="PER" tokenIDs="t_146 t_147"></entity>
+      <entity ID="ne_14" class="PER" tokenIDs="t_152"></entity>
+      <entity ID="ne_15" class="LOC" tokenIDs="t_155"></entity>
+      <entity ID="ne_16" class="ORG" tokenIDs="t_157 t_158"></entity>
+      <entity ID="ne_17" class="LOC" tokenIDs="t_160"></entity>
+      <entity ID="ne_18" class="PER" tokenIDs="t_171 t_172"></entity>
+      <entity ID="ne_19" class="LOC" tokenIDs="t_178"></entity>
+      <entity ID="ne_20" class="MISC" tokenIDs="t_192 t_193"></entity>
+      <entity ID="ne_21" class="PER" tokenIDs="t_198 t_199"></entity>
+      <entity ID="ne_22" class="MISC" tokenIDs="t_203 t_204"></entity>
+      <entity ID="ne_23" class="LOC" tokenIDs="t_215"></entity>
+      <entity ID="ne_24" class="PER" tokenIDs="t_220"></entity>
+      <entity ID="ne_25" class="ORG" tokenIDs="t_226 t_227"></entity>
+      <entity ID="ne_26" class="PER" tokenIDs="t_233"></entity>
+      <entity ID="ne_27" class="PER" tokenIDs="t_252"></entity>
+      <entity ID="ne_28" class="PER" tokenIDs="t_290 t_291"></entity>
+      <entity ID="ne_29" class="PER" tokenIDs="t_300 t_301"></entity>
+      <entity ID="ne_30" class="PER" tokenIDs="t_324"></entity>
+      <entity ID="ne_31" class="ORG" tokenIDs="t_327 t_328 t_329 t_330"></entity>
+      <entity ID="ne_32" class="ORG" tokenIDs="t_337"></entity>
+      <entity ID="ne_33" class="ORG" tokenIDs="t_340 t_341 t_342"></entity>
+      <entity ID="ne_34" class="PER" tokenIDs="t_353 t_354"></entity>
+      <entity ID="ne_35" class="PER" tokenIDs="t_365"></entity>
+      <entity ID="ne_36" class="PER" tokenIDs="t_369 t_370 t_371"></entity>
+      <entity ID="ne_37" class="PER" tokenIDs="t_387"></entity>
+      <entity ID="ne_38" class="PER" tokenIDs="t_461 t_462"></entity>
+      <entity ID="ne_39" class="LOC" tokenIDs="t_476"></entity>
+      <entity ID="ne_40" class="LOC" tokenIDs="t_488"></entity>
+      <entity ID="ne_41" class="PER" tokenIDs="t_511 t_512"></entity>
+      <entity ID="ne_42" class="LOC" tokenIDs="t_518"></entity>
+      <entity ID="ne_43" class="LOC" tokenIDs="t_529"></entity>
+      <entity ID="ne_44" class="LOC" tokenIDs="t_536"></entity>
+      <entity ID="ne_45" class="ORG" tokenIDs="t_562 t_563 t_564"></entity>
+      <entity ID="ne_46" class="PER" tokenIDs="t_568"></entity>
+      <entity ID="ne_47" class="LOC" tokenIDs="t_573"></entity>
+      <entity ID="ne_48" class="ORG" tokenIDs="t_604 t_605 t_606"></entity>
+      <entity ID="ne_49" class="PER" tokenIDs="t_612 t_613"></entity>
+      <entity ID="ne_50" class="ORG" tokenIDs="t_622 t_623"></entity>
+      <entity ID="ne_51" class="LOC" tokenIDs="t_629"></entity>
+      <entity ID="ne_52" class="LOC" tokenIDs="t_648"></entity>
+    </namedEntities>
+  </TextCorpus>
+</D-Spin>

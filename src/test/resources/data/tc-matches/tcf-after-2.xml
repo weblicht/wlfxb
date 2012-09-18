@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns4:D-Spin xmlns="http://www.dspin.de/data/metadata"
+	xmlns:ns2="http://www.dspin.de/data/textcorpus" xmlns:ns3="http://www.dspin.de/data/lexicon"
+	xmlns:ns4="http://www.dspin.de/data" version="0.4">
+	<MetaData />
+	<ns2:TextCorpus lang="de">
+		<ns2:text>p . 121&amp;#x2013;124. ( Die Variations-Beobachtungen von
+			1846 und 1851 sind als Fortsetzung der in No . 1 bezeichneten von
+			1840&amp;#x2013;1845 zu betrachten . Auch Sir Alexander Burnes rühmt
+			in Bokhara , als Folge der Reinheit des Himmels : &quot; das
+			entzückende , immer wiederkehrende Schauspiel der vielen farbigen
+			Sternschnuppen &quot; . Frau Otti Gisbert reiste nach Worms zur
+			Hochzeit ihrer jüngsten Schwester . Der Kaspar Peter ward zu
+			Wildisbuch bewacht , bis sein Zustand den Transport nach Zürich
+			erlaubte , wohin auch der ewiggeliebte Jakob aus Illnau als
+			Gefangener kam . Maurice Dengremont trat in Stockholm nur dieses eine
+			Mal auf . Don Alonso Gomez stammte aus Mexiko . Pan Andreas drückte
+			auf Alexandras Hand einen langen Kuß , und die Panna , um nicht
+			unliebenswürdig zu scheinen , sträubte sich nicht . Karl VIII. zog in
+			Florenz ein . Karl VIII. zog in Florenz ein . Pietro Aretino , von
+			Tizian Cesare kehrte nach Rom zurück , denn er brauchte Geld , Geld
+			und wieder Geld für seine Kriegsfahrten .</ns2:text>
+		<ns2:tokens>
+			<ns2:token ID="t_0">p</ns2:token>
+			<ns2:token ID="t_1">. 121&amp;#x2013;124.</ns2:token>
+			<ns2:token ID="t_2">(</ns2:token>
+			<ns2:token ID="t_3">Die</ns2:token>
+			<ns2:token ID="t_4">Variations-Beobachtungen</ns2:token>
+			<ns2:token ID="t_5">von</ns2:token>
+			<ns2:token ID="t_6">1846</ns2:token>
+			<ns2:token ID="t_7">und</ns2:token>
+			<ns2:token ID="t_8">1851</ns2:token>
+			<ns2:token ID="t_9">sind</ns2:token>
+			<ns2:token ID="t_10">als</ns2:token>
+			<ns2:token ID="t_11">Fortsetzung</ns2:token>
+			<ns2:token ID="t_12">der</ns2:token>
+			<ns2:token ID="t_13">in</ns2:token>
+			<ns2:token ID="t_14">No</ns2:token>
+			<ns2:token ID="t_15">. 1</ns2:token>
+			<ns2:token ID="t_16">bezeichneten</ns2:token>
+			<ns2:token ID="t_17">von</ns2:token>
+			<ns2:token ID="t_18">1840&amp;#x2013;1845</ns2:token>
+			<ns2:token ID="t_19">zu</ns2:token>
+			<ns2:token ID="t_20">betrachten</ns2:token>
+			<ns2:token ID="t_21">.</ns2:token>
+			<ns2:token ID="t_22">Auch</ns2:token>
+			<ns2:token ID="t_23">Sir</ns2:token>
+			<ns2:token ID="t_24">Alexander</ns2:token>
+			<ns2:token ID="t_25">Burnes</ns2:token>
+			<ns2:token ID="t_26">rühmt</ns2:token>
+			<ns2:token ID="t_27">in</ns2:token>
+			<ns2:token ID="t_28">Bokhara</ns2:token>
+			<ns2:token ID="t_29">,</ns2:token>
+			<ns2:token ID="t_30">als</ns2:token>
+			<ns2:token ID="t_31">Folge</ns2:token>
+			<ns2:token ID="t_32">der</ns2:token>
+			<ns2:token ID="t_33">Reinheit</ns2:token>
+			<ns2:token ID="t_34">des</ns2:token>
+			<ns2:token ID="t_35">Himmels</ns2:token>
+			<ns2:token ID="t_36">:</ns2:token>
+			<ns2:token ID="t_37">&quot;</ns2:token>
+			<ns2:token ID="t_38">das</ns2:token>
+			<ns2:token ID="t_39">entzückende</ns2:token>
+			<ns2:token ID="t_40">,</ns2:token>
+			<ns2:token ID="t_41">immer</ns2:token>
+			<ns2:token ID="t_42">wiederkehrende</ns2:token>
+			<ns2:token ID="t_43">Schauspiel</ns2:token>
+			<ns2:token ID="t_44">der</ns2:token>
+			<ns2:token ID="t_45">vielen</ns2:token>
+			<ns2:token ID="t_46">farbigen</ns2:token>
+			<ns2:token ID="t_47">Sternschnuppen</ns2:token>
+			<ns2:token ID="t_48">&quot;</ns2:token>
+			<ns2:token ID="t_49">.</ns2:token>
+			<ns2:token ID="t_50">Frau</ns2:token>
+			<ns2:token ID="t_51">Otti</ns2:token>
+			<ns2:token ID="t_52">Gisbert</ns2:token>
+			<ns2:token ID="t_53">reiste</ns2:token>
+			<ns2:token ID="t_54">nach</ns2:token>
+			<ns2:token ID="t_55">Worms</ns2:token>
+			<ns2:token ID="t_56">zur</ns2:token>
+			<ns2:token ID="t_57">Hochzeit</ns2:token>
+			<ns2:token ID="t_58">ihrer</ns2:token>
+			<ns2:token ID="t_59">jüngsten</ns2:token>
+			<ns2:token ID="t_60">Schwester</ns2:token>
+			<ns2:token ID="t_61">.</ns2:token>
+			<ns2:token ID="t_62">Der</ns2:token>
+			<ns2:token ID="t_63">Kaspar</ns2:token>
+			<ns2:token ID="t_64">Peter</ns2:token>
+			<ns2:token ID="t_65">ward</ns2:token>
+			<ns2:token ID="t_66">zu</ns2:token>
+			<ns2:token ID="t_67">Wildisbuch</ns2:token>
+			<ns2:token ID="t_68">bewacht</ns2:token>
+			<ns2:token ID="t_69">,</ns2:token>
+			<ns2:token ID="t_70">bis</ns2:token>
+			<ns2:token ID="t_71">sein</ns2:token>
+			<ns2:token ID="t_72">Zustand</ns2:token>
+			<ns2:token ID="t_73">den</ns2:token>
+			<ns2:token ID="t_74">Transport</ns2:token>
+			<ns2:token ID="t_75">nach</ns2:token>
+			<ns2:token ID="t_76">Zürich</ns2:token>
+			<ns2:token ID="t_77">erlaubte</ns2:token>
+			<ns2:token ID="t_78">,</ns2:token>
+			<ns2:token ID="t_79">wohin</ns2:token>
+			<ns2:token ID="t_80">auch</ns2:token>
+			<ns2:token ID="t_81">der</ns2:token>
+			<ns2:token ID="t_82">ewiggeliebte</ns2:token>
+			<ns2:token ID="t_83">Jakob</ns2:token>
+			<ns2:token ID="t_84">aus</ns2:token>
+			<ns2:token ID="t_85">Illnau</ns2:token>
+			<ns2:token ID="t_86">als</ns2:token>
+			<ns2:token ID="t_87">Gefangener</ns2:token>
+			<ns2:token ID="t_88">kam</ns2:token>
+			<ns2:token ID="t_89">.</ns2:token>
+			<ns2:token ID="t_90">Maurice</ns2:token>
+			<ns2:token ID="t_91">Dengremont</ns2:token>
+			<ns2:token ID="t_92">trat</ns2:token>
+			<ns2:token ID="t_93">in</ns2:token>
+			<ns2:token ID="t_94">Stockholm</ns2:token>
+			<ns2:token ID="t_95">nur</ns2:token>
+			<ns2:token ID="t_96">dieses</ns2:token>
+			<ns2:token ID="t_97">eine</ns2:token>
+			<ns2:token ID="t_98">Mal</ns2:token>
+			<ns2:token ID="t_99">auf</ns2:token>
+			<ns2:token ID="t_100">.</ns2:token>
+			<ns2:token ID="t_101">Don</ns2:token>
+			<ns2:token ID="t_102">Alonso</ns2:token>
+			<ns2:token ID="t_103">Gomez</ns2:token>
+			<ns2:token ID="t_104">stammte</ns2:token>
+			<ns2:token ID="t_105">aus</ns2:token>
+			<ns2:token ID="t_106">Mexiko</ns2:token>
+			<ns2:token ID="t_107">.</ns2:token>
+			<ns2:token ID="t_108">Pan</ns2:token>
+			<ns2:token ID="t_109">Andreas</ns2:token>
+			<ns2:token ID="t_110">drückte</ns2:token>
+			<ns2:token ID="t_111">auf</ns2:token>
+			<ns2:token ID="t_112">Alexandras</ns2:token>
+			<ns2:token ID="t_113">Hand</ns2:token>
+			<ns2:token ID="t_114">einen</ns2:token>
+			<ns2:token ID="t_115">langen</ns2:token>
+			<ns2:token ID="t_116">Kuß</ns2:token>
+			<ns2:token ID="t_117">,</ns2:token>
+			<ns2:token ID="t_118">und</ns2:token>
+			<ns2:token ID="t_119">die</ns2:token>
+			<ns2:token ID="t_120">Panna</ns2:token>
+			<ns2:token ID="t_121">,</ns2:token>
+			<ns2:token ID="t_122">um</ns2:token>
+			<ns2:token ID="t_123">nicht</ns2:token>
+			<ns2:token ID="t_124">unliebenswürdig</ns2:token>
+			<ns2:token ID="t_125">zu</ns2:token>
+			<ns2:token ID="t_126">scheinen</ns2:token>
+			<ns2:token ID="t_127">,</ns2:token>
+			<ns2:token ID="t_128">sträubte</ns2:token>
+			<ns2:token ID="t_129">sich</ns2:token>
+			<ns2:token ID="t_130">nicht</ns2:token>
+			<ns2:token ID="t_131">.</ns2:token>
+			<ns2:token ID="t_132">Karl</ns2:token>
+			<ns2:token ID="t_133">VIII.</ns2:token>
+			<ns2:token ID="t_134">zog</ns2:token>
+			<ns2:token ID="t_135">in</ns2:token>
+			<ns2:token ID="t_136">Florenz</ns2:token>
+			<ns2:token ID="t_137">ein</ns2:token>
+			<ns2:token ID="t_138">.</ns2:token>
+			<ns2:token ID="t_139">Karl</ns2:token>
+			<ns2:token ID="t_140">VIII.</ns2:token>
+			<ns2:token ID="t_141">zog</ns2:token>
+			<ns2:token ID="t_142">in</ns2:token>
+			<ns2:token ID="t_143">Florenz</ns2:token>
+			<ns2:token ID="t_144">ein</ns2:token>
+			<ns2:token ID="t_145">.</ns2:token>
+			<ns2:token ID="t_146">Pietro</ns2:token>
+			<ns2:token ID="t_147">Aretino</ns2:token>
+			<ns2:token ID="t_148">,</ns2:token>
+			<ns2:token ID="t_149">von</ns2:token>
+			<ns2:token ID="t_150">Tizian</ns2:token>
+			<ns2:token ID="t_151">Cesare</ns2:token>
+			<ns2:token ID="t_152">kehrte</ns2:token>
+			<ns2:token ID="t_153">nach</ns2:token>
+			<ns2:token ID="t_154">Rom</ns2:token>
+			<ns2:token ID="t_155">zurück</ns2:token>
+			<ns2:token ID="t_156">,</ns2:token>
+			<ns2:token ID="t_157">denn</ns2:token>
+			<ns2:token ID="t_158">er</ns2:token>
+			<ns2:token ID="t_159">brauchte</ns2:token>
+			<ns2:token ID="t_160">Geld</ns2:token>
+			<ns2:token ID="t_161">,</ns2:token>
+			<ns2:token ID="t_162">Geld</ns2:token>
+			<ns2:token ID="t_163">und</ns2:token>
+			<ns2:token ID="t_164">wieder</ns2:token>
+			<ns2:token ID="t_165">Geld</ns2:token>
+			<ns2:token ID="t_166">für</ns2:token>
+			<ns2:token ID="t_167">seine</ns2:token>
+			<ns2:token ID="t_168">Kriegsfahrten</ns2:token>
+			<ns2:token ID="t_169">.</ns2:token>
+		</ns2:tokens>
+		<ns2:sentences>
+			<ns2:sentence
+				tokenIDs="t_0 t_1 t_2 t_3 t_4 t_5 t_6 t_7 t_8 t_9 t_10 t_11 t_12 t_13 t_14 t_15 t_16 t_17 t_18 t_19 t_20 t_21" />
+			<ns2:sentence
+				tokenIDs="t_22 t_23 t_24 t_25 t_26 t_27 t_28 t_29 t_30 t_31 t_32 t_33 t_34 t_35 t_36 t_37 t_38 t_39 t_40 t_41 t_42 t_43 t_44 t_45 t_46 t_47 t_48 t_49" />
+			<ns2:sentence
+				tokenIDs="t_50 t_51 t_52 t_53 t_54 t_55 t_56 t_57 t_58 t_59 t_60 t_61" />
+			<ns2:sentence
+				tokenIDs="t_62 t_63 t_64 t_65 t_66 t_67 t_68 t_69 t_70 t_71 t_72 t_73 t_74 t_75 t_76 t_77 t_78 t_79 t_80 t_81 t_82 t_83 t_84 t_85 t_86 t_87 t_88 t_89" />
+			<ns2:sentence
+				tokenIDs="t_90 t_91 t_92 t_93 t_94 t_95 t_96 t_97 t_98 t_99 t_100" />
+			<ns2:sentence tokenIDs="t_101 t_102 t_103 t_104 t_105 t_106 t_107" />
+			<ns2:sentence
+				tokenIDs="t_108 t_109 t_110 t_111 t_112 t_113 t_114 t_115 t_116 t_117 t_118 t_119 t_120 t_121 t_122 t_123 t_124 t_125 t_126 t_127 t_128 t_129 t_130 t_131" />
+			<ns2:sentence tokenIDs="t_132 t_133 t_134 t_135 t_136 t_137 t_138" />
+			<ns2:sentence tokenIDs="t_139 t_140 t_141 t_142 t_143 t_144 t_145" />
+			<ns2:sentence
+				tokenIDs="t_146 t_147 t_148 t_149 t_150 t_151 t_152 t_153 t_154 t_155 t_156 t_157 t_158 t_159 t_160 t_161 t_162 t_163 t_164 t_165 t_166 t_167 t_168 t_169" />
+		</ns2:sentences>
+		<ns2:lemmas>
+			<ns2:lemma tokenIDs="t_0" ID="l_0">p</ns2:lemma>
+			<ns2:lemma tokenIDs="t_1" ID="l_1">. 121?124.</ns2:lemma>
+			<ns2:lemma tokenIDs="t_2" ID="l_2">(</ns2:lemma>
+			<ns2:lemma tokenIDs="t_3" ID="l_3">die</ns2:lemma>
+			<ns2:lemma tokenIDs="t_4" ID="l_4">Variations-Beobachtung
+			</ns2:lemma>
+			<ns2:lemma tokenIDs="t_5" ID="l_5">von</ns2:lemma>
+			<ns2:lemma tokenIDs="t_6" ID="l_6">@card@</ns2:lemma>
+			<ns2:lemma tokenIDs="t_7" ID="l_7">und</ns2:lemma>
+			<ns2:lemma tokenIDs="t_8" ID="l_8">@card@</ns2:lemma>
+			<ns2:lemma tokenIDs="t_9" ID="l_9">sein</ns2:lemma>
+			<ns2:lemma tokenIDs="t_10" ID="l_10">als</ns2:lemma>
+			<ns2:lemma tokenIDs="t_11" ID="l_11">Fortsetzung</ns2:lemma>
+			<ns2:lemma tokenIDs="t_12" ID="l_12">die</ns2:lemma>
+			<ns2:lemma tokenIDs="t_13" ID="l_13">in</ns2:lemma>
+			<ns2:lemma tokenIDs="t_14" ID="l_14">$unknown$</ns2:lemma>
+			<ns2:lemma tokenIDs="t_15" ID="l_15">. 1</ns2:lemma>
+			<ns2:lemma tokenIDs="t_16" ID="l_16">bezeichnen</ns2:lemma>
+			<ns2:lemma tokenIDs="t_17" ID="l_17">von</ns2:lemma>
+			<ns2:lemma tokenIDs="t_18" ID="l_18">1840?1845</ns2:lemma>
+			<ns2:lemma tokenIDs="t_19" ID="l_19">zu</ns2:lemma>
+			<ns2:lemma tokenIDs="t_20" ID="l_20">betrachten</ns2:lemma>
+			<ns2:lemma tokenIDs="t_21" ID="l_21">.</ns2:lemma>
+			<ns2:lemma tokenIDs="t_22" ID="l_22">auch</ns2:lemma>
+			<ns2:lemma tokenIDs="t_23" ID="l_23">Sir</ns2:lemma>
+			<ns2:lemma tokenIDs="t_24" ID="l_24">Alexander</ns2:lemma>
+			<ns2:lemma tokenIDs="t_25" ID="l_25">$unknown$</ns2:lemma>
+			<ns2:lemma tokenIDs="t_26" ID="l_26">rühmen</ns2:lemma>
+			<ns2:lemma tokenIDs="t_27" ID="l_27">in</ns2:lemma>
+			<ns2:lemma tokenIDs="t_28" ID="l_28">$unknown$</ns2:lemma>
+			<ns2:lemma tokenIDs="t_29" ID="l_29">,</ns2:lemma>
+			<ns2:lemma tokenIDs="t_30" ID="l_30">als</ns2:lemma>
+			<ns2:lemma tokenIDs="t_31" ID="l_31">Folge</ns2:lemma>
+			<ns2:lemma tokenIDs="t_32" ID="l_32">die</ns2:lemma>
+			<ns2:lemma tokenIDs="t_33" ID="l_33">Reinheit</ns2:lemma>
+			<ns2:lemma tokenIDs="t_34" ID="l_34">die</ns2:lemma>
+			<ns2:lemma tokenIDs="t_35" ID="l_35">Himmel</ns2:lemma>
+			<ns2:lemma tokenIDs="t_36" ID="l_36">:</ns2:lemma>
+			<ns2:lemma tokenIDs="t_37" ID="l_37">&quot;</ns2:lemma>
+			<ns2:lemma tokenIDs="t_38" ID="l_38">die</ns2:lemma>
+			<ns2:lemma tokenIDs="t_39" ID="l_39">entzückend</ns2:lemma>
+			<ns2:lemma tokenIDs="t_40" ID="l_40">,</ns2:lemma>
+			<ns2:lemma tokenIDs="t_41" ID="l_41">immer</ns2:lemma>
+			<ns2:lemma tokenIDs="t_42" ID="l_42">wiederkehrend</ns2:lemma>
+			<ns2:lemma tokenIDs="t_43" ID="l_43">Schauspiel</ns2:lemma>
+			<ns2:lemma tokenIDs="t_44" ID="l_44">die</ns2:lemma>
+			<ns2:lemma tokenIDs="t_45" ID="l_45">viele</ns2:lemma>
+			<ns2:lemma tokenIDs="t_46" ID="l_46">farbig</ns2:lemma>
+			<ns2:lemma tokenIDs="t_47" ID="l_47">Sternschnuppe</ns2:lemma>
+			<ns2:lemma tokenIDs="t_48" ID="l_48">&quot;</ns2:lemma>
+			<ns2:lemma tokenIDs="t_49" ID="l_49">.</ns2:lemma>
+			<ns2:lemma tokenIDs="t_50" ID="l_50">Frau</ns2:lemma>
+			<ns2:lemma tokenIDs="t_51" ID="l_51">Otti</ns2:lemma>
+			<ns2:lemma tokenIDs="t_52" ID="l_52">Gisbert</ns2:lemma>
+			<ns2:lemma tokenIDs="t_53" ID="l_53">reisen</ns2:lemma>
+			<ns2:lemma tokenIDs="t_54" ID="l_54">nach</ns2:lemma>
+			<ns2:lemma tokenIDs="t_55" ID="l_55">Worms</ns2:lemma>
+			<ns2:lemma tokenIDs="t_56" ID="l_56">zur</ns2:lemma>
+			<ns2:lemma tokenIDs="t_57" ID="l_57">Hochzeit</ns2:lemma>
+			<ns2:lemma tokenIDs="t_58" ID="l_58">ihr</ns2:lemma>
+			<ns2:lemma tokenIDs="t_59" ID="l_59">jung</ns2:lemma>
+			<ns2:lemma tokenIDs="t_60" ID="l_60">Schwester</ns2:lemma>
+			<ns2:lemma tokenIDs="t_61" ID="l_61">.</ns2:lemma>
+			<ns2:lemma tokenIDs="t_62" ID="l_62">die</ns2:lemma>
+			<ns2:lemma tokenIDs="t_63" ID="l_63">Kaspar</ns2:lemma>
+			<ns2:lemma tokenIDs="t_64" ID="l_64">Peter</ns2:lemma>
+			<ns2:lemma tokenIDs="t_65" ID="l_65">werd</ns2:lemma>
+			<ns2:lemma tokenIDs="t_66" ID="l_66">zu</ns2:lemma>
+			<ns2:lemma tokenIDs="t_67" ID="l_67">$unknown$</ns2:lemma>
+			<ns2:lemma tokenIDs="t_68" ID="l_68">bewachen</ns2:lemma>
+			<ns2:lemma tokenIDs="t_69" ID="l_69">,</ns2:lemma>
+			<ns2:lemma tokenIDs="t_70" ID="l_70">bis</ns2:lemma>
+			<ns2:lemma tokenIDs="t_71" ID="l_71">sein</ns2:lemma>
+			<ns2:lemma tokenIDs="t_72" ID="l_72">Zustand</ns2:lemma>
+			<ns2:lemma tokenIDs="t_73" ID="l_73">die</ns2:lemma>
+			<ns2:lemma tokenIDs="t_74" ID="l_74">Transport</ns2:lemma>
+			<ns2:lemma tokenIDs="t_75" ID="l_75">nach</ns2:lemma>
+			<ns2:lemma tokenIDs="t_76" ID="l_76">Zürich</ns2:lemma>
+			<ns2:lemma tokenIDs="t_77" ID="l_77">erlauben</ns2:lemma>
+			<ns2:lemma tokenIDs="t_78" ID="l_78">,</ns2:lemma>
+			<ns2:lemma tokenIDs="t_79" ID="l_79">wohin</ns2:lemma>
+			<ns2:lemma tokenIDs="t_80" ID="l_80">auch</ns2:lemma>
+			<ns2:lemma tokenIDs="t_81" ID="l_81">die</ns2:lemma>
+			<ns2:lemma tokenIDs="t_82" ID="l_82">ewiggeliebt</ns2:lemma>
+			<ns2:lemma tokenIDs="t_83" ID="l_83">Jakob</ns2:lemma>
+			<ns2:lemma tokenIDs="t_84" ID="l_84">aus</ns2:lemma>
+			<ns2:lemma tokenIDs="t_85" ID="l_85">$unknown$</ns2:lemma>
+			<ns2:lemma tokenIDs="t_86" ID="l_86">als</ns2:lemma>
+			<ns2:lemma tokenIDs="t_87" ID="l_87">Gefangene</ns2:lemma>
+			<ns2:lemma tokenIDs="t_88" ID="l_88">kommen</ns2:lemma>
+			<ns2:lemma tokenIDs="t_89" ID="l_89">.</ns2:lemma>
+			<ns2:lemma tokenIDs="t_90" ID="l_90">Maurice</ns2:lemma>
+			<ns2:lemma tokenIDs="t_91" ID="l_91">$unknown$</ns2:lemma>
+			<ns2:lemma tokenIDs="t_92" ID="l_92">treten</ns2:lemma>
+			<ns2:lemma tokenIDs="t_93" ID="l_93">in</ns2:lemma>
+			<ns2:lemma tokenIDs="t_94" ID="l_94">Stockholm</ns2:lemma>
+			<ns2:lemma tokenIDs="t_95" ID="l_95">nur</ns2:lemma>
+			<ns2:lemma tokenIDs="t_96" ID="l_96">diese</ns2:lemma>
+			<ns2:lemma tokenIDs="t_97" ID="l_97">eine</ns2:lemma>
+			<ns2:lemma tokenIDs="t_98" ID="l_98">Mal</ns2:lemma>
+			<ns2:lemma tokenIDs="t_99" ID="l_99">auf</ns2:lemma>
+			<ns2:lemma tokenIDs="t_100" ID="l_100">.</ns2:lemma>
+			<ns2:lemma tokenIDs="t_101" ID="l_101">Don</ns2:lemma>
+			<ns2:lemma tokenIDs="t_102" ID="l_102">$unknown$</ns2:lemma>
+			<ns2:lemma tokenIDs="t_103" ID="l_103">Gomez</ns2:lemma>
+			<ns2:lemma tokenIDs="t_104" ID="l_104">stammen</ns2:lemma>
+			<ns2:lemma tokenIDs="t_105" ID="l_105">aus</ns2:lemma>
+			<ns2:lemma tokenIDs="t_106" ID="l_106">Mexiko</ns2:lemma>
+			<ns2:lemma tokenIDs="t_107" ID="l_107">.</ns2:lemma>
+			<ns2:lemma tokenIDs="t_108" ID="l_108">Pan</ns2:lemma>
+			<ns2:lemma tokenIDs="t_109" ID="l_109">Andrea|Andreas</ns2:lemma>
+			<ns2:lemma tokenIDs="t_110" ID="l_110">drücken</ns2:lemma>
+			<ns2:lemma tokenIDs="t_111" ID="l_111">auf</ns2:lemma>
+			<ns2:lemma tokenIDs="t_112" ID="l_112">Alexandra</ns2:lemma>
+			<ns2:lemma tokenIDs="t_113" ID="l_113">Hand</ns2:lemma>
+			<ns2:lemma tokenIDs="t_114" ID="l_114">eine</ns2:lemma>
+			<ns2:lemma tokenIDs="t_115" ID="l_115">lang</ns2:lemma>
+			<ns2:lemma tokenIDs="t_116" ID="l_116">Kuß</ns2:lemma>
+			<ns2:lemma tokenIDs="t_117" ID="l_117">,</ns2:lemma>
+			<ns2:lemma tokenIDs="t_118" ID="l_118">und</ns2:lemma>
+			<ns2:lemma tokenIDs="t_119" ID="l_119">die</ns2:lemma>
+			<ns2:lemma tokenIDs="t_120" ID="l_120">$unknown$</ns2:lemma>
+			<ns2:lemma tokenIDs="t_121" ID="l_121">,</ns2:lemma>
+			<ns2:lemma tokenIDs="t_122" ID="l_122">um</ns2:lemma>
+			<ns2:lemma tokenIDs="t_123" ID="l_123">nicht</ns2:lemma>
+			<ns2:lemma tokenIDs="t_124" ID="l_124">unliebenswürdig</ns2:lemma>
+			<ns2:lemma tokenIDs="t_125" ID="l_125">zu</ns2:lemma>
+			<ns2:lemma tokenIDs="t_126" ID="l_126">scheinen</ns2:lemma>
+			<ns2:lemma tokenIDs="t_127" ID="l_127">,</ns2:lemma>
+			<ns2:lemma tokenIDs="t_128" ID="l_128">sträuben</ns2:lemma>
+			<ns2:lemma tokenIDs="t_129" ID="l_129">sich</ns2:lemma>
+			<ns2:lemma tokenIDs="t_130" ID="l_130">nicht</ns2:lemma>
+			<ns2:lemma tokenIDs="t_131" ID="l_131">.</ns2:lemma>
+			<ns2:lemma tokenIDs="t_132" ID="l_132">Karl</ns2:lemma>
+			<ns2:lemma tokenIDs="t_133" ID="l_133">VIII.</ns2:lemma>
+			<ns2:lemma tokenIDs="t_134" ID="l_134">ziehen</ns2:lemma>
+			<ns2:lemma tokenIDs="t_135" ID="l_135">in</ns2:lemma>
+			<ns2:lemma tokenIDs="t_136" ID="l_136">Florenz</ns2:lemma>
+			<ns2:lemma tokenIDs="t_137" ID="l_137">ein</ns2:lemma>
+			<ns2:lemma tokenIDs="t_138" ID="l_138">.</ns2:lemma>
+			<ns2:lemma tokenIDs="t_139" ID="l_139">Karl</ns2:lemma>
+			<ns2:lemma tokenIDs="t_140" ID="l_140">VIII.</ns2:lemma>
+			<ns2:lemma tokenIDs="t_141" ID="l_141">ziehen</ns2:lemma>
+			<ns2:lemma tokenIDs="t_142" ID="l_142">in</ns2:lemma>
+			<ns2:lemma tokenIDs="t_143" ID="l_143">Florenz</ns2:lemma>
+			<ns2:lemma tokenIDs="t_144" ID="l_144">ein</ns2:lemma>
+			<ns2:lemma tokenIDs="t_145" ID="l_145">.</ns2:lemma>
+			<ns2:lemma tokenIDs="t_146" ID="l_146">Pietro</ns2:lemma>
+			<ns2:lemma tokenIDs="t_147" ID="l_147">$unknown$</ns2:lemma>
+			<ns2:lemma tokenIDs="t_148" ID="l_148">,</ns2:lemma>
+			<ns2:lemma tokenIDs="t_149" ID="l_149">von</ns2:lemma>
+			<ns2:lemma tokenIDs="t_150" ID="l_150">Tizian</ns2:lemma>
+			<ns2:lemma tokenIDs="t_151" ID="l_151">Cesare</ns2:lemma>
+			<ns2:lemma tokenIDs="t_152" ID="l_152">kehren</ns2:lemma>
+			<ns2:lemma tokenIDs="t_153" ID="l_153">nach</ns2:lemma>
+			<ns2:lemma tokenIDs="t_154" ID="l_154">Rom</ns2:lemma>
+			<ns2:lemma tokenIDs="t_155" ID="l_155">zurück</ns2:lemma>
+			<ns2:lemma tokenIDs="t_156" ID="l_156">,</ns2:lemma>
+			<ns2:lemma tokenIDs="t_157" ID="l_157">denn</ns2:lemma>
+			<ns2:lemma tokenIDs="t_158" ID="l_158">er</ns2:lemma>
+			<ns2:lemma tokenIDs="t_159" ID="l_159">brauchen</ns2:lemma>
+			<ns2:lemma tokenIDs="t_160" ID="l_160">Geld</ns2:lemma>
+			<ns2:lemma tokenIDs="t_161" ID="l_161">,</ns2:lemma>
+			<ns2:lemma tokenIDs="t_162" ID="l_162">Geld</ns2:lemma>
+			<ns2:lemma tokenIDs="t_163" ID="l_163">und</ns2:lemma>
+			<ns2:lemma tokenIDs="t_164" ID="l_164">wieder</ns2:lemma>
+			<ns2:lemma tokenIDs="t_165" ID="l_165">Geld</ns2:lemma>
+			<ns2:lemma tokenIDs="t_166" ID="l_166">für</ns2:lemma>
+			<ns2:lemma tokenIDs="t_167" ID="l_167">sein</ns2:lemma>
+			<ns2:lemma tokenIDs="t_168" ID="l_168">Kriegsfahrt</ns2:lemma>
+			<ns2:lemma tokenIDs="t_169" ID="l_169">.</ns2:lemma>
+		</ns2:lemmas>
+		<ns2:POStags tagset="stts">
+			<ns2:tag tokenIDs="t_0">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_1">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_2">$(</ns2:tag>
+			<ns2:tag tokenIDs="t_3">ART</ns2:tag>
+			<ns2:tag tokenIDs="t_4">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_5">APPR</ns2:tag>
+			<ns2:tag tokenIDs="t_6">CARD</ns2:tag>
+			<ns2:tag tokenIDs="t_7">KON</ns2:tag>
+			<ns2:tag tokenIDs="t_8">CARD</ns2:tag>
+			<ns2:tag tokenIDs="t_9">VAFIN</ns2:tag>
+			<ns2:tag tokenIDs="t_10">KOKOM</ns2:tag>
+			<ns2:tag tokenIDs="t_11">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_12">ART</ns2:tag>
+			<ns2:tag tokenIDs="t_13">APPR</ns2:tag>
+			<ns2:tag tokenIDs="t_14">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_15">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_16">VVFIN</ns2:tag>
+			<ns2:tag tokenIDs="t_17">APPR</ns2:tag>
+			<ns2:tag tokenIDs="t_18">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_19">PTKZU</ns2:tag>
+			<ns2:tag tokenIDs="t_20">VVINF</ns2:tag>
+			<ns2:tag tokenIDs="t_21">$.</ns2:tag>
+			<ns2:tag tokenIDs="t_22">ADV</ns2:tag>
+			<ns2:tag tokenIDs="t_23">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_24">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_25">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_26">VVFIN</ns2:tag>
+			<ns2:tag tokenIDs="t_27">APPR</ns2:tag>
+			<ns2:tag tokenIDs="t_28">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_29">$,</ns2:tag>
+			<ns2:tag tokenIDs="t_30">KOKOM</ns2:tag>
+			<ns2:tag tokenIDs="t_31">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_32">ART</ns2:tag>
+			<ns2:tag tokenIDs="t_33">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_34">ART</ns2:tag>
+			<ns2:tag tokenIDs="t_35">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_36">$.</ns2:tag>
+			<ns2:tag tokenIDs="t_37">$(</ns2:tag>
+			<ns2:tag tokenIDs="t_38">ART</ns2:tag>
+			<ns2:tag tokenIDs="t_39">ADJA</ns2:tag>
+			<ns2:tag tokenIDs="t_40">$,</ns2:tag>
+			<ns2:tag tokenIDs="t_41">ADV</ns2:tag>
+			<ns2:tag tokenIDs="t_42">ADJA</ns2:tag>
+			<ns2:tag tokenIDs="t_43">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_44">ART</ns2:tag>
+			<ns2:tag tokenIDs="t_45">PIAT</ns2:tag>
+			<ns2:tag tokenIDs="t_46">ADJA</ns2:tag>
+			<ns2:tag tokenIDs="t_47">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_48">$(</ns2:tag>
+			<ns2:tag tokenIDs="t_49">$.</ns2:tag>
+			<ns2:tag tokenIDs="t_50">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_51">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_52">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_53">VVFIN</ns2:tag>
+			<ns2:tag tokenIDs="t_54">APPR</ns2:tag>
+			<ns2:tag tokenIDs="t_55">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_56">APPRART</ns2:tag>
+			<ns2:tag tokenIDs="t_57">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_58">PPOSAT</ns2:tag>
+			<ns2:tag tokenIDs="t_59">ADJA</ns2:tag>
+			<ns2:tag tokenIDs="t_60">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_61">$.</ns2:tag>
+			<ns2:tag tokenIDs="t_62">ART</ns2:tag>
+			<ns2:tag tokenIDs="t_63">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_64">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_65">VVFIN</ns2:tag>
+			<ns2:tag tokenIDs="t_66">APPR</ns2:tag>
+			<ns2:tag tokenIDs="t_67">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_68">VVPP</ns2:tag>
+			<ns2:tag tokenIDs="t_69">$,</ns2:tag>
+			<ns2:tag tokenIDs="t_70">KOUS</ns2:tag>
+			<ns2:tag tokenIDs="t_71">PPOSAT</ns2:tag>
+			<ns2:tag tokenIDs="t_72">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_73">ART</ns2:tag>
+			<ns2:tag tokenIDs="t_74">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_75">APPR</ns2:tag>
+			<ns2:tag tokenIDs="t_76">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_77">VVFIN</ns2:tag>
+			<ns2:tag tokenIDs="t_78">$,</ns2:tag>
+			<ns2:tag tokenIDs="t_79">PWAV</ns2:tag>
+			<ns2:tag tokenIDs="t_80">ADV</ns2:tag>
+			<ns2:tag tokenIDs="t_81">ART</ns2:tag>
+			<ns2:tag tokenIDs="t_82">ADJA</ns2:tag>
+			<ns2:tag tokenIDs="t_83">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_84">APPR</ns2:tag>
+			<ns2:tag tokenIDs="t_85">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_86">KOKOM</ns2:tag>
+			<ns2:tag tokenIDs="t_87">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_88">VVFIN</ns2:tag>
+			<ns2:tag tokenIDs="t_89">$.</ns2:tag>
+			<ns2:tag tokenIDs="t_90">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_91">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_92">VVFIN</ns2:tag>
+			<ns2:tag tokenIDs="t_93">APPR</ns2:tag>
+			<ns2:tag tokenIDs="t_94">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_95">ADV</ns2:tag>
+			<ns2:tag tokenIDs="t_96">PDAT</ns2:tag>
+			<ns2:tag tokenIDs="t_97">ART</ns2:tag>
+			<ns2:tag tokenIDs="t_98">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_99">PTKVZ</ns2:tag>
+			<ns2:tag tokenIDs="t_100">$.</ns2:tag>
+			<ns2:tag tokenIDs="t_101">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_102">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_103">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_104">VVFIN</ns2:tag>
+			<ns2:tag tokenIDs="t_105">APPR</ns2:tag>
+			<ns2:tag tokenIDs="t_106">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_107">$.</ns2:tag>
+			<ns2:tag tokenIDs="t_108">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_109">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_110">VVFIN</ns2:tag>
+			<ns2:tag tokenIDs="t_111">APPR</ns2:tag>
+			<ns2:tag tokenIDs="t_112">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_113">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_114">ART</ns2:tag>
+			<ns2:tag tokenIDs="t_115">ADJA</ns2:tag>
+			<ns2:tag tokenIDs="t_116">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_117">$,</ns2:tag>
+			<ns2:tag tokenIDs="t_118">KON</ns2:tag>
+			<ns2:tag tokenIDs="t_119">ART</ns2:tag>
+			<ns2:tag tokenIDs="t_120">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_121">$,</ns2:tag>
+			<ns2:tag tokenIDs="t_122">KOUI</ns2:tag>
+			<ns2:tag tokenIDs="t_123">PTKNEG</ns2:tag>
+			<ns2:tag tokenIDs="t_124">ADJD</ns2:tag>
+			<ns2:tag tokenIDs="t_125">PTKZU</ns2:tag>
+			<ns2:tag tokenIDs="t_126">VVINF</ns2:tag>
+			<ns2:tag tokenIDs="t_127">$,</ns2:tag>
+			<ns2:tag tokenIDs="t_128">VVFIN</ns2:tag>
+			<ns2:tag tokenIDs="t_129">PRF</ns2:tag>
+			<ns2:tag tokenIDs="t_130">PTKNEG</ns2:tag>
+			<ns2:tag tokenIDs="t_131">$.</ns2:tag>
+			<ns2:tag tokenIDs="t_132">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_133">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_134">VVFIN</ns2:tag>
+			<ns2:tag tokenIDs="t_135">APPR</ns2:tag>
+			<ns2:tag tokenIDs="t_136">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_137">PTKVZ</ns2:tag>
+			<ns2:tag tokenIDs="t_138">$.</ns2:tag>
+			<ns2:tag tokenIDs="t_139">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_140">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_141">VVFIN</ns2:tag>
+			<ns2:tag tokenIDs="t_142">APPR</ns2:tag>
+			<ns2:tag tokenIDs="t_143">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_144">PTKVZ</ns2:tag>
+			<ns2:tag tokenIDs="t_145">$.</ns2:tag>
+			<ns2:tag tokenIDs="t_146">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_147">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_148">$,</ns2:tag>
+			<ns2:tag tokenIDs="t_149">APPR</ns2:tag>
+			<ns2:tag tokenIDs="t_150">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_151">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_152">VVFIN</ns2:tag>
+			<ns2:tag tokenIDs="t_153">APPR</ns2:tag>
+			<ns2:tag tokenIDs="t_154">NE</ns2:tag>
+			<ns2:tag tokenIDs="t_155">PTKVZ</ns2:tag>
+			<ns2:tag tokenIDs="t_156">$,</ns2:tag>
+			<ns2:tag tokenIDs="t_157">KON</ns2:tag>
+			<ns2:tag tokenIDs="t_158">PPER</ns2:tag>
+			<ns2:tag tokenIDs="t_159">VVFIN</ns2:tag>
+			<ns2:tag tokenIDs="t_160">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_161">$,</ns2:tag>
+			<ns2:tag tokenIDs="t_162">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_163">KON</ns2:tag>
+			<ns2:tag tokenIDs="t_164">ADV</ns2:tag>
+			<ns2:tag tokenIDs="t_165">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_166">APPR</ns2:tag>
+			<ns2:tag tokenIDs="t_167">PPOSAT</ns2:tag>
+			<ns2:tag tokenIDs="t_168">NN</ns2:tag>
+			<ns2:tag tokenIDs="t_169">$.</ns2:tag>
+		</ns2:POStags>
+		<ns2:matches>
+			<ns2:query type="cqp">[ne='PER'] @[ne='PER'] [pos='VVFIN'] [pos='APPR'] [ne='LOC']</ns2:query>
+			<ns2:corpus pid="11858/00-1778-0000-0001-DDAF-D" name="TUEBA-DDC">
+				<ns2:item tokenIDs="t_14 t_15 t_16 t_17 t_18" srcIDs="438901 438902 438903 438904 438905">
+					<ns2:target value="t_15" name="0" />
+					<ns2:category value="kos413" name="text_filename" />
+					<ns2:category value="Alexander von Humboldt" name="text_author" />
+					<ns2:category
+						value="Kosmos / IV, Ergebnisse der Beobachtung aus dem tellurischen Theile / I / Magnetische Thätigkeit (1)"
+						name="text_title" />
+					<ns2:category value="Kosmos Band IV" name="text_booktitle" />
+					<ns2:category value="tractate" name="text_type" />
+				</ns2:item>
+				<ns2:item tokenIDs="t_24 t_25 t_26 t_27 t_28" srcIDs="532777 532778 532779 532780 532781">
+					<ns2:target value="t_25" name="0" />
+					<ns2:category value="kos1302" name="text_filename" />
+					<ns2:category value="Alexander von Humboldt" name="text_author" />
+					<ns2:category value="Kosmos / I, Naturgemälde / 2"
+						name="text_title" />
+					<ns2:category value="Kosmos Band I" name="text_booktitle" />
+					<ns2:category value="tractate" name="text_type" />
+				</ns2:item>
+				<ns2:item tokenIDs="t_51 t_52 t_53 t_54 t_55"
+					srcIDs="2264349 2264350 2264351 2264352 2264353">
+					<ns2:target value="t_52" name="0" />
+					<ns2:category value="fuerdich" name="text_filename" />
+					<ns2:category value="Rudolph Stratz" name="text_author" />
+					<ns2:category value="Für Dich" name="text_title" />
+					<ns2:category value="" name="text_booktitle" />
+					<ns2:category value="fiction" name="text_type" />
+				</ns2:item>
+				<ns2:item tokenIDs="t_63 t_64 t_65 t_66 t_67"
+					srcIDs="5619607 5619608 5619609 5619610 5619611">
+					<ns2:target value="t_64" name="0" />
+					<ns2:category value="groewahn" name="text_filename" />
+					<ns2:category value="Johannes Scherr" name="text_author" />
+					<ns2:category value="Größenwahn" name="text_title" />
+					<ns2:category value="" name="text_booktitle" />
+					<ns2:category value="essay" name="text_type" />
+				</ns2:item>
+				<ns2:item tokenIDs="t_90 t_91 t_92 t_93 t_94"
+					srcIDs="8116604 8116605 8116606 8116607 8116608">
+					<ns2:target value="t_91" name="0" />
+					<ns2:category value="10jahre" name="text_filename" />
+					<ns2:category value="Herman Bang" name="text_author" />
+					<ns2:category
+						value="Zehn Jahre &amp;#x2013; Erinnerungen und Begebenheiten"
+						name="text_title" />
+					<ns2:category value="" name="text_booktitle" />
+					<ns2:category value="autobio" name="text_type" />
+				</ns2:item>
+				<ns2:item tokenIDs="t_102 t_103 t_104 t_105 t_106"
+					srcIDs="8618019 8618020 8618021 8618022 8618023">
+					<ns2:target value="t_103" name="0" />
+					<ns2:category value="reederma" name="text_filename" />
+					<ns2:category value="Ernst Willkomm" name="text_author" />
+					<ns2:category value="Reeder und Matrose" name="text_title" />
+					<ns2:category value="Reeder und Matrose" name="text_booktitle" />
+					<ns2:category value="fiction" name="text_type" />
+				</ns2:item>
+				<ns2:item tokenIDs="t_108 t_109 t_110 t_111 t_112"
+					srcIDs="8718432 8718433 8718434 8718435 8718436">
+					<ns2:target value="t_109" name="0" />
+					<ns2:category value="sintflut" name="text_filename" />
+					<ns2:category value="Henryk Sienkiewicz" name="text_author" />
+					<ns2:category value="Sintflut" name="text_title" />
+					<ns2:category value="" name="text_booktitle" />
+					<ns2:category value="fiction" name="text_type" />
+				</ns2:item>
+				<ns2:item tokenIDs="t_132 t_133 t_134 t_135 t_136"
+					srcIDs="9853448 9853449 9853450 9853451 9853452">
+					<ns2:target value="t_133" name="0" />
+					<ns2:category value="borg" name="text_filename" />
+					<ns2:category value="Klabund" name="text_author" />
+					<ns2:category value="Borgia" name="text_title" />
+					<ns2:category value="Borgia" name="text_booktitle" />
+					<ns2:category value="fiction" name="text_type" />
+				</ns2:item>
+				<ns2:item tokenIDs="t_139 t_140 t_141 t_142 t_143"
+					srcIDs="9933696 9933697 9933698 9933699 9933700">
+					<ns2:target value="t_140" name="0" />
+					<ns2:category value="borgia" name="text_filename" />
+					<ns2:category value="Klabund" name="text_author" />
+					<ns2:category value="Borgia" name="text_title" />
+					<ns2:category value="" name="text_booktitle" />
+					<ns2:category value="fiction" name="text_type" />
+				</ns2:item>
+				<ns2:item tokenIDs="t_150 t_151 t_152 t_153 t_154"
+					srcIDs="9942007 9942008 9942009 9942010 9942011">
+					<ns2:target value="t_151" name="0" />
+					<ns2:category value="borgia" name="text_filename" />
+					<ns2:category value="Klabund" name="text_author" />
+					<ns2:category value="Borgia" name="text_title" />
+					<ns2:category value="" name="text_booktitle" />
+					<ns2:category value="fiction" name="text_type" />
+				</ns2:item>
+			</ns2:corpus>
+		</ns2:matches>
+	</ns2:TextCorpus>
+</ns4:D-Spin>

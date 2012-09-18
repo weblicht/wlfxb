@@ -1,0 +1,34 @@
+<parsing tagset="Tiger" xmlns="http://www.dspin.de/data/textcorpus">
+   <parse>
+    <constituent ID="c1" cat="TOP">
+     <constituent ID="c2" cat="S" edge="TOP">
+      <constituent ID="c3" cat="NP" edge ="SB">
+       <constituent ID="c4" cat="PN-Nom.Sg" edge="HD">
+        <constituent ID="c5" cat="NE-Nom.Sg" edge="HD" tokenIDs="t1"/>
+       </constituent>
+      </constituent>
+      <constituent cat="VVFIN" ID="c6"  edge="HD" tokenIDs="t2"/>
+      <constituent ID="c7" cat="NP" edge="OA">
+       <cref constID="c3" edge="some-secondary-edge-label"/>
+       <constituent cat="ART-Acc.Sg" ID="c8" edge="NK" tokenIDs="t3"/>
+       <constituent cat="NN-Acc.Sg" ID="c9" edge="NK" tokenIDs="t4"/>
+      </constituent>
+     </constituent>
+     <constituent cat="\$." ID="c10" tokenIDs="t5"/>
+    </constituent>
+   </parse>
+   <parse>
+    <constituent ID="c11" cat="TOP">
+     <constituent ID="c12" cat="S" edge="TOP">
+      <constituent ID="c13" cat="NP" edge="SB">
+       <constituent cat="PPER-Nom" ID="c14" edge="HD" tokenIDs="t6"/>
+      </constituent>
+      <constituent cat="VVFIN" ID="c15" edge="HD" tokenIDs="t7"/>
+      <constituent ID="c16" cat="NP" edge="DA">
+       <constituent cat="PPER-Dat" ID="c17" edge="HD" tokenIDs="t8"/>
+      </constituent>
+     </constituent>
+     <constituent cat="\$." ID="c18" tokenIDs="t9"/>
+    </constituent>
+   </parse>
+</parsing>

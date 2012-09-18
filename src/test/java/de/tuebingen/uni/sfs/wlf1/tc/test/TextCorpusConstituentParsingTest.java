@@ -51,6 +51,10 @@ public class TextCorpusConstituentParsingTest extends AbstractTextCorpusTest {
             Constituent root = parse(sentenceTokens, parses);
             parses.addParse(root);
         }
+
+        ConstituentReference cref = parses.getParseRoot(0).getChildren()[0].getChildren()[2].getSecondaryEdgeChildren()[0];
+        Assert.assertEquals(parses.getParseRoot(0).getChildren()[0].getChildren()[0], parses.getConstituent(cref));
+
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml

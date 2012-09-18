@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/d-spin_0_4.rnc" type="application/relax-ng-compact-syntax"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+  <MetaData xmlns="http://www.dspin.de/data/metadata">
+    <source></source>
+  </MetaData>
+  <Lexicon xmlns="http://www.dspin.de/data/lexicon" lang="de">
+    <lemmas>
+      <lemma ID="l1">Peter</lemma>
+      <lemma ID="l2">essen</lemma>
+      <lemma ID="l3">ein</lemma>
+      <lemma ID="l4">Pizza</lemma>
+      <lemma ID="l5">.</lemma>
+      <lemma ID="l6">sie</lemma>
+      <lemma ID="l7">schmecken</lemma>
+      <lemma ID="l8">er</lemma>
+      <lemma ID="l9">.</lemma>
+    </lemmas>
+	<frequencies>
+      <frequency lemID="l1">100</frequency>
+      <frequency lemID="l2">101</frequency>
+      <frequency lemID="l3">102</frequency>
+      <frequency lemID="l4">103</frequency>
+      <frequency lemID="l5">104</frequency>
+      <frequency lemID="l6">105</frequency>
+      <frequency lemID="l7">106</frequency>
+      <frequency lemID="l8">107</frequency>
+      <frequency lemID="l9">108</frequency>
+	</frequencies>
+  </Lexicon>
+</D-Spin>

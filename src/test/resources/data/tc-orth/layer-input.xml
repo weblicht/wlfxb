@@ -1,0 +1,4 @@
+<orthography xmlns="http://www.dspin.de/data/textcorpus">
+   <correction tokenIDs="t2" operation="replace">will</correction>
+   <correction tokenIDs="t4" operation="insert_after">essen</correction>
+</orthography>

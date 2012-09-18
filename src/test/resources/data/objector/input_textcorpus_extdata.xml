@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+
+ <MetaData xmlns="http://www.dspin.de/data/metadata">
+ </MetaData>
+  
+  <ExternalData xmlns="http://www.dspin.de/data/extdata">
+    <speechsignal type="audio/wav" numberchannels="1">http://arc:8080/drop-off/storage/g046acn1_037_AFI.wav</speechsignal>
+  </ExternalData>
+ 
+  <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+    <text>&lt;ähm&gt; ich würde diesmal sagen Theater das ist dann immer so aufge in letzter Minute so was spielt man heute abend ich wäre eher dafür daß wir vielleicht ins Kino gehen und nachher irgendwo in eine nette Kneipe</text>
+ </TextCorpus>
+</D-Spin>

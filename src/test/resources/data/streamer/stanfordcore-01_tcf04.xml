@@ -1,0 +1,1353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+       <tns:MetaData xmlns:tns="http://www.dspin.de/data/metadata">
+           <tns:source>some source</tns:source>
+       </tns:MetaData>
+       <tns:TextCorpus xmlns:tns="http://www.dspin.de/data/textcorpus" lang="en">
+           <tns:text>President Barack Obama's political clout was on the line Tuesday as Virginia and New Jersey chose governors in contests that could serve as warning signs for Democrats about the public's mood heading into an important midterm election year. Elsewhere, Maine voters weighed in on same-sex marriage in a closely watched initiative, and New York and California picked congressmen for two vacant seats. A slew of cities selected mayors, and Ohio voted on allowing casinos. One year after Obama won the White House in an electoral landslide and Democrats expanded their majorities in Congress, much of the focus was on Virginia and New Jersey, where Democratic control was in danger despite hefty campaigning by Obama himself. The outcomes were sure to feed discussion about the state of the electorate, the status of the diverse coalition that sent Obama to the White House and the limits of the president's influence on the party's base of support. Democratic victories in both states in 2005 preceded big Democratic years nationally in 2006 and 2008.</tns:text>
+           <tns:tokens>
+               <tns:token ID="t_0">President</tns:token>
+               <tns:token ID="t_1">Barack</tns:token>
+               <tns:token ID="t_2">Obama</tns:token>
+               <tns:token ID="t_3">'s</tns:token>
+               <tns:token ID="t_4">political</tns:token>
+               <tns:token ID="t_5">clout</tns:token>
+               <tns:token ID="t_6">was</tns:token>
+               <tns:token ID="t_7">on</tns:token>
+               <tns:token ID="t_8">the</tns:token>
+               <tns:token ID="t_9">line</tns:token>
+               <tns:token ID="t_10">Tuesday</tns:token>
+               <tns:token ID="t_11">as</tns:token>
+               <tns:token ID="t_12">Virginia</tns:token>
+               <tns:token ID="t_13">and</tns:token>
+               <tns:token ID="t_14">New</tns:token>
+               <tns:token ID="t_15">Jersey</tns:token>
+               <tns:token ID="t_16">chose</tns:token>
+               <tns:token ID="t_17">governors</tns:token>
+               <tns:token ID="t_18">in</tns:token>
+               <tns:token ID="t_19">contests</tns:token>
+               <tns:token ID="t_20">that</tns:token>
+               <tns:token ID="t_21">could</tns:token>
+               <tns:token ID="t_22">serve</tns:token>
+               <tns:token ID="t_23">as</tns:token>
+               <tns:token ID="t_24">warning</tns:token>
+               <tns:token ID="t_25">signs</tns:token>
+               <tns:token ID="t_26">for</tns:token>
+               <tns:token ID="t_27">Democrats</tns:token>
+               <tns:token ID="t_28">about</tns:token>
+               <tns:token ID="t_29">the</tns:token>
+               <tns:token ID="t_30">public</tns:token>
+               <tns:token ID="t_31">'s</tns:token>
+               <tns:token ID="t_32">mood</tns:token>
+               <tns:token ID="t_33">heading</tns:token>
+               <tns:token ID="t_34">into</tns:token>
+               <tns:token ID="t_35">an</tns:token>
+               <tns:token ID="t_36">important</tns:token>
+               <tns:token ID="t_37">midterm</tns:token>
+               <tns:token ID="t_38">election</tns:token>
+               <tns:token ID="t_39">year</tns:token>
+               <tns:token ID="t_40">.</tns:token>
+               <tns:token ID="t_41">Elsewhere</tns:token>
+               <tns:token ID="t_42">,</tns:token>
+               <tns:token ID="t_43">Maine</tns:token>
+               <tns:token ID="t_44">voters</tns:token>
+               <tns:token ID="t_45">weighed</tns:token>
+               <tns:token ID="t_46">in</tns:token>
+               <tns:token ID="t_47">on</tns:token>
+               <tns:token ID="t_48">same-sex</tns:token>
+               <tns:token ID="t_49">marriage</tns:token>
+               <tns:token ID="t_50">in</tns:token>
+               <tns:token ID="t_51">a</tns:token>
+               <tns:token ID="t_52">closely</tns:token>
+               <tns:token ID="t_53">watched</tns:token>
+               <tns:token ID="t_54">initiative</tns:token>
+               <tns:token ID="t_55">,</tns:token>
+               <tns:token ID="t_56">and</tns:token>
+               <tns:token ID="t_57">New</tns:token>
+               <tns:token ID="t_58">York</tns:token>
+               <tns:token ID="t_59">and</tns:token>
+               <tns:token ID="t_60">California</tns:token>
+               <tns:token ID="t_61">picked</tns:token>
+               <tns:token ID="t_62">congressmen</tns:token>
+               <tns:token ID="t_63">for</tns:token>
+               <tns:token ID="t_64">two</tns:token>
+               <tns:token ID="t_65">vacant</tns:token>
+               <tns:token ID="t_66">seats</tns:token>
+               <tns:token ID="t_67">.</tns:token>
+               <tns:token ID="t_68">A</tns:token>
+               <tns:token ID="t_69">slew</tns:token>
+               <tns:token ID="t_70">of</tns:token>
+               <tns:token ID="t_71">cities</tns:token>
+               <tns:token ID="t_72">selected</tns:token>
+               <tns:token ID="t_73">mayors</tns:token>
+               <tns:token ID="t_74">,</tns:token>
+               <tns:token ID="t_75">and</tns:token>
+               <tns:token ID="t_76">Ohio</tns:token>
+               <tns:token ID="t_77">voted</tns:token>
+               <tns:token ID="t_78">on</tns:token>
+               <tns:token ID="t_79">allowing</tns:token>
+               <tns:token ID="t_80">casinos</tns:token>
+               <tns:token ID="t_81">.</tns:token>
+               <tns:token ID="t_82">One</tns:token>
+               <tns:token ID="t_83">year</tns:token>
+               <tns:token ID="t_84">after</tns:token>
+               <tns:token ID="t_85">Obama</tns:token>
+               <tns:token ID="t_86">won</tns:token>
+               <tns:token ID="t_87">the</tns:token>
+               <tns:token ID="t_88">White</tns:token>
+               <tns:token ID="t_89">House</tns:token>
+               <tns:token ID="t_90">in</tns:token>
+               <tns:token ID="t_91">an</tns:token>
+               <tns:token ID="t_92">electoral</tns:token>
+               <tns:token ID="t_93">landslide</tns:token>
+               <tns:token ID="t_94">and</tns:token>
+               <tns:token ID="t_95">Democrats</tns:token>
+               <tns:token ID="t_96">expanded</tns:token>
+               <tns:token ID="t_97">their</tns:token>
+               <tns:token ID="t_98">majorities</tns:token>
+               <tns:token ID="t_99">in</tns:token>
+               <tns:token ID="t_100">Congress</tns:token>
+               <tns:token ID="t_101">,</tns:token>
+               <tns:token ID="t_102">much</tns:token>
+               <tns:token ID="t_103">of</tns:token>
+               <tns:token ID="t_104">the</tns:token>
+               <tns:token ID="t_105">focus</tns:token>
+               <tns:token ID="t_106">was</tns:token>
+               <tns:token ID="t_107">on</tns:token>
+               <tns:token ID="t_108">Virginia</tns:token>
+               <tns:token ID="t_109">and</tns:token>
+               <tns:token ID="t_110">New</tns:token>
+               <tns:token ID="t_111">Jersey</tns:token>
+               <tns:token ID="t_112">,</tns:token>
+               <tns:token ID="t_113">where</tns:token>
+               <tns:token ID="t_114">Democratic</tns:token>
+               <tns:token ID="t_115">control</tns:token>
+               <tns:token ID="t_116">was</tns:token>
+               <tns:token ID="t_117">in</tns:token>
+               <tns:token ID="t_118">danger</tns:token>
+               <tns:token ID="t_119">despite</tns:token>
+               <tns:token ID="t_120">hefty</tns:token>
+               <tns:token ID="t_121">campaigning</tns:token>
+               <tns:token ID="t_122">by</tns:token>
+               <tns:token ID="t_123">Obama</tns:token>
+               <tns:token ID="t_124">himself</tns:token>
+               <tns:token ID="t_125">.</tns:token>
+               <tns:token ID="t_126">The</tns:token>
+               <tns:token ID="t_127">outcomes</tns:token>
+               <tns:token ID="t_128">were</tns:token>
+               <tns:token ID="t_129">sure</tns:token>
+               <tns:token ID="t_130">to</tns:token>
+               <tns:token ID="t_131">feed</tns:token>
+               <tns:token ID="t_132">discussion</tns:token>
+               <tns:token ID="t_133">about</tns:token>
+               <tns:token ID="t_134">the</tns:token>
+               <tns:token ID="t_135">state</tns:token>
+               <tns:token ID="t_136">of</tns:token>
+               <tns:token ID="t_137">the</tns:token>
+               <tns:token ID="t_138">electorate</tns:token>
+               <tns:token ID="t_139">,</tns:token>
+               <tns:token ID="t_140">the</tns:token>
+               <tns:token ID="t_141">status</tns:token>
+               <tns:token ID="t_142">of</tns:token>
+               <tns:token ID="t_143">the</tns:token>
+               <tns:token ID="t_144">diverse</tns:token>
+               <tns:token ID="t_145">coalition</tns:token>
+               <tns:token ID="t_146">that</tns:token>
+               <tns:token ID="t_147">sent</tns:token>
+               <tns:token ID="t_148">Obama</tns:token>
+               <tns:token ID="t_149">to</tns:token>
+               <tns:token ID="t_150">the</tns:token>
+               <tns:token ID="t_151">White</tns:token>
+               <tns:token ID="t_152">House</tns:token>
+               <tns:token ID="t_153">and</tns:token>
+               <tns:token ID="t_154">the</tns:token>
+               <tns:token ID="t_155">limits</tns:token>
+               <tns:token ID="t_156">of</tns:token>
+               <tns:token ID="t_157">the</tns:token>
+               <tns:token ID="t_158">president</tns:token>
+               <tns:token ID="t_159">'s</tns:token>
+               <tns:token ID="t_160">influence</tns:token>
+               <tns:token ID="t_161">on</tns:token>
+               <tns:token ID="t_162">the</tns:token>
+               <tns:token ID="t_163">party</tns:token>
+               <tns:token ID="t_164">'s</tns:token>
+               <tns:token ID="t_165">base</tns:token>
+               <tns:token ID="t_166">of</tns:token>
+               <tns:token ID="t_167">support</tns:token>
+               <tns:token ID="t_168">.</tns:token>
+               <tns:token ID="t_169">Democratic</tns:token>
+               <tns:token ID="t_170">victories</tns:token>
+               <tns:token ID="t_171">in</tns:token>
+               <tns:token ID="t_172">both</tns:token>
+               <tns:token ID="t_173">states</tns:token>
+               <tns:token ID="t_174">in</tns:token>
+               <tns:token ID="t_175">2005</tns:token>
+               <tns:token ID="t_176">preceded</tns:token>
+               <tns:token ID="t_177">big</tns:token>
+               <tns:token ID="t_178">Democratic</tns:token>
+               <tns:token ID="t_179">years</tns:token>
+               <tns:token ID="t_180">nationally</tns:token>
+               <tns:token ID="t_181">in</tns:token>
+               <tns:token ID="t_182">2006</tns:token>
+               <tns:token ID="t_183">and</tns:token>
+               <tns:token ID="t_184">2008</tns:token>
+               <tns:token ID="t_185">.</tns:token>
+           </tns:tokens>
+           <tns:sentences>
+               <tns:sentence tokenIDs="t_0 t_1 t_2 t_3 t_4 t_5 t_6 t_7 t_8 t_9 t_10 t_11 t_12 t_13 t_14 t_15 t_16 t_17 t_18 t_19 t_20 t_21 t_22 t_23 t_24 t_25 t_26 t_27 t_28 t_29 t_30 t_31 t_32 t_33 t_34 t_35 t_36 t_37 t_38 t_39 t_40" ID="s_0"/>
+               <tns:sentence tokenIDs="t_41 t_42 t_43 t_44 t_45 t_46 t_47 t_48 t_49 t_50 t_51 t_52 t_53 t_54 t_55 t_56 t_57 t_58 t_59 t_60 t_61 t_62 t_63 t_64 t_65 t_66 t_67" ID="s_1"/>
+               <tns:sentence tokenIDs="t_68 t_69 t_70 t_71 t_72 t_73 t_74 t_75 t_76 t_77 t_78 t_79 t_80 t_81" ID="s_2"/>
+               <tns:sentence tokenIDs="t_82 t_83 t_84 t_85 t_86 t_87 t_88 t_89 t_90 t_91 t_92 t_93 t_94 t_95 t_96 t_97 t_98 t_99 t_100 t_101 t_102 t_103 t_104 t_105 t_106 t_107 t_108 t_109 t_110 t_111 t_112 t_113 t_114 t_115 t_116 t_117 t_118 t_119 t_120 t_121 t_122 t_123 t_124 t_125" ID="s_3"/>
+               <tns:sentence tokenIDs="t_126 t_127 t_128 t_129 t_130 t_131 t_132 t_133 t_134 t_135 t_136 t_137 t_138 t_139 t_140 t_141 t_142 t_143 t_144 t_145 t_146 t_147 t_148 t_149 t_150 t_151 t_152 t_153 t_154 t_155 t_156 t_157 t_158 t_159 t_160 t_161 t_162 t_163 t_164 t_165 t_166 t_167 t_168" ID="s_4"/>
+               <tns:sentence tokenIDs="t_169 t_170 t_171 t_172 t_173 t_174 t_175 t_176 t_177 t_178 t_179 t_180 t_181 t_182 t_183 t_184 t_185" ID="s_5"/>
+           </tns:sentences>
+           <tns:lemmas>
+               <tns:lemma tokenIDs="t_0" ID="le_0">President</tns:lemma>
+               <tns:lemma tokenIDs="t_1" ID="le_1">Barack</tns:lemma>
+               <tns:lemma tokenIDs="t_2" ID="le_2">Obama</tns:lemma>
+               <tns:lemma tokenIDs="t_3" ID="le_3">'s</tns:lemma>
+               <tns:lemma tokenIDs="t_4" ID="le_4">political</tns:lemma>
+               <tns:lemma tokenIDs="t_5" ID="le_5">clout</tns:lemma>
+               <tns:lemma tokenIDs="t_6" ID="le_6">be</tns:lemma>
+               <tns:lemma tokenIDs="t_7" ID="le_7">on</tns:lemma>
+               <tns:lemma tokenIDs="t_8" ID="le_8">the</tns:lemma>
+               <tns:lemma tokenIDs="t_9" ID="le_9">line</tns:lemma>
+               <tns:lemma tokenIDs="t_10" ID="le_10">Tuesday</tns:lemma>
+               <tns:lemma tokenIDs="t_11" ID="le_11">as</tns:lemma>
+               <tns:lemma tokenIDs="t_12" ID="le_12">Virginia</tns:lemma>
+               <tns:lemma tokenIDs="t_13" ID="le_13">and</tns:lemma>
+               <tns:lemma tokenIDs="t_14" ID="le_14">New</tns:lemma>
+               <tns:lemma tokenIDs="t_15" ID="le_15">Jersey</tns:lemma>
+               <tns:lemma tokenIDs="t_16" ID="le_16">choose</tns:lemma>
+               <tns:lemma tokenIDs="t_17" ID="le_17">governor</tns:lemma>
+               <tns:lemma tokenIDs="t_18" ID="le_18">in</tns:lemma>
+               <tns:lemma tokenIDs="t_19" ID="le_19">contest</tns:lemma>
+               <tns:lemma tokenIDs="t_20" ID="le_20">that</tns:lemma>
+               <tns:lemma tokenIDs="t_21" ID="le_21">could</tns:lemma>
+               <tns:lemma tokenIDs="t_22" ID="le_22">serve</tns:lemma>
+               <tns:lemma tokenIDs="t_23" ID="le_23">as</tns:lemma>
+               <tns:lemma tokenIDs="t_24" ID="le_24">warn</tns:lemma>
+               <tns:lemma tokenIDs="t_25" ID="le_25">sign</tns:lemma>
+               <tns:lemma tokenIDs="t_26" ID="le_26">for</tns:lemma>
+               <tns:lemma tokenIDs="t_27" ID="le_27">democrat</tns:lemma>
+               <tns:lemma tokenIDs="t_28" ID="le_28">about</tns:lemma>
+               <tns:lemma tokenIDs="t_29" ID="le_29">the</tns:lemma>
+               <tns:lemma tokenIDs="t_30" ID="le_30">public</tns:lemma>
+               <tns:lemma tokenIDs="t_31" ID="le_31">'s</tns:lemma>
+               <tns:lemma tokenIDs="t_32" ID="le_32">mood</tns:lemma>
+               <tns:lemma tokenIDs="t_33" ID="le_33">head</tns:lemma>
+               <tns:lemma tokenIDs="t_34" ID="le_34">into</tns:lemma>
+               <tns:lemma tokenIDs="t_35" ID="le_35">a</tns:lemma>
+               <tns:lemma tokenIDs="t_36" ID="le_36">important</tns:lemma>
+               <tns:lemma tokenIDs="t_37" ID="le_37">midterm</tns:lemma>
+               <tns:lemma tokenIDs="t_38" ID="le_38">election</tns:lemma>
+               <tns:lemma tokenIDs="t_39" ID="le_39">year</tns:lemma>
+               <tns:lemma tokenIDs="t_40" ID="le_40">.</tns:lemma>
+               <tns:lemma tokenIDs="t_41" ID="le_41">elsewhere</tns:lemma>
+               <tns:lemma tokenIDs="t_42" ID="le_42">,</tns:lemma>
+               <tns:lemma tokenIDs="t_43" ID="le_43">Maine</tns:lemma>
+               <tns:lemma tokenIDs="t_44" ID="le_44">voter</tns:lemma>
+               <tns:lemma tokenIDs="t_45" ID="le_45">weigh</tns:lemma>
+               <tns:lemma tokenIDs="t_46" ID="le_46">in</tns:lemma>
+               <tns:lemma tokenIDs="t_47" ID="le_47">on</tns:lemma>
+               <tns:lemma tokenIDs="t_48" ID="le_48">same-sex</tns:lemma>
+               <tns:lemma tokenIDs="t_49" ID="le_49">marriage</tns:lemma>
+               <tns:lemma tokenIDs="t_50" ID="le_50">in</tns:lemma>
+               <tns:lemma tokenIDs="t_51" ID="le_51">a</tns:lemma>
+               <tns:lemma tokenIDs="t_52" ID="le_52">closely</tns:lemma>
+               <tns:lemma tokenIDs="t_53" ID="le_53">watch</tns:lemma>
+               <tns:lemma tokenIDs="t_54" ID="le_54">initiative</tns:lemma>
+               <tns:lemma tokenIDs="t_55" ID="le_55">,</tns:lemma>
+               <tns:lemma tokenIDs="t_56" ID="le_56">and</tns:lemma>
+               <tns:lemma tokenIDs="t_57" ID="le_57">New</tns:lemma>
+               <tns:lemma tokenIDs="t_58" ID="le_58">York</tns:lemma>
+               <tns:lemma tokenIDs="t_59" ID="le_59">and</tns:lemma>
+               <tns:lemma tokenIDs="t_60" ID="le_60">California</tns:lemma>
+               <tns:lemma tokenIDs="t_61" ID="le_61">pick</tns:lemma>
+               <tns:lemma tokenIDs="t_62" ID="le_62">congressman</tns:lemma>
+               <tns:lemma tokenIDs="t_63" ID="le_63">for</tns:lemma>
+               <tns:lemma tokenIDs="t_64" ID="le_64">two</tns:lemma>
+               <tns:lemma tokenIDs="t_65" ID="le_65">vacant</tns:lemma>
+               <tns:lemma tokenIDs="t_66" ID="le_66">seat</tns:lemma>
+               <tns:lemma tokenIDs="t_67" ID="le_67">.</tns:lemma>
+               <tns:lemma tokenIDs="t_68" ID="le_68">a</tns:lemma>
+               <tns:lemma tokenIDs="t_69" ID="le_69">slew</tns:lemma>
+               <tns:lemma tokenIDs="t_70" ID="le_70">of</tns:lemma>
+               <tns:lemma tokenIDs="t_71" ID="le_71">city</tns:lemma>
+               <tns:lemma tokenIDs="t_72" ID="le_72">select</tns:lemma>
+               <tns:lemma tokenIDs="t_73" ID="le_73">mayor</tns:lemma>
+               <tns:lemma tokenIDs="t_74" ID="le_74">,</tns:lemma>
+               <tns:lemma tokenIDs="t_75" ID="le_75">and</tns:lemma>
+               <tns:lemma tokenIDs="t_76" ID="le_76">Ohio</tns:lemma>
+               <tns:lemma tokenIDs="t_77" ID="le_77">vote</tns:lemma>
+               <tns:lemma tokenIDs="t_78" ID="le_78">on</tns:lemma>
+               <tns:lemma tokenIDs="t_79" ID="le_79">allow</tns:lemma>
+               <tns:lemma tokenIDs="t_80" ID="le_80">casino</tns:lemma>
+               <tns:lemma tokenIDs="t_81" ID="le_81">.</tns:lemma>
+               <tns:lemma tokenIDs="t_82" ID="le_82">one</tns:lemma>
+               <tns:lemma tokenIDs="t_83" ID="le_83">year</tns:lemma>
+               <tns:lemma tokenIDs="t_84" ID="le_84">after</tns:lemma>
+               <tns:lemma tokenIDs="t_85" ID="le_85">Obama</tns:lemma>
+               <tns:lemma tokenIDs="t_86" ID="le_86">win</tns:lemma>
+               <tns:lemma tokenIDs="t_87" ID="le_87">the</tns:lemma>
+               <tns:lemma tokenIDs="t_88" ID="le_88">White</tns:lemma>
+               <tns:lemma tokenIDs="t_89" ID="le_89">House</tns:lemma>
+               <tns:lemma tokenIDs="t_90" ID="le_90">in</tns:lemma>
+               <tns:lemma tokenIDs="t_91" ID="le_91">a</tns:lemma>
+               <tns:lemma tokenIDs="t_92" ID="le_92">electoral</tns:lemma>
+               <tns:lemma tokenIDs="t_93" ID="le_93">landslide</tns:lemma>
+               <tns:lemma tokenIDs="t_94" ID="le_94">and</tns:lemma>
+               <tns:lemma tokenIDs="t_95" ID="le_95">Democrats</tns:lemma>
+               <tns:lemma tokenIDs="t_96" ID="le_96">expand</tns:lemma>
+               <tns:lemma tokenIDs="t_97" ID="le_97">they</tns:lemma>
+               <tns:lemma tokenIDs="t_98" ID="le_98">majority</tns:lemma>
+               <tns:lemma tokenIDs="t_99" ID="le_99">in</tns:lemma>
+               <tns:lemma tokenIDs="t_100" ID="le_100">Congress</tns:lemma>
+               <tns:lemma tokenIDs="t_101" ID="le_101">,</tns:lemma>
+               <tns:lemma tokenIDs="t_102" ID="le_102">much</tns:lemma>
+               <tns:lemma tokenIDs="t_103" ID="le_103">of</tns:lemma>
+               <tns:lemma tokenIDs="t_104" ID="le_104">the</tns:lemma>
+               <tns:lemma tokenIDs="t_105" ID="le_105">focus</tns:lemma>
+               <tns:lemma tokenIDs="t_106" ID="le_106">be</tns:lemma>
+               <tns:lemma tokenIDs="t_107" ID="le_107">on</tns:lemma>
+               <tns:lemma tokenIDs="t_108" ID="le_108">Virginia</tns:lemma>
+               <tns:lemma tokenIDs="t_109" ID="le_109">and</tns:lemma>
+               <tns:lemma tokenIDs="t_110" ID="le_110">New</tns:lemma>
+               <tns:lemma tokenIDs="t_111" ID="le_111">Jersey</tns:lemma>
+               <tns:lemma tokenIDs="t_112" ID="le_112">,</tns:lemma>
+               <tns:lemma tokenIDs="t_113" ID="le_113">where</tns:lemma>
+               <tns:lemma tokenIDs="t_114" ID="le_114">democratic</tns:lemma>
+               <tns:lemma tokenIDs="t_115" ID="le_115">control</tns:lemma>
+               <tns:lemma tokenIDs="t_116" ID="le_116">be</tns:lemma>
+               <tns:lemma tokenIDs="t_117" ID="le_117">in</tns:lemma>
+               <tns:lemma tokenIDs="t_118" ID="le_118">danger</tns:lemma>
+               <tns:lemma tokenIDs="t_119" ID="le_119">despite</tns:lemma>
+               <tns:lemma tokenIDs="t_120" ID="le_120">hefty</tns:lemma>
+               <tns:lemma tokenIDs="t_121" ID="le_121">campaigning</tns:lemma>
+               <tns:lemma tokenIDs="t_122" ID="le_122">by</tns:lemma>
+               <tns:lemma tokenIDs="t_123" ID="le_123">Obama</tns:lemma>
+               <tns:lemma tokenIDs="t_124" ID="le_124">himself</tns:lemma>
+               <tns:lemma tokenIDs="t_125" ID="le_125">.</tns:lemma>
+               <tns:lemma tokenIDs="t_126" ID="le_126">the</tns:lemma>
+               <tns:lemma tokenIDs="t_127" ID="le_127">outcome</tns:lemma>
+               <tns:lemma tokenIDs="t_128" ID="le_128">be</tns:lemma>
+               <tns:lemma tokenIDs="t_129" ID="le_129">sure</tns:lemma>
+               <tns:lemma tokenIDs="t_130" ID="le_130">to</tns:lemma>
+               <tns:lemma tokenIDs="t_131" ID="le_131">feed</tns:lemma>
+               <tns:lemma tokenIDs="t_132" ID="le_132">discussion</tns:lemma>
+               <tns:lemma tokenIDs="t_133" ID="le_133">about</tns:lemma>
+               <tns:lemma tokenIDs="t_134" ID="le_134">the</tns:lemma>
+               <tns:lemma tokenIDs="t_135" ID="le_135">state</tns:lemma>
+               <tns:lemma tokenIDs="t_136" ID="le_136">of</tns:lemma>
+               <tns:lemma tokenIDs="t_137" ID="le_137">the</tns:lemma>
+               <tns:lemma tokenIDs="t_138" ID="le_138">electorate</tns:lemma>
+               <tns:lemma tokenIDs="t_139" ID="le_139">,</tns:lemma>
+               <tns:lemma tokenIDs="t_140" ID="le_140">the</tns:lemma>
+               <tns:lemma tokenIDs="t_141" ID="le_141">status</tns:lemma>
+               <tns:lemma tokenIDs="t_142" ID="le_142">of</tns:lemma>
+               <tns:lemma tokenIDs="t_143" ID="le_143">the</tns:lemma>
+               <tns:lemma tokenIDs="t_144" ID="le_144">diverse</tns:lemma>
+               <tns:lemma tokenIDs="t_145" ID="le_145">coalition</tns:lemma>
+               <tns:lemma tokenIDs="t_146" ID="le_146">that</tns:lemma>
+               <tns:lemma tokenIDs="t_147" ID="le_147">send</tns:lemma>
+               <tns:lemma tokenIDs="t_148" ID="le_148">Obama</tns:lemma>
+               <tns:lemma tokenIDs="t_149" ID="le_149">to</tns:lemma>
+               <tns:lemma tokenIDs="t_150" ID="le_150">the</tns:lemma>
+               <tns:lemma tokenIDs="t_151" ID="le_151">White</tns:lemma>
+               <tns:lemma tokenIDs="t_152" ID="le_152">House</tns:lemma>
+               <tns:lemma tokenIDs="t_153" ID="le_153">and</tns:lemma>
+               <tns:lemma tokenIDs="t_154" ID="le_154">the</tns:lemma>
+               <tns:lemma tokenIDs="t_155" ID="le_155">limit</tns:lemma>
+               <tns:lemma tokenIDs="t_156" ID="le_156">of</tns:lemma>
+               <tns:lemma tokenIDs="t_157" ID="le_157">the</tns:lemma>
+               <tns:lemma tokenIDs="t_158" ID="le_158">president</tns:lemma>
+               <tns:lemma tokenIDs="t_159" ID="le_159">'s</tns:lemma>
+               <tns:lemma tokenIDs="t_160" ID="le_160">influence</tns:lemma>
+               <tns:lemma tokenIDs="t_161" ID="le_161">on</tns:lemma>
+               <tns:lemma tokenIDs="t_162" ID="le_162">the</tns:lemma>
+               <tns:lemma tokenIDs="t_163" ID="le_163">party</tns:lemma>
+               <tns:lemma tokenIDs="t_164" ID="le_164">'s</tns:lemma>
+               <tns:lemma tokenIDs="t_165" ID="le_165">base</tns:lemma>
+               <tns:lemma tokenIDs="t_166" ID="le_166">of</tns:lemma>
+               <tns:lemma tokenIDs="t_167" ID="le_167">support</tns:lemma>
+               <tns:lemma tokenIDs="t_168" ID="le_168">.</tns:lemma>
+               <tns:lemma tokenIDs="t_169" ID="le_169">democratic</tns:lemma>
+               <tns:lemma tokenIDs="t_170" ID="le_170">victory</tns:lemma>
+               <tns:lemma tokenIDs="t_171" ID="le_171">in</tns:lemma>
+               <tns:lemma tokenIDs="t_172" ID="le_172">both</tns:lemma>
+               <tns:lemma tokenIDs="t_173" ID="le_173">state</tns:lemma>
+               <tns:lemma tokenIDs="t_174" ID="le_174">in</tns:lemma>
+               <tns:lemma tokenIDs="t_175" ID="le_175">2005</tns:lemma>
+               <tns:lemma tokenIDs="t_176" ID="le_176">precede</tns:lemma>
+               <tns:lemma tokenIDs="t_177" ID="le_177">big</tns:lemma>
+               <tns:lemma tokenIDs="t_178" ID="le_178">democratic</tns:lemma>
+               <tns:lemma tokenIDs="t_179" ID="le_179">year</tns:lemma>
+               <tns:lemma tokenIDs="t_180" ID="le_180">nationally</tns:lemma>
+               <tns:lemma tokenIDs="t_181" ID="le_181">in</tns:lemma>
+               <tns:lemma tokenIDs="t_182" ID="le_182">2006</tns:lemma>
+               <tns:lemma tokenIDs="t_183" ID="le_183">and</tns:lemma>
+               <tns:lemma tokenIDs="t_184" ID="le_184">2008</tns:lemma>
+               <tns:lemma tokenIDs="t_185" ID="le_185">.</tns:lemma>
+           </tns:lemmas>
+           <tns:POStags tagset="penntb">
+               <tns:tag tokenIDs="t_0" ID="pt_0">NNP</tns:tag>
+               <tns:tag tokenIDs="t_1" ID="pt_1">NNP</tns:tag>
+               <tns:tag tokenIDs="t_2" ID="pt_2">NNP</tns:tag>
+               <tns:tag tokenIDs="t_3" ID="pt_3">POS</tns:tag>
+               <tns:tag tokenIDs="t_4" ID="pt_4">JJ</tns:tag>
+               <tns:tag tokenIDs="t_5" ID="pt_5">NN</tns:tag>
+               <tns:tag tokenIDs="t_6" ID="pt_6">VBD</tns:tag>
+               <tns:tag tokenIDs="t_7" ID="pt_7">IN</tns:tag>
+               <tns:tag tokenIDs="t_8" ID="pt_8">DT</tns:tag>
+               <tns:tag tokenIDs="t_9" ID="pt_9">NN</tns:tag>
+               <tns:tag tokenIDs="t_10" ID="pt_10">NNP</tns:tag>
+               <tns:tag tokenIDs="t_11" ID="pt_11">IN</tns:tag>
+               <tns:tag tokenIDs="t_12" ID="pt_12">NNP</tns:tag>
+               <tns:tag tokenIDs="t_13" ID="pt_13">CC</tns:tag>
+               <tns:tag tokenIDs="t_14" ID="pt_14">NNP</tns:tag>
+               <tns:tag tokenIDs="t_15" ID="pt_15">NNP</tns:tag>
+               <tns:tag tokenIDs="t_16" ID="pt_16">VBD</tns:tag>
+               <tns:tag tokenIDs="t_17" ID="pt_17">NNS</tns:tag>
+               <tns:tag tokenIDs="t_18" ID="pt_18">IN</tns:tag>
+               <tns:tag tokenIDs="t_19" ID="pt_19">NNS</tns:tag>
+               <tns:tag tokenIDs="t_20" ID="pt_20">WDT</tns:tag>
+               <tns:tag tokenIDs="t_21" ID="pt_21">MD</tns:tag>
+               <tns:tag tokenIDs="t_22" ID="pt_22">VB</tns:tag>
+               <tns:tag tokenIDs="t_23" ID="pt_23">IN</tns:tag>
+               <tns:tag tokenIDs="t_24" ID="pt_24">VBG</tns:tag>
+               <tns:tag tokenIDs="t_25" ID="pt_25">NNS</tns:tag>
+               <tns:tag tokenIDs="t_26" ID="pt_26">IN</tns:tag>
+               <tns:tag tokenIDs="t_27" ID="pt_27">NNS</tns:tag>
+               <tns:tag tokenIDs="t_28" ID="pt_28">IN</tns:tag>
+               <tns:tag tokenIDs="t_29" ID="pt_29">DT</tns:tag>
+               <tns:tag tokenIDs="t_30" ID="pt_30">NN</tns:tag>
+               <tns:tag tokenIDs="t_31" ID="pt_31">POS</tns:tag>
+               <tns:tag tokenIDs="t_32" ID="pt_32">NN</tns:tag>
+               <tns:tag tokenIDs="t_33" ID="pt_33">VBG</tns:tag>
+               <tns:tag tokenIDs="t_34" ID="pt_34">IN</tns:tag>
+               <tns:tag tokenIDs="t_35" ID="pt_35">DT</tns:tag>
+               <tns:tag tokenIDs="t_36" ID="pt_36">JJ</tns:tag>
+               <tns:tag tokenIDs="t_37" ID="pt_37">JJ</tns:tag>
+               <tns:tag tokenIDs="t_38" ID="pt_38">NN</tns:tag>
+               <tns:tag tokenIDs="t_39" ID="pt_39">NN</tns:tag>
+               <tns:tag tokenIDs="t_40" ID="pt_40">.</tns:tag>
+               <tns:tag tokenIDs="t_41" ID="pt_41">RB</tns:tag>
+               <tns:tag tokenIDs="t_42" ID="pt_42">,</tns:tag>
+               <tns:tag tokenIDs="t_43" ID="pt_43">NNP</tns:tag>
+               <tns:tag tokenIDs="t_44" ID="pt_44">NNS</tns:tag>
+               <tns:tag tokenIDs="t_45" ID="pt_45">VBD</tns:tag>
+               <tns:tag tokenIDs="t_46" ID="pt_46">RP</tns:tag>
+               <tns:tag tokenIDs="t_47" ID="pt_47">IN</tns:tag>
+               <tns:tag tokenIDs="t_48" ID="pt_48">JJ</tns:tag>
+               <tns:tag tokenIDs="t_49" ID="pt_49">NN</tns:tag>
+               <tns:tag tokenIDs="t_50" ID="pt_50">IN</tns:tag>
+               <tns:tag tokenIDs="t_51" ID="pt_51">DT</tns:tag>
+               <tns:tag tokenIDs="t_52" ID="pt_52">RB</tns:tag>
+               <tns:tag tokenIDs="t_53" ID="pt_53">VBN</tns:tag>
+               <tns:tag tokenIDs="t_54" ID="pt_54">NN</tns:tag>
+               <tns:tag tokenIDs="t_55" ID="pt_55">,</tns:tag>
+               <tns:tag tokenIDs="t_56" ID="pt_56">CC</tns:tag>
+               <tns:tag tokenIDs="t_57" ID="pt_57">NNP</tns:tag>
+               <tns:tag tokenIDs="t_58" ID="pt_58">NNP</tns:tag>
+               <tns:tag tokenIDs="t_59" ID="pt_59">CC</tns:tag>
+               <tns:tag tokenIDs="t_60" ID="pt_60">NNP</tns:tag>
+               <tns:tag tokenIDs="t_61" ID="pt_61">VBD</tns:tag>
+               <tns:tag tokenIDs="t_62" ID="pt_62">NNS</tns:tag>
+               <tns:tag tokenIDs="t_63" ID="pt_63">IN</tns:tag>
+               <tns:tag tokenIDs="t_64" ID="pt_64">CD</tns:tag>
+               <tns:tag tokenIDs="t_65" ID="pt_65">JJ</tns:tag>
+               <tns:tag tokenIDs="t_66" ID="pt_66">NNS</tns:tag>
+               <tns:tag tokenIDs="t_67" ID="pt_67">.</tns:tag>
+               <tns:tag tokenIDs="t_68" ID="pt_68">DT</tns:tag>
+               <tns:tag tokenIDs="t_69" ID="pt_69">NN</tns:tag>
+               <tns:tag tokenIDs="t_70" ID="pt_70">IN</tns:tag>
+               <tns:tag tokenIDs="t_71" ID="pt_71">NNS</tns:tag>
+               <tns:tag tokenIDs="t_72" ID="pt_72">VBN</tns:tag>
+               <tns:tag tokenIDs="t_73" ID="pt_73">NNS</tns:tag>
+               <tns:tag tokenIDs="t_74" ID="pt_74">,</tns:tag>
+               <tns:tag tokenIDs="t_75" ID="pt_75">CC</tns:tag>
+               <tns:tag tokenIDs="t_76" ID="pt_76">NNP</tns:tag>
+               <tns:tag tokenIDs="t_77" ID="pt_77">VBD</tns:tag>
+               <tns:tag tokenIDs="t_78" ID="pt_78">IN</tns:tag>
+               <tns:tag tokenIDs="t_79" ID="pt_79">VBG</tns:tag>
+               <tns:tag tokenIDs="t_80" ID="pt_80">NNS</tns:tag>
+               <tns:tag tokenIDs="t_81" ID="pt_81">.</tns:tag>
+               <tns:tag tokenIDs="t_82" ID="pt_82">CD</tns:tag>
+               <tns:tag tokenIDs="t_83" ID="pt_83">NN</tns:tag>
+               <tns:tag tokenIDs="t_84" ID="pt_84">IN</tns:tag>
+               <tns:tag tokenIDs="t_85" ID="pt_85">NNP</tns:tag>
+               <tns:tag tokenIDs="t_86" ID="pt_86">VBD</tns:tag>
+               <tns:tag tokenIDs="t_87" ID="pt_87">DT</tns:tag>
+               <tns:tag tokenIDs="t_88" ID="pt_88">NNP</tns:tag>
+               <tns:tag tokenIDs="t_89" ID="pt_89">NNP</tns:tag>
+               <tns:tag tokenIDs="t_90" ID="pt_90">IN</tns:tag>
+               <tns:tag tokenIDs="t_91" ID="pt_91">DT</tns:tag>
+               <tns:tag tokenIDs="t_92" ID="pt_92">JJ</tns:tag>
+               <tns:tag tokenIDs="t_93" ID="pt_93">NN</tns:tag>
+               <tns:tag tokenIDs="t_94" ID="pt_94">CC</tns:tag>
+               <tns:tag tokenIDs="t_95" ID="pt_95">NNPS</tns:tag>
+               <tns:tag tokenIDs="t_96" ID="pt_96">VBD</tns:tag>
+               <tns:tag tokenIDs="t_97" ID="pt_97">PRP$</tns:tag>
+               <tns:tag tokenIDs="t_98" ID="pt_98">NNS</tns:tag>
+               <tns:tag tokenIDs="t_99" ID="pt_99">IN</tns:tag>
+               <tns:tag tokenIDs="t_100" ID="pt_100">NNP</tns:tag>
+               <tns:tag tokenIDs="t_101" ID="pt_101">,</tns:tag>
+               <tns:tag tokenIDs="t_102" ID="pt_102">RB</tns:tag>
+               <tns:tag tokenIDs="t_103" ID="pt_103">IN</tns:tag>
+               <tns:tag tokenIDs="t_104" ID="pt_104">DT</tns:tag>
+               <tns:tag tokenIDs="t_105" ID="pt_105">NN</tns:tag>
+               <tns:tag tokenIDs="t_106" ID="pt_106">VBD</tns:tag>
+               <tns:tag tokenIDs="t_107" ID="pt_107">IN</tns:tag>
+               <tns:tag tokenIDs="t_108" ID="pt_108">NNP</tns:tag>
+               <tns:tag tokenIDs="t_109" ID="pt_109">CC</tns:tag>
+               <tns:tag tokenIDs="t_110" ID="pt_110">NNP</tns:tag>
+               <tns:tag tokenIDs="t_111" ID="pt_111">NNP</tns:tag>
+               <tns:tag tokenIDs="t_112" ID="pt_112">,</tns:tag>
+               <tns:tag tokenIDs="t_113" ID="pt_113">WRB</tns:tag>
+               <tns:tag tokenIDs="t_114" ID="pt_114">JJ</tns:tag>
+               <tns:tag tokenIDs="t_115" ID="pt_115">NN</tns:tag>
+               <tns:tag tokenIDs="t_116" ID="pt_116">VBD</tns:tag>
+               <tns:tag tokenIDs="t_117" ID="pt_117">IN</tns:tag>
+               <tns:tag tokenIDs="t_118" ID="pt_118">NN</tns:tag>
+               <tns:tag tokenIDs="t_119" ID="pt_119">IN</tns:tag>
+               <tns:tag tokenIDs="t_120" ID="pt_120">JJ</tns:tag>
+               <tns:tag tokenIDs="t_121" ID="pt_121">NN</tns:tag>
+               <tns:tag tokenIDs="t_122" ID="pt_122">IN</tns:tag>
+               <tns:tag tokenIDs="t_123" ID="pt_123">NNP</tns:tag>
+               <tns:tag tokenIDs="t_124" ID="pt_124">PRP</tns:tag>
+               <tns:tag tokenIDs="t_125" ID="pt_125">.</tns:tag>
+               <tns:tag tokenIDs="t_126" ID="pt_126">DT</tns:tag>
+               <tns:tag tokenIDs="t_127" ID="pt_127">NNS</tns:tag>
+               <tns:tag tokenIDs="t_128" ID="pt_128">VBD</tns:tag>
+               <tns:tag tokenIDs="t_129" ID="pt_129">JJ</tns:tag>
+               <tns:tag tokenIDs="t_130" ID="pt_130">TO</tns:tag>
+               <tns:tag tokenIDs="t_131" ID="pt_131">VB</tns:tag>
+               <tns:tag tokenIDs="t_132" ID="pt_132">NN</tns:tag>
+               <tns:tag tokenIDs="t_133" ID="pt_133">IN</tns:tag>
+               <tns:tag tokenIDs="t_134" ID="pt_134">DT</tns:tag>
+               <tns:tag tokenIDs="t_135" ID="pt_135">NN</tns:tag>
+               <tns:tag tokenIDs="t_136" ID="pt_136">IN</tns:tag>
+               <tns:tag tokenIDs="t_137" ID="pt_137">DT</tns:tag>
+               <tns:tag tokenIDs="t_138" ID="pt_138">NN</tns:tag>
+               <tns:tag tokenIDs="t_139" ID="pt_139">,</tns:tag>
+               <tns:tag tokenIDs="t_140" ID="pt_140">DT</tns:tag>
+               <tns:tag tokenIDs="t_141" ID="pt_141">NN</tns:tag>
+               <tns:tag tokenIDs="t_142" ID="pt_142">IN</tns:tag>
+               <tns:tag tokenIDs="t_143" ID="pt_143">DT</tns:tag>
+               <tns:tag tokenIDs="t_144" ID="pt_144">JJ</tns:tag>
+               <tns:tag tokenIDs="t_145" ID="pt_145">NN</tns:tag>
+               <tns:tag tokenIDs="t_146" ID="pt_146">WDT</tns:tag>
+               <tns:tag tokenIDs="t_147" ID="pt_147">VBD</tns:tag>
+               <tns:tag tokenIDs="t_148" ID="pt_148">NNP</tns:tag>
+               <tns:tag tokenIDs="t_149" ID="pt_149">TO</tns:tag>
+               <tns:tag tokenIDs="t_150" ID="pt_150">DT</tns:tag>
+               <tns:tag tokenIDs="t_151" ID="pt_151">NNP</tns:tag>
+               <tns:tag tokenIDs="t_152" ID="pt_152">NNP</tns:tag>
+               <tns:tag tokenIDs="t_153" ID="pt_153">CC</tns:tag>
+               <tns:tag tokenIDs="t_154" ID="pt_154">DT</tns:tag>
+               <tns:tag tokenIDs="t_155" ID="pt_155">NNS</tns:tag>
+               <tns:tag tokenIDs="t_156" ID="pt_156">IN</tns:tag>
+               <tns:tag tokenIDs="t_157" ID="pt_157">DT</tns:tag>
+               <tns:tag tokenIDs="t_158" ID="pt_158">NN</tns:tag>
+               <tns:tag tokenIDs="t_159" ID="pt_159">POS</tns:tag>
+               <tns:tag tokenIDs="t_160" ID="pt_160">NN</tns:tag>
+               <tns:tag tokenIDs="t_161" ID="pt_161">IN</tns:tag>
+               <tns:tag tokenIDs="t_162" ID="pt_162">DT</tns:tag>
+               <tns:tag tokenIDs="t_163" ID="pt_163">NN</tns:tag>
+               <tns:tag tokenIDs="t_164" ID="pt_164">POS</tns:tag>
+               <tns:tag tokenIDs="t_165" ID="pt_165">NN</tns:tag>
+               <tns:tag tokenIDs="t_166" ID="pt_166">IN</tns:tag>
+               <tns:tag tokenIDs="t_167" ID="pt_167">NN</tns:tag>
+               <tns:tag tokenIDs="t_168" ID="pt_168">.</tns:tag>
+               <tns:tag tokenIDs="t_169" ID="pt_169">JJ</tns:tag>
+               <tns:tag tokenIDs="t_170" ID="pt_170">NNS</tns:tag>
+               <tns:tag tokenIDs="t_171" ID="pt_171">IN</tns:tag>
+               <tns:tag tokenIDs="t_172" ID="pt_172">DT</tns:tag>
+               <tns:tag tokenIDs="t_173" ID="pt_173">NNS</tns:tag>
+               <tns:tag tokenIDs="t_174" ID="pt_174">IN</tns:tag>
+               <tns:tag tokenIDs="t_175" ID="pt_175">CD</tns:tag>
+               <tns:tag tokenIDs="t_176" ID="pt_176">VBD</tns:tag>
+               <tns:tag tokenIDs="t_177" ID="pt_177">JJ</tns:tag>
+               <tns:tag tokenIDs="t_178" ID="pt_178">JJ</tns:tag>
+               <tns:tag tokenIDs="t_179" ID="pt_179">NNS</tns:tag>
+               <tns:tag tokenIDs="t_180" ID="pt_180">RB</tns:tag>
+               <tns:tag tokenIDs="t_181" ID="pt_181">IN</tns:tag>
+               <tns:tag tokenIDs="t_182" ID="pt_182">CD</tns:tag>
+               <tns:tag tokenIDs="t_183" ID="pt_183">CC</tns:tag>
+               <tns:tag tokenIDs="t_184" ID="pt_184">CD</tns:tag>
+               <tns:tag tokenIDs="t_185" ID="pt_185">.</tns:tag>
+           </tns:POStags>
+           <tns:parsing tagset="penntb">
+               <tns:parse>
+                   <tns:constituent cat="ROOT" ID="c_75">
+                       <tns:constituent cat="S" ID="c_74">
+                           <tns:constituent cat="NP" ID="c_7">
+                               <tns:constituent cat="NP" ID="c_4">
+                                   <tns:constituent cat="NNP" tokenIDs="t_0" ID="c_0"/>
+                                   <tns:constituent cat="NNP" tokenIDs="t_1" ID="c_1"/>
+                                   <tns:constituent cat="NNP" tokenIDs="t_2" ID="c_2"/>
+                                   <tns:constituent cat="POS" tokenIDs="t_3" ID="c_3"/>
+                               </tns:constituent>
+                               <tns:constituent cat="JJ" tokenIDs="t_4" ID="c_5"/>
+                               <tns:constituent cat="NN" tokenIDs="t_5" ID="c_6"/>
+                           </tns:constituent>
+                           <tns:constituent cat="VP" ID="c_72">
+                               <tns:constituent cat="VBD" tokenIDs="t_6" ID="c_8"/>
+                               <tns:constituent cat="PP" ID="c_13">
+                                   <tns:constituent cat="IN" tokenIDs="t_7" ID="c_9"/>
+                                   <tns:constituent cat="NP" ID="c_12">
+                                       <tns:constituent cat="DT" tokenIDs="t_8" ID="c_10"/>
+                                       <tns:constituent cat="NN" tokenIDs="t_9" ID="c_11"/>
+                                   </tns:constituent>
+                               </tns:constituent>
+                               <tns:constituent cat="NP-TMP" ID="c_15">
+                                   <tns:constituent cat="NNP" tokenIDs="t_10" ID="c_14"/>
+                               </tns:constituent>
+                               <tns:constituent cat="SBAR" ID="c_71">
+                                   <tns:constituent cat="IN" tokenIDs="t_11" ID="c_16"/>
+                                   <tns:constituent cat="S" ID="c_70">
+                                       <tns:constituent cat="NP" ID="c_22">
+                                           <tns:constituent cat="NP" ID="c_20">
+                                               <tns:constituent cat="NNP" tokenIDs="t_12" ID="c_17"/>
+                                               <tns:constituent cat="CC" tokenIDs="t_13" ID="c_18"/>
+                                               <tns:constituent cat="NNP" tokenIDs="t_14" ID="c_19"/>
+                                           </tns:constituent>
+                                           <tns:constituent cat="NNP" tokenIDs="t_15" ID="c_21"/>
+                                       </tns:constituent>
+                                       <tns:constituent cat="VP" ID="c_69">
+                                           <tns:constituent cat="VBD" tokenIDs="t_16" ID="c_23"/>
+                                           <tns:constituent cat="NP" ID="c_25">
+                                               <tns:constituent cat="NNS" tokenIDs="t_17" ID="c_24"/>
+                                           </tns:constituent>
+                                           <tns:constituent cat="PP" ID="c_68">
+                                               <tns:constituent cat="IN" tokenIDs="t_18" ID="c_26"/>
+                                               <tns:constituent cat="NP" ID="c_67">
+                                                   <tns:constituent cat="NP" ID="c_28">
+                                                       <tns:constituent cat="NNS" tokenIDs="t_19" ID="c_27"/>
+                                                   </tns:constituent>
+                                                   <tns:constituent cat="SBAR" ID="c_66">
+                                                       <tns:constituent cat="WHNP" ID="c_30">
+                                                           <tns:constituent cat="WDT" tokenIDs="t_20" ID="c_29"/>
+                                                       </tns:constituent>
+                                                       <tns:constituent cat="S" ID="c_65">
+                                                           <tns:constituent cat="VP" ID="c_64">
+                                                               <tns:constituent cat="MD" tokenIDs="t_21" ID="c_31"/>
+                                                               <tns:constituent cat="VP" ID="c_63">
+                                                                   <tns:constituent cat="VB" tokenIDs="t_22" ID="c_32"/>
+                                                                   <tns:constituent cat="PP" ID="c_62">
+                                                                       <tns:constituent cat="IN" tokenIDs="t_23" ID="c_33"/>
+                                                                       <tns:constituent cat="NP" ID="c_61">
+                                                                           <tns:constituent cat="NP" ID="c_36">
+                                                                               <tns:constituent cat="VBG" tokenIDs="t_24" ID="c_34"/>
+                                                                               <tns:constituent cat="NNS" tokenIDs="t_25" ID="c_35"/>
+                                                                           </tns:constituent>
+                                                                           <tns:constituent cat="PP" ID="c_60">
+                                                                               <tns:constituent cat="IN" tokenIDs="t_26" ID="c_37"/>
+                                                                               <tns:constituent cat="NP" ID="c_59">
+                                                                                   <tns:constituent cat="NP" ID="c_39">
+                                                                                       <tns:constituent cat="NNS" tokenIDs="t_27" ID="c_38"/>
+                                                                                   </tns:constituent>
+                                                                                   <tns:constituent cat="PP" ID="c_58">
+                                                                                       <tns:constituent cat="IN" tokenIDs="t_28" ID="c_40"/>
+                                                                                       <tns:constituent cat="NP" ID="c_57">
+                                                                                           <tns:constituent cat="NP" ID="c_46">
+                                                                                               <tns:constituent cat="NP" ID="c_44">
+                                                                                                   <tns:constituent cat="DT" tokenIDs="t_29" ID="c_41"/>
+                                                                                                   <tns:constituent cat="NN" tokenIDs="t_30" ID="c_42"/>
+                                                                                                   <tns:constituent cat="POS" tokenIDs="t_31" ID="c_43"/>
+                                                                                               </tns:constituent>
+                                                                                               <tns:constituent cat="NN" tokenIDs="t_32" ID="c_45"/>
+                                                                                           </tns:constituent>
+                                                                                           <tns:constituent cat="VP" ID="c_56">
+                                                                                               <tns:constituent cat="VBG" tokenIDs="t_33" ID="c_47"/>
+                                                                                               <tns:constituent cat="PP" ID="c_55">
+                                                                                                   <tns:constituent cat="IN" tokenIDs="t_34" ID="c_48"/>
+                                                                                                   <tns:constituent cat="NP" ID="c_54">
+                                                                                                       <tns:constituent cat="DT" tokenIDs="t_35" ID="c_49"/>
+                                                                                                       <tns:constituent cat="JJ" tokenIDs="t_36" ID="c_50"/>
+                                                                                                       <tns:constituent cat="JJ" tokenIDs="t_37" ID="c_51"/>
+                                                                                                       <tns:constituent cat="NN" tokenIDs="t_38" ID="c_52"/>
+                                                                                                       <tns:constituent cat="NN" tokenIDs="t_39" ID="c_53"/>
+                                                                                                   </tns:constituent>
+                                                                                               </tns:constituent>
+                                                                                           </tns:constituent>
+                                                                                       </tns:constituent>
+                                                                                   </tns:constituent>
+                                                                               </tns:constituent>
+                                                                           </tns:constituent>
+                                                                       </tns:constituent>
+                                                                   </tns:constituent>
+                                                               </tns:constituent>
+                                                           </tns:constituent>
+                                                       </tns:constituent>
+                                                   </tns:constituent>
+                                               </tns:constituent>
+                                           </tns:constituent>
+                                       </tns:constituent>
+                                   </tns:constituent>
+                               </tns:constituent>
+                           </tns:constituent>
+                           <tns:constituent cat="." tokenIDs="t_40" ID="c_73"/>
+                       </tns:constituent>
+                   </tns:constituent>
+               </tns:parse>
+               <tns:parse>
+                   <tns:constituent cat="ROOT" ID="c_121">
+                       <tns:constituent cat="S" ID="c_120">
+                           <tns:constituent cat="ADVP" ID="c_77">
+                               <tns:constituent cat="RB" tokenIDs="t_41" ID="c_76"/>
+                           </tns:constituent>
+                           <tns:constituent cat="," tokenIDs="t_42" ID="c_78"/>
+                           <tns:constituent cat="S" ID="c_100">
+                               <tns:constituent cat="NP" ID="c_81">
+                                   <tns:constituent cat="NNP" tokenIDs="t_43" ID="c_79"/>
+                                   <tns:constituent cat="NNS" tokenIDs="t_44" ID="c_80"/>
+                               </tns:constituent>
+                               <tns:constituent cat="VP" ID="c_99">
+                                   <tns:constituent cat="VBD" tokenIDs="t_45" ID="c_82"/>
+                                   <tns:constituent cat="PRT" ID="c_84">
+                                       <tns:constituent cat="RP" tokenIDs="t_46" ID="c_83"/>
+                                   </tns:constituent>
+                                   <tns:constituent cat="PP" ID="c_98">
+                                       <tns:constituent cat="IN" tokenIDs="t_47" ID="c_85"/>
+                                       <tns:constituent cat="NP" ID="c_97">
+                                           <tns:constituent cat="NP" ID="c_88">
+                                               <tns:constituent cat="JJ" tokenIDs="t_48" ID="c_86"/>
+                                               <tns:constituent cat="NN" tokenIDs="t_49" ID="c_87"/>
+                                           </tns:constituent>
+                                           <tns:constituent cat="PP" ID="c_96">
+                                               <tns:constituent cat="IN" tokenIDs="t_50" ID="c_89"/>
+                                               <tns:constituent cat="NP" ID="c_95">
+                                                   <tns:constituent cat="DT" tokenIDs="t_51" ID="c_90"/>
+                                                   <tns:constituent cat="ADJP" ID="c_93">
+                                                       <tns:constituent cat="RB" tokenIDs="t_52" ID="c_91"/>
+                                                       <tns:constituent cat="VBN" tokenIDs="t_53" ID="c_92"/>
+                                                   </tns:constituent>
+                                                   <tns:constituent cat="NN" tokenIDs="t_54" ID="c_94"/>
+                                               </tns:constituent>
+                                           </tns:constituent>
+                                       </tns:constituent>
+                                   </tns:constituent>
+                               </tns:constituent>
+                           </tns:constituent>
+                           <tns:constituent cat="," tokenIDs="t_55" ID="c_101"/>
+                           <tns:constituent cat="CC" tokenIDs="t_56" ID="c_102"/>
+                           <tns:constituent cat="S" ID="c_118">
+                               <tns:constituent cat="NP" ID="c_107">
+                                   <tns:constituent cat="NNP" tokenIDs="t_57" ID="c_103"/>
+                                   <tns:constituent cat="NNP" tokenIDs="t_58" ID="c_104"/>
+                                   <tns:constituent cat="CC" tokenIDs="t_59" ID="c_105"/>
+                                   <tns:constituent cat="NNP" tokenIDs="t_60" ID="c_106"/>
+                               </tns:constituent>
+                               <tns:constituent cat="VP" ID="c_117">
+                                   <tns:constituent cat="VBD" tokenIDs="t_61" ID="c_108"/>
+                                   <tns:constituent cat="NP" ID="c_110">
+                                       <tns:constituent cat="NNS" tokenIDs="t_62" ID="c_109"/>
+                                   </tns:constituent>
+                                   <tns:constituent cat="PP" ID="c_116">
+                                       <tns:constituent cat="IN" tokenIDs="t_63" ID="c_111"/>
+                                       <tns:constituent cat="NP" ID="c_115">
+                                           <tns:constituent cat="CD" tokenIDs="t_64" ID="c_112"/>
+                                           <tns:constituent cat="JJ" tokenIDs="t_65" ID="c_113"/>
+                                           <tns:constituent cat="NNS" tokenIDs="t_66" ID="c_114"/>
+                                       </tns:constituent>
+                                   </tns:constituent>
+                               </tns:constituent>
+                           </tns:constituent>
+                           <tns:constituent cat="." tokenIDs="t_67" ID="c_119"/>
+                       </tns:constituent>
+                   </tns:constituent>
+               </tns:parse>
+               <tns:parse>
+                   <tns:constituent cat="ROOT" ID="c_151">
+                       <tns:constituent cat="S" ID="c_150">
+                           <tns:constituent cat="S" ID="c_134">
+                               <tns:constituent cat="NP" ID="c_129">
+                                   <tns:constituent cat="NP" ID="c_124">
+                                       <tns:constituent cat="DT" tokenIDs="t_68" ID="c_122"/>
+                                       <tns:constituent cat="NN" tokenIDs="t_69" ID="c_123"/>
+                                   </tns:constituent>
+                                   <tns:constituent cat="PP" ID="c_128">
+                                       <tns:constituent cat="IN" tokenIDs="t_70" ID="c_125"/>
+                                       <tns:constituent cat="NP" ID="c_127">
+                                           <tns:constituent cat="NNS" tokenIDs="t_71" ID="c_126"/>
+                                       </tns:constituent>
+                                   </tns:constituent>
+                               </tns:constituent>
+                               <tns:constituent cat="VP" ID="c_133">
+                                   <tns:constituent cat="VBN" tokenIDs="t_72" ID="c_130"/>
+                                   <tns:constituent cat="NP" ID="c_132">
+                                       <tns:constituent cat="NNS" tokenIDs="t_73" ID="c_131"/>
+                                   </tns:constituent>
+                               </tns:constituent>
+                           </tns:constituent>
+                           <tns:constituent cat="," tokenIDs="t_74" ID="c_135"/>
+                           <tns:constituent cat="CC" tokenIDs="t_75" ID="c_136"/>
+                           <tns:constituent cat="S" ID="c_148">
+                               <tns:constituent cat="NP" ID="c_138">
+                                   <tns:constituent cat="NNP" tokenIDs="t_76" ID="c_137"/>
+                               </tns:constituent>
+                               <tns:constituent cat="VP" ID="c_147">
+                                   <tns:constituent cat="VBD" tokenIDs="t_77" ID="c_139"/>
+                                   <tns:constituent cat="PP" ID="c_146">
+                                       <tns:constituent cat="IN" tokenIDs="t_78" ID="c_140"/>
+                                       <tns:constituent cat="S" ID="c_145">
+                                           <tns:constituent cat="VP" ID="c_144">
+                                               <tns:constituent cat="VBG" tokenIDs="t_79" ID="c_141"/>
+                                               <tns:constituent cat="NP" ID="c_143">
+                                                   <tns:constituent cat="NNS" tokenIDs="t_80" ID="c_142"/>
+                                               </tns:constituent>
+                                           </tns:constituent>
+                                       </tns:constituent>
+                                   </tns:constituent>
+                               </tns:constituent>
+                           </tns:constituent>
+                           <tns:constituent cat="." tokenIDs="t_81" ID="c_149"/>
+                       </tns:constituent>
+                   </tns:constituent>
+               </tns:parse>
+               <tns:parse>
+                   <tns:constituent cat="ROOT" ID="c_233">
+                       <tns:constituent cat="SINV" ID="c_232">
+                           <tns:constituent cat="S" ID="c_194">
+                               <tns:constituent cat="S" ID="c_172">
+                                   <tns:constituent cat="NP" ID="c_159">
+                                       <tns:constituent cat="NP" ID="c_154">
+                                           <tns:constituent cat="CD" tokenIDs="t_82" ID="c_152"/>
+                                           <tns:constituent cat="NN" tokenIDs="t_83" ID="c_153"/>
+                                       </tns:constituent>
+                                       <tns:constituent cat="PP" ID="c_158">
+                                           <tns:constituent cat="IN" tokenIDs="t_84" ID="c_155"/>
+                                           <tns:constituent cat="NP" ID="c_157">
+                                               <tns:constituent cat="NNP" tokenIDs="t_85" ID="c_156"/>
+                                           </tns:constituent>
+                                       </tns:constituent>
+                                   </tns:constituent>
+                                   <tns:constituent cat="VP" ID="c_171">
+                                       <tns:constituent cat="VBD" tokenIDs="t_86" ID="c_160"/>
+                                       <tns:constituent cat="NP" ID="c_164">
+                                           <tns:constituent cat="DT" tokenIDs="t_87" ID="c_161"/>
+                                           <tns:constituent cat="NNP" tokenIDs="t_88" ID="c_162"/>
+                                           <tns:constituent cat="NNP" tokenIDs="t_89" ID="c_163"/>
+                                       </tns:constituent>
+                                       <tns:constituent cat="PP" ID="c_170">
+                                           <tns:constituent cat="IN" tokenIDs="t_90" ID="c_165"/>
+                                           <tns:constituent cat="NP" ID="c_169">
+                                               <tns:constituent cat="DT" tokenIDs="t_91" ID="c_166"/>
+                                               <tns:constituent cat="JJ" tokenIDs="t_92" ID="c_167"/>
+                                               <tns:constituent cat="NN" tokenIDs="t_93" ID="c_168"/>
+                                           </tns:constituent>
+                                       </tns:constituent>
+                                   </tns:constituent>
+                               </tns:constituent>
+                               <tns:constituent cat="CC" tokenIDs="t_94" ID="c_173"/>
+                               <tns:constituent cat="S" ID="c_193">
+                                   <tns:constituent cat="NP" ID="c_175">
+                                       <tns:constituent cat="NNPS" tokenIDs="t_95" ID="c_174"/>
+                                   </tns:constituent>
+                                   <tns:constituent cat="VP" ID="c_192">
+                                       <tns:constituent cat="VBD" tokenIDs="t_96" ID="c_176"/>
+                                       <tns:constituent cat="NP" ID="c_179">
+                                           <tns:constituent cat="PRP$" tokenIDs="t_97" ID="c_177"/>
+                                           <tns:constituent cat="NNS" tokenIDs="t_98" ID="c_178"/>
+                                       </tns:constituent>
+                                       <tns:constituent cat="PP" ID="c_183">
+                                           <tns:constituent cat="IN" tokenIDs="t_99" ID="c_180"/>
+                                           <tns:constituent cat="NP" ID="c_182">
+                                               <tns:constituent cat="NNP" tokenIDs="t_100" ID="c_181"/>
+                                           </tns:constituent>
+                                       </tns:constituent>
+                                       <tns:constituent cat="," tokenIDs="t_101" ID="c_184"/>
+                                       <tns:constituent cat="ADVP" ID="c_191">
+                                           <tns:constituent cat="RB" tokenIDs="t_102" ID="c_185"/>
+                                           <tns:constituent cat="PP" ID="c_190">
+                                               <tns:constituent cat="IN" tokenIDs="t_103" ID="c_186"/>
+                                               <tns:constituent cat="NP" ID="c_189">
+                                                   <tns:constituent cat="DT" tokenIDs="t_104" ID="c_187"/>
+                                                   <tns:constituent cat="NN" tokenIDs="t_105" ID="c_188"/>
+                                               </tns:constituent>
+                                           </tns:constituent>
+                                       </tns:constituent>
+                                   </tns:constituent>
+                               </tns:constituent>
+                           </tns:constituent>
+                           <tns:constituent cat="VP" ID="c_228">
+                               <tns:constituent cat="VBD" tokenIDs="t_106" ID="c_195"/>
+                               <tns:constituent cat="PP" ID="c_227">
+                                   <tns:constituent cat="IN" tokenIDs="t_107" ID="c_196"/>
+                                   <tns:constituent cat="NP" ID="c_226">
+                                       <tns:constituent cat="NP" ID="c_202">
+                                           <tns:constituent cat="NP" ID="c_200">
+                                               <tns:constituent cat="NNP" tokenIDs="t_108" ID="c_197"/>
+                                               <tns:constituent cat="CC" tokenIDs="t_109" ID="c_198"/>
+                                               <tns:constituent cat="NNP" tokenIDs="t_110" ID="c_199"/>
+                                           </tns:constituent>
+                                           <tns:constituent cat="NNP" tokenIDs="t_111" ID="c_201"/>
+                                       </tns:constituent>
+                                       <tns:constituent cat="," tokenIDs="t_112" ID="c_203"/>
+                                       <tns:constituent cat="SBAR" ID="c_225">
+                                           <tns:constituent cat="WHADVP" ID="c_205">
+                                               <tns:constituent cat="WRB" tokenIDs="t_113" ID="c_204"/>
+                                           </tns:constituent>
+                                           <tns:constituent cat="S" ID="c_224">
+                                               <tns:constituent cat="NP" ID="c_208">
+                                                   <tns:constituent cat="JJ" tokenIDs="t_114" ID="c_206"/>
+                                                   <tns:constituent cat="NN" tokenIDs="t_115" ID="c_207"/>
+                                               </tns:constituent>
+                                               <tns:constituent cat="VP" ID="c_223">
+                                                   <tns:constituent cat="VBD" tokenIDs="t_116" ID="c_209"/>
+                                                   <tns:constituent cat="PP" ID="c_213">
+                                                       <tns:constituent cat="IN" tokenIDs="t_117" ID="c_210"/>
+                                                       <tns:constituent cat="NP" ID="c_212">
+                                                           <tns:constituent cat="NN" tokenIDs="t_118" ID="c_211"/>
+                                                       </tns:constituent>
+                                                   </tns:constituent>
+                                                   <tns:constituent cat="PP" ID="c_218">
+                                                       <tns:constituent cat="IN" tokenIDs="t_119" ID="c_214"/>
+                                                       <tns:constituent cat="NP" ID="c_217">
+                                                           <tns:constituent cat="JJ" tokenIDs="t_120" ID="c_215"/>
+                                                           <tns:constituent cat="NN" tokenIDs="t_121" ID="c_216"/>
+                                                       </tns:constituent>
+                                                   </tns:constituent>
+                                                   <tns:constituent cat="PP" ID="c_222">
+                                                       <tns:constituent cat="IN" tokenIDs="t_122" ID="c_219"/>
+                                                       <tns:constituent cat="NP" ID="c_221">
+                                                           <tns:constituent cat="NNP" tokenIDs="t_123" ID="c_220"/>
+                                                       </tns:constituent>
+                                                   </tns:constituent>
+                                               </tns:constituent>
+                                           </tns:constituent>
+                                       </tns:constituent>
+                                   </tns:constituent>
+                               </tns:constituent>
+                           </tns:constituent>
+                           <tns:constituent cat="NP" ID="c_230">
+                               <tns:constituent cat="PRP" tokenIDs="t_124" ID="c_229"/>
+                           </tns:constituent>
+                           <tns:constituent cat="." tokenIDs="t_125" ID="c_231"/>
+                       </tns:constituent>
+                   </tns:constituent>
+               </tns:parse>
+               <tns:parse>
+                   <tns:constituent cat="ROOT" ID="c_314">
+                       <tns:constituent cat="S" ID="c_313">
+                           <tns:constituent cat="NP" ID="c_236">
+                               <tns:constituent cat="DT" tokenIDs="t_126" ID="c_234"/>
+                               <tns:constituent cat="NNS" tokenIDs="t_127" ID="c_235"/>
+                           </tns:constituent>
+                           <tns:constituent cat="VP" ID="c_311">
+                               <tns:constituent cat="VBD" tokenIDs="t_128" ID="c_237"/>
+                               <tns:constituent cat="ADJP" ID="c_310">
+                                   <tns:constituent cat="JJ" tokenIDs="t_129" ID="c_238"/>
+                                   <tns:constituent cat="S" ID="c_309">
+                                       <tns:constituent cat="VP" ID="c_308">
+                                           <tns:constituent cat="TO" tokenIDs="t_130" ID="c_239"/>
+                                           <tns:constituent cat="VP" ID="c_307">
+                                               <tns:constituent cat="VB" tokenIDs="t_131" ID="c_240"/>
+                                               <tns:constituent cat="NP" ID="c_242">
+                                                   <tns:constituent cat="NN" tokenIDs="t_132" ID="c_241"/>
+                                               </tns:constituent>
+                                               <tns:constituent cat="PP" ID="c_306">
+                                                   <tns:constituent cat="IN" tokenIDs="t_133" ID="c_243"/>
+                                                   <tns:constituent cat="NP" ID="c_305">
+                                                       <tns:constituent cat="NP" ID="c_246">
+                                                           <tns:constituent cat="DT" tokenIDs="t_134" ID="c_244"/>
+                                                           <tns:constituent cat="NN" tokenIDs="t_135" ID="c_245"/>
+                                                       </tns:constituent>
+                                                       <tns:constituent cat="PP" ID="c_304">
+                                                           <tns:constituent cat="IN" tokenIDs="t_136" ID="c_247"/>
+                                                           <tns:constituent cat="NP" ID="c_303">
+                                                               <tns:constituent cat="NP" ID="c_250">
+                                                                   <tns:constituent cat="DT" tokenIDs="t_137" ID="c_248"/>
+                                                                   <tns:constituent cat="NN" tokenIDs="t_138" ID="c_249"/>
+                                                               </tns:constituent>
+                                                               <tns:constituent cat="," tokenIDs="t_139" ID="c_251"/>
+                                                               <tns:constituent cat="NP" ID="c_302">
+                                                                   <tns:constituent cat="NP" ID="c_254">
+                                                                       <tns:constituent cat="DT" tokenIDs="t_140" ID="c_252"/>
+                                                                       <tns:constituent cat="NN" tokenIDs="t_141" ID="c_253"/>
+                                                                   </tns:constituent>
+                                                                   <tns:constituent cat="PP" ID="c_260">
+                                                                       <tns:constituent cat="IN" tokenIDs="t_142" ID="c_255"/>
+                                                                       <tns:constituent cat="NP" ID="c_259">
+                                                                           <tns:constituent cat="DT" tokenIDs="t_143" ID="c_256"/>
+                                                                           <tns:constituent cat="JJ" tokenIDs="t_144" ID="c_257"/>
+                                                                           <tns:constituent cat="NN" tokenIDs="t_145" ID="c_258"/>
+                                                                       </tns:constituent>
+                                                                   </tns:constituent>
+                                                                   <tns:constituent cat="SBAR" ID="c_301">
+                                                                       <tns:constituent cat="WHNP" ID="c_262">
+                                                                           <tns:constituent cat="WDT" tokenIDs="t_146" ID="c_261"/>
+                                                                       </tns:constituent>
+                                                                       <tns:constituent cat="S" ID="c_300">
+                                                                           <tns:constituent cat="VP" ID="c_299">
+                                                                               <tns:constituent cat="VBD" tokenIDs="t_147" ID="c_263"/>
+                                                                               <tns:constituent cat="NP" ID="c_265">
+                                                                                   <tns:constituent cat="NNP" tokenIDs="t_148" ID="c_264"/>
+                                                                               </tns:constituent>
+                                                                               <tns:constituent cat="PP" ID="c_285">
+                                                                                   <tns:constituent cat="TO" tokenIDs="t_149" ID="c_266"/>
+                                                                                   <tns:constituent cat="NP" ID="c_284">
+                                                                                       <tns:constituent cat="NP" ID="c_270">
+                                                                                           <tns:constituent cat="DT" tokenIDs="t_150" ID="c_267"/>
+                                                                                           <tns:constituent cat="NNP" tokenIDs="t_151" ID="c_268"/>
+                                                                                           <tns:constituent cat="NNP" tokenIDs="t_152" ID="c_269"/>
+                                                                                       </tns:constituent>
+                                                                                       <tns:constituent cat="CC" tokenIDs="t_153" ID="c_271"/>
+                                                                                       <tns:constituent cat="NP" ID="c_283">
+                                                                                           <tns:constituent cat="NP" ID="c_274">
+                                                                                               <tns:constituent cat="DT" tokenIDs="t_154" ID="c_272"/>
+                                                                                               <tns:constituent cat="NNS" tokenIDs="t_155" ID="c_273"/>
+                                                                                           </tns:constituent>
+                                                                                           <tns:constituent cat="PP" ID="c_282">
+                                                                                               <tns:constituent cat="IN" tokenIDs="t_156" ID="c_275"/>
+                                                                                               <tns:constituent cat="NP" ID="c_281">
+                                                                                                   <tns:constituent cat="NP" ID="c_279">
+                                                                                                       <tns:constituent cat="DT" tokenIDs="t_157" ID="c_276"/>
+                                                                                                       <tns:constituent cat="NN" tokenIDs="t_158" ID="c_277"/>
+                                                                                                       <tns:constituent cat="POS" tokenIDs="t_159" ID="c_278"/>
+                                                                                                   </tns:constituent>
+                                                                                                   <tns:constituent cat="NN" tokenIDs="t_160" ID="c_280"/>
+                                                                                               </tns:constituent>
+                                                                                           </tns:constituent>
+                                                                                       </tns:constituent>
+                                                                                   </tns:constituent>
+                                                                               </tns:constituent>
+                                                                               <tns:constituent cat="PP" ID="c_298">
+                                                                                   <tns:constituent cat="IN" tokenIDs="t_161" ID="c_286"/>
+                                                                                   <tns:constituent cat="NP" ID="c_297">
+                                                                                       <tns:constituent cat="NP" ID="c_292">
+                                                                                           <tns:constituent cat="NP" ID="c_290">
+                                                                                               <tns:constituent cat="DT" tokenIDs="t_162" ID="c_287"/>
+                                                                                               <tns:constituent cat="NN" tokenIDs="t_163" ID="c_288"/>
+                                                                                               <tns:constituent cat="POS" tokenIDs="t_164" ID="c_289"/>
+                                                                                           </tns:constituent>
+                                                                                           <tns:constituent cat="NN" tokenIDs="t_165" ID="c_291"/>
+                                                                                       </tns:constituent>
+                                                                                       <tns:constituent cat="PP" ID="c_296">
+                                                                                           <tns:constituent cat="IN" tokenIDs="t_166" ID="c_293"/>
+                                                                                           <tns:constituent cat="NP" ID="c_295">
+                                                                                               <tns:constituent cat="NN" tokenIDs="t_167" ID="c_294"/>
+                                                                                           </tns:constituent>
+                                                                                       </tns:constituent>
+                                                                                   </tns:constituent>
+                                                                               </tns:constituent>
+                                                                           </tns:constituent>
+                                                                       </tns:constituent>
+                                                                   </tns:constituent>
+                                                               </tns:constituent>
+                                                           </tns:constituent>
+                                                       </tns:constituent>
+                                                   </tns:constituent>
+                                               </tns:constituent>
+                                           </tns:constituent>
+                                       </tns:constituent>
+                                   </tns:constituent>
+                               </tns:constituent>
+                           </tns:constituent>
+                           <tns:constituent cat="." tokenIDs="t_168" ID="c_312"/>
+                       </tns:constituent>
+                   </tns:constituent>
+               </tns:parse>
+               <tns:parse>
+                   <tns:constituent cat="ROOT" ID="c_345">
+                       <tns:constituent cat="S" ID="c_344">
+                           <tns:constituent cat="NP" ID="c_328">
+                               <tns:constituent cat="NP" ID="c_317">
+                                   <tns:constituent cat="JJ" tokenIDs="t_169" ID="c_315"/>
+                                   <tns:constituent cat="NNS" tokenIDs="t_170" ID="c_316"/>
+                               </tns:constituent>
+                               <tns:constituent cat="PP" ID="c_327">
+                                   <tns:constituent cat="IN" tokenIDs="t_171" ID="c_318"/>
+                                   <tns:constituent cat="NP" ID="c_326">
+                                       <tns:constituent cat="NP" ID="c_321">
+                                           <tns:constituent cat="DT" tokenIDs="t_172" ID="c_319"/>
+                                           <tns:constituent cat="NNS" tokenIDs="t_173" ID="c_320"/>
+                                       </tns:constituent>
+                                       <tns:constituent cat="PP" ID="c_325">
+                                           <tns:constituent cat="IN" tokenIDs="t_174" ID="c_322"/>
+                                           <tns:constituent cat="NP" ID="c_324">
+                                               <tns:constituent cat="CD" tokenIDs="t_175" ID="c_323"/>
+                                           </tns:constituent>
+                                       </tns:constituent>
+                                   </tns:constituent>
+                               </tns:constituent>
+                           </tns:constituent>
+                           <tns:constituent cat="VP" ID="c_342">
+                               <tns:constituent cat="VBD" tokenIDs="t_176" ID="c_329"/>
+                               <tns:constituent cat="NP" ID="c_333">
+                                   <tns:constituent cat="JJ" tokenIDs="t_177" ID="c_330"/>
+                                   <tns:constituent cat="JJ" tokenIDs="t_178" ID="c_331"/>
+                                   <tns:constituent cat="NNS" tokenIDs="t_179" ID="c_332"/>
+                               </tns:constituent>
+                               <tns:constituent cat="ADVP" ID="c_335">
+                                   <tns:constituent cat="RB" tokenIDs="t_180" ID="c_334"/>
+                               </tns:constituent>
+                               <tns:constituent cat="PP" ID="c_341">
+                                   <tns:constituent cat="IN" tokenIDs="t_181" ID="c_336"/>
+                                   <tns:constituent cat="NP" ID="c_340">
+                                       <tns:constituent cat="CD" tokenIDs="t_182" ID="c_337"/>
+                                       <tns:constituent cat="CC" tokenIDs="t_183" ID="c_338"/>
+                                       <tns:constituent cat="CD" tokenIDs="t_184" ID="c_339"/>
+                                   </tns:constituent>
+                               </tns:constituent>
+                           </tns:constituent>
+                           <tns:constituent cat="." tokenIDs="t_185" ID="c_343"/>
+                       </tns:constituent>
+                   </tns:constituent>
+               </tns:parse>
+           </tns:parsing>
+           <tns:namedEntities type="stanford_ner/regexner">
+               <tns:entity tokenIDs="t_0" class="TITLE" ID="ne_0"/>
+               <tns:entity tokenIDs="t_1 t_2" class="PERSON" ID="ne_1"/>
+               <tns:entity tokenIDs="t_10" class="DATE" ID="ne_2"/>
+               <tns:entity tokenIDs="t_12" class="LOCATION" ID="ne_3"/>
+               <tns:entity tokenIDs="t_14 t_15" class="LOCATION" ID="ne_4"/>
+               <tns:entity tokenIDs="t_27" class="MISC" ID="ne_5"/>
+               <tns:entity tokenIDs="t_39" class="DURATION" ID="ne_6"/>
+               <tns:entity tokenIDs="t_43" class="LOCATION" ID="ne_7"/>
+               <tns:entity tokenIDs="t_57 t_58" class="LOCATION" ID="ne_8"/>
+               <tns:entity tokenIDs="t_60" class="LOCATION" ID="ne_9"/>
+               <tns:entity tokenIDs="t_64" class="NUMBER" ID="ne_10"/>
+               <tns:entity tokenIDs="t_76" class="LOCATION" ID="ne_11"/>
+               <tns:entity tokenIDs="t_82 t_83" class="DURATION" ID="ne_12"/>
+               <tns:entity tokenIDs="t_85" class="PERSON" ID="ne_13"/>
+               <tns:entity tokenIDs="t_95" class="MISC" ID="ne_14"/>
+               <tns:entity tokenIDs="t_100" class="ORGANIZATION" ID="ne_15"/>
+               <tns:entity tokenIDs="t_108" class="LOCATION" ID="ne_16"/>
+               <tns:entity tokenIDs="t_110 t_111" class="LOCATION" ID="ne_17"/>
+               <tns:entity tokenIDs="t_114" class="MISC" ID="ne_18"/>
+               <tns:entity tokenIDs="t_123" class="PERSON" ID="ne_19"/>
+               <tns:entity tokenIDs="t_148" class="PERSON" ID="ne_20"/>
+               <tns:entity tokenIDs="t_169" class="MISC" ID="ne_21"/>
+               <tns:entity tokenIDs="t_175" class="DATE" ID="ne_22"/>
+               <tns:entity tokenIDs="t_178" class="MISC" ID="ne_23"/>
+               <tns:entity tokenIDs="t_179" class="DURATION" ID="ne_24"/>
+               <tns:entity tokenIDs="t_182 t_183 t_184" class="DATE" ID="ne_25"/>
+           </tns:namedEntities>
+           <tns:depparsing tagset="stanford" multigovs="true" emptytoks="false">
+               <tns:parse ID="d_0">
+                   <tns:dependency govIDs="t_2" func="nn" depIDs="t_0"/>
+                   <tns:dependency govIDs="t_2" func="nn" depIDs="t_1"/>
+                   <tns:dependency govIDs="t_2" func="possessive" depIDs="t_3"/>
+                   <tns:dependency govIDs="t_5" func="poss" depIDs="t_2"/>
+                   <tns:dependency govIDs="t_5" func="amod" depIDs="t_4"/>
+                   <tns:dependency govIDs="t_6" func="advcl" depIDs="t_16"/>
+                   <tns:dependency govIDs="t_6" func="nsubj" depIDs="t_5"/>
+                   <tns:dependency govIDs="t_6" func="prep" depIDs="t_7"/>
+                   <tns:dependency govIDs="t_6" func="tmod" depIDs="t_10"/>
+                   <tns:dependency govIDs="t_7" func="pobj" depIDs="t_9"/>
+                   <tns:dependency govIDs="t_9" func="det" depIDs="t_8"/>
+                   <tns:dependency govIDs="t_12" func="cc" depIDs="t_13"/>
+                   <tns:dependency govIDs="t_12" func="conj" depIDs="t_14"/>
+                   <tns:dependency govIDs="t_16" func="nsubj" depIDs="t_15"/>
+                   <tns:dependency govIDs="t_16" func="prep" depIDs="t_18"/>
+                   <tns:dependency govIDs="t_16" func="dobj" depIDs="t_17"/>
+                   <tns:dependency govIDs="t_16" func="mark" depIDs="t_11"/>
+                   <tns:dependency govIDs="t_15" func="nn" depIDs="t_12"/>
+                   <tns:dependency govIDs="t_18" func="pobj" depIDs="t_19"/>
+                   <tns:dependency govIDs="t_19" func="rcmod" depIDs="t_22"/>
+                   <tns:dependency govIDs="t_22" func="nsubj" depIDs="t_20"/>
+                   <tns:dependency govIDs="t_22" func="aux" depIDs="t_21"/>
+                   <tns:dependency govIDs="t_22" func="prep" depIDs="t_23"/>
+                   <tns:dependency govIDs="t_23" func="pobj" depIDs="t_25"/>
+                   <tns:dependency govIDs="t_26" func="pobj" depIDs="t_27"/>
+                   <tns:dependency govIDs="t_25" func="amod" depIDs="t_24"/>
+                   <tns:dependency govIDs="t_25" func="prep" depIDs="t_26"/>
+                   <tns:dependency govIDs="t_28" func="pobj" depIDs="t_32"/>
+                   <tns:dependency govIDs="t_27" func="prep" depIDs="t_28"/>
+                   <tns:dependency govIDs="t_30" func="possessive" depIDs="t_31"/>
+                   <tns:dependency govIDs="t_30" func="det" depIDs="t_29"/>
+                   <tns:dependency govIDs="t_33" func="prep" depIDs="t_34"/>
+                   <tns:dependency govIDs="t_34" func="pobj" depIDs="t_39"/>
+                   <tns:dependency govIDs="t_32" func="partmod" depIDs="t_33"/>
+                   <tns:dependency govIDs="t_32" func="poss" depIDs="t_30"/>
+                   <tns:dependency govIDs="t_39" func="amod" depIDs="t_37"/>
+                   <tns:dependency govIDs="t_39" func="nn" depIDs="t_38"/>
+                   <tns:dependency govIDs="t_39" func="det" depIDs="t_35"/>
+                   <tns:dependency govIDs="t_39" func="amod" depIDs="t_36"/>
+               </tns:parse>
+               <tns:parse ID="d_1">
+                   <tns:dependency govIDs="t_44" func="nn" depIDs="t_43"/>
+                   <tns:dependency govIDs="t_45" func="cc" depIDs="t_56"/>
+                   <tns:dependency govIDs="t_45" func="advmod" depIDs="t_41"/>
+                   <tns:dependency govIDs="t_45" func="conj" depIDs="t_61"/>
+                   <tns:dependency govIDs="t_45" func="nsubj" depIDs="t_44"/>
+                   <tns:dependency govIDs="t_45" func="prt" depIDs="t_46"/>
+                   <tns:dependency govIDs="t_45" func="prep" depIDs="t_47"/>
+                   <tns:dependency govIDs="t_47" func="pobj" depIDs="t_49"/>
+                   <tns:dependency govIDs="t_49" func="amod" depIDs="t_48"/>
+                   <tns:dependency govIDs="t_49" func="prep" depIDs="t_50"/>
+                   <tns:dependency govIDs="t_50" func="pobj" depIDs="t_54"/>
+                   <tns:dependency govIDs="t_53" func="advmod" depIDs="t_52"/>
+                   <tns:dependency govIDs="t_54" func="det" depIDs="t_51"/>
+                   <tns:dependency govIDs="t_54" func="amod" depIDs="t_53"/>
+                   <tns:dependency govIDs="t_58" func="nn" depIDs="t_57"/>
+                   <tns:dependency govIDs="t_58" func="cc" depIDs="t_59"/>
+                   <tns:dependency govIDs="t_58" func="conj" depIDs="t_60"/>
+                   <tns:dependency govIDs="t_61" func="nsubj" depIDs="t_58"/>
+                   <tns:dependency govIDs="t_61" func="prep" depIDs="t_63"/>
+                   <tns:dependency govIDs="t_61" func="dobj" depIDs="t_62"/>
+                   <tns:dependency govIDs="t_63" func="pobj" depIDs="t_66"/>
+                   <tns:dependency govIDs="t_66" func="amod" depIDs="t_65"/>
+                   <tns:dependency govIDs="t_66" func="num" depIDs="t_64"/>
+               </tns:parse>
+               <tns:parse ID="d_2">
+                   <tns:dependency govIDs="t_69" func="det" depIDs="t_68"/>
+                   <tns:dependency govIDs="t_69" func="prep" depIDs="t_70"/>
+                   <tns:dependency govIDs="t_70" func="pobj" depIDs="t_71"/>
+                   <tns:dependency govIDs="t_72" func="nsubj" depIDs="t_69"/>
+                   <tns:dependency govIDs="t_72" func="dobj" depIDs="t_73"/>
+                   <tns:dependency govIDs="t_72" func="cc" depIDs="t_75"/>
+                   <tns:dependency govIDs="t_72" func="conj" depIDs="t_77"/>
+                   <tns:dependency govIDs="t_77" func="nsubj" depIDs="t_76"/>
+                   <tns:dependency govIDs="t_77" func="prep" depIDs="t_78"/>
+                   <tns:dependency govIDs="t_78" func="pcomp" depIDs="t_79"/>
+                   <tns:dependency govIDs="t_79" func="dobj" depIDs="t_80"/>
+               </tns:parse>
+               <tns:parse ID="d_3">
+                   <tns:dependency govIDs="t_83" func="num" depIDs="t_82"/>
+                   <tns:dependency govIDs="t_83" func="prep" depIDs="t_84"/>
+                   <tns:dependency govIDs="t_84" func="pobj" depIDs="t_85"/>
+                   <tns:dependency govIDs="t_86" func="nsubj" depIDs="t_83"/>
+                   <tns:dependency govIDs="t_86" func="dobj" depIDs="t_89"/>
+                   <tns:dependency govIDs="t_86" func="prep" depIDs="t_90"/>
+                   <tns:dependency govIDs="t_86" func="cc" depIDs="t_94"/>
+                   <tns:dependency govIDs="t_86" func="conj" depIDs="t_96"/>
+                   <tns:dependency govIDs="t_89" func="det" depIDs="t_87"/>
+                   <tns:dependency govIDs="t_89" func="nn" depIDs="t_88"/>
+                   <tns:dependency govIDs="t_90" func="pobj" depIDs="t_93"/>
+                   <tns:dependency govIDs="t_93" func="det" depIDs="t_91"/>
+                   <tns:dependency govIDs="t_93" func="amod" depIDs="t_92"/>
+                   <tns:dependency govIDs="t_96" func="dobj" depIDs="t_98"/>
+                   <tns:dependency govIDs="t_96" func="prep" depIDs="t_99"/>
+                   <tns:dependency govIDs="t_96" func="advmod" depIDs="t_102"/>
+                   <tns:dependency govIDs="t_96" func="nsubj" depIDs="t_95"/>
+                   <tns:dependency govIDs="t_98" func="poss" depIDs="t_97"/>
+                   <tns:dependency govIDs="t_99" func="pobj" depIDs="t_100"/>
+                   <tns:dependency govIDs="t_102" func="prep" depIDs="t_103"/>
+                   <tns:dependency govIDs="t_103" func="pobj" depIDs="t_105"/>
+                   <tns:dependency govIDs="t_106" func="dep" depIDs="t_86"/>
+                   <tns:dependency govIDs="t_106" func="nsubj" depIDs="t_124"/>
+                   <tns:dependency govIDs="t_106" func="prep" depIDs="t_107"/>
+                   <tns:dependency govIDs="t_105" func="det" depIDs="t_104"/>
+                   <tns:dependency govIDs="t_108" func="conj" depIDs="t_110"/>
+                   <tns:dependency govIDs="t_108" func="cc" depIDs="t_109"/>
+                   <tns:dependency govIDs="t_107" func="pobj" depIDs="t_111"/>
+                   <tns:dependency govIDs="t_111" func="rcmod" depIDs="t_116"/>
+                   <tns:dependency govIDs="t_111" func="nn" depIDs="t_108"/>
+                   <tns:dependency govIDs="t_115" func="amod" depIDs="t_114"/>
+                   <tns:dependency govIDs="t_116" func="nsubj" depIDs="t_115"/>
+                   <tns:dependency govIDs="t_116" func="advmod" depIDs="t_113"/>
+                   <tns:dependency govIDs="t_116" func="prep" depIDs="t_119"/>
+                   <tns:dependency govIDs="t_116" func="prep" depIDs="t_117"/>
+                   <tns:dependency govIDs="t_116" func="prep" depIDs="t_122"/>
+                   <tns:dependency govIDs="t_119" func="pobj" depIDs="t_121"/>
+                   <tns:dependency govIDs="t_117" func="pobj" depIDs="t_118"/>
+                   <tns:dependency govIDs="t_121" func="amod" depIDs="t_120"/>
+                   <tns:dependency govIDs="t_122" func="pobj" depIDs="t_123"/>
+               </tns:parse>
+               <tns:parse ID="d_4">
+                   <tns:dependency govIDs="t_127" func="det" depIDs="t_126"/>
+                   <tns:dependency govIDs="t_129" func="nsubj" depIDs="t_127"/>
+                   <tns:dependency govIDs="t_129" func="cop" depIDs="t_128"/>
+                   <tns:dependency govIDs="t_129" func="xcomp" depIDs="t_131"/>
+                   <tns:dependency govIDs="t_131" func="aux" depIDs="t_130"/>
+                   <tns:dependency govIDs="t_131" func="dobj" depIDs="t_132"/>
+                   <tns:dependency govIDs="t_131" func="prep" depIDs="t_133"/>
+                   <tns:dependency govIDs="t_133" func="pobj" depIDs="t_135"/>
+                   <tns:dependency govIDs="t_135" func="det" depIDs="t_134"/>
+                   <tns:dependency govIDs="t_135" func="prep" depIDs="t_136"/>
+                   <tns:dependency govIDs="t_136" func="pobj" depIDs="t_138"/>
+                   <tns:dependency govIDs="t_138" func="appos" depIDs="t_141"/>
+                   <tns:dependency govIDs="t_138" func="det" depIDs="t_137"/>
+                   <tns:dependency govIDs="t_142" func="pobj" depIDs="t_145"/>
+                   <tns:dependency govIDs="t_141" func="prep" depIDs="t_142"/>
+                   <tns:dependency govIDs="t_141" func="rcmod" depIDs="t_147"/>
+                   <tns:dependency govIDs="t_141" func="det" depIDs="t_140"/>
+                   <tns:dependency govIDs="t_145" func="amod" depIDs="t_144"/>
+                   <tns:dependency govIDs="t_145" func="det" depIDs="t_143"/>
+                   <tns:dependency govIDs="t_147" func="nsubj" depIDs="t_146"/>
+                   <tns:dependency govIDs="t_147" func="prep" depIDs="t_161"/>
+                   <tns:dependency govIDs="t_147" func="dobj" depIDs="t_148"/>
+                   <tns:dependency govIDs="t_147" func="prep" depIDs="t_149"/>
+                   <tns:dependency govIDs="t_149" func="pobj" depIDs="t_152"/>
+                   <tns:dependency govIDs="t_152" func="det" depIDs="t_150"/>
+                   <tns:dependency govIDs="t_152" func="nn" depIDs="t_151"/>
+                   <tns:dependency govIDs="t_152" func="cc" depIDs="t_153"/>
+                   <tns:dependency govIDs="t_152" func="conj" depIDs="t_155"/>
+                   <tns:dependency govIDs="t_156" func="pobj" depIDs="t_160"/>
+                   <tns:dependency govIDs="t_155" func="det" depIDs="t_154"/>
+                   <tns:dependency govIDs="t_155" func="prep" depIDs="t_156"/>
+                   <tns:dependency govIDs="t_160" func="poss" depIDs="t_158"/>
+                   <tns:dependency govIDs="t_158" func="possessive" depIDs="t_159"/>
+                   <tns:dependency govIDs="t_158" func="det" depIDs="t_157"/>
+                   <tns:dependency govIDs="t_163" func="possessive" depIDs="t_164"/>
+                   <tns:dependency govIDs="t_163" func="det" depIDs="t_162"/>
+                   <tns:dependency govIDs="t_161" func="pobj" depIDs="t_165"/>
+                   <tns:dependency govIDs="t_165" func="poss" depIDs="t_163"/>
+                   <tns:dependency govIDs="t_165" func="prep" depIDs="t_166"/>
+                   <tns:dependency govIDs="t_166" func="pobj" depIDs="t_167"/>
+               </tns:parse>
+               <tns:parse ID="d_5">
+                   <tns:dependency govIDs="t_170" func="amod" depIDs="t_169"/>
+                   <tns:dependency govIDs="t_170" func="prep" depIDs="t_171"/>
+                   <tns:dependency govIDs="t_171" func="pobj" depIDs="t_173"/>
+                   <tns:dependency govIDs="t_173" func="det" depIDs="t_172"/>
+                   <tns:dependency govIDs="t_173" func="prep" depIDs="t_174"/>
+                   <tns:dependency govIDs="t_174" func="pobj" depIDs="t_175"/>
+                   <tns:dependency govIDs="t_176" func="nsubj" depIDs="t_170"/>
+                   <tns:dependency govIDs="t_176" func="tmod" depIDs="t_179"/>
+                   <tns:dependency govIDs="t_176" func="advmod" depIDs="t_180"/>
+                   <tns:dependency govIDs="t_176" func="prep" depIDs="t_181"/>
+                   <tns:dependency govIDs="t_179" func="amod" depIDs="t_177"/>
+                   <tns:dependency govIDs="t_179" func="amod" depIDs="t_178"/>
+                   <tns:dependency govIDs="t_181" func="pobj" depIDs="t_182"/>
+                   <tns:dependency govIDs="t_182" func="conj" depIDs="t_184"/>
+                   <tns:dependency govIDs="t_182" func="cc" depIDs="t_183"/>
+               </tns:parse>
+           </tns:depparsing>
+           <tns:references>
+               <tns:entity ID="rft_0">
+                   <tns:reference tokenIDs="t_0"/>
+                   <tns:reference tokenIDs="t_157 t_158 t_159"/>
+               </tns:entity>
+               <tns:entity ID="rft_1">
+                   <tns:reference tokenIDs="t_12"/>
+                   <tns:reference tokenIDs="t_108"/>
+               </tns:entity>
+               <tns:entity ID="rft_2">
+                   <tns:reference tokenIDs="t_0 t_1 t_2 t_3"/>
+                   <tns:reference tokenIDs="t_85"/>
+                   <tns:reference tokenIDs="t_123"/>
+                   <tns:reference tokenIDs="t_124"/>
+                   <tns:reference tokenIDs="t_148"/>
+               </tns:entity>
+               <tns:entity ID="rft_3">
+                   <tns:reference tokenIDs="t_12 t_13 t_14 t_15"/>
+                   <tns:reference tokenIDs="t_108 t_109 t_110 t_111 t_112 t_113 t_114 t_115 t_116 t_117 t_118 t_119 t_120 t_121 t_122 t_123" mintokIDs="t_110 t_111" type="NA"/>
+               </tns:entity>
+               <tns:entity ID="rft_4">
+                   <tns:reference tokenIDs="t_12 t_13 t_14"/>
+                   <tns:reference tokenIDs="t_108 t_109 t_110"/>
+               </tns:entity>
+               <tns:entity ID="rft_5">
+                   <tns:reference tokenIDs="t_27 t_28 t_29 t_30 t_31 t_32 t_33 t_34 t_35 t_36 t_37 t_38 t_39"/>
+                   <tns:reference tokenIDs="t_95"/>
+               </tns:entity>
+               <tns:entity ID="rft_6">
+                   <tns:reference tokenIDs="t_73"/>
+                   <tns:reference tokenIDs="t_97"/>
+               </tns:entity>
+               <tns:entity ID="rft_7">
+                   <tns:reference tokenIDs="t_114"/>
+                   <tns:reference tokenIDs="t_169"/>
+                   <tns:reference tokenIDs="t_178"/>
+               </tns:entity>
+               <tns:entity ID="rft_8">
+                   <tns:reference tokenIDs="t_87 t_88 t_89"/>
+                   <tns:reference tokenIDs="t_150 t_151 t_152"/>
+               </tns:entity>
+           </tns:references>
+       </tns:TextCorpus>
+   </D-Spin> 

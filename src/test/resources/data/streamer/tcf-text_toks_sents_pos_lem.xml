@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/d-spin_0_4.rnc" type="application/relax-ng-compact-syntax"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+
+ <MetaData xmlns="http://www.dspin.de/data/metadata">
+  <source>IMS, Uni Stuttgart</source>
+  <md name="source" value="Tuebingen Uni"></md>
+ </MetaData>
+
+ <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+  <text>Peter aß eine Käsepizza. Sie schmeckte ihm.</text>
+  <tokens charOffsets="true">
+   <token ID="t1" start="0" end="5">Peter</token>
+   <token ID="t2" start="6" end="8">aß</token>
+   <token ID="t3" start="9" end="13">eine</token>
+   <token ID="t4" start="14" end="23">Käsepizza</token>
+   <token ID="t5" start="23" end="24">.</token>
+   <token ID="t6" start="25" end="28">Sie</token>
+   <token ID="t7" start="29" end="38">schmeckte</token>
+   <token ID="t8" start="39" end="42">ihm</token>
+   <token ID="t9" start="42" end="43">.</token>
+  </tokens>
+  <sentences charOffsets="true">
+   <sentence ID="s1" start="1" end="24" tokenIDs="t1 t2 t3 t4 t5"/>
+   <sentence ID="s2" start="25" end="43" tokenIDs="t6 t7 t8 t9"/>
+  </sentences>
+  <POStags tagset="STTS">
+   <tag tokenIDs="t1">NE</tag>
+   <tag tokenIDs="t2">VVFIN</tag>
+   <tag tokenIDs="t3">ART</tag>
+   <tag tokenIDs="t4">NE</tag>
+   <tag tokenIDs="t5">$.</tag>
+   <tag tokenIDs="t6">PPER</tag>
+   <tag tokenIDs="t7">VVFIN</tag>
+   <tag tokenIDs="t8">PPER</tag>
+   <tag tokenIDs="t9">$.</tag>
+  </POStags>
+  <lemmas>
+   <lemma ID="l1" tokenIDs="t1">Peter</lemma>
+   <lemma ID="l2" tokenIDs="t2">essen</lemma>
+   <lemma ID="l3" tokenIDs="t3">ein</lemma>
+   <lemma ID="l4" tokenIDs="t4">Käsepizza</lemma>
+   <lemma ID="l5" tokenIDs="t5">.</lemma>
+   <lemma ID="l6" tokenIDs="t6">sie</lemma>
+   <lemma ID="l7" tokenIDs="t7">schmecken</lemma>
+   <lemma ID="l8" tokenIDs="t8">er</lemma>
+   <lemma ID="l9" tokenIDs="t9">.</lemma>
+  </lemmas>
+  
+ </TextCorpus>
+</D-Spin>
