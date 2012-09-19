@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package de.tuebingen.uni.sfs.wlf1.ed.api;
 
@@ -9,10 +9,9 @@ package de.tuebingen.uni.sfs.wlf1.ed.api;
  */
 public interface ExternalDataLayer {
 
-	
-	public String getDataMimeType();
-	
-	public String getLink();
-	public void addLink(String dataURI);
+    public String getDataMimeType();
 
+    public String getLink();
+
+    public void addLink(String dataURI);
 }

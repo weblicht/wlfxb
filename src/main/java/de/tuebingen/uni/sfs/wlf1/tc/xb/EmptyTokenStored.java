@@ -3,13 +3,12 @@
  */
 package de.tuebingen.uni.sfs.wlf1.tc.xb;
 
+import de.tuebingen.uni.sfs.wlf1.tc.api.Token;
+import de.tuebingen.uni.sfs.wlf1.utils.CommonAttributes;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlValue;
-
-import de.tuebingen.uni.sfs.wlf1.tc.api.Token;
-import de.tuebingen.uni.sfs.wlf1.utils.CommonAttributes;
 
 /**
  * @author Yana Panchenko
@@ -23,10 +22,10 @@ public class EmptyTokenStored implements Token {
 	public static final String ID_PREFIX = "et_";
 	
 	@XmlValue
-	String tokenString;
+	protected String tokenString;
 	@XmlAttribute(name=CommonAttributes.ID, required = true)
-	String id;
-	int order;
+	protected String id;
+	protected int order;
 	
 	
 	@Override
@@ -37,7 +36,7 @@ public class EmptyTokenStored implements Token {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(order + ": " + id + " " + tokenString );
+		sb.append(order).append(": ").append(id).append(" ").append(tokenString);
 		return sb.toString();
 	}
 

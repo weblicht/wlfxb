@@ -21,10 +21,10 @@ import org.junit.Test;
 //TODO so that it tests all layers, and so that all layers be in separate tests
 public class WLDObjectorTest {
 
-    private static final String INPUT_FILE_Textcorpus = "/data/input2.xml";
-    private static final String INPUT_FILE_Lexicon = "/data/input_lexicon.xml";
-    private static final String OUTPUT_FILE_1 = "/tmp/wld-objector-output.xml";
-    private static final String OUTPUT_FILE_2 = "/tmp/wld-objector-min-prefix-output.xml";
+	private static final String INPUT_FILE_Textcorpus = "/data/objector/input_textcorpus.xml";
+	private static final String INPUT_FILE_Lexicon = "/data/objector/input_lexicon.xml";
+	private static final String OUTPUT_FILE_1 = "/tmp/wld-output.xml";
+	private static final String OUTPUT_FILE_2 = "/tmp/wld-min-prefix-output.xml";
 
     public WLDObjectorTest() {
     }
@@ -61,6 +61,7 @@ public class WLDObjectorTest {
         System.out.println("read");
         WLData wld = WLDObjector.read(is);
         System.out.println(" --- " + wld.getMetaData());
+        System.out.println(" --- " + wld.getExternalData());
         System.out.println(" --- " + wld.getTextCorpus());
         System.out.println(" --- " + wld.getLexicon());
     }
@@ -92,14 +93,8 @@ public class WLDObjectorTest {
     private MetaData createTestMetadata() {
         MetaData md = new MetaData();
         //data.metaData.source = "Tuebingen Uni";
-        MetaDataItem mdi1 = new MetaDataItem();
-        mdi1.name = "title";
-        mdi1.value = "binding test";
-        md.metaDataItems.add(mdi1);
-        MetaDataItem mdi2 = new MetaDataItem();
-        mdi2.name = "author";
-        mdi2.value = "Yana";
-        md.metaDataItems.add(mdi2);
+        md.addMetaDataItem("title", "binding test");
+        md.addMetaDataItem("author", "Yana");
         return md;
     }
 }

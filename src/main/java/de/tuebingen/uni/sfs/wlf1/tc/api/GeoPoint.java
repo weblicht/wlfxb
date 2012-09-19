@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package de.tuebingen.uni.sfs.wlf1.tc.api;
 
@@ -8,11 +8,16 @@ package de.tuebingen.uni.sfs.wlf1.tc.api;
  *
  */
 public interface GeoPoint {
-	
-	public String getLongitude();
-	public String getLatitude();
-	public Double getAltitude();
-	public String getContinent();
-	public String getCountry();
-	public String getCapital();
+
+    public String getLongitude();
+
+    public String getLatitude();
+
+    public Double getAltitude();
+
+    public String getContinent();
+
+    public String getCountry();
+
+    public String getCapital();
 }

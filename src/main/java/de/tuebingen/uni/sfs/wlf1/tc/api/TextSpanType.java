@@ -1,10 +1,9 @@
 package de.tuebingen.uni.sfs.wlf1.tc.api;
 
-
 public enum TextSpanType {
 
-	page,
-	line,
+    page,
+    line,
     paragraph,
     chapter,
     title,
@@ -13,7 +12,5 @@ public enum TextSpanType {
     footnote,
     reference,
     citation,
-    
     other;
-	
 }

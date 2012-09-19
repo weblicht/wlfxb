@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package de.tuebingen.uni.sfs.wlf1.tc.xb;
 
@@ -8,8 +8,8 @@ package de.tuebingen.uni.sfs.wlf1.tc.xb;
  *
  */
 public enum PronunciationType {
-	
-	word,
-	syllable,
-	phone;
+
+    word,
+    syllable,
+    phone;
 }

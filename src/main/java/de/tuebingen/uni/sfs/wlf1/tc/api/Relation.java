@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package de.tuebingen.uni.sfs.wlf1.tc.api;
 
@@ -10,5 +10,5 @@ package de.tuebingen.uni.sfs.wlf1.tc.api;
 @Deprecated
 public interface Relation {
 
-	public String getFunction();
+    public String getFunction();
 }

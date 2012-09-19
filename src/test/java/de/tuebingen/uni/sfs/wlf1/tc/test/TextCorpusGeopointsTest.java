@@ -9,7 +9,6 @@ import de.tuebingen.uni.sfs.wlf1.tc.api.GeoLongLatFormat;
 import de.tuebingen.uni.sfs.wlf1.tc.api.TextCorpus;
 import de.tuebingen.uni.sfs.wlf1.tc.api.Token;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.TextCorpusLayerTag;
-import java.io.*;
 import java.util.EnumSet;
 import org.junit.Assert;
 import org.junit.Test;
@@ -44,11 +43,7 @@ public class TextCorpusGeopointsTest extends AbstractTextCorpusTest {
 
     @Test
     public void testReadWrite() throws Exception {
-        File file = new File(INPUT_FILE_WITHOUT_LAYER);
-        InputStream is = new FileInputStream(file);
-        File ofile = new File(OUTPUT_FILE);
-        OutputStream os = new FileOutputStream(ofile);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToReadBeforeGeopointsRecognition, os, false);
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeGeopointsRecognition);
         System.out.println(tc);
         // create geo layer, it's empty at first
         GeoLayer geo = tc.createGeoLayer("http://www.geonames.org/", GeoLongLatFormat.DegDec);

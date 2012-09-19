@@ -3,14 +3,12 @@
  */
 package de.tuebingen.uni.sfs.wlf1.tc.xb;
 
+import de.tuebingen.uni.sfs.wlf1.tc.api.Dependency;
+import de.tuebingen.uni.sfs.wlf1.utils.CommonAttributes;
 import java.util.Arrays;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-
-import de.tuebingen.uni.sfs.wlf1.tc.api.Dependency;
-import de.tuebingen.uni.sfs.wlf1.utils.CommonAttributes;
 
 /**
  * @author Yana Panchenko
@@ -25,11 +23,11 @@ public class DependencyStored implements Dependency {
 	
 	
 	@XmlAttribute(name=CommonAttributes.FUNCTION)
-	String function;
+	protected String function;
 	@XmlAttribute(name=XML_ATTR_DEPENDENT_REFERENCE, required = true)
-	String[] depIds;
+	protected String[] depIds;
 	@XmlAttribute(name=XML_ATTR_GOVERNOR_REFERENCE)
-	String[] govIds;
+	protected String[] govIds;
 	
 	@Override
 	public String getFunction() {
@@ -43,7 +41,7 @@ public class DependencyStored implements Dependency {
 			sb.append(function);
 			sb.append(" ");
 		}
-		sb.append(Arrays.toString(depIds) + " <- ");
+		sb.append(Arrays.toString(depIds)).append(" <- ");
 		if (govIds == null) {
 			sb.append("[ ]");
 		} else {

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package de.tuebingen.uni.sfs.wlf1.tc.api;
 
@@ -8,10 +8,9 @@ package de.tuebingen.uni.sfs.wlf1.tc.api;
  *
  */
 public interface Reference {
-	
-	public String getType();
-	public String getRelation();
-	
-	//public String getSemanticRole();
 
+    public String getType();
+
+    public String getRelation();
+    //public String getSemanticRole();
 }

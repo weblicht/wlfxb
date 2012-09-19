@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package de.tuebingen.uni.sfs.wlf1.tc.api;
 
@@ -8,10 +8,9 @@ package de.tuebingen.uni.sfs.wlf1.tc.api;
  *
  */
 public enum CorrectionOperation {
-	
-	replace,
-	insert_after,
-	insert_before,
-	delete;
 
+    replace,
+    insert_after,
+    insert_before,
+    delete;
 }

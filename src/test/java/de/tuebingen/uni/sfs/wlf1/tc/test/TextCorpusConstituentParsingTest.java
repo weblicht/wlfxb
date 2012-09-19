@@ -133,6 +133,7 @@ public class TextCorpusConstituentParsingTest extends AbstractTextCorpusTest {
         Constituent c8 = parses.createTerminalConstituent("ART-NK-Acc.Sg", sentenceTokens[2]);
         Constituent c9 = parses.createTerminalConstituent("NN-NK-Acc.Sg", sentenceTokens[3]);
         Constituent c7 = parses.createConstituent("NP-OA", Arrays.asList(new Constituent[]{c8, c9}));
+        parses.addSecondaryEdgeChild(c7, c3, "some-secondary-edge-label");
 
         Constituent c2 = parses.createConstituent("S-TOP", Arrays.asList(new Constituent[]{c3, c6, c7}));
 

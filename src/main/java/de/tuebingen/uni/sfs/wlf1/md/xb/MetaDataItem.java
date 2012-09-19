@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package de.tuebingen.uni.sfs.wlf1.md.xb;
 
@@ -16,18 +16,30 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "md")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class MetaDataItem {
-	
-	
-	@XmlAttribute
-	public String value;
-	@XmlAttribute
-	public String name;
 
-	@Override
-	public String toString() {
-		return name + "=" + value;
-	}
+    @XmlAttribute
+    private String value;
+    @XmlAttribute
+    private String name;
 
-	
-	
+    public MetaDataItem() {
+    }
+
+    protected MetaDataItem(String name, String value) {
+        this.name = name;
+        this.value = value;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        return name + "=" + value;
+    }
 }

@@ -73,7 +73,7 @@ public class TextCorpusStreamedTest {
         OutputStream os = new FileOutputStream(ofile);
         testReadWriteAddingMetadata(is, EnumSet.of(TextCorpusLayerTag.TOKENS),
                 os,
-                createTestMetadata().metaDataItems);
+                createTestMetadata().getMetaDataItems());
         System.out.println("--- WRITE TEST END ---");
         System.out.println();
     }
@@ -145,14 +145,8 @@ public class TextCorpusStreamedTest {
     private MetaData createTestMetadata() throws ParserConfigurationException {
         MetaData metaData = new MetaData();
 
-        MetaDataItem mdElement = new MetaDataItem();
-        mdElement.name = "sentences-boundary-detector";
-        mdElement.value = "Tuebingen Uni";
-        metaData.metaDataItems.add(mdElement);
-        MetaDataItem mdElement2 = new MetaDataItem();
-        mdElement2.name = "lemmatizer";
-        mdElement2.value = "Tuebingen Uni";
-        metaData.metaDataItems.add(mdElement2);
+        metaData.addMetaDataItem("sentences-boundary-detector", "Tuebingen Uni");
+        metaData.addMetaDataItem("lemmatizer", "Tuebingen Uni");
 
         return metaData;
     }

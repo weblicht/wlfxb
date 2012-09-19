@@ -25,7 +25,7 @@ public class WLDProfileReadTest {
     public void testRead_File1() throws Exception {
         WLDProfile profile = test(INPUT_FILE_Textcorpus04);
         assertEquals("0.4", profile.getVersion());
-        assertEquals("de", profile.getTcProfile().lang);
+        assertEquals("de", profile.getTcProfile().getLang());
         assertEquals(null, profile.getLexProfile());
     }
 
@@ -33,7 +33,7 @@ public class WLDProfileReadTest {
     public void testRead_File2() throws Exception {
         WLDProfile profile = test(INPUT_FILE_Textcorpus03);
         assertEquals("0.3", profile.getVersion());
-        assertEquals("en", profile.getTcProfile().lang);
+        assertEquals("en", profile.getTcProfile().getLang());
         assertEquals(null, profile.getLexProfile());
     }
 
@@ -41,7 +41,7 @@ public class WLDProfileReadTest {
     public void testRead_File3() throws Exception {
         WLDProfile profile = test(INPUT_FILE_Lexicon04);
         assertEquals("0.4", profile.getVersion());
-        assertEquals("de", profile.getLexProfile().lang);
+        assertEquals("de", profile.getLexProfile().getLang());
         assertEquals(null, profile.getTcProfile());
     }
 

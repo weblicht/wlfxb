@@ -4,13 +4,15 @@ package de.tuebingen.uni.sfs.wlf1.io;
  * An Exception to be thrown by TextCorpusFormat
  */
 public class WLFormatException extends Exception {
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1650046637471293795L;
 
-	/**
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1650046637471293795L;
+
+    /**
      * Create from a string message
+     *
      * @param msg a string message
      */
     public WLFormatException(String msg) {
@@ -19,6 +21,7 @@ public class WLFormatException extends Exception {
 
     /**
      * create from an exception
+     *
      * @param ex an exception
      */
     public WLFormatException(Throwable ex) {
@@ -27,6 +30,7 @@ public class WLFormatException extends Exception {
 
     /**
      * create from a message and an exception
+     *
      * @param msg a message
      * @param ex an exception
      */

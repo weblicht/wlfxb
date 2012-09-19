@@ -7,7 +7,6 @@ import de.tuebingen.uni.sfs.wlf1.tc.api.CorrectionOperation;
 import de.tuebingen.uni.sfs.wlf1.tc.api.OrthographyLayer;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.OrthographyLayerStored;
 import de.tuebingen.uni.sfs.wlf1.test.utils.TestUtils;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -26,7 +25,7 @@ public class OrthographyTest {
     @Test
     public void testReadAndWriteBack() throws Exception {
 
-        InputStream is = new FileInputStream(INPUT);
+        InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(OUTPUT);
 
 

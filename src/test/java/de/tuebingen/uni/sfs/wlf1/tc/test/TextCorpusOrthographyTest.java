@@ -46,11 +46,7 @@ public class TextCorpusOrthographyTest extends AbstractTextCorpusTest {
 
     @Test
     public void testReadWrite() throws Exception {
-        File file = new File(INPUT_FILE_WITHOUT_LAYER);
-        InputStream is = new FileInputStream(file);
-        File ofile = new File(OUTPUT_FILE);
-        OutputStream os = new FileOutputStream(ofile);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToReadBeforeCorrections, os, false);
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeCorrections);
         System.out.println(tc);
         OrthographyLayer layer = tc.createOrthographyLayer();
 

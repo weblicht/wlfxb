@@ -3,15 +3,13 @@
  */
 package de.tuebingen.uni.sfs.wlf1.tc.xb;
 
+import de.tuebingen.uni.sfs.wlf1.tc.api.DiscourseConnective;
+import de.tuebingen.uni.sfs.wlf1.utils.CommonAttributes;
 import java.util.Arrays;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
-
-import de.tuebingen.uni.sfs.wlf1.tc.api.DiscourseConnective;
-import de.tuebingen.uni.sfs.wlf1.utils.CommonAttributes;
 
 /**
  * @author Yana Panchenko
@@ -24,9 +22,9 @@ public class DiscourseConnectiveStored implements DiscourseConnective {
 	public static final String XML_NAME = "connective";
 
 	@XmlAttribute(name="type")
-	String type;
+	protected String type;
 	@XmlAttribute(name=CommonAttributes.TOKEN_SEQUENCE_REFERENCE, required = true)
-	String[] tokRefs;
+	protected String[] tokRefs;
 	
 	
 

@@ -17,10 +17,10 @@ import org.xml.sax.SAXException;
  */
 public abstract class AbstractExternalDataTest {
 
-    protected ExternalDataWithTextCorpusStreamed read(String file,
+    protected ExternalDataWithTextCorpusStreamed read(String resource,
             EnumSet<ExternalDataLayerTag> edLayersToRead,
             EnumSet<TextCorpusLayerTag> tcLayersToRead) throws Exception {
-        InputStream is = new FileInputStream(file);
+        InputStream is = this.getClass().getResourceAsStream(resource);
         ExternalDataWithTextCorpusStreamed edtc = new ExternalDataWithTextCorpusStreamed(is, edLayersToRead, tcLayersToRead);
         edtc.close();
         System.out.println(edtc);

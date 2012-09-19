@@ -3,14 +3,9 @@
  */
 package de.tuebingen.uni.sfs.wlf1.lx.xb;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlValue;
-
 import de.tuebingen.uni.sfs.wlf1.lx.api.Lemma;
 import de.tuebingen.uni.sfs.wlf1.utils.CommonAttributes;
+import javax.xml.bind.annotation.*;
 
 /**
  * @author Yana Panchenko
@@ -24,9 +19,9 @@ public class LemmaStored implements Lemma {
 	public static final String ID_PREFIX = "l_";
 	
 	@XmlValue
-	String lemmaString;
+	protected String lemmaString;
 	@XmlAttribute(name=CommonAttributes.ID, required = true)
-	String lemmaId;
+	protected String lemmaId;
 	
 	
 	@Override

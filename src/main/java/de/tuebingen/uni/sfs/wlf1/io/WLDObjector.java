@@ -3,16 +3,13 @@
  */
 package de.tuebingen.uni.sfs.wlf1.io;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.Reader;
+import de.tuebingen.uni.sfs.wlf1.md.xb.MetaData;
+import de.tuebingen.uni.sfs.wlf1.tc.xb.TextCorpusStored;
+import de.tuebingen.uni.sfs.wlf1.utils.CommonConstants;
+import de.tuebingen.uni.sfs.wlf1.xb.WLData;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -24,11 +21,6 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.Namespace;
 import javax.xml.stream.events.XMLEvent;
-
-import de.tuebingen.uni.sfs.wlf1.md.xb.MetaData;
-import de.tuebingen.uni.sfs.wlf1.tc.xb.TextCorpusStored;
-import de.tuebingen.uni.sfs.wlf1.utils.CommonConstants;
-import de.tuebingen.uni.sfs.wlf1.xb.WLData;
 
 /**
  * @author Yana Panchenko

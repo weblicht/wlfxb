@@ -39,8 +39,8 @@ public class TokensTest {
         Assert.assertEquals(9, layer.size());
         Assert.assertEquals("Peter", layer.getToken(0).getString());
         Assert.assertEquals("t1", layer.getToken(0).getID());
-        Assert.assertEquals(Integer.valueOf(0), layer.getToken(0).getStart());
-        Assert.assertEquals(Integer.valueOf(5), layer.getToken(0).getEnd());
+        Assert.assertEquals(Long.valueOf(0), layer.getToken(0).getStart());
+        Assert.assertEquals(Long.valueOf(5), layer.getToken(0).getEnd());
         Assert.assertEquals(".", layer.getToken(layer.size() - 1).getString());
 
     }

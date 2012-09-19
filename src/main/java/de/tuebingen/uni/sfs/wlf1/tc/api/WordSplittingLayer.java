@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package de.tuebingen.uni.sfs.wlf1.tc.api;
 
@@ -8,11 +8,16 @@ package de.tuebingen.uni.sfs.wlf1.tc.api;
  *
  */
 public interface WordSplittingLayer {
-	
-	public String getType();
-	public int size();
-	public WordSplit getSplit(int index);
-	public WordSplit getSplit(Token token);
-	public Token getToken(WordSplit split);
-	public WordSplit addSplit(Token token, int[] splitIndices);
+
+    public String getType();
+
+    public int size();
+
+    public WordSplit getSplit(int index);
+
+    public WordSplit getSplit(Token token);
+
+    public Token getToken(WordSplit split);
+
+    public WordSplit addSplit(Token token, int[] splitIndices);
 }

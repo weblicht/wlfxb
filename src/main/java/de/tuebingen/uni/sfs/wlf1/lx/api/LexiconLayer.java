@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package de.tuebingen.uni.sfs.wlf1.lx.api;
 
@@ -9,7 +9,7 @@ package de.tuebingen.uni.sfs.wlf1.lx.api;
  */
 public interface LexiconLayer {
 
-	public boolean isEmpty();
-	public int size();
+    public boolean isEmpty();
 
+    public int size();
 }

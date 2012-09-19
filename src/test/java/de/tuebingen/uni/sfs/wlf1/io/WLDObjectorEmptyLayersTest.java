@@ -1,7 +1,6 @@
 package de.tuebingen.uni.sfs.wlf1.io;
 
 import de.tuebingen.uni.sfs.wlf1.md.xb.MetaData;
-import de.tuebingen.uni.sfs.wlf1.md.xb.MetaDataItem;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.TextCorpusStored;
 import de.tuebingen.uni.sfs.wlf1.xb.WLData;
 import java.io.File;
@@ -15,10 +14,10 @@ import org.junit.Test;
 //TODO so that it tests all layers, and so that all layers be in separate tests
 public class WLDObjectorEmptyLayersTest {
 
-    private static final String INPUT_FILE_Textcorpus = "/data/input2.xml";
-    private static final String INPUT_FILE_Lexicon = "/data/input_lexicon.xml";
-    private static final String OUTPUT_FILE_1 = "/tmp/wld-objector-output-empty.xml";
-    private static final String OUTPUT_FILE_2 = "/tmp/wld-objector-min-prefix-output-empty.xml";
+    private static final String INPUT_FILE_Textcorpus = "/data/objector/input_textcorpus.xml";
+    private static final String INPUT_FILE_Lexicon = "/data/objector/input_lexicon.xml";
+    private static final String OUTPUT_FILE_1 = "/tmp/wld-output-empty.xml";
+    private static final String OUTPUT_FILE_2 = "/tmp/wld-min-prefix-output-empty.xml";
 
     public WLDObjectorEmptyLayersTest() {
     }
@@ -78,14 +77,8 @@ public class WLDObjectorEmptyLayersTest {
     private MetaData createTestMetadata() {
         MetaData md = new MetaData();
         //data.metaData.source = "Tuebingen Uni";
-        MetaDataItem mdi1 = new MetaDataItem();
-        mdi1.name = "title";
-        mdi1.value = "binding test";
-        md.metaDataItems.add(mdi1);
-        MetaDataItem mdi2 = new MetaDataItem();
-        mdi2.name = "author";
-        mdi2.value = "Yana";
-        md.metaDataItems.add(mdi2);
+        md.addMetaDataItem("title", "binding test");
+        md.addMetaDataItem("author", "Yana");
         return md;
     }
 }

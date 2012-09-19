@@ -8,7 +8,6 @@ import de.tuebingen.uni.sfs.wlf1.tc.api.DiscourseConnectivesLayer;
 import de.tuebingen.uni.sfs.wlf1.tc.api.TextCorpus;
 import de.tuebingen.uni.sfs.wlf1.tc.api.Token;
 import de.tuebingen.uni.sfs.wlf1.tc.xb.TextCorpusLayerTag;
-import java.io.*;
 import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.HashMap;
@@ -49,11 +48,7 @@ public class TextCorpusDiscourseConnectivesTest extends AbstractTextCorpusTest {
 
     @Test
     public void testReadWrite() throws Exception {
-        File file = new File(INPUT_FILE_WITHOUT_LAYER);
-        InputStream is = new FileInputStream(file);
-        File ofile = new File(OUTPUT_FILE);
-        OutputStream os = new FileOutputStream(ofile);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToReadBeforeDConnDetect, os, false);
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeDConnDetect);
         System.out.println(tc);
         DiscourseConnectivesLayer layer = tc.createDiscourseConnectivesLayer("TuebaDZ");
         for (int i = 0; i < tc.getTokensLayer().size(); i++) {

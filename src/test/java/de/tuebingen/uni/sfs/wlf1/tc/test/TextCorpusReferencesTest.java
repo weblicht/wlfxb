@@ -44,11 +44,7 @@ public class TextCorpusReferencesTest extends AbstractTextCorpusTest {
 
     @Test
     public void testReadWrite() throws Exception {
-        File file = new File(INPUT_FILE_WITHOUT_LAYER);
-        InputStream is = new FileInputStream(file);
-        File ofile = new File(OUTPUT_FILE);
-        OutputStream os = new FileOutputStream(ofile);
-        TextCorpusStreamed tc = new TextCorpusStreamed(is, layersToReadBeforeReferenceAnnotation, os, false);
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeReferenceAnnotation);
         System.out.println(tc);
         // get tokens layer
         TokensLayer tokensLayer = tc.getTokensLayer();

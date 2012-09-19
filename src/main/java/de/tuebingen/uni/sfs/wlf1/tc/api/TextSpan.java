@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package de.tuebingen.uni.sfs.wlf1.tc.api;
 
@@ -8,7 +8,6 @@ package de.tuebingen.uni.sfs.wlf1.tc.api;
  *
  */
 public interface TextSpan {
-	
-	public TextSpanType getType();
 
+    public TextSpanType getType();
 }

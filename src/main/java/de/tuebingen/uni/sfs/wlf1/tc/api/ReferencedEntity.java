@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package de.tuebingen.uni.sfs.wlf1.tc.api;
 
@@ -8,8 +8,8 @@ package de.tuebingen.uni.sfs.wlf1.tc.api;
  *
  */
 public interface ReferencedEntity {
-	
-	public String getExternalId();
-	public Reference[] getReferences();
 
+    public String getExternalId();
+
+    public Reference[] getReferences();
 }
