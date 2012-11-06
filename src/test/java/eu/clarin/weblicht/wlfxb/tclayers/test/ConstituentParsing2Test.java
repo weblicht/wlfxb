@@ -6,7 +6,6 @@ package eu.clarin.weblicht.wlfxb.tclayers.test;
 import eu.clarin.weblicht.wlfxb.tc.api.ConstituentParsingLayer;
 import eu.clarin.weblicht.wlfxb.tc.xb.ConstituentParsingLayerStored;
 import eu.clarin.weblicht.wlfxb.test.utils.TestUtils;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -17,7 +16,7 @@ import org.junit.Test;
  * @author Yana Panchenko
  *
  */
-public class ConstituentParsingTest2 {
+public class ConstituentParsing2Test {
 
     private static final String INPUT = "/data/tc-parsing/layer-input-2.xml";
     private static final String OUTPUT = "/tmp/layer-output-2.xml";
@@ -25,7 +24,7 @@ public class ConstituentParsingTest2 {
     @Test
     public void testReadAndWriteBack() throws Exception {
 
-        InputStream is = new FileInputStream(INPUT);
+        InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(OUTPUT);
 
 
