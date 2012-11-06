@@ -8,7 +8,6 @@ import eu.clarin.weblicht.wlfxb.tc.api.TokensLayer;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusStored;
 import eu.clarin.weblicht.wlfxb.xb.WLData;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,18 +17,17 @@ import org.junit.Test;
  * @author Yana Panchenko
  *
  */
-public class WLDObjectorTest2 {
+public class WLDObjector2Test {
 
     private static final String INPUT_FILE_TextcorpusAndExternalData = "/data/objector/input_textcorpus_extdata.xml";
     private static final String OUTPUT_FILE_1 = "/tmp/wld-output2.xml";
 
-    public WLDObjectorTest2() {
+    public WLDObjector2Test() {
     }
 
     @Test
     public void testRead_TextcorpusAndExternalData() throws Exception {
-        File file = new File(INPUT_FILE_TextcorpusAndExternalData);
-        InputStream is = new FileInputStream(file);
+        InputStream is = this.getClass().getResourceAsStream(INPUT_FILE_TextcorpusAndExternalData);
         testRead(is);
     }
 
