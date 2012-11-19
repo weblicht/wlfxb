@@ -28,6 +28,7 @@ import javax.xml.stream.events.XMLEvent;
 public class TextCorpusStreamed extends TextCorpusStored {
 
     private EnumSet<TextCorpusLayerTag> layersToRead;
+    private EnumSet<TextCorpusLayerTag> readSucceeded = EnumSet.noneOf(TextCorpusLayerTag.class);
     private XMLEventReader xmlEventReader;
     private XMLEventWriter xmlEventWriter;
     private XmlReaderWriter xmlReaderWriter;
@@ -124,6 +125,10 @@ public class TextCorpusStreamed extends TextCorpusStored {
         } catch (XMLStreamException e) {
             throw new WLFormatException(e);
         }
+        if (layersToRead.size() != readSucceeded.size()) {
+            layersToRead.removeAll(readSucceeded);
+             throw new WLFormatException("Following layers could not be read: " + layersToRead.toString());
+        }
     }
 
     private void processLayers() throws WLFormatException {
@@ -191,6 +196,7 @@ public class TextCorpusStreamed extends TextCorpusStored {
         } catch (JAXBException e) {
             throw new WLFormatException(e);
         }
+        readSucceeded.add(layerTag);
     }
 
     private void marshall(TextCorpusLayer layer) throws WLFormatException {
