@@ -79,7 +79,7 @@ public class TextCorpusStreamed extends TextCorpusStored {
                 XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
                 xmlEventReader = xmlInputFactory.createXMLEventReader(inputStream, "UTF-8");
             } catch (XMLStreamException e) {
-                throw new WLFormatException(e);
+                throw new WLFormatException(e.getMessage(), e);
             }
         }
         if (outputStream != null) {
@@ -87,7 +87,7 @@ public class TextCorpusStreamed extends TextCorpusStored {
                 XMLOutputFactory xmlOutputFactory = XMLOutputFactory.newInstance();
                 xmlEventWriter = xmlOutputFactory.createXMLEventWriter(outputStream, "UTF-8");
             } catch (XMLStreamException e) {
-                throw new WLFormatException(e);
+                throw new WLFormatException(e.getMessage(), e);
             }
         }
         xmlReaderWriter = new XmlReaderWriter(xmlEventReader, xmlEventWriter);
@@ -102,7 +102,7 @@ public class TextCorpusStreamed extends TextCorpusStored {
             XMLEvent event = xmlEventReader.nextEvent();
             xmlReaderWriter.add(event);
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
     }
 
@@ -123,7 +123,7 @@ public class TextCorpusStreamed extends TextCorpusStored {
                 xmlReaderWriter.readWriteToTheEnd();
             }
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
         if (layersToRead.size() != readSucceeded.size()) {
             layersToRead.removeAll(readSucceeded);
@@ -150,7 +150,7 @@ public class TextCorpusStreamed extends TextCorpusStored {
                 }
             }
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
 
         if (!textCorpusEnd) {
@@ -178,7 +178,7 @@ public class TextCorpusStreamed extends TextCorpusStored {
                 xmlReaderWriter.readWriteElement(tagName);
             }
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
 
 
@@ -194,7 +194,7 @@ public class TextCorpusStreamed extends TextCorpusStored {
             super.layersInOrder[layerTag.ordinal()] = layer;
             marshall(super.layersInOrder[layerTag.ordinal()]);
         } catch (JAXBException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
         readSucceeded.add(layerTag);
     }
@@ -213,9 +213,9 @@ public class TextCorpusStreamed extends TextCorpusStored {
             marshaller.marshal(layer, xmlEventWriter);
             xmlReaderWriter.endExternalFragment(LAYER_INDENT_RELATIVE);
         } catch (JAXBException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
     }
 
@@ -235,9 +235,9 @@ public class TextCorpusStreamed extends TextCorpusStored {
                 xmlReaderWriter.endExternalFragment(LAYER_INDENT_RELATIVE);
             }
         } catch (JAXBException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
     }
 

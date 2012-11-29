@@ -36,7 +36,7 @@ public class WLDObjector {
 			Unmarshaller unmarshaller = context.createUnmarshaller();
 			data = ((WLData) unmarshaller.unmarshal(inputStream));
 		} catch (JAXBException e) {
-			throw new WLFormatException(e);
+			throw new WLFormatException(e.getMessage(), e);
 		}
 		return data;
 	}
@@ -48,7 +48,7 @@ public class WLDObjector {
 			Unmarshaller unmarshaller = context.createUnmarshaller();
 			data = ((WLData) unmarshaller.unmarshal(reader));
 		} catch (JAXBException e) {
-			throw new WLFormatException(e);
+			throw new WLFormatException(e.getMessage(), e);
 		}
 		return data;
 	}
@@ -84,7 +84,7 @@ public class WLDObjector {
 					CommonConstants.XML_MODEL_DECLARATION_WITH_WL1_PI_CONTENT); 
 			marshaller.marshal(wlData, outputStream);
 		} catch (JAXBException e) {
-			throw new WLFormatException(e);
+			throw new WLFormatException(e.getMessage(), e);
 		}
 		
 	}
@@ -99,7 +99,7 @@ public class WLDObjector {
 					CommonConstants.XML_MODEL_DECLARATION_WITH_WL1_PI_CONTENT); 
 			marshaller.marshal(wlData, file);
 		} catch (JAXBException e) {
-				throw new WLFormatException(e);
+				throw new WLFormatException(e.getMessage(), e);
 		}
 	}
 	
@@ -116,7 +116,7 @@ public class WLDObjector {
 			}
 			marshaller.marshal(wlData, outputStream);
 		} catch (JAXBException e) {
-			throw new WLFormatException(e);
+			throw new WLFormatException(e.getMessage(), e);
 		}
 	}
 	
@@ -133,7 +133,7 @@ public class WLDObjector {
 			}
 		marshaller.marshal(wlData, file);
 		} catch (JAXBException e) {
-				throw new WLFormatException(e);
+				throw new WLFormatException(e.getMessage(), e);
 		}
 	}
 	
@@ -143,7 +143,6 @@ public class WLDObjector {
 		try {
 			outputStream = new FileOutputStream(file);
 			write(md, tc, outputStream, outputAsXmlFragment);
-			outputStream.close();
 		} catch (Exception e) {
 			throw new WLFormatException(e);
 		} finally {
@@ -222,14 +221,14 @@ public class WLDObjector {
 				xmlEventWriter.add(e);
 			}
 		} catch (Exception ex) {
-			throw new WLFormatException(ex);
+			throw new WLFormatException(ex.getMessage(), ex);
 		} finally {
 			if (xmlEventWriter != null) {
 				try {
 					xmlEventWriter.flush();
 					xmlEventWriter.close();
 				} catch (XMLStreamException ex2){
-					throw new WLFormatException(ex2);
+					throw new WLFormatException(ex2.getMessage(), ex2);
 				}
 			}
 		}

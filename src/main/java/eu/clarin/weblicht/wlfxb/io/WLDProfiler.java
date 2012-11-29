@@ -15,7 +15,7 @@ public class WLDProfiler {
             Unmarshaller unmarshaller = context.createUnmarshaller();
             profile = (WLDProfile) unmarshaller.unmarshal(inputStream);
         } catch (JAXBException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
         return profile;
     }
@@ -27,7 +27,7 @@ public class WLDProfiler {
             Unmarshaller unmarshaller = context.createUnmarshaller();
             profile = (WLDProfile) unmarshaller.unmarshal(reader);
         } catch (JAXBException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
         return profile;
     }

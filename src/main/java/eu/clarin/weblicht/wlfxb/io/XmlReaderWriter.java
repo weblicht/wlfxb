@@ -31,7 +31,7 @@ public class XmlReaderWriter {
         try {
             return xmlEventReader.nextEvent();
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
     }
 
@@ -183,14 +183,15 @@ public class XmlReaderWriter {
     }
 
     public void readWriteToTheEnd() throws WLFormatException {
-        while (xmlEventReader.hasNext()) {
-            try {
+        try {
+            while (xmlEventReader.hasNext()) {
                 add(xmlEventReader.nextEvent());
-            } catch (XMLStreamException e) {
-                throw new WLFormatException(e);
             }
+        } catch (XMLStreamException e) {
+            throw new WLFormatException(e.getMessage(), e);
+        } finally {
+            close();
         }
-        close();
     }
 
     // precondition read pointer is just before the start tag with the local name tagName
@@ -213,7 +214,7 @@ public class XmlReaderWriter {
             }
 
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
     }
 

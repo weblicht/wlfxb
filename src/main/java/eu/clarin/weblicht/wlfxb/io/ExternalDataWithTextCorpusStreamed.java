@@ -128,7 +128,7 @@ public class ExternalDataWithTextCorpusStreamed {
                 XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
                 xmlEventReader = xmlInputFactory.createXMLEventReader(inputStream, "UTF-8");
             } catch (XMLStreamException e) {
-                throw new WLFormatException(e);
+                throw new WLFormatException(e.getMessage(), e);
             }
         }
         if (outputStream != null) {
@@ -136,7 +136,7 @@ public class ExternalDataWithTextCorpusStreamed {
                 XMLOutputFactory xmlOutputFactory = XMLOutputFactory.newInstance();
                 xmlEventWriter = xmlOutputFactory.createXMLEventWriter(outputStream, "UTF-8");
             } catch (XMLStreamException e) {
-                throw new WLFormatException(e);
+                throw new WLFormatException(e.getMessage(), e);
             }
         }
         xmlReaderWriter = new XmlReaderWriter(xmlEventReader, xmlEventWriter);
@@ -178,7 +178,7 @@ public class ExternalDataWithTextCorpusStreamed {
             }
 
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
     }
 
@@ -215,7 +215,7 @@ public class ExternalDataWithTextCorpusStreamed {
             extData = ExternalDataStored.compose(layers);
 
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
     }
 
@@ -239,7 +239,7 @@ public class ExternalDataWithTextCorpusStreamed {
                 xmlReaderWriter.readWriteElement(tagName);
             }
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
 
         return layer;
@@ -256,7 +256,7 @@ public class ExternalDataWithTextCorpusStreamed {
             // marshall it back to xml
             marshall(layer);
         } catch (JAXBException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
         return layer;
     }
@@ -301,7 +301,7 @@ public class ExternalDataWithTextCorpusStreamed {
             textCorpus = TextCorpusStored.compose(lang, layers);
 
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
     }
 
@@ -334,7 +334,7 @@ public class ExternalDataWithTextCorpusStreamed {
                 xmlReaderWriter.readWriteElement(tagName);
             }
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
 
         return layer;
@@ -351,7 +351,7 @@ public class ExternalDataWithTextCorpusStreamed {
             // marshall it back to xml
             marshall(layer);
         } catch (JAXBException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
         return layer;
     }
@@ -370,9 +370,9 @@ public class ExternalDataWithTextCorpusStreamed {
             marshaller.marshal(layer, xmlEventWriter);
             xmlReaderWriter.endExternalFragment(LAYER_INDENT_RELATIVE);
         } catch (JAXBException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
     }
 
@@ -460,13 +460,9 @@ public class ExternalDataWithTextCorpusStreamed {
 
                 // write to the end
                 xmlReaderWriter.readWriteToTheEnd();
-
-                //TODO close???
-
-
             }
         } catch (XMLStreamException ex) {
-            throw new WLFormatException(ex);
+            throw new WLFormatException(ex.getMessage(), ex);
         }
 
     }

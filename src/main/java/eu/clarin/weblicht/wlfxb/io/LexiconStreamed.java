@@ -28,6 +28,7 @@ import javax.xml.stream.events.XMLEvent;
 public class LexiconStreamed extends LexiconStored {
 
     private EnumSet<LexiconLayerTag> layersToRead;
+    private EnumSet<LexiconLayerTag> readSucceeded = EnumSet.noneOf(LexiconLayerTag.class);
     private XMLEventReader xmlEventReader;
     private XMLEventWriter xmlEventWriter;
     private XmlReaderWriter xmlReaderWriter;
@@ -78,7 +79,7 @@ public class LexiconStreamed extends LexiconStored {
                 XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
                 xmlEventReader = xmlInputFactory.createXMLEventReader(inputStream, "UTF-8");
             } catch (XMLStreamException e) {
-                throw new WLFormatException(e);
+                throw new WLFormatException(e.getMessage(), e);
             }
         }
         if (outputStream != null) {
@@ -86,7 +87,7 @@ public class LexiconStreamed extends LexiconStored {
                 XMLOutputFactory xmlOutputFactory = XMLOutputFactory.newInstance();
                 xmlEventWriter = xmlOutputFactory.createXMLEventWriter(outputStream, "UTF-8");
             } catch (XMLStreamException e) {
-                throw new WLFormatException(e);
+                throw new WLFormatException(e.getMessage(), e);
             }
         }
         xmlReaderWriter = new XmlReaderWriter(xmlEventReader, xmlEventWriter);
@@ -101,7 +102,7 @@ public class LexiconStreamed extends LexiconStored {
             XMLEvent event = xmlEventReader.nextEvent();
             xmlReaderWriter.add(event);
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
     }
 
@@ -122,7 +123,11 @@ public class LexiconStreamed extends LexiconStored {
                 xmlReaderWriter.readWriteToTheEnd();
             }
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
+        }
+        if (layersToRead.size() != readSucceeded.size()) {
+            layersToRead.removeAll(readSucceeded);
+             throw new WLFormatException("Following layers could not be read: " + layersToRead.toString());
         }
     }
 
@@ -145,7 +150,7 @@ public class LexiconStreamed extends LexiconStored {
                 }
             }
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
 
         if (!textCorpusEnd) {
@@ -173,7 +178,7 @@ public class LexiconStreamed extends LexiconStored {
                 xmlReaderWriter.readWriteElement(tagName);
             }
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
 
 
@@ -189,9 +194,9 @@ public class LexiconStreamed extends LexiconStored {
             super.layersInOrder[layerTag.ordinal()] = layer;
             marshall(super.layersInOrder[layerTag.ordinal()]);
         } catch (JAXBException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
-        //super.connectLayers();
+        readSucceeded.add(layerTag);
     }
 
     private void marshall(LexiconLayer layer) throws WLFormatException {
@@ -208,9 +213,9 @@ public class LexiconStreamed extends LexiconStored {
             marshaller.marshal(layer, xmlEventWriter);
             xmlReaderWriter.endExternalFragment(LAYER_INDENT_RELATIVE);
         } catch (JAXBException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
     }
 
@@ -230,9 +235,9 @@ public class LexiconStreamed extends LexiconStored {
                 xmlReaderWriter.endExternalFragment(LAYER_INDENT_RELATIVE);
             }
         } catch (JAXBException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
+            throw new WLFormatException(e.getMessage(), e);
         }
     }
 
