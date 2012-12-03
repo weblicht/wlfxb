@@ -173,7 +173,6 @@ public class XmlReaderWriter {
 
         try {
             if (xmlEventWriter != null) {
-                xmlEventWriter.flush();
                 xmlEventWriter.close();
             }
         } catch (XMLStreamException e) {
@@ -186,6 +185,9 @@ public class XmlReaderWriter {
         try {
             while (xmlEventReader.hasNext()) {
                 add(xmlEventReader.nextEvent());
+            }
+            if (xmlEventWriter != null) {
+                xmlEventWriter.flush();
             }
         } catch (XMLStreamException e) {
             throw new WLFormatException(e.getMessage(), e);

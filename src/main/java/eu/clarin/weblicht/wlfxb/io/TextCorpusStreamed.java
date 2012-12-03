@@ -39,8 +39,13 @@ public class TextCorpusStreamed extends TextCorpusStored {
             throws WLFormatException {
         super("unknown");
         this.layersToRead = layersToRead;
+        try {
         initializeReaderAndWriter(inputStream, null, false);
         process();
+        } catch (WLFormatException e) {
+            xmlReaderWriter.close();
+            throw e;
+        }
     }
 
     public TextCorpusStreamed(InputStream inputStream,
@@ -48,8 +53,13 @@ public class TextCorpusStreamed extends TextCorpusStored {
             throws WLFormatException {
         super("unknown");
         this.layersToRead = layersToRead;
+        try {
         initializeReaderAndWriter(inputStream, outputStream, false);
         process();
+        } catch (WLFormatException e) {
+            xmlReaderWriter.close();
+            throw e;
+        }
     }
 
     public TextCorpusStreamed(InputStream inputStream,
@@ -58,8 +68,13 @@ public class TextCorpusStreamed extends TextCorpusStored {
             throws WLFormatException {
         super("unknown");
         this.layersToRead = layersToRead;
+        try {
         initializeReaderAndWriter(inputStream, outputStream, outputAsXmlFragment);
         process();
+        } catch (WLFormatException e) {
+            xmlReaderWriter.close();
+            throw e;
+        }
     }
 
     public TextCorpusStreamed(InputStream inputStream,
@@ -68,9 +83,14 @@ public class TextCorpusStreamed extends TextCorpusStored {
             throws WLFormatException {
         super("unknown");
         this.layersToRead = layersToRead;
+        try {
         initializeReaderAndWriter(inputStream, outputStream, false);
         addMetadata(metaDataToAdd);
         process();
+        } catch (WLFormatException e) {
+            xmlReaderWriter.close();
+            throw e;
+        }
     }
 
     private void initializeReaderAndWriter(InputStream inputStream, OutputStream outputStream, boolean outputAsXmlFragment) throws WLFormatException {
@@ -248,7 +268,10 @@ public class TextCorpusStreamed extends TextCorpusStored {
         }
 
         for (int i = 0; i < super.layersInOrder.length; i++) {
-            if (super.layersInOrder[i] != null && !super.layersInOrder[i].isEmpty() && !layersRead[i]) {
+            // if it's a newly added layer
+            if (super.layersInOrder[i] != null && !layersRead[i]
+                    //&& !super.layersInOrder[i].isEmpty() 
+                    ) {
                 marshall(super.layersInOrder[i]);
             }
         }

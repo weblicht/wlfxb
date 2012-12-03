@@ -18,6 +18,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -61,8 +63,10 @@ public class ExternalDataWithTextCorpusStreamed {
         try {
             initializeReaderAndWriter(inputStream, null, false);
             readLayers();
-        } finally {
-            //TODO close all streams, delete all temp files
+        } catch (WLFormatException e) {
+            Logger.getLogger(ExternalDataWithTextCorpusStreamed.class.getName()).log(Level.SEVERE, null, e);
+            cleanup();
+            throw e;
         }
     }
 
@@ -80,14 +84,18 @@ public class ExternalDataWithTextCorpusStreamed {
             this.tcLayersToRead = tcLayersToRead;
         }
 
+        OutputStream osTemp = null;
+        InputStream isTemp = null;
         try {
-            OutputStream osTemp = getTempOutputStream();
+            osTemp = getTempOutputStream();
             initializeReaderAndWriter(inputStream, osTemp, false);
             readLayers();
-            InputStream isTemp = getTempInputStream();
+            isTemp = getTempInputStream();
             initializeReaderAndWriter(isTemp, outputStream, false);
-        } catch (Exception e) {
-            //TODO close all streams, delete all temp files
+        } catch (WLFormatException e) {
+            Logger.getLogger(ExternalDataWithTextCorpusStreamed.class.getName()).log(Level.SEVERE, null, e);
+            cleanup();
+            throw e;
         }
     }
 
@@ -105,6 +113,15 @@ public class ExternalDataWithTextCorpusStreamed {
             tempFile = File.createTempFile("wlftemp", null);
             os = new FileOutputStream(tempFile);
         } catch (IOException e) {
+            Logger.getLogger(ExternalDataWithTextCorpusStreamed.class.getName()).log(Level.SEVERE, null, e);
+            if (os != null) {
+                try {
+                    os.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(ExternalDataWithTextCorpusStreamed.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            cleanup();
             throw new WLFormatException(e);
         }
         return os;
@@ -115,6 +132,15 @@ public class ExternalDataWithTextCorpusStreamed {
         try {
             is = new FileInputStream(tempFile);
         } catch (IOException e) {
+            Logger.getLogger(ExternalDataWithTextCorpusStreamed.class.getName()).log(Level.SEVERE, null, e);
+            if (is != null) {
+                try {
+                    is.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(ExternalDataWithTextCorpusStreamed.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            cleanup();
             throw new WLFormatException(e);
         }
         return is;
@@ -369,9 +395,9 @@ public class ExternalDataWithTextCorpusStreamed {
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             marshaller.marshal(layer, xmlEventWriter);
             xmlReaderWriter.endExternalFragment(LAYER_INDENT_RELATIVE);
-        } catch (JAXBException e) {
-            throw new WLFormatException(e.getMessage(), e);
-        } catch (XMLStreamException e) {
+        } catch (Exception e) {
+            Logger.getLogger(ExternalDataWithTextCorpusStreamed.class.getName()).log(Level.SEVERE, null, e);
+            cleanup();
             throw new WLFormatException(e.getMessage(), e);
         }
     }
@@ -463,6 +489,8 @@ public class ExternalDataWithTextCorpusStreamed {
             }
         } catch (XMLStreamException ex) {
             throw new WLFormatException(ex.getMessage(), ex);
+        } finally {
+            cleanup();
         }
 
     }
@@ -470,5 +498,32 @@ public class ExternalDataWithTextCorpusStreamed {
     @Override
     public String toString() {
         return this.extData.toString() + "\n" + this.textCorpus.toString();
+    }
+
+    private void cleanup() {
+        if (xmlEventWriter != null) {
+            try {
+                xmlEventWriter.close();
+            } catch (XMLStreamException ex) {
+                Logger.getLogger(ExternalDataWithTextCorpusStreamed.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        if (xmlEventReader != null) {
+            try {
+                xmlEventReader.close();
+            } catch (XMLStreamException ex) {
+                Logger.getLogger(ExternalDataWithTextCorpusStreamed.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        if (xmlReaderWriter != null) {
+            try {
+                xmlReaderWriter.close();
+            } catch (WLFormatException ex) {
+                Logger.getLogger(ExternalDataWithTextCorpusStreamed.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        if (tempFile != null) {
+             tempFile.delete();
+        }
     }
 }

@@ -39,8 +39,13 @@ public class LexiconStreamed extends LexiconStored {
             throws WLFormatException {
         super("unknown");
         this.layersToRead = layersToRead;
-        initializeReaderAndWriter(inputStream, null, false);
-        process();
+        try {
+            initializeReaderAndWriter(inputStream, null, false);
+            process();
+        } catch (WLFormatException e) {
+            xmlReaderWriter.close();
+            throw e;
+        }
     }
 
     public LexiconStreamed(InputStream inputStream,
@@ -48,8 +53,13 @@ public class LexiconStreamed extends LexiconStored {
             throws WLFormatException {
         super("unknown");
         this.layersToRead = layersToRead;
-        initializeReaderAndWriter(inputStream, outputStream, false);
-        process();
+        try {
+            initializeReaderAndWriter(inputStream, outputStream, false);
+            process();
+        } catch (WLFormatException e) {
+            xmlReaderWriter.close();
+            throw e;
+        }
     }
 
     public LexiconStreamed(InputStream inputStream,
@@ -58,8 +68,13 @@ public class LexiconStreamed extends LexiconStored {
             throws WLFormatException {
         super("unknown");
         this.layersToRead = layersToRead;
-        initializeReaderAndWriter(inputStream, outputStream, outputAsXmlFragment);
-        process();
+        try {
+            initializeReaderAndWriter(inputStream, outputStream, outputAsXmlFragment);
+            process();
+        } catch (WLFormatException e) {
+            xmlReaderWriter.close();
+            throw e;
+        }
     }
 
     public LexiconStreamed(InputStream inputStream,
@@ -68,9 +83,14 @@ public class LexiconStreamed extends LexiconStored {
             throws WLFormatException {
         super("unknown");
         this.layersToRead = layersToRead;
-        initializeReaderAndWriter(inputStream, outputStream, false);
-        addMetadata(metaDataToAdd);
-        process();
+        try {
+            initializeReaderAndWriter(inputStream, outputStream, false);
+            addMetadata(metaDataToAdd);
+            process();
+        } catch (WLFormatException e) {
+            xmlReaderWriter.close();
+            throw e;
+        }
     }
 
     private void initializeReaderAndWriter(InputStream inputStream, OutputStream outputStream, boolean outputAsXmlFragment) throws WLFormatException {
@@ -127,7 +147,7 @@ public class LexiconStreamed extends LexiconStored {
         }
         if (layersToRead.size() != readSucceeded.size()) {
             layersToRead.removeAll(readSucceeded);
-             throw new WLFormatException("Following layers could not be read: " + layersToRead.toString());
+            throw new WLFormatException("Following layers could not be read: " + layersToRead.toString());
         }
     }
 
@@ -248,7 +268,9 @@ public class LexiconStreamed extends LexiconStored {
         }
 
         for (int i = 0; i < super.layersInOrder.length; i++) {
-            if (super.layersInOrder[i] != null && !super.layersInOrder[i].isEmpty() && !layersRead[i]) {
+            if (super.layersInOrder[i] != null && !layersRead[i]
+                    // && !super.layersInOrder[i].isEmpty() 
+                    ) {
                 marshall(super.layersInOrder[i]);
             }
         }
