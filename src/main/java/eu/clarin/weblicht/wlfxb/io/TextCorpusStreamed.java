@@ -28,6 +28,7 @@ import javax.xml.stream.events.XMLEvent;
 public class TextCorpusStreamed extends TextCorpusStored {
 
     private EnumSet<TextCorpusLayerTag> layersToRead;
+    private EnumSet<TextCorpusLayerTag> layersFound = EnumSet.noneOf(TextCorpusLayerTag.class);
     private EnumSet<TextCorpusLayerTag> readSucceeded = EnumSet.noneOf(TextCorpusLayerTag.class);
     private XMLEventReader xmlEventReader;
     private XMLEventWriter xmlEventWriter;
@@ -190,12 +191,15 @@ public class TextCorpusStreamed extends TextCorpusStored {
             if (layerTag == null) { // unknown layer, just add it to output
                 //readWriteElement(tagName);
                 xmlReaderWriter.readWriteElement(tagName);
-            } else if (this.layersToRead.contains(layerTag)) { // known layer, and is requested for reading
-                // add it to the output, but store its data
-                readLayerData(layerTag);
-            } else { // known layer, and is not requested for reading
-                // just add it to the output
-                xmlReaderWriter.readWriteElement(tagName);
+            } else {
+                if (this.layersToRead.contains(layerTag)) { // known layer, and is requested for reading
+                    // add it to the output, but store its data
+                    readLayerData(layerTag);
+                } else { // known layer, and is not requested for reading
+                    // just add it to the output
+                    xmlReaderWriter.readWriteElement(tagName);
+                }
+                layersFound.add(layerTag);
             }
         } catch (XMLStreamException e) {
             throw new WLFormatException(e.getMessage(), e);
@@ -222,6 +226,10 @@ public class TextCorpusStreamed extends TextCorpusStored {
     private void marshall(TextCorpusLayer layer) throws WLFormatException {
         if (xmlEventWriter == null) {
             return;
+        }
+        TextCorpusLayerTag layerTag = TextCorpusLayerTag.getFromClass(layer.getClass());
+        if (layersFound.contains(layerTag)) {
+            throw new WLFormatException(layerTag.getXmlName() + " cannot be marshalled: the document already contains this annotation layer.");
         }
         JAXBContext context;
         try {
