@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/d-spin_0_4.rnc" type="application/relax-ng-compact-syntax"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+ <MetaData xmlns="http://www.dspin.de/data/metadata">
+  <source>IMS, Uni Stuttgart</source>
+ </MetaData>
+ <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+  <tokens>
+   <token ID="t1">Peter</token>
+   <token ID="t2">aß</token>
+   <token ID="t3">eine</token>
+   <token ID="t4">Käsepizza</token>
+   <token ID="t5">.</token>
+  </tokens>
+  <sentences>
+   <sentence ID="s1" tokenIDs="t1 t2 t3 t4 t5"/>
+  </sentences>
+  
+  <depparsing tagset="Tiger" multigovs="false" emptytoks="false">
+	<parse>
+    <dependency depIDs="t3" func="ROOT"/>
+    <dependency func="SUBJ" depIDs="t2" govIDs="t5"/>
+    <dependency func="SPEC" depIDs="t1" govIDs="t4"/>
+    <dependency func="OBJ" depIDs="t4" govIDs="t3"/>
+    <dependency func="TEST" depIDs="t5" govIDs="t3"/>
+   </parse>
+  </depparsing>
+  
+ </TextCorpus>
+</D-Spin>

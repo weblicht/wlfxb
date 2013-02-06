@@ -24,8 +24,8 @@ public class GeoLayerStored extends TextCorpusLayerStoredAbstract implements Geo
     private String source;
     @XmlAttribute(name = "coordFormat", required = true)
     private GeoLongLatFormat coordFormat;
-    @XmlAttribute(name = "contitentFormat")
-    private GeoContinentFormat contitentFormat;
+    @XmlAttribute(name = "continentFormat")
+    private GeoContinentFormat continentFormat;
     @XmlAttribute(name = "countryFormat")
     private GeoCountryFormat countryFormat;
     @XmlAttribute(name = "capitalFormat")
@@ -77,7 +77,7 @@ public class GeoLayerStored extends TextCorpusLayerStoredAbstract implements Geo
             GeoCapitalFormat capitalFormat) {
         this.source = source;
         this.coordFormat = coordFormat;
-        this.contitentFormat = continentFormat;
+        this.continentFormat = continentFormat;
         this.countryFormat = countryFormat;
         this.capitalFormat = capitalFormat;
     }
@@ -117,7 +117,7 @@ public class GeoLayerStored extends TextCorpusLayerStoredAbstract implements Geo
 
     @Override
     public GeoContinentFormat getContinentFormat() {
-        return this.contitentFormat;
+        return this.continentFormat;
     }
 
     @Override
@@ -189,9 +189,9 @@ public class GeoLayerStored extends TextCorpusLayerStoredAbstract implements Geo
         sb.append(source);
         sb.append(",");
         sb.append(coordFormat);
-        if (this.contitentFormat != null) {
+        if (this.continentFormat != null) {
             sb.append(",");
-            sb.append(contitentFormat.name());
+            sb.append(continentFormat.name());
         }
         if (this.countryFormat != null) {
             sb.append(",");
