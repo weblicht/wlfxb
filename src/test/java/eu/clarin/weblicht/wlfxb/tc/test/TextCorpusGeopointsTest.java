@@ -4,6 +4,7 @@
 package eu.clarin.weblicht.wlfxb.tc.test;
 
 import eu.clarin.weblicht.wlfxb.io.TextCorpusStreamed;
+import eu.clarin.weblicht.wlfxb.tc.api.GeoContinentFormat;
 import eu.clarin.weblicht.wlfxb.tc.api.GeoLayer;
 import eu.clarin.weblicht.wlfxb.tc.api.GeoLongLatFormat;
 import eu.clarin.weblicht.wlfxb.tc.api.TextCorpus;
@@ -46,12 +47,12 @@ public class TextCorpusGeopointsTest extends AbstractTextCorpusTest {
         TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeGeopointsRecognition);
         System.out.println(tc);
         // create geo layer, it's empty at first
-        GeoLayer geo = tc.createGeoLayer("http://www.geonames.org/", GeoLongLatFormat.DegDec);
+        GeoLayer geo = tc.createGeoLayer("http://www.geonames.org/", GeoLongLatFormat.DegDec, GeoContinentFormat.name);
         for (int i = 0; i < tc.getTokensLayer().size(); i++) {
             Token token = tc.getTokensLayer().getToken(i);
             if (token.getString().equals(sampleToken)) {
                 // create and add geo point to the geo layer
-                geo.addPoint(sampleLon, sampleLat, sampleAlt, null, null, null, token);
+                geo.addPoint(sampleLon, sampleLat, sampleAlt, "Europe", null, null, token);
             }
         }
         // IMPORTANT close the streams!!!

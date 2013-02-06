@@ -12,6 +12,6 @@
       <sentence ID="s2" tokenIDs="t6 t7 t8 t9"></sentence>
     </sentences>
     <namedEntities type="MUC1990"><entity tokenIDs="t1" class="PERSON"/></namedEntities>
-    <geo  coordFormat="DegDec"><src>http://www.geonames.org/</src><gpoint tokenIDs="t1" lat="39.11417" lon="-94.62746" alt="233.0"></gpoint></geo>
+    <geo  coordFormat="DegDec" continentFormat="name"><src>http://www.geonames.org/</src><gpoint tokenIDs="t1" lat="39.11417" lon="-94.62746" alt="233.0" continent="Europe"></gpoint></geo>
   </TextCorpus>
 </D-Spin>
