@@ -4,8 +4,10 @@
 package eu.clarin.weblicht.wlfxb.lx.test;
 
 import eu.clarin.weblicht.wlfxb.io.LexiconStreamed;
+import eu.clarin.weblicht.wlfxb.lx.api.Lemma;
 import eu.clarin.weblicht.wlfxb.lx.api.LemmasLayer;
 import eu.clarin.weblicht.wlfxb.lx.api.Lexicon;
+import eu.clarin.weblicht.wlfxb.lx.api.Relation;
 import eu.clarin.weblicht.wlfxb.lx.api.RelationsLayer;
 import eu.clarin.weblicht.wlfxb.lx.api.Term;
 import eu.clarin.weblicht.wlfxb.lx.xb.LexiconLayerTag;
@@ -38,6 +40,10 @@ public class LexiconRelationsTest extends AbstractLexiconTest {
         Assert.assertEquals("collocation", layer.getRelation(0).getType());
         Assert.assertArrayEquals(new String[]{"steife", "Brise"}, layer.getWords(layer.getRelation(0)));
         Assert.assertArrayEquals(new String[]{"essen", "Frühstück"}, layer.getWords(layer.getRelation(2)));
+        
+        Relation[] relations = layer.getRelations(lex.getLemmasLayer().getLemma(0));
+        Relation[] relationsExpected = new Relation[0];
+        Assert.assertArrayEquals(relationsExpected, relations);
     }
 
     @Test

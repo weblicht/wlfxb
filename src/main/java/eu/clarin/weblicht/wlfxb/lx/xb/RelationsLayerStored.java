@@ -57,7 +57,11 @@ public class RelationsLayerStored extends LexiconLayerStoredAbstract implements 
     @Override
     public Relation[] getRelations(Lemma lemma) {
         List<Relation> relList = connector.lemma2ItsRels.get(lemma);
-        return relList.toArray(new Relation[rels.size()]);
+        if (relList != null) {
+            return relList.toArray(new Relation[relList.size()]);
+        } else {
+            return new Relation[0];
+        }
     }
 
     @Override

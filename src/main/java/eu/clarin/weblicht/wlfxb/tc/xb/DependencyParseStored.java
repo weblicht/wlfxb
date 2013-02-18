@@ -29,6 +29,9 @@ public class DependencyParseStored implements DependencyParse {
 
     @Override
     public Dependency[] getDependencies() {
+        if (dependencies == null) {
+            return new Dependency[0];
+        }
         return dependencies.toArray(new Dependency[dependencies.size()]);
     }
 

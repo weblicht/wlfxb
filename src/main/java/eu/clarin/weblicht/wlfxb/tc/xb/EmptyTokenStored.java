@@ -30,7 +30,7 @@ public class EmptyTokenStored implements Token {
 	
 	@Override
 	public String getString() {
-		return tokenString;
+            return tokenString;
 	}
 	
 	@Override
