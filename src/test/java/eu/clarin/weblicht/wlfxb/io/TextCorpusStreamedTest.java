@@ -3,6 +3,7 @@ package eu.clarin.weblicht.wlfxb.io;
 import eu.clarin.weblicht.wlfxb.md.xb.MetaData;
 import eu.clarin.weblicht.wlfxb.md.xb.MetaDataItem;
 import eu.clarin.weblicht.wlfxb.tc.api.LemmasLayer;
+import eu.clarin.weblicht.wlfxb.tc.api.Sentence;
 import eu.clarin.weblicht.wlfxb.tc.api.SentencesLayer;
 import eu.clarin.weblicht.wlfxb.tc.api.TextCorpus;
 import eu.clarin.weblicht.wlfxb.tc.api.Token;
@@ -12,6 +13,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.List;
 import javax.xml.parsers.ParserConfigurationException;
@@ -29,13 +31,18 @@ public class TextCorpusStreamedTest {
         System.out.println();
         System.out.println("--- READ TEST START ---");
         InputStream is =this.getClass().getResourceAsStream(INPUT_FILE_FOR_READ);
-        testRead(is, EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.SENTENCES, TextCorpusLayerTag.LEMMAS));
+        testRead(is, EnumSet.of(TextCorpusLayerTag.SENTENCES, TextCorpusLayerTag.LEMMAS));
         System.out.println("--- READ TEST END ---");
         System.out.println();
     }
 
     private void testRead(InputStream is, EnumSet<TextCorpusLayerTag> layersToRead) throws Exception {
         TextCorpus tc = new TextCorpusStreamed(is, layersToRead);
+        System.out.println(tc.getTokensLayer());
+        SentencesLayer sentencesLayer = tc.getSentencesLayer();
+        Sentence sentence1 = sentencesLayer.getSentence(0);
+        Token[] sentence1Tokens = sentencesLayer.getTokens(sentence1);
+        System.out.println(Arrays.toString(sentence1Tokens));
         System.out.println(tc);
     }
 

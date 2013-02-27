@@ -2,6 +2,8 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.TextCorpusLayer;
 import java.util.Arrays;
+import java.util.EnumMap;
+import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +38,7 @@ public enum TextCorpusLayerTag {
     TEXT_STRUCTURE(TextStructureLayerStored.XML_NAME, TextStructureLayerStored.class),
     DISCOURSE_CONNECTIVES(DiscourseConnectivesLayerStored.XML_NAME, DiscourseConnectivesLayerStored.class),
     CORPUS_MATCHES(MatchesLayerStored.XML_NAME, MatchesLayerStored.class);
+    
     private static final Map<String, TextCorpusLayerTag> xmlNameToLayerTagMap =
             new HashMap<String, TextCorpusLayerTag>() {
 
@@ -45,6 +48,7 @@ public enum TextCorpusLayerTag {
                     }
                 }
             };
+    
     private static final Map<Class<? extends TextCorpusLayer>, TextCorpusLayerTag> classToLayerTagMap =
             new HashMap<Class<? extends TextCorpusLayer>, TextCorpusLayerTag>() {
 
@@ -54,6 +58,7 @@ public enum TextCorpusLayerTag {
                     }
                 }
             };
+    
     private static final TextCorpusLayerTag[] layersOrder;
 
     static {
@@ -62,6 +67,34 @@ public enum TextCorpusLayerTag {
             layersOrder[layerTag.ordinal()] = layerTag;
         }
     }
+    
+    private static final EnumMap<TextCorpusLayerTag, EnumSet<TextCorpusLayerTag>> layerDependencies;
+    static {
+        layerDependencies = new  EnumMap(TextCorpusLayerTag.class);
+        layerDependencies.put(TextCorpusLayerTag.TEXT, EnumSet.noneOf(TextCorpusLayerTag.class));
+        layerDependencies.put(TextCorpusLayerTag.TOKENS, EnumSet.noneOf(TextCorpusLayerTag.class));
+        layerDependencies.put(TextCorpusLayerTag.LEMMAS, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.POSTAGS, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.SENTENCES, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.NAMED_ENTITIES, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.PHONETICS, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.PARSING_CONSTITUENT, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.PARSING_DEPENDENCY, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.MORPHOLOGY, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.ORTHOGRAPHY, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.REFERENCES, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.CORPUS_MATCHES, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.DISCOURSE_CONNECTIVES, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.GEO, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.TEXT_STRUCTURE, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.WORD_SPLITTINGS, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.SYNONYMY, EnumSet.of(TextCorpusLayerTag.LEMMAS));
+        layerDependencies.put(TextCorpusLayerTag.ANTONYMY, EnumSet.of(TextCorpusLayerTag.LEMMAS));
+        layerDependencies.put(TextCorpusLayerTag.HYPONYMY, EnumSet.of(TextCorpusLayerTag.LEMMAS));
+        layerDependencies.put(TextCorpusLayerTag.HYPERONYMY, EnumSet.of(TextCorpusLayerTag.LEMMAS));
+        layerDependencies.put(TextCorpusLayerTag.RELATIONS, EnumSet.of(TextCorpusLayerTag.TOKENS));
+    }
+    
     private final String xmlName;
     private final Class<? extends TextCorpusLayer> layerClass;
 
@@ -88,5 +121,19 @@ public enum TextCorpusLayerTag {
 
     public static TextCorpusLayerTag getFromClass(Class<? extends TextCorpusLayer> cl) {
         return classToLayerTagMap.get(cl);
+    }
+    
+    public EnumSet<TextCorpusLayerTag> withDependentLayers() {
+        EnumSet<TextCorpusLayerTag> layerAndDependentLayers = EnumSet.of(this);
+        addDependentLayers(this, layerAndDependentLayers);
+        return layerAndDependentLayers;
+    }
+        
+    private static void addDependentLayers(TextCorpusLayerTag tag, EnumSet<TextCorpusLayerTag> layers) {
+        EnumSet<TextCorpusLayerTag> dependentLayers = layerDependencies.get(tag);
+        layers.addAll(dependentLayers);
+        for (TextCorpusLayerTag dependentLayer : dependentLayers) {
+                addDependentLayers(dependentLayer, layers);
+        }
     }
 }

@@ -39,7 +39,8 @@ public class TextCorpusStreamed extends TextCorpusStored {
             EnumSet<TextCorpusLayerTag> layersToRead)
             throws WLFormatException {
         super("unknown");
-        this.layersToRead = layersToRead;
+        //this.layersToRead = layersToRead;
+        getLayersToReadWithDependencies(layersToRead);
         try {
         initializeReaderAndWriter(inputStream, null, false);
         process();
@@ -284,5 +285,12 @@ public class TextCorpusStreamed extends TextCorpusStored {
             }
         }
         xmlReaderWriter.readWriteToTheEnd();
+    }
+
+    private void getLayersToReadWithDependencies(EnumSet<TextCorpusLayerTag> layersToRead) {
+        this.layersToRead = EnumSet.copyOf(layersToRead);
+        for (TextCorpusLayerTag tag : layersToRead) {
+            this.layersToRead.addAll(tag.withDependentLayers());
+        }
     }
 }
