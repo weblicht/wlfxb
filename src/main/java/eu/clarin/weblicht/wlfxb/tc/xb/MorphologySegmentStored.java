@@ -38,15 +38,15 @@ public class MorphologySegmentStored implements MorphologySegment {
     @XmlElementRefs({
         @XmlElementRef(name = MorphologySegmentStored.XML_NAME, type = MorphologySegmentStored.class),})
     protected List<Object> getContent() {
-        List<Object> content = new ArrayList<Object>();
+        List<Object> contentToMarshal = new ArrayList<Object>();
         if (subsegments != null) {
-            content.addAll(subsegments);
+            contentToMarshal.addAll(subsegments);
         } else if (value != null) {
-            content.add(value);
+            contentToMarshal.add(value);
         } else {
             return null;
         }
-        return content;
+        return contentToMarshal;
     }
 
     void setContent(List<Object> content) {

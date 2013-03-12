@@ -33,18 +33,19 @@ public class TextCorpusLayersConnector {
     protected Map<Lemma, Orthform> lemma2ItsHyperonyms = new HashMap<Lemma, Orthform>();
     protected Map<String, EmptyTokenStored> emptyTokId2EmptyTok = new HashMap<String, EmptyTokenStored>();
     protected Map<Token, OrthCorrection> token2ItsCorrection = new HashMap<Token, OrthCorrection>();
-    protected Map<TextSpanType, Map<Token, TextSpan>> token2ItsTextSpans = new EnumMap<TextSpanType, Map<Token, TextSpan>>(TextSpanType.class);
+    //protected Map<TextSpanType, Map<Token, TextSpan>> token2ItsTextSpans = new EnumMap<TextSpanType, Map<Token, TextSpan>>(TextSpanType.class);
+    protected Map<String, Map<Token, TextSpan>> token2ItsTextSpans = new HashMap<String, Map<Token, TextSpan>>();
     protected Map<Token, DiscourseConnective> token2ItsDConnective = new HashMap<Token, DiscourseConnective>();
     protected Map<String, Constituent> constitId2ItsConstit = new HashMap<String, Constituent>();
 
     TextCorpusLayersConnector() {
         super();
-        initSubmaps();
+//       initSubmaps();
     }
 
-    private void initSubmaps() {
-        for (TextSpanType value : TextSpanType.values()) {
-            token2ItsTextSpans.put(value, new HashMap<Token, TextSpan>());
-        }
-    }
+//    private void initSubmaps() {
+//        for (TextSpanType value : TextSpanType.values()) {
+//            token2ItsTextSpans.put(value, new HashMap<Token, TextSpan>());
+//        }
+//    }
 }
