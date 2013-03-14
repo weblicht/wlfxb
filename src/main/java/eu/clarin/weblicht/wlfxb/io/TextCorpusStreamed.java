@@ -1,4 +1,24 @@
 /**
+ * wlfxb - a library for creating and processing of TCF data streams.
+ *
+ * Copyright (C) Yana Panchenko.
+ *
+ * This file is part of wlfxb.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+/**
  *
  */
 package eu.clarin.weblicht.wlfxb.io;
@@ -22,8 +42,15 @@ import javax.xml.stream.*;
 import javax.xml.stream.events.XMLEvent;
 
 /**
- * @author Yana Panchenko
+ * {@inheritDoc}
+ * 
+ * Class <tt>TextCorpusStreamed</tt>  is used for accessing specified annotation 
+ * layers and (optionally) adding any new annotation layers from/to TextCorpus. 
+ * Only specified in the constructor annotation layers are loaded into the memory. 
+ * In case all the annotation layers should be loaded into the memory, use 
+ * {@link WLData} class.
  *
+ * @author Yana Panchenko
  */
 public class TextCorpusStreamed extends TextCorpusStored {
 
@@ -35,6 +62,18 @@ public class TextCorpusStreamed extends TextCorpusStored {
     private XmlReaderWriter xmlReaderWriter;
     private static final int LAYER_INDENT_RELATIVE = 1;
 
+    /**
+     * Creates a <tt>TextCorpusStreamed</tt> from the given TCF input stream and
+     * specified annotation layers.
+     *
+     * @param inputStream the underlying input stream with linguistic
+     * annotations in TCF format.
+     * @param layersToRead the annotation layers of <tt>TextCorpus</tt> that
+     * should be read into this <tt>TextCorpusStreamed</tt>.
+     *
+     * @throws WLFormatException if an error in input format or an I/O error
+     * occurs.
+     */
     public TextCorpusStreamed(InputStream inputStream,
             EnumSet<TextCorpusLayerTag> layersToRead)
             throws WLFormatException {
@@ -42,28 +81,60 @@ public class TextCorpusStreamed extends TextCorpusStored {
         //this.layersToRead = layersToRead;
         getLayersToReadWithDependencies(layersToRead);
         try {
-        initializeReaderAndWriter(inputStream, null, false);
-        process();
+            initializeReaderAndWriter(inputStream, null, false);
+            process();
         } catch (WLFormatException e) {
             xmlReaderWriter.close();
             throw e;
         }
     }
 
+    /**
+     * Creates a <tt>TextCorpusStreamed</tt> from the given TCF input stream,
+     * specified annotation layers and the output stream.
+     *
+     * @param inputStream the underlying input stream with linguistic
+     * annotations in TCF format.
+     * @param layersToRead the annotation layers of <tt>TextCorpus</tt> that
+     * should be read into this <tt>TextCorpusStreamed</tt>.
+     * @param outputStream the underlying output stream into which the
+     * annotations from the input stream and any new created annotations will be
+     * written (in TCF format).
+     *
+     * @throws WLFormatException if an error in input format or an I/O error
+     * occurs.
+     */
     public TextCorpusStreamed(InputStream inputStream,
             EnumSet<TextCorpusLayerTag> layersToRead, OutputStream outputStream)
             throws WLFormatException {
         super("unknown");
         this.layersToRead = layersToRead;
         try {
-        initializeReaderAndWriter(inputStream, outputStream, false);
-        process();
+            initializeReaderAndWriter(inputStream, outputStream, false);
+            process();
         } catch (WLFormatException e) {
             xmlReaderWriter.close();
             throw e;
         }
     }
 
+    /**
+     * Creates a <tt>TextCorpusStreamed</tt> from the given TCF input stream,
+     * specified annotation layers and the output stream.
+     *
+     * @param inputStream the underlying input stream with linguistic
+     * annotations in TCF format.
+     * @param layersToRead the annotation layers of <tt>TextCorpus</tt> that
+     * should be read into this <tt>TextCorpusStreamed</tt>.
+     * @param outputStream the underlying output stream into which the
+     * annotations from the input stream and any new created annotations will be
+     * written (in TCF format).
+     * @param outputAsXmlFragment true if the output should not contain xml
+     * headers, false otherwise.
+     *
+     * @throws WLFormatException if an error in input format or an I/O error
+     * occurs.
+     */
     public TextCorpusStreamed(InputStream inputStream,
             EnumSet<TextCorpusLayerTag> layersToRead, OutputStream outputStream,
             boolean outputAsXmlFragment)
@@ -71,14 +142,30 @@ public class TextCorpusStreamed extends TextCorpusStored {
         super("unknown");
         this.layersToRead = layersToRead;
         try {
-        initializeReaderAndWriter(inputStream, outputStream, outputAsXmlFragment);
-        process();
+            initializeReaderAndWriter(inputStream, outputStream, outputAsXmlFragment);
+            process();
         } catch (WLFormatException e) {
             xmlReaderWriter.close();
             throw e;
         }
     }
 
+    /**
+     * Creates a <tt>TextCorpusStreamed</tt> from the given TCF input stream,
+     * specified annotation layers, output stream and meta data.
+     *
+     * @param inputStream the underlying input stream with linguistic
+     * annotations in TCF format.
+     * @param layersToRead the annotation layers of <tt>TextCorpus</tt> that
+     * should be read into this <tt>TextCorpusStreamed</tt>.
+     * @param outputStream the underlying output stream into which the
+     * annotations from the input stream and any new created annotations will be
+     * written (in TCF format).
+     * @param metaDataToAdd meta data to be added to the output TCF.
+     *
+     * @throws WLFormatException if an error in input format or an I/O error
+     * occurs.
+     */
     public TextCorpusStreamed(InputStream inputStream,
             EnumSet<TextCorpusLayerTag> layersToRead, OutputStream outputStream,
             List<MetaDataItem> metaDataToAdd)
@@ -86,9 +173,9 @@ public class TextCorpusStreamed extends TextCorpusStored {
         super("unknown");
         this.layersToRead = layersToRead;
         try {
-        initializeReaderAndWriter(inputStream, outputStream, false);
-        addMetadata(metaDataToAdd);
-        process();
+            initializeReaderAndWriter(inputStream, outputStream, false);
+            addMetadata(metaDataToAdd);
+            process();
         } catch (WLFormatException e) {
             xmlReaderWriter.close();
             throw e;
@@ -149,7 +236,7 @@ public class TextCorpusStreamed extends TextCorpusStored {
         }
         if (layersToRead.size() != readSucceeded.size()) {
             layersToRead.removeAll(readSucceeded);
-             throw new WLFormatException("Following layers could not be read: " + layersToRead.toString());
+            throw new WLFormatException("Following layers could not be read: " + layersToRead.toString());
         }
     }
 
@@ -270,6 +357,19 @@ public class TextCorpusStreamed extends TextCorpusStored {
         }
     }
 
+    /**
+     * Closes the input and output streams associated with this object and
+     * releases any associated system resources. Before the streams are closed,
+     * all in-memory annotations of the <tt>TextCorpusStreamed</tt> and
+     * not-processed part of the input stream are written to the output stream.
+     * Therefore, it's important to call <tt>close()<tt> method, so that all the
+     * in-memory annotations are saved to the output stream. Once the
+     * <tt>TextCorpusStreamed</tt> has been closed, adding further annotations
+     * will have no effect on the output stream.
+     *
+     * @throws WLFormatException if an error in input format or an I/O error
+     * occurs.
+     */
     public void close() throws WLFormatException {
         boolean[] layersRead = new boolean[super.layersInOrder.length];
         for (TextCorpusLayerTag layerRead : layersToRead) {
@@ -278,8 +378,7 @@ public class TextCorpusStreamed extends TextCorpusStored {
 
         for (int i = 0; i < super.layersInOrder.length; i++) {
             // if it's a newly added layer
-            if (super.layersInOrder[i] != null && !layersRead[i]
-                    //&& !super.layersInOrder[i].isEmpty() 
+            if (super.layersInOrder[i] != null && !layersRead[i] //&& !super.layersInOrder[i].isEmpty() 
                     ) {
                 marshall(super.layersInOrder[i]);
             }

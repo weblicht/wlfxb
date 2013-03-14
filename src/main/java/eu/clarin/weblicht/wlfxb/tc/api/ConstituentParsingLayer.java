@@ -1,19 +1,40 @@
 /**
+ * wlfxb - a library for creating and processing of TCF data streams.
  *
+ * Copyright (C) Yana Panchenko.
+ *
+ * This file is part of wlfxb.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
 import java.util.List;
 
 /**
+ * {@inheritDoc}
+ * 
+ * The <tt>ConstituentParsingLayer</tt> layer represents phrase structure 
+ * parsing annotations on sentence tokens. The layer specifies the tagset used 
+ * for phrase structure categories. The parsed structure is a tree, where the 
+ * terminal nodes reference tokens, and non-terminal nodes are composed of other
+ * nodes. Optionally, the nodes can include incoming edge labels. Additionally, 
+ * secondary edges can be specified by referencing target nodes.
+ * 
  * @author Yana Panchenko
- *
  */
 public interface ConstituentParsingLayer extends TextCorpusLayer {
-
-    public boolean isEmpty();
-
-    public int size();
 
     public String getTagset();
 

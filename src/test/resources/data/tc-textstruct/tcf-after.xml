@@ -16,7 +16,9 @@
    <token ID="t9">.</token>
   </tokens>
   <textstructure>
-   <textspan start="t1" end="t5" type="page"/>
+   <textspan start="t1" end="t5" type="page">
+       <textspan type="number">1</textspan>
+   </textspan>
    <textspan type="line"/>
    <textspan start="t1" end="t9" type="paragraph"/>
    <textspan start="t1" end="t3" type="line"/>

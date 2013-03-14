@@ -36,8 +36,8 @@ public class TextStructureTest {
         is.close();
         os.close();
 
-        Assert.assertEquals(TextSpanType.page, layer.getSpan(0).getType());
-        Assert.assertEquals(TextSpanType.line, layer.getSpan(1).getType());
-        Assert.assertEquals(TextSpanType.paragraph, layer.getSpan(2).getType());
+        Assert.assertEquals("page", layer.getSpan(0).getType());
+        Assert.assertEquals("line", layer.getSpan(1).getType());
+        Assert.assertEquals("paragraph", layer.getSpan(2).getType());
     }
 }
