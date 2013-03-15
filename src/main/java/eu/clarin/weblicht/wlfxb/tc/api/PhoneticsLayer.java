@@ -24,8 +24,6 @@ import eu.clarin.weblicht.wlfxb.tc.xb.PronunciationType;
 import java.util.List;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>PhoneticsLayer</tt> layer annotates tokens with their phonetic 
  * pronunciation. The transcription system (alphabet) is specified in the 
  * corresponding attribute of the layer.

@@ -20,7 +20,6 @@
  */
 package eu.clarin.weblicht.wlfxb.xb;
 
-import eu.clarin.weblicht.wlfxb.ed.api.ExternalData;
 import eu.clarin.weblicht.wlfxb.ed.xb.ExternalDataStored;
 import eu.clarin.weblicht.wlfxb.lx.xb.LexiconStored;
 import eu.clarin.weblicht.wlfxb.md.xb.MetaData;
@@ -28,18 +27,19 @@ import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusStored;
 import javax.xml.bind.annotation.*;
 
 /**
- * Class <tt>WLData</tt> represents TCF annotations. Corresponds to the
- * specification:
- * http://clarin-d.de/images/weblicht-tutorials/resources/tcf-04/schemas/latest/d-spin_0_4.rnc
- * These annotations represent linguistic annotations. They are composed of 3
- * annotation groups: {@link TextCorpus} annotations represent annotations on
- * written connected text, Lexicon annotations represent linguistic information
- * on a list of words, {@link ExternalData} annotations represent annotations
- * that are related to the annotations inside TCF but themselves are stored
- * outside of TCF.
+ * Class <tt>WLData</tt> represents TCF annotations. 
+ * Corresponds to <a href="http://clarin-d.de/images/weblicht-tutorials/resources/tcf-04/schemas/latest/d-spin_0_4.rnc">TCF specification</a>.
+ * 
+ * <tt>WLData</tt> annotations can be: {@link eu.clarin.weblicht.wlfxb.tc.api.TextCorpus} 
+ * annotations represent annotations on written connected text, 
+ * {@link eu.clarin.weblicht.wlfxb.lx.api.Lexicon} annotations represent 
+ * linguistic information on a list of words, 
+ * {@link eu.clarin.weblicht.wlfxb.ed.api.ExternalData} annotations represent 
+ * annotations that are related to the annotations inside TCF but themselves 
+ * are stored outside of TCF.
  *
  * Class <tt>WLData</tt> can be marshaled into XML representation of TCF. See
- * also {@link WLDObjector}.
+ * also {@link eu.clarin.weblicht.wlfxb.io.WLDObjector}.
  *
  * @author Yana Panchenko
  */
@@ -83,16 +83,16 @@ public class WLData {
     }
 
     /**
-     * Gets {@link ExternalData} of the <tt>WLData</tt>.
+     * Gets external data annotations of the <tt>WLData</tt>.
      *
      * @return the external data annotations.
      */
-    public ExternalData getExternalData() {
+    public ExternalDataStored getExternalData() {
         return extData;
     }
 
     /**
-     * Gets {@link TextCorpus} of the <tt>WLData</tt>.
+     * Gets text corpus annotations of the <tt>WLData</tt>.
      *
      * @return the text corpus annotations.
      */
@@ -101,7 +101,7 @@ public class WLData {
     }
 
     /**
-     * Gets {@link Lexicon} of the <tt>WLData</tt>.
+     * Gets lexicon annotations of the <tt>WLData</tt>.
      *
      * @return the lexicon annotations.
      */

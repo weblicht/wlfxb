@@ -21,8 +21,6 @@
 package eu.clarin.weblicht.wlfxb.tc.api;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>TokensLayer</tt> is composed of token elements, each having a unique 
  * identifier and token string value. Optionally, each token can reference its 
  * start and end character offset position in relation to the character string 

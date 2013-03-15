@@ -21,8 +21,6 @@
 package eu.clarin.weblicht.wlfxb.tc.api;
 
 /**
- * {@inheritDoc}
- * 
  * The annotations in <tt>LexicalSemanticsLayer</tt> are represented by synonymy, 
  * antonymy, hyponymy, hyperonymy. The layers specify the resource from which 
  * the annotations were extracted, and enumerate the orthform elements. Each 

@@ -23,7 +23,7 @@ package eu.clarin.weblicht.wlfxb.io;
 
 /**
  * Indicates an exceptional condition that occurred due to errors or 
- * inconsistencies in TCF or {@link WLData}.
+ * inconsistencies in TCF or {@link eu.clarin.weblicht.wlfxb.xb.WLData}.
  * 
  * @author Yana Panchenko
  */

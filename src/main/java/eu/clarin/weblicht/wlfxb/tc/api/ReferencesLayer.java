@@ -23,8 +23,6 @@ package eu.clarin.weblicht.wlfxb.tc.api;
 import java.util.List;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>ReferencesLayer</tt> layer represents annotations on tokens, or 
  * sequences of tokens, that refer to the same entities. The layer consists of a
  * list of entity elements. Each entity element consists of all the mentions 

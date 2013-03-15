@@ -23,8 +23,6 @@ package eu.clarin.weblicht.wlfxb.tc.api;
 import java.util.List;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>DependencyParsingLayer</tt> annotates dependency relations between 
  * tokens. Each dependency annotation contains a reference to a token, or 
  * sequence of tokens, that is in a dependent role in the given relation, as 

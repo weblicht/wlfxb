@@ -25,8 +25,7 @@ import java.util.List;
 /**
  * The <tt>ExternalData</tt> interface represents layers of linguistic 
  * annotations to be used with TCF annotations but to be stored outside of TCF.
- * Corresponds to the specification:
- * http://clarin-d.de/images/weblicht-tutorials/resources/tcf-04/schemas/latest/extdata_0_4.rnc
+ * Corresponds to TCF <a href="http://clarin-d.de/images/weblicht-tutorials/resources/tcf-04/schemas/latest/extdata_0_4.rnc">ExternalData specification</a>.
  * 
  * Each layer of annotations in <tt>ExternalData</tt> has a URL link to its 
  * annotations data file. 

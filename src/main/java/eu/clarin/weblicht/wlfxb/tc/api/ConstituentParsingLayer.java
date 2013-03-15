@@ -23,8 +23,6 @@ package eu.clarin.weblicht.wlfxb.tc.api;
 import java.util.List;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>ConstituentParsingLayer</tt> layer represents phrase structure 
  * parsing annotations on sentence tokens. The layer specifies the tagset used 
  * for phrase structure categories. The parsed structure is a tree, where the 

@@ -26,7 +26,7 @@ import java.util.EnumSet;
 
 /**
  * A linguistic annotations processing tool. The tool processes existing 
- * linguistic layers and produces new linguistic layers in {@link TextCorpus}.
+ * linguistic layers and produces new linguistic layers in TCF.
  * 
  * @author akislev
  */

@@ -23,8 +23,6 @@ package eu.clarin.weblicht.wlfxb.tc.api;
 import java.util.List;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>OrthographyLayer</tt> layer annotates tokens with their correct 
  * orthographic transcription. For each correction a correction operation is 
  * specified. 

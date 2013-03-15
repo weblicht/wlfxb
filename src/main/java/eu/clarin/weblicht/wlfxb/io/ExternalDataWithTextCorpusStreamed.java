@@ -53,7 +53,7 @@ import javax.xml.stream.events.XMLEvent;
  * annotation layers and (optionally) adding any new annotation layers from/to 
  * TextCorpus and/or ExternalData. Only specified in the constructor
  * annotation layers are loaded into the memory. In case all the annotation
- * layers should be loaded into the memory, use {@link WLData} class.
+ * layers should be loaded into the memory, use {@link eu.clarin.weblicht.wlfxb.xb.WLData} class.
  * 
  * @author Yana Panchenko
  */

@@ -24,8 +24,6 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>NamedEntitiesLayer</tt> layer specifies named entity annotations on 
  * tokens. Each entity annotation references a token, or sequence of tokens, 
  * that represents this entity and specifies a named entity class (e.g. person, 

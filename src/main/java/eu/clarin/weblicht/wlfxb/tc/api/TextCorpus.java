@@ -24,18 +24,18 @@ import java.util.List;
 
 /**
  * Interface <tt>TextCorpus</tt> represents TCF TextCorpus annotations.
- * Corresponds to the specification:
- * http://clarin-d.de/images/weblicht-tutorials/resources/tcf-04/schemas/latest/textcorpus_0_4.rnc
+ * Corresponds to TCF <a href="http://clarin-d.de/images/weblicht-tutorials/resources/tcf-04/schemas/latest/textcorpus_0_4.rnc">TextCorpus specification</a>.
+ * 
  * These annotations represent linguistic annotations on written connected text.
  * The annotations are divided into the annotation layers, were each layer
  * represents specific linguistic aspect. For example, <tt>TextCorpus</tt> can
  * contain {@link TokensLayer}, {@link PosTagsLayer},
- * {@link ConstituentPartsingLayer}, etc. In TextCorpus, annotations from any
+ * {@link ConstituentParsingLayer}, etc. In TextCorpus, annotations from any
  * layer usually annotate (directly or indirectly) {@link Token} annotations
  * from {@link TokensLayer}. An exception is {@link TextLayer} which is
  * independent from any other layer.
  * See also:
- * http://weblicht.sfs.uni-tuebingen.de/weblichtwiki/index.php/The_TCF_Format
+ * <a href="http://weblicht.sfs.uni-tuebingen.de/weblichtwiki/index.php/The_TCF_Format">TCF Format description</a>.
  *
  * @author Yana Panchenko
  */

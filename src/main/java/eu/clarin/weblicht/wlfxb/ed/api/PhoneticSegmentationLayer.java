@@ -21,10 +21,9 @@
 package eu.clarin.weblicht.wlfxb.ed.api;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>PhoneticSegmentationLayer</tt> interface represents annotations for
- * phonetic signal segmentation of the given audio data. 
+ * phonetic signal segmentation of the given audio data. The layer is used with 
+ * TCF annotations but is stored outside of TCF. 
  * 
  * @author Yana Panchenko
  */

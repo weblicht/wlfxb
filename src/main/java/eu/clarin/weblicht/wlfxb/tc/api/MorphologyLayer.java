@@ -23,8 +23,6 @@ package eu.clarin.weblicht.wlfxb.tc.api;
 import java.util.List;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>MorphologyLayer</tt> layer specifies the morphological features of 
  * tokens. Each morphology annotation (analysis) contains a list of morphological 
  * features with either a feature name - feature value pair, or a feature name - 

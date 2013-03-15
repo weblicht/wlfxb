@@ -21,8 +21,6 @@
 package eu.clarin.weblicht.wlfxb.tc.api;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>WordSplittingLayer</tt> annotates tokens with regard to character 
  * intervals the token can be split into. The type of the splitting is specified 
  * at the layer level. Each split references the token it annotates and character 

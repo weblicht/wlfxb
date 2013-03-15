@@ -21,6 +21,7 @@
 package eu.clarin.weblicht.wlfxb.io;
 
 import eu.clarin.weblicht.wlfxb.md.xb.MetaData;
+import eu.clarin.weblicht.wlfxb.tc.api.TextCorpus;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusStored;
 import eu.clarin.weblicht.wlfxb.utils.CommonConstants;
 import eu.clarin.weblicht.wlfxb.xb.WLData;
@@ -40,8 +41,8 @@ import javax.xml.stream.events.Namespace;
 import javax.xml.stream.events.XMLEvent;
 
 /**
- * Class <tt>WLDObjector</tt> helps to read/write {@link WLData} from/to TCF
- * stream. 
+ * Class <tt>WLDObjector</tt> helps to read/write 
+ * {@link eu.clarin.weblicht.wlfxb.xb.WLData} from/to TCF stream. 
  * 
  * @author Yana Panchenko
  */
@@ -157,7 +158,7 @@ public class WLDObjector {
 	}
 	
 	
-	public static void write(MetaData md, TextCorpusStored tc,  File file, boolean outputAsXmlFragment)  throws WLFormatException {
+	public static void write(MetaData md, TextCorpus tc,  File file, boolean outputAsXmlFragment)  throws WLFormatException {
 		OutputStream outputStream = null;
 		try {
 			outputStream = new FileOutputStream(file);
@@ -176,7 +177,7 @@ public class WLDObjector {
 	}
 	
 	
-	public static void write(MetaData md, TextCorpusStored tc, 
+	public static void write(MetaData md, TextCorpus tc, 
 			OutputStream outputStream, boolean outputAsXmlFragment) 
 	 throws WLFormatException {
 		

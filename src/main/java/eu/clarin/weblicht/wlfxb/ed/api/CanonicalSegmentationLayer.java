@@ -21,11 +21,10 @@
 package eu.clarin.weblicht.wlfxb.ed.api;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>CanonicalSegmentationLayer</tt> interface represents annotations for
  * canonical pronunciation segmentation (phonemic transcriptions) of the given 
- * text or/and audio data.
+ * text or/and audio data. The layer is used with TCF annotations but is stored 
+ * outside of TCF. 
  * 
  * @author Yana Panchenko
  */

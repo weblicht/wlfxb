@@ -21,10 +21,9 @@
 package eu.clarin.weblicht.wlfxb.ed.api;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>TokenSegmentationLayer</tt> interface represents annotations for
- * signal token segmentation of the given audio data. 
+ * signal token segmentation of the given audio data. The layer is used with TCF 
+ * annotations but is stored outside of TCF. 
  * 
  * @author Yana Panchenko
  */

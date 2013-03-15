@@ -23,8 +23,6 @@ package eu.clarin.weblicht.wlfxb.tc.api;
 import java.util.List;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>LemmasLayer</tt> represents lemma annotations on tokens. Each lemma 
  * element references a token, or sequence of tokens, via token identifiers, 
  * and provides the lemma string value.

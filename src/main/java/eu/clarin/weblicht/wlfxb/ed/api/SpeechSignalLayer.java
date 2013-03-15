@@ -21,10 +21,9 @@
 package eu.clarin.weblicht.wlfxb.ed.api;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>SpeechSignalLayer</tt> interface represents audio data that contains
- * speech signal. 
+ * speech signal. The layer is used with TCF annotations but is stored outside 
+ * of TCF. 
  * 
  * @author Yana Panchenko
  */

@@ -23,8 +23,6 @@ package eu.clarin.weblicht.wlfxb.tc.api;
 import java.util.List;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>PosTagsLayer</tt> layer annotates tokens with part-of-speech tags. 
  * Each tag element references a token, or sequence of tokens, and provides the 
  * tag string value. Tag values usually belong to some predefined standard tagset.

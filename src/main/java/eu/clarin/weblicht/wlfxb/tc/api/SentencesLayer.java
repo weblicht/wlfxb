@@ -23,8 +23,6 @@ package eu.clarin.weblicht.wlfxb.tc.api;
 import java.util.List;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>SentencesLayer</tt> represents sentence boundary annotations. Each sentence 
  * element enumerates token identifiers of tokens that belong to this sentence. 
  * Optionally, a sentence can have start and end character offset positions in 

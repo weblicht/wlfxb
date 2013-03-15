@@ -24,8 +24,6 @@ import eu.clarin.weblicht.wlfxb.io.WLFormatException;
 import java.util.List;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>TextStructureLayer</tt> preserves the original structure of a written 
  * text. Within the layer, a token sequence can be annotated as belonging to 
  * some text structure element, such as to a page, a paragraph, a line, a title, 

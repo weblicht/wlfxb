@@ -21,8 +21,6 @@
 package eu.clarin.weblicht.wlfxb.tc.api;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>TextLayer</tt> contains a character string representing natural 
  * language text. This layer is commonly used by linguistic tools to produce 
  * token and sentence boundary annotations.

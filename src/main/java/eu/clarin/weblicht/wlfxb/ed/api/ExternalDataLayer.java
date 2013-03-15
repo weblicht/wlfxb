@@ -48,7 +48,7 @@ public interface ExternalDataLayer {
     /**
      * Adds link (URL) to the location of the data file of this layer.
      * 
-     * @param dataURI the URL of the data file.
+     * @param dataURL the URL of the data file.
      */
     public void addLink(String dataURL);
 }

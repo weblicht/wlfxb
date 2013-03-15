@@ -23,8 +23,6 @@ package eu.clarin.weblicht.wlfxb.tc.api;
 import java.util.List;
 
 /**
- * {@inheritDoc}
- * 
  * The <tt>DiscourseConnectivesLayer</tt> layer annotates discourse connectives. 
  * For each discourse connective its type can be specified. In such a case, the 
  * tagset used for discourse connectives types should be specified on the layer 
