@@ -91,6 +91,12 @@ public class ExternalDataStored implements ExternalData {
         CanonicalSegmentationLayer layer = initializeLayer(CanonicalSegmentationLayerStored.class, mimeType);
         return layer;
     }
+    
+    @Override
+    public NamedEntityModelLayer createNamedEntityModelLayer(String mimeType, String neType, String modelType) {
+        NamedEntityModelLayer layer = initializeLayer(NamedEntityModelLayerStored.class, mimeType, neType, modelType);
+        return layer;
+    }
 
     @SuppressWarnings("unchecked")
     private <T extends ExternalDataLayerStored> T initializeLayer(Class<T> layerClass, Object... params) {
@@ -124,7 +130,7 @@ public class ExternalDataStored implements ExternalData {
 
     @XmlElement(name = SpeechSignalLayerStored.XML_NAME)
     protected void setSpeechSignalLayer(SpeechSignalLayerStored layer) {
-        System.out.println(layer);
+        //System.out.println(layer);
         layersInOrder[ExternalDataLayerTag.SPEECH_SIGNAL.ordinal()] = layer;
     }
 
@@ -135,7 +141,7 @@ public class ExternalDataStored implements ExternalData {
 
     @XmlElement(name = TokenSegmentationLayerStored.XML_NAME)
     protected void setTokenSegmentationLayer(TokenSegmentationLayerStored layer) {
-        System.out.println(layer);
+        //System.out.println(layer);
         layersInOrder[ExternalDataLayerTag.TOKEN_SEGMENTATION.ordinal()] = layer;
     }
 
@@ -146,7 +152,7 @@ public class ExternalDataStored implements ExternalData {
 
     @XmlElement(name = PhoneticSegmentationLayerStored.XML_NAME)
     protected void setPhoneticSegmentationLayer(PhoneticSegmentationLayerStored layer) {
-        System.out.println(layer);
+        //System.out.println(layer);
         layersInOrder[ExternalDataLayerTag.PHONETIC_SEGMENTATION.ordinal()] = layer;
     }
 
@@ -157,13 +163,24 @@ public class ExternalDataStored implements ExternalData {
 
     @XmlElement(name = CanonicalSegmentationLayerStored.XML_NAME)
     protected void setCanonicalSegmentationLayer(CanonicalSegmentationLayerStored layer) {
-        System.out.println(layer);
+        //System.out.println(layer);
         layersInOrder[ExternalDataLayerTag.CANONICAL_SEGMENTATION.ordinal()] = layer;
     }
 
     @Override
     public CanonicalSegmentationLayerStored getCanonicalSegmentationLayer() {
         return ((CanonicalSegmentationLayerStored) layersInOrder[ExternalDataLayerTag.CANONICAL_SEGMENTATION.ordinal()]);
+    }
+    
+    @XmlElement(name = NamedEntityModelLayerStored.XML_NAME)
+    protected void setNamedEntityModelLayer(NamedEntityModelLayerStored layer) {
+        //System.out.println(layer);
+        layersInOrder[ExternalDataLayerTag.NAMEDENTITY_MODEL.ordinal()] = layer;
+    }
+    
+    @Override
+    public NamedEntityModelLayer getNamedEntityModelLayer() {
+        return ((NamedEntityModelLayerStored) layersInOrder[ExternalDataLayerTag.NAMEDENTITY_MODEL.ordinal()]);
     }
 
 //		protected void afterUnmarshal(Unmarshaller u, Object parent) {
@@ -208,4 +225,5 @@ public class ExternalDataStored implements ExternalData {
         }
         return ed;
     }
+
 }

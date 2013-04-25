@@ -88,12 +88,7 @@ public class ExternalDataWithTextCorpusStreamed {
             EnumSet<ExternalDataLayerTag> edLayersToRead,
             EnumSet<TextCorpusLayerTag> tcLayersToRead)
             throws WLFormatException {
-        if (edLayersToRead != null) {
-            this.edLayersToRead = edLayersToRead;
-        }
-        if (tcLayersToRead != null) {
-            this.tcLayersToRead = tcLayersToRead;
-        }
+        getLayersToReadWithDependencies(edLayersToRead, tcLayersToRead);
         extData = new ExternalDataStored();
         textCorpus = new TextCorpusStored("unknown");
         try {
@@ -129,12 +124,7 @@ public class ExternalDataWithTextCorpusStreamed {
             throws WLFormatException {
         extData = new ExternalDataStored();
         textCorpus = new TextCorpusStored("unknown");
-        if (edLayersToRead != null) {
-            this.edLayersToRead = edLayersToRead;
-        }
-        if (tcLayersToRead != null) {
-            this.tcLayersToRead = tcLayersToRead;
-        }
+        getLayersToReadWithDependencies(edLayersToRead, tcLayersToRead);
 
         OutputStream osTemp = null;
         InputStream isTemp = null;
@@ -598,6 +588,19 @@ public class ExternalDataWithTextCorpusStreamed {
         }
         if (tempFile != null) {
              tempFile.delete();
+        }
+    }
+
+    private void getLayersToReadWithDependencies(EnumSet<ExternalDataLayerTag> edLayersToRead, EnumSet<TextCorpusLayerTag> tcLayersToRead) {
+        
+        if (edLayersToRead != null) {
+            this.edLayersToRead = EnumSet.copyOf(edLayersToRead);
+        }
+        if (tcLayersToRead != null) {
+            this.tcLayersToRead = EnumSet.copyOf(tcLayersToRead);
+            for (TextCorpusLayerTag tag : tcLayersToRead) {
+                this.tcLayersToRead.addAll(tag.withDependentLayers());
+            }
         }
     }
 }

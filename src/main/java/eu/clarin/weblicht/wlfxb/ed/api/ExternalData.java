@@ -53,4 +53,8 @@ public interface ExternalData {
     public CanonicalSegmentationLayer getCanonicalSegmentationLayer();
 
     public CanonicalSegmentationLayer createCanonicalSegmentationLayer(String mimeType);
+    
+    public NamedEntityModelLayer createNamedEntityModelLayer(String mimeType, String neType, String modelType);
+    
+    public NamedEntityModelLayer getNamedEntityModelLayer();
 }

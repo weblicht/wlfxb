@@ -36,7 +36,8 @@ public enum ExternalDataLayerTag {
     SPEECH_SIGNAL(SpeechSignalLayerStored.XML_NAME, SpeechSignalLayerStored.class),
     TOKEN_SEGMENTATION(TokenSegmentationLayerStored.XML_NAME, TokenSegmentationLayerStored.class),
     PHONETIC_SEGMENTATION(PhoneticSegmentationLayerStored.XML_NAME, PhoneticSegmentationLayerStored.class),
-    CANONICAL_SEGMENTATION(CanonicalSegmentationLayerStored.XML_NAME, CanonicalSegmentationLayerStored.class);
+    CANONICAL_SEGMENTATION(CanonicalSegmentationLayerStored.XML_NAME, CanonicalSegmentationLayerStored.class),
+    NAMEDENTITY_MODEL(NamedEntityModelLayerStored.XML_NAME, NamedEntityModelLayerStored.class);
     private static final Map<String, ExternalDataLayerTag> xmlNameToLayerTagMap =
             new HashMap<String, ExternalDataLayerTag>() {
 
