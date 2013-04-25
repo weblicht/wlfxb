@@ -106,7 +106,7 @@ public class TextCorpusStreamed extends TextCorpusStored {
             EnumSet<TextCorpusLayerTag> layersToRead, OutputStream outputStream)
             throws WLFormatException {
         super("unknown");
-        this.layersToRead = layersToRead;
+        this.layersToRead = EnumSet.copyOf(layersToRead);
         try {
             initializeReaderAndWriter(inputStream, outputStream, false);
             process();
@@ -138,7 +138,7 @@ public class TextCorpusStreamed extends TextCorpusStored {
             boolean outputAsXmlFragment)
             throws WLFormatException {
         super("unknown");
-        this.layersToRead = layersToRead;
+        this.layersToRead = EnumSet.copyOf(layersToRead);
         try {
             initializeReaderAndWriter(inputStream, outputStream, outputAsXmlFragment);
             process();
@@ -169,7 +169,7 @@ public class TextCorpusStreamed extends TextCorpusStored {
             List<MetaDataItem> metaDataToAdd)
             throws WLFormatException {
         super("unknown");
-        this.layersToRead = layersToRead;
+        this.layersToRead = EnumSet.copyOf(layersToRead);
         try {
             initializeReaderAndWriter(inputStream, outputStream, false);
             addMetadata(metaDataToAdd);
