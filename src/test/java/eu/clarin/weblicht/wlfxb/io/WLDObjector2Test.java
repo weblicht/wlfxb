@@ -78,6 +78,8 @@ public class WLDObjector2Test {
         ExternalDataStored extData = new ExternalDataStored();
         SpeechSignalLayer speechLayer = extData.createSpeechSignalLayer("audio/wav", 1);
         speechLayer.addLink("http://arc:8080/drop-off/storage/g046acn1_037_AFI.wav");
+        extData.createNamedEntityModelLayer("bin", "tuebaDZ", "opennlp1.5");
+        extData.getNamedEntityModelLayer().addLink("www.example.com");
         return extData;
     }
 

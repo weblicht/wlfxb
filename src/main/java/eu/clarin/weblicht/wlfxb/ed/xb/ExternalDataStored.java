@@ -38,7 +38,8 @@ import javax.xml.bind.annotation.*;
     "speechSignalLayer",
     "tokenSegmentationLayer",
     "phoneticSegmentationLayer",
-    "canonicalSegmentationLayer"
+    "canonicalSegmentationLayer",
+    "namedEntityModelLayer",
 })
 public class ExternalDataStored implements ExternalData {
 
@@ -179,7 +180,7 @@ public class ExternalDataStored implements ExternalData {
     }
     
     @Override
-    public NamedEntityModelLayer getNamedEntityModelLayer() {
+    public NamedEntityModelLayerStored getNamedEntityModelLayer() {
         return ((NamedEntityModelLayerStored) layersInOrder[ExternalDataLayerTag.NAMEDENTITY_MODEL.ordinal()]);
     }
 

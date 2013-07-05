@@ -4,9 +4,9 @@
  <MetaData xmlns="http://www.dspin.de/data/metadata"/>
  <ExternalData xmlns="http://www.dspin.de/data/extdata">
     <speechsignal type="audio/wav" numberchannels="1">http://weblicht.sfs.uni-tuebingen.de/tced_example/g046acn1_037_AFI.wav</speechsignal>
-    <tokensegmentation type="text/xml+an">http://ws1-clarind.esc.rzg.mpg.de/drop-off/storage/g046acn1_037_AFI.an</tokensegmentation>
-    <phoneticsegmentation type="text/xml+an">http://ws1-clarind.esc.rzg.mpg.de/drop-off/storage/g046acn1_037_AFI.an</phoneticsegmentation>
-    <canonicalsegmentation type="text/xml+an">http://ws1-clarind.esc.rzg.mpg.de/drop-off/storage/g046acn1_037_AFI.an</canonicalsegmentation>
+    <tokensegmentation type="text/eaf+xml">http://ws1-clarind.esc.rzg.mpg.de/drop-off/storage/g046acn1_037_AFI.an</tokensegmentation>
+    <phoneticsegmentation type="text/eaf+xml">http://ws1-clarind.esc.rzg.mpg.de/drop-off/storage/g046acn1_037_AFI.an</phoneticsegmentation>
+    <canonicalsegmentation type="text/eaf+xml">http://ws1-clarind.esc.rzg.mpg.de/drop-off/storage/g046acn1_037_AFI.an</canonicalsegmentation>
   </ExternalData>
   <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
     <text>&lt;ähm&gt; ich würde diesmal sagen Theater das ist dann immer so aufge in letzter Minute so was spielt man heute abend ich wäre eher dafür daß wir vielleicht ins Kino gehen und nachher irgendwo in eine nette Kneipe</text>
