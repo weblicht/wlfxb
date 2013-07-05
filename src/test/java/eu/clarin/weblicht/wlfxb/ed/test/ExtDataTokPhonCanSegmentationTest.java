@@ -47,11 +47,11 @@ public class ExtDataTokPhonCanSegmentationTest extends AbstractExternalDataTest 
         SpeechSignalLayer sLayer = ed.getSpeechSignalLayer();
         assertEquals("audio/wav", sLayer.getDataMimeType());
         TokenSegmentationLayer tsLayer = ed.getTokenSegmentationLayer();
-        assertEquals("text/xml+an", tsLayer.getDataMimeType());
+        assertEquals("text/eaf+xml", tsLayer.getDataMimeType());
         PhoneticSegmentationLayer psLayer = ed.getPhoneticSegmentationLayer();
-        assertEquals("text/xml+an", psLayer.getDataMimeType());
+        assertEquals("text/eaf+xml", psLayer.getDataMimeType());
         CanonicalSegmentationLayer csLayer = ed.getCanonicalSegmentationLayer();
-        assertEquals("text/xml+an", csLayer.getDataMimeType());
+        assertEquals("text/eaf+xml", csLayer.getDataMimeType());
 
     }
 
