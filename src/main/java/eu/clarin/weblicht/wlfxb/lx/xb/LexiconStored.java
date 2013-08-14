@@ -40,7 +40,7 @@ import javax.xml.bind.annotation.*;
     "lemmasLayer",
     "posTagsLayer",
     "frequenciesLayer",
-    "relationsLayer",})
+    "relationsLayer"})
 public class LexiconStored implements Lexicon {
 
     public static final String XML_NAME = "Lexicon";

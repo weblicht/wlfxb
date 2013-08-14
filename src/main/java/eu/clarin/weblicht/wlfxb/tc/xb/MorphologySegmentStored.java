@@ -56,7 +56,7 @@ public class MorphologySegmentStored implements MorphologySegment {
 
     @XmlMixed
     @XmlElementRefs({
-        @XmlElementRef(name = MorphologySegmentStored.XML_NAME, type = MorphologySegmentStored.class),})
+        @XmlElementRef(name = MorphologySegmentStored.XML_NAME, type = MorphologySegmentStored.class)})
     protected List<Object> getContent() {
         List<Object> contentToMarshal = new ArrayList<Object>();
         if (subsegments != null) {

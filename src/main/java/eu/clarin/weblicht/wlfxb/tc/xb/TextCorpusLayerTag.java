@@ -90,7 +90,7 @@ public enum TextCorpusLayerTag {
     
     private static final EnumMap<TextCorpusLayerTag, EnumSet<TextCorpusLayerTag>> layerDependencies;
     static {
-        layerDependencies = new  EnumMap(TextCorpusLayerTag.class);
+        layerDependencies = new  EnumMap<TextCorpusLayerTag, EnumSet<TextCorpusLayerTag>>(TextCorpusLayerTag.class);
         layerDependencies.put(TextCorpusLayerTag.TEXT, EnumSet.noneOf(TextCorpusLayerTag.class));
         layerDependencies.put(TextCorpusLayerTag.TOKENS, EnumSet.noneOf(TextCorpusLayerTag.class));
         layerDependencies.put(TextCorpusLayerTag.LEMMAS, EnumSet.of(TextCorpusLayerTag.TOKENS));

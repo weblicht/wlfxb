@@ -90,7 +90,7 @@ public class TextSpanStored implements TextSpan {
     
     @XmlMixed
     @XmlElementRefs({
-    @XmlElementRef(name = TextSpanStored.XML_NAME, type = TextSpanStored.class),})
+    @XmlElementRef(name = TextSpanStored.XML_NAME, type = TextSpanStored.class)})
     protected List<Object> getContent() {
         List<Object> contentToMarshal = new ArrayList<Object>();
         if (subspans != null) {

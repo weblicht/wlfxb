@@ -61,7 +61,7 @@ import javax.xml.bind.annotation.*;
     "geoLayer",
     "textStructureLayer",
     "orthographyLayer",
-    "discourseConnectivesLayer",})
+    "discourseConnectivesLayer"})
 public class TextCorpusStored implements TextCorpus {
 
     public static final String XML_NAME = "TextCorpus";

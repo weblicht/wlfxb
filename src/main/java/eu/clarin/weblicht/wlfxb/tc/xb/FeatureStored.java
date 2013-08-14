@@ -71,7 +71,7 @@ public class FeatureStored implements Feature {
 
     @XmlMixed
     @XmlElementRefs({
-        @XmlElementRef(name = FeatureStructureStored.XML_NAME, type = FeatureStructureStored.class),})
+        @XmlElementRef(name = FeatureStructureStored.XML_NAME, type = FeatureStructureStored.class)})
     protected List<Object> getContent() {
         List<Object> content = new ArrayList<Object>();
         if (fs != null) {

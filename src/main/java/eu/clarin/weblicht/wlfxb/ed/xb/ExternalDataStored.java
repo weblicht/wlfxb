@@ -39,7 +39,7 @@ import javax.xml.bind.annotation.*;
     "tokenSegmentationLayer",
     "phoneticSegmentationLayer",
     "canonicalSegmentationLayer",
-    "namedEntityModelLayer",
+    "namedEntityModelLayer"
 })
 public class ExternalDataStored implements ExternalData {
 
