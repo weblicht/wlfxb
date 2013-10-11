@@ -37,6 +37,7 @@ public class TextCorpusConstituentParsingTest extends AbstractTextCorpusTest {
         Assert.assertEquals(4, parsingLayer.getTokens(parsingLayer.getParse(1)).length);
         Assert.assertEquals(tc.getTokensLayer().getToken(0), parsingLayer.getTokens(parsingLayer.getParse(0))[0]);
         Assert.assertEquals(tc.getTokensLayer().getToken(5), parsingLayer.getTokens(parsingLayer.getParse(1))[0]);
+        Assert.assertEquals(5, parsingLayer.getTokens(parsingLayer.getParseRoot(0)).length);
     }
 
     @Test

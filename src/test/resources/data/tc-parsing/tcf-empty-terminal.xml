@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+  <MetaData xmlns="http://www.dspin.de/data/metadata">
+    <source></source>
+  <Services><CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.clarin.eu/cmd/" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd"><Resources><ResourceProxyList></ResourceProxyList><JournalFileProxyList></JournalFileProxyList><ResourceRelationList></ResourceRelationList></Resources><Components><WebServiceToolChain><GeneralInfo><Descriptions><Description></Description></Descriptions><ResourceName>Custom chain</ResourceName><ResourceClass>Toolchain</ResourceClass></GeneralInfo><Toolchain><ToolInChain><PID>11858/00-1778-0000-0004-BA56-7</PID><Parameter name="lang" value="en"></Parameter><Parameter name="type" value="text/plain"></Parameter><Parameter name="version" value="0.4"></Parameter></ToolInChain><ToolInChain><PID>http://hdl.handle.net/11858/00-247C-0000-0007-3736-B</PID><Parameter name="lang" value="en"></Parameter></ToolInChain><ToolInChain><PID>http://hdl.handle.net/11858/00-247C-0000-0007-3738-7</PID><Parameter name="lang" value="en"></Parameter></ToolInChain></Toolchain></WebServiceToolChain></Components></CMD></Services></MetaData>
+  <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="en">
+    <text>What has happened in recent years has brought to our attention the tremendous problems facing not only to the producers of food but also the consumers.</text>
+  <tokens><token ID="t1">What</token><token ID="t2">has</token><token ID="t3">happened</token><token ID="t4">in</token><token ID="t5">recent</token><token ID="t6">years</token><token ID="t7">has</token><token ID="t8">brought</token><token ID="t9">to</token><token ID="t10">our</token><token ID="t11">attention</token><token ID="t12">the</token><token ID="t13">tremendous</token><token ID="t14">problems</token><token ID="t15">facing</token><token ID="t16">not</token><token ID="t17">only</token><token ID="t18">to</token><token ID="t19">the</token><token ID="t20">producers</token><token ID="t21">of</token><token ID="t22">food</token><token ID="t23">but</token><token ID="t24">also</token><token ID="t25">the</token><token ID="t26">consumers</token><token ID="t27">.</token></tokens>
+  <sentences><sentence ID="s1" tokenIDs="t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23 t24 t25 t26 t27"></sentence></sentences>
+  <parsing tagset="penntb">
+  <parse>
+  <constituent cat="TOP">
+  	<constituent cat="S">
+  		<constituent cat="SBAR-NOM">
+  			<constituent cat="WHNP-1">
+  				<constituent cat="WP" tokenIDs="t1">
+  				</constituent>
+  			</constituent>
+  			<constituent cat="S">
+  				<constituent cat="NP-SBJ">
+  					<constituent cat="-NONE-">
+  						<constituent cat="*T*-1"></constituent>
+  					</constituent>
+  				</constituent>
+  			<constituent cat="VP">
+  			<constituent cat="VHZ" tokenIDs="t2"></constituent>
+  			<constituent cat="VP">
+  				<constituent cat="VVN" tokenIDs="t3"></constituent>
+  				<constituent cat="PP-TMP">
+  					<constituent cat="IN" tokenIDs="t4"></constituent>
+  					<constituent cat="NP">
+  						<constituent cat="JJ" tokenIDs="t5"></constituent>
+  						<constituent cat="NNS" tokenIDs="t6"></constituent>
+  					</constituent>
+  				</constituent>
+  			</constituent>
+  		</constituent>
+  	</constituent></constituent>
+  	<constituent cat="VP">
+  		<constituent cat="VHZ" tokenIDs="t7"></constituent>
+  		<constituent cat="VP">
+  			<constituent cat="VVD" tokenIDs="t8"></constituent>
+  			<constituent cat="PP">
+  				<constituent cat="TO" tokenIDs="t9"></constituent><constituent cat="NP"><constituent cat="PRP\$" tokenIDs="t10"></constituent><constituent cat="NN" tokenIDs="t11"></constituent></constituent></constituent><constituent cat="NP"><constituent cat="NP"><constituent cat="DT" tokenIDs="t12"></constituent><constituent cat="JJ" tokenIDs="t13"></constituent><constituent cat="NNS" tokenIDs="t14"></constituent></constituent><constituent cat="VP"><constituent cat="VVG" tokenIDs="t15"></constituent><constituent cat="NP"><constituent cat="NP"><constituent cat="RB" tokenIDs="t16"></constituent><constituent cat="RB" tokenIDs="t17"></constituent></constituent><constituent cat="PP"><constituent cat="TO" tokenIDs="t18"></constituent><constituent cat="NP"><constituent cat="NP"><constituent cat="DT" tokenIDs="t19"></constituent><constituent cat="NNS" tokenIDs="t20"></constituent></constituent><constituent cat="PP"><constituent cat="IN" tokenIDs="t21"></constituent><constituent cat="NP"><constituent cat="NP"><constituent cat="NN" tokenIDs="t22"></constituent></constituent><constituent cat="CONJP"><constituent cat="CC" tokenIDs="t23"></constituent><constituent cat="RB" tokenIDs="t24"></constituent></constituent><constituent cat="NP"><constituent cat="DT" tokenIDs="t25"></constituent><constituent cat="NNS" tokenIDs="t26"></constituent></constituent></constituent></constituent></constituent></constituent></constituent></constituent></constituent></constituent></constituent><constituent cat="." tokenIDs="t27"></constituent></constituent></constituent>
+  </parse>
+  </parsing>
+  </TextCorpus>
+</D-Spin>

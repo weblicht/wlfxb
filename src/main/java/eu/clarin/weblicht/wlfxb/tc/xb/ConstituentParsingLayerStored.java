@@ -143,8 +143,10 @@ public class ConstituentParsingLayerStored extends TextCorpusLayerStoredAbstract
     private void collectTerminalsTokens(List<Token> terminalsTokens,
             ConstituentStored c) {
         if (c.isTerminal()) {
-            for (int i = 0; i < c.tokRefs.length; i++) {
-                terminalsTokens.add(connector.tokenId2ItsToken.get(c.tokRefs[i]));
+            if (!c.isEmptyTerminal()) {
+                for (int i = 0; i < c.tokRefs.length; i++) {
+                    terminalsTokens.add(connector.tokenId2ItsToken.get(c.tokRefs[i]));
+                }
             }
         } else {
             for (ConstituentStored child : c.children) {
