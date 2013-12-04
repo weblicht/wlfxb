@@ -61,7 +61,8 @@ import javax.xml.bind.annotation.*;
     "geoLayer",
     "textStructureLayer",
     "orthographyLayer",
-    "discourseConnectivesLayer"})
+    "discourseConnectivesLayer",
+    "wordSensesLayer"})
 public class TextCorpusStored implements TextCorpus {
 
     public static final String XML_NAME = "TextCorpus";
@@ -81,10 +82,12 @@ public class TextCorpusStored implements TextCorpus {
         this.lang = language;
     }
 
+    @Override
     public String getLanguage() {
         return lang;
     }
 
+    @Override
     public List<TextCorpusLayer> getLayers() {
         List<TextCorpusLayer> allLayers = new ArrayList<TextCorpusLayer>(this.layersInOrder.length);
         for (TextCorpusLayer layer : this.layersInOrder) {
@@ -95,67 +98,82 @@ public class TextCorpusStored implements TextCorpus {
         return allLayers;
     }
 
+    @Override
     public TextLayer createTextLayer() {
         TextLayer layer = initializeLayer(TextLayerStored.class);
         return layer;
     }
 
+    @Override
     public TokensLayer createTokensLayer() {
         return initializeLayer(TokensLayerStored.class);
     }
 
+    @Override
     public TokensLayer createTokensLayer(boolean hasCharOffsets) {
         return initializeLayer(TokensLayerStored.class, Boolean.valueOf(hasCharOffsets));
     }
 
+    @Override
     public LemmasLayer createLemmasLayer() {
         return initializeLayer(LemmasLayerStored.class);
     }
 
+    @Override
     public PosTagsLayer createPosTagsLayer(String tagset) {
         return initializeLayer(PosTagsLayerStored.class, tagset);
     }
 
+    @Override
     public SentencesLayer createSentencesLayer() {
         return initializeLayer(SentencesLayerStored.class);
     }
 
+    @Override
     public SentencesLayer createSentencesLayer(boolean hasCharOffsets) {
         return initializeLayer(SentencesLayerStored.class, Boolean.valueOf(hasCharOffsets));
     }
 
+    @Override
     public ConstituentParsingLayer createConstituentParsingLayer(String tagset) {
         return initializeLayer(ConstituentParsingLayerStored.class, tagset);
     }
 
+    @Override
     public DependencyParsingLayer createDependencyParsingLayer(String tagset,
             boolean multipleGovernorsPossible, boolean emptyTokensPossible) {
         return initializeLayer(DependencyParsingLayerStored.class, tagset,
                 Boolean.valueOf(multipleGovernorsPossible), Boolean.valueOf(emptyTokensPossible));
     }
 
+    @Override
     public DependencyParsingLayer createDependencyParsingLayer(
             boolean multipleGovernorsPossible, boolean emptyTokensPossible) {
         return initializeLayer(DependencyParsingLayerStored.class,
                 Boolean.valueOf(multipleGovernorsPossible), Boolean.valueOf(emptyTokensPossible));
     }
 
+    @Override
     public MorphologyLayer createMorphologyLayer() {
         return initializeLayer(MorphologyLayerStored.class);
     }
 
+    @Override
     public MorphologyLayer createMorphologyLayer(boolean hasSegmentation) {
         return initializeLayer(MorphologyLayerStored.class, Boolean.valueOf(hasSegmentation));
     }
 
+    @Override
     public MorphologyLayer createMorphologyLayer(boolean hasSegmentation, boolean hasCharOffsets) {
         return initializeLayer(MorphologyLayerStored.class, Boolean.valueOf(hasSegmentation), Boolean.valueOf(hasCharOffsets));
     }
 
+    @Override
     public NamedEntitiesLayer createNamedEntitiesLayer(String entitiesType) {
         return initializeLayer(NamedEntitiesLayerStored.class, entitiesType);
     }
 
+    @Override
     public ReferencesLayer createReferencesLayer(String typetagset, String reltagset, String externalReferencesSource) {
         ReferencesLayerStored layer = initializeLayer(ReferencesLayerStored.class);
         layer.typetagset = typetagset;
@@ -164,22 +182,27 @@ public class TextCorpusStored implements TextCorpus {
         return layer;
     }
 
+    @Override
     public RelationsLayer createRelationsLayer(String type) {
         return initializeLayer(RelationsLayerStored.class, type);
     }
 
+    @Override
     public MatchesLayer createMatchesLayer(String queryLanguage, String queryString) {
         return initializeLayer(MatchesLayerStored.class, queryLanguage, queryString);
     }
 
+    @Override
     public WordSplittingLayer createWordSplittingLayer(String type) {
         return initializeLayer(WordSplittingLayerStored.class, type);
     }
 
+    @Override
     public PhoneticsLayer createPhotenicsLayer(String alphabet) {
         return initializeLayer(PhoneticsLayerStored.class, alphabet);
     }
 
+    @Override
     public GeoLayer createGeoLayer(String source, GeoLongLatFormat coordFormat) {
         return initializeLayer(GeoLayerStored.class, source, coordFormat);
     }
@@ -220,42 +243,56 @@ public class TextCorpusStored implements TextCorpus {
                 capitalFormat);
     }
 
+    @Override
     public GeoLayer createGeoLayer(String source, GeoLongLatFormat coordFormat,
             GeoContinentFormat continentFormat, GeoCountryFormat countryFormat, GeoCapitalFormat capitalFormat) {
         return initializeLayer(GeoLayerStored.class, source, coordFormat,
                 continentFormat, countryFormat, capitalFormat);
     }
 
-    public LexicalSemanticsLayer createSynonymyLayer(String source) {
-        return initializeLayer(SynonymyLayerStored.class, source);
+    @Override
+    public LexicalSemanticsLayer createSynonymyLayer() {
+        return initializeLayer(SynonymyLayerStored.class);
     }
 
-    public LexicalSemanticsLayer createAntonymyLayer(String source) {
-        return initializeLayer(AntonymyLayerStored.class, source);
+    @Override
+    public LexicalSemanticsLayer createAntonymyLayer() {
+        return initializeLayer(AntonymyLayerStored.class);
     }
 
-    public LexicalSemanticsLayer createHyponymyLayer(String source) {
-        return initializeLayer(HyponymyLayerStored.class, source);
+    @Override
+    public LexicalSemanticsLayer createHyponymyLayer() {
+        return initializeLayer(HyponymyLayerStored.class);
     }
 
-    public LexicalSemanticsLayer createHyperonymyLayer(String source) {
-        return initializeLayer(HyperonymyLayerStored.class, source);
+    @Override
+    public LexicalSemanticsLayer createHyperonymyLayer() {
+        return initializeLayer(HyperonymyLayerStored.class);
     }
 
+    @Override
     public OrthographyLayer createOrthographyLayer() {
         return initializeLayer(OrthographyLayerStored.class);
     }
 
+    @Override
     public TextStructureLayer createTextStructureLayer() {
         return initializeLayer(TextStructureLayerStored.class);
     }
 
+    @Override
     public DiscourseConnectivesLayer createDiscourseConnectivesLayer() {
         return initializeLayer(DiscourseConnectivesLayerStored.class);
     }
 
+    @Override
     public DiscourseConnectivesLayer createDiscourseConnectivesLayer(String typesTagset) {
         return initializeLayer(DiscourseConnectivesLayerStored.class, typesTagset);
+    }
+    
+    @Override
+    public WordSensesLayer createWordSensesLayer(String source) {
+        return initializeLayer(WordSensesLayerStored.class, source);
     }
 
     @SuppressWarnings("unchecked")
@@ -293,6 +330,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.TEXT.ordinal()] = layer;
     }
 
+    @Override
     public TextLayerStored getTextLayer() {
         return ((TextLayerStored) layersInOrder[TextCorpusLayerTag.TEXT.ordinal()]);
     }
@@ -302,6 +340,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.TOKENS.ordinal()] = layer;
     }
 
+    @Override
     public TokensLayerStored getTokensLayer() {
         return ((TokensLayerStored) layersInOrder[TextCorpusLayerTag.TOKENS.ordinal()]);
     }
@@ -311,6 +350,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.SENTENCES.ordinal()] = layer;
     }
 
+    @Override
     public SentencesLayerStored getSentencesLayer() {
         return ((SentencesLayerStored) layersInOrder[TextCorpusLayerTag.SENTENCES.ordinal()]);
     }
@@ -320,6 +360,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.LEMMAS.ordinal()] = layer;
     }
 
+    @Override
     public LemmasLayerStored getLemmasLayer() {
         return ((LemmasLayerStored) layersInOrder[TextCorpusLayerTag.LEMMAS.ordinal()]);
     }
@@ -329,6 +370,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.POSTAGS.ordinal()] = layer;
     }
 
+    @Override
     public PosTagsLayerStored getPosTagsLayer() {
         return ((PosTagsLayerStored) layersInOrder[TextCorpusLayerTag.POSTAGS.ordinal()]);
     }
@@ -338,6 +380,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.PARSING_CONSTITUENT.ordinal()] = layer;
     }
 
+    @Override
     public ConstituentParsingLayerStored getConstituentParsingLayer() {
         return ((ConstituentParsingLayerStored) layersInOrder[TextCorpusLayerTag.PARSING_CONSTITUENT.ordinal()]);
     }
@@ -347,6 +390,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.PARSING_DEPENDENCY.ordinal()] = layer;
     }
 
+    @Override
     public DependencyParsingLayerStored getDependencyParsingLayer() {
         return ((DependencyParsingLayerStored) layersInOrder[TextCorpusLayerTag.PARSING_DEPENDENCY.ordinal()]);
     }
@@ -356,6 +400,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.MORPHOLOGY.ordinal()] = layer;
     }
 
+    @Override
     public MorphologyLayerStored getMorphologyLayer() {
         return ((MorphologyLayerStored) layersInOrder[TextCorpusLayerTag.MORPHOLOGY.ordinal()]);
     }
@@ -365,6 +410,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.NAMED_ENTITIES.ordinal()] = layer;
     }
 
+    @Override
     public NamedEntitiesLayerStored getNamedEntitiesLayer() {
         return ((NamedEntitiesLayerStored) layersInOrder[TextCorpusLayerTag.NAMED_ENTITIES.ordinal()]);
     }
@@ -374,6 +420,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.REFERENCES.ordinal()] = layer;
     }
 
+    @Override
     public ReferencesLayerStored getReferencesLayer() {
         return ((ReferencesLayerStored) layersInOrder[TextCorpusLayerTag.REFERENCES.ordinal()]);
     }
@@ -383,6 +430,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.RELATIONS.ordinal()] = layer;
     }
 
+    @Override
     public RelationsLayerStored getRelationsLayer() {
         return ((RelationsLayerStored) layersInOrder[TextCorpusLayerTag.RELATIONS.ordinal()]);
     }
@@ -392,6 +440,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.CORPUS_MATCHES.ordinal()] = layer;
     }
 
+    @Override
     public MatchesLayerStored getMatchesLayer() {
         return ((MatchesLayerStored) layersInOrder[TextCorpusLayerTag.CORPUS_MATCHES.ordinal()]);
     }
@@ -401,6 +450,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.WORD_SPLITTINGS.ordinal()] = layer;
     }
 
+    @Override
     public WordSplittingLayerStored getWordSplittingLayer() {
         return ((WordSplittingLayerStored) layersInOrder[TextCorpusLayerTag.WORD_SPLITTINGS.ordinal()]);
     }
@@ -410,6 +460,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.PHONETICS.ordinal()] = layer;
     }
 
+    @Override
     public PhoneticsLayerStored getPhoneticsLayer() {
         return ((PhoneticsLayerStored) layersInOrder[TextCorpusLayerTag.PHONETICS.ordinal()]);
     }
@@ -419,6 +470,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.GEO.ordinal()] = layer;
     }
 
+    @Override
     public GeoLayerStored getGeoLayer() {
         return ((GeoLayerStored) layersInOrder[TextCorpusLayerTag.GEO.ordinal()]);
     }
@@ -428,6 +480,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.SYNONYMY.ordinal()] = layer;
     }
 
+    @Override
     public SynonymyLayerStored getSynonymyLayer() {
         return ((SynonymyLayerStored) layersInOrder[TextCorpusLayerTag.SYNONYMY.ordinal()]);
     }
@@ -437,6 +490,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.ANTONYMY.ordinal()] = layer;
     }
 
+    @Override
     public AntonymyLayerStored getAntonymyLayer() {
         return ((AntonymyLayerStored) layersInOrder[TextCorpusLayerTag.ANTONYMY.ordinal()]);
     }
@@ -446,6 +500,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.HYPONYMY.ordinal()] = layer;
     }
 
+    @Override
     public HyponymyLayerStored getHyponymyLayer() {
         return ((HyponymyLayerStored) layersInOrder[TextCorpusLayerTag.HYPONYMY.ordinal()]);
     }
@@ -455,6 +510,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.HYPERONYMY.ordinal()] = layer;
     }
 
+    @Override
     public HyperonymyLayerStored getHyperonymyLayer() {
         return ((HyperonymyLayerStored) layersInOrder[TextCorpusLayerTag.HYPERONYMY.ordinal()]);
     }
@@ -464,6 +520,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.TEXT_STRUCTURE.ordinal()] = layer;
     }
 
+    @Override
     public TextStructureLayerStored getTextStructureLayer() {
         return ((TextStructureLayerStored) layersInOrder[TextCorpusLayerTag.TEXT_STRUCTURE.ordinal()]);
     }
@@ -473,6 +530,7 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.ORTHOGRAPHY.ordinal()] = layer;
     }
 
+    @Override
     public OrthographyLayerStored getOrthographyLayer() {
         return ((OrthographyLayerStored) layersInOrder[TextCorpusLayerTag.ORTHOGRAPHY.ordinal()]);
     }
@@ -482,8 +540,19 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.DISCOURSE_CONNECTIVES.ordinal()] = layer;
     }
 
+    @Override
     public DiscourseConnectivesLayerStored getDiscourseConnectivesLayer() {
         return ((DiscourseConnectivesLayerStored) layersInOrder[TextCorpusLayerTag.DISCOURSE_CONNECTIVES.ordinal()]);
+    }
+    
+    @XmlElement(name = WordSensesLayerStored.XML_NAME)
+    protected void setWordSensesLayer(WordSensesLayerStored layer) {
+        layersInOrder[TextCorpusLayerTag.WORD_SENSES.ordinal()] = layer;
+    }
+
+    @Override
+    public WordSensesLayerStored getWordSensesLayer() {
+        return ((WordSensesLayerStored) layersInOrder[TextCorpusLayerTag.WORD_SENSES.ordinal()]);
     }
 
     protected void afterUnmarshal(Unmarshaller u, Object parent) {

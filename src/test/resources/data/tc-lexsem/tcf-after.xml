@@ -28,17 +28,17 @@
             <lemma ID="l_7" tokenIDs="t8">er</lemma>
             <lemma ID="l_8" tokenIDs="t9">.</lemma>
         </lemmas>
-        <synonymy src="GermaNet">
+        <synonymy>
             <orthform lemmaRefs="l_1">futtern, nehmen</orthform>
         </synonymy>
-        <antonymy src="GermaNet">
+        <antonymy>
             <orthform lemmaRefs="l_1">verhungern</orthform>
         </antonymy>
-        <hyponymy src="GermaNet">
+        <hyponymy>
             <orthform lemmaRefs="l_1">Art essen, EssensOrt spezifiziert, EssensZeit spezifiziert, acheln, aufessen, aufnehmen, einverleiben, essen mit Instrument, hermachen, stärken, vertilgen, wegessen</orthform>
             <orthform lemmaRefs="l_6">abschmecken, gustieren, kosten, munden, probieren, versuchen, würzen</orthform>
         </hyponymy>
-        <hyperonymy src="GermaNet">
+        <hyperonymy>
             <orthform lemmaRefs="l_1">verzehren</orthform>
             <orthform lemmaRefs="l_6">Genuss essen, gut tun, guttun, perzipieren, wahrnehmen</orthform>
         </hyperonymy>

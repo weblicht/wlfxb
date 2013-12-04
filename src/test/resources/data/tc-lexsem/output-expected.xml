@@ -8,9 +8,9 @@
     <text>Peter aß eine Käsepizza. Sie schmeckte ihm.</text>
     <tokens><token ID="t1">Peter</token><token ID="t2">aß</token><token ID="t3">eine</token><token ID="t4">Käsepizza</token><token ID="t5">.</token><token ID="t6">Sie</token><token ID="t7">schmeckte</token><token ID="t8">ihm</token><token ID="t9">.</token></tokens>
     <lemmas><lemma ID="l_0" tokenIDs="t1">Peter</lemma><lemma ID="l_1" tokenIDs="t2">essen</lemma><lemma ID="l_2" tokenIDs="t3">ein</lemma><lemma ID="l_3" tokenIDs="t4">Käsepizza</lemma><lemma ID="l_4" tokenIDs="t5">.</lemma><lemma ID="l_5" tokenIDs="t6">sie</lemma><lemma ID="l_6" tokenIDs="t7">schmecken</lemma><lemma ID="l_7" tokenIDs="t8">er</lemma><lemma ID="l_8" tokenIDs="t9">.</lemma></lemmas>
-    <synonymy src="GermaNet"><orthform lemmaRefs="l_1">futtern, nehmen</orthform></synonymy>
-    <antonymy src="GermaNet"><orthform lemmaRefs="l_1">verhungern</orthform></antonymy>
-    <hyponymy src="GermaNet"><orthform lemmaRefs="l_1">Art essen, EssensOrt spezifiziert, EssensZeit spezifiziert, acheln, aufessen, aufnehmen, einverleiben, essen mit Instrument, hermachen, stärken, vertilgen, wegessen</orthform><orthform lemmaRefs="l_6">abschmecken, gustieren, kosten, munden, probieren, versuchen, würzen</orthform></hyponymy>
-    <hyperonymy src="GermaNet"><orthform lemmaRefs="l_1">verzehren</orthform><orthform lemmaRefs="l_6">Genuss essen, gut tun, guttun, perzipieren, wahrnehmen</orthform></hyperonymy>
+    <synonymy><orthform lemmaRefs="l_1">futtern, nehmen</orthform></synonymy>
+    <antonymy><orthform lemmaRefs="l_1">verhungern</orthform></antonymy>
+    <hyponymy><orthform lemmaRefs="l_1">Art essen, EssensOrt spezifiziert, EssensZeit spezifiziert, acheln, aufessen, aufnehmen, einverleiben, essen mit Instrument, hermachen, stärken, vertilgen, wegessen</orthform><orthform lemmaRefs="l_6">abschmecken, gustieren, kosten, munden, probieren, versuchen, würzen</orthform></hyponymy>
+    <hyperonymy><orthform lemmaRefs="l_1">verzehren</orthform><orthform lemmaRefs="l_6">Genuss essen, gut tun, guttun, perzipieren, wahrnehmen</orthform></hyperonymy>
   </TextCorpus>
 </D-Spin>

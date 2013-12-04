@@ -1,0 +1,5 @@
+<wsd src="GermaNet8.0" xmlns="http://www.dspin.de/data/textcorpus">
+    <ws tokenIDs="t2" lexunits="75069 75197" comment="übertragen"/>
+    <ws tokenIDs="t4" lexunits="-1" comment="unbestimmbar"/>
+    <ws tokenIDs="t7" lexunits="82896"/>
+</wsd>

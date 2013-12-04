@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/d-spin_0_4.rnc" type="application/relax-ng-compact-syntax"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+ <MetaData xmlns="http://www.dspin.de/data/metadata">
+  <source>IMS, Uni Stuttgart</source>
+ </MetaData>
+ <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+  <tokens>
+   <token ID="t1">Peter</token>
+   <token ID="t2">aß</token>
+   <token ID="t3">eine</token>
+   <token ID="t4">Käsepizza</token>
+   <token ID="t5">.</token>
+   <token ID="t6">Sie</token>
+   <token ID="t7">schmeckte</token>
+   <token ID="t8">ihm</token>
+   <token ID="t9">.</token>
+  </tokens>
+ </TextCorpus>
+</D-Spin>

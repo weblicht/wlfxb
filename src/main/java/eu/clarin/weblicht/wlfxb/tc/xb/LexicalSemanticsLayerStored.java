@@ -41,8 +41,8 @@ import javax.xml.bind.annotation.XmlElement;
 @XmlAccessorType(XmlAccessType.NONE)
 public abstract class LexicalSemanticsLayerStored extends TextCorpusLayerStoredAbstract implements LexicalSemanticsLayer {
 
-    @XmlAttribute(name = CommonAttributes.SOURCE)
-    protected String source;
+//   @XmlAttribute(name = CommonAttributes.SOURCE)
+//    protected String source;
     @XmlElement(name = OrthformStored.XML_NAME)
     protected List<OrthformStored> orthforms = new ArrayList<OrthformStored>();
     protected TextCorpusLayersConnector connector;
@@ -51,9 +51,9 @@ public abstract class LexicalSemanticsLayerStored extends TextCorpusLayerStoredA
     protected LexicalSemanticsLayerStored() {
     }
 
-    protected LexicalSemanticsLayerStored(String source) {
-        this.source = source;
-    }
+//    protected LexicalSemanticsLayerStored(String source) {
+//        this.source = source;
+//    }
 
     protected LexicalSemanticsLayerStored(TextCorpusLayersConnector connector) {
         this.connector = connector;
@@ -64,10 +64,10 @@ public abstract class LexicalSemanticsLayerStored extends TextCorpusLayerStoredA
         return orthforms.isEmpty();
     }
 
-    @Override
-    public String getSource() {
-        return source;
-    }
+//    @Override
+//    public String getSource() {
+//        return source;
+//    }
 
     @Override
     public int size() {
@@ -130,9 +130,9 @@ public abstract class LexicalSemanticsLayerStored extends TextCorpusLayerStoredA
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        sb.append(source);
-        sb.append("}");
+//        sb.append("{");
+//        sb.append(source);
+//        sb.append("}");
         sb.append(" : ");
         sb.append(orthforms.toString());
         return sb.toString();

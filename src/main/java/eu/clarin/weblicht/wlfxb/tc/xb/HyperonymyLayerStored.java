@@ -47,9 +47,9 @@ public class HyperonymyLayerStored extends LexicalSemanticsLayerStored {
         super(connector);
     }
 
-    protected HyperonymyLayerStored(String source) {
-        super(source);
-    }
+//    protected HyperonymyLayerStored(String source) {
+//        super(source);
+//    }
 
     protected void setLayersConnector(TextCorpusLayersConnector connector) {
         super.connector = connector;

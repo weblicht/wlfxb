@@ -208,6 +208,13 @@ public interface TextCorpus {
      * {@link Token} objects from {@link TokensLayer}.
      */
     public MorphologyLayer getMorphologyLayer();
+    
+    /**
+     * Creates empty {@link MorphologyLayer} in this <tt>TextCorpus</tt>.
+     *
+     * @return annotation layer that has been created.
+     */
+    public MorphologyLayer createMorphologyLayer();
 
     /**
      * Creates empty {@link MorphologyLayer} in this <tt>TextCorpus</tt>.
@@ -404,10 +411,9 @@ public interface TextCorpus {
     /**
      * Creates empty synonymy layer in this <tt>TextCorpus</tt>.
      *
-     * @param source from where the synonyms were taken.
      * @return annotation layer that has been created.
      */
-    public LexicalSemanticsLayer createSynonymyLayer(String source);
+    public LexicalSemanticsLayer createSynonymyLayer();
 
     /**
      * Gets antonymy layer of this <tt>TextCorpus</tt>.
@@ -420,10 +426,9 @@ public interface TextCorpus {
     /**
      * Creates empty antonymy layer in this <tt>TextCorpus</tt>.
      *
-     * @param source from where the antonyms were taken.
      * @return annotation layer that has been created.
      */
-    public LexicalSemanticsLayer createAntonymyLayer(String source);
+    public LexicalSemanticsLayer createAntonymyLayer();
 
     /**
      * Gets hyponymy layer of this <tt>TextCorpus</tt>.
@@ -436,10 +441,9 @@ public interface TextCorpus {
     /**
      * Creates empty hyponymy layer in this <tt>TextCorpus</tt>.
      *
-     * @param source from where the hyponyms were taken.
      * @return annotation layer that has been created.
      */
-    public LexicalSemanticsLayer createHyponymyLayer(String source);
+    public LexicalSemanticsLayer createHyponymyLayer();
 
     /**
      * Gets hyperonymy layer of this <tt>TextCorpus</tt>.
@@ -452,10 +456,9 @@ public interface TextCorpus {
     /**
      * Creates empty hyperonymy layer in this <tt>TextCorpus</tt>.
      *
-     * @param source from where the hyperonyms were taken.
      * @return annotation layer that has been created.
      */
-    public LexicalSemanticsLayer createHyperonymyLayer(String source);
+    public LexicalSemanticsLayer createHyperonymyLayer();
 
     /**
      * Gets discourse connectives layer of this <tt>TextCorpus</tt>.
@@ -481,4 +484,21 @@ public interface TextCorpus {
      * @return annotation layer that has been created.
      */
     public DiscourseConnectivesLayer createDiscourseConnectivesLayer(String typeTagset);
+    
+    /**
+     * Gets word senses layer of this <tt>TextCorpus</tt>.
+     *
+     * @return layer containing word sense annotations on
+     * {@link Token} objects from {@link TokensLayer}.
+     */
+    public WordSensesLayer getWordSensesLayer();
+    
+    /**
+     * Creates empty {@link WordSensesLayer} in this
+     * <tt>TextCorpus</tt>.
+     *
+     * @param source from where the word senses are taken
+     * @return annotation layer that has been created.
+     */
+    public WordSensesLayer createWordSensesLayer(String source);
 }

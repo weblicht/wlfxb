@@ -53,25 +53,25 @@ public class TextCorpusLexicalSemanticsTest extends AbstractTextCorpusTest {
 
         layer = tc.getSynonymyLayer();
         Assert.assertEquals(1, layer.size());
-        Assert.assertEquals("GermaNet", layer.getSource());
+        //Assert.assertEquals("GermaNet", layer.getSource());
         Assert.assertEquals(tc.getLemmasLayer().getLemma(1), layer.getLemmas(layer.getOrthform(0))[0]);
         Assert.assertEquals(layer.getOrthform(0), layer.getOrthform(tc.getLemmasLayer().getLemma(1)));
 
         layer = tc.getAntonymyLayer();
         Assert.assertEquals(1, layer.size());
-        Assert.assertEquals("GermaNet", layer.getSource());
+        //Assert.assertEquals("GermaNet", layer.getSource());
         Assert.assertEquals(tc.getLemmasLayer().getLemma(1), layer.getLemmas(layer.getOrthform(0))[0]);
         Assert.assertEquals(layer.getOrthform(0), layer.getOrthform(tc.getLemmasLayer().getLemma(1)));
 
         layer = tc.getHyponymyLayer();
         Assert.assertEquals(2, layer.size());
-        Assert.assertEquals("GermaNet", layer.getSource());
+        //Assert.assertEquals("GermaNet", layer.getSource());
         Assert.assertEquals(tc.getLemmasLayer().getLemma(1), layer.getLemmas(layer.getOrthform(0))[0]);
         Assert.assertEquals(layer.getOrthform(0), layer.getOrthform(tc.getLemmasLayer().getLemma(1)));
 
         layer = tc.getHyperonymyLayer();
         Assert.assertEquals(2, layer.size());
-        Assert.assertEquals("GermaNet", layer.getSource());
+        //Assert.assertEquals("GermaNet", layer.getSource());
         Assert.assertEquals(tc.getLemmasLayer().getLemma(1), layer.getLemmas(layer.getOrthform(0))[0]);
         Assert.assertEquals(layer.getOrthform(0), layer.getOrthform(tc.getLemmasLayer().getLemma(1)));
     }
@@ -81,11 +81,11 @@ public class TextCorpusLexicalSemanticsTest extends AbstractTextCorpusTest {
         TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeLexSemAnnotation);
         System.out.println(tc);
         // create lexical semantics layers, empty at first
-        String source = "GermaNet";
-        LexicalSemanticsLayer synonymy = tc.createSynonymyLayer(source);
-        LexicalSemanticsLayer antonymy = tc.createAntonymyLayer(source);
-        LexicalSemanticsLayer hyponymy = tc.createHyponymyLayer(source);
-        LexicalSemanticsLayer hyperonymy = tc.createHyperonymyLayer(source);
+        //String source = "GermaNet";
+        LexicalSemanticsLayer synonymy = tc.createSynonymyLayer();
+        LexicalSemanticsLayer antonymy = tc.createAntonymyLayer();
+        LexicalSemanticsLayer hyponymy = tc.createHyponymyLayer();
+        LexicalSemanticsLayer hyperonymy = tc.createHyperonymyLayer();
         for (int i = 0; i < tc.getLemmasLayer().size(); i++) {
             Lemma lemma = tc.getLemmasLayer().getLemma(i);
             String[] synonyms = getSynonyms(lemma.getString());

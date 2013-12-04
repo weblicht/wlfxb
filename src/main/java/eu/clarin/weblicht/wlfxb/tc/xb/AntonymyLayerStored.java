@@ -47,9 +47,9 @@ public class AntonymyLayerStored extends LexicalSemanticsLayerStored {
         super(connector);
     }
 
-    protected AntonymyLayerStored(String source) {
-        super(source);
-    }
+//    protected AntonymyLayerStored(String source) {
+//        super(source);
+//    }
 
     protected void setLayersConnector(TextCorpusLayersConnector connector) {
         super.connector = connector;

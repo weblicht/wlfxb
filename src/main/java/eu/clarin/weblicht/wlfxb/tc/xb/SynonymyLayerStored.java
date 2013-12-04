@@ -46,9 +46,9 @@ public class SynonymyLayerStored extends LexicalSemanticsLayerStored {
         super(connector);
     }
 
-    protected SynonymyLayerStored(String source) {
-        super(source);
-    }
+//    protected SynonymyLayerStored(String source) {
+//        super(source);
+//    }
 
     protected void setLayersConnector(TextCorpusLayersConnector connector) {
         super.connector = connector;

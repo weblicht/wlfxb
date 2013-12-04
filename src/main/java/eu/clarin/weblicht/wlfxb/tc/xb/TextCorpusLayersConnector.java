@@ -57,6 +57,7 @@ public class TextCorpusLayersConnector {
     protected Map<String, Map<Token, TextSpan>> token2ItsTextSpans = new HashMap<String, Map<Token, TextSpan>>();
     protected Map<Token, DiscourseConnective> token2ItsDConnective = new HashMap<Token, DiscourseConnective>();
     protected Map<String, Constituent> constitId2ItsConstit = new HashMap<String, Constituent>();
+    protected Map<Token, WordSense>  token2ItsWordSense = new HashMap<Token, WordSense>();
 
     TextCorpusLayersConnector() {
         super();

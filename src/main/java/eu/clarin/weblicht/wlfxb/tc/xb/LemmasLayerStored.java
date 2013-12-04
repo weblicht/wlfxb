@@ -55,6 +55,7 @@ public class LemmasLayerStored extends TextCorpusLayerStoredAbstract implements 
         this.connector = connector;
     }
 
+    @Override
     protected void setLayersConnector(TextCorpusLayersConnector connector) {
         this.connector = connector;
         for (int i = 0; i < lemmas.size(); i++) {

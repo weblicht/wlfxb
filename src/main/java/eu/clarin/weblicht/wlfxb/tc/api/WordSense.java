@@ -18,29 +18,20 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+/**
+ *
+ */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
+import java.util.List;
+
 /**
- * The annotations in <tt>LexicalSemanticsLayer</tt> are represented by synonymy, 
- * antonymy, hyponymy, hyperonymy. The layers specify the resource from which 
- * the annotations were extracted, and enumerate the orthform elements. Each 
- * orthform element has an orthform string (can be a word, a phrase, or a list 
- * of both) and references lemmas that are in synonymy/antonymy/hyponymy/hyperonymy 
- * relations with this orthform.
- * 
  * @author Yana Panchenko
+ *
  */
-public interface LexicalSemanticsLayer extends TextCorpusLayer {
+public interface WordSense {
 
-    //public String getSource();
-
-    public Orthform getOrthform(int index);
-
-    public Orthform getOrthform(Lemma lemma);
-
-    public Lemma[] getLemmas(Orthform orthform);
-
-    public Orthform addOrthform(String orthformValues, Lemma lemma);
-
-    public Orthform addOrthform(String[] orthformValues, Lemma lemma);
+    public String getComment();
+    
+    public List<String> getLexicalUnits();
 }
