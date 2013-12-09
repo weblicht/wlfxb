@@ -26,6 +26,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author Yana Panchenko
+ *
+ */
 public enum LexiconLayerTag {
 
     /*
@@ -33,11 +37,18 @@ public enum LexiconLayerTag {
      * after the layers they reference and before the layers that are
      * referencing them. The order here will also be the order in TCF output.
      */
-    LEMMAS("lemmas", LemmasLayerStored.class),
+    //LEMMAS("lemmas", LemmasLayerStored.class),
+    ENTRIES("entries", EntriesLayerStored.class),
     //MORPHOLOGY("morphology"),
     POSTAGS("POStags", PosTagsLayerStored.class),
     FREQUENCIES("frequencies", FrequenciesLayerStored.class),
-    RELATIONS("word-relations", RelationsLayerStored.class);
+    SYLLABIFICATIONS("syllabifications", SyllabificationsLayerStored.class),
+    COOCCURRENCES("cooccurrences", CooccurrencesLayerStored.class),
+    SYNONYMS("synonyms", SynonymsLayerStored.class)
+    //@Deprecated
+    //RELATIONS("word-relations", RelationsLayerStored.class)
+    ;
+    
     private static final Map<String, LexiconLayerTag> xmlNameToLayerTagMap =
             new HashMap<String, LexiconLayerTag>() {
 

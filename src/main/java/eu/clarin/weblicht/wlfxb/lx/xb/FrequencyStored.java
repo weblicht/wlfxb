@@ -18,9 +18,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-/**
- *
- */
 package eu.clarin.weblicht.wlfxb.lx.xb;
 
 import eu.clarin.weblicht.wlfxb.lx.api.Frequency;
@@ -39,19 +36,19 @@ public class FrequencyStored implements Frequency {
 
     public static final String XML_NAME = "frequency";
     @XmlValue
-    protected int value;
-    @XmlAttribute(name = CommonAttributes.LEMMA_REFERENCE, required = true)
-    protected String lemRef;
+    protected double value;
+    @XmlAttribute(name = CommonAttributes.ENTRY_REFERENCE, required = true)
+    protected String entryId;
 
     @Override
-    public int getValue() {
+    public double getValue() {
         return value;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(lemRef);
+        sb.append(entryId);
         sb.append(" ").append(value);
         return sb.toString();
     }

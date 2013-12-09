@@ -18,17 +18,17 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-/**
- *
- */
+
 package eu.clarin.weblicht.wlfxb.lx.xb;
 
-import eu.clarin.weblicht.wlfxb.lx.api.Lemma;
-import eu.clarin.weblicht.wlfxb.lx.api.LemmasLayer;
+import eu.clarin.weblicht.wlfxb.lx.api.Entry;
+import eu.clarin.weblicht.wlfxb.lx.api.EntriesLayer;
+import eu.clarin.weblicht.wlfxb.lx.api.EntryType;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -36,66 +36,80 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Yana Panchenko
  *
  */
-@XmlRootElement(name = LemmasLayerStored.XML_NAME)
+@XmlRootElement(name = EntriesLayerStored.XML_NAME)
 @XmlAccessorType(XmlAccessType.NONE)
-public class LemmasLayerStored extends LexiconLayerStoredAbstract implements LemmasLayer {
+public class EntriesLayerStored extends LexiconLayerStoredAbstract implements EntriesLayer {
 
-    public static final String XML_NAME = "lemmas";
+    public static final String XML_NAME = "entries";
     private LexiconLayersConnector connector;
-    @XmlElement(name = LemmaStored.XML_NAME)
-    private List<LemmaStored> lemmas = new ArrayList<LemmaStored>();
+    @XmlAttribute(name = "type")
+    private EntryType entryType;
+    @XmlElement(name = EntryStored.XML_NAME)
+    private List<EntryStored> entries = new ArrayList<EntryStored>();
 
-    protected LemmasLayerStored() {
+    protected EntriesLayerStored() {
+    }
+    
+    protected EntriesLayerStored(EntryType type) {
+        this.entryType = type;
     }
 
-    protected LemmasLayerStored(LexiconLayersConnector connector) {
+    protected EntriesLayerStored(LexiconLayersConnector connector) {
         this.connector = connector;
     }
 
+    @Override
     public void setLayersConnector(LexiconLayersConnector connector) {
         this.connector = connector;
-        for (LemmaStored lemma : lemmas) {
-            this.connector.lemmaId2ItsLemma.put(lemma.lemmaId, lemma);
+        for (EntryStored entry : entries) {
+            this.connector.entryId2ItsEntry.put(entry.entryId, entry);
         }
     }
-
+    
     @Override
-    public Lemma getLemma(int index) {
-        return lemmas.get(index);
+    public EntryType getType() {
+        return entryType;
     }
 
     @Override
-    public Lemma getLemma(String lemmaId) {
-        Lemma lemma = connector.lemmaId2ItsLemma.get(lemmaId);
-        return lemma;
+    public Entry getEntry(int index) {
+        return entries.get(index);
     }
 
     @Override
-    public Lemma addLemma(String lemmaString) {
-        LemmaStored lemma = new LemmaStored();
-        int lemmaCount = lemmas.size();
-        lemma.lemmaId = LemmaStored.ID_PREFIX + lemmaCount;
-        lemma.lemmaString = lemmaString;
-        connector.lemmaId2ItsLemma.put(lemma.lemmaId, lemma);
-        lemmas.add(lemma);
-        return lemma;
+    public Entry getEntry(String entryId) {
+        Entry entry = connector.entryId2ItsEntry.get(entryId);
+        return entry;
+    }
+
+    @Override
+    public Entry addEntry(String entryString) {
+        EntryStored entry = new EntryStored();
+        int entryCount = entries.size();
+        entry.entryId = EntryStored.ID_PREFIX + entryCount;
+        entry.entryString = entryString;
+        connector.entryId2ItsEntry.put(entry.entryId, entry);
+        entries.add(entry);
+        return entry;
     }
 
     @Override
     public boolean isEmpty() {
-        return lemmas.isEmpty();
+        return entries.isEmpty();
     }
 
     @Override
     public int size() {
-        return lemmas.size();
+        return entries.size();
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder(XML_NAME);
+        sb.append(" ");
+        sb.append(entryType);
         sb.append(" : ");
-        sb.append(lemmas.toString());
+        sb.append(entries.toString());
         return sb.toString();
     }
 }

@@ -20,21 +20,37 @@
  */
 package eu.clarin.weblicht.wlfxb.lx.xb;
 
+import eu.clarin.weblicht.wlfxb.lx.api.Cooccurrence;
 import eu.clarin.weblicht.wlfxb.lx.api.Frequency;
-import eu.clarin.weblicht.wlfxb.lx.api.Lemma;
 import eu.clarin.weblicht.wlfxb.lx.api.PosTag;
-import eu.clarin.weblicht.wlfxb.lx.api.Relation;
+import eu.clarin.weblicht.wlfxb.lx.api.Entry;
+import eu.clarin.weblicht.wlfxb.lx.api.Syllabification;
+import eu.clarin.weblicht.wlfxb.lx.api.Synonym;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author Yana Panchenko
+ *
+ */
 public class LexiconLayersConnector {
 
     // maps for connecting elements of different layers that reference one another
-    protected Map<String, Lemma> lemmaId2ItsLemma = new HashMap<String, Lemma>();
-    protected Map<Lemma, List<PosTag>> lemma2ItsTags = new HashMap<Lemma, List<PosTag>>();
-    protected Map<Lemma, Frequency> lemma2ItsFreq = new HashMap<Lemma, Frequency>();
-    protected Map<Lemma, List<Relation>> lemma2ItsRels = new HashMap<Lemma, List<Relation>>();
+    protected Map<String, Entry> entryId2ItsEntry = new HashMap<String, Entry>();
+    
+    //protected Map<String, Lemma> lemmaId2ItsLemma = new HashMap<String, Lemma>();
+    //protected Map<String, Entry> typeId2ItsType = new HashMap<String, Entry>();
+    //protected Map<Lemma, List<PosTag>> lemma2ItsTags = new HashMap<Lemma, List<PosTag>>();
+    protected Map<Entry, List<PosTag>> entry2ItsTags = new HashMap<Entry, List<PosTag>>();
+    //protected Map<Lemma, Frequency> lemma2ItsFreq = new HashMap<Lemma, Frequency>();
+    protected Map<Entry, Frequency> entry2ItsFreq = new HashMap<Entry, Frequency>();
+    //protected Map<Lemma, List<Relation>> lemma2ItsRels = new HashMap<Lemma, List<Relation>>();
+    //protected Map<Lemma, List<Cooccurrence>> lemma2ItsCoocs = new HashMap<Lemma, List<Cooccurrence>>();
+    //protected Map<Entry, List<Cooccurrence>> type2ItsCoocs = new HashMap<Entry, List<Cooccurrence>>();
+    protected Map<Entry, List<Cooccurrence>> entry2ItsCoocs = new HashMap<Entry, List<Cooccurrence>>();
+    protected Map<Entry, List<Synonym>> entry2ItsSyns = new HashMap<Entry, List<Synonym>>();
+    protected Map<Entry, Syllabification> entry2ItsSyllab = new HashMap<Entry, Syllabification>();
 
     LexiconLayersConnector() {
         super();

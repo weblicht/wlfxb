@@ -5,16 +5,15 @@
     <source></source>
   </MetaData>
   <Lexicon xmlns="http://www.dspin.de/data/lexicon" lang="de">
-    <lemmas>
-      <lemma ID="l1">Peter</lemma>
-      <lemma ID="l2">essen</lemma>
-      <lemma ID="l3">ein</lemma>
-      <lemma ID="l4">Pizza</lemma>
-      <lemma ID="l5">.</lemma>
-      <lemma ID="l6">sie</lemma>
-      <lemma ID="l7">schmecken</lemma>
-      <lemma ID="l8">er</lemma>
-      <lemma ID="l9">.</lemma>
-    </lemmas>
+    <entries type="lemmas">
+      <entry ID="e1">Peter</entry>
+      <entry ID="e2">essen</entry>
+      <entry ID="e3">ein</entry>
+      <entry ID="e4">Pizza</entry>
+      <entry ID="e5">.</entry>
+      <entry ID="e6">sie</entry>
+      <entry ID="e7">schmecken</entry>
+      <entry ID="e8">er</entry>
+    </entries>
   </Lexicon>
 </D-Spin>

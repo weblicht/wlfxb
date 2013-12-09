@@ -20,5 +20,9 @@
  */
 package eu.clarin.weblicht.wlfxb.lx.api;
 
+/**
+ * @author Yana Panchenko
+ *
+ */
 public interface Term {
 }

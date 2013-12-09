@@ -20,15 +20,19 @@
  */
 package eu.clarin.weblicht.wlfxb.lx.api;
 
+/**
+ * @author Yana Panchenko
+ *
+ */
 public interface FrequenciesLayer extends LexiconLayer {
-
-    public int size();
+    
+    public FrequencyType getType();
 
     public Frequency getFrequency(int index);
 
-    public Frequency getFrequency(Lemma lemma);
+    public Frequency getFrequency(Entry entry);
 
-    public Lemma getLemma(Frequency frequency);
+    public Entry getEntry(Frequency frequency);
 
-    public Frequency addFrequency(Lemma lemma, int frequency);
+    public Frequency addFrequency(Entry entry, double frequency);
 }

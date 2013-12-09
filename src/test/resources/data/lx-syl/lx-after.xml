@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/d-spin_0_4.rnc" type="application/relax-ng-compact-syntax"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+  <MetaData xmlns="http://www.dspin.de/data/metadata">
+    <source></source>
+  </MetaData>
+  <Lexicon xmlns="http://www.dspin.de/data/lexicon" lang="de">
+    <entries type="lemmas">
+      <entry ID="e1">Peter</entry>
+      <entry ID="e2">essen</entry>
+      <entry ID="e3">ein</entry>
+      <entry ID="e4">Pizza</entry>
+      <entry ID="e5">.</entry>
+      <entry ID="e6">sie</entry>
+      <entry ID="e7">schmecken</entry>
+      <entry ID="e8">er</entry>
+    </entries>
+    <syllabifications>
+        <syllabification entryID="e1">Pe-ter</syllabification>
+        <syllabification entryID="e2">e-ssen</syllabification>
+        <syllabification entryID="e3">ein</syllabification>
+        <syllabification entryID="e4">Pi-zza</syllabification>
+        <syllabification entryID="e6">sie</syllabification>
+        <syllabification entryID="e7">schme-cken</syllabification>
+        <syllabification entryID="e8">er</syllabification>
+    </syllabifications>
+  </Lexicon>
+</D-Spin>

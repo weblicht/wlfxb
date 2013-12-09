@@ -1,0 +1,16 @@
+<synonyms xmlns="http://www.dspin.de/data/lexicon">
+      <synonym>
+      	<sig>2.7</sig>
+        <term entryID="e2"></term>
+        <term>sich ernähren</term>
+        <term>speisen</term>
+        <term>aufzehren</term>
+      </synonym>
+      <synonym>
+      	<sig>2.0</sig>
+        <term entryID="e2"></term>
+        <term>schlucken</term>
+        <term>bezwingen</term>
+        <term>hinunterschlingen</term>
+      </synonym>
+</synonyms>

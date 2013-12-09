@@ -20,9 +20,13 @@
  */
 package eu.clarin.weblicht.wlfxb.lx.api;
 
+/**
+ * @author Yana Panchenko
+ *
+ */
 public interface Sig {
 
     public String getMeasure();
 
-    public double getValue();
+    public float getValue();
 }

@@ -4,6 +4,7 @@
 package eu.clarin.weblicht.wlfxb.lxlayers.test;
 
 import eu.clarin.weblicht.wlfxb.lx.api.FrequenciesLayer;
+import eu.clarin.weblicht.wlfxb.lx.api.FrequencyType;
 import eu.clarin.weblicht.wlfxb.lx.xb.FrequenciesLayerStored;
 import eu.clarin.weblicht.wlfxb.test.utils.TestUtils;
 import java.io.FileOutputStream;
@@ -20,6 +21,7 @@ public class FrequenciesTest {
 
     private static final String INPUT = "/data/lx-freq/layer-input.xml";
     private static final String OUTPUT = "/tmp/layer-output.xml";
+    private static final double delta = 0.0001;
 
     @Test
     public void testReadAndWriteBack() throws Exception {
@@ -35,9 +37,10 @@ public class FrequenciesTest {
         is.close();
         os.close();
 
-        assertEquals(9, layer.size());
-        assertEquals(100, layer.getFrequency(0).getValue());
-        assertEquals(108, layer.getFrequency(layer.size() - 1).getValue());
+        assertEquals(8, layer.size());
+        assertEquals(FrequencyType.absolute, layer.getType());
+        assertEquals(100, layer.getFrequency(0).getValue(), delta);
+        assertEquals(107, layer.getFrequency(layer.size() - 1).getValue(), delta);
 
     }
 }

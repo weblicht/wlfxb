@@ -20,15 +20,16 @@
  */
 package eu.clarin.weblicht.wlfxb.lx.api;
 
+
 /**
  * @author Yana Panchenko
  *
  */
 public interface Lexicon {
 
-    public LemmasLayer getLemmasLayer();
+    public EntriesLayer getEntriesLayer();
 
-    public LemmasLayer createLemmasLayer();
+    public EntriesLayer createEntriesLayer(EntryType entryType);
 
     public PosTagsLayer getPosTagsLayer();
 
@@ -36,9 +37,17 @@ public interface Lexicon {
 
     public FrequenciesLayer getFrequenciesLayer();
 
-    public FrequenciesLayer createFrequenciesLayer();
-
-    public RelationsLayer getRelationsLayer();
-
-    public RelationsLayer createRelationsLayer();
+    public FrequenciesLayer createFrequenciesLayer(FrequencyType type);
+    
+    public CooccurrencesLayer getCooccurrencesLayer();
+    
+    public CooccurrencesLayer createCooccurrencesLayer();
+    
+    public SynonymsLayer getSynonymsLayer();
+    
+    public SynonymsLayer createSynonymsLayer();
+    
+    public SyllabificationsLayer getSyllabificationsLayer();
+    
+    public SyllabificationsLayer createSyllabificationsLayer();
 }

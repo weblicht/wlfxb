@@ -20,9 +20,17 @@
  */
 package eu.clarin.weblicht.wlfxb.lx.api;
 
-public interface Lemma {
+/**
+ * @author Yana Panchenko
+ *
+ */
+public interface EntriesLayer extends LexiconLayer {
+    
+    public EntryType getType();
 
-    public String getString();
+    public Entry getEntry(int index);
 
-    public String getID();
+    public Entry getEntry(String entryId);
+
+    public Entry addEntry(String entryString);
 }

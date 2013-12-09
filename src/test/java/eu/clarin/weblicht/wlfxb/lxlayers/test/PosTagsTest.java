@@ -36,11 +36,11 @@ public class PosTagsTest {
         os.close();
 
         Assert.assertEquals("STTS", layer.getTagset());
-        Assert.assertEquals(10, layer.size());
+        Assert.assertEquals(9, layer.size());
         Assert.assertEquals("NE", layer.getTag(0).getString());
         Assert.assertEquals("NE", layer.getTag(3).getString());
         Assert.assertEquals("NN", layer.getTag(4).getString());
-        Assert.assertEquals("$.", layer.getTag(layer.size() - 1).getString());
+        Assert.assertEquals("PPER", layer.getTag(layer.size() - 1).getString());
 
     }
 }

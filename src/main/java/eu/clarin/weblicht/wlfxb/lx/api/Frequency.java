@@ -20,7 +20,11 @@
  */
 package eu.clarin.weblicht.wlfxb.lx.api;
 
+/**
+ * @author Yana Panchenko
+ *
+ */
 public interface Frequency {
 
-    public int getValue();
+    public double getValue();
 }

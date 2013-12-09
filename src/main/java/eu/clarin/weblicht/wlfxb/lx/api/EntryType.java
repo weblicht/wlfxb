@@ -18,16 +18,25 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package eu.clarin.weblicht.wlfxb.lx.api;
 
-public interface Relation {
+import javax.xml.bind.annotation.XmlEnumValue;
 
-    public String getType();
-
-    public String getFunction();
-
-    public Integer getFrequency();
-
-    public Sig getSig();
-    //public List<Term> getTerms();
+/**
+ *
+ * @author yanapanchenko
+ */
+public enum EntryType {
+    
+    types,
+    lemmas,
+    @XmlEnumValue("type-bigrams")
+    type_bigrams,
+    @XmlEnumValue("type-trigrams")
+    type_trigrams,
+    syllables;
 }

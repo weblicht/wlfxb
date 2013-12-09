@@ -24,21 +24,26 @@ import eu.clarin.weblicht.wlfxb.lx.api.Term;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
 import javax.xml.bind.annotation.*;
 
+/**
+ * @author Yana Panchenko
+ *
+ */
+
 @XmlRootElement(name = TermStored.XML_NAME)
 @XmlAccessorType(XmlAccessType.NONE)
 public class TermStored implements Term {
 
     public static final String XML_NAME = "term";
-    @XmlAttribute(name = CommonAttributes.LEMMA_REFERENCE)
-    protected String lemId;
+    @XmlAttribute(name = CommonAttributes.ENTRY_REFERENCE)
+    protected String entryId;
     @XmlValue
     protected String word;
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        if (lemId != null) {
-            sb.append(lemId);
+        if (entryId != null) {
+            sb.append(entryId);
         } else if (word != null) {
             sb.append(word);
         }

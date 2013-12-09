@@ -18,51 +18,37 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-/**
- * 
- */
 package eu.clarin.weblicht.wlfxb.lx.xb;
 
-import eu.clarin.weblicht.wlfxb.lx.api.Lemma;
+import eu.clarin.weblicht.wlfxb.lx.api.Syllabification;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlValue;
 
 /**
  * @author Yana Panchenko
  *
  */
-@XmlRootElement(name=LemmaStored.XML_NAME)
 @XmlAccessorType(XmlAccessType.NONE)
-public class LemmaStored implements Lemma {
-	
-	public static final String XML_NAME = "lemma";
-	public static final String ID_PREFIX = "l_";
-	
-	@XmlValue
-	protected String lemmaString;
-	@XmlAttribute(name=CommonAttributes.ID, required = true)
-	protected String lemmaId;
-	
-	
-	@Override
-	public String getString() {
-		return lemmaString;
-	}
-	
-	@Override
-	public String getID() {
-		return lemmaId;
-	}
+public class SyllabificationStored implements Syllabification {
 
+    public static final String XML_NAME = "syllabification";
+    @XmlValue
+    protected String syllabString;
+    @XmlAttribute(name = CommonAttributes.ENTRY_REFERENCE, required = true)
+    protected String entryId;
 
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder(lemmaId);
-		sb.append(" -> ");
-		sb.append(lemmaString);
-		return sb.toString();
-	}
+    @Override
+    public String getString() {
+        return syllabString;
+    }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(syllabString).append("[").append(entryId).append("]");
+        return sb.toString();
+    }
 }
-
-

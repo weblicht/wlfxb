@@ -18,15 +18,25 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package eu.clarin.weblicht.wlfxb.lx.api;
 
-public interface LemmasLayer extends LexiconLayer {
+import javax.xml.bind.annotation.XmlEnumValue;
 
-    public int size();
-
-    public Lemma getLemma(int index);
-
-    public Lemma getLemma(String lemmaId);
-
-    public Lemma addLemma(String tokenString);
+/**
+ *
+ * @author yanapanchenko
+ */
+public enum CooccurrenceFunction {
+    
+    @XmlEnumValue("right-neighbour")
+    right_neighbour,
+    @XmlEnumValue("left-neighbour")
+    left_neighbour,
+    sentence,
+    document;
+    
 }

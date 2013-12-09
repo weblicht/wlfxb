@@ -20,18 +20,19 @@
  */
 package eu.clarin.weblicht.wlfxb.lx.api;
 
+/**
+ * @author Yana Panchenko
+ *
+ */
 public interface PosTagsLayer extends LexiconLayer {
-
-    public int size();
 
     public String getTagset();
 
     public PosTag getTag(int index);
-    //can be several tags for each lemma
+    
+    public PosTag[] getTags(Entry entry);
 
-    public PosTag[] getTags(Lemma lemma);
+    public Entry getEntry(PosTag tag);
 
-    public Lemma getLemma(PosTag tag);
-
-    public PosTag addTag(String tagString, Lemma tagLemma);
+    public PosTag addTag(String tagString, Entry tagEntry);
 }

@@ -18,9 +18,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-/**
- *
- */
 package eu.clarin.weblicht.wlfxb.lx.xb;
 
 import eu.clarin.weblicht.wlfxb.lx.api.*;
@@ -37,10 +34,12 @@ import javax.xml.bind.annotation.*;
 @XmlRootElement(name = LexiconStored.XML_NAME, namespace = LexiconStored.XML_NAMESPACE)
 @XmlAccessorType(XmlAccessType.NONE)
 @XmlType(propOrder = {
-    "lemmasLayer",
+    "entriesLayer",
     "posTagsLayer",
     "frequenciesLayer",
-    "relationsLayer"})
+    "cooccurrencesLayer",
+    "synonymsLayer",
+    "syllabificationsLayer"})
 public class LexiconStored implements Lexicon {
 
     public static final String XML_NAME = "Lexicon";
@@ -64,20 +63,34 @@ public class LexiconStored implements Lexicon {
         return lang;
     }
 
-    public LemmasLayer createLemmasLayer() {
-        return initializeLayer(LemmasLayerStored.class);
+    @Override
+    public EntriesLayer createEntriesLayer(EntryType entryType) {
+        return initializeLayer(EntriesLayerStored.class, entryType);
     }
 
+    @Override
     public PosTagsLayer createPosTagsLayer(String tagset) {
         return initializeLayer(PosTagsLayerStored.class, tagset);
     }
 
-    public FrequenciesLayer createFrequenciesLayer() {
-        return initializeLayer(FrequenciesLayerStored.class);
+    @Override
+    public FrequenciesLayer createFrequenciesLayer(FrequencyType freqType) {
+        return initializeLayer(FrequenciesLayerStored.class, freqType);
+    }
+    
+    @Override
+    public CooccurrencesLayer createCooccurrencesLayer() {
+        return initializeLayer(CooccurrencesLayerStored.class);
     }
 
-    public RelationsLayer createRelationsLayer() {
-        return initializeLayer(RelationsLayerStored.class);
+    @Override
+    public SynonymsLayer createSynonymsLayer() {
+        return initializeLayer(SynonymsLayerStored.class);
+    }
+    
+    @Override
+    public SyllabificationsLayer createSyllabificationsLayer() {
+        return initializeLayer(SyllabificationsLayerStored.class);
     }
 
     @SuppressWarnings("unchecked")
@@ -111,13 +124,14 @@ public class LexiconStored implements Lexicon {
         return (T) layersInOrder[layerTag.ordinal()];
     }
 
-    @XmlElement(name = LemmasLayerStored.XML_NAME)
-    protected void setLemmasLayer(LemmasLayerStored layer) {
-        layersInOrder[LexiconLayerTag.LEMMAS.ordinal()] = layer;
+    @XmlElement(name = EntriesLayerStored.XML_NAME)
+    protected void setEntriesLayer(EntriesLayerStored layer) {
+        layersInOrder[LexiconLayerTag.ENTRIES.ordinal()] = layer;
     }
 
-    public LemmasLayerStored getLemmasLayer() {
-        return ((LemmasLayerStored) layersInOrder[LexiconLayerTag.LEMMAS.ordinal()]);
+    @Override
+    public EntriesLayerStored getEntriesLayer() {
+        return ((EntriesLayerStored) layersInOrder[LexiconLayerTag.ENTRIES.ordinal()]);
     }
 
     @XmlElement(name = PosTagsLayerStored.XML_NAME)
@@ -125,6 +139,7 @@ public class LexiconStored implements Lexicon {
         layersInOrder[LexiconLayerTag.POSTAGS.ordinal()] = layer;
     }
 
+    @Override
     public PosTagsLayerStored getPosTagsLayer() {
         return ((PosTagsLayerStored) layersInOrder[LexiconLayerTag.POSTAGS.ordinal()]);
     }
@@ -134,17 +149,39 @@ public class LexiconStored implements Lexicon {
         layersInOrder[LexiconLayerTag.FREQUENCIES.ordinal()] = layer;
     }
 
+    @Override
     public FrequenciesLayerStored getFrequenciesLayer() {
         return ((FrequenciesLayerStored) layersInOrder[LexiconLayerTag.FREQUENCIES.ordinal()]);
     }
-
-    @XmlElement(name = RelationsLayerStored.XML_NAME)
-    protected void setRelationsLayer(RelationsLayerStored layer) {
-        layersInOrder[LexiconLayerTag.RELATIONS.ordinal()] = layer;
+    
+    @XmlElement(name = CooccurrencesLayerStored.XML_NAME)
+    protected void setCooccurrencesLayer(CooccurrencesLayerStored layer) {
+        layersInOrder[LexiconLayerTag.COOCCURRENCES.ordinal()] = layer;
     }
 
-    public RelationsLayerStored getRelationsLayer() {
-        return ((RelationsLayerStored) layersInOrder[LexiconLayerTag.RELATIONS.ordinal()]);
+    @Override
+    public CooccurrencesLayerStored getCooccurrencesLayer() {
+        return ((CooccurrencesLayerStored) layersInOrder[LexiconLayerTag.COOCCURRENCES.ordinal()]);
+    }
+
+    @XmlElement(name = SynonymsLayerStored.XML_NAME)
+    protected void setSynonymsLayer(SynonymsLayerStored layer) {
+        layersInOrder[LexiconLayerTag.SYNONYMS.ordinal()] = layer;
+    }
+
+    @Override
+    public SynonymsLayerStored getSynonymsLayer() {
+        return ((SynonymsLayerStored) layersInOrder[LexiconLayerTag.SYNONYMS.ordinal()]);
+    }
+    
+    @XmlElement(name = SyllabificationsLayerStored.XML_NAME)
+    protected void setSyllabificationsLayer(SyllabificationsLayerStored layer) {
+        layersInOrder[LexiconLayerTag.SYLLABIFICATIONS.ordinal()] = layer;
+    }
+
+    @Override
+    public SyllabificationsLayerStored getSyllabificationsLayer() {
+        return ((SyllabificationsLayerStored) layersInOrder[LexiconLayerTag.SYLLABIFICATIONS.ordinal()]);
     }
 
     protected void afterUnmarshal(Unmarshaller u, Object parent) {

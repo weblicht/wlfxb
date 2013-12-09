@@ -23,7 +23,7 @@
  */
 package eu.clarin.weblicht.wlfxb.lx.xb;
 
-import eu.clarin.weblicht.wlfxb.lx.api.Lemma;
+import eu.clarin.weblicht.wlfxb.lx.api.Entry;
 import eu.clarin.weblicht.wlfxb.lx.api.PosTag;
 import eu.clarin.weblicht.wlfxb.lx.api.PosTagsLayer;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
@@ -57,18 +57,19 @@ public class PosTagsLayerStored extends LexiconLayerStoredAbstract implements Po
         this.connector = connector;
     }
 
+    @Override
     protected void setLayersConnector(LexiconLayersConnector connector) {
         this.connector = connector;
         for (PosTagStored tag : tags) {
-            connect(tag, connector.lemmaId2ItsLemma.get(tag.lemRef));
+            connect(tag, connector.entryId2ItsEntry.get(tag.entryId));
         }
     }
 
-    private void connect(PosTagStored tag, Lemma lemma) {
-        if (!connector.lemma2ItsTags.containsKey(lemma)) {
-            connector.lemma2ItsTags.put(lemma, new ArrayList<PosTag>());
+    private void connect(PosTagStored tag, Entry entry) {
+        if (!connector.entry2ItsTags.containsKey(entry)) {
+            connector.entry2ItsTags.put(entry, new ArrayList<PosTag>());
         }
-        connector.lemma2ItsTags.get(lemma).add(tag);
+        connector.entry2ItsTags.get(entry).add(tag);
     }
 
     @Override
@@ -93,9 +94,9 @@ public class PosTagsLayerStored extends LexiconLayerStoredAbstract implements Po
     }
 
     @Override
-    public PosTag[] getTags(Lemma lemma) {
-        if (connector.lemma2ItsTags.containsKey(lemma)) {
-            List<PosTag> tagsList = connector.lemma2ItsTags.get(lemma);
+    public PosTag[] getTags(Entry entry) {
+        if (connector.entry2ItsTags.containsKey(entry)) {
+            List<PosTag> tagsList = connector.entry2ItsTags.get(entry);
             PosTag[] posTags = tagsList.toArray(new PosTag[tagsList.size()]);
             return posTags;
         }
@@ -103,21 +104,21 @@ public class PosTagsLayerStored extends LexiconLayerStoredAbstract implements Po
     }
 
     @Override
-    public Lemma getLemma(PosTag tag) {
+    public Entry getEntry(PosTag tag) {
         if (tag instanceof PosTagStored) {
             PosTagStored tagStored = (PosTagStored) tag;
-            return connector.lemmaId2ItsLemma.get(tagStored.lemRef);
+            return connector.entryId2ItsEntry.get(tagStored.entryId);
         } else {
             return null;
         }
     }
 
     @Override
-    public PosTag addTag(String tagString, Lemma tagLemma) {
+    public PosTag addTag(String tagString, Entry tagEntry) {
         PosTagStored tag = new PosTagStored();
         tag.tagString = tagString;
-        tag.lemRef = tagLemma.getID();
-        connect(tag, tagLemma);
+        tag.entryId = tagEntry.getID();
+        connect(tag, tagEntry);
         tags.add(tag);
         return tag;
     }

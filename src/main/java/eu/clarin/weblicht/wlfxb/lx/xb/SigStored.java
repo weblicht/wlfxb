@@ -23,6 +23,10 @@ package eu.clarin.weblicht.wlfxb.lx.xb;
 import eu.clarin.weblicht.wlfxb.lx.api.Sig;
 import javax.xml.bind.annotation.*;
 
+/**
+ * @author Yana Panchenko
+ *
+ */
 @XmlRootElement(name = SigStored.XML_NAME)
 @XmlAccessorType(XmlAccessType.NONE)
 public class SigStored implements Sig {
@@ -31,12 +35,12 @@ public class SigStored implements Sig {
     @XmlAttribute(name = "measure")
     private String measure;
     @XmlValue
-    private double value;
+    private float value;
 
     SigStored() {
     }
 
-    SigStored(String measure, double value) {
+    SigStored(String measure, float value) {
         this.measure = measure;
         this.value = value;
     }
@@ -47,7 +51,7 @@ public class SigStored implements Sig {
     }
 
     @Override
-    public double getValue() {
+    public float getValue() {
         return value;
     }
 

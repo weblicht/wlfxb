@@ -18,9 +18,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-/**
- *
- */
 package eu.clarin.weblicht.wlfxb.lx.xb;
 
 import eu.clarin.weblicht.wlfxb.lx.api.PosTag;
@@ -38,14 +35,12 @@ import javax.xml.bind.annotation.XmlValue;
 public class PosTagStored implements PosTag {
 
     public static final String XML_NAME = "tag";
-    //public static final String ID_PREFIX = "p_";
-    //TODO rename attributes!!!
     @XmlValue
     protected String tagString;
     @XmlAttribute(name = CommonAttributes.ID)
     private String tagId;
-    @XmlAttribute(name = CommonAttributes.LEMMA_REFERENCE, required = true)
-    protected String lemRef;
+    @XmlAttribute(name = CommonAttributes.ENTRY_REFERENCE, required = true)
+    protected String entryId;
 
     @Override
     public String getString() {
@@ -59,7 +54,7 @@ public class PosTagStored implements PosTag {
             sb.append(tagId);
             sb.append(" -> ");
         }
-        sb.append(tagString).append("[").append(lemRef).append("]");
+        sb.append(tagString).append("[").append(entryId).append("]");
         return sb.toString();
     }
 }

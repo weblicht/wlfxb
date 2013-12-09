@@ -4,7 +4,7 @@
 package eu.clarin.weblicht.wlfxb.lx.test;
 
 import eu.clarin.weblicht.wlfxb.io.LexiconStreamed;
-import eu.clarin.weblicht.wlfxb.lx.api.Lemma;
+import eu.clarin.weblicht.wlfxb.lx.api.Entry;
 import eu.clarin.weblicht.wlfxb.lx.api.Lexicon;
 import eu.clarin.weblicht.wlfxb.lx.api.PosTag;
 import eu.clarin.weblicht.wlfxb.lx.api.PosTagsLayer;
@@ -26,9 +26,9 @@ public class LexiconPosTagsTest extends AbstractLexiconTest {
     private static final String EXPECTED_OUTPUT_FILE = "/data/lx-pos/output-expected.xml";
     private static final String OUTPUT_FILE = "/tmp/output.xml";
     private static final EnumSet<LexiconLayerTag> layersToReadBeforePosTagging =
-            EnumSet.of(LexiconLayerTag.LEMMAS);
+            EnumSet.of(LexiconLayerTag.ENTRIES);
     private static final EnumSet<LexiconLayerTag> layersToReadAfterPosTagging =
-            EnumSet.of(LexiconLayerTag.LEMMAS, LexiconLayerTag.POSTAGS);
+            EnumSet.of(LexiconLayerTag.ENTRIES, LexiconLayerTag.POSTAGS);
     public static final Map<String, String> lemma2Pos = new HashMap<String, String>();
 
     static {
@@ -46,14 +46,14 @@ public class LexiconPosTagsTest extends AbstractLexiconTest {
     public void testRead() throws Exception {
         Lexicon lex = read(INPUT_FILE_WITH_LAYER, layersToReadAfterPosTagging);
         PosTagsLayer layer = lex.getPosTagsLayer();
-        Assert.assertEquals(10, layer.size());
+        Assert.assertEquals(9, layer.size());
         Assert.assertEquals("NE", layer.getTag(0).getString());
-        Assert.assertEquals(lex.getLemmasLayer().getLemma(0), layer.getLemma(layer.getTag(0)));
-        Assert.assertEquals(lex.getLemmasLayer().getLemma(3), layer.getLemma(layer.getTag(3)));
-        Assert.assertEquals(lex.getLemmasLayer().getLemma(3), layer.getLemma(layer.getTag(4)));
+        Assert.assertEquals(lex.getEntriesLayer().getEntry(0), layer.getEntry(layer.getTag(0)));
+        Assert.assertEquals(lex.getEntriesLayer().getEntry(3), layer.getEntry(layer.getTag(3)));
+        Assert.assertEquals(lex.getEntriesLayer().getEntry(3), layer.getEntry(layer.getTag(4)));
         Assert.assertArrayEquals(
                 new PosTag[]{layer.getTag(3), layer.getTag(4)},
-                layer.getTags(lex.getLemmasLayer().getLemma(3)));
+                layer.getTags(lex.getEntriesLayer().getEntry(3)));
     }
 
     @Test
@@ -62,8 +62,8 @@ public class LexiconPosTagsTest extends AbstractLexiconTest {
         System.out.println(lex);
         // create part of speech layer, it's empty at first
         PosTagsLayer tags = lex.createPosTagsLayer("STTS");
-        for (int i = 0; i < lex.getLemmasLayer().size(); i++) {
-            Lemma lemma = lex.getLemmasLayer().getLemma(i);
+        for (int i = 0; i < lex.getEntriesLayer().size(); i++) {
+            Entry lemma = lex.getEntriesLayer().getEntry(i);
             String posTag = tag(lemma.getString());
             // create and add part-of-speech tag to the tags layer
             tags.addTag(posTag, lemma);

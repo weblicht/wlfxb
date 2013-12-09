@@ -33,6 +33,7 @@ public abstract class CommonAttributes {
     public static final String TOKEN_SEQUENCE_REFERENCE = "tokenIDs";
     public static final String TOKEN_REFERENCE = "tokID";
     public static final String LEMMA_REFERENCE = "lemID";
+    public static final String ENTRY_REFERENCE = "entryID";
     public static final String NONCONSECUTIVE_LEMMAS_REFERENCE = "lemmaRefs";
     public static final String CHAR_OFFSETS = "charOffsets";
     public static final String START_CHAR_OFFSET = "start";

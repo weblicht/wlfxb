@@ -1,0 +1,12 @@
+<cooccurrences xmlns="http://www.dspin.de/data/lexicon">
+      <cooccurrence func="sentence">
+      	<sig>2.7</sig>
+        <term entryID="e2"></term>
+        <term>Banana</term>
+      </cooccurrence>
+      <cooccurrence func="left-neighbour">
+      	<sig>2.0</sig>
+        <term entryID="e7"></term>
+        <term>Brot</term>
+      </cooccurrence>
+</cooccurrences>

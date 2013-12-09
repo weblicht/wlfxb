@@ -1,11 +1,10 @@
-<frequencies xmlns="http://www.dspin.de/data/lexicon">
-      <frequency lemID="l1">100</frequency>
-      <frequency lemID="l2">101</frequency>
-      <frequency lemID="l3">102</frequency>
-      <frequency lemID="l4">103</frequency>
-      <frequency lemID="l5">104</frequency>
-      <frequency lemID="l6">105</frequency>
-      <frequency lemID="l7">106</frequency>
-      <frequency lemID="l8">107</frequency>
-      <frequency lemID="l9">108</frequency>
+<frequencies type="absolute" xmlns="http://www.dspin.de/data/lexicon">
+      <frequency entryID="e1">100</frequency>
+      <frequency entryID="e2">101</frequency>
+      <frequency entryID="e3">102</frequency>
+      <frequency entryID="e4">103</frequency>
+      <frequency entryID="e5">104</frequency>
+      <frequency entryID="e6">105</frequency>
+      <frequency entryID="e7">106</frequency>
+      <frequency entryID="e8">107</frequency>
 </frequencies>
