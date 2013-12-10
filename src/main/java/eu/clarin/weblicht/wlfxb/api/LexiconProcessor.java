@@ -20,19 +20,20 @@
  */
 package eu.clarin.weblicht.wlfxb.api;
 
+import eu.clarin.weblicht.wlfxb.lx.api.Lexicon;
 import eu.clarin.weblicht.wlfxb.tc.api.TextCorpus;
-import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
+import eu.clarin.weblicht.wlfxb.lx.xb.LexiconLayerTag;
 import java.util.EnumSet;
 
 /**
  * A linguistic annotations processing tool. The tool processes existing 
- * linguistic layers of TextCorpus and produces new linguistic layers in TCF.
+ * linguistic layers of Lexicon and produces new linguistic layers in TCF.
  * 
  * @author akislev
  */
-public interface TextCorpusProcessor {
+public interface LexiconProcessor {
 
-    public EnumSet<TextCorpusLayerTag> getRequiredLayers();
+    public EnumSet<LexiconLayerTag> getRequiredLayers();
 
-    public void process(TextCorpus textCorpus) throws TextCorpusProcessorException;
+    public void process(Lexicon textCorpus) throws LexiconProcessorException;
 }
