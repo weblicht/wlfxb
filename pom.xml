@@ -44,6 +44,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    
+    <scm>
+        <url>https://dspin.sfs.uni-tuebingen.de/svn/weblicht/libraries/wlfxb/trunk</url>
+        <connection>scm:svn:https://dspin.sfs.uni-tuebingen.de/svn/weblicht/libraries/wlfxb/trunk</connection>
+        <developerConnection>scm:svn:https://dspin.sfs.uni-tuebingen.de/svn/weblicht/libraries/wlfxb/trunk</developerConnection>
+    </scm>
 
     <dependencies>
         <dependency>
@@ -86,11 +92,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     </execution>
                 </executions>
             </plugin>
+            <!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
                 <version>2.2</version>
             </plugin>
+            -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -133,6 +141,31 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     <target>1.6</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                  <!-- can be helpful for the developers that use wlfxb to look
+                    at the sources of some tests, to know how accessing/creating
+                    annotations work -->
+                  <execution>
+                    <id>attach-sources</id>
+                    <phase>verify</phase>
+                    <goals>
+                      <goal>test-jar-no-fork</goal>
+                    </goals>
+                    <configuration>
+                        <excludes>
+                          <exclude>**/tclayers/test/*</exclude>
+                          <exclude>**/lxlayers/test/*</exclude>
+                          <exclude>**/edlayers/test/*</exclude>
+                          <exclude>**/layer-input*.xml</exclude>
+                        </excludes>
+                    </configuration>
+                  </execution>
+                </executions>
+              </plugin>
         </plugins>
     </build>
 </project>
