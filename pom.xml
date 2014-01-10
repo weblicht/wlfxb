@@ -145,14 +145,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
                 <artifactId>maven-source-plugin</artifactId>
                 <version>2.2.1</version>
                 <executions>
-                  <!-- can be helpful for the developers that use wlfxb to look
-                    at the sources of some tests, to know how accessing/creating
-                    annotations work -->
+                  <!-- Sources and test sources attached.
+                    Test sources - because it can be helpful for the developers 
+                    that use wlfxb to inspect some test cases, - to know how 
+                    accessing/creating annotations in TCF works. -->
                   <execution>
                     <id>attach-sources</id>
                     <phase>verify</phase>
                     <goals>
                       <goal>test-jar-no-fork</goal>
+                      <goal>jar-no-fork</goal>
                     </goals>
                     <configuration>
                         <excludes>
