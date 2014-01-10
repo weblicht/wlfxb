@@ -1,34 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/d-spin_0_4.rnc" type="application/relax-ng-compact-syntax"?>
-
 <D-Spin xmlns="http://www.dspin.de/data" version="0.4">
-
 <MetaData xmlns="http://www.dspin.de/data/metadata"/>
-
-<TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
-    <tokens>
-        <token ID="t_0">Peter</token>
-        <token ID="t_1">aß</token>
-        <token ID="t_2">eine</token>
-        <token ID="t_3">Käsepizza</token>
-        <token ID="t_4">.</token>
-        <token ID="t_5">Sie</token>
-        <token ID="t_6">schmeckte</token>
-        <token ID="t_7">ihm</token>
-        <token ID="t_8">.</token>
-    </tokens>
-    <textstructure>
-        <textspan start="t_0" end="t_4" type="page">
-            <textspan type="number">1</textspan>
-        </textspan>
-        <textspan type="line"/>
-        <textspan type="paragraph" start="t_0" end="t_8"/>
-        <textspan type="line" start="t_0" end="t_2"/>
-        <textspan type="line" start="t_3" end="t_4"/>
-        <textspan type="page" start="t_5" end="t_8"/>
-        <textspan type="line" start="t_5" end="t_6"/>
-        <textspan type="line" start="t_7" end="t_8"/>
-        <textspan type="line"/>
-    </textstructure>
-</TextCorpus>
+<TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de"><tokens><token ID="t_0">Peter</token><token ID="t_1">aß</token><token ID="t_2">eine</token><token ID="t_3">Käsepizza</token><token ID="t_4">.</token><token ID="t_5">Sie</token><token ID="t_6">schmeckte</token><token ID="t_7">ihm</token><token ID="t_8">.</token></tokens><textstructure><textspan start="t_0" end="t_4" type="page"><textspan type="number">1</textspan></textspan><textspan type="line"/><textspan type="paragraph" start="t_0" end="t_8"/><textspan type="line" start="t_0" end="t_2"/><textspan type="line" start="t_3" end="t_4"/><textspan type="page" start="t_5" end="t_8"/><textspan type="line" start="t_5" end="t_6"/><textspan type="line" start="t_7" end="t_8"/><textspan type="line"/></textstructure></TextCorpus>
 </D-Spin>
