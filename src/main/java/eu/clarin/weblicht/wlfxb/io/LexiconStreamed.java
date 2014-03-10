@@ -44,7 +44,8 @@ import javax.xml.stream.events.XMLEvent;
  * used for accessing specified annotation layers and (optionally) adding any
  * new annotation layers from/to Lexicon. Only specified in the constructor
  * annotation layers are loaded into the memory. In case all the annotation
- * layers should be loaded into the memory, use {@link eu.clarin.weblicht.wlfxb.xb.WLData} class.
+ * layers should be loaded into the memory, use
+ * {@link eu.clarin.weblicht.wlfxb.xb.WLData} class.
  *
  * @author Yana Panchenko
  */
@@ -56,6 +57,7 @@ public class LexiconStreamed extends LexiconStored {
     private XMLEventWriter xmlEventWriter;
     private XmlReaderWriter xmlReaderWriter;
     private static final int LAYER_INDENT_RELATIVE = 1;
+    private boolean closed = false;
 
     /**
      * Creates a <tt>LexiconStreamed</tt> from the given TCF input stream and
@@ -358,17 +360,25 @@ public class LexiconStreamed extends LexiconStored {
      * occurs.
      */
     public void close() throws WLFormatException {
-        boolean[] layersRead = new boolean[super.layersInOrder.length];
-        for (LexiconLayerTag layerRead : layersToRead) {
-            layersRead[layerRead.ordinal()] = true;
-        }
 
-        for (int i = 0; i < super.layersInOrder.length; i++) {
-            if (super.layersInOrder[i] != null && !layersRead[i] // && !super.layersInOrder[i].isEmpty() 
-                    ) {
-                marshall(super.layersInOrder[i]);
-            }
+        if (closed) {
+            return;
         }
-        xmlReaderWriter.readWriteToTheEnd();
+        closed = true;
+        try {
+            boolean[] layersRead = new boolean[super.layersInOrder.length];
+            for (LexiconLayerTag layerRead : layersToRead) {
+                layersRead[layerRead.ordinal()] = true;
+            }
+
+            for (int i = 0; i < super.layersInOrder.length; i++) {
+                if (super.layersInOrder[i] != null && !layersRead[i] // && !super.layersInOrder[i].isEmpty() 
+                        ) {
+                    marshall(super.layersInOrder[i]);
+                }
+            }
+        } finally {
+            xmlReaderWriter.readWriteToTheEnd();
+        }
     }
 }

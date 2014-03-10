@@ -27,7 +27,7 @@ import javax.xml.stream.events.XMLEvent;
 /**
  * Class <tt>XmlReaderWriter</tt> helps to work with TCF XML underlying streams.
  * Should not be used directly.
- * 
+ *
  * @author Yana Panchenko
  */
 public class XmlReaderWriter {
@@ -194,14 +194,13 @@ public class XmlReaderWriter {
                 xmlEventReader.close();
             }
         } catch (XMLStreamException e) {
-            throw new WLFormatException(e);
-        }
-
-        try {
-            if (xmlEventWriter != null) {
-                xmlEventWriter.close();
+            try {
+                if (xmlEventWriter != null) {
+                    xmlEventWriter.close();
+                }
+            } catch (XMLStreamException e2) {
+                throw new WLFormatException(e2);
             }
-        } catch (XMLStreamException e) {
             throw new WLFormatException(e);
         }
 

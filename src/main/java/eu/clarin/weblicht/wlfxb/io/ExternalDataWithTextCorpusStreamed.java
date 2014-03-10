@@ -70,6 +70,7 @@ public class ExternalDataWithTextCorpusStreamed {
     private XMLEventWriter xmlEventWriter;
     private XmlReaderWriter xmlReaderWriter;
     private static final int LAYER_INDENT_RELATIVE = 1;
+    private boolean closed = false;
 
     /**
      * Creates a <tt>ExternalDataWithTextCorpusStreamed</tt> from the given TCF
@@ -467,6 +468,11 @@ public class ExternalDataWithTextCorpusStreamed {
      * @throws WLFormatException if an error in input format or an I/O error occurs.
      */
     public void close() throws WLFormatException {
+        
+        if (closed) {
+            return;
+        }
+        closed = true;
 
         XMLEventFactory eventFactory = XMLEventFactory.newInstance();
         XMLEvent e;

@@ -29,6 +29,7 @@ import eu.clarin.weblicht.wlfxb.tc.api.TextCorpusLayer;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerStoredAbstract;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusStored;
+import java.io.Closeable;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.EnumSet;
@@ -42,15 +43,15 @@ import javax.xml.stream.*;
 import javax.xml.stream.events.XMLEvent;
 
 /**
- * Class <tt>TextCorpusStreamed</tt>  is used for accessing specified annotation 
- * layers and (optionally) adding any new annotation layers from/to TextCorpus. 
- * Only specified in the constructor annotation layers are loaded into the memory. 
- * In case all the annotation layers should be loaded into the memory, use 
- * {@link eu.clarin.weblicht.wlfxb.xb.WLData} class.
+ * Class <tt>TextCorpusStreamed</tt> is used for accessing specified annotation
+ * layers and (optionally) adding any new annotation layers from/to TextCorpus.
+ * Only specified in the constructor annotation layers are loaded into the
+ * memory. In case all the annotation layers should be loaded into the memory,
+ * use {@link eu.clarin.weblicht.wlfxb.xb.WLData} class.
  *
  * @author Yana Panchenko
  */
-public class TextCorpusStreamed extends TextCorpusStored {
+public class TextCorpusStreamed extends TextCorpusStored implements Closeable {
 
     private EnumSet<TextCorpusLayerTag> layersToRead;
     private EnumSet<TextCorpusLayerTag> layersFound = EnumSet.noneOf(TextCorpusLayerTag.class);
@@ -59,6 +60,7 @@ public class TextCorpusStreamed extends TextCorpusStored {
     private XMLEventWriter xmlEventWriter;
     private XmlReaderWriter xmlReaderWriter;
     private static final int LAYER_INDENT_RELATIVE = 1;
+    private boolean closed = false;
 
     /**
      * Creates a <tt>TextCorpusStreamed</tt> from the given TCF input stream and
@@ -367,20 +369,29 @@ public class TextCorpusStreamed extends TextCorpusStored {
      * @throws WLFormatException if an error in input format or an I/O error
      * occurs.
      */
+    @Override
     public void close() throws WLFormatException {
-        boolean[] layersRead = new boolean[super.layersInOrder.length];
-        for (TextCorpusLayerTag layerRead : layersToRead) {
-            layersRead[layerRead.ordinal()] = true;
-        }
 
-        for (int i = 0; i < super.layersInOrder.length; i++) {
-            // if it's a newly added layer
-            if (super.layersInOrder[i] != null && !layersRead[i] //&& !super.layersInOrder[i].isEmpty() 
-                    ) {
-                marshall(super.layersInOrder[i]);
-            }
+        if (closed) {
+            return;
         }
-        xmlReaderWriter.readWriteToTheEnd();
+        closed = true;
+        try {
+            boolean[] layersRead = new boolean[super.layersInOrder.length];
+            for (TextCorpusLayerTag layerRead : layersToRead) {
+                layersRead[layerRead.ordinal()] = true;
+            }
+
+            for (int i = 0; i < super.layersInOrder.length; i++) {
+                // if it's a newly added layer
+                if (super.layersInOrder[i] != null && !layersRead[i] //&& !super.layersInOrder[i].isEmpty() 
+                        ) {
+                    marshall(super.layersInOrder[i]);
+                }
+            }
+        } finally {
+            xmlReaderWriter.readWriteToTheEnd();
+        }
     }
 
     private void getLayersToReadWithDependencies(EnumSet<TextCorpusLayerTag> layersToRead) {

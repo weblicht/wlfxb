@@ -20,6 +20,8 @@
  */
 package eu.clarin.weblicht.wlfxb.io;
 
+import java.io.IOException;
+
 
 /**
  * Indicates an exceptional condition that occurred due to errors or 
@@ -27,7 +29,7 @@ package eu.clarin.weblicht.wlfxb.io;
  * 
  * @author Yana Panchenko
  */
-public class WLFormatException extends Exception {
+public class WLFormatException extends IOException {
 
     /**
      * Creates an exception with the given message.
