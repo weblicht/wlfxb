@@ -16,6 +16,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
 
     <groupId>eu.clarin.weblicht</groupId>
     <artifactId>wlfxb</artifactId>
@@ -23,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
     <packaging>jar</packaging>
 
     <name>wlfxb</name>
-    <url>http://weblicht.sfs.uni-tuebingen.de/</url>
+    <url>https://weblicht.sfs.uni-tuebingen.de/</url>
     <inceptionYear>2013</inceptionYear>
     <description>A library for creating and processing of TCF data streams.</description>
     
@@ -45,10 +51,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
     </properties>
     
     <scm>
-        <url>https://dspin.sfs.uni-tuebingen.de/svn/weblicht/libraries/wlfxb/trunk</url>
-        <connection>scm:svn:https://dspin.sfs.uni-tuebingen.de/svn/weblicht/libraries/wlfxb/trunk</connection>
-        <developerConnection>scm:svn:https://dspin.sfs.uni-tuebingen.de/svn/weblicht/libraries/wlfxb/trunk</developerConnection>
+        <url>git@github.com:weblicht/wlfxb.git</url>
+        <connection>scm:git:git@github.com:weblicht/wlfxb.git</connection>
+        <developerConnection>scm:git:git@github.com:weblicht/wlfxb.git</developerConnection>
     </scm>
+    
+    <developers>
+        <developer>
+            <id>yanapanchenko</id>
+            <name>Yana Panchenko</name>
+            <email>yana.panchenko@uni-tuebingen.de</email>
+        </developer>
+    </developers>
 
     <dependencies>
         <dependency>
@@ -160,6 +174,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
                   </execution>
                 </executions>
               </plugin>
+              <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
+    
 </project>
