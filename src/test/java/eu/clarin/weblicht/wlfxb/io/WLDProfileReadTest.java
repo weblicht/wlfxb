@@ -51,6 +51,9 @@ public class WLDProfileReadTest {
         InputStream is = this.getClass().getResourceAsStream(file);
         WLDProfile wldProfile = WLDProfiler.read(is);
         System.out.println(wldProfile);
+        if (wldProfile.getMetadata().getServices() != null) {
+            System.out.println(wldProfile.getMetadata().getServices().getToolchainCmd().getComponents().getWebServiceToolChain().getToolchain().getToolsInChain().get(0).getPID());
+        }
         System.out.println("--- READ TEST END ---");
         System.out.println();
         return wldProfile;

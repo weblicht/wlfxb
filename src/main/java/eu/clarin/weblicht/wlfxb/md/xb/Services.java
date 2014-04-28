@@ -18,44 +18,31 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-/**
- *
- */
 package eu.clarin.weblicht.wlfxb.md.xb;
 
+import eu.clarin.weblicht.bindings.cmd.chains.ToolchainCMD;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@Deprecated
-@XmlRootElement(name = "md")
-@XmlAccessorType(XmlAccessType.FIELD)
-public class MetaDataItem {
 
-    @XmlAttribute
-    private String value;
-    @XmlAttribute
-    private String name;
+@XmlRootElement(name = Services.XML_NAME)
+@XmlAccessorType(XmlAccessType.NONE)
+public class Services {
+    
+    public static final String XML_NAME = "Services";
+    
+    @XmlElement(name = "CMD", namespace = "http://www.clarin.eu/cmd/")
+    private ToolchainCMD toolchainCmd;
 
-    public MetaDataItem() {
-    }
-
-    protected MetaDataItem(String name, String value) {
-        this.name = name;
-        this.value = value;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getValue() {
-        return value;
+    public ToolchainCMD getToolchainCmd() {
+        return toolchainCmd;
     }
 
     @Override
     public String toString() {
-        return name + "=" + value;
+        return "Services{" + "toolchainCmd=" + toolchainCmd + '}';
     }
+    
 }

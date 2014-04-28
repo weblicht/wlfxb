@@ -18,44 +18,38 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-/**
- *
- */
 package eu.clarin.weblicht.wlfxb.md.xb;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlValue;
+
 
 @Deprecated
-@XmlRootElement(name = "md")
-@XmlAccessorType(XmlAccessType.FIELD)
-public class MetaDataItem {
+@XmlRootElement(name = Source.XML_NAME)
+@XmlAccessorType(XmlAccessType.NONE)
+public class Source {
+    
+    public static final String XML_NAME = "source";
+    
+    @XmlValue
+    private String text;
 
-    @XmlAttribute
-    private String value;
-    @XmlAttribute
-    private String name;
-
-    public MetaDataItem() {
+    protected Source() {
+        this.text = "";
     }
 
-    protected MetaDataItem(String name, String value) {
-        this.name = name;
-        this.value = value;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getValue() {
-        return value;
+    public String getText() {
+        return text;
     }
 
     @Override
     public String toString() {
-        return name + "=" + value;
+        StringBuilder sb = new StringBuilder(XML_NAME);
+        sb.append(" : ");
+        sb.append(text);
+        return sb.toString();
     }
+    
 }

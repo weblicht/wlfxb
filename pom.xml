@@ -63,6 +63,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
             <email>yana.panchenko@uni-tuebingen.de</email>
         </developer>
     </developers>
+    
+       <!-- THIS IS TEMPORARY! REMOVE WHEN bindings are moved to MAVEN CENTRAL! -->
+   <repositories>
+        <repository>
+            <id>clarin</id>
+            <url>http://catalog.clarin.eu/ds/nexus/content/repositories/Clarin/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -71,6 +79,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
             <version>4.10</version>
             <scope>test</scope>
             <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>bindings</artifactId>
+            <version>1.0.4</version>
         </dependency>
     </dependencies>
     
