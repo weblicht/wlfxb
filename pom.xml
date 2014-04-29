@@ -63,14 +63,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
             <email>yana.panchenko@uni-tuebingen.de</email>
         </developer>
     </developers>
-    
-       <!-- THIS IS TEMPORARY! REMOVE WHEN bindings are moved to MAVEN CENTRAL! -->
-   <repositories>
-        <repository>
-            <id>clarin</id>
-            <url>http://catalog.clarin.eu/ds/nexus/content/repositories/Clarin/</url>
-        </repository>
-    </repositories>
 
     <dependencies>
         <dependency>
@@ -82,8 +74,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>bindings</artifactId>
-            <version>1.0.4</version>
+            <artifactId>oaipmh-cmdi-bindings</artifactId>
+            <version>1.0.5</version>
         </dependency>
     </dependencies>
     
@@ -165,43 +157,59 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
                 <artifactId>maven-source-plugin</artifactId>
                 <version>2.2.1</version>
                 <executions>
-                  <!-- Sources and test sources attached.
+                    <!-- Sources and test sources attached.
                     Test sources - because it can be helpful for the developers 
                     that use wlfxb to inspect some test cases, - to know how 
                     accessing/creating annotations in TCF works. -->
-                  <execution>
-                    <id>attach-sources</id>
-                    <phase>verify</phase>
-                    <goals>
-                      <goal>test-jar-no-fork</goal>
-                      <goal>jar-no-fork</goal>
-                    </goals>
-                    <configuration>
-                        <excludes>
-                          <exclude>**/tclayers/test/*</exclude>
-                          <exclude>**/lxlayers/test/*</exclude>
-                          <exclude>**/edlayers/test/*</exclude>
-                          <exclude>**/layer-input*.xml</exclude>
-                        </excludes>
-                    </configuration>
-                  </execution>
-                </executions>
-              </plugin>
-              <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
-                <executions>
                     <execution>
-                        <id>sign-artifacts</id>
+                        <id>attach-sources</id>
                         <phase>verify</phase>
                         <goals>
-                            <goal>sign</goal>
+                            <goal>test-jar-no-fork</goal>
+                            <goal>jar-no-fork</goal>
                         </goals>
+                        <configuration>
+                            <excludes>
+                                <exclude>**/tclayers/test/*</exclude>
+                                <exclude>**/lxlayers/test/*</exclude>
+                                <exclude>**/edlayers/test/*</exclude>
+                                <exclude>**/layer-input*.xml</exclude>
+                            </excludes>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
+    
+    <profiles>
+        <profile>
+            <id>release-sign-artifacts</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.1</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
     
 </project>
