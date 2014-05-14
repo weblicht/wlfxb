@@ -73,8 +73,12 @@ public class TestUtils {
         boolean equal = true;
         for (Object le : list) {
             Difference d = (Difference) le;
-            // ignore differences in namespace prefix names
-            if (!d.equals(DifferenceEngine.NAMESPACE_PREFIX)) {
+            // ignore certain differences
+            if (d.equals(DifferenceEngine.NAMESPACE_PREFIX)) {
+                // ignore differences in namespace prefix names
+            } else if (d.equals(DifferenceEngine.SCHEMA_LOCATION)) {
+                // ignore at which place the schemaLocation is inserted
+            } else {
                 equal = false;
                 break;
             }

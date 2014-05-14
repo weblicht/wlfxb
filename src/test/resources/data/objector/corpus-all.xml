@@ -2,183 +2,208 @@
 
 <D-Spin xmlns="http://www.dspin.de/data" version="0.4">
 
- <MetaData xmlns="http://www.dspin.de/data/metadata">
-  	<tool>
-  		<source>IMS, Uni Stuttgart</source>
-  		<date>2011-12-08</date>
-  	</tool>
-  	<tool>
-  		<source>Uni Tübingen</source>
-  		<date>2011-12-08</date>
-  	</tool>
- </MetaData>
+    <MetaData xmlns="http://www.dspin.de/data/metadata">
+        <Services>
+            <cmd:CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cmd="http://www.clarin.eu/cmd/" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd">
+                <cmd:Resources>
+                    <cmd:ResourceProxyList></cmd:ResourceProxyList>
+                    <cmd:JournalFileProxyList></cmd:JournalFileProxyList>
+                    <cmd:ResourceRelationList></cmd:ResourceRelationList>
+                </cmd:Resources>
+                <cmd:Components>
+                    <cmd:WebServiceToolChain>
+                        <cmd:GeneralInfo>
+                            <cmd:Descriptions>
+                                <cmd:Description></cmd:Description>
+                            </cmd:Descriptions>
+                            <cmd:ResourceName>Custom chain</cmd:ResourceName>
+                            <cmd:ResourceClass>Toolchain</cmd:ResourceClass>
+                        </cmd:GeneralInfo>
+                        <cmd:Toolchain>
+                            <cmd:ToolInChain>
+                                <cmd:PID>11858/00-1778-0000-0004-BA56-7</cmd:PID>
+                                <cmd:Parameter name="lang" value="de"></cmd:Parameter>
+                                <cmd:Parameter name="type" value="text/plain"></cmd:Parameter>
+                            </cmd:ToolInChain>
+                            <cmd:ToolInChain>
+                                <cmd:PID>http://hdl.handle.net/11858/00-247C-0000-0007-3736-B</cmd:PID>
+                                <cmd:Parameter name="lang" value="de"></cmd:Parameter>
+                            </cmd:ToolInChain>
+                            <cmd:ToolInChain>
+                                <cmd:PID>11858/00-1778-0000-0004-BA92-E</cmd:PID>
+                                <cmd:Parameter name="lang" value="de"></cmd:Parameter>
+                            </cmd:ToolInChain>
+                            <cmd:ToolInChain>
+                                <cmd:PID>http://hdl.handle.net/11022/0000-0000-1D84-B</cmd:PID>
+                                <cmd:Parameter value="tuebadz-r8" name="model"></cmd:Parameter>
+                            </cmd:ToolInChain>
+                        </cmd:Toolchain>
+                    </cmd:WebServiceToolChain>
+                </cmd:Components>
+            </cmd:CMD>
+        </Services>
+    </MetaData>
 
- <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
-   
-  <text>Peter aß eine Käsepizza. Sie schmeckte ihm.</text>
-   
-  <tokens charOffsets="true">
-   <token ID="t1">Peter</token>
-   <token ID="t2">aß</token>
-   <token ID="t3">eine</token>
-   <token ID="t4">Käsepizza</token>
-   <token ID="t5">.</token>
-   <token ID="t6">Sie</token>
-   <token ID="t7">schmeckte</token>
-   <token ID="t8">ihm</token>
-   <token ID="t9">.</token>
-  </tokens>
-   
-  <sentences charOffsets="true">
-   <sentence ID="s1" start="1" end="20" tokenIDs="t1 t2 t3 t4 t5"/>
-   <sentence ID="s2" start="22" end="39" tokenIDs="t6 t7 t8 t9"/>
-  </sentences>
-   
-  <POStags tagset="STTS">
-   <tag tokenIDs="t1">NE</tag>
-   <tag tokenIDs="t2">VVFIN</tag>
-   <tag tokenIDs="t3">ART</tag>
-   <tag tokenIDs="t4">NE</tag>
-   <tag tokenIDs="t5">$.</tag>
-   <tag tokenIDs="t6">PPER</tag>
-   <tag tokenIDs="t7">VVFIN</tag>
-   <tag tokenIDs="t8">PPER</tag>
-   <tag tokenIDs="t9">$.</tag>
-  </POStags>
-   
-  <lemmas>
-   <lemma ID="l1" tokenIDs="t1">Peter</lemma>
-   <lemma ID="l2" tokenIDs="t2">essen</lemma>
-   <lemma ID="l3" tokenIDs="t3">ein</lemma>
-   <lemma ID="l4" tokenIDs="t4">Käsepizza</lemma>
-   <lemma ID="l5" tokenIDs="t5">.</lemma>
-   <lemma ID="l6" tokenIDs="t6">sie</lemma>
-   <lemma ID="l7" tokenIDs="t7">schmecken</lemma>
-   <lemma ID="l8" tokenIDs="t8">er</lemma>
-   <lemma ID="l9" tokenIDs="t9">.</lemma>
-  </lemmas>
-   
-  <morphology segmentation="true">
-    <analysis tokenIDs="t4">
-      <tag>
-        <fs>
-          <f name="cat">noun</f>
-          <f name="case">acc</f>
-          <f name="gender">fem</f>
-          <f name="number">singular</f>
-        </fs>
-      </tag>
-      <segmentation>
-        <segment cat="noun" start="0" end="9">
-          <segment type="stem" cat="noun" func="comp" start="0" end="4">
-            Käse
-          </segment>
-          <segment type="stem" cat="noun" func="base" start="4" end="9">
-            Pizza
-          </segment>
-        </segment>
-      </segmentation>
-    </analysis>
-  </morphology>
-   
-  <namedEntities type="MUC1990">
-    <entity class="PERSON" tokenIDs="t1"/>
-  </namedEntities>
-   
-  <WordSplittings type="hyphenation">
-    <split tokID="t4">4</split>
-  </WordSplittings> 
-   
-  <Phonetics transcription="IPA">
-    <pron tokID="t7">ʃmekən</pron>
-  </Phonetics> 
-   
-  <matches>
-    <query type="cqp">tb_lemma=&quot;Peter&quot; | tb_lemma=&quot;schmecken&quot;</query>
-   <corpus name="wcorp-1" pid="some-pid">
-    <item tokenIDs="t1" srcIDs="5-1023">
-     <target name="tname" value="t1"></target>
-     <category name="cname" value="cval"></category>
-    </item>
-    <item tokenIDs="t7" srcIDs="16-117">
-     <target name="tname" value="t7"></target>
-     <category name="cname" value="cval"></category>
-    </item>
-   </corpus>
-  </matches>
-   
-  <parsing tagset="Tiger">
-   <parse>
-    <constituent ID="c1" cat="TOP">
-     <constituent ID="c2" cat="S-TOP">
-      <constituent ID="c3" cat="NP-SB">
-       <constituent ID="c4" cat="PN-HD-Nom.Sg">
-        <constituent ID="c5" cat="NE-HD-Nom.Sg" tokenIDs="t1"/>
-       </constituent>
-      </constituent>
-      <constituent cat="VVFIN-HD" ID="c6" tokenIDs="t2"/>
-      <constituent ID="c7" cat="NP-OA">
-       <constituent cat="ART-NK-Acc.Sg" ID="c8" tokenIDs="t3"/>
-       <constituent cat="NN-NK-Acc.Sg" ID="c9" tokenIDs="t4"/>
-      </constituent>
-     </constituent>
-     <constituent cat="\$." ID="c10" tokenIDs="t5"/>
-    </constituent>
-   </parse>
-   <parse>
-    <constituent ID="c11" cat="TOP">
-     <constituent ID="c12" cat="S-TOP">
-      <constituent ID="c13" cat="NP-SB">
-       <constituent cat="PPER-HD-Nom" ID="c14" tokenIDs="t6"/>
-      </constituent>
-      <constituent cat="VVFIN-HD" ID="c15" tokenIDs="t7"/>
-      <constituent ID="c16" cat="NP-DA">
-       <constituent cat="PPER-HD-Dat" ID="c17" tokenIDs="t8"/>
-      </constituent>
-     </constituent>
-     <constituent cat="\$." ID="c18" tokenIDs="t9"/>
-    </constituent>
-   </parse>
-  </parsing>
-   
-  <depparsing tagset="Tiger" multigovs="false" emptytoks="false">
-   <parse>
-    <dependency func="SUBJ" depIDs="t1" govIDs="t2"/>
-    <dependency func="SPEC" depIDs="t3" govIDs="t4"/>
-    <dependency func="OBJ" depIDs="t4" govIDs="t2"/>
-   </parse>
-   <parse>
-    <dependency func="SUBJ" depIDs="t6" govIDs="t7"/>
-    <dependency func="OBJ" depIDs="t8" govIDs="t7"/>
-   </parse>
-  </depparsing>
-  
-  <synonymy src="GermaNet">
-    <orthform lemmaRefs="l2">futtern, nehmen</orthform>
-  </synonymy>
-  <antonymy src="GermaNet">
-   <orthform lemmaRefs="l2">verhungern</orthform>
-  </antonymy>
-  <hyponymy src="GermaNet">
-   <orthform lemmaRefs="l2">Art essen, EssensOrt spezifiziert, EssensZeit spezifiziert, acheln, aufessen, aufnehmen, einverleiben, essen mit Instrument, hermachen, stärken, vertilgen, wegessen</orthform>
-   <orthform lemmaRefs="l7">abschmecken, gustieren, kosten, munden, probieren, versuchen, würzen</orthform>
-  </hyponymy>
-  <hyperonymy src="GermaNet">
-   <orthform lemmaRefs="l2">verzehren</orthform>
-   <orthform lemmaRefs="l7">Genuss essen, gut tun, guttun, perzipieren, wahrnehmen</orthform>
-  </hyperonymy>
-  
-  
-  <coreferences tagset="none">
-      <referent>
-        <coreference tokenIDs="t1"></coreference>
-        <coreference tokenIDs="t8"></coreference>
-      </referent>
-      <referent>
-        <coreference tokenIDs="t4"></coreference>
-        <coreference tokenIDs="t6"></coreference>
-      </referent>
-    </coreferences>
-    
- </TextCorpus>
+    <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+        <text>Peter aß eine Käsepizza. Sie schmeckte ihm.</text>
+        <tokens charOffsets="true">
+            <token ID="t1">Peter</token>
+            <token ID="t2">aß</token>
+            <token ID="t3">eine</token>
+            <token ID="t4">Käsepizza</token>
+            <token ID="t5">.</token>
+            <token ID="t6">Sie</token>
+            <token ID="t7">schmeckte</token>
+            <token ID="t8">ihm</token>
+            <token ID="t9">.</token>
+        </tokens>
+        <sentences charOffsets="true">
+            <sentence ID="s1" start="1" end="20" tokenIDs="t1 t2 t3 t4 t5"/>
+            <sentence ID="s2" start="22" end="39" tokenIDs="t6 t7 t8 t9"/>
+        </sentences>
+        <lemmas>
+            <lemma tokenIDs="t1" ID="l1">Peter</lemma>
+            <lemma tokenIDs="t2" ID="l2">essen</lemma>
+            <lemma tokenIDs="t3" ID="l3">ein</lemma>
+            <lemma tokenIDs="t4" ID="l4">Käsepizza</lemma>
+            <lemma tokenIDs="t5" ID="l5">.</lemma>
+            <lemma tokenIDs="t6" ID="l6">sie</lemma>
+            <lemma tokenIDs="t7" ID="l7">schmecken</lemma>
+            <lemma tokenIDs="t8" ID="l8">er</lemma>
+            <lemma tokenIDs="t9" ID="l9">.</lemma>
+        </lemmas>
+        <POStags tagset="STTS">
+            <tag tokenIDs="t1">NE</tag>
+            <tag tokenIDs="t2">VVFIN</tag>
+            <tag tokenIDs="t3">ART</tag>
+            <tag tokenIDs="t4">NE</tag>
+            <tag tokenIDs="t5">$.</tag>
+            <tag tokenIDs="t6">PPER</tag>
+            <tag tokenIDs="t7">VVFIN</tag>
+            <tag tokenIDs="t8">PPER</tag>
+            <tag tokenIDs="t9">$.</tag>
+        </POStags>
+        <parsing tagset="Tiger">
+            <parse>
+                <constituent cat="TOP" ID="c1">
+                    <constituent cat="S-TOP" ID="c2">
+                        <constituent cat="NP-SB" ID="c3">
+                            <constituent cat="PN-HD-Nom.Sg" ID="c4">
+                                <constituent tokenIDs="t1" cat="NE-HD-Nom.Sg" ID="c5"/>
+                            </constituent>
+                        </constituent>
+                        <constituent tokenIDs="t2" cat="VVFIN-HD" ID="c6"/>
+                        <constituent cat="NP-OA" ID="c7">
+                            <constituent tokenIDs="t3" cat="ART-NK-Acc.Sg" ID="c8"/>
+                            <constituent tokenIDs="t4" cat="NN-NK-Acc.Sg" ID="c9"/>
+                        </constituent>
+                    </constituent>
+                    <constituent tokenIDs="t5" cat="\$." ID="c10"/>
+                </constituent>
+            </parse>
+            <parse>
+                <constituent cat="TOP" ID="c11">
+                    <constituent cat="S-TOP" ID="c12">
+                        <constituent cat="NP-SB" ID="c13">
+                            <constituent tokenIDs="t6" cat="PPER-HD-Nom" ID="c14"/>
+                        </constituent>
+                        <constituent tokenIDs="t7" cat="VVFIN-HD" ID="c15"/>
+                        <constituent cat="NP-DA" ID="c16">
+                            <constituent tokenIDs="t8" cat="PPER-HD-Dat" ID="c17"/>
+                        </constituent>
+                    </constituent>
+                    <constituent tokenIDs="t9" cat="\$." ID="c18"/>
+                </constituent>
+            </parse>
+        </parsing>
+        <depparsing emptytoks="false" multigovs="false" tagset="Tiger">
+            <parse>
+                <dependency govIDs="t2" depIDs="t1" func="SUBJ"/>
+                <dependency govIDs="t4" depIDs="t3" func="SPEC"/>
+                <dependency govIDs="t2" depIDs="t4" func="OBJ"/>
+            </parse>
+            <parse>
+                <dependency govIDs="t7" depIDs="t6" func="SUBJ"/>
+                <dependency govIDs="t7" depIDs="t8" func="OBJ"/>
+            </parse>
+        </depparsing>
+        <morphology segmentation="true">
+            <analysis tokenIDs="t4">
+                <tag>
+                    <fs>
+                        <f name="cat">noun</f>
+                        <f name="case">acc</f>
+                        <f name="gender">fem</f>
+                        <f name="number">singular</f>
+                    </fs>
+                </tag>
+                <segmentation>
+                    <segment end="9" start="0" cat="noun">
+                        <segment end="4" start="0" cat="noun" func="comp" type="stem">Käse</segment>
+                        <segment end="9" start="4" cat="noun" func="base" type="stem"
+                            >Pizza</segment>
+                    </segment>
+                </segmentation>
+            </analysis>
+        </morphology>
+        <namedEntities type="MUC1990">
+            <entity tokenIDs="t1" class="PERSON"/>
+        </namedEntities>
+        <references reltagset="TuebaDZ" typetagset="BART">
+            <entity>
+                <reference mintokIDs="t1" tokenIDs="t1" target="rc_1" rel="cataphoric"
+                    type="pro.per3" ID="rc_0"/>
+                <reference mintokIDs="t8" tokenIDs="t8" type="nam" ID="rc_1"/>
+            </entity>
+        </references>
+        <matches>
+            <query type="cqp">tb_lemma="Peter" | tb_lemma="schmecken"</query>
+            <corpus pid="some-pid" name="wcorp-1">
+                <item tokenIDs="t1" srcIDs="5-1023">
+                    <target value="t1" name="tname"/>
+                    <category value="cval" name="cname"/>
+                </item>
+                <item tokenIDs="t7" srcIDs="16-117">
+                    <target value="t7" name="tname"/>
+                    <category value="cval" name="cname"/>
+                </item>
+            </corpus>
+        </matches>
+        <WordSplittings type="hyphenation">
+            <split tokID="t4">4</split>
+        </WordSplittings>
+        <phonetics alphabet="SAMPA">
+            <phonseg tokID="t7">
+                <pron rp="Sm'E.kN" cp="Sm'E.k@n" type="word">
+                    <pron rp="SmE" offset="2.0E-4" onset="0.0" type="syllable">
+                        <pron rp="S" offset="1.0E-4" onset="0.0" type="phone"/>
+                        <pron rp="m" offset="1.5E-4" onset="1.0E-4" type="phone"/>
+                        <pron rp="E" offset="2.0E-4" onset="1.5E-4" type="phone"/>
+                    </pron>
+                    <pron rp="kN" offset="3.0E-4" onset="2.0E-4" type="syllable">
+                        <pron rp="k" offset="2.5E-4" onset="2.0E-4" type="phone"/>
+                        <pron rp="N" offset="3.0E-4" onset="2.5E-4" type="phone"/>
+                    </pron>
+                </pron>
+            </phonseg>
+        </phonetics>
+        <synonymy>
+            <orthform lemmaRefs="l2">futtern, nehmen</orthform>
+        </synonymy>
+        <antonymy>
+            <orthform lemmaRefs="l2">verhungern</orthform>
+        </antonymy>
+        <hyponymy>
+            <orthform lemmaRefs="l2">Art essen, EssensOrt spezifiziert, EssensZeit spezifiziert,
+                acheln, aufessen, aufnehmen, einverleiben, essen mit Instrument, hermachen, stärken,
+                vertilgen, wegessen</orthform>
+            <orthform lemmaRefs="l7">abschmecken, gustieren, kosten, munden, probieren, versuchen,
+                würzen</orthform>
+        </hyponymy>
+        <hyperonymy>
+            <orthform lemmaRefs="l2">verzehren</orthform>
+            <orthform lemmaRefs="l7">Genuss essen, gut tun, guttun, perzipieren,
+                wahrnehmen</orthform>
+        </hyperonymy>
+    </TextCorpus>
 </D-Spin>

@@ -47,7 +47,7 @@ import javax.xml.stream.events.XMLEvent;
  * @author Yana Panchenko
  */
 public class WLDObjector {
-
+    
     public static WLData read(InputStream inputStream) throws WLFormatException {
         WLData data = null;
         try {
@@ -137,7 +137,7 @@ public class WLDObjector {
         XMLOutputFactory xmlOututFactory = XMLOutputFactory.newInstance();
         XMLEvent e;
         XMLEventWriter xmlEventWriter = null;
-
+        
         try {
             xmlEventWriter = xmlOututFactory.createXMLEventWriter(outputStream, "UTF-8");
 
@@ -170,6 +170,7 @@ public class WLDObjector {
             //does not work with XMLEventWriter:
             //mdMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             mdMarshaller.setProperty(Marshaller.JAXB_FRAGMENT, true);
+            mdMarshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, CommonConstants.CMD_SCHEMA_LOCATION);
             mdMarshaller.marshal(md, xmlEventWriter);
             
             e = eventFactory.createIgnorableSpace(XmlReaderWriter.NEW_LINE);

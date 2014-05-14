@@ -36,4 +36,7 @@ public class CommonConstants {
             + "href=\"http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/"
             + "latest/d-spin_0_4.rnc\" "
             + "type=\"application/relax-ng-compact-syntax\"?>\n";
+    
+    public static final String CMD_SCHEMA_LOCATION = "http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd";
+    
 }

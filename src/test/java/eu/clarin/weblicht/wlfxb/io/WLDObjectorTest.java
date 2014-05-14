@@ -44,7 +44,7 @@ public class WLDObjectorTest {
         System.out.println("write");
         File file = new File(OUTPUT_FILE_1);
         WLData data = createWLTestData();
-        WLDObjector.write(data, file, true);
+        WLDObjector.write(data, file);
     }
 
     @Test

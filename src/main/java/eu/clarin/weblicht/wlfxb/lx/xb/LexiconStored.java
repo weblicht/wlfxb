@@ -188,9 +188,8 @@ public class LexiconStored implements Lexicon {
         connectLayers();
     }
 
-//		protected boolean beforeMarshal(Marshaller m) {
+//		protected void beforeMarshal(Marshaller m) {
 //			setEmptyLayersToNull();
-//			return true;
 //		}
 //		
 //
