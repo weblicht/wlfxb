@@ -232,9 +232,8 @@ public class MorphologyLayerStored extends TextCorpusLayerStoredAbstract impleme
         return ms;
     }
 
-    protected boolean beforeMarshal(Marshaller m) {
+    protected void beforeMarshal(Marshaller m) {
         setFalseAttrToNull();
-        return true;
     }
 
     private void setFalseAttrToNull() {

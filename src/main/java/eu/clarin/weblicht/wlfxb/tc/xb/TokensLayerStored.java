@@ -134,9 +134,8 @@ public class TokensLayerStored extends TextCorpusLayerStoredAbstract implements 
         return charOffsets;
     }
 
-    protected boolean beforeMarshal(Marshaller m) {
+    protected void beforeMarshal(Marshaller m) {
         setFalseAttrToNull();
-        return true;
     }
 
     private void setFalseAttrToNull() {

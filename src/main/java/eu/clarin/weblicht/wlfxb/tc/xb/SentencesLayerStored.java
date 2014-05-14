@@ -134,9 +134,8 @@ public class SentencesLayerStored extends TextCorpusLayerStoredAbstract implemen
         return sentence;
     }
 
-    protected boolean beforeMarshal(Marshaller m) {
+    protected void beforeMarshal(Marshaller m) {
         setFalseAttrToNull();
-        return true;
     }
 
     private void setFalseAttrToNull() {

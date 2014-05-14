@@ -65,12 +65,8 @@ public class ReferenceStored implements Reference {
         return relation;
     }
 
-    protected boolean beforeMarshal(Marshaller m) {
+    protected void beforeMarshal(Marshaller m) {
         setEmptyTargetToNull();
-        if (targetIds != null) {
-            System.out.println(Arrays.toString(targetIds));
-        }
-        return true;
     }
 
     private void setEmptyTargetToNull() {
