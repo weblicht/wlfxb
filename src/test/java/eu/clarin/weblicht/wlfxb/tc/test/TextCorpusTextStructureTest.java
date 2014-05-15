@@ -1,11 +1,9 @@
-/**
- *
- */
 package eu.clarin.weblicht.wlfxb.tc.test;
 
 import eu.clarin.weblicht.wlfxb.io.WLDObjector;
 import eu.clarin.weblicht.wlfxb.md.xb.MetaData;
 import eu.clarin.weblicht.wlfxb.tc.api.TextCorpus;
+import eu.clarin.weblicht.wlfxb.tc.api.TextLayer;
 import eu.clarin.weblicht.wlfxb.tc.api.TextSpan;
 import eu.clarin.weblicht.wlfxb.tc.api.TextSpanType;
 import eu.clarin.weblicht.wlfxb.tc.api.TextStructureLayer;
@@ -51,6 +49,9 @@ public class TextCorpusTextStructureTest extends AbstractTextCorpusTest {
         Assert.assertEquals("1", layer.getSpan(0).getSubspans()[0].getValue());
         Assert.assertEquals("line", layer.getSpan(1).getType());
         Assert.assertEquals("paragraph", layer.getSpan(2).getType());
+        
+        Assert.assertEquals(Integer.valueOf(0), layer.getSpan(2).getStartChar());
+        Assert.assertEquals(Integer.valueOf(13), layer.getSpan(3).getEndChar());
 
         Assert.assertEquals(tc.getTokensLayer().getToken(0), layer.getTokens(layer.getSpan(3))[0]);
         Assert.assertEquals((new Token[0]).length, layer.getTokens(layer.getSpan(0).getSubspans()[0]).length);
@@ -98,6 +99,8 @@ public class TextCorpusTextStructureTest extends AbstractTextCorpusTest {
 
         File ofile = new File(OUTPUT_FILE);
 
+        TextLayer text = tc.createTextLayer();
+        text.addText("Peter aß eine Käsepizza. Sie schmeckte ihm.");
         TokensLayer tokens = tc.createTokensLayer();
         for (String tokenString : tokenstrings) {
             tokens.addToken(tokenString);
@@ -108,12 +111,12 @@ public class TextCorpusTextStructureTest extends AbstractTextCorpusTest {
         textstructure.addSpan(parentSpan, null, null, "number", "1");
         
         textstructure.addSpan(null, null, "line");
-        textstructure.addSpan(tokens.getToken(0), tokens.getToken(8), "paragraph");
-        textstructure.addSpan(tokens.getToken(0), tokens.getToken(2), "line");
-        textstructure.addSpan(tokens.getToken(3), tokens.getToken(4), "line");
-        textstructure.addSpan(tokens.getToken(5), tokens.getToken(8), "page");
-        textstructure.addSpan(tokens.getToken(5), tokens.getToken(6), "line");
-        textstructure.addSpan(tokens.getToken(7), tokens.getToken(8), "line");
+        textstructure.addSpan(tokens.getToken(0), tokens.getToken(8), "paragraph", 0, 45);
+        textstructure.addSpan(tokens.getToken(0), tokens.getToken(2), "line", 0, 13);
+        textstructure.addSpan(tokens.getToken(3), tokens.getToken(4), "line", 14, 25);
+        textstructure.addSpan(tokens.getToken(5), tokens.getToken(8), "page", 26, 45);
+        textstructure.addSpan(tokens.getToken(5), tokens.getToken(6), "line", 26, 39);
+        textstructure.addSpan(tokens.getToken(7), tokens.getToken(8), "line", 40, 45);
         textstructure.addSpan(null, null, "line");
 
         WLDObjector.write(md, tc, ofile, false);

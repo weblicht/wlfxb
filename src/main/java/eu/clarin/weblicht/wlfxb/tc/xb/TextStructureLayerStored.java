@@ -212,12 +212,21 @@ public class TextStructureLayerStored extends TextCorpusLayerStoredAbstract impl
     
     @Override
     public TextSpan addSpan(Token spanStart, Token spanEnd, String type) {
-        return addSpan(spanStart, spanEnd, type, null);
+        return addSpan(spanStart, spanEnd, type, null, null, null);
+    }
+    
+    @Override
+    public TextSpan addSpan(Token spanStart, Token spanEnd, String type, int startChar, int endChar) {
+        return addSpan(spanStart, spanEnd, type, null, startChar, endChar);
     }
     
     @Override
     public TextSpan addSpan(Token spanStart, Token spanEnd, String type, String value) {
-        TextSpanStored tspan = createTextSpan(spanStart, spanEnd, type, value);
+        return addSpan(spanStart, spanEnd, type, value, null, null);
+    }
+    
+    private TextSpan addSpan(Token spanStart, Token spanEnd, String type, String value, Integer startChar, Integer endChar) {
+        TextSpanStored tspan = createTextSpan(spanStart, spanEnd, type, value, startChar, endChar);
         tspans.add(tspan);
         return tspan;
     }
@@ -228,9 +237,20 @@ public class TextStructureLayerStored extends TextCorpusLayerStoredAbstract impl
     }
     
     @Override
+    public TextSpan addSpan(TextSpan parentSpan, Token spanStart, Token spanEnd, String type, int startChar, int endChar) throws WLFormatException {
+        return addSpan(parentSpan, spanStart, spanEnd, type, null, startChar, endChar);
+    }
+    
+    @Override
     public TextSpan addSpan(TextSpan parentSpan, Token spanStart, Token spanEnd, String type, String value) throws WLFormatException {
+        return addSpan(parentSpan, spanStart, spanEnd, type, value, null, null);
+    }
+    
+    private TextSpan addSpan(TextSpan parentSpan, Token spanStart, Token spanEnd, 
+            String type, String value,
+            Integer startChar, Integer endChar) throws WLFormatException {
         
-        TextSpanStored tspan = createTextSpan(spanStart, spanEnd, type, value);
+        TextSpanStored tspan = createTextSpan(spanStart, spanEnd, type, value, startChar, endChar);
         
         if (parentSpan == null) {
             tspans.add(tspan);
@@ -253,7 +273,9 @@ public class TextStructureLayerStored extends TextCorpusLayerStoredAbstract impl
         return tspan;
     }
     
-    private TextSpanStored createTextSpan(Token spanStart, Token spanEnd, String type, String value) {
+    private TextSpanStored createTextSpan(Token spanStart, Token spanEnd, 
+            String type, String value,
+            Integer startChar, Integer endChar) {
          
         TextSpanStored tspan = new TextSpanStored();
         tspan.type = type;
@@ -269,6 +291,10 @@ public class TextStructureLayerStored extends TextCorpusLayerStoredAbstract impl
                 }
                 connector.token2ItsTextSpans.get(type).put(connector.tokens.get(j), tspan);
             }
+        }
+        if (startChar != null && endChar != null) {
+            tspan.startChar = startChar;
+            tspan.endChar = endChar;
         }
         return tspan;
     }

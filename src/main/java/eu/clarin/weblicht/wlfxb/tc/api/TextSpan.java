@@ -37,6 +37,10 @@ public interface TextSpan {
     public boolean isTerminal();
 
     public String getValue();
+    
+    public Integer getStartChar();
+    
+    public Integer getEndChar();
 
     public TextSpanStored[] getSubspans();
 }

@@ -75,6 +75,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class TextSpanStored implements TextSpan {
 
     public static final String XML_NAME = "textspan";
+    @XmlAttribute(name = "startChar")
+    protected Integer startChar;
+    @XmlAttribute(name = "endChar")
+    protected Integer endChar;
     @XmlAttribute(name = CommonAttributes.START_TOKEN)
     protected String startToken;
     @XmlAttribute(name = CommonAttributes.END_TOKEN)
@@ -150,6 +154,16 @@ public class TextSpanStored implements TextSpan {
     }
 
     @Override
+    public Integer getStartChar() {
+        return startChar;
+    }
+
+    @Override
+    public Integer getEndChar() {
+        return endChar;
+    }
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (type != null) {
@@ -161,6 +175,12 @@ public class TextSpanStored implements TextSpan {
             sb.append(startToken);
             sb.append(" - ");
             sb.append(endToken);
+        }
+        if (startChar != null && endChar != null) {
+            sb.append(" ");
+            sb.append(startChar);
+            sb.append(" - ");
+            sb.append(endChar);
         }
         if (isTerminal()) {
             sb.append(value);

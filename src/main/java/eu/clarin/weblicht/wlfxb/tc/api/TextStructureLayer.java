@@ -51,9 +51,13 @@ public interface TextStructureLayer extends TextCorpusLayer {
     
     public TextSpan addSpan(Token spanStart, Token spanEnd, String type);
     
+    public TextSpan addSpan(Token spanStart, Token spanEnd, String type, int startChar, int endChar);
+    
     public TextSpan addSpan(Token spanStart, Token spanEnd, String type, String value);
     
     public TextSpan addSpan(TextSpan parentSpan, Token spanStart, Token spanEnd, String type) throws WLFormatException;
+    
+    public TextSpan addSpan(TextSpan parentSpan, Token spanStart, Token spanEnd, String type, int startChar, int endChar) throws WLFormatException;
     
     public TextSpan addSpan(TextSpan parentSpan, Token spanStart, Token spanEnd, String type, String value) throws WLFormatException;
     
