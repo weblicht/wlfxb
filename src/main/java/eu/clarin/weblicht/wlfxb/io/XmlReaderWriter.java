@@ -49,11 +49,11 @@ public class XmlReaderWriter {
         this.xmlEventWriter = xmlEventWriter;
     }
 
-    void setOutputAsXmlFragment(boolean outputAsXmlFragment) {
+    public void setOutputAsXmlFragment(boolean outputAsXmlFragment) {
         this.fragment = outputAsXmlFragment;
     }
 
-    XMLEvent readEvent() throws WLFormatException {
+    public XMLEvent readEvent() throws WLFormatException {
         try {
             return xmlEventReader.nextEvent();
         } catch (XMLStreamException e) {
@@ -61,7 +61,7 @@ public class XmlReaderWriter {
         }
     }
 
-    void startExternalFragment(int incIndent) throws XMLStreamException {
+    public void startExternalFragment(int incIndent) throws XMLStreamException {
         if (!ispaceWritten) {
             XMLEvent e = eventFactory.createIgnorableSpace(NEW_LINE);
             xmlEventWriter.add(e);
@@ -73,7 +73,7 @@ public class XmlReaderWriter {
         addIndent();
     }
 
-    void endExternalFragment(int decIndent) throws XMLStreamException {
+    public void endExternalFragment(int decIndent) throws XMLStreamException {
         XMLEvent e = eventFactory.createIgnorableSpace(NEW_LINE);
         xmlEventWriter.add(e);
         ispaceWritten = true;
@@ -82,7 +82,7 @@ public class XmlReaderWriter {
         }
     }
 
-    void add(XMLEvent xmlEvent) throws XMLStreamException {
+    public void add(XMLEvent xmlEvent) throws XMLStreamException {
 
         if (xmlEventWriter == null) {
             return;
@@ -187,7 +187,7 @@ public class XmlReaderWriter {
         }
     }
 
-    void close() throws WLFormatException {
+    public void close() throws WLFormatException {
 
         try {
             if (xmlEventReader != null) {
@@ -223,7 +223,7 @@ public class XmlReaderWriter {
 
     // precondition read pointer is just before the start tag with the local name tagName
     // postcondition read pointer is just after the end of the tag with the local name tagName
-    void readWriteElement(String tagName) throws WLFormatException {
+    public void readWriteElement(String tagName) throws WLFormatException {
         try {
             while (xmlEventReader.hasNext()) {
                 XMLEvent event = xmlEventReader.nextEvent();
