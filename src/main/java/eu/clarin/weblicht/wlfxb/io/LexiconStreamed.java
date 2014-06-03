@@ -26,6 +26,8 @@ import eu.clarin.weblicht.wlfxb.lx.xb.LexiconLayerTag;
 import eu.clarin.weblicht.wlfxb.lx.xb.LexiconStored;
 import eu.clarin.weblicht.wlfxb.md.xb.MetaData;
 import eu.clarin.weblicht.wlfxb.md.xb.MetaDataItem;
+import javanet.staxutils.IndentingXMLEventWriter;
+
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.EnumSet;
@@ -190,7 +192,7 @@ public class LexiconStreamed extends LexiconStored {
         if (outputStream != null) {
             try {
                 XMLOutputFactory xmlOutputFactory = XMLOutputFactory.newInstance();
-                xmlEventWriter = xmlOutputFactory.createXMLEventWriter(outputStream, "UTF-8");
+                xmlEventWriter = new IndentingXMLEventWriter(xmlOutputFactory.createXMLEventWriter(outputStream, "UTF-8"));
             } catch (XMLStreamException e) {
                 throw new WLFormatException(e.getMessage(), e);
             }

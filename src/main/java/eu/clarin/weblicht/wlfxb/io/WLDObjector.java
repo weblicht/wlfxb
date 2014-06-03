@@ -25,6 +25,8 @@ import eu.clarin.weblicht.wlfxb.tc.api.TextCorpus;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusStored;
 import eu.clarin.weblicht.wlfxb.utils.CommonConstants;
 import eu.clarin.weblicht.wlfxb.xb.WLData;
+import javanet.staxutils.IndentingXMLEventWriter;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -139,7 +141,7 @@ public class WLDObjector {
         XMLEventWriter xmlEventWriter = null;
         
         try {
-            xmlEventWriter = xmlOututFactory.createXMLEventWriter(outputStream, "UTF-8");
+            xmlEventWriter = new IndentingXMLEventWriter(xmlOututFactory.createXMLEventWriter(outputStream, "UTF-8"));
 
             if (!outputAsXmlFragment) {
                 e = eventFactory.createStartDocument("UTF-8");

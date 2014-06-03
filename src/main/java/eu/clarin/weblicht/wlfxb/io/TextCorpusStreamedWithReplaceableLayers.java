@@ -1,3 +1,23 @@
+/**
+ * wlfxb - a library for creating and processing of TCF data streams.
+ *
+ * Copyright (C) Yana Panchenko.
+ *
+ * This file is part of wlfxb.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 package eu.clarin.weblicht.wlfxb.io;
 
 import eu.clarin.weblicht.wlfxb.io.WLFormatException;
@@ -6,6 +26,8 @@ import eu.clarin.weblicht.wlfxb.tc.api.TextCorpusLayer;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerStoredAbstract;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusStored;
+import javanet.staxutils.IndentingXMLEventWriter;
+
 import java.io.Closeable;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -101,7 +123,7 @@ public class TextCorpusStreamedWithReplaceableLayers extends TextCorpusStored im
         if (outputStream != null) {
             try {
                 XMLOutputFactory xmlOutputFactory = XMLOutputFactory.newInstance();
-                xmlEventWriter = xmlOutputFactory.createXMLEventWriter(outputStream, "UTF-8");
+                xmlEventWriter = new IndentingXMLEventWriter(xmlOutputFactory.createXMLEventWriter(outputStream, "UTF-8"));
             } catch (XMLStreamException e) {
                 throw new WLFormatException(e.getMessage(), e);
             }

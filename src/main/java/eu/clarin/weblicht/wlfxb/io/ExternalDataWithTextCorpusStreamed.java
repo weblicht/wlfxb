@@ -31,6 +31,8 @@ import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerStoredAbstract;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusStored;
 import eu.clarin.weblicht.wlfxb.xb.WLData;
+import javanet.staxutils.IndentingXMLEventWriter;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.EnumSet;
@@ -213,7 +215,7 @@ public class ExternalDataWithTextCorpusStreamed {
         if (outputStream != null) {
             try {
                 XMLOutputFactory xmlOutputFactory = XMLOutputFactory.newInstance();
-                xmlEventWriter = xmlOutputFactory.createXMLEventWriter(outputStream, "UTF-8");
+                xmlEventWriter = new IndentingXMLEventWriter(xmlOutputFactory.createXMLEventWriter(outputStream, "UTF-8"));
             } catch (XMLStreamException e) {
                 throw new WLFormatException(e.getMessage(), e);
             }
