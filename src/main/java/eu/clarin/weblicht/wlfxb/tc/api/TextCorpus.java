@@ -214,7 +214,7 @@ public interface TextCorpus {
      *
      * @return annotation layer that has been created.
      */
-    public MorphologyLayer createMorphologyLayer();
+    public MorphologyLayer createMorphologyLayer(String tagset);
 
     /**
      * Creates empty {@link MorphologyLayer} in this <tt>TextCorpus</tt>.
@@ -223,7 +223,7 @@ public interface TextCorpus {
      * segmentation analysis.
      * @return annotation layer that has been created.
      */
-    public MorphologyLayer createMorphologyLayer(boolean hasSegmentation);
+    public MorphologyLayer createMorphologyLayer(String tagset, boolean hasSegmentation);
 
     /**
      * Creates empty {@link MorphologyLayer} in this <tt>TextCorpus</tt>.
@@ -235,7 +235,7 @@ public interface TextCorpus {
      * token information, false otherwise.
      * @return annotation layer that has been created.
      */
-    public MorphologyLayer createMorphologyLayer(boolean hasSegmentation, boolean hasCharOffsets);
+    public MorphologyLayer createMorphologyLayer(String tagset, boolean hasSegmentation, boolean hasCharOffsets);
 
     /**
      * Gets named entities layer of this <tt>TextCorpus</tt>.

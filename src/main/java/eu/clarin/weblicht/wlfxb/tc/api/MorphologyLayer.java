@@ -63,4 +63,6 @@ public interface MorphologyLayer extends TextCorpusLayer {
 
     public MorphologySegment createSegment(String type, String category,
             String function, Integer start, Integer end, List<MorphologySegment> subsegments);
+
+    public String getTagset();
 }

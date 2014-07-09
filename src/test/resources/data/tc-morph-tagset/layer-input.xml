@@ -1,0 +1,27 @@
+<morphology tagset="PENN" segmentation="true" charOffsets="true" xmlns="http://www.dspin.de/data/textcorpus">
+    <analysis tokenIDs="t4">
+      <tag>
+        <fs>
+          <f name="cat">noun</f>
+          <f name="case">acc</f>
+          <f name="gender">fem</f>
+          <f name="number">singular</f>
+          <f name="test">
+          	<fs>
+	          <f name="cat">noun</f>
+	          <f name="case">acc</f>
+	          <f name="gender">fem</f>
+	          <f name="number">singular</f>
+	          <f name="number">singular</f>
+        	</fs>
+          </f>
+        </fs>
+      </tag>
+      <segmentation>
+        <segment cat="noun" start="0" end="9">
+          <segment type="stem" cat="noun" func="comp" start="0" end="4">Käse</segment>
+          <segment type="stem" cat="noun" func="base" start="4" end="9">Pizza</segment>
+        </segment>
+      </segmentation>
+    </analysis>
+</morphology>

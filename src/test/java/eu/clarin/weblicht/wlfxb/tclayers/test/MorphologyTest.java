@@ -21,6 +21,9 @@ public class MorphologyTest {
     private static final String INPUT = "/data/tc-morph/layer-input.xml";
     private static final String OUTPUT = "/tmp/layer-output.xml";
 
+    private static final String INPUTTAG = "/data/tc-morph-tagset/layer-input.xml";
+    private static final String OUTPUTTAG = "/tmp/layer-output-tagset.xml";
+
     @Test
     public void testReadAndWriteBack() throws Exception {
 
@@ -35,6 +38,34 @@ public class MorphologyTest {
         is.close();
         os.close();
 
+        Assert.assertEquals(null, layer.getTagset());
+        Assert.assertEquals(true, layer.hasCharoffsets());
+        Assert.assertEquals(true, layer.hasSegmentation());
+        Assert.assertEquals(true, layer.getAnalysis(0).getFeatures()[0].isTerminal());
+        Assert.assertEquals("cat", layer.getAnalysis(0).getFeatures()[0].getName());
+        Assert.assertEquals("noun", layer.getAnalysis(0).getFeatures()[0].getValue());
+        Assert.assertEquals(false, layer.getAnalysis(0).getFeatures()[4].isTerminal());
+        Assert.assertEquals("test", layer.getAnalysis(0).getFeatures()[4].getName());
+        Assert.assertEquals("noun", layer.getAnalysis(0).getFeatures()[4].getSubfeatures()[0].getValue());
+        Assert.assertEquals(1, layer.size());
+
+    }
+
+    @Test
+    public void testReadAndWriteBackWithTagset() throws Exception {
+
+        InputStream is = this.getClass().getResourceAsStream(INPUTTAG);
+        OutputStream os = new FileOutputStream(OUTPUTTAG);
+
+
+        MorphologyLayer layer = TestUtils.read(MorphologyLayerStored.class, is);
+        System.out.println(layer);
+        TestUtils.write(layer, os);
+
+        is.close();
+        os.close();
+
+        Assert.assertEquals("PENN", layer.getTagset());
         Assert.assertEquals(true, layer.hasCharoffsets());
         Assert.assertEquals(true, layer.hasSegmentation());
         Assert.assertEquals(true, layer.getAnalysis(0).getFeatures()[0].isTerminal());

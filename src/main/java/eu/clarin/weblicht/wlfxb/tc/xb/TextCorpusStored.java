@@ -154,18 +154,18 @@ public class TextCorpusStored implements TextCorpus {
     }
 
     @Override
-    public MorphologyLayer createMorphologyLayer() {
-        return initializeLayer(MorphologyLayerStored.class);
+    public MorphologyLayer createMorphologyLayer(String tagset) {
+        return initializeLayer(MorphologyLayerStored.class, tagset);
     }
 
     @Override
-    public MorphologyLayer createMorphologyLayer(boolean hasSegmentation) {
-        return initializeLayer(MorphologyLayerStored.class, Boolean.valueOf(hasSegmentation));
+    public MorphologyLayer createMorphologyLayer(String tagset, boolean hasSegmentation) {
+        return initializeLayer(MorphologyLayerStored.class, tagset, Boolean.valueOf(hasSegmentation));
     }
 
     @Override
-    public MorphologyLayer createMorphologyLayer(boolean hasSegmentation, boolean hasCharOffsets) {
-        return initializeLayer(MorphologyLayerStored.class, Boolean.valueOf(hasSegmentation), Boolean.valueOf(hasCharOffsets));
+    public MorphologyLayer createMorphologyLayer(String tagset, boolean hasSegmentation, boolean hasCharOffsets) {
+        return initializeLayer(MorphologyLayerStored.class, tagset, Boolean.valueOf(hasSegmentation), Boolean.valueOf(hasCharOffsets));
     }
 
     @Override

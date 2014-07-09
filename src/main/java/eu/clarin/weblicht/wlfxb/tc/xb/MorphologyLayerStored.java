@@ -30,6 +30,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 
 /**
  * @author Yana Panchenko
@@ -44,6 +46,8 @@ public class MorphologyLayerStored extends TextCorpusLayerStoredAbstract impleme
     private Boolean hasCharoffsets;
     @XmlAttribute(name = "segmentation")
     private Boolean hasSegmentation;
+    @XmlAttribute(name = "tagset")
+    private String tagset;
     @XmlElement(name = MorphologyAnalysisStored.XML_NAME)
     private List<MorphologyAnalysisStored> moans = new ArrayList<MorphologyAnalysisStored>();
     private TextCorpusLayersConnector connector;
@@ -57,15 +61,20 @@ public class MorphologyLayerStored extends TextCorpusLayerStoredAbstract impleme
         }
     }
 
-    protected MorphologyLayerStored() {
+    protected MorphologyLayerStored(){
     }
 
-    protected MorphologyLayerStored(Boolean hasSegmentation) {
+    protected MorphologyLayerStored(String tagset) {
+        this.tagset = tagset;
+    }
+
+    protected MorphologyLayerStored(String tagset, Boolean hasSegmentation) {
+        this.tagset = tagset;
         this.hasSegmentation = hasSegmentation;
     }
 
-    protected MorphologyLayerStored(Boolean hasSegmentation, Boolean hasCharOffsets) {
-        this(hasSegmentation);
+    protected MorphologyLayerStored(String tagset, Boolean hasSegmentation, Boolean hasCharOffsets) {
+        this(tagset, hasSegmentation);
         this.hasCharoffsets = hasCharOffsets;
     }
 
@@ -232,6 +241,11 @@ public class MorphologyLayerStored extends TextCorpusLayerStoredAbstract impleme
         return ms;
     }
 
+    @Override
+    public String getTagset() {
+        return tagset;
+    }
+
     protected void beforeMarshal(Marshaller m) {
         setFalseAttrToNull();
     }
@@ -254,6 +268,9 @@ public class MorphologyLayerStored extends TextCorpusLayerStoredAbstract impleme
         }
         if (this.hasSegmentation != null) {
             sb.append(" segmentation ").append(this.hasSegmentation);
+        }
+        if (this.tagset != null) {
+            sb.append(" tagset ").append(this.tagset);
         }
         sb.append("}: ");
         sb.append(moans.toString());
