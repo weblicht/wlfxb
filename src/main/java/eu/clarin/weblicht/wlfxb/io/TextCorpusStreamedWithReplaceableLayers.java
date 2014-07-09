@@ -22,6 +22,8 @@ package eu.clarin.weblicht.wlfxb.io;
 
 import eu.clarin.weblicht.wlfxb.io.WLFormatException;
 import eu.clarin.weblicht.wlfxb.io.XmlReaderWriter;
+import eu.clarin.weblicht.wlfxb.md.xb.MetaData;
+import eu.clarin.weblicht.wlfxb.md.xb.MetaDataItem;
 import eu.clarin.weblicht.wlfxb.tc.api.TextCorpusLayer;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerStoredAbstract;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
@@ -32,6 +34,7 @@ import java.io.Closeable;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.EnumSet;
+import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -111,6 +114,35 @@ public class TextCorpusStreamedWithReplaceableLayers extends TextCorpusStored im
         }
     }
 
+    /**
+     * Creates a <tt>TextCorpusStreamedWithReplaceableLayer</tt> from the given TCF input stream,
+     * specified annotation layers, output stream and the meta data.
+     * @param inputStream the the underlying input stream with linguistic annotations in TCF format.
+     * @param layersToRead the annotation layers of <tt>TextCorpus</tt> that should be read into this <tt>TextCorpusStreamedWithReplaceableLayers</tt>.
+     * @param outputStream the underlying output stream into which the annotations from the input stream and any new created annotations will be written (in TCF format).
+     * @param metaDataToAdd  meta data to be added to the output TCF
+     * @throws WLFormatException
+     */
+    public TextCorpusStreamedWithReplaceableLayers(InputStream inputStream,
+                                                   EnumSet<TextCorpusLayerTag> layersToRead, OutputStream outputStream,
+                                                   List<MetaDataItem> metaDataToAdd)
+        throws WLFormatException {
+        super("unknown");
+        getLayersToReadWithDependencies(layersToRead);
+        getLayersToUpdate(layersToReplace);
+        if (intersect(layersToRead, layersToReplace)) {
+            throw new WLFormatException("Layers to replace should not be among the layers to read.");
+        }
+        try {
+            initializeReaderAndWriter(inputStream, outputStream, false);
+            addMetadata(metaDataToAdd);
+            process();
+        } catch (WLFormatException e) {
+            xmlReaderWriter.close();
+            throw e;
+        }
+    }
+
     private void initializeReaderAndWriter(InputStream inputStream, OutputStream outputStream, boolean outputAsXmlFragment) throws WLFormatException {
         if (inputStream != null) {
             try {
@@ -130,6 +162,18 @@ public class TextCorpusStreamedWithReplaceableLayers extends TextCorpusStored im
         }
         xmlReaderWriter = new XmlReaderWriter(xmlEventReader, xmlEventWriter);
         xmlReaderWriter.setOutputAsXmlFragment(outputAsXmlFragment);
+    }
+
+    private void addMetadata(List<MetaDataItem> metaDataToAdd) throws WLFormatException {
+        try {
+            xmlReaderWriter.readWriteUpToEndElement(MetaData.XML_NAME);
+            marshall(metaDataToAdd);
+            // rewrite metadata end element
+            XMLEvent event = xmlEventReader.nextEvent();
+            xmlReaderWriter.add(event);
+        } catch (XMLStreamException e) {
+            throw new WLFormatException(e.getMessage(), e);
+        }
     }
 
     private void process() throws WLFormatException {
@@ -257,11 +301,32 @@ public class TextCorpusStreamedWithReplaceableLayers extends TextCorpusStored im
         }
     }
 
+    private void marshall(List<MetaDataItem> metaDataToAdd) throws WLFormatException {
+        if (xmlEventWriter == null) {
+            return;
+        }
+        JAXBContext context;
+        try {
+            context = JAXBContext.newInstance(MetaDataItem.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FRAGMENT, true);
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            for (MetaDataItem mdi : metaDataToAdd) {
+                xmlReaderWriter.startExternalFragment(LAYER_INDENT_RELATIVE);
+                marshaller.marshal(mdi, xmlEventWriter);
+                xmlReaderWriter.endExternalFragment(LAYER_INDENT_RELATIVE);
+            }
+        } catch (JAXBException e) {
+            throw new WLFormatException(e.getMessage(), e);
+        } catch (XMLStreamException e) {
+            throw new WLFormatException(e.getMessage(), e);
+        }
+    }
 
     /**
      * Closes the input and output streams associated with this object and
      * releases any associated system resources. Before the streams are closed,
-     * all in-memory annotations of the <tt>TextCorpus</tt> and
+     * all in-memory annotations of the <tt>TextCorpusStreamedWithReplaceableLayers</tt> and
      * not-processed part of the input stream are written to the output stream.
      * Therefore, it's important to call <tt>close()<tt> method, so that all the
      * in-memory annotations are saved to the output stream. Once closed, 
