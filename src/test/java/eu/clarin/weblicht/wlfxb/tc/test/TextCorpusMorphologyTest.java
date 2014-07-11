@@ -22,10 +22,12 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
     private static final String INPUT_FILE_WITH_LAYER = "/data/tc-morph-tagset/tcf-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/tc-morph-tagset/output-expected.xml";
     private static final String OUTPUT_FILE = "/tmp/output.xml";
+    private static final String EXP_TAGSET = "PENN";
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeMorphologyAnnotation =
             EnumSet.of(TextCorpusLayerTag.TOKENS);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterMorphologyAnnotation =
             EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.MORPHOLOGY);
+
 
     @Test
     public void testRead() throws Exception {
@@ -47,7 +49,7 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
     public void testReadWrite() throws Exception {
         TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeMorphologyAnnotation);
         System.out.println(tc);
-        MorphologyLayer morphology = tc.createMorphologyLayer("PENN", true, true);
+        MorphologyLayer morphology = tc.createMorphologyLayer(EXP_TAGSET, true, true);
         for (int i = 0; i < tc.getTokensLayer().size(); i++) {
             Token token = tc.getTokensLayer().getToken(i);
             // create morphology annotation for the test token (for the 4th token)
@@ -56,7 +58,7 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
             }
         }
         tc.close();
-        Assert.assertEquals("PENN", tc.getMorphologyLayer().getTagset());
+        Assert.assertEquals(EXP_TAGSET, tc.getMorphologyLayer().getTagset());
         System.out.println(tc);
         // compare output xml with expected xml
         assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
