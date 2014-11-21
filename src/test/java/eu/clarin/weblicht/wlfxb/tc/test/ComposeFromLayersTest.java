@@ -23,6 +23,7 @@ public class ComposeFromLayersTest extends AbstractLexiconTest{
     private static final String INPUT_PARSING = "/data/tc-parsing/layer-input.xml";
     private static final String INPUT_SENTENCES = "/data/tc-sents/layer-input.xml";
     private static final String INPUT_LEMMAS = "/data/tc-lemmas/layer-input.xml";
+    private static final String INPUT_TEXTSRC = "/data/tc-textsource/layer-input.xml";
     private static final String OUTPUT_FILE = "/tmp/output.xml";
 
     public ComposeFromLayersTest() {
@@ -53,7 +54,11 @@ public class ComposeFromLayersTest extends AbstractLexiconTest{
         LemmasLayerStored lemmasLayer = TestUtils.read(LemmasLayerStored.class, is);
         is.close();
 
-        TextCorpusStored textCorpus = TextCorpusStored.compose("de", textLayer, tokensLayer, parsingLayer, sentsLayer, lemmasLayer);
+        is = this.getClass().getResourceAsStream(INPUT_TEXTSRC);
+        TextSourceLayerStored textSourceLayer = TestUtils.read(TextSourceLayerStored.class, is);
+        is.close();
+
+        TextCorpusStored textCorpus = TextCorpusStored.compose("de", textLayer, tokensLayer, parsingLayer, sentsLayer, lemmasLayer, textSourceLayer);
 //        List<TextCorpusLayerStoredAbstract> layers = new ArrayList<TextCorpusLayerStoredAbstract>();
 //        layers.add(textLayer); layers.add(tokensLayer); layers.add(parsingLayer); layers.add(sentsLayer); layers.add(lemmasLayer);
 //        TextCorpusLayerStoredAbstract[] layersAsArray = new TextCorpusLayerStoredAbstract[layers.size()];

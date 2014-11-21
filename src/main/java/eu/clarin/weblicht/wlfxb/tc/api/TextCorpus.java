@@ -501,4 +501,18 @@ public interface TextCorpus {
      * @return annotation layer that has been created.
      */
     public WordSensesLayer createWordSensesLayer(String source);
+
+    /**
+     * Gets textSource layer of this <tt>TextSource</tt>.
+     *
+     * @return annotation layer containing text.
+     */
+    public TextSourceLayer getTextSourceLayer();
+
+    /**
+     * Creates empty {@link TextSourceLayer} in this <tt>TextCorpus</tt>.
+     *
+     * @return annotation layer that has been created.
+     */
+    public TextSourceLayer createTextSourceLayer();
 }

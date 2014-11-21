@@ -58,7 +58,8 @@ public enum TextCorpusLayerTag {
     TEXT_STRUCTURE(TextStructureLayerStored.XML_NAME, TextStructureLayerStored.class),
     DISCOURSE_CONNECTIVES(DiscourseConnectivesLayerStored.XML_NAME, DiscourseConnectivesLayerStored.class),
     WORD_SENSES(WordSensesLayerStored.XML_NAME, WordSensesLayerStored.class),
-    CORPUS_MATCHES(MatchesLayerStored.XML_NAME, MatchesLayerStored.class);
+    CORPUS_MATCHES(MatchesLayerStored.XML_NAME, MatchesLayerStored.class),
+    TEXT_SOURCE(TextSourceLayerStored.XML_NAME, TextSourceLayerStored.class);
     
     private static final Map<String, TextCorpusLayerTag> xmlNameToLayerTagMap =
             new HashMap<String, TextCorpusLayerTag>() {
@@ -115,6 +116,7 @@ public enum TextCorpusLayerTag {
         layerDependencies.put(TextCorpusLayerTag.HYPERONYMY, EnumSet.of(TextCorpusLayerTag.LEMMAS));
         layerDependencies.put(TextCorpusLayerTag.RELATIONS, EnumSet.of(TextCorpusLayerTag.TOKENS));
         layerDependencies.put(TextCorpusLayerTag.WORD_SENSES, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.TEXT_SOURCE, EnumSet.noneOf(TextCorpusLayerTag.class));
     }
     
     private final String xmlName;

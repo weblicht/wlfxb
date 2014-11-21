@@ -49,4 +49,5 @@ public abstract class CommonAttributes {
     public static final String CATEGORY = "cat";
     public static final String SOURCE = "src";
     public static final String ALPHABET = "alphabet"; //alphabet 
+    public static final String EXTREF = "extref";
 }

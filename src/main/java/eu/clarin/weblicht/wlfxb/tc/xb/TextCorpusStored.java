@@ -62,7 +62,8 @@ import javax.xml.bind.annotation.*;
     "textStructureLayer",
     "orthographyLayer",
     "discourseConnectivesLayer",
-    "wordSensesLayer"})
+    "wordSensesLayer",
+    "textSourceLayer"})
 public class TextCorpusStored implements TextCorpus {
 
     public static final String XML_NAME = "TextCorpus";
@@ -293,6 +294,11 @@ public class TextCorpusStored implements TextCorpus {
     @Override
     public WordSensesLayer createWordSensesLayer(String source) {
         return initializeLayer(WordSensesLayerStored.class, source);
+    }
+
+    @Override
+    public TextSourceLayer createTextSourceLayer() {
+        return initializeLayer(TextSourceLayerStored.class);
     }
 
     @SuppressWarnings("unchecked")
@@ -540,6 +546,12 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.DISCOURSE_CONNECTIVES.ordinal()] = layer;
     }
 
+    @XmlElement(name = TextSourceLayerStored.XML_NAME)
+    protected void setTextSourceLayer(TextSourceLayerStored layer) {
+        layersInOrder[TextCorpusLayerTag.TEXT_SOURCE.ordinal()] = layer;
+    }
+
+
     @Override
     public DiscourseConnectivesLayerStored getDiscourseConnectivesLayer() {
         return ((DiscourseConnectivesLayerStored) layersInOrder[TextCorpusLayerTag.DISCOURSE_CONNECTIVES.ordinal()]);
@@ -553,6 +565,11 @@ public class TextCorpusStored implements TextCorpus {
     @Override
     public WordSensesLayerStored getWordSensesLayer() {
         return ((WordSensesLayerStored) layersInOrder[TextCorpusLayerTag.WORD_SENSES.ordinal()]);
+    }
+
+    @Override
+    public TextSourceLayerStored getTextSourceLayer() {
+        return ((TextSourceLayerStored) layersInOrder[TextCorpusLayerTag.TEXT_SOURCE.ordinal()]);
     }
 
     protected void afterUnmarshal(Unmarshaller u, Object parent) {
