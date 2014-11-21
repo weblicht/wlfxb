@@ -1,1 +1,8 @@
 /target/
+/.idea/
+wlfxb.iml
+.classpath
+.externalToolBuilders/
+.project
+.settings/
+maven-eclipse.xml
