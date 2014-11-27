@@ -16,12 +16,17 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 
 public class LexiconStreamedTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_FILE_FOR_READ = "/data/streamer/lx-karin.xml";
     private static final String INPUT_FILE_FOR_REWRITE = "/data/streamer/lx-karin-ent_freq.xml";
-    private static final String OUTPUT_FILE_ADD_COOCCURRENCES = "/tmp/output-add_cooc.xml";
+    private static final String OUTPUT_FILE_ADD_COOCCURRENCES = "output-add_cooc.xml";
 
     @Test
     public void testRead() throws Exception {
@@ -53,7 +58,7 @@ public class LexiconStreamedTest {
         System.out.println();
         System.out.println("--- WRITE TEST START ---");
         InputStream is = this.getClass().getResourceAsStream(INPUT_FILE_FOR_REWRITE);
-        File ofile = new File(OUTPUT_FILE_ADD_COOCCURRENCES);
+        File ofile = testFolder.newFile(OUTPUT_FILE_ADD_COOCCURRENCES);
         OutputStream os = new FileOutputStream(ofile);
         testReadWrite(is, EnumSet.of(LexiconLayerTag.ENTRIES),
                 os, false);

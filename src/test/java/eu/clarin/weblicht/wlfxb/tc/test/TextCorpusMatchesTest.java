@@ -13,6 +13,9 @@ import java.io.OutputStream;
 import java.util.*;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
+import java.io.File;
 
 /**
  * @author Yana Panchenko
@@ -20,9 +23,12 @@ import org.junit.Test;
  */
 public class TextCorpusMatchesTest extends AbstractTextCorpusTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_FILE_WITH_LAYER = "/data/tc-matches/tcf-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/tc-matches/output-expected.xml";
-    private static final String OUTPUT_FILE = "/tmp/output.xml";
+    private static final String OUTPUT_FILE = "output.xml";
 
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterQuery =
             EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.CORPUS_MATCHES);
@@ -38,7 +44,8 @@ public class TextCorpusMatchesTest extends AbstractTextCorpusTest {
 
     @Test
     public void testWrite() throws Exception {
-        OutputStream os = new FileOutputStream(OUTPUT_FILE);
+        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
+        OutputStream os = new FileOutputStream(outfile);
         TextCorpusStored tc = new TextCorpusStored("de");
 
         queryCorporaAndAddMatchesToTextCorpus(tc);
@@ -48,7 +55,7 @@ public class TextCorpusMatchesTest extends AbstractTextCorpusTest {
 
         System.out.println(tc);
         // compare output xml with expected xml
-        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
     private void queryCorporaAndAddMatchesToTextCorpus(TextCorpusStored tc) {

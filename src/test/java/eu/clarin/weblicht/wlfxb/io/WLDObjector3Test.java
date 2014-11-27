@@ -7,6 +7,8 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 
 /**
  * @author Yana Panchenko
@@ -14,8 +16,12 @@ import org.junit.Test;
  */
 public class WLDObjector3Test {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
+
     private static final String INPUT_FILE = "/data/objector/corpus-all.xml";
-    private static final String OUTPUT_FILE = "/tmp/corpus-all-output.xml";
+    private static final String OUTPUT_FILE = "corpus-all-output.xml";
 
     public WLDObjector3Test() {
     }
@@ -24,8 +30,8 @@ public class WLDObjector3Test {
     public void testReadWrite() throws Exception {
         InputStream is = this.getClass().getResourceAsStream(INPUT_FILE);
         WLData wld = WLDObjector.read(is);
-        WLDObjector.write(wld, new File(OUTPUT_FILE), false);
-        InputStream is2 = new FileInputStream(OUTPUT_FILE);
+        WLDObjector.write(wld, testFolder.newFile(OUTPUT_FILE), false);
+        InputStream is2 = new FileInputStream(testFolder.newFile(OUTPUT_FILE));
        
         // TODO: can use after equal methods are implemented for TCF components
         //WLData wld2 = WLDObjector.read(is2);

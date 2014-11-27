@@ -16,6 +16,9 @@ import java.util.List;
 import org.junit.Assert;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
+import java.io.File;
 
 /**
  * @author Yana Panchenko
@@ -23,10 +26,13 @@ import org.junit.Test;
  */
 public class LexiconSynonymsTest extends AbstractLexiconTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_FILE_WITHOUT_LAYER = "/data/lx-syns/lx-before.xml";
     private static final String INPUT_FILE_WITH_LAYER = "/data/lx-syns/lx-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/lx-syns/output-expected.xml";
-    private static final String OUTPUT_FILE = "/tmp/output.xml";
+    private static final String OUTPUT_FILE = "output.xml";
     private static final EnumSet<LexiconLayerTag> layersToReadBeforeRelationAnnotation =
             EnumSet.of(LexiconLayerTag.ENTRIES);
     private static final EnumSet<LexiconLayerTag> layersToReadAfterRelationAnnotation =
@@ -52,7 +58,8 @@ public class LexiconSynonymsTest extends AbstractLexiconTest {
 
     @Test
     public void testReadWrite() throws Exception {
-        LexiconStreamed lex = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeRelationAnnotation);
+        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
+        LexiconStreamed lex = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeRelationAnnotation);
         System.out.println(lex);
         // get lemmas layer
         EntriesLayer entries = lex.getEntriesLayer();
@@ -63,7 +70,7 @@ public class LexiconSynonymsTest extends AbstractLexiconTest {
         lex.close();
         System.out.println(lex);
         // compare output xml with expected xml
-        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
     private void annotateWithSynonyms(EntriesLayer entries, SynonymsLayer syns) {

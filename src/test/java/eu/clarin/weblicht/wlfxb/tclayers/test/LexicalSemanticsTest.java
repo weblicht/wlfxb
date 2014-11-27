@@ -15,6 +15,8 @@ import java.io.OutputStream;
 import org.junit.Assert;
 import static org.junit.Assert.*;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 
 /**
  * @author Yana Panchenko
@@ -22,20 +24,19 @@ import org.junit.Test;
  */
 public class LexicalSemanticsTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_SYN = "/data/tc-lexsem/layer-input-syn.xml";
-    private static final String OUTPUT_SYN = "/tmp/layer-output-syn.xml";
     private static final String INPUT_ANT = "/data/tc-lexsem/layer-input-ant.xml";
-    private static final String OUTPUT_ANT = "/tmp/layer-output-ant.xml";
     private static final String INPUT_HYPO = "/data/tc-lexsem/layer-input-hypo.xml";
-    private static final String OUTPUT_HYPO = "/tmp/layer-output-hypo.xml";
     private static final String INPUT_HYPER = "/data/tc-lexsem/layer-input-hyper.xml";
-    private static final String OUTPUT_HYPER = "/tmp/layer-output-hyper.xml";
 
     @Test
     public void testReadAndWriteBackSyn() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_SYN);
-        OutputStream os = new FileOutputStream(OUTPUT_SYN);
+        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output-syn.xml"));
 
 
         LexicalSemanticsLayer layer = TestUtils.read(SynonymyLayerStored.class, is);
@@ -55,7 +56,7 @@ public class LexicalSemanticsTest {
     public void testReadAndWriteBackAnt() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANT);
-        OutputStream os = new FileOutputStream(OUTPUT_ANT);
+        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output-ant.xml"));
 
 
         LexicalSemanticsLayer layer = TestUtils.read(AntonymyLayerStored.class, is);
@@ -75,7 +76,7 @@ public class LexicalSemanticsTest {
     public void testReadAndWriteBackHypo() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_HYPO);
-        OutputStream os = new FileOutputStream(OUTPUT_HYPO);
+        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output-hypo.xml"));
 
 
         LexicalSemanticsLayer layer = TestUtils.read(HyponymyLayerStored.class, is);
@@ -97,7 +98,7 @@ public class LexicalSemanticsTest {
     public void testReadAndWriteBackHyper() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_HYPER);
-        OutputStream os = new FileOutputStream(OUTPUT_HYPER);
+        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output-hyper.xml"));
 
 
         LexicalSemanticsLayer layer = TestUtils.read(HyperonymyLayerStored.class, is);

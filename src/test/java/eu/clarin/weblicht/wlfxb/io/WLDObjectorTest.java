@@ -11,6 +11,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 
 /**
  * @author Yana Panchenko
@@ -19,10 +21,13 @@ import org.junit.Test;
 //TODO so that it tests all layers, and so that all layers be in separate tests
 public class WLDObjectorTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
 	private static final String INPUT_FILE_Textcorpus = "/data/objector/input_textcorpus.xml";
 	private static final String INPUT_FILE_Lexicon = "/data/objector/input_lexicon.xml";
-	private static final String OUTPUT_FILE_1 = "/tmp/wld-output.xml";
-	private static final String OUTPUT_FILE_2 = "/tmp/wld-min-prefix-output.xml";
+	private static final String OUTPUT_FILE_1 = "wld-output.xml";
+	private static final String OUTPUT_FILE_2 = "wld-min-prefix-output.xml";
 
     public WLDObjectorTest() {
     }
@@ -42,7 +47,7 @@ public class WLDObjectorTest {
     @Test
     public void testWrite_File() throws Exception {
         System.out.println("write");
-        File file = new File(OUTPUT_FILE_1);
+        File file = testFolder.newFile(OUTPUT_FILE_1);
         WLData data = createWLTestData();
         WLDObjector.write(data, file);
     }
@@ -50,7 +55,7 @@ public class WLDObjectorTest {
     @Test
     public void testWriteUsingMinimumNsPrefixes_File() throws Exception {
         System.out.println("write");
-        File file = new File(OUTPUT_FILE_2);
+        File file = testFolder.newFile(OUTPUT_FILE_2);
         WLData data = createWLTestData();
         WLDObjector.write(data.getMetaData(), data.getTextCorpus(), file, false);
     }

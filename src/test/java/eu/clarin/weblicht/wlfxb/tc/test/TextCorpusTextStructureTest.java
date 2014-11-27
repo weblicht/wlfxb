@@ -15,6 +15,9 @@ import java.io.File;
 import java.util.EnumSet;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
+import java.io.File;
 
 /**
  * @author Yana Panchenko
@@ -22,9 +25,12 @@ import org.junit.Test;
  */
 public class TextCorpusTextStructureTest extends AbstractTextCorpusTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_FILE_WITH_LAYER = "/data/tc-textstruct/tcf-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/tc-textstruct/output-expected.xml";
-    private static final String OUTPUT_FILE = "/tmp/output.xml";
+    private static final String OUTPUT_FILE = "output.xml";
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterTextStructureAnnotation =
             EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.TEXT_STRUCTURE);
     private String[] tokenstrings = new String[]{"Peter", "aß", "eine", "Käsepizza", ".", "Sie", "schmeckte", "ihm", "."};
@@ -97,7 +103,8 @@ public class TextCorpusTextStructureTest extends AbstractTextCorpusTest {
         MetaData md = new MetaData();
         //WLData data = new WLData(tc);
 
-        File ofile = new File(OUTPUT_FILE);
+        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
+        File ofile = new File(outfile);
 
         TextLayer text = tc.createTextLayer();
         text.addText("Peter aß eine Käsepizza. Sie schmeckte ihm.");
@@ -123,6 +130,6 @@ public class TextCorpusTextStructureTest extends AbstractTextCorpusTest {
 
         System.out.println(tc);
         // compare output xml with expected xml
-        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 }

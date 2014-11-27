@@ -13,8 +13,11 @@ import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
+import java.io.File;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 
 /**
  * @author Yana Panchenko
@@ -22,10 +25,13 @@ import org.junit.Test;
  */
 public class ExtDataSpeechSignalTest extends AbstractExternalDataTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_FILE_WITHOUT_LAYER = "/data/ed-speechsig/tcf-before.xml";
     private static final String INPUT_FILE_WITH_LAYER = "/data/ed-speechsig/tcf-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/ed-speechsig/output-expected.xml";
-    private static final String OUTPUT_FILE = "/tmp/output.xml";
+    private static final String OUTPUT_FILE = "output.xml";
     private static final EnumSet<ExternalDataLayerTag> edLayersToReadBeforeSpeechSig =
             EnumSet.noneOf(ExternalDataLayerTag.class);
     private static final EnumSet<TextCorpusLayerTag> tcLayersToReadBeforeSpeechSig =
@@ -49,7 +55,8 @@ public class ExtDataSpeechSignalTest extends AbstractExternalDataTest {
 
     @Test
     public void testReadWrite() throws Exception {
-        ExternalDataWithTextCorpusStreamed edtc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, edLayersToReadBeforeSpeechSig, tcLayersToReadBeforeSpeechSig);
+        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE; 
+        ExternalDataWithTextCorpusStreamed edtc = open(INPUT_FILE_WITHOUT_LAYER, outfile, edLayersToReadBeforeSpeechSig, tcLayersToReadBeforeSpeechSig);
         System.out.println(edtc);
 
         TextCorpus tc = edtc.getTextCorpus();
@@ -68,7 +75,7 @@ public class ExtDataSpeechSignalTest extends AbstractExternalDataTest {
         edtc.close();
         System.out.println(edtc);
         // compare output xml with expected xml
-        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
     private List<String> tokenize(String text) {

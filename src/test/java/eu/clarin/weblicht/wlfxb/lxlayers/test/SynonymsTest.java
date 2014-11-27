@@ -12,6 +12,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import static org.junit.Assert.*;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 
 /**
  * @author Yana Panchenko
@@ -19,15 +21,18 @@ import org.junit.Test;
  */
 public class SynonymsTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT = "/data/lx-syns/layer-input.xml";
-    private static final String OUTPUT = "/tmp/layer-output.xml";
+    private static final String OUTPUT = "layer-output.xml";
     private static final double delta = 0.0001;
 
     @Test
     public void testReadAndWriteBack() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT);
-        OutputStream os = new FileOutputStream(OUTPUT);
+        OutputStream os = new FileOutputStream(testFolder.newFile(OUTPUT));
 
 
         SynonymsLayer layer = TestUtils.read(SynonymsLayerStored.class, is);

@@ -14,6 +14,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
+import java.io.File;
 
 /**
  * @author Yana Panchenko
@@ -21,10 +24,13 @@ import org.junit.Test;
  */
 public class TextCorpusDiscourseConnectivesTest extends AbstractTextCorpusTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-dconn/tcf-before.xml";
     private static final String INPUT_FILE_WITH_LAYER = "/data/tc-dconn/tcf-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/tc-dconn/output-expected.xml";
-    private static final String OUTPUT_FILE = "/tmp/output.xml";
+    private static final String OUTPUT_FILE = "output.xml";
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeDConnDetect =
             EnumSet.of(TextCorpusLayerTag.TOKENS);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterDConnDetect =
@@ -48,7 +54,8 @@ public class TextCorpusDiscourseConnectivesTest extends AbstractTextCorpusTest {
 
     @Test
     public void testReadWrite() throws Exception {
-        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeDConnDetect);
+        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeDConnDetect);
         System.out.println(tc);
         DiscourseConnectivesLayer layer = tc.createDiscourseConnectivesLayer("TuebaDZ");
         for (int i = 0; i < tc.getTokensLayer().size(); i++) {
@@ -63,7 +70,7 @@ public class TextCorpusDiscourseConnectivesTest extends AbstractTextCorpusTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
     // semantically this example doesn't make sense, but is given just for the sake of testing

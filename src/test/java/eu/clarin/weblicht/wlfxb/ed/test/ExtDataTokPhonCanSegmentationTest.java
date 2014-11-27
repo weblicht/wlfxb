@@ -10,8 +10,11 @@ import eu.clarin.weblicht.wlfxb.tc.api.TextCorpus;
 import eu.clarin.weblicht.wlfxb.tc.api.TokensLayer;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
 import java.util.EnumSet;
+import java.io.File;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 
 /**
  * @author Yana Panchenko
@@ -19,9 +22,12 @@ import org.junit.Test;
  */
 public class ExtDataTokPhonCanSegmentationTest extends AbstractExternalDataTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_FILE_WITHOUT_LAYER = "/data/ed-seg/tcf-before.xml";
     private static final String INPUT_FILE_WITH_LAYER = "/data/ed-seg/tcf-after.xml";
-    private static final String OUTPUT_FILE = "/tmp/output.xml";
+    private static final String OUTPUT_FILE = "output.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/ed-seg/output-expected.xml";
     private static final EnumSet<ExternalDataLayerTag> edLayersToReadBeforeSeg =
             EnumSet.of(ExternalDataLayerTag.SPEECH_SIGNAL);
@@ -57,7 +63,8 @@ public class ExtDataTokPhonCanSegmentationTest extends AbstractExternalDataTest 
 
     @Test
     public void testReadWrite() throws Exception {
-        ExternalDataWithTextCorpusStreamed edtc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, edLayersToReadBeforeSeg, tcLayersToReadBeforeSeg);
+        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
+        ExternalDataWithTextCorpusStreamed edtc = open(INPUT_FILE_WITHOUT_LAYER, outfile, edLayersToReadBeforeSeg, tcLayersToReadBeforeSeg);
         System.out.println(edtc);
 
         TextCorpus tc = edtc.getTextCorpus();
@@ -84,7 +91,7 @@ public class ExtDataTokPhonCanSegmentationTest extends AbstractExternalDataTest 
         edtc.close();
         System.out.println(edtc);
         // compare output xml with expected xml
-        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
     private String extractName(String speechSignalUrl) {

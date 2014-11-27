@@ -13,6 +13,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
+import java.io.File;
 
 /**
  * @author Yana Panchenko
@@ -20,10 +23,13 @@ import org.junit.Test;
  */
 public class TextCorpusNamedEntitiesTest extends AbstractTextCorpusTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-nes/tcf-before.xml";
     private static final String INPUT_FILE_WITH_LAYER = "/data/tc-nes/tcf-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/tc-nes/output-expected.xml";
-    private static final String OUTPUT_FILE = "/tmp/output.xml";
+    private static final String OUTPUT_FILE = "output.xml";
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeNamedEntityRecognition =
             EnumSet.of(TextCorpusLayerTag.TOKENS);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterNamedEntityRecognition =
@@ -45,7 +51,8 @@ public class TextCorpusNamedEntitiesTest extends AbstractTextCorpusTest {
 
     @Test
     public void testReadWrite() throws Exception {
-        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeNamedEntityRecognition);
+        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeNamedEntityRecognition);
         System.out.println(tc);
         // create named entities layer, it's empty at first
         NamedEntitiesLayer nes = tc.createNamedEntitiesLayer("MUC1990");
@@ -61,7 +68,7 @@ public class TextCorpusNamedEntitiesTest extends AbstractTextCorpusTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
     private String recognize(String tokenString) {

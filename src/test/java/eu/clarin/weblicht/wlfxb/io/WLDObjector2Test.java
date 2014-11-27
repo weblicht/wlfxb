@@ -12,6 +12,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 
 /**
  * @author Yana Panchenko
@@ -19,8 +21,12 @@ import org.junit.Test;
  */
 public class WLDObjector2Test {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
+
     private static final String INPUT_FILE_TextcorpusAndExternalData = "/data/objector/input_textcorpus_extdata.xml";
-    private static final String OUTPUT_FILE_1 = "/tmp/wld-output2.xml";
+    private static final String OUTPUT_FILE_1 = "wld-output2.xml";
 
     public WLDObjector2Test() {
     }
@@ -34,7 +40,7 @@ public class WLDObjector2Test {
     @Test
     public void testWrite_File() throws Exception {
         System.out.println("write");
-        File file = new File(OUTPUT_FILE_1);
+        File file = testFolder.newFile(OUTPUT_FILE_1);
         WLData data = createWLTestData();
         WLDObjector.write(data, file);
     }

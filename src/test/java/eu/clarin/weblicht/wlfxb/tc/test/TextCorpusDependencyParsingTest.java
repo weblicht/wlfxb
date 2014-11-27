@@ -11,6 +11,9 @@ import java.util.EnumSet;
 import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
+import java.io.File;
 
 /**
  * @author Yana Panchenko
@@ -18,10 +21,13 @@ import org.junit.Test;
  */
 public class TextCorpusDependencyParsingTest extends AbstractTextCorpusTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_FILE_WITHOUT_PARSING = "/data/tc-dparsing/tcf-before.xml";
     private static final String INPUT_FILE_WITH_PARSING = "/data/tc-dparsing/tcf-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/tc-dparsing/output-expected.xml";
-    private static final String OUTPUT_FILE = "/tmp/output.xml";
+    private static final String OUTPUT_FILE = "output.xml";
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeParsing =
             EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.SENTENCES);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterParsing =
@@ -43,7 +49,8 @@ public class TextCorpusDependencyParsingTest extends AbstractTextCorpusTest {
 
     @Test
     public void testReadWrite() throws Exception {
-        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_PARSING, OUTPUT_FILE, layersToReadBeforeParsing);
+        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_PARSING, outfile, layersToReadBeforeParsing);
         System.out.println(tc);
         SentencesLayer sentences = tc.getSentencesLayer();
         DependencyParsingLayer parses = tc.createDependencyParsingLayer("Tiger", false, true);
@@ -56,7 +63,7 @@ public class TextCorpusDependencyParsingTest extends AbstractTextCorpusTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
     private List<Dependency> parse(Token[] sentenceTokens, DependencyParsingLayer parses) {

@@ -11,6 +11,8 @@ import eu.clarin.weblicht.wlfxb.test.utils.TestUtils;
 import java.io.File;
 import java.io.InputStream;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 
 /**
  * @author Yana Panchenko
@@ -18,13 +20,16 @@ import org.junit.Test;
  */
 public class ComposeFromLayersTest extends AbstractLexiconTest{
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_TEXT = "/data/tc-text/layer-input.xml";
     private static final String INPUT_TOKENS = "/data/tc-tokens/layer-input.xml";
     private static final String INPUT_PARSING = "/data/tc-parsing/layer-input.xml";
     private static final String INPUT_SENTENCES = "/data/tc-sents/layer-input.xml";
     private static final String INPUT_LEMMAS = "/data/tc-lemmas/layer-input.xml";
     private static final String INPUT_TEXTSRC = "/data/tc-textsource/layer-input.xml";
-    private static final String OUTPUT_FILE = "/tmp/output.xml";
+    private static final String OUTPUT_FILE = "output.xml";
 
     public ComposeFromLayersTest() {
     }
@@ -65,7 +70,7 @@ public class ComposeFromLayersTest extends AbstractLexiconTest{
 //        TextCorpusStored textCorpus = TextCorpusStored.compose("de",  layers.toArray(layersAsArray));
 
 
-        WLDObjector.write(new MetaData(), textCorpus, new File(OUTPUT_FILE), false);
+        WLDObjector.write(new MetaData(), textCorpus, testFolder.newFile(OUTPUT_FILE), false);
 
     }
 }

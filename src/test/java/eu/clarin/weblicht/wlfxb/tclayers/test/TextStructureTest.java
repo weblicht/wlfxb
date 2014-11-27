@@ -12,6 +12,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 
 /**
  * @author Yana Panchenko
@@ -20,13 +22,15 @@ import org.junit.Test;
 public class TextStructureTest {
 
     private static final String INPUT = "/data/tc-textstruct/layer-input.xml";
-    private static final String OUTPUT = "/tmp/layer-output.xml";
+
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
 
     @Test
     public void testReadAndWriteBack() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT);
-        OutputStream os = new FileOutputStream(OUTPUT);
+        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
 
 
         TextStructureLayer layer = TestUtils.read(TextStructureLayerStored.class, is);

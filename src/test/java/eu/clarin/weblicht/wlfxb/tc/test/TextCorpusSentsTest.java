@@ -14,6 +14,9 @@ import java.util.EnumSet;
 import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
+import java.io.File;
 
 /**
  * @author Yana Panchenko
@@ -21,10 +24,13 @@ import org.junit.Test;
  */
 public class TextCorpusSentsTest extends AbstractTextCorpusTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-sents/tcf-before.xml";
     private static final String INPUT_FILE_WITH_LAYER = "/data/tc-sents/tcf-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/tc-sents/output-expected.xml";
-    private static final String OUTPUT_FILE = "/tmp/output.xml";
+    private static final String OUTPUT_FILE = "output.xml";
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeSentDetect =
             EnumSet.of(TextCorpusLayerTag.TOKENS);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterSentDetect =
@@ -41,7 +47,8 @@ public class TextCorpusSentsTest extends AbstractTextCorpusTest {
 
     @Test
     public void testReadWrite() throws Exception {
-        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeSentDetect);
+        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeSentDetect);
         System.out.println(tc);
         SentencesLayer layer = tc.createSentencesLayer();
         boolean[] boundaries = detectSentenceBoundaries(tc.getTokensLayer());
@@ -60,7 +67,7 @@ public class TextCorpusSentsTest extends AbstractTextCorpusTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
     private boolean[] detectSentenceBoundaries(TokensLayer tokensLayer) {

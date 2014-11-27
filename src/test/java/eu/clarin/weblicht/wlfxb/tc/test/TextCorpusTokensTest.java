@@ -12,6 +12,9 @@ import java.util.EnumSet;
 import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
+import java.io.File;
 
 /**
  * @author Yana Panchenko
@@ -19,10 +22,13 @@ import org.junit.Test;
  */
 public class TextCorpusTokensTest extends AbstractTextCorpusTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-tokens/tcf-before.xml";
     private static final String INPUT_FILE_WITH_LAYER = "/data/tc-tokens/tcf-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/tc-tokens/output-expected.xml";
-    private static final String OUTPUT_FILE = "/tmp/output.xml";
+    private static final String OUTPUT_FILE = "output.xml";
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeTokenization =
             EnumSet.of(TextCorpusLayerTag.TEXT);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterTokenization =
@@ -38,7 +44,8 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
 
     @Test
     public void testReadWrite() throws Exception {
-        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeTokenization);
+        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeTokenization);
         System.out.println(tc);
         List<String> tokenstrings = tokenize(tc.getTextLayer().getText());
         // create tokens layer, it is empty first
@@ -51,7 +58,7 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
     private List<String> tokenize(String text) {

@@ -34,15 +34,21 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.XMLEvent;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 
 /**
  *
  * @author Yana Panchenko <yana.panchenko@uni-tuebingen.de>
  */
 public class TextCorpusStreamedWithReplaceableLayersTest extends AbstractTextCorpusTest {
+
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_FILE_WITH_LAYER = "/data/streamer/tcf-text_toks_sents_pos_lem.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/streamer/tcf-text_toks_sents_pos_changed-lem.xml";
-    private static final String OUTPUT_FILE = "/tmp/output.xml";
+    private static final String OUTPUT_FILE = "output.xml";
     private static final EnumSet<TextCorpusLayerTag> layersToRead =
             EnumSet.of(TextCorpusLayerTag.TOKENS);
     private static final EnumSet<TextCorpusLayerTag> layersToReplace =
@@ -65,7 +71,7 @@ public class TextCorpusStreamedWithReplaceableLayersTest extends AbstractTextCor
     public void testReadWrite() throws Exception {
         InputStream is = this.getClass().getResourceAsStream(INPUT_FILE_WITH_LAYER);
         junit.framework.Assert.assertNotNull("can't open input resource", is);
-        OutputStream os = new FileOutputStream(OUTPUT_FILE);
+        OutputStream os = new FileOutputStream(testFolder.newFile(OUTPUT_FILE));
         junit.framework.Assert.assertNotNull("can't open output file", os);
         TextCorpusStreamedWithReplaceableLayers tc = new TextCorpusStreamedWithReplaceableLayers(is, layersToRead, layersToReplace, os);
         
@@ -86,7 +92,7 @@ public class TextCorpusStreamedWithReplaceableLayersTest extends AbstractTextCor
         //assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
         InputStream expected = this.getClass().getResourceAsStream(EXPECTED_OUTPUT_FILE);
         junit.framework.Assert.assertNotNull("can't open expected output resource", expected);
-        InputStream actual = new FileInputStream(OUTPUT_FILE);
+        InputStream actual = new FileInputStream(testFolder.newFile(OUTPUT_FILE));
         junit.framework.Assert.assertNotNull("can't open actual output resource", actual);
         TestUtils.assertEqualXml(expected, actual);
     }

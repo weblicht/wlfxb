@@ -13,6 +13,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
+import java.io.File;
 
 /**
  * @author Yana Panchenko
@@ -20,10 +23,13 @@ import org.junit.Test;
  */
 public class LexiconSyllabificationsTest extends AbstractLexiconTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_FILE_WITHOUT_LAYER = "/data/lx-syl/lx-before.xml";
     private static final String INPUT_FILE_WITH_LAYER = "/data/lx-syl/lx-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/lx-syl/output-expected.xml";
-    private static final String OUTPUT_FILE = "/tmp/output.xml";
+    private static final String OUTPUT_FILE = "output.xml";
     private static final EnumSet<LexiconLayerTag> layersToReadBefore =
             EnumSet.of(LexiconLayerTag.ENTRIES);
     private static final EnumSet<LexiconLayerTag> layersToReadAfter =
@@ -52,7 +58,8 @@ public class LexiconSyllabificationsTest extends AbstractLexiconTest {
 
     @Test
     public void testReadWrite() throws Exception {
-        LexiconStreamed lex = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBefore);
+        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
+        LexiconStreamed lex = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBefore);
         System.out.println(lex);
         SyllabificationsLayer syls = lex.createSyllabificationsLayer();
         for (int i = 0; i < lex.getEntriesLayer().size(); i++) {
@@ -66,7 +73,7 @@ public class LexiconSyllabificationsTest extends AbstractLexiconTest {
         lex.close();
         System.out.println(lex);
         // compare output xml with expected xml
-        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
     private String syllabify(String tokenString) {

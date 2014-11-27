@@ -18,13 +18,18 @@ import java.util.EnumSet;
 import java.util.List;
 import javax.xml.parsers.ParserConfigurationException;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 
 public class TextCorpusStreamedTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_FILE_FOR_READ = "/data/streamer/tcf-text_toks_sents_pos_lem.xml";
     private static final String INPUT_FILE_FOR_REWRITE = "/data/streamer/tcf-text_tok_pos.xml";
-    private static final String OUTPUT_FILE_ADD_LEMMS_SENTS = "/tmp/output-add_lemms_sents.xml";
-    private static final String OUTPUT_FILE_ADD_LEMMS_SENTS_METADATA = "/tmp/output-add_lemms_sents_metadata.xml";
+    private static final String OUTPUT_FILE_ADD_LEMMS_SENTS = "output-add_lemms_sents.xml";
+    private static final String OUTPUT_FILE_ADD_LEMMS_SENTS_METADATA = "output-add_lemms_sents_metadata.xml";
 
     @Test
     public void testRead() throws Exception {
@@ -56,7 +61,7 @@ public class TextCorpusStreamedTest {
         System.out.println();
         System.out.println("--- WRITE TEST START ---");
         InputStream is = this.getClass().getResourceAsStream(INPUT_FILE_FOR_REWRITE);
-        File ofile = new File(OUTPUT_FILE_ADD_LEMMS_SENTS);
+        File ofile = testFolder.newFile(OUTPUT_FILE_ADD_LEMMS_SENTS);
         OutputStream os = new FileOutputStream(ofile);
         testReadWrite(is, EnumSet.of(TextCorpusLayerTag.TOKENS),
                 os, false);
@@ -76,7 +81,7 @@ public class TextCorpusStreamedTest {
         System.out.println();
         System.out.println("--- WRITE TEST START ---");
         InputStream is = this.getClass().getResourceAsStream(INPUT_FILE_FOR_REWRITE);
-        File ofile = new File(OUTPUT_FILE_ADD_LEMMS_SENTS_METADATA);
+        File ofile = testFolder.newFile(OUTPUT_FILE_ADD_LEMMS_SENTS_METADATA);
         OutputStream os = new FileOutputStream(ofile);
         testReadWriteAddingMetadata(is, EnumSet.of(TextCorpusLayerTag.TOKENS),
                 os,

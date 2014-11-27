@@ -11,6 +11,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 
 /**
  * @author Yana Panchenko
@@ -19,13 +21,15 @@ import org.junit.Test;
 public class ConstituentParsing2Test {
 
     private static final String INPUT = "/data/tc-parsing/layer-input-2.xml";
-    private static final String OUTPUT = "/tmp/layer-output-2.xml";
+
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
 
     @Test
     public void testReadAndWriteBack() throws Exception {
-
         InputStream is = this.getClass().getResourceAsStream(INPUT);
-        OutputStream os = new FileOutputStream(OUTPUT);
+        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output-2.xml"));
 
 
         ConstituentParsingLayer layer = TestUtils.read(ConstituentParsingLayerStored.class, is);

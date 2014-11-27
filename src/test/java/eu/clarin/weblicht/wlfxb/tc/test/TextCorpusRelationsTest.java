@@ -13,6 +13,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
+import java.io.File;
 
 /**
  * @author Yana Panchenko
@@ -21,10 +24,13 @@ import org.junit.Test;
 @SuppressWarnings("deprecation")
 public class TextCorpusRelationsTest extends AbstractTextCorpusTest {
 
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
     private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-rels/tcf-before.xml";
     private static final String INPUT_FILE_WITH_LAYER = "/data/tc-rels/tcf-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/tc-rels/output-expected.xml";
-    private static final String OUTPUT_FILE = "/tmp/output.xml";
+    private static final String OUTPUT_FILE = "output.xml";
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeRelTagging =
             EnumSet.of(TextCorpusLayerTag.TOKENS);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterRelTagging =
@@ -49,7 +55,8 @@ public class TextCorpusRelationsTest extends AbstractTextCorpusTest {
 
     @Test
     public void testReadWrite() throws Exception {
-        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, OUTPUT_FILE, layersToReadBeforeRelTagging);
+        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeRelTagging);
         System.out.println(tc);
         // create relations layer, it's empty at first
         RelationsLayer rels = tc.createRelationsLayer("verb-arg");
@@ -65,7 +72,7 @@ public class TextCorpusRelationsTest extends AbstractTextCorpusTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        assertEqualXml(EXPECTED_OUTPUT_FILE, OUTPUT_FILE);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
     private String tag(String tokenString) {

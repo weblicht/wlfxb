@@ -13,6 +13,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 
 /**
  * @author Yana Panchenko
@@ -21,14 +23,16 @@ import org.junit.Test;
 public class GeopointsTest {
 
     private static final String INPUT = "/data/tc-geo/layer-input.xml";
-    private static final String OUTPUT = "/tmp/layer-output.xml";
     public static final double DELTA = 1e-15;
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
+
 
     @Test
     public void testReadAndWriteBack() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT);
-        OutputStream os = new FileOutputStream(OUTPUT);
+        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
 
 
         GeoLayer layer = TestUtils.read(GeoLayerStored.class, is);
