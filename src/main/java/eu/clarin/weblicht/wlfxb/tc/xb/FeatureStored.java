@@ -61,6 +61,9 @@ public class FeatureStored implements Feature {
 
     @Override
     public Feature[] getSubfeatures() {
+        if (fs == null) {
+            return null;
+        } 
         return fs.getFeatures();
     }
 
