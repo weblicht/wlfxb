@@ -1,7 +1,7 @@
 /**
  * wlfxb - a library for creating and processing of TCF data streams.
  *
- * Copyright (C) Yana Panchenko.
+ * Copyright (C) University of Tübingen.
  *
  * This file is part of wlfxb.
  *
@@ -18,7 +18,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 /**
  * Provides classes to input/process/output TCF streams with only specified annotations 
  * being loaded into the memory.
