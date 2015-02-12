@@ -20,6 +20,7 @@
  */
 package eu.clarin.weblicht.wlfxb.io;
 
+import java.util.NoSuchElementException;
 import javax.xml.stream.*;
 import javax.xml.stream.events.Characters;
 import javax.xml.stream.events.XMLEvent;
@@ -58,7 +59,10 @@ public class XmlReaderWriter {
             return xmlEventReader.nextEvent();
         } catch (XMLStreamException e) {
             throw new WLFormatException(e.getMessage(), e);
-        }
+        } catch (NoSuchElementException e) {
+            throw new WLFormatException(e.getMessage(), e);
+        } 
+
     }
 
     public void startExternalFragment(int incIndent) throws XMLStreamException {
@@ -216,6 +220,8 @@ public class XmlReaderWriter {
             }
         } catch (XMLStreamException e) {
             throw new WLFormatException(e.getMessage(), e);
+        } catch (NoSuchElementException e) {
+            throw new WLFormatException(e.getMessage(), e);
         } finally {
             close();
         }
@@ -242,7 +248,10 @@ public class XmlReaderWriter {
 
         } catch (XMLStreamException e) {
             throw new WLFormatException(e.getMessage(), e);
-        }
+        } catch (NoSuchElementException e) {
+            throw new WLFormatException(e.getMessage(), e);
+        } 
+
     }
 
     // precondition read pointer is at any place before start tag with the local name startTag

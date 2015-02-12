@@ -37,6 +37,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.bind.JAXBContext;
@@ -297,6 +298,8 @@ public class ExternalDataWithTextCorpusStreamed {
 
         } catch (XMLStreamException e) {
             throw new WLFormatException(e.getMessage(), e);
+        } catch (NoSuchElementException e) {
+            throw new WLFormatException(e.getMessage(), e);
         }
     }
 
@@ -382,6 +385,8 @@ public class ExternalDataWithTextCorpusStreamed {
             textCorpus = TextCorpusStored.compose(lang, layers);
 
         } catch (XMLStreamException e) {
+            throw new WLFormatException(e.getMessage(), e);
+        } catch (NoSuchElementException e) {
             throw new WLFormatException(e.getMessage(), e);
         }
     }

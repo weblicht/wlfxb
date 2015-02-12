@@ -36,6 +36,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.EnumSet;
 import java.util.List;
+import java.util.NoSuchElementException;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -213,6 +214,8 @@ public class TextCorpusStreamed extends TextCorpusStored implements Closeable {
             xmlReaderWriter.add(event);
         } catch (XMLStreamException e) {
             throw new WLFormatException(e.getMessage(), e);
+        } catch (NoSuchElementException e) {
+            throw new WLFormatException(e.getMessage(), e);
         }
     }
 
@@ -234,7 +237,10 @@ public class TextCorpusStreamed extends TextCorpusStored implements Closeable {
             }
         } catch (XMLStreamException e) {
             throw new WLFormatException(e.getMessage(), e);
+        } catch (NoSuchElementException e) {
+            throw new WLFormatException(e.getMessage(), e);
         }
+
         if (layersToRead.size() != readSucceeded.size()) {
             layersToRead.removeAll(readSucceeded);
             throw new WLFormatException("Following layers could not be read: " + layersToRead.toString());
