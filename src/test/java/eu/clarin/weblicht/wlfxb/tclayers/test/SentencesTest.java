@@ -43,5 +43,6 @@ public class SentencesTest {
         Assert.assertEquals(true, layer.hasCharOffsets());
         Assert.assertEquals(Integer.valueOf(0), layer.getSentence(0).getStartCharOffset());
         Assert.assertEquals(Integer.valueOf(24), layer.getSentence(0).getEndCharOffset());
+        Assert.assertEquals("s1", layer.getSentence(0).getSentenceId());
     }
 }
