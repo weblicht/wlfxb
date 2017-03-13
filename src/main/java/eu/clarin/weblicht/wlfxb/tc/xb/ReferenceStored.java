@@ -56,6 +56,11 @@ public class ReferenceStored implements Reference {
     protected String[] minTokRefs;
 
     @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
     public String getType() {
         return type;
     }

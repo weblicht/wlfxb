@@ -48,6 +48,11 @@ public class DependencyParseStored implements DependencyParse {
     protected List<EmptyTokenStored> emptytoks;
 
     @Override
+    public String getId() {
+        return parseId;
+    }
+
+    @Override
     public Dependency[] getDependencies() {
         if (dependencies == null) {
             return new Dependency[0];

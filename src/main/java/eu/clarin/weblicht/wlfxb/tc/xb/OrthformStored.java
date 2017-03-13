@@ -47,6 +47,11 @@ public class OrthformStored implements Orthform {
     protected String[] lemmaRefs;
 
     @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
     public String[] getValue() {
         String[] splittedValues = values.split(",[ ]*");
         return splittedValues;

@@ -27,7 +27,7 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  * @author Yana Panchenko
  *
  */
-public interface ReferencedEntity {
+public interface ReferencedEntity extends Annotation {
 
     public String getExternalId();
 

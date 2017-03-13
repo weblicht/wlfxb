@@ -27,7 +27,7 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  * @author Yana Panchenko
  *
  */
-public interface DependencyParse {
+public interface DependencyParse extends Annotation {
 
     public Dependency[] getDependencies();
 }

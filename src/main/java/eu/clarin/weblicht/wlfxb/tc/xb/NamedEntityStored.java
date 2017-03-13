@@ -48,6 +48,11 @@ public class NamedEntityStored implements NamedEntity {
     protected String[] tokRefs;
 
     @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
     public String getType() {
         return type;
     }

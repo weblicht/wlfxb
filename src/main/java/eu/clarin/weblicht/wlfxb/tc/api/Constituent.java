@@ -27,7 +27,7 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  * @author Yana Panchenko
  *
  */
-public interface Constituent {
+public interface Constituent extends Annotation {
 
     public boolean isTerminal();
 

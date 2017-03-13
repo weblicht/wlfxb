@@ -20,7 +20,7 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
-public interface Sentence {
+public interface Sentence extends Annotation {
 
     //public List<Token> getTokens();
     public Integer getStartCharOffset();

@@ -45,8 +45,15 @@ public class DiscourseConnectiveStored implements DiscourseConnective {
 	protected String type;
 	@XmlAttribute(name=CommonAttributes.TOKEN_SEQUENCE_REFERENCE, required = true)
 	protected String[] tokRefs;
-	
-	
+
+	/**
+	 * DiscourceConnectives do not have any identifier, always return null
+	 */
+	@Override
+	public String getId() {
+		return null;
+	}
+
 
 	@Override
 	public String getType() {

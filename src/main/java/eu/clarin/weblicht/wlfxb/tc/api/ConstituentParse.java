@@ -27,7 +27,7 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  * @author Yana Panchenko
  *
  */
-public interface ConstituentParse {
+public interface ConstituentParse extends Annotation {
 
     public Constituent getRoot();
 }
