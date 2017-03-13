@@ -20,11 +20,9 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
-public interface Token {
+public interface Token extends Annotation {
 
     public String getString();
-
-    public String getID();
 
     public int getOrder();
 

@@ -46,6 +46,11 @@ public class LemmaStored implements Lemma {
     protected String[] tokRefs;
 
     @Override
+    public String getId() {
+        return lemmaId;
+    }
+
+    @Override
     public String getString() {
         return lemmaString;
     }

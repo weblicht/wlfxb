@@ -46,6 +46,11 @@ public class PosTagStored implements PosTag {
     protected String[] tokRefs;
 
     @Override
+    public String getId() {
+        return tagId;
+    }
+
+    @Override
     public String getString() {
         return tagString;
     }

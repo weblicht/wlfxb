@@ -47,6 +47,11 @@ public class ReferencedEntityStored implements ReferencedEntity {
     protected List<ReferenceStored> references = new ArrayList<ReferenceStored>();
 
     @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (id != null) {

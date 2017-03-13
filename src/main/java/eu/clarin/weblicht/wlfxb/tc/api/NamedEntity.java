@@ -27,7 +27,7 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  * @author Yana Panchenko
  *
  */
-public interface NamedEntity {
+public interface NamedEntity extends Annotation {
 
     public String getType();
 }

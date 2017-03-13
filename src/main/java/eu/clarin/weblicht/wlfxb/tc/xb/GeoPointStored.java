@@ -58,6 +58,11 @@ public class GeoPointStored implements GeoPoint {
     protected String[] tokRefs;
 
     @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
     public String getLongitude() {
         return longitude;
     }

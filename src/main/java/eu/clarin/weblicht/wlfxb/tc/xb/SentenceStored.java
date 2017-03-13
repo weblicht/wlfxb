@@ -48,6 +48,11 @@ public class SentenceStored implements Sentence {
     protected Integer end;
 
     @Override
+    public String getId() {
+        return sentenceId;
+    }
+
+    @Override
     public Integer getStartCharOffset() {
         return start;
     }

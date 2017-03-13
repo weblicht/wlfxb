@@ -46,8 +46,13 @@ public class EmptyTokenStored implements Token {
 	@XmlAttribute(name=CommonAttributes.ID, required = true)
 	protected String id;
 	protected int order;
-	
-	
+
+	@Override
+	public String getId() {
+		return id;
+	}
+
+
 	@Override
 	public String getString() {
             return tokenString;

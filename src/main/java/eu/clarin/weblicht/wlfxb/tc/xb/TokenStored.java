@@ -55,7 +55,7 @@ public class TokenStored implements Token {
     }
 
     @Override
-    public String getID() {
+    public String getId() {
         return tokenId;
     }
 

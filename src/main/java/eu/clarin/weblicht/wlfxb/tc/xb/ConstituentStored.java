@@ -56,6 +56,11 @@ public class ConstituentStored implements Constituent {
     protected List<ConstituentStored> children = new ArrayList<ConstituentStored>();
 
     @Override
+    public String getId() {
+        return constituentId;
+    }
+
+    @Override
     public boolean isTerminal() {
         return children.isEmpty();
     }

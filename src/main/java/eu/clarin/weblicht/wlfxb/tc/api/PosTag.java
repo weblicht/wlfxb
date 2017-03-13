@@ -20,7 +20,7 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
-public interface PosTag {
+public interface PosTag extends Annotation {
 
     public String getString();
 }

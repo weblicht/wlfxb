@@ -44,6 +44,11 @@ public class ConstituentParseStored implements ConstituentParse {
     protected ConstituentStored constituentParseRoot;
 
     @Override
+    public String getId() {
+        return constituentParseId;
+    }
+
+    @Override
     public Constituent getRoot() {
         return constituentParseRoot;
     }
