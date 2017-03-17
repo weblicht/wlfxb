@@ -58,11 +58,6 @@ public class SentenceStored implements Sentence {
     }
 
     @Override
-    public String getSentenceId() {
-        return sentenceId;
-    }
-
-    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (sentenceId != null) {

@@ -26,6 +26,4 @@ public interface Sentence {
     public Integer getStartCharOffset();
 
     public Integer getEndCharOffset();
-
-    public String getSentenceId();
 }

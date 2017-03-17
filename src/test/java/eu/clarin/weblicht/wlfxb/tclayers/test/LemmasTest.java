@@ -31,7 +31,6 @@ public class LemmasTest {
         InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
 
-
         LemmasLayer layer = TestUtils.read(LemmasLayerStored.class, is);
         System.out.println(layer);
         TestUtils.write(layer, os);
@@ -42,6 +41,6 @@ public class LemmasTest {
         Assert.assertEquals(9, layer.size());
         Assert.assertEquals("Peter", layer.getLemma(0).getString());
         Assert.assertEquals(".", layer.getLemma(layer.size() - 1).getString());
-
+        Assert.assertEquals("l1", layer.getLemma(0).getLemmaId());
     }
 }
