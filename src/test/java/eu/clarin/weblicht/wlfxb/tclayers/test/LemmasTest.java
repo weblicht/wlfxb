@@ -42,5 +42,6 @@ public class LemmasTest {
         Assert.assertEquals("Peter", layer.getLemma(0).getString());
         Assert.assertEquals(".", layer.getLemma(layer.size() - 1).getString());
         Assert.assertEquals("l1", layer.getLemma(0).getLemmaId());
+
     }
 }
