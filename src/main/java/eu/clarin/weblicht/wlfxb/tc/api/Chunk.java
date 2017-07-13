@@ -10,5 +10,6 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  * @author felahi
  */
 public interface Chunk {
-    
+
+    public String getType();
 }
