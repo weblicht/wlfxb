@@ -29,8 +29,6 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
     public TemporaryFolder testFolder = new TemporaryFolder();
 
     //private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tcf-chunk/tcf-before.xml";
-    
-    
     private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-chunk/tcf-before.xml";
     private static final String INPUT_FILE_WITH_LAYER = "/data/tc-chunk/tcf-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/tc-chunk/output-expected.xml";
@@ -54,7 +52,7 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
         Assert.assertEquals(tc.getTokensLayer().getToken(0), layer.getTokens(layer.getChunk(0))[0]);
     }
 
-    /*@Test
+    @Test
     public void testReadWrite() throws Exception {
         String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
         TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeChunkLayer);
@@ -74,7 +72,7 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
         System.out.println(tc);
         // compare output xml with expected xml
         assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
-    }*/
+    }
 
     private String recognize(String tokenString) {
         return token2CH.get(tokenString);
