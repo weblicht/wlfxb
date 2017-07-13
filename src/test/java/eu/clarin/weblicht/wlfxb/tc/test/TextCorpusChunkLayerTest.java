@@ -5,9 +5,12 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.test;
 
+import eu.clarin.weblicht.wlfxb.io.TextCorpusStreamed;
 import eu.clarin.weblicht.wlfxb.tc.api.ChunkLayer;
 import eu.clarin.weblicht.wlfxb.tc.api.TextCorpus;
+import eu.clarin.weblicht.wlfxb.tc.api.Token;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
+import java.io.File;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
@@ -32,7 +35,7 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeChunkLayer
             = EnumSet.of(TextCorpusLayerTag.TOKENS);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterChunkLayer
-            = EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.NAMED_ENTITIES);
+            = EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.CHUNKS);
     public static final Map<String, String> token2CH = new HashMap<String, String>();
 
     static {
@@ -48,19 +51,19 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
         Assert.assertEquals(tc.getTokensLayer().getToken(0), layer.getTokens(layer.getChunk(0))[0]);
     }
 
-    /*@Test
+    @Test
     public void testReadWrite() throws Exception {
         String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
         TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeChunkLayer);
         System.out.println(tc);
         // create named entities layer, it's empty at first
-        NamedEntitiesLayer nes = tc.createNamedEntitiesLayer("MUC1990");
+        ChunkLayer layer = tc.createChunkLayer("tagset");
         for (int i = 0; i < tc.getTokensLayer().size(); i++) {
             Token token = tc.getTokensLayer().getToken(i);
-            String neType = recognize(token.getString());
-            if (neType != null) {
+            String chType = recognize(token.getString());
+            if (chType != null) {
                 // create and add part-of-speech tag to the tags layer
-                nes.addEntity(neType, token);
+                layer.addChunk(chType, token);
             }
         }
         // IMPORTANT close the streams!!!
@@ -68,10 +71,9 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
         System.out.println(tc);
         // compare output xml with expected xml
         assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
-    }*/
+    }
 
     private String recognize(String tokenString) {
         return token2CH.get(tokenString);
     }
 }
-

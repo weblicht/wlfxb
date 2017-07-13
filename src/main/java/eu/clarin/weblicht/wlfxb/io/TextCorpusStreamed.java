@@ -25,6 +25,7 @@ package eu.clarin.weblicht.wlfxb.io;
 
 import eu.clarin.weblicht.wlfxb.md.xb.MetaData;
 import eu.clarin.weblicht.wlfxb.md.xb.MetaDataItem;
+import eu.clarin.weblicht.wlfxb.tc.api.ChunkLayer;
 import eu.clarin.weblicht.wlfxb.tc.api.TextCorpusLayer;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerStoredAbstract;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
@@ -408,4 +409,5 @@ public class TextCorpusStreamed extends TextCorpusStored implements Closeable {
             this.layersToRead.addAll(tag.withDependentLayers());
         }
     }
+
 }

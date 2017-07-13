@@ -263,6 +263,15 @@ public interface TextCorpus {
      * @return annotation layer that has been created.
      */
     public NamedEntitiesLayer createNamedEntitiesLayer(String entitiesType);
+    
+    /**
+     * Creates empty {@link ChunkLayer} with the given tagset for named
+     * entity types in this <tt>TextCorpus</tt>.
+     *
+     * @param entitiesType tagset of the chunk annotations.
+     * @return annotation layer that has been created.
+     */
+    public ChunkLayer createChunkLayer(String entitiesType);
 
     /**
      * Gets references layer of this <tt>TextCorpus</tt>.

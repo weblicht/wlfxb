@@ -100,6 +100,7 @@ public enum TextCorpusLayerTag {
         layerDependencies.put(TextCorpusLayerTag.POSTAGS, EnumSet.of(TextCorpusLayerTag.TOKENS));
         layerDependencies.put(TextCorpusLayerTag.SENTENCES, EnumSet.of(TextCorpusLayerTag.TOKENS));
         layerDependencies.put(TextCorpusLayerTag.NAMED_ENTITIES, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.CHUNKS, EnumSet.of(TextCorpusLayerTag.TOKENS));
         layerDependencies.put(TextCorpusLayerTag.PHONETICS, EnumSet.of(TextCorpusLayerTag.TOKENS));
         layerDependencies.put(TextCorpusLayerTag.PARSING_CONSTITUENT, EnumSet.of(TextCorpusLayerTag.TOKENS));
         layerDependencies.put(TextCorpusLayerTag.PARSING_DEPENDENCY, EnumSet.of(TextCorpusLayerTag.TOKENS));

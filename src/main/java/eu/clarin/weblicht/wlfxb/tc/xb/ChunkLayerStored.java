@@ -31,6 +31,7 @@ import eu.clarin.weblicht.wlfxb.tc.api.Token;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
 import eu.clarin.weblicht.wlfxb.utils.WlfUtilities;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -129,6 +130,12 @@ public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements C
     }
 
     @Override
+    public Chunk addChunk(String ChunkType, Token ChunkToken) {
+        List<Token> tagTokens = Arrays.asList(new Token[]{ChunkToken});
+        return addChunk(ChunkType, tagTokens);
+    }
+
+    @Override
     public Chunk addChunk(String ChunkType, List<Token> ChunkTokens) {
         ChunkStored ch = new ChunkStored();
         ch.type = ChunkType;
@@ -151,4 +158,5 @@ public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements C
     public Set<String> getFoundTypes() {
         return foundTypes;
     }
+
 }
