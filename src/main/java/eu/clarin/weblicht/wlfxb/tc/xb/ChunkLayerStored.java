@@ -28,6 +28,7 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 import eu.clarin.weblicht.wlfxb.tc.api.Chunk;
 import eu.clarin.weblicht.wlfxb.tc.api.ChunkLayer;
 import eu.clarin.weblicht.wlfxb.tc.api.Token;
+import static eu.clarin.weblicht.wlfxb.tc.xb.NamedEntitiesLayerStored.XML_NAME;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
 import eu.clarin.weblicht.wlfxb.utils.WlfUtilities;
 import java.util.ArrayList;
@@ -157,6 +158,17 @@ public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements C
     @Override
     public Set<String> getFoundTypes() {
         return foundTypes;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(XML_NAME);
+        sb.append(" ");
+        sb.append("{");
+        sb.append(tagset);
+        sb.append("} :");
+        sb.append(chunks.toString());
+        return sb.toString();
     }
 
 }
