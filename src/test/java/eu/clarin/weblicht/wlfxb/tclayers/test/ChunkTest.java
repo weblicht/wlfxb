@@ -33,7 +33,6 @@ public class ChunkTest {
         InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
 
-
         ChunkLayer layer = TestUtils.read(ChunkLayerStored.class, is);
         System.out.println(layer);
         TestUtils.write(layer, os);

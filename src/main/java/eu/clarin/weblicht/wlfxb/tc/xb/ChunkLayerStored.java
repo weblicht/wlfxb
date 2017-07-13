@@ -50,8 +50,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements ChunkLayer {
 
     public static final String XML_NAME = "chunks";
-    @XmlAttribute(name = CommonAttributes.TYPE, required = true)
-    private String type;
+    @XmlAttribute(name = CommonAttributes.TAGSET, required = true)
+    private String tagset;
     @XmlElement(name = ChunkStored.XML_NAME)
     private List<ChunkStored> chunks = new ArrayList<ChunkStored>();
     private Set<String> foundTypes = new HashSet<String>();
@@ -60,8 +60,8 @@ public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements C
     protected ChunkLayerStored() {
     }
 
-    protected ChunkLayerStored(String type) {
-        this.type = type;
+    protected ChunkLayerStored(String tagset) {
+        this.tagset = tagset;
     }
 
     protected ChunkLayerStored(TextCorpusLayersConnector connector) {
@@ -95,7 +95,7 @@ public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements C
 
     @Override
     public String getTagset() {
-        return type;
+        return tagset;
     }
 
     @Override
