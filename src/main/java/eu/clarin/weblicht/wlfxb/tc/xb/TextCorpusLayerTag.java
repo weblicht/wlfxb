@@ -46,6 +46,7 @@ public enum TextCorpusLayerTag {
     @Deprecated
     RELATIONS(RelationsLayerStored.XML_NAME, RelationsLayerStored.class),
     NAMED_ENTITIES(NamedEntitiesLayerStored.XML_NAME, NamedEntitiesLayerStored.class),
+    CHUNKS(ChunkLayerStored.XML_NAME, ChunkLayerStored.class),
     REFERENCES(ReferencesLayerStored.XML_NAME, ReferencesLayerStored.class),
     SYNONYMY(SynonymyLayerStored.XML_NAME, SynonymyLayerStored.class),
     ANTONYMY(AntonymyLayerStored.XML_NAME, AntonymyLayerStored.class),

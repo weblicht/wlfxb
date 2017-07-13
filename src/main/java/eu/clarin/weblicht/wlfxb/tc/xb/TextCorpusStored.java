@@ -290,7 +290,7 @@ public class TextCorpusStored implements TextCorpus {
     public DiscourseConnectivesLayer createDiscourseConnectivesLayer(String typesTagset) {
         return initializeLayer(DiscourseConnectivesLayerStored.class, typesTagset);
     }
-    
+
     @Override
     public WordSensesLayer createWordSensesLayer(String source) {
         return initializeLayer(WordSensesLayerStored.class, source);
@@ -418,7 +418,17 @@ public class TextCorpusStored implements TextCorpus {
 
     @Override
     public NamedEntitiesLayerStored getNamedEntitiesLayer() {
-        return ((NamedEntitiesLayerStored) layersInOrder[TextCorpusLayerTag.NAMED_ENTITIES.ordinal()]);
+        return ((NamedEntitiesLayerStored) layersInOrder[TextCorpusLayerTag.CHUNKS.ordinal()]);
+    }
+
+    @XmlElement(name = ChunkLayerStored.XML_NAME)
+    protected void setChunkLayer(ChunkLayerStored layer) {
+        layersInOrder[TextCorpusLayerTag.CHUNKS.ordinal()] = layer;
+    }
+
+    @Override
+    public ChunkLayerStored getChunkLayer() {
+        return ((ChunkLayerStored) layersInOrder[TextCorpusLayerTag.NAMED_ENTITIES.ordinal()]);
     }
 
     @XmlElement(name = ReferencesLayerStored.XML_NAME)
@@ -551,12 +561,11 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.TEXT_SOURCE.ordinal()] = layer;
     }
 
-
     @Override
     public DiscourseConnectivesLayerStored getDiscourseConnectivesLayer() {
         return ((DiscourseConnectivesLayerStored) layersInOrder[TextCorpusLayerTag.DISCOURSE_CONNECTIVES.ordinal()]);
     }
-    
+
     @XmlElement(name = WordSensesLayerStored.XML_NAME)
     protected void setWordSensesLayer(WordSensesLayerStored layer) {
         layersInOrder[TextCorpusLayerTag.WORD_SENSES.ordinal()] = layer;
