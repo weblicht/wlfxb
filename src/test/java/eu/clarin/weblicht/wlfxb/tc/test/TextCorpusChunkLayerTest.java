@@ -28,7 +28,6 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
 
-    //private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tcf-chunk/tcf-before.xml";
     private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-chunk/tcf-before.xml";
     private static final String INPUT_FILE_WITH_LAYER = "/data/tc-chunk/tcf-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/tc-chunk/output-expected.xml";
@@ -57,13 +56,13 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
         String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
         TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeChunkLayer);
         System.out.println(tc);
-        // create named entities layer, it's empty at first
+        // create chunk layer, it's empty at first
         ChunkLayer layer = tc.createChunkLayer("tagset");
         for (int i = 0; i < tc.getTokensLayer().size(); i++) {
             Token token = tc.getTokensLayer().getToken(i);
             String chType = recognize(token.getString());
             if (chType != null) {
-                // create and add part-of-speech tag to the tags layer
+                // create and add chunk to the chunk layer
                 layer.addChunk(chType, token);
             }
         }
