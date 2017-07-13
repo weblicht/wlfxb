@@ -34,7 +34,7 @@ import java.util.Set;
  */
 public interface ChunkLayer extends TextCorpusLayer {
 
-    public String getType();
+    public String getTagset();
 
     public Chunk getChunk(int index);
 

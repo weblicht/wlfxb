@@ -6,9 +6,11 @@ import eu.clarin.weblicht.wlfxb.tc.api.TextCorpus;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
 import eu.clarin.weblicht.wlfxb.test.utils.TestUtils;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.EnumSet;
 import javax.xml.parsers.ParserConfigurationException;
 import junit.framework.Assert;
+import org.apache.commons.io.IOUtils;
 import org.xml.sax.SAXException;
 
 /**
@@ -25,8 +27,10 @@ public abstract class AbstractTextCorpusTest {
         return tc;
     }
 
-    protected TextCorpusStreamed open(String inputResource, String outputFile, EnumSet<TextCorpusLayerTag> layersToRead) throws FileNotFoundException, WLFormatException {
+    protected TextCorpusStreamed open(String inputResource, String outputFile, EnumSet<TextCorpusLayerTag> layersToRead) throws FileNotFoundException, WLFormatException, IOException {
         InputStream is = this.getClass().getResourceAsStream(inputResource);
+        //String result = IOUtils.toString(is, StandardCharsets.UTF_8);
+        //System.out.println(result);
         Assert.assertNotNull("can't open input resource", is);
         OutputStream os = new FileOutputStream(outputFile);
         Assert.assertNotNull("can't open output file", os);

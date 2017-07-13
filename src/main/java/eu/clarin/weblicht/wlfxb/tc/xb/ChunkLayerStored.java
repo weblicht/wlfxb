@@ -94,7 +94,7 @@ public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements C
     }
 
     @Override
-    public String getType() {
+    public String getTagset() {
         return type;
     }
 

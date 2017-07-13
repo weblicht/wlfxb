@@ -1,3 +1,3 @@
-<tc:chunks tagset="tagset" xmlns="http://www.dspin.de/data/textcorpus">
-    <tc:chunk type="NP" tokenIDs="t0"/>
-</tc:chunks>
+<chunks type="tagset" xmlns="http://www.dspin.de/data/textcorpus">
+    <chunk type="NP" tokenIDs="t0"/>
+</chunks>
