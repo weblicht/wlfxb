@@ -50,4 +50,7 @@ public abstract class CommonAttributes {
     public static final String SOURCE = "src";
     public static final String ALPHABET = "alphabet"; //alphabet 
     public static final String EXTREF = "extref";
+    public static final String SURFACE_FORM = "surfaceForm";
+    public static final String PARTS = "parts";
+
 }

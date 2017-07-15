@@ -45,6 +45,12 @@ public class TokenStored implements Token {
     //and in connector to store tokenIDs and lists where index correspond to order instead of maps... to ... instead of Token to ... 
     @XmlAttribute(name = CommonAttributes.START_CHAR_OFFSET)
     protected Long start;
+
+    @XmlAttribute(name = CommonAttributes.SURFACE_FORM)
+    protected String surfaceForm;
+
+    @XmlAttribute(name = CommonAttributes.PARTS, required = true)
+    protected String[] parts;
     //@XmlAttribute(name=CommonAttributes.END_CHAR_OFFSET)
     //Long end;
     protected int order;
@@ -67,6 +73,16 @@ public class TokenStored implements Token {
     @Override
     public Long getStart() {
         return start;
+    }
+
+    @Override
+    public String getSurfaceForm() {
+        return surfaceForm;
+    }
+
+    @Override
+    public String[] getParts() {
+        return parts;
     }
 
     @Override

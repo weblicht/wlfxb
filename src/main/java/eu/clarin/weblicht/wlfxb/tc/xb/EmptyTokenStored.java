@@ -19,7 +19,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /**
- * 
+ *
  */
 package eu.clarin.weblicht.wlfxb.tc.xb;
 
@@ -36,51 +36,55 @@ import javax.xml.bind.annotation.XmlValue;
  */
 @XmlAccessorType(XmlAccessType.NONE)
 public class EmptyTokenStored implements Token {
-	
-	
-	public static final String XML_NAME = "emptytok";
-	public static final String ID_PREFIX = "et_";
-	
-	@XmlValue
-	protected String tokenString;
-	@XmlAttribute(name=CommonAttributes.ID, required = true)
-	protected String id;
-	protected int order;
-	
-	
-	@Override
-	public String getString() {
-            return tokenString;
-	}
-	
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append(order).append(": ").append(id).append(" ").append(tokenString);
-		return sb.toString();
-	}
 
+    public static final String XML_NAME = "emptytok";
+    public static final String ID_PREFIX = "et_";
 
+    @XmlValue
+    protected String tokenString;
+    @XmlAttribute(name = CommonAttributes.ID, required = true)
+    protected String id;
+    protected int order;
 
-	@Override
-	public String getID() {
-		return id;
-	}
+    @Override
+    public String getString() {
+        return tokenString;
+    }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(order).append(": ").append(id).append(" ").append(tokenString);
+        return sb.toString();
+    }
 
-	@Override
-	public Long getStart() {
-		return null;
-	}
+    @Override
+    public String getID() {
+        return id;
+    }
 
+    @Override
+    public Long getStart() {
+        return null;
+    }
 
-	@Override
-	public Long getEnd() {
-		return null;
-	}
-	
-	public int getOrder() {
-		return order;
-	}
+    @Override
+    public Long getEnd() {
+        return null;
+    }
+
+    public int getOrder() {
+        return order;
+    }
+
+    @Override
+    public String getSurfaceForm() {
+        return null;
+    }
+
+    @Override
+    public String[] getParts() {
+        return null;
+    }
 
 }
