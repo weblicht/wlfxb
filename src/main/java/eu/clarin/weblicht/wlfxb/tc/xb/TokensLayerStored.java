@@ -23,6 +23,7 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.xb;
 
+import eu.clarin.weblicht.wlfxb.tc.api.NamedEntity;
 import eu.clarin.weblicht.wlfxb.tc.api.Token;
 import eu.clarin.weblicht.wlfxb.tc.api.TokensLayer;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
@@ -117,6 +118,29 @@ public class TokensLayerStored extends TextCorpusLayerStoredAbstract implements 
     }
 
     @Override
+    public Token addToken(String tokenString, String tokenId, Long start, Long end, String surfaceForm, List<Token> entityTokens) {
+        TokenStored token = new TokenStored();
+        token.tokenId = tokenId;
+        token.tokenString = tokenString;
+        token.surfaceForm = surfaceForm;
+        if (start != null && end != null) {
+            token.start = start;
+            this.charOffsets = true;
+        }
+        
+        token.parts = new String[entityTokens.size()];
+        for (int i = 0; i < entityTokens.size(); i++) {
+            Token partToken = entityTokens.get(i);
+            token.parts[i] = partToken.getID();
+        }
+        
+        token.order = tokens.size();
+        connector.tokenId2ItsToken.put(token.tokenId, token);
+        tokens.add(token);
+        return token;
+    }
+
+    @Override
     public boolean isEmpty() {
         return tokens.isEmpty();
     }
@@ -155,4 +179,5 @@ public class TokensLayerStored extends TextCorpusLayerStoredAbstract implements 
         sb.append(tokens.toString());
         return sb.toString();
     }
+
 }
