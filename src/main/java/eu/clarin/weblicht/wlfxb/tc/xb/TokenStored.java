@@ -106,6 +106,15 @@ public class TokenStored implements Token {
             sb.append(getEnd());
             sb.append(")");
         }
+        if (surfaceForm != null) {
+            sb.append(" (");
+            sb.append(surfaceForm);
+            sb.append("-");
+            for(String tokenStringPart:parts){
+              sb.append(tokenStringPart+" ");  
+            }
+            sb.append(")");
+        }
         return sb.toString();
     }
 }
