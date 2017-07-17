@@ -17,8 +17,6 @@ import org.junit.Test;
 import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author Yana Panchenko
@@ -32,12 +30,13 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
     private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-tokens/tcf-before.xml";
     private static final String INPUT_FILE_WITH_LAYER = "/data/tc-tokens/tcf-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/tc-tokens/output-expected.xml";
+     private static final String OUTPUT_FILE = "output.xml";
 
     private static final String INPUT_FILE_UD_WITHOUT_LAYER = "/data/tc-tokens/tcf-beforeUD.xml";
     private static final String INPUT_FILE_UD_WITH_LAYER = "/data/tc-tokens/tcf-afterUD.xml";
     private static final String EXPECTED_UD_OUTPUT_FILE = "/data/tc-tokens/output-expectedUD.xml";
 
-    private static final String OUTPUT_FILE = "output.xml";
+   
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeTokenization
             = EnumSet.of(TextCorpusLayerTag.TEXT);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterTokenization
@@ -59,7 +58,7 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
         Assert.assertEquals("Dann", layer.getToken(0).getString());
     }
 
-    @Test
+   @Test
     public void testReadWrite() throws Exception {
         String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
         TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeTokenization);
@@ -75,6 +74,7 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
+                
         assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
@@ -109,7 +109,7 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        //assertEqualXml(EXPECTED_UD_OUTPUT_FILE, outfile);
+        assertEqualXml(EXPECTED_UD_OUTPUT_FILE, outfile);
     }
 
     private List<String> tokenize(String text) {
