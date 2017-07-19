@@ -51,6 +51,11 @@ public class LemmaStored implements Lemma {
     }
 
     @Override
+    public String getLemmaId() {
+        return lemmaId;
+    }
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (lemmaId != null) {
@@ -60,4 +65,5 @@ public class LemmaStored implements Lemma {
         sb.append(lemmaString).append(" ").append(Arrays.toString(tokRefs));
         return sb.toString();
     }
+
 }
