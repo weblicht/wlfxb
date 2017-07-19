@@ -139,14 +139,15 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
         if (lastToken != null) {
             if (lastToken.getID().contains("_")) {
                 String[] split = lastToken.getID().split("_");
-                start_id = Integer.parseInt(split[1]);
+                start_id = Integer.parseInt(split[1])+1;
             } else {
                 throw new Exception("The tokenID string format is wrong!!");
             }
         }
+            
         for (Integer id = 0; id < length; id++) {
-            start_id++;
             IDs[id] = tokenID_Prefix + (start_id).toString();
+            start_id++;
         }
         return IDs;
     }

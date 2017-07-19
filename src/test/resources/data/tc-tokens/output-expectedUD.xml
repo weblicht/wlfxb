@@ -7,14 +7,15 @@
     <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
         <text>Dann schau doch mal im Spamfilter.</text>
         <tokens>
-            <token ID="t_0">Dann</token>
-            <token ID="t_1">schau</token>
-            <token ID="t_2">doch</token>
-            <token ID="t_3">mal</token>
-            <token ID="t_4" surfaceForm="im" parts="t_4 t_5">in</token>
-            <token ID="t_5">dem</token>
-            <token ID="t_6">Spamfilter</token>
-            <token ID="t_7">.</token>
+            <token ID="t_0" surfaceForm="Dann" parts="t_0 t_1">Dan</token>
+            <token ID="t_1" >n</token>
+            <token ID="t_2">schau</token>
+            <token ID="t_3">doch</token>
+            <token ID="t_4">mal</token>
+            <token ID="t_5" surfaceForm="im" parts="t_5 t_6">in</token>
+            <token ID="t_6">dem</token>
+            <token ID="t_7">Spamfilter</token>
+            <token ID="t_8">.</token>
         </tokens>
     </TextCorpus>
 </D-Spin>

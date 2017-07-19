@@ -27,6 +27,8 @@ public class TestUtilUDTokenizer {
 
     static {
         compositeTokens.put("im", Arrays.asList("in", "dem"));
+        compositeTokens.put("Dann", Arrays.asList("Dan", "n"));
+        
     }
 
     public static boolean isCompositeToken(String tokenString) {
