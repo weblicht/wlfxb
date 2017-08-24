@@ -92,6 +92,37 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
         Assert.assertEquals(1, layer.size());
     }
 
+    @Test
+    public void testReadScore() throws Exception {
+        TextCorpus tc = read(INPUT_FILE_WITH_LAYER_SCORE, layersToReadAfterMorphologyAnnotation);
+        MorphologyLayer layer = tc.getMorphologyLayer();
+        Assert.assertEquals(true, layer.hasCharoffsets());
+        Assert.assertEquals(true, layer.hasSegmentation());
+        Assert.assertEquals("STTS", layer.getTagset());
+        Assert.assertEquals(tc.getTokensLayer().getToken(3), layer.getTokens(layer.getAnalysis(0))[0]);
+
+        //reading feature structure from first tag element
+        Assert.assertEquals(true, layer.getAnalysis(0).getTags().get(0).isScore());
+        Assert.assertEquals(new Double(0.8), layer.getAnalysis(0).getTags().get(0).getScore());
+        Assert.assertEquals(true, layer.getAnalysis(0).getTags().get(0).getFeatures()[0].isTerminal());
+        Assert.assertEquals("cat", layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getName());
+        Assert.assertEquals("noun", layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getValue());
+        Assert.assertEquals(false, layer.getAnalysis(0).getTags().get(0).getFeatures()[4].isTerminal());
+        Assert.assertEquals("test1", layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getName());
+        Assert.assertEquals("noun", layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getSubfeatures()[0].getValue());
+
+        //reading feature structure from second tag element
+        Assert.assertEquals(true, layer.getAnalysis(0).getTags().get(1).isScore());
+        Assert.assertEquals(new Double(0.6), layer.getAnalysis(0).getTags().get(1).getScore());
+        Assert.assertEquals(true, layer.getAnalysis(0).getTags().get(1).getFeatures()[0].isTerminal());
+        Assert.assertEquals("cat", layer.getAnalysis(0).getTags().get(1).getFeatures()[0].getName());
+        Assert.assertEquals("pronoun", layer.getAnalysis(0).getTags().get(1).getFeatures()[0].getValue());
+        Assert.assertEquals(false, layer.getAnalysis(0).getTags().get(1).getFeatures()[4].isTerminal());
+        Assert.assertEquals("test2", layer.getAnalysis(0).getTags().get(1).getFeatures()[4].getName());
+        Assert.assertEquals("pronoun", layer.getAnalysis(0).getTags().get(1).getFeatures()[4].getSubfeatures()[0].getValue());
+        Assert.assertEquals(1, layer.size());
+    }
+
     private void addAnalysis(Token token, MorphologyLayer morphology) {
 
         List<Feature> features = new ArrayList<Feature>();
