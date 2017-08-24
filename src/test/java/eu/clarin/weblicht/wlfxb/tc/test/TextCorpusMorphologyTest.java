@@ -142,8 +142,8 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
         // compare output xml with expected xml
         assertEqualXml(EXPECTED_OUTPUT_FILE_TAGSET, outfile);
     }
-    
-     @Test
+
+    @Test
     public void testReadWriteWithScore() throws Exception {
         String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
         TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeMorphologyAnnotation);
@@ -154,13 +154,13 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
             // create morphology annotation for the test token (for the 4th token)
             if (i == 3) {
                 addMultipleAnalysis(token, morphology);
-                 //addAnalysis(token, morphology);
+                //addAnalysis(token, morphology);
             }
         }
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-       assertEqualXml(EXPECTED_OUTPUT_FILE_SCORE, outfile);
+        assertEqualXml(EXPECTED_OUTPUT_FILE_SCORE, outfile);
     }
 
     private void addAnalysis(Token token, MorphologyLayer morphology) {
@@ -219,7 +219,7 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
         segments.add(s1);
         morphology.addAnalysis(token, features, segments);
     }
-    
+
     private void addMultipleAnalysis(Token token, MorphologyLayer morphology) {
 
         List<Feature> featuresForTag1 = new ArrayList<Feature>();
@@ -248,8 +248,7 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
         subfeatures5.add(feature5_5);
         Feature feature5 = morphology.createFeature("test1", subfeatures5);
         featuresForTag1.add(feature5);
-       
-        
+
         //Create second tag element...
         Feature feature11 = morphology.createFeature("cat", "pronoun");
         featuresForTag2.add(feature11);
@@ -286,12 +285,12 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
         subsegments1.add(s1_2);
         MorphologySegment s1 = morphology.createSegment(null, "noun", null, 0, 9, subsegments1);
         segments.add(s1);
-        
-        MorphologyTagStored tag1=morphology.createTag(0.8, featuresForTag1);
-        MorphologyTagStored tag2=morphology.createTag(0.6, featuresForTag2);
-        List<MorphologyTagStored> tags=new ArrayList<MorphologyTagStored>();
+
+        MorphologyTagStored tag1 = morphology.createTag(0.8, featuresForTag1);
+        MorphologyTagStored tag2 = morphology.createTag(0.6, featuresForTag2);
+        List<MorphologyTagStored> tags = new ArrayList<MorphologyTagStored>();
         tags.add(tag1);
         tags.add(tag2);
-        morphology.addMultipleAnalysis(token, tags,segments);
+        morphology.addMultipleAnalysis(token, tags, segments);
     }
 }
