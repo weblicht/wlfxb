@@ -153,9 +153,9 @@ public class MorphologyLayerStored extends TextCorpusLayerStoredAbstract impleme
             }
         }
         if (!fs.features.isEmpty()) {
-            //temporary closed..
-           // a.tag = new MorphologyTagStored();
-           // a.tag.fs = fs;
+            MorphologyTagStored morphologyTagStored = new MorphologyTagStored();
+            morphologyTagStored.fs = fs;
+            a.tags.add(morphologyTagStored);
         }
         a.tokRefs = new String[analysedTokens.size()];
         for (int i = 0; i < analysedTokens.size(); i++) {
