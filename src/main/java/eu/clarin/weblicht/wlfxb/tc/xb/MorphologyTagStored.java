@@ -23,8 +23,12 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.xb;
 
+import eu.clarin.weblicht.wlfxb.tc.api.Feature;
+import eu.clarin.weblicht.wlfxb.tc.api.MorphologyTag;
+import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -34,11 +38,40 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = FeatureStructureStored.XML_NAME)
 @XmlAccessorType(XmlAccessType.NONE)
-public class MorphologyTagStored {
+public class MorphologyTagStored implements MorphologyTag {
+
+    @XmlAttribute(name = CommonAttributes.SCORE)
+    protected Double score;
+
+    public MorphologyTagStored() {
+
+    }
+
+    public MorphologyTagStored(Double score) {
+        this.score = score;
+    }
 
     public static final String XML_NAME = "tag";
     @XmlElement(name = FeatureStructureStored.XML_NAME)
     protected FeatureStructureStored fs;
+
+    @Override
+    public boolean isScore() {
+        if (score != null) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public Double getScore() {
+        return score;
+    }
+
+    @Override
+    public Feature[] getFeatures() {
+        return fs.getFeatures();
+    }
 
     @Override
     public String toString() {

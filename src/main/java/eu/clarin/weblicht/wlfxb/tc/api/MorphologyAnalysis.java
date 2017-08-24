@@ -23,13 +23,20 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
+import eu.clarin.weblicht.wlfxb.tc.xb.MorphologyTagStored;
+import java.util.List;
+
 /**
- * @author Yana Panchenko
+ * @author Yana Panchenko and Mohammad Fazleh Elahi
  *
  */
 public interface MorphologyAnalysis {
 
     //public FeatureStructure getFeatures();
+    public List<MorphologyTagStored> getTags();
+
+    public Feature[] getFeatures(Integer tagIndex);
+
     public Feature[] getFeatures();
 
     public MorphologySegment[] getSegmentation();

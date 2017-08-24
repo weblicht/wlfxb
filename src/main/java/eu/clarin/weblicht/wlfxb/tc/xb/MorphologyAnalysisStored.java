@@ -27,6 +27,7 @@ import eu.clarin.weblicht.wlfxb.tc.api.Feature;
 import eu.clarin.weblicht.wlfxb.tc.api.MorphologyAnalysis;
 import eu.clarin.weblicht.wlfxb.tc.api.MorphologySegment;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.xml.bind.annotation.*;
@@ -43,14 +44,24 @@ public class MorphologyAnalysisStored implements MorphologyAnalysis {
     @XmlAttribute(name = CommonAttributes.TOKEN_SEQUENCE_REFERENCE)
     protected String[] tokRefs;
     @XmlElement(name = MorphologyTagStored.XML_NAME)
-    protected MorphologyTagStored tag;
+    protected List<MorphologyTagStored> tags = new ArrayList<MorphologyTagStored>();
     @XmlElement(name = MorphologySegmentStored.XML_NAME)
     @XmlElementWrapper(name = "segmentation")
     protected List<MorphologySegmentStored> segments;
+    
+    @Override
+    public List<MorphologyTagStored> getTags() {
+        return tags;
+    }
 
     @Override
+    public Feature[] getFeatures(Integer tagIndex) {
+        return tags.get(tagIndex).fs.getFeatures();
+    }
+    
+    @Override
     public Feature[] getFeatures() {
-        return tag.fs.getFeatures();
+        return tags.get(0).fs.getFeatures();
     }
 
     @Override
@@ -67,7 +78,7 @@ public class MorphologyAnalysisStored implements MorphologyAnalysis {
         StringBuilder sb = new StringBuilder();
         sb.append(Arrays.toString(tokRefs));
         sb.append("( ");
-        sb.append(tag.toString());
+        sb.append(tags.toString());
         sb.append(" )");
         if (segments != null) {
             sb.append("[ ");
@@ -76,4 +87,5 @@ public class MorphologyAnalysisStored implements MorphologyAnalysis {
         }
         return sb.toString();
     }
+
 }
