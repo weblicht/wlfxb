@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+  <MetaData xmlns="http://www.dspin.de/data/metadata"><Services><cmd:CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cmd="http://www.clarin.eu/cmd/1" CMDVersion="1.2" xsi:schemaLocation="http://www.clarin.eu/cmd/1 http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd"><cmd:Resources><cmd:ResourceProxyList></cmd:ResourceProxyList><cmd:JournalFileProxyList></cmd:JournalFileProxyList><cmd:ResourceRelationList></cmd:ResourceRelationList></cmd:Resources><cmd:Components><cmd:WebServiceToolChain><cmd:GeneralInfo><cmd:Descriptions><cmd:Description></cmd:Description></cmd:Descriptions><cmd:ResourceName>Custom chain</cmd:ResourceName><cmd:ResourceClass>Toolchain</cmd:ResourceClass></cmd:GeneralInfo><cmd:Toolchain><cmd:ToolInChain><cmd:PID>http://hdl.handle.net/11858/00-1778-0000-0004-BA56-7</cmd:PID><cmd:Parameter value="en" name="lang"></cmd:Parameter><cmd:Parameter value="text/plain" name="type"></cmd:Parameter></cmd:ToolInChain><cmd:ToolInChain><cmd:PID>http://hdl.handle.net/11022/0000-0000-2518-C</cmd:PID></cmd:ToolInChain></cmd:Toolchain></cmd:WebServiceToolChain></cmd:Components></cmd:CMD></Services></MetaData>
+  <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="en">
+    <tc:text xmlns:tc="http://www.dspin.de/data/textcorpus">He reckons the current account deficit will narrow to only # 1.8 billion in September.</tc:text>
+    <tc:tokens xmlns:tc="http://www.dspin.de/data/textcorpus">
+      <tc:token ID="t_0">He</tc:token>
+      <tc:token ID="t_1">reckons</tc:token>
+      <tc:token ID="t_2">the</tc:token>
+      <tc:token ID="t_3">current</tc:token>
+      <tc:token ID="t_4">account</tc:token>
+      <tc:token ID="t_5">deficit</tc:token>
+      <tc:token ID="t_6">will</tc:token>
+      <tc:token ID="t_7">narrow</tc:token>
+      <tc:token ID="t_8">to</tc:token>
+      <tc:token ID="t_9">only</tc:token>
+      <tc:token ID="t_10">#</tc:token>
+      <tc:token ID="t_11">1.8</tc:token>
+      <tc:token ID="t_12">billion</tc:token>
+      <tc:token ID="t_13">in</tc:token>
+      <tc:token ID="t_14">September</tc:token>
+      <tc:token ID="t_15">.</tc:token>
+    </tc:tokens>
+    <tc:sentences xmlns:tc="http://www.dspin.de/data/textcorpus">
+      <tc:sentence tokenIDs="t_0 t_1 t_2 t_3 t_4 t_5 t_6 t_7 t_8 t_9 t_10 t_11 t_12 t_13 t_14 t_15"></tc:sentence>
+    </tc:sentences>
+  </TextCorpus>
+</D-Spin>
