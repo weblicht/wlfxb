@@ -20,6 +20,7 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
+import eu.clarin.weblicht.wlfxb.tc.xb.MorphologyTagStored;
 import java.util.List;
 
 /**
@@ -41,6 +42,8 @@ public interface MorphologyLayer extends TextCorpusLayer {
     public MorphologyAnalysis getAnalysis(int index);
 
     public MorphologyAnalysis getAnalysis(Token token);
+    
+    public String getTagset();
 
     public Token[] getTokens(MorphologyAnalysis analysis);
 
@@ -53,6 +56,16 @@ public interface MorphologyLayer extends TextCorpusLayer {
 
     public MorphologyAnalysis addAnalysis(List<Token> analysedTokens, List<Feature> morphologyFeatures,
             List<MorphologySegment> segments);
+    
+    public MorphologyAnalysis addMultipleAnalysis(Token analysedTokens, List<MorphologyTagStored> tags);
+
+    public MorphologyAnalysis addMultipleAnalysis(Token token, List<MorphologyTagStored> tags, List<MorphologySegment> segments);
+
+    public MorphologyAnalysis addMultipleAnalysis(List<Token> analysedTokens, List<MorphologyTagStored> tags);
+
+    public MorphologyAnalysis addMultipleAnalysis(List<Token> analysedTokens, List<MorphologyTagStored> tags, List<MorphologySegment> segments);
+
+    public MorphologyTagStored createTag(Double score, List<Feature> morphologyFeatures);
 
     public Feature createFeature(String name, String value);
 

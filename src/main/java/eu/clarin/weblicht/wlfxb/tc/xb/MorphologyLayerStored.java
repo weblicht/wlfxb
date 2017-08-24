@@ -44,6 +44,8 @@ public class MorphologyLayerStored extends TextCorpusLayerStoredAbstract impleme
     private Boolean hasCharoffsets;
     @XmlAttribute(name = "segmentation")
     private Boolean hasSegmentation;
+    @XmlAttribute(name = CommonAttributes.TAGSET)
+    private String tagset;
     @XmlElement(name = MorphologyAnalysisStored.XML_NAME)
     private List<MorphologyAnalysisStored> moans = new ArrayList<MorphologyAnalysisStored>();
     private TextCorpusLayersConnector connector;
@@ -111,6 +113,11 @@ public class MorphologyLayerStored extends TextCorpusLayerStoredAbstract impleme
     }
 
     @Override
+    public String getTagset() {
+        return tagset;
+    }
+
+    @Override
     public Token[] getTokens(MorphologyAnalysis analysis) {
         if (analysis instanceof MorphologyAnalysisStored) {
             MorphologyAnalysisStored a = (MorphologyAnalysisStored) analysis;
@@ -146,8 +153,9 @@ public class MorphologyLayerStored extends TextCorpusLayerStoredAbstract impleme
             }
         }
         if (!fs.features.isEmpty()) {
-            a.tag = new MorphologyTagStored();
-            a.tag.fs = fs;
+            //temporary closed..
+           // a.tag = new MorphologyTagStored();
+           // a.tag.fs = fs;
         }
         a.tokRefs = new String[analysedTokens.size()];
         for (int i = 0; i < analysedTokens.size(); i++) {
@@ -177,6 +185,31 @@ public class MorphologyLayerStored extends TextCorpusLayerStoredAbstract impleme
             }
         }
         return a;
+    }
+
+    @Override
+    public MorphologyAnalysis addMultipleAnalysis(Token analysedTokens, List<MorphologyTagStored> tags) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public MorphologyAnalysis addMultipleAnalysis(Token token, List<MorphologyTagStored> tags, List<MorphologySegment> segments) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public MorphologyAnalysis addMultipleAnalysis(List<Token> analysedTokens, List<MorphologyTagStored> tags) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public MorphologyAnalysis addMultipleAnalysis(List<Token> analysedTokens, List<MorphologyTagStored> tags, List<MorphologySegment> segments) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public MorphologyTagStored createTag(Double score, List<Feature> morphologyFeatures) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -259,4 +292,5 @@ public class MorphologyLayerStored extends TextCorpusLayerStoredAbstract impleme
         sb.append(moans.toString());
         return sb.toString();
     }
+
 }
