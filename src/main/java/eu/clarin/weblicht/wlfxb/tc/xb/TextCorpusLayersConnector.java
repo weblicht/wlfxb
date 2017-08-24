@@ -39,6 +39,7 @@ public class TextCorpusLayersConnector {
     protected Map<Token, MorphologyAnalysis> token2ItsAnalysis = new HashMap<Token, MorphologyAnalysis>();
     //Map<Token,NamedEntity> token2ItsNE = new HashMap<Token,NamedEntity>();
     protected Map<Token, List<NamedEntity>> token2ItsNE = new HashMap<Token, List<NamedEntity>>();
+    protected Map<Token, List<Chunk>> token2ItsCH = new HashMap<Token, List<Chunk>>();
     //Map<Token,Referent> token2ItsReferent = new HashMap<Token,Referent>();
     protected Map<Token, List<ReferencedEntity>> token2ItsReferent = new HashMap<Token, List<ReferencedEntity>>();
     protected Map<String, Reference> referenceId2ItsReference = new HashMap<String, Reference>();
