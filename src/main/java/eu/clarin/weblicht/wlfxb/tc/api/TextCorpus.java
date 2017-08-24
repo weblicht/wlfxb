@@ -24,8 +24,10 @@ import java.util.List;
 
 /**
  * Interface <tt>TextCorpus</tt> represents TCF TextCorpus annotations.
- * Corresponds to TCF <a href="http://clarin-d.de/images/weblicht-tutorials/resources/tcf-04/schemas/latest/textcorpus_0_4.rnc">TextCorpus specification</a>.
- * 
+ * Corresponds to TCF
+ * <a href="http://clarin-d.de/images/weblicht-tutorials/resources/tcf-04/schemas/latest/textcorpus_0_4.rnc">TextCorpus
+ * specification</a>.
+ *
  * These annotations represent linguistic annotations on written connected text.
  * The annotations are divided into the annotation layers, were each layer
  * represents specific linguistic aspect. For example, <tt>TextCorpus</tt> can
@@ -33,9 +35,9 @@ import java.util.List;
  * {@link ConstituentParsingLayer}, etc. In TextCorpus, annotations from any
  * layer usually annotate (directly or indirectly) {@link Token} annotations
  * from {@link TokensLayer}. An exception is {@link TextLayer} which is
- * independent from any other layer.
- * See also:
- * <a href="http://weblicht.sfs.uni-tuebingen.de/weblichtwiki/index.php/The_TCF_Format">TCF Format description</a>.
+ * independent from any other layer. See also:
+ * <a href="http://weblicht.sfs.uni-tuebingen.de/weblichtwiki/index.php/The_TCF_Format">TCF
+ * Format description</a>.
  *
  * @author Yana Panchenko
  */
@@ -208,13 +210,21 @@ public interface TextCorpus {
      * {@link Token} objects from {@link TokensLayer}.
      */
     public MorphologyLayer getMorphologyLayer();
-    
+
     /**
      * Creates empty {@link MorphologyLayer} in this <tt>TextCorpus</tt>.
      *
      * @return annotation layer that has been created.
      */
     public MorphologyLayer createMorphologyLayer();
+
+    /**
+     * Creates empty {@link MorphologyLayer} in this <tt>TextCorpus</tt>.
+     *
+     * @param tagset of the morphology annotations contain
+     * @return annotation layer that has been created.
+     */
+    public MorphologyLayer createMorphologyLayer(String tagset);
 
     /**
      * Creates empty {@link MorphologyLayer} in this <tt>TextCorpus</tt>.
@@ -228,6 +238,16 @@ public interface TextCorpus {
     /**
      * Creates empty {@link MorphologyLayer} in this <tt>TextCorpus</tt>.
      *
+     * @param tagset of the morphology annotations contain
+     * @param hasSegmentation true if morphology annotations contain
+     * segmentation analysis.
+     * @return annotation layer that has been created.
+     */
+    public MorphologyLayer createMorphologyLayer(String tagset, boolean hasSegmentation);
+
+    /**
+     * Creates empty {@link MorphologyLayer} in this <tt>TextCorpus</tt>.
+     *
      * @param hasSegmentation true if morphology annotations contain
      * segmentation analysis.
      * @param hasCharOffsets true if the {@link MorphologyAnalysis} objects in
@@ -236,6 +256,19 @@ public interface TextCorpus {
      * @return annotation layer that has been created.
      */
     public MorphologyLayer createMorphologyLayer(boolean hasSegmentation, boolean hasCharOffsets);
+    
+    /**
+     * Creates empty {@link MorphologyLayer} in this <tt>TextCorpus</tt>.
+     *
+     * @param tagset of the morphology annotations contain
+     * @param hasSegmentation true if morphology annotations contain
+     * segmentation analysis.
+     * @param hasCharOffsets true if the {@link MorphologyAnalysis} objects in
+     * this layer will contain character offset for segmentation within the
+     * token information, false otherwise.
+     * @return annotation layer that has been created.
+     */
+    public MorphologyLayer createMorphologyLayer(String tagset, boolean hasSegmentation, boolean hasCharOffsets);
 
     /**
      * Gets named entities layer of this <tt>TextCorpus</tt>.
@@ -484,15 +517,15 @@ public interface TextCorpus {
      * @return annotation layer that has been created.
      */
     public DiscourseConnectivesLayer createDiscourseConnectivesLayer(String typeTagset);
-    
+
     /**
      * Gets word senses layer of this <tt>TextCorpus</tt>.
      *
-     * @return layer containing word sense annotations on
-     * {@link Token} objects from {@link TokensLayer}.
+     * @return layer containing word sense annotations on {@link Token} objects
+     * from {@link TokensLayer}.
      */
     public WordSensesLayer getWordSensesLayer();
-    
+
     /**
      * Creates empty {@link WordSensesLayer} in this
      * <tt>TextCorpus</tt>.

@@ -57,25 +57,6 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
     }
 
     @Test
-    public void testReadWrite() throws Exception {
-        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
-        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeMorphologyAnnotation);
-        System.out.println(tc);
-        MorphologyLayer morphology = tc.createMorphologyLayer(true, true);
-        for (int i = 0; i < tc.getTokensLayer().size(); i++) {
-            Token token = tc.getTokensLayer().getToken(i);
-            // create morphology annotation for the test token (for the 4th token)
-            if (i == 3) {
-                addAnalysis(token, morphology);
-            }
-        }
-        tc.close();
-        System.out.println(tc);
-        // compare output xml with expected xml
-        assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
-    }
-
-    @Test
     public void testReadWithTagSet() throws Exception {
         TextCorpus tc = read(INPUT_FILE_WITH_LAYER_TAGSET, layersToReadAfterMorphologyAnnotation);
         MorphologyLayer layer = tc.getMorphologyLayer();
@@ -121,6 +102,44 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
         Assert.assertEquals("test2", layer.getAnalysis(0).getTags().get(1).getFeatures()[4].getName());
         Assert.assertEquals("pronoun", layer.getAnalysis(0).getTags().get(1).getFeatures()[4].getSubfeatures()[0].getValue());
         Assert.assertEquals(1, layer.size());
+    }
+
+    @Test
+    public void testReadWrite() throws Exception {
+        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeMorphologyAnnotation);
+        System.out.println(tc);
+        MorphologyLayer morphology = tc.createMorphologyLayer(true, true);
+        for (int i = 0; i < tc.getTokensLayer().size(); i++) {
+            Token token = tc.getTokensLayer().getToken(i);
+            // create morphology annotation for the test token (for the 4th token)
+            if (i == 3) {
+                addAnalysis(token, morphology);
+            }
+        }
+        tc.close();
+        System.out.println(tc);
+        // compare output xml with expected xml
+        assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
+    }
+
+    @Test
+    public void testReadWriteWithTagSet() throws Exception {
+        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
+        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeMorphologyAnnotation);
+        System.out.println(tc);
+        MorphologyLayer morphology = tc.createMorphologyLayer("STTS", true, true);
+        for (int i = 0; i < tc.getTokensLayer().size(); i++) {
+            Token token = tc.getTokensLayer().getToken(i);
+            // create morphology annotation for the test token (for the 4th token)
+            if (i == 3) {
+                addAnalysis(token, morphology);
+            }
+        }
+        tc.close();
+        System.out.println(tc);
+        // compare output xml with expected xml
+        assertEqualXml(EXPECTED_OUTPUT_FILE_TAGSET, outfile);
     }
 
     private void addAnalysis(Token token, MorphologyLayer morphology) {
