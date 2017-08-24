@@ -28,10 +28,17 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
     private static final String INPUT_FILE_WITH_LAYER = "/data/tc-morph/tcf-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/tc-morph/output-expected.xml";
     private static final String OUTPUT_FILE = "output.xml";
-    private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeMorphologyAnnotation =
-            EnumSet.of(TextCorpusLayerTag.TOKENS);
-    private static final EnumSet<TextCorpusLayerTag> layersToReadAfterMorphologyAnnotation =
-            EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.MORPHOLOGY);
+
+    private static final String INPUT_FILE_WITH_LAYER_TAGSET = "/data/tc-morph/tcf-afterTagSet.xml";
+    private static final String EXPECTED_OUTPUT_FILE_TAGSET = "/data/tc-morph/output-expectedTagSet.xml";
+
+    private static final String INPUT_FILE_WITH_LAYER_SCORE = "/data/tc-morph/tcf-afterScore.xml";
+    private static final String EXPECTED_OUTPUT_FILE_SCORE = "/data/tc-morph/output-expectedScore.xml";
+
+    private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeMorphologyAnnotation
+            = EnumSet.of(TextCorpusLayerTag.TOKENS);
+    private static final EnumSet<TextCorpusLayerTag> layersToReadAfterMorphologyAnnotation
+            = EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.MORPHOLOGY);
 
     @Test
     public void testRead() throws Exception {

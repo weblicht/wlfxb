@@ -189,27 +189,67 @@ public class MorphologyLayerStored extends TextCorpusLayerStoredAbstract impleme
 
     @Override
     public MorphologyAnalysis addMultipleAnalysis(Token analysedTokens, List<MorphologyTagStored> tags) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public MorphologyAnalysis addMultipleAnalysis(Token token, List<MorphologyTagStored> tags, List<MorphologySegment> segments) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Token> toks = new ArrayList<Token>();
+        toks.add(analysedTokens);
+        return addMultipleAnalysis(toks, tags);
     }
 
     @Override
     public MorphologyAnalysis addMultipleAnalysis(List<Token> analysedTokens, List<MorphologyTagStored> tags) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        MorphologyAnalysisStored a = new MorphologyAnalysisStored();
+        for (MorphologyTagStored tag : tags) {
+            a.tags.add(tag);
+        }
+
+        a.tokRefs = new String[analysedTokens.size()];
+        for (int i = 0; i < analysedTokens.size(); i++) {
+            Token token = analysedTokens.get(i);
+            a.tokRefs[i] = token.getID();
+            connector.token2ItsAnalysis.put(token, a);
+        }
+        moans.add(a);
+        return a;
+    }
+
+    @Override
+    public MorphologyAnalysis addMultipleAnalysis(Token analysedTokens, List<MorphologyTagStored> tags, List<MorphologySegment> segments) {
+        List<Token> toks = new ArrayList<Token>();
+        toks.add(analysedTokens);
+        return addMultipleAnalysis(toks, tags, segments);
     }
 
     @Override
     public MorphologyAnalysis addMultipleAnalysis(List<Token> analysedTokens, List<MorphologyTagStored> tags, List<MorphologySegment> segments) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        MorphologyAnalysisStored a = (MorphologyAnalysisStored) addMultipleAnalysis(analysedTokens, tags);
+        for (MorphologySegment segment : segments) {
+            if (segment instanceof MorphologySegmentStored) {
+                MorphologySegmentStored s = (MorphologySegmentStored) segment;
+                this.hasSegmentation = true;
+                if (s.hasCharoffsets()) {
+                    this.hasCharoffsets = true;
+                }
+                if (a.segments == null) {
+                    a.segments = new ArrayList<MorphologySegmentStored>();
+                }
+                a.segments.add(s);
+            }
+        }
+        return a;
     }
 
     @Override
     public MorphologyTagStored createTag(Double score, List<Feature> morphologyFeatures) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        FeatureStructureStored fs = new FeatureStructureStored();
+        MorphologyTagStored morphologyTagStored = new MorphologyTagStored(score);
+        for (Feature f : morphologyFeatures) {
+            if (f instanceof FeatureStored) {
+                fs.features.add((FeatureStored) f);
+            }
+        }
+        if (!fs.features.isEmpty()) {
+            morphologyTagStored.fs = fs;
+        }
+        return morphologyTagStored;
     }
 
     @Override
