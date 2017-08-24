@@ -75,6 +75,23 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
         assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
+    @Test
+    public void testReadWithTagSet() throws Exception {
+        TextCorpus tc = read(INPUT_FILE_WITH_LAYER_TAGSET, layersToReadAfterMorphologyAnnotation);
+        MorphologyLayer layer = tc.getMorphologyLayer();
+        Assert.assertEquals(true, layer.hasCharoffsets());
+        Assert.assertEquals(true, layer.hasSegmentation());
+        Assert.assertEquals("STTS", layer.getTagset());
+        Assert.assertEquals(tc.getTokensLayer().getToken(3), layer.getTokens(layer.getAnalysis(0))[0]);
+        Assert.assertEquals(true, layer.getAnalysis(0).getFeatures()[0].isTerminal());
+        Assert.assertEquals("cat", layer.getAnalysis(0).getFeatures()[0].getName());
+        Assert.assertEquals("noun", layer.getAnalysis(0).getFeatures()[0].getValue());
+        Assert.assertEquals(false, layer.getAnalysis(0).getFeatures()[4].isTerminal());
+        Assert.assertEquals("test", layer.getAnalysis(0).getFeatures()[4].getName());
+        Assert.assertEquals("noun", layer.getAnalysis(0).getFeatures()[4].getSubfeatures()[0].getValue());
+        Assert.assertEquals(1, layer.size());
+    }
+
     private void addAnalysis(Token token, MorphologyLayer morphology) {
 
         List<Feature> features = new ArrayList<Feature>();
