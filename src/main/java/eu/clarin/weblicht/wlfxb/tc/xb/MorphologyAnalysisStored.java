@@ -48,7 +48,7 @@ public class MorphologyAnalysisStored implements MorphologyAnalysis {
     @XmlElement(name = MorphologySegmentStored.XML_NAME)
     @XmlElementWrapper(name = "segmentation")
     protected List<MorphologySegmentStored> segments;
-    
+
     @Override
     public List<MorphologyTagStored> getTags() {
         return tags;
@@ -58,7 +58,7 @@ public class MorphologyAnalysisStored implements MorphologyAnalysis {
     public Feature[] getFeatures(Integer tagIndex) {
         return tags.get(tagIndex).fs.getFeatures();
     }
-    
+
     @Override
     public Feature[] getFeatures() {
         return tags.get(0).fs.getFeatures();

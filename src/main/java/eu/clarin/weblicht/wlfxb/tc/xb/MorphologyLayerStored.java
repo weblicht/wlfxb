@@ -62,12 +62,26 @@ public class MorphologyLayerStored extends TextCorpusLayerStoredAbstract impleme
     protected MorphologyLayerStored() {
     }
 
+    protected MorphologyLayerStored(String tagset) {
+        this.tagset = tagset;
+    }
+
     protected MorphologyLayerStored(Boolean hasSegmentation) {
         this.hasSegmentation = hasSegmentation;
     }
 
     protected MorphologyLayerStored(Boolean hasSegmentation, Boolean hasCharOffsets) {
         this(hasSegmentation);
+        this.hasCharoffsets = hasCharOffsets;
+    }
+
+    protected MorphologyLayerStored(String tagset, Boolean hasSegmentation) {
+        this(tagset);
+        this.hasSegmentation = hasSegmentation;
+    }
+
+    protected MorphologyLayerStored(String tagset, Boolean hasSegmentation, Boolean hasCharOffsets) {
+        this(tagset, hasSegmentation);
         this.hasCharoffsets = hasCharOffsets;
     }
 

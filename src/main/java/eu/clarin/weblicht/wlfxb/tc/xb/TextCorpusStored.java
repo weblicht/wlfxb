@@ -160,13 +160,28 @@ public class TextCorpusStored implements TextCorpus {
     }
 
     @Override
+    public MorphologyLayer createMorphologyLayer(String tagset) {
+        return initializeLayer(MorphologyLayerStored.class, tagset);
+    }
+
+    @Override
     public MorphologyLayer createMorphologyLayer(boolean hasSegmentation) {
         return initializeLayer(MorphologyLayerStored.class, Boolean.valueOf(hasSegmentation));
     }
 
     @Override
+    public MorphologyLayer createMorphologyLayer(String tagset, boolean hasSegmentation) {
+        return initializeLayer(MorphologyLayerStored.class, tagset, Boolean.valueOf(hasSegmentation));
+    }
+
+    @Override
     public MorphologyLayer createMorphologyLayer(boolean hasSegmentation, boolean hasCharOffsets) {
         return initializeLayer(MorphologyLayerStored.class, Boolean.valueOf(hasSegmentation), Boolean.valueOf(hasCharOffsets));
+    }
+
+    @Override
+    public MorphologyLayer createMorphologyLayer(String tagset, boolean hasSegmentation, boolean hasCharOffsets) {
+        return initializeLayer(MorphologyLayerStored.class, tagset, Boolean.valueOf(hasSegmentation), Boolean.valueOf(hasCharOffsets));
     }
 
     @Override
@@ -290,7 +305,7 @@ public class TextCorpusStored implements TextCorpus {
     public DiscourseConnectivesLayer createDiscourseConnectivesLayer(String typesTagset) {
         return initializeLayer(DiscourseConnectivesLayerStored.class, typesTagset);
     }
-    
+
     @Override
     public WordSensesLayer createWordSensesLayer(String source) {
         return initializeLayer(WordSensesLayerStored.class, source);
@@ -551,12 +566,11 @@ public class TextCorpusStored implements TextCorpus {
         layersInOrder[TextCorpusLayerTag.TEXT_SOURCE.ordinal()] = layer;
     }
 
-
     @Override
     public DiscourseConnectivesLayerStored getDiscourseConnectivesLayer() {
         return ((DiscourseConnectivesLayerStored) layersInOrder[TextCorpusLayerTag.DISCOURSE_CONNECTIVES.ordinal()]);
     }
-    
+
     @XmlElement(name = WordSensesLayerStored.XML_NAME)
     protected void setWordSensesLayer(WordSensesLayerStored layer) {
         layersInOrder[TextCorpusLayerTag.WORD_SENSES.ordinal()] = layer;
