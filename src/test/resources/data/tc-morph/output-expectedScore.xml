@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/d-spin_0_4.rnc" type="application/relax-ng-compact-syntax"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+  <MetaData xmlns="http://www.dspin.de/data/metadata">
+    <source>IMS, Uni Stuttgart</source>
+  </MetaData>
+  <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+    <text>Peter aß eine Käsepizza. Sie schmeckte ihm.</text>
+    <tc:tokens xmlns:tc="http://www.dspin.de/data/textcorpus">
+      <tc:token ID="t1">Peter</tc:token>
+      <tc:token ID="t2">aß</tc:token>
+      <tc:token ID="t3">eine</tc:token>
+      <tc:token ID="t4">Käsepizza</tc:token>
+      <tc:token ID="t5">.</tc:token>
+      <tc:token ID="t6">Sie</tc:token>
+      <tc:token ID="t7">schmeckte</tc:token>
+      <tc:token ID="t8">ihm</tc:token>
+      <tc:token ID="t9">.</tc:token>
+    </tc:tokens>
+    <sentences>
+      <sentence ID="s1" tokenIDs="t1 t2 t3 t4 t5"></sentence>
+      <sentence ID="s2" tokenIDs="t6 t7 t8 t9"></sentence>
+    </sentences>
+    <tc:morphology xmlns:tc="http://www.dspin.de/data/textcorpus" charOffsets="true" segmentation="true" tagset="STTS">
+      <tc:analysis tokenIDs="t4">
+        <tc:tag score="0.8">
+          <tc:fs>
+            <tc:f name="cat">noun</tc:f>
+            <tc:f name="case">acc</tc:f>
+            <tc:f name="gender">fem</tc:f>
+            <tc:f name="number">singular</tc:f>
+            <tc:f name="test1">
+              <tc:fs>
+                <tc:f name="cat">noun</tc:f>
+                <tc:f name="case">acc</tc:f>
+                <tc:f name="gender">fem</tc:f>
+                <tc:f name="number">singular</tc:f>
+                <tc:f name="number">singular</tc:f>
+              </tc:fs>
+            </tc:f>
+          </tc:fs>
+        </tc:tag>
+        <tc:tag score="0.6">
+          <tc:fs>
+            <tc:f name="cat">pronoun</tc:f>
+            <tc:f name="case">acc</tc:f>
+            <tc:f name="gender">fem</tc:f>
+            <tc:f name="number">singular</tc:f>
+            <tc:f name="test2">
+              <tc:fs>
+                <tc:f name="cat">pronoun</tc:f>
+                <tc:f name="case">acc</tc:f>
+                <tc:f name="gender">fem</tc:f>
+                <tc:f name="number">singular</tc:f>
+                <tc:f name="number">singular</tc:f>
+              </tc:fs>
+            </tc:f>
+          </tc:fs>
+        </tc:tag>
+        <tc:segmentation>
+          <tc:segment cat="noun" start="0" end="9">
+            <tc:segment type="stem" func="comp" cat="noun" start="0" end="4">Käse</tc:segment>
+            <tc:segment type="stem" func="base" cat="noun" start="4" end="9">Pizza</tc:segment>
+          </tc:segment>
+        </tc:segmentation>
+      </tc:analysis>
+    </tc:morphology>
+  </TextCorpus>
+</D-Spin>
