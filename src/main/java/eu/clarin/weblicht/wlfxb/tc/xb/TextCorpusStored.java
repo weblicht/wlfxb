@@ -190,6 +190,11 @@ public class TextCorpusStored implements TextCorpus {
     }
 
     @Override
+    public ChunkLayer createChunkLayer(String entitiesType) {
+        return initializeLayer(ChunkLayerStored.class, entitiesType);
+    }
+
+    @Override
     public ReferencesLayer createReferencesLayer(String typetagset, String reltagset, String externalReferencesSource) {
         ReferencesLayerStored layer = initializeLayer(ReferencesLayerStored.class);
         layer.typetagset = typetagset;
@@ -436,6 +441,11 @@ public class TextCorpusStored implements TextCorpus {
         return ((NamedEntitiesLayerStored) layersInOrder[TextCorpusLayerTag.NAMED_ENTITIES.ordinal()]);
     }
 
+    @Override
+    public ChunkLayerStored getChunkLayer() {
+        return ((ChunkLayerStored) layersInOrder[TextCorpusLayerTag.CHUNKS.ordinal()]);
+    }
+
     @XmlElement(name = ReferencesLayerStored.XML_NAME)
     protected void setReferencesLayer(ReferencesLayerStored layer) {
         layersInOrder[TextCorpusLayerTag.REFERENCES.ordinal()] = layer;
@@ -631,4 +641,5 @@ public class TextCorpusStored implements TextCorpus {
         tc.connectLayers();
         return tc;
     }
+
 }
