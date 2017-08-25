@@ -83,4 +83,14 @@ public class EmptyTokenStored implements Token {
 		return order;
 	}
 
+    @Override
+    public String getSurfaceForm() {
+        return null;
+    }
+
+    @Override
+    public String[] getParts() {
+        return null;
+    }
+
 }

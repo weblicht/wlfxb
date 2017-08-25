@@ -31,4 +31,8 @@ public interface Token {
     public Long getStart();
 
     public Long getEnd();
+
+    public String getSurfaceForm();
+
+    public String[] getParts();
 }
