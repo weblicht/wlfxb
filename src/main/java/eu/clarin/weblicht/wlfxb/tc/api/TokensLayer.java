@@ -46,4 +46,6 @@ public interface TokensLayer extends TextCorpusLayer {
     public Token addToken(String tokenString, long start, long end);
 
     public Token addToken(String tokenString, long start, long end, String tokenId);
+    
+    public Token addToken(String tokenString, String tokenId, Long start, Long end, String surfaceForm, String[] parts);
 }

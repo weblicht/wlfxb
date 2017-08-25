@@ -117,6 +117,23 @@ public class TokensLayerStored extends TextCorpusLayerStoredAbstract implements 
     }
 
     @Override
+    public Token addToken(String tokenString, String tokenId, Long start, Long end, String surfaceForm, String[] tokenParts) {
+        TokenStored token = new TokenStored();
+        token.tokenId = tokenId;
+        token.tokenString = tokenString;
+        token.surfaceForm = surfaceForm;
+        token.parts = tokenParts;
+        if (start != null && end != null) {
+            token.start = start;
+            this.charOffsets = true;
+        }
+        token.order = tokens.size();
+        connector.tokenId2ItsToken.put(token.tokenId, token);
+        tokens.add(token);
+        return token;
+    }
+
+    @Override
     public boolean isEmpty() {
         return tokens.isEmpty();
     }
