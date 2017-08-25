@@ -46,6 +46,7 @@ public enum TextCorpusLayerTag {
     @Deprecated
     RELATIONS(RelationsLayerStored.XML_NAME, RelationsLayerStored.class),
     NAMED_ENTITIES(NamedEntitiesLayerStored.XML_NAME, NamedEntitiesLayerStored.class),
+    CHUNKS(ChunkLayerStored.XML_NAME, ChunkLayerStored.class),
     REFERENCES(ReferencesLayerStored.XML_NAME, ReferencesLayerStored.class),
     SYNONYMY(SynonymyLayerStored.XML_NAME, SynonymyLayerStored.class),
     ANTONYMY(AntonymyLayerStored.XML_NAME, AntonymyLayerStored.class),
@@ -99,6 +100,7 @@ public enum TextCorpusLayerTag {
         layerDependencies.put(TextCorpusLayerTag.POSTAGS, EnumSet.of(TextCorpusLayerTag.TOKENS));
         layerDependencies.put(TextCorpusLayerTag.SENTENCES, EnumSet.of(TextCorpusLayerTag.TOKENS));
         layerDependencies.put(TextCorpusLayerTag.NAMED_ENTITIES, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.CHUNKS, EnumSet.of(TextCorpusLayerTag.TOKENS));
         layerDependencies.put(TextCorpusLayerTag.PHONETICS, EnumSet.of(TextCorpusLayerTag.TOKENS));
         layerDependencies.put(TextCorpusLayerTag.PARSING_CONSTITUENT, EnumSet.of(TextCorpusLayerTag.TOKENS));
         layerDependencies.put(TextCorpusLayerTag.PARSING_DEPENDENCY, EnumSet.of(TextCorpusLayerTag.TOKENS));

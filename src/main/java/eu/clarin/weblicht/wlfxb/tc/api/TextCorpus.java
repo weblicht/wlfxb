@@ -256,7 +256,7 @@ public interface TextCorpus {
      * @return annotation layer that has been created.
      */
     public MorphologyLayer createMorphologyLayer(boolean hasSegmentation, boolean hasCharOffsets);
-    
+
     /**
      * Creates empty {@link MorphologyLayer} in this <tt>TextCorpus</tt>.
      *
@@ -286,6 +286,23 @@ public interface TextCorpus {
      * @return annotation layer that has been created.
      */
     public NamedEntitiesLayer createNamedEntitiesLayer(String entitiesType);
+
+    /**
+     * Creates empty {@link ChunkLayer} with the given tagset for named entity
+     * types in this <tt>TextCorpus</tt>.
+     *
+     * @param entitiesType tagset of the chunk annotations.
+     * @return annotation layer that has been created.
+     */
+    public ChunkLayer createChunkLayer(String entitiesType);
+
+    /**
+     * Gets chunks layer of this <tt>TextCorpus</tt>.
+     *
+     * @return layer containing chunk annotations on {@link Token} objects from
+     * {@link TokensLayer}.
+     */
+    public ChunkLayer getChunkLayer();
 
     /**
      * Gets references layer of this <tt>TextCorpus</tt>.
