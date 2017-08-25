@@ -47,6 +47,11 @@ public class TokenStored implements Token {
     protected Long start;
     //@XmlAttribute(name=CommonAttributes.END_CHAR_OFFSET)
     //Long end;
+    @XmlAttribute(name = CommonAttributes.SURFACE_FORM)
+    protected String surfaceForm;
+
+    @XmlAttribute(name = CommonAttributes.PARTS, required = true)
+    protected String[] parts;
     protected int order;
 
     @Override
@@ -79,6 +84,16 @@ public class TokenStored implements Token {
     }
 
     @Override
+    public String getSurfaceForm() {
+        return surfaceForm;
+    }
+
+    @Override
+    public String[] getParts() {
+        return parts;
+    }
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder(order + ": " + tokenId);
         sb.append(" -> ");
@@ -92,4 +107,5 @@ public class TokenStored implements Token {
         }
         return sb.toString();
     }
+
 }
