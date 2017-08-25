@@ -25,11 +25,14 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
+import java.util.Map;
+import javax.xml.namespace.QName;
+
 /**
  *
  * @author felahi
  */
 public interface Chunk {
 
-    public String getType();
+    public Map<QName, String> getType();
 }

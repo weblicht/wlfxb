@@ -28,10 +28,14 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 import eu.clarin.weblicht.wlfxb.tc.api.Chunk;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.namespace.QName;
 
 /**
  *
@@ -44,13 +48,13 @@ public class ChunkStored implements Chunk {
     public static final String XML_NAME = "chunk";
     @XmlAttribute(name = CommonAttributes.ID)
     protected String id;
-    @XmlAttribute(name = "type")
-    protected String type;
+    @XmlAnyAttribute
+    protected Map<QName, String> type = new HashMap<QName, String>();
     @XmlAttribute(name = CommonAttributes.TOKEN_SEQUENCE_REFERENCE, required = true)
     protected String[] tokRefs;
 
     @Override
-    public String getType() {
+    public Map<QName, String> getType() {
         return type;
     }
 

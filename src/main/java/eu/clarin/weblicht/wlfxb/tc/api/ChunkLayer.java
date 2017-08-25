@@ -26,7 +26,9 @@
 package eu.clarin.weblicht.wlfxb.tc.api;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import javax.xml.namespace.QName;
 
 /**
  *
@@ -44,9 +46,9 @@ public interface ChunkLayer extends TextCorpusLayer{
 
     public Token[] getTokens(Chunk chunk);
 
-    public Chunk addChunk(String ChunkType, List<Token> ChunkTokens);
+    public Chunk addChunk(Map<QName,String> ChunkType, List<Token> ChunkTokens);
 
-    public Chunk addChunk(String ChunkType, Token ChunkToken);
+    public Chunk addChunk(Map<QName,String> ChunkType, Token ChunkToken);
 
     public Set<String> getFoundTypes();
 

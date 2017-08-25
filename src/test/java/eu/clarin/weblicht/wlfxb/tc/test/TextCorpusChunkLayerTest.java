@@ -36,13 +36,15 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
             = EnumSet.of(TextCorpusLayerTag.TOKENS);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterChunkLayer
             = EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.CHUNKS);
-    public static final Map<String, String> token2CH = new HashMap<String, String>();
+    public static final Map<String, Map<String, String>> token2CH = new HashMap<String, Map<String, String>>();
 
     static {
-        token2CH.put("He", "NP");
+        Map<String, String> types = new HashMap<String, String>();
+        types.put("type", "NP");
+        token2CH.put("He", types);
     }
 
-   @Test
+    @Test
     public void testRead() throws Exception {
         TextCorpus tc = read(INPUT_FILE_WITH_LAYER, layersToReadAfterChunkLayer);
         ChunkLayer layer = tc.getChunkLayer();
@@ -60,7 +62,7 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
         ChunkLayer layer = tc.createChunkLayer("tagset");
         for (int i = 0; i < tc.getTokensLayer().size(); i++) {
             Token token = tc.getTokensLayer().getToken(i);
-            String chType = recognize(token.getString());
+            Map<String, String> chType = recognize(token.getString());
             if (chType != null) {
                 // create and add chunk to the chunk layer
                 layer.addChunk(chType, token);
@@ -73,7 +75,7 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
         assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
-    private String recognize(String tokenString) {
+    private Map<String, String> recognize(String tokenString) {
         return token2CH.get(tokenString);
     }
 }

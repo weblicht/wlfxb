@@ -1,3 +1,4 @@
 <chunks tagset="tagset" xmlns="http://www.dspin.de/data/textcorpus">
     <chunk type="NP" tokenIDs="t0"/>
+    <chunk type="NP" voice="VP" tokenIDs="t1"/>
 </chunks>

@@ -34,12 +34,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.namespace.QName;
 
 /**
  *
@@ -79,7 +81,9 @@ public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements C
                 }
                 connector.token2ItsCH.get(tok).add(ch);
             }
-            foundTypes.add(ch.getType());
+            for (QName type : ch.getType().keySet()) {
+                foundTypes.add(type.toString());
+            }
         }
     }
 
@@ -130,13 +134,13 @@ public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements C
     }
 
     @Override
-    public Chunk addChunk(String ChunkType, Token ChunkToken) {
+    public Chunk addChunk(Map<QName, String> ChunkType, Token ChunkToken) {
         List<Token> tagTokens = Arrays.asList(new Token[]{ChunkToken});
         return addChunk(ChunkType, tagTokens);
     }
 
     @Override
-    public Chunk addChunk(String ChunkType, List<Token> ChunkTokens) {
+    public Chunk addChunk(Map<QName, String> ChunkType, List<Token> ChunkTokens) {
         ChunkStored ch = new ChunkStored();
         ch.type = ChunkType;
         ch.tokRefs = new String[ChunkTokens.size()];
@@ -150,7 +154,9 @@ public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements C
             connector.token2ItsCH.get(tok).add(ch);
         }
         chunks.add(ch);
-        this.foundTypes.add(ch.getType());
+        for (QName type : ch.getType().keySet()) {
+            this.foundTypes.add(type.toString());
+        }
         return ch;
     }
 
