@@ -145,7 +145,8 @@ public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements C
     @Override
     public Chunk addChunk(Map<String, String> ChunkType, List<Token> ChunkTokens) {
         ChunkStored ch = new ChunkStored();
-        ch.types = ChunkType;
+        //ch.types = ChunkType;
+        ch.attributes = ch.getAttributes(ChunkType);
         ch.tokRefs = new String[ChunkTokens.size()];
         for (int i = 0; i < ChunkTokens.size(); i++) {
             Token token = ChunkTokens.get(i);

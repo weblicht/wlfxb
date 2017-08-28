@@ -52,8 +52,16 @@ public class ChunkStored implements Chunk {
     protected Map<QName, String> attributes = new HashMap<QName, String>();
     @XmlAttribute(name = CommonAttributes.TOKEN_SEQUENCE_REFERENCE, required = true)
     protected String[] tokRefs;
-
     protected Map<String, String> types = new HashMap<String, String>();
+
+    public Map<QName, String> getAttributes(Map<String, String> types) {
+        Map<QName, String> attributes = new HashMap<QName, String>();
+        for (String type : types.keySet()) {
+            QName qname = new QName(type);
+            attributes.put(qname, types.get(type));
+        }
+        return attributes;
+    }
 
     @Override
     public Map<String, String> getTypes() {
