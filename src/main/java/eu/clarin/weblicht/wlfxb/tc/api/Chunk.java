@@ -34,5 +34,5 @@ import javax.xml.namespace.QName;
  */
 public interface Chunk {
 
-    public Map<QName, String> getType();
+    public Map<String, String> getTypes();
 }

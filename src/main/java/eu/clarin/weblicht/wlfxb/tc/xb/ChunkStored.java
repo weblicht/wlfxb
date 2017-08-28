@@ -49,13 +49,18 @@ public class ChunkStored implements Chunk {
     @XmlAttribute(name = CommonAttributes.ID)
     protected String id;
     @XmlAnyAttribute
-    protected Map<QName, String> type = new HashMap<QName, String>();
+    protected Map<QName, String> attributes = new HashMap<QName, String>();
     @XmlAttribute(name = CommonAttributes.TOKEN_SEQUENCE_REFERENCE, required = true)
     protected String[] tokRefs;
 
+    protected Map<String, String> types = new HashMap<String, String>();
+
     @Override
-    public Map<QName, String> getType() {
-        return type;
+    public Map<String, String> getTypes() {
+        for (QName qName : attributes.keySet()) {
+            types.put(qName.toString(), attributes.get(qName).toString());
+        }
+        return types;
     }
 
     @Override
@@ -65,9 +70,10 @@ public class ChunkStored implements Chunk {
             sb.append(id);
             sb.append(" -> ");
         }
-        sb.append(type);
+        sb.append(types.toString());
         sb.append(" ");
         sb.append(Arrays.toString(tokRefs));
         return sb.toString();
     }
+
 }

@@ -81,9 +81,12 @@ public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements C
                 }
                 connector.token2ItsCH.get(tok).add(ch);
             }
-            for (QName type : ch.getType().keySet()) {
+            for (String type : ch.getTypes().keySet()) {
                 foundTypes.add(type.toString());
             }
+            /*for (QName type : ch.getType().keySet()) {
+                foundTypes.add(type.toString());
+            }*/
         }
     }
 
@@ -134,15 +137,15 @@ public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements C
     }
 
     @Override
-    public Chunk addChunk(Map<QName, String> ChunkType, Token ChunkToken) {
+    public Chunk addChunk(Map<String, String> ChunkType, Token ChunkToken) {
         List<Token> tagTokens = Arrays.asList(new Token[]{ChunkToken});
         return addChunk(ChunkType, tagTokens);
     }
 
     @Override
-    public Chunk addChunk(Map<QName, String> ChunkType, List<Token> ChunkTokens) {
+    public Chunk addChunk(Map<String, String> ChunkType, List<Token> ChunkTokens) {
         ChunkStored ch = new ChunkStored();
-        ch.type = ChunkType;
+        ch.types = ChunkType;
         ch.tokRefs = new String[ChunkTokens.size()];
         for (int i = 0; i < ChunkTokens.size(); i++) {
             Token token = ChunkTokens.get(i);
@@ -154,7 +157,7 @@ public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements C
             connector.token2ItsCH.get(tok).add(ch);
         }
         chunks.add(ch);
-        for (QName type : ch.getType().keySet()) {
+        for (String type : ch.getTypes().keySet()) {
             this.foundTypes.add(type.toString());
         }
         return ch;
