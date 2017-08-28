@@ -7,11 +7,14 @@ package eu.clarin.weblicht.wlfxb.tclayers.test;
 
 import eu.clarin.weblicht.wlfxb.tc.api.Chunk;
 import eu.clarin.weblicht.wlfxb.tc.api.ChunkLayer;
+import eu.clarin.weblicht.wlfxb.tc.api.Token;
 import eu.clarin.weblicht.wlfxb.tc.xb.ChunkLayerStored;
 import eu.clarin.weblicht.wlfxb.test.utils.TestUtils;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.namespace.QName;
 import org.junit.Assert;
 import org.junit.Rule;
@@ -43,21 +46,21 @@ public class ChunkTest {
         os.close();
 
         Assert.assertEquals("tagset", layer.getTagset());
-        Assert.assertEquals(2, layer.size());
+        Assert.assertEquals(8, layer.size());
 
         for (Integer index = 0; index < layer.size(); index++) {
-            Chunk chunk=layer.getChunk(index);
-            for (String type : chunk.getTypes().keySet()) {
-                String value = chunk.getTypes().get(type).toString();
-               
-                if (index==0) {
-                    Assert.assertEquals("type", type.toString());
-                    Assert.assertEquals("NP", value);
-                }
-                /*if (index==1) {
-                    Assert.assertEquals("voice", type.toString());
-                    Assert.assertEquals("VP", value);
-                }*/
+            Chunk chunk = layer.getChunk(index);
+
+            if (index == 0) {
+                Assert.assertEquals("NP", chunk.getTypes().get("type"));
+            }
+            if (index == 1) {
+                Assert.assertEquals("VP", chunk.getTypes().get("type"));
+                Assert.assertEquals("none", chunk.getTypes().get("voice"));
+                Assert.assertEquals("present", chunk.getTypes().get("tense"));
+            }
+            if (index == 2) {
+                Assert.assertEquals("NP", chunk.getTypes().get("type"));
             }
         }
 
@@ -73,5 +76,4 @@ public class ChunkTest {
             System.out.print(" " + type.toString() + " " + value.toString());
         }
     }*/
-
 }
