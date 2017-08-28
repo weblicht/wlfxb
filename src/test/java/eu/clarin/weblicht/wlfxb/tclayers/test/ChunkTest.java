@@ -5,6 +5,7 @@
  */
 package eu.clarin.weblicht.wlfxb.tclayers.test;
 
+import eu.clarin.weblicht.wlfxb.tc.api.Chunk;
 import eu.clarin.weblicht.wlfxb.tc.api.ChunkLayer;
 import eu.clarin.weblicht.wlfxb.tc.xb.ChunkLayerStored;
 import eu.clarin.weblicht.wlfxb.test.utils.TestUtils;
@@ -45,8 +46,10 @@ public class ChunkTest {
         Assert.assertEquals(2, layer.size());
 
         for (Integer index = 0; index < layer.size(); index++) {
-            for (QName type : layer.getChunk(index).getType().keySet()) {
-                String value = layer.getChunk(index).getType().get(type).toString();
+            Chunk chunk=layer.getChunk(index);
+            for (String type : chunk.getTypes().keySet()) {
+                String value = chunk.getTypes().get(type).toString();
+               
                 if (index==0) {
                     Assert.assertEquals("type", type.toString());
                     Assert.assertEquals("NP", value);

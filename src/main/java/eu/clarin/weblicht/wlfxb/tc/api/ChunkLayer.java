@@ -46,13 +46,9 @@ public interface ChunkLayer extends TextCorpusLayer{
 
     public Token[] getTokens(Chunk chunk);
 
-    public Chunk addChunk(Map<QName,String> ChunkType, List<Token> ChunkTokens);
+    public Chunk addChunk(Map<String,String> ChunkType, List<Token> ChunkTokens);
 
-    public Chunk addChunk(Map<QName,String> ChunkType, Token ChunkToken);
+    public Chunk addChunk(Map<String,String> ChunkType, Token ChunkToken);
 
     public Set<String> getFoundTypes();
-
-    //public Chunk addChunk(String ChunkType, Token ChunkToken);
-    //public Chunk addChunk(Set<String> ChunkTypes, Token ChunkToken);
-    //public Chunk addChunk(Set<String> ChunkTypes, List<Token> ChunkTokens);
 }
