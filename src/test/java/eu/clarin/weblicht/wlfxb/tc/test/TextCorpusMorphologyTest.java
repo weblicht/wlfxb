@@ -244,11 +244,9 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
         subfeatures5.add(feature5_3);
         Feature feature5_4 = morphology.createFeature("number", "singular");
         subfeatures5.add(feature5_4);
-        Feature feature5_5 = morphology.createFeature("number", "singular");
-        subfeatures5.add(feature5_5);
         Feature feature5 = morphology.createFeature("test1", subfeatures5);
         featuresForTag1.add(feature5);
-
+   
         //Create second tag element...
         Feature feature11 = morphology.createFeature("cat", "pronoun");
         featuresForTag2.add(feature11);
@@ -256,7 +254,7 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
         featuresForTag2.add(feature12);
         Feature feature13 = morphology.createFeature("gender", "fem");
         featuresForTag2.add(feature13);
-        Feature feature14 = morphology.createFeature("number", "singular");
+        Feature feature14 = morphology.createFeature("number", "plural");
         featuresForTag2.add(feature14);
 
         List<Feature> subfeatures15 = new ArrayList<Feature>();
@@ -266,10 +264,8 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
         subfeatures15.add(feature15_2);
         Feature feature15_3 = morphology.createFeature("gender", "fem");
         subfeatures15.add(feature15_3);
-        Feature feature15_4 = morphology.createFeature("number", "singular");
+        Feature feature15_4 = morphology.createFeature("number", "plural");
         subfeatures15.add(feature15_4);
-        Feature feature15_5 = morphology.createFeature("number", "singular");
-        subfeatures15.add(feature15_5);
         Feature feature15 = morphology.createFeature("test2", subfeatures15);
         featuresForTag2.add(feature15);
 

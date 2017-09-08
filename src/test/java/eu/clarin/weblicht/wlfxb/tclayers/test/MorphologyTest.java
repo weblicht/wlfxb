@@ -114,7 +114,7 @@ public class MorphologyTest {
         Assert.assertEquals("pronoun", layer.getAnalysis(0).getTags().get(1).getFeatures()[0].getValue());
         Assert.assertEquals(false, layer.getAnalysis(0).getTags().get(1).getFeatures()[4].isTerminal());
         Assert.assertEquals("test2", layer.getAnalysis(0).getTags().get(1).getFeatures()[4].getName());
-        Assert.assertEquals("noun", layer.getAnalysis(0).getTags().get(1).getFeatures()[4].getSubfeatures()[0].getValue());
+        Assert.assertEquals("pronoun", layer.getAnalysis(0).getTags().get(1).getFeatures()[4].getSubfeatures()[0].getValue());
 
         //reading first feature structure  layer directly
         Assert.assertEquals(true, layer.getAnalysis(0).getFeatures(0)[0].isTerminal());
@@ -130,7 +130,7 @@ public class MorphologyTest {
         Assert.assertEquals("pronoun", layer.getAnalysis(0).getFeatures(1)[0].getValue());
         Assert.assertEquals(false, layer.getAnalysis(0).getFeatures(1)[4].isTerminal());
         Assert.assertEquals("test2", layer.getAnalysis(0).getFeatures(1)[4].getName());
-        Assert.assertEquals("noun", layer.getAnalysis(0).getFeatures(1)[4].getSubfeatures()[0].getValue());
+        Assert.assertEquals("pronoun", layer.getAnalysis(0).getFeatures(1)[4].getSubfeatures()[0].getValue());
         Assert.assertEquals(1, layer.size());
 
     }

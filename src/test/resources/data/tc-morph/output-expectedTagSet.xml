@@ -18,10 +18,10 @@
             <token ID="t9">.</token>
         </tokens>
         <sentences>
-            <sentence ID="s1" tokenIDs="t1 t2 t3 t4 t5"></sentence>
-            <sentence ID="s2" tokenIDs="t6 t7 t8 t9"></sentence>
+            <sentence ID="s1" tokenIDs="t1 t2 t3 t4 t5"/>
+            <sentence ID="s2" tokenIDs="t6 t7 t8 t9"/>
         </sentences>
-        <morphology tagset="STTS" segmentation="true" charOffsets="true">
+        <morphology tagset="STTS" segmentation="true" charOffsets="true" xmlns="http://www.dspin.de/data/textcorpus">
             <analysis tokenIDs="t4">
                 <tag>
                     <fs>
