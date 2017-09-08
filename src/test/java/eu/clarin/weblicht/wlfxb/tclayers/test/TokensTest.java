@@ -62,22 +62,28 @@ public class TokensTest {
         is.close();
         os.close();
 
-        Assert.assertEquals(true, layer.hasCharOffsets());
-        Assert.assertEquals(2, layer.size());
-
-        Assert.assertEquals("in", layer.getToken(0).getString());
-        Assert.assertEquals("t_1", layer.getToken(0).getID());
-        Assert.assertEquals(Long.valueOf(0), layer.getToken(0).getStart());
-        Assert.assertEquals(Long.valueOf(2), layer.getToken(0).getEnd());
-        Assert.assertEquals("im", layer.getToken(0).getSurfaceForm());
-        Assert.assertEquals("t_1", layer.getToken(0).getParts()[0]);
-        Assert.assertEquals("t_2", layer.getToken(0).getParts()[1]);
-
-        Assert.assertEquals("dem", layer.getToken(1).getString());
-        Assert.assertEquals("t_2", layer.getToken(1).getID());
-        Assert.assertEquals(Long.valueOf(3), layer.getToken(1).getStart());
-        Assert.assertEquals(Long.valueOf(6), layer.getToken(1).getEnd());
-        Assert.assertNull(layer.getToken(1).getSurfaceForm());
-        Assert.assertNull(layer.getToken(1).getParts());
+        Assert.assertEquals(false, layer.hasCharOffsets());
+        Assert.assertEquals(9, layer.size());
+      
+        Assert.assertEquals("Dan", layer.getToken(0).getString());
+        Assert.assertEquals("t_0", layer.getToken(0).getID());
+        Assert.assertEquals("Dann", layer.getToken(0).getSurfaceForm());
+        Assert.assertEquals("t_0", layer.getToken(0).getParts()[0]);
+        Assert.assertEquals("t_1", layer.getToken(0).getParts()[1]);
+        
+        Assert.assertEquals("n", layer.getToken(1).getString());
+        Assert.assertEquals("t_1", layer.getToken(1).getID());
+        Assert.assertEquals("schau", layer.getToken(2).getString());
+        Assert.assertEquals("t_2", layer.getToken(2).getID());
+        Assert.assertEquals("doch", layer.getToken(3).getString());
+        Assert.assertEquals("t_3", layer.getToken(3).getID());
+        Assert.assertEquals("mal", layer.getToken(4).getString());
+        Assert.assertEquals("t_4", layer.getToken(4).getID());
+        
+        Assert.assertEquals("in", layer.getToken(5).getString());
+        Assert.assertEquals("t_5", layer.getToken(5).getID());
+        Assert.assertEquals("im", layer.getToken(5).getSurfaceForm());
+        Assert.assertEquals("t_5", layer.getToken(5).getParts()[0]);
+        Assert.assertEquals("t_6", layer.getToken(5).getParts()[1]);
     }
 }

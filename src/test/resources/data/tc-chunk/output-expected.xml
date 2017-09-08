@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+<?xml version="1.0" encoding="UTF-8"?><D-Spin xmlns="http://www.dspin.de/data" version="0.4">
     <MetaData xmlns="http://www.dspin.de/data/metadata">
         <Services>
             <cmd:CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cmd="http://www.clarin.eu/cmd/1" CMDVersion="1.2" xsi:schemaLocation="http://www.clarin.eu/cmd/1 http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd">
@@ -20,8 +19,8 @@
                         <cmd:Toolchain>
                             <cmd:ToolInChain>
                                 <cmd:PID>http://hdl.handle.net/11858/00-1778-0000-0004-BA56-7</cmd:PID>
-                                <cmd:Parameter name="lang" value="en"></cmd:Parameter>
-                                <cmd:Parameter name="type" value="text/plain"></cmd:Parameter>
+                                <cmd:Parameter value="en" name="lang"></cmd:Parameter>
+                                <cmd:Parameter value="text/plain" name="type"></cmd:Parameter>
                             </cmd:ToolInChain>
                             <cmd:ToolInChain>
                                 <cmd:PID>http://hdl.handle.net/11022/0000-0000-2518-C</cmd:PID>
@@ -55,7 +54,7 @@
         <sentences xmlns:tc="http://www.dspin.de/data/textcorpus">
             <sentence tokenIDs="t_0 t_1 t_2 t_3 t_4 t_5 t_6 t_7 t_8 t_9 t_10 t_11 t_12 t_13 t_14 t_15"></sentence>
         </sentences>
-        <chunks xmlns:tc="http://www.dspin.de/data/textcorpus" tagset="tagset">
+         <chunks xmlns:tc="http://www.dspin.de/data/textcorpus" tagset="tagset">
             <chunk type="NP" tokenIDs="t_0"></chunk>
             <chunk type="VP" voice="none" tense="present" tokenIDs="t_1"></chunk>
         </chunks>

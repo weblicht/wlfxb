@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/d-spin_0_4.rnc" type="application/relax-ng-compact-syntax"?>
 <D-Spin xmlns="http://www.dspin.de/data" version="0.4">
     <MetaData xmlns="http://www.dspin.de/data/metadata">
@@ -6,7 +6,7 @@
     </MetaData>
     <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
         <text>Dann schau doch mal im Spamfilter.</text>
-        <tokens>
+        <tokens xmlns="http://www.dspin.de/data/textcorpus">
             <token ID="t_0" surfaceForm="Dann" parts="t_0 t_1">Dan</token>
             <token ID="t_1" >n</token>
             <token ID="t_2">schau</token>
