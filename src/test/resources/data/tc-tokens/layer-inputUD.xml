@@ -1,4 +1,4 @@
 <tokens xmlns="http://www.dspin.de/data/textcorpus" charOffsets="true">
-   <token ID="t_1" start="0" end="2" surfaceForm="im" parts="t_1 t_2">in</token>
-   <token ID="t_2" start="3" end="6" >dem</token>
+    <token ID="t_1" start="0" end="2" surfaceForm="im" parts="t_1 t_2">in</token>
+    <token ID="t_2" start="3" end="6" >dem</token>
 </tokens>

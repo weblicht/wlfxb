@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/d-spin_0_4.rnc" type="application/relax-ng-compact-syntax"?>
 <D-Spin xmlns="http://www.dspin.de/data" version="0.4">
- <MetaData xmlns="http://www.dspin.de/data/metadata">
-  <source>IMS, Uni Stuttgart</source>
- </MetaData>
- <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
-  <text>Dann schau doch mal im Spamfilter.</text>
-  <tokens>
-   <token ID="t_0">Dann</token>
-   <token ID="t_1">schau</token>
-   <token ID="t_2">eine</token>
-   <token ID="t_3">doch</token>
-   <token ID="t_4">mal</token>
-   <token ID="t_5" surfaceForm="im" parts="t_5 t_6">in</token>
-   <token ID="t_6">dem</token>
-   <token ID="t_7">Spamfilter</token>
-   <token ID="t_8">.</token>
-  </tokens>
- </TextCorpus>
+    <MetaData xmlns="http://www.dspin.de/data/metadata">
+        <source>IMS, Uni Stuttgart</source>
+    </MetaData>
+    <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+        <text>Dann schau doch mal im Spamfilter.</text>
+        <tokens>
+            <token ID="t_0">Dann</token>
+            <token ID="t_1">schau</token>
+            <token ID="t_2">eine</token>
+            <token ID="t_3">doch</token>
+            <token ID="t_4">mal</token>
+            <token ID="t_5" surfaceForm="im" parts="t_5 t_6">in</token>
+            <token ID="t_6">dem</token>
+            <token ID="t_7">Spamfilter</token>
+            <token ID="t_8">.</token>
+        </tokens>
+    </TextCorpus>
 </D-Spin>
