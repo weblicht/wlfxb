@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/d-spin_0_4.rnc" type="application/relax-ng-compact-syntax"?>
 <D-Spin xmlns="http://www.dspin.de/data" version="0.4">
     <MetaData xmlns="http://www.dspin.de/data/metadata">
@@ -6,7 +6,7 @@
     </MetaData>
     <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
         <text>Peter aß eine Käsepizza. Sie schmeckte ihm.</text>
-        <tokens xmlns:tc="http://www.dspin.de/data/textcorpus">
+        <tokens>
             <token ID="t1">Peter</token>
             <token ID="t2">aß</token>
             <token ID="t3">eine</token>
@@ -18,10 +18,10 @@
             <token ID="t9">.</token>
         </tokens>
         <sentences>
-            <sentence ID="s1" tokenIDs="t1 t2 t3 t4 t5"></sentence>
-            <sentence ID="s2" tokenIDs="t6 t7 t8 t9"></sentence>
+            <sentence ID="s1" tokenIDs="t1 t2 t3 t4 t5"/>
+            <sentence ID="s2" tokenIDs="t6 t7 t8 t9"/>
         </sentences>
-        <morphology xmlns:tc="http://www.dspin.de/data/textcorpus" charOffsets="true" segmentation="true" tagset="STTS">
+        <morphology tagset="STTS" segmentation="true" charOffsets="true" xmlns="http://www.dspin.de/data/textcorpus">
             <analysis tokenIDs="t4">
                 <tag score="0.8">
                     <fs>
@@ -35,7 +35,6 @@
                                 <f name="case">acc</f>
                                 <f name="gender">fem</f>
                                 <f name="number">singular</f>
-                                <f name="number">singular</f>
                             </fs>
                         </f>
                     </fs>
@@ -45,22 +44,21 @@
                         <f name="cat">pronoun</f>
                         <f name="case">acc</f>
                         <f name="gender">fem</f>
-                        <f name="number">singular</f>
+                        <f name="number">plural</f>
                         <f name="test2">
                             <fs>
                                 <f name="cat">pronoun</f>
                                 <f name="case">acc</f>
                                 <f name="gender">fem</f>
-                                <f name="number">singular</f>
-                                <f name="number">singular</f>
+                                <f name="number">plural</f>
                             </fs>
                         </f>
                     </fs>
                 </tag>
                 <segmentation>
                     <segment cat="noun" start="0" end="9">
-                        <segment type="stem" func="comp" cat="noun" start="0" end="4">Käse</segment>
-                        <segment type="stem" func="base" cat="noun" start="4" end="9">Pizza</segment>
+                        <segment type="stem" cat="noun" func="comp" start="0" end="4">Käse</segment>
+                        <segment type="stem" cat="noun" func="base" start="4" end="9">Pizza</segment>
                     </segment>
                 </segmentation>
             </analysis>

@@ -12,7 +12,6 @@
                         <f name="case">acc</f>
                         <f name="gender">fem</f>
                         <f name="number">singular</f>
-                        <f name="number">singular</f>
                     </fs>
                 </f>
             </fs>
@@ -25,11 +24,10 @@
                 <f name="number">plural</f>
                 <f name="test2">
                     <fs>
-                        <f name="cat">noun</f>
+                        <f name="cat">pronoun</f>
                         <f name="case">acc</f>
                         <f name="gender">fem</f>
-                        <f name="number">singular</f>
-                        <f name="number">singular</f>
+                        <f name="number">plural</f>
                     </fs>
                 </f>
             </fs>
