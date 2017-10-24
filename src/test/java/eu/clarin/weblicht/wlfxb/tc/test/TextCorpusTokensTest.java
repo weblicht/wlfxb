@@ -34,6 +34,8 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
 
     private static final String INPUT_FILE_UD_WITHOUT_LAYER = "/data/tc-tokens/tcf-beforeUD.xml";
     private static final String INPUT_FILE_UD_WITH_LAYER = "/data/tc-tokens/tcf-afterUD.xml";
+    private static final String INPUT_FILE_SL_WITH_LAYER = "/data/tc-tokens/tcf-afterSL.xml";
+
     private static final String EXPECTED_UD_OUTPUT_FILE = "/data/tc-tokens/output-expectedUD.xml";
 
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeTokenization
@@ -55,6 +57,14 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
         TokensLayer layer = tc.getTokensLayer();
         Assert.assertEquals(9, layer.size());
         Assert.assertEquals("Dann", layer.getToken(0).getString());
+    }
+
+    @Test
+    public void testReadSL() throws Exception {
+        TextCorpus tc = read(INPUT_FILE_SL_WITH_LAYER, layersToReadAfterTokenization);
+        TokensLayer layer = tc.getTokensLayer();
+        Assert.assertEquals(3, layer.size());
+        Assert.assertEquals("ne", layer.getToken(0).getString());
     }
 
     @Test

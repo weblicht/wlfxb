@@ -109,10 +109,10 @@ public class TokensTest {
         Assert.assertEquals("neb", layer.getToken(0).getSurfaceForm());
         Assert.assertEquals("t_0", layer.getToken(0).getParts()[0]);
         Assert.assertEquals("t_1", layer.getToken(0).getParts()[1]);
-        
+
         Assert.assertEquals("bi", layer.getToken(1).getString());
         Assert.assertEquals("t_1", layer.getToken(1).getID());
-        
+
         Assert.assertEquals("ponoči", layer.getToken(2).getString());
         Assert.assertEquals("t_2", layer.getToken(2).getID());
         Assert.assertEquals("po noči", layer.getToken(2).getSurfaceForm());
