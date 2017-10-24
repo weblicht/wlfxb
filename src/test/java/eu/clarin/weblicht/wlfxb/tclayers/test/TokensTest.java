@@ -22,6 +22,7 @@ public class TokensTest {
 
     private static final String INPUT = "/data/tc-tokens/layer-input.xml";
     private static final String INPUT_UD = "/data/tc-tokens/layer-inputUD.xml";
+    private static final String INPUT_SL = "/data/tc-tokens/layer-inputSL.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
@@ -64,13 +65,13 @@ public class TokensTest {
 
         Assert.assertEquals(false, layer.hasCharOffsets());
         Assert.assertEquals(9, layer.size());
-      
+
         Assert.assertEquals("Dan", layer.getToken(0).getString());
         Assert.assertEquals("t_0", layer.getToken(0).getID());
         Assert.assertEquals("Dann", layer.getToken(0).getSurfaceForm());
         Assert.assertEquals("t_0", layer.getToken(0).getParts()[0]);
         Assert.assertEquals("t_1", layer.getToken(0).getParts()[1]);
-        
+
         Assert.assertEquals("n", layer.getToken(1).getString());
         Assert.assertEquals("t_1", layer.getToken(1).getID());
         Assert.assertEquals("schau", layer.getToken(2).getString());
@@ -79,11 +80,41 @@ public class TokensTest {
         Assert.assertEquals("t_3", layer.getToken(3).getID());
         Assert.assertEquals("mal", layer.getToken(4).getString());
         Assert.assertEquals("t_4", layer.getToken(4).getID());
-        
+
         Assert.assertEquals("in", layer.getToken(5).getString());
         Assert.assertEquals("t_5", layer.getToken(5).getID());
         Assert.assertEquals("im", layer.getToken(5).getSurfaceForm());
         Assert.assertEquals("t_5", layer.getToken(5).getParts()[0]);
         Assert.assertEquals("t_6", layer.getToken(5).getParts()[1]);
+    }
+
+    @Test
+    public void testReadAndWriteBackSL() throws Exception {
+
+        InputStream is = this.getClass().getResourceAsStream(INPUT_SL);
+        OutputStream os = new FileOutputStream(testFolder.newFile("layer-outputSL.xml"));
+
+        TokensLayer layer = TestUtils.read(TokensLayerStored.class, is);
+        System.out.println(layer);
+        TestUtils.write(layer, os);
+
+        is.close();
+        os.close();
+
+        Assert.assertEquals(false, layer.hasCharOffsets());
+        Assert.assertEquals(3, layer.size());
+
+        Assert.assertEquals("ne", layer.getToken(0).getString());
+        Assert.assertEquals("t_0", layer.getToken(0).getID());
+        Assert.assertEquals("neb", layer.getToken(0).getSurfaceForm());
+        Assert.assertEquals("t_0", layer.getToken(0).getParts()[0]);
+        Assert.assertEquals("t_1", layer.getToken(0).getParts()[1]);
+        
+        Assert.assertEquals("bi", layer.getToken(1).getString());
+        Assert.assertEquals("t_1", layer.getToken(1).getID());
+        
+        Assert.assertEquals("ponoči", layer.getToken(2).getString());
+        Assert.assertEquals("t_2", layer.getToken(2).getID());
+        Assert.assertEquals("po noči", layer.getToken(2).getSurfaceForm());
     }
 }
