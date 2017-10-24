@@ -28,15 +28,16 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
     public TemporaryFolder testFolder = new TemporaryFolder();
 
     private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-tokens/tcf-before.xml";
-    private static final String INPUT_FILE_WITH_LAYER = "/data/tc-tokens/tcf-after.xml";
-    private static final String EXPECTED_OUTPUT_FILE = "/data/tc-tokens/output-expected.xml";
-    private static final String OUTPUT_FILE = "output.xml";
-
     private static final String INPUT_FILE_UD_WITHOUT_LAYER = "/data/tc-tokens/tcf-beforeUD.xml";
+    private static final String INPUT_FILE_SL_WITHOUT_LAYER = "/data/tc-tokens/tcf-beforeSL.xml";
+
+    private static final String INPUT_FILE_WITH_LAYER = "/data/tc-tokens/tcf-after.xml";
     private static final String INPUT_FILE_UD_WITH_LAYER = "/data/tc-tokens/tcf-afterUD.xml";
     private static final String INPUT_FILE_SL_WITH_LAYER = "/data/tc-tokens/tcf-afterSL.xml";
 
+    private static final String EXPECTED_OUTPUT_FILE = "/data/tc-tokens/output-expected.xml";
     private static final String EXPECTED_UD_OUTPUT_FILE = "/data/tc-tokens/output-expectedUD.xml";
+    private static final String OUTPUT_FILE = "output.xml";
 
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeTokenization
             = EnumSet.of(TextCorpusLayerTag.TEXT);
@@ -118,6 +119,40 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
         System.out.println(tc);
         // compare output xml with expected xml
         assertEqualXml(EXPECTED_UD_OUTPUT_FILE, outfile);
+    }
+
+    @Test
+    public void testReadWriteSL() throws Exception {
+        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
+        TextCorpusStreamed tc = open(INPUT_FILE_SL_WITHOUT_LAYER, outfile, layersToReadBeforeTokenization);
+        System.out.println(tc);
+
+        /*List<String> tokenstrings = tokenize(tc.getTextLayer().getText());
+        // create tokens layer, it is empty first
+        TokensLayer tokens = tc.createTokensLayer();
+        Token lastToken = null;
+        for (String tokenString : tokenstrings) {
+            // create and add Token objects to the tokens layer
+            if (TestUtilUDTokenizer.isCompositeToken(tokenString)) {
+                List<String> tokenPartStrings = TestUtilUDTokenizer.getParts();
+                String[] nexttokenIDs = getNextIDs(lastToken, new Integer(tokenPartStrings.size()));
+                for (int i = 0; i < nexttokenIDs.length; i++) {
+                    if (i == 0) {
+                        tokens.addToken(tokenPartStrings.get(i), nexttokenIDs[i], null, null, tokenString, nexttokenIDs);
+                    } else {
+                        tokens.addToken(tokenPartStrings.get(i), nexttokenIDs[i]);
+                    }
+                }
+
+            } else {
+                lastToken = tokens.addToken(tokenString);
+            }
+        }
+        // IMPORTANT close the streams!!!
+        tc.close();
+        System.out.println(tc);
+        // compare output xml with expected xml
+        assertEqualXml(EXPECTED_UD_OUTPUT_FILE, outfile);*/
     }
 
     private List<String> tokenize(String text) {
