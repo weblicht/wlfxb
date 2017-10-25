@@ -115,9 +115,26 @@ public class TokensLayerStored extends TextCorpusLayerStoredAbstract implements 
         tokens.add(token);
         return token;
     }
+    
+    @Override
+    public Token addToken(String tokenString, String surfaceForm, Long start, Long end) {
+        TokenStored token = new TokenStored();
+        int tokenCount = tokens.size();
+        token.tokenId = TokenStored.ID_PREFIX + tokenCount;
+        token.tokenString = tokenString;
+        token.surfaceForm = surfaceForm;
+        if (start != null && end != null) {
+            token.start = start;
+            this.charOffsets = true;
+        }
+        token.order = tokens.size();
+        connector.tokenId2ItsToken.put(token.tokenId, token);
+        tokens.add(token);
+        return token;
+    }
 
     @Override
-    public Token addToken(String tokenString, String tokenId, Long start, Long end, String surfaceForm, String[] tokenParts) {
+    public Token addToken(String tokenString, String tokenId,Long start, Long end, String surfaceForm, String[] tokenParts) {
         TokenStored token = new TokenStored();
         token.tokenId = tokenId;
         token.tokenString = tokenString;
@@ -172,4 +189,5 @@ public class TokensLayerStored extends TextCorpusLayerStoredAbstract implements 
         sb.append(tokens.toString());
         return sb.toString();
     }
+
 }
