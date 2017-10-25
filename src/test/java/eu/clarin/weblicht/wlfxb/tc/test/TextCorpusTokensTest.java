@@ -8,7 +8,7 @@ import eu.clarin.weblicht.wlfxb.tc.api.TextCorpus;
 import eu.clarin.weblicht.wlfxb.tc.api.Token;
 import eu.clarin.weblicht.wlfxb.tc.api.TokensLayer;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
-import eu.clarin.weblicht.wlfxb.test.utils.TestUtilUDTokenizer;
+import eu.clarin.weblicht.wlfxb.test.utils.TestUtilCompositeTokenizer;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
@@ -99,8 +99,8 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
         Token lastToken = null;
         for (String tokenString : tokenstrings) {
             // create and add Token objects to the tokens layer
-            if (TestUtilUDTokenizer.isCompositeToken(tokenString)) {
-                List<String> tokenPartStrings = TestUtilUDTokenizer.getParts();
+            if (TestUtilCompositeTokenizer.isCompositeToken(tokenString)) {
+                List<String> tokenPartStrings = TestUtilCompositeTokenizer.getParts();
                 String[] nexttokenIDs = getNextIDs(lastToken, new Integer(tokenPartStrings.size()));
                 for (int i = 0; i < nexttokenIDs.length; i++) {
                     if (i == 0) {
@@ -127,14 +127,14 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
         TextCorpusStreamed tc = open(INPUT_FILE_SL_WITHOUT_LAYER, outfile, layersToReadBeforeTokenization);
         System.out.println(tc);
 
-        /*List<String> tokenstrings = tokenize(tc.getTextLayer().getText());
+        List<String> tokenstrings = tokenizeSL(tc.getTextLayer().getText());
         // create tokens layer, it is empty first
         TokensLayer tokens = tc.createTokensLayer();
         Token lastToken = null;
         for (String tokenString : tokenstrings) {
             // create and add Token objects to the tokens layer
-            if (TestUtilUDTokenizer.isCompositeToken(tokenString)) {
-                List<String> tokenPartStrings = TestUtilUDTokenizer.getParts();
+            if (TestUtilCompositeTokenizer.isCompositeToken(tokenString)) {
+                List<String> tokenPartStrings = TestUtilCompositeTokenizer.getParts();
                 String[] nexttokenIDs = getNextIDs(lastToken, new Integer(tokenPartStrings.size()));
                 for (int i = 0; i < nexttokenIDs.length; i++) {
                     if (i == 0) {
@@ -144,6 +144,10 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
                     }
                 }
 
+            } else if (TestUtilCompositeTokenizer.isNoncompoundTokens(tokenString)) {
+                tokens.addToken(TestUtilCompositeTokenizer.getCompositeForm(), TestUtilCompositeTokenizer.getSurFaceForm(), null, null);
+            } else if (TestUtilCompositeTokenizer.isNoncompoundTokenParts(tokenString)) {
+                ;
             } else {
                 lastToken = tokens.addToken(tokenString);
             }
@@ -151,11 +155,31 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
         // IMPORTANT close the streams!!!
         tc.close();
         System.out.println(tc);
-        // compare output xml with expected xml
+        /*// compare output xml with expected xml
         assertEqualXml(EXPECTED_UD_OUTPUT_FILE, outfile);*/
     }
 
     private List<String> tokenize(String text) {
+        List<String> tokenstrings = new ArrayList<String>();
+        StringBuilder tokenBuilder = new StringBuilder();
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == ' ') {
+                if (tokenBuilder.length() > 0) {
+                    tokenstrings.add(tokenBuilder.toString());
+                    tokenBuilder = new StringBuilder();
+                }
+            } else if (text.charAt(i) == '.') {
+                tokenstrings.add(tokenBuilder.toString());
+                tokenstrings.add(text.charAt(i) + "");
+                tokenBuilder = new StringBuilder();
+            } else {
+                tokenBuilder.append(text.charAt(i));
+            }
+        }
+        return tokenstrings;
+    }
+
+    private List<String> tokenizeSL(String text) {
         List<String> tokenstrings = new ArrayList<String>();
         StringBuilder tokenBuilder = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {

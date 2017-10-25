@@ -21,14 +21,14 @@
 package eu.clarin.weblicht.wlfxb.tc.api;
 
 /**
- * The <tt>TokensLayer</tt> is composed of token elements, each having a unique 
- * identifier and token string value. Optionally, each token can reference its 
- * start and end character offset position in relation to the character string 
- * in the text layer. The <tt>TokensLayer</tt> is the main anchor layer 
- * among layers of the {@link TextCorpus}, i.e. all other layers (with the 
- * exception of the text layer) directly or indirectly (via other layers) 
- * reference tokens.
- * 
+ * The <tt>TokensLayer</tt> is composed of token elements, each having a unique
+ * identifier and token string value. Optionally, each token can reference its
+ * start and end character offset position in relation to the character string
+ * in the text layer. The <tt>TokensLayer</tt> is the main anchor layer among
+ * layers of the {@link TextCorpus}, i.e. all other layers (with the exception
+ * of the text layer) directly or indirectly (via other layers) reference
+ * tokens.
+ *
  * @author Yana Panchenko
  */
 public interface TokensLayer extends TextCorpusLayer {
@@ -46,6 +46,9 @@ public interface TokensLayer extends TextCorpusLayer {
     public Token addToken(String tokenString, long start, long end);
 
     public Token addToken(String tokenString, long start, long end, String tokenId);
+
+    public Token addToken(String tokenString, String surfaceForm, Long start, Long end);
     
     public Token addToken(String tokenString, String tokenId, Long start, Long end, String surfaceForm, String[] parts);
+
 }
