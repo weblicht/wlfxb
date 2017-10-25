@@ -64,7 +64,7 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
     public void testReadSL() throws Exception {
         TextCorpus tc = read(INPUT_FILE_SL_WITH_LAYER, layersToReadAfterTokenization);
         TokensLayer layer = tc.getTokensLayer();
-        Assert.assertEquals(3, layer.size());
+        Assert.assertEquals(4, layer.size());
         Assert.assertEquals("ne", layer.getToken(0).getString());
     }
 
