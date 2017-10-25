@@ -102,7 +102,7 @@ public class TokensTest {
         os.close();
 
         Assert.assertEquals(false, layer.hasCharOffsets());
-        Assert.assertEquals(3, layer.size());
+        Assert.assertEquals(4, layer.size());
 
         Assert.assertEquals("ne", layer.getToken(0).getString());
         Assert.assertEquals("t_0", layer.getToken(0).getID());
@@ -116,5 +116,8 @@ public class TokensTest {
         Assert.assertEquals("ponoči", layer.getToken(2).getString());
         Assert.assertEquals("t_2", layer.getToken(2).getID());
         Assert.assertEquals("po noči", layer.getToken(2).getSurfaceForm());
+        
+        Assert.assertEquals(".", layer.getToken(3).getString());
+        Assert.assertEquals("t_3", layer.getToken(3).getID());
     }
 }
