@@ -37,6 +37,7 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterChunkLayer
             = EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.CHUNKS);
     public static final Map<String, Map<String, String>> token2CH = new HashMap<String, Map<String, String>>();
+    public static final Map<String, String> multiword = new HashMap<String, String>();
 
     static {
         Map<String, String> types = new HashMap<String, String>();
@@ -47,8 +48,28 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
         types.put("voice", "none");
         types.put("tense", "present");
         token2CH.put("reckons", types);
+        types = new HashMap<String, String>();
+        types.put("type", "VP");
+        types.put("voice", "none");
+        types.put("tense", "present");
+        token2CH.put("reckons", types);
+        /*types = new HashMap<String, String>();
+        types.put("type", "NP");
+        token2CH.put("the", types);
+        types = new HashMap<String, String>();
+        types.put("type", "NP");
+        token2CH.put("current", types);
+        types = new HashMap<String, String>();
+        types.put("type", "NP");
+        token2CH.put("account", types);
+        types = new HashMap<String, String>();
+        types.put("type", "NP");
+        token2CH.put("deficit", types);*/
+        
+        multiword.put("the", "the current account deficit");
     }
-
+ //   <chunk type="NP" tokenIDs="t_2 t_3 t_4 t_5"/>
+ 
     @Test
     public void testRead() throws Exception {
         TextCorpus tc = read(INPUT_FILE_WITH_LAYER, layersToReadAfterChunkLayer);
@@ -61,16 +82,16 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
     @Test
     public void testReadWrite() throws Exception {
         String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
-        //String outfile = "/Users/felahi/repository/tcf_wlfxb/newwlfxb/wlfxb/src/test/resources/data/tc-chunk" + File.separator + OUTPUT_FILE;
         TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeChunkLayer);
-        System.out.println(tc);
         // create chunk layer, it's empty at first
         ChunkLayer layer = tc.createChunkLayer("tagset");
         for (int i = 0; i < tc.getTokensLayer().size(); i++) {
             Token token = tc.getTokensLayer().getToken(i);
             Map<String, String> chType = recognize(token.getString());
+            
             if (chType != null) {
                 // create and add chunk to the chunk layer
+                if(!multiword.containsKey(token.getString()))
                 layer.addChunk(chType, token);
             }
         }
@@ -78,7 +99,7 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        //assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
+        assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
     private Map<String, String> recognize(String tokenString) {
