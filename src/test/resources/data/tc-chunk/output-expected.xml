@@ -55,14 +55,8 @@
             <sentence tokenIDs="t_0 t_1 t_2 t_3 t_4 t_5 t_6 t_7 t_8 t_9 t_10 t_11 t_12 t_13 t_14 t_15"></sentence>
         </sentences>
         <chunks tagset="tagset" xmlns="http://www.dspin.de/data/textcorpus">
-            <chunk type="NP" tokenIDs="t_0"/>
-            <chunk voice="none" tense="present" type="VP" tokenIDs="t_1"/>
-            <chunk type="NP" tokenIDs="t_2 t_3 t_4 t_5"/>
-            <chunk voice="none" tense="future" type="VP" tokenIDs="t_6 t_7"/>
-            <chunk type="PP " tokenIDs="t_8"/>
-            <chunk type="NP" tokenIDs="t_9 t_10 t_11 t_12"/>
-            <chunk type="PP" tokenIDs="t_13"/>
-            <chunk type="NP" tokenIDs="t_15"/>
+            <chunk tokenIDs="t_0" type="NP"/>
+            <chunk tokenIDs="t_1" voice="none" type="VP" tense="present"/>
         </chunks>
     </TextCorpus>
 </D-Spin>
