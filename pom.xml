@@ -154,6 +154,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
                         <goals>
                             <goal>jar</goal>
                         </goals>
+                        <configuration>
+                            <additionalparam>${javadoc.opts}</additionalparam>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -256,6 +259,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>java8-doclint-disabled</id>
+            <activation>
+                <jdk>[1.8,)</jdk>
+            </activation>
+            <properties>
+                <javadoc.opts>-Xdoclint:none</javadoc.opts>
+            </properties>
         </profile>
     </profiles>
 
