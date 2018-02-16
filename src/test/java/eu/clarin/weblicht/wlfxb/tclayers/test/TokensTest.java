@@ -51,7 +51,7 @@ public class TokensTest {
     }
 
     @Test
-    public void testReadAndWriteBackUD() throws Exception {
+    public void testReadAndWriteBackMultiWordTokensForUD() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_UD);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-outputUD.xml"));
@@ -89,7 +89,7 @@ public class TokensTest {
     }
 
     @Test
-    public void testReadAndWriteBackSL() throws Exception {
+    public void testReadAndWriteBackMultiWordForSlovanian() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_SL);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-outputSL.xml"));
