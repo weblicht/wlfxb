@@ -20,9 +20,7 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
-import java.util.LinkedHashMap;
-
-public interface Token {
+public interface Token extends AnyAtrributes{
 
     public String getString();
 
@@ -38,5 +36,4 @@ public interface Token {
 
     public String[] getParts();
 
-    public LinkedHashMap<String, String> getAnyAtrributes();
 }
