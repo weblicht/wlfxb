@@ -18,9 +18,20 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
-public interface PosTag extends AnyAtrributes{
+import java.util.LinkedHashMap;
 
-    public String getString();
+/**
+ *
+ * @author Mohammad Fazleh Elahi
+ */
+public interface AnyAtrributes {
+
+    public LinkedHashMap<String, String> getAnyAtrributes();
 }

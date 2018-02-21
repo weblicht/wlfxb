@@ -21,6 +21,7 @@ import org.junit.rules.TemporaryFolder;
 public class LemmasTest {
 
     private static final String INPUT = "/data/tc-lemmas/layer-input.xml";
+    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-lemmas/layer-inputAnyAtt.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
@@ -42,6 +43,39 @@ public class LemmasTest {
         Assert.assertEquals("Peter", layer.getLemma(0).getString());
         Assert.assertEquals(".", layer.getLemma(layer.size() - 1).getString());
         Assert.assertEquals("l1", layer.getLemma(0).getLemmaId());
+
+    }
+    
+    @Test
+    public void testReadAndWriteBackAnyAttributes() throws Exception {
+
+        InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
+        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
+
+        LemmasLayer layer = TestUtils.read(LemmasLayerStored.class, is);
+        System.out.println(layer);
+        TestUtils.write(layer, os);
+
+        is.close();
+        os.close();
+
+        Assert.assertEquals(9, layer.size());
+        Assert.assertEquals("Peter", layer.getLemma(0).getString());
+        Assert.assertEquals(".", layer.getLemma(layer.size() - 1).getString());
+        Assert.assertEquals("l1", layer.getLemma(0).getLemmaId());
+        Integer index=0;
+        for (String anyAttribute : layer.getLemma(1).getAnyAtrributes().keySet()) {
+            if (index == 0) {
+                Assert.assertEquals("baseForm", anyAttribute);
+                Assert.assertEquals("essen", layer.getLemma(1).getAnyAtrributes().get(anyAttribute));
+            }
+            if (index == 1) {
+                Assert.assertEquals("alterForm", anyAttribute);
+                Assert.assertEquals("isst", layer.getLemma(1).getAnyAtrributes().get(anyAttribute));
+            }
+
+            index++;
+        }
 
     }
 }
