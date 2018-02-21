@@ -1,0 +1,4 @@
+<sentences charOffsets="true" xmlns="http://www.dspin.de/data/textcorpus">
+   <sentence ID="s1" start="0" end="24" baseForm="base" alterForm="modified" tokenIDs="t1 t2 t3 t4 t5"/>
+   <sentence ID="s2" start="25" end="43" tokenIDs="t6 t7 t8 t9"/>
+</sentences>
