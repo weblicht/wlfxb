@@ -1,0 +1,16 @@
+<depparsing tagset="Tiger" multigovs="false"  emptytoks="true" xmlns="http://www.dspin.de/data/textcorpus">
+   <parse>
+    <dependency depIDs="t2" func="ROOT"/>
+    <dependency func="SUBJ" depIDs="t1" govIDs="t2" baseForm="deps" alterForm="universal"/>
+    <dependency func="SPEC" depIDs="t3" govIDs="t4"/>
+    <dependency func="OBJ" depIDs="t4" govIDs="t2"/>
+   </parse>
+   <parse>
+   <dependency func="ROOT" depIDs="t7" govIDs="et_0"/>
+    <dependency func="SUBJ" depIDs="t6" govIDs="t7"/>
+    <dependency func="OBJ" depIDs="t8" govIDs="t7"/>
+    <emptytoks>
+          <emptytok ID="et_0"></emptytok>
+        </emptytoks>
+   </parse>
+</depparsing>
