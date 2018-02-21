@@ -21,7 +21,7 @@ import org.junit.rules.TemporaryFolder;
 public class PosTagsTest {
 
     private static final String INPUT = "/data/tc-pos/layer-input.xml";
-      private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-pos/layer-inputAnyAtt.xml";
+    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-pos/layer-inputAnyAtt.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
