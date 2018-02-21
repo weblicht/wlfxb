@@ -29,6 +29,7 @@ import eu.clarin.weblicht.wlfxb.tc.api.Chunk;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -49,13 +50,13 @@ public class ChunkStored implements Chunk {
     @XmlAttribute(name = CommonAttributes.ID)
     protected String id;
     @XmlAnyAttribute
-    protected Map<QName, String> attributes = new HashMap<QName, String>();
+    protected LinkedHashMap<QName, String> attributes = new LinkedHashMap<QName, String>();
     @XmlAttribute(name = CommonAttributes.TOKEN_SEQUENCE_REFERENCE, required = true)
     protected String[] tokRefs;
     protected Map<String, String> types = new HashMap<String, String>();
 
-    public Map<QName, String> getAttributes(Map<String, String> types) {
-        Map<QName, String> attributes = new HashMap<QName, String>();
+    public LinkedHashMap<QName, String> getAttributes(LinkedHashMap<String, String> types) {
+        LinkedHashMap<QName, String> attributes = new LinkedHashMap<QName, String>();
         for (String type : types.keySet()) {
             QName qname = new QName(type);
             attributes.put(qname, types.get(type));

@@ -56,7 +56,7 @@
         </sentences>
         <chunks tagset="tagset" xmlns="http://www.dspin.de/data/textcorpus">
             <chunk tokenIDs="t_0" type="NP"/>
-            <chunk tokenIDs="t_1" voice="none" type="VP" tense="present"/>
+            <chunk type="VP" voice="none" tense="present" tokenIDs="t_1"/>
         </chunks>
     </TextCorpus>
 </D-Spin>

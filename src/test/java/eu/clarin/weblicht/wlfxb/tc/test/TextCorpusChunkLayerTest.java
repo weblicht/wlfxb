@@ -13,6 +13,7 @@ import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
 import java.io.File;
 import java.util.EnumSet;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import org.junit.Assert;
 import org.junit.Rule;
@@ -36,19 +37,19 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
             = EnumSet.of(TextCorpusLayerTag.TOKENS);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterChunkLayer
             = EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.CHUNKS);
-    public static final Map<String, Map<String, String>> token2CH = new HashMap<String, Map<String, String>>();
+    public static final Map<String, LinkedHashMap<String, String>> token2CH = new HashMap<String, LinkedHashMap<String, String>>();
     public static final Map<String, String> multiword = new HashMap<String, String>();
 
     static {
-        Map<String, String> types = new HashMap<String, String>();
+        LinkedHashMap<String, String> types = new LinkedHashMap<String, String>();
         types.put("type", "NP");
         token2CH.put("He", types);
-        types = new HashMap<String, String>();
+        types = new LinkedHashMap<String, String>();
         types.put("type", "VP");
         types.put("voice", "none");
         types.put("tense", "present");
         token2CH.put("reckons", types);
-        types = new HashMap<String, String>();
+        types = new LinkedHashMap<String, String>();
         types.put("type", "VP");
         types.put("voice", "none");
         types.put("tense", "present");
@@ -87,12 +88,13 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
         ChunkLayer layer = tc.createChunkLayer("tagset");
         for (int i = 0; i < tc.getTokensLayer().size(); i++) {
             Token token = tc.getTokensLayer().getToken(i);
-            Map<String, String> chType = recognize(token.getString());
+            LinkedHashMap<String, String> chunkAttributes = recognize(token.getString());
             
-            if (chType != null) {
+            if (chunkAttributes != null) {
                 // create and add chunk to the chunk layer
                 if(!multiword.containsKey(token.getString()))
-                layer.addChunk(chType, token);
+                    System.out.println(chunkAttributes.toString());
+                layer.addChunk(chunkAttributes, token);
             }
         }
         // IMPORTANT close the streams!!!
@@ -102,7 +104,7 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
         assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
-    private Map<String, String> recognize(String tokenString) {
+    private LinkedHashMap<String, String> recognize(String tokenString) {
         return token2CH.get(tokenString);
     }
 }

@@ -33,6 +33,7 @@ import eu.clarin.weblicht.wlfxb.utils.WlfUtilities;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -137,19 +138,19 @@ public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements C
     }
 
     @Override
-    public Chunk addChunk(Map<String, String> ChunkType, Token ChunkToken) {
-        List<Token> tagTokens = Arrays.asList(new Token[]{ChunkToken});
-        return addChunk(ChunkType, tagTokens);
+    public Chunk addChunk(LinkedHashMap<String, String> chunkAttributes, Token chunkToken) {
+        List<Token> tagTokens = Arrays.asList(new Token[]{chunkToken});
+        return addChunk(chunkAttributes, tagTokens);
     }
 
     @Override
-    public Chunk addChunk(Map<String, String> ChunkType, List<Token> ChunkTokens) {
+    public Chunk addChunk(LinkedHashMap<String, String> chunkAttributes, List<Token> chunkTokens) {
         ChunkStored ch = new ChunkStored();
-        //ch.types = ChunkType;
-        ch.attributes = ch.getAttributes(ChunkType);
-        ch.tokRefs = new String[ChunkTokens.size()];
-        for (int i = 0; i < ChunkTokens.size(); i++) {
-            Token token = ChunkTokens.get(i);
+        //ch.types = chunkAttributes;
+        ch.attributes = ch.getAttributes(chunkAttributes);
+        ch.tokRefs = new String[chunkTokens.size()];
+        for (int i = 0; i < chunkTokens.size(); i++) {
+            Token token = chunkTokens.get(i);
             ch.tokRefs[i] = token.getID();
             Token tok = connector.tokenId2ItsToken.get(token.getID());
             if (!connector.token2ItsCH.containsKey(tok)) {

@@ -25,14 +25,13 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
+import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
-import javax.xml.namespace.QName;
 
 /**
  *
- * @author felahi
+ * @author Mohammad Fazleh Elahi
  */
 public interface ChunkLayer extends TextCorpusLayer{
 
@@ -46,9 +45,9 @@ public interface ChunkLayer extends TextCorpusLayer{
 
     public Token[] getTokens(Chunk chunk);
 
-    public Chunk addChunk(Map<String,String> types, List<Token> chunkTokens);
+    public Chunk addChunk(LinkedHashMap<String,String> types, List<Token> chunkTokens);
 
-    public Chunk addChunk(Map<String,String> types, Token chunkToken);
+    public Chunk addChunk(LinkedHashMap<String,String> types, Token chunkToken);
 
     public Set<String> getFoundTypes();
 }
