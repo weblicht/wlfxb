@@ -53,7 +53,7 @@ public class ChunkStored implements Chunk {
     protected LinkedHashMap<QName, String> attributes = new LinkedHashMap<QName, String>();
     @XmlAttribute(name = CommonAttributes.TOKEN_SEQUENCE_REFERENCE, required = true)
     protected String[] tokRefs;
-    protected Map<String, String> types = new HashMap<String, String>();
+    protected LinkedHashMap<String, String> types = new LinkedHashMap<String, String>();
 
     public LinkedHashMap<QName, String> getAttributes(LinkedHashMap<String, String> types) {
         LinkedHashMap<QName, String> attributes = new LinkedHashMap<QName, String>();
@@ -65,7 +65,7 @@ public class ChunkStored implements Chunk {
     }
 
     @Override
-    public Map<String, String> getTypes() {
+    public LinkedHashMap<String, String> getTypes() {
         for (QName qName : attributes.keySet()) {
             types.put(qName.toString(), attributes.get(qName).toString());
         }

@@ -19,16 +19,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /**
- * 
+ *
  */
 package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.Token;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlValue;
+import javax.xml.namespace.QName;
 
 /**
  * @author Yana Panchenko
@@ -36,52 +41,49 @@ import javax.xml.bind.annotation.XmlValue;
  */
 @XmlAccessorType(XmlAccessType.NONE)
 public class EmptyTokenStored implements Token {
-	
-	
-	public static final String XML_NAME = "emptytok";
-	public static final String ID_PREFIX = "et_";
-	
-	@XmlValue
-	protected String tokenString;
-	@XmlAttribute(name=CommonAttributes.ID, required = true)
-	protected String id;
-	protected int order;
-	
-	
-	@Override
-	public String getString() {
-            return tokenString;
-	}
-	
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append(order).append(": ").append(id).append(" ").append(tokenString);
-		return sb.toString();
-	}
 
+    public static final String XML_NAME = "emptytok";
+    public static final String ID_PREFIX = "et_";
 
+    @XmlValue
+    protected String tokenString;
+    @XmlAttribute(name = CommonAttributes.ID, required = true)
+    protected String id;
+    @XmlAnyAttribute
+    protected LinkedHashMap<QName, String> attributes = new LinkedHashMap<QName, String>();
+    protected int order;
+    protected LinkedHashMap<String, String> anyAttributes = new LinkedHashMap<String, String>();
 
-	@Override
-	public String getID() {
-		return id;
-	}
+    @Override
+    public String getString() {
+        return tokenString;
+    }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(order).append(": ").append(id).append(" ").append(tokenString);
+        return sb.toString();
+    }
 
-	@Override
-	public Long getStart() {
-		return null;
-	}
+    @Override
+    public String getID() {
+        return id;
+    }
 
+    @Override
+    public Long getStart() {
+        return null;
+    }
 
-	@Override
-	public Long getEnd() {
-		return null;
-	}
-	
-	public int getOrder() {
-		return order;
-	}
+    @Override
+    public Long getEnd() {
+        return null;
+    }
+
+    public int getOrder() {
+        return order;
+    }
 
     @Override
     public String getSurfaceForm() {
@@ -91,6 +93,11 @@ public class EmptyTokenStored implements Token {
     @Override
     public String[] getParts() {
         return null;
+    }
+
+    @Override
+    public LinkedHashMap<String, String> getAnyAtrributes() {
+        return new LinkedHashMap<String, String>();
     }
 
 }
