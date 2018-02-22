@@ -19,50 +19,70 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /**
- * 
+ *
  */
 package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.DiscourseConnective;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.namespace.QName;
 
 /**
  * @author Yana Panchenko
  *
  */
-@XmlRootElement(name=DiscourseConnectiveStored.XML_NAME)
+@XmlRootElement(name = DiscourseConnectiveStored.XML_NAME)
 @XmlAccessorType(XmlAccessType.NONE)
 public class DiscourseConnectiveStored implements DiscourseConnective {
-	
-	public static final String XML_NAME = "connective";
 
-	@XmlAttribute(name="type")
-	protected String type;
-	@XmlAttribute(name=CommonAttributes.TOKEN_SEQUENCE_REFERENCE, required = true)
-	protected String[] tokRefs;
-	
-	
+    public static final String XML_NAME = "connective";
 
-	@Override
-	public String getType() {
-		return type;
-	}
-	
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		if (type != null) {
-			sb.append(type);
-			sb.append(" ");
-		}
-		sb.append(Arrays.toString(tokRefs));
-		return sb.toString();
-	}
+    @XmlAttribute(name = "type")
+    protected String type;
+    @XmlAttribute(name = CommonAttributes.TOKEN_SEQUENCE_REFERENCE, required = true)
+    protected String[] tokRefs;
+    @XmlAnyAttribute
+    protected LinkedHashMap<QName, String> attributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<String, String> anyAttributes = new LinkedHashMap<String, String>();
+
+    public LinkedHashMap<QName, String> getAttributes(LinkedHashMap<String, String> types) {
+        LinkedHashMap<QName, String> attributes = new LinkedHashMap<QName, String>();
+        for (String type : types.keySet()) {
+            QName qname = new QName(type);
+            attributes.put(qname, types.get(type));
+        }
+        return attributes;
+    }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public LinkedHashMap<String, String> getAnyAtrributes() {
+        for (QName qName : attributes.keySet()) {
+            anyAttributes.put(qName.toString(), attributes.get(qName).toString());
+        }
+        return anyAttributes;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        if (type != null) {
+            sb.append(type);
+            sb.append(" ");
+        }
+        sb.append(Arrays.toString(tokRefs));
+        return sb.toString();
+    }
 
 }
-
