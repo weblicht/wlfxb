@@ -26,10 +26,13 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 import eu.clarin.weblicht.wlfxb.tc.api.GeoPoint;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.namespace.QName;
 
 /**
  * @author Yana Panchenko
@@ -56,6 +59,18 @@ public class GeoPointStored implements GeoPoint {
     protected String capital;
     @XmlAttribute(name = CommonAttributes.TOKEN_SEQUENCE_REFERENCE, required = true)
     protected String[] tokRefs;
+    @XmlAnyAttribute
+    protected LinkedHashMap<QName, String> attributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<String, String> anyAttributes = new LinkedHashMap<String, String>();
+
+    public LinkedHashMap<QName, String> getAttributes(LinkedHashMap<String, String> types) {
+        LinkedHashMap<QName, String> attributes = new LinkedHashMap<QName, String>();
+        for (String type : types.keySet()) {
+            QName qname = new QName(type);
+            attributes.put(qname, types.get(type));
+        }
+        return attributes;
+    }
 
     @Override
     public String getLongitude() {
@@ -85,6 +100,14 @@ public class GeoPointStored implements GeoPoint {
     @Override
     public String getCapital() {
         return capital;
+    }
+
+    @Override
+    public LinkedHashMap<String, String> getAnyAtrributes() {
+        for (QName qName : attributes.keySet()) {
+            anyAttributes.put(qName.toString(), attributes.get(qName).toString());
+        }
+        return anyAttributes;
     }
 
     @Override

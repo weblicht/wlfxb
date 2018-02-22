@@ -1,0 +1,5 @@
+<geo xmlns="http://www.dspin.de/data/textcorpus"  coordFormat="DegDec" continentFormat="name">
+    <src>http://www.geonames.org/</src>
+	<gpoint tokenIDs="t_13 t_14" lat="39.11417" lon="-94.62746" alt="233" continent="Europe" country="germany" language="german"/>
+	<gpoint tokenIDs="t_39" lat="52.47693" lon="13.41027" alt="333" continent="Europe"/>
+</geo>
