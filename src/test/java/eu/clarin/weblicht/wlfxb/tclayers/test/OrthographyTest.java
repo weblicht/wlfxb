@@ -22,6 +22,7 @@ import org.junit.rules.TemporaryFolder;
 public class OrthographyTest {
 
     private static final String INPUT = "/data/tc-orth/layer-input.xml";
+    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-orth/layer-inputAnyAtt.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
@@ -31,7 +32,6 @@ public class OrthographyTest {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
-
 
         OrthographyLayer layer = TestUtils.read(OrthographyLayerStored.class, is);
         System.out.println(layer);
@@ -44,5 +44,38 @@ public class OrthographyTest {
         Assert.assertEquals("will", layer.getCorrection(0).getString());
         Assert.assertEquals("essen", layer.getCorrection(1).getString());
         Assert.assertEquals(CorrectionOperation.replace, layer.getCorrection(0).getOperation());
+    }
+
+    @Test
+    public void testReadAndWriteBackAnyAttributes() throws Exception {
+
+        InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
+        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
+
+        OrthographyLayer layer = TestUtils.read(OrthographyLayerStored.class, is);
+        System.out.println(layer);
+        TestUtils.write(layer, os);
+
+        is.close();
+        os.close();
+
+        Assert.assertEquals(2, layer.size());
+        Assert.assertEquals("will", layer.getCorrection(0).getString());
+        Assert.assertEquals("essen", layer.getCorrection(1).getString());
+        Assert.assertEquals(CorrectionOperation.replace, layer.getCorrection(0).getOperation());
+        Integer index=0;
+        for (String anyAttribute : layer.getCorrection(0).getAnyAtrributes().keySet()) {
+            if (index == 0) {
+                Assert.assertEquals("baseForm", anyAttribute);
+                Assert.assertEquals("correction1", layer.getCorrection(0).getAnyAtrributes().get(anyAttribute));
+            }
+            if (index == 1) {
+                Assert.assertEquals("alterForm", anyAttribute);
+                Assert.assertEquals("correction2", layer.getCorrection(0).getAnyAtrributes().get(anyAttribute));
+            }
+
+            index++;
+        }
+
     }
 }

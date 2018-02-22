@@ -27,7 +27,9 @@ import eu.clarin.weblicht.wlfxb.tc.api.CorrectionOperation;
 import eu.clarin.weblicht.wlfxb.tc.api.OrthCorrection;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.*;
+import javax.xml.namespace.QName;
 
 /**
  * @author Yana Panchenko
@@ -44,6 +46,19 @@ public class OrthCorrectionStored implements OrthCorrection {
     protected String[] tokRefs;
     @XmlAttribute(name = "operation", required = true)
     protected CorrectionOperation operation;
+    @XmlAnyAttribute
+    protected LinkedHashMap<QName, String> attributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<String, String> anyAttributes = new LinkedHashMap<String, String>();
+
+    public LinkedHashMap<QName, String> getAttributes(LinkedHashMap<String, String> types) {
+        LinkedHashMap<QName, String> attributes = new LinkedHashMap<QName, String>();
+        for (String type : types.keySet()) {
+            QName qname = new QName(type);
+            attributes.put(qname, types.get(type));
+        }
+        return attributes;
+    }
+
 
     @Override
     public String getString() {
@@ -56,9 +71,18 @@ public class OrthCorrectionStored implements OrthCorrection {
     }
 
     @Override
+    public LinkedHashMap<String, String> getAnyAtrributes() {
+        for (QName qName : attributes.keySet()) {
+            anyAttributes.put(qName.toString(), attributes.get(qName).toString());
+        }
+        return anyAttributes;
+    }
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(corrString).append(" - ").append(operation.name()).append(Arrays.toString(tokRefs));
         return sb.toString();
     }
+
 }
