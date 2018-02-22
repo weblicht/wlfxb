@@ -63,14 +63,14 @@ public class SentencesTest {
         Assert.assertEquals(Integer.valueOf(24), layer.getSentence(0).getEndCharOffset());
         
         Integer index = 0;
-        for (String anyAttribute : layer.getSentence(0).getAnyAtrributes().keySet()) {
+        for (String anyAttribute : layer.getSentence(0).getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("base", layer.getSentence(0).getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("base", layer.getSentence(0).getExtraAtrributes().get(anyAttribute));
             }
             if (index == 1) {
                 Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("modified", layer.getSentence(0).getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("modified", layer.getSentence(0).getExtraAtrributes().get(anyAttribute));
             }
 
             index++;

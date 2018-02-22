@@ -70,14 +70,14 @@ public class DependencyParsingTest {
         System.out.println(layer.getParse(0).getDependencies()[1]);
         
         Integer index = 0;
-        for (String anyAttribute : layer.getParse(0).getDependencies()[1].getAnyAtrributes().keySet()) {
+        for (String anyAttribute : layer.getParse(0).getDependencies()[1].getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("deps", layer.getParse(0).getDependencies()[1].getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("deps", layer.getParse(0).getDependencies()[1].getExtraAtrributes().get(anyAttribute));
             }
             if (index == 1) {
                 Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("universal", layer.getParse(0).getDependencies()[1].getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("universal", layer.getParse(0).getDependencies()[1].getExtraAtrributes().get(anyAttribute));
             }
 
             index++;

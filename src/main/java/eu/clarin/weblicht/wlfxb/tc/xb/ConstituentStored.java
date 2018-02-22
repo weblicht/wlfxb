@@ -57,17 +57,8 @@ public class ConstituentStored implements Constituent {
     @XmlElement(name = ConstituentStored.XML_NAME)
     protected List<ConstituentStored> children = new ArrayList<ConstituentStored>();
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> attributes = new LinkedHashMap<QName, String>();
-    protected LinkedHashMap<String, String> anyAttributes = new LinkedHashMap<String, String>();
-
-    public LinkedHashMap<QName, String> getAttributes(LinkedHashMap<String, String> types) {
-        LinkedHashMap<QName, String> attributes = new LinkedHashMap<QName, String>();
-        for (String type : types.keySet()) {
-            QName qname = new QName(type);
-            attributes.put(qname, types.get(type));
-        }
-        return attributes;
-    }
+    protected LinkedHashMap<QName, String> qnameAttributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
 
     @Override
     public boolean isTerminal() {
@@ -111,11 +102,11 @@ public class ConstituentStored implements Constituent {
     }
 
     @Override
-    public LinkedHashMap<String, String> getAnyAtrributes() {
-        for (QName qName : attributes.keySet()) {
-            anyAttributes.put(qName.toString(), attributes.get(qName).toString());
+    public LinkedHashMap<String, String> getExtraAtrributes() {
+        for (QName qName : qnameAttributes.keySet()) {
+            extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
         }
-        return anyAttributes;
+        return extraAttributes;
     }
 
     @Override

@@ -64,14 +64,14 @@ public class PosTagsTest {
         Assert.assertEquals("NE", layer.getTag(0).getString());
         Assert.assertEquals("$.", layer.getTag(layer.size() - 1).getString());
         Integer index = 0;
-        for (String anyAttribute : layer.getTag(0).getAnyAtrributes().keySet()) {
+        for (String anyAttribute : layer.getTag(0).getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("NE", layer.getTag(0).getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("NE", layer.getTag(0).getExtraAtrributes().get(anyAttribute));
             }
             if (index == 1) {
                 Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("NEE", layer.getTag(0).getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("NEE", layer.getTag(0).getExtraAtrributes().get(anyAttribute));
             }
 
             index++;

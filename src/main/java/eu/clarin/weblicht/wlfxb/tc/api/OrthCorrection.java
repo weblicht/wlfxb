@@ -20,7 +20,7 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
-public interface OrthCorrection extends AnyAtrributes{
+public interface OrthCorrection extends ExtraAtrributes{
 
     public String getString();
 

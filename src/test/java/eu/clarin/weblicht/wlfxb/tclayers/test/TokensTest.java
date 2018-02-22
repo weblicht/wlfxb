@@ -155,14 +155,14 @@ public class TokensTest {
         Assert.assertEquals("t_3", layer.getToken(3).getID());
 
         Integer index = 0;
-        for (String anyAttribute : layer.getToken(2).getAnyAtrributes().keySet()) {
+        for (String anyAttribute : layer.getToken(2).getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("schau", layer.getToken(2).getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("schau", layer.getToken(2).getExtraAtrributes().get(anyAttribute));
             }
             if (index == 1) {
                 Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("schaum", layer.getToken(2).getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("schaum", layer.getToken(2).getExtraAtrributes().get(anyAttribute));
             }
 
             index++;

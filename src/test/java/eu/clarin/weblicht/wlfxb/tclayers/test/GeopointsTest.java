@@ -69,14 +69,14 @@ public class GeopointsTest {
         Assert.assertEquals("39.11417", layer.getPoint(0).getLatitude());
         Assert.assertEquals("Europe", layer.getPoint(0).getContinent());
         Integer index=0;
-        for (String anyAttribute : layer.getPoint(0).getAnyAtrributes().keySet()) {
+        for (String anyAttribute : layer.getPoint(0).getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("language", anyAttribute);
-                Assert.assertEquals("german", layer.getPoint(0).getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("german", layer.getPoint(0).getExtraAtrributes().get(anyAttribute));
             }
             if (index == 1) {
                 Assert.assertEquals("country", anyAttribute);
-                Assert.assertEquals("germany", layer.getPoint(0).getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("germany", layer.getPoint(0).getExtraAtrributes().get(anyAttribute));
             }
 
             index++;

@@ -27,7 +27,7 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  * @author Yana Panchenko
  *
  */
-public interface Constituent extends AnyAtrributes{
+public interface Constituent extends ExtraAtrributes{
 
     public boolean isTerminal();
 
