@@ -47,18 +47,8 @@ public class OrthCorrectionStored implements OrthCorrection {
     @XmlAttribute(name = "operation", required = true)
     protected CorrectionOperation operation;
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> attributes = new LinkedHashMap<QName, String>();
-    protected LinkedHashMap<String, String> anyAttributes = new LinkedHashMap<String, String>();
-
-    public LinkedHashMap<QName, String> getAttributes(LinkedHashMap<String, String> types) {
-        LinkedHashMap<QName, String> attributes = new LinkedHashMap<QName, String>();
-        for (String type : types.keySet()) {
-            QName qname = new QName(type);
-            attributes.put(qname, types.get(type));
-        }
-        return attributes;
-    }
-
+    protected LinkedHashMap<QName, String> qnameattributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
 
     @Override
     public String getString() {
@@ -71,11 +61,11 @@ public class OrthCorrectionStored implements OrthCorrection {
     }
 
     @Override
-    public LinkedHashMap<String, String> getAnyAtrributes() {
-        for (QName qName : attributes.keySet()) {
-            anyAttributes.put(qName.toString(), attributes.get(qName).toString());
+    public LinkedHashMap<String, String> getExtraAtrributes() {
+        for (QName qName : qnameattributes.keySet()) {
+            extraAttributes.put(qName.toString(), qnameattributes.get(qName).toString());
         }
-        return anyAttributes;
+        return extraAttributes;
     }
 
     @Override

@@ -64,14 +64,14 @@ public class OrthographyTest {
         Assert.assertEquals("essen", layer.getCorrection(1).getString());
         Assert.assertEquals(CorrectionOperation.replace, layer.getCorrection(0).getOperation());
         Integer index=0;
-        for (String anyAttribute : layer.getCorrection(0).getAnyAtrributes().keySet()) {
+        for (String anyAttribute : layer.getCorrection(0).getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("correction1", layer.getCorrection(0).getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("correction1", layer.getCorrection(0).getExtraAtrributes().get(anyAttribute));
             }
             if (index == 1) {
                 Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("correction2", layer.getCorrection(0).getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("correction2", layer.getCorrection(0).getExtraAtrributes().get(anyAttribute));
             }
 
             index++;

@@ -27,7 +27,7 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  * @author Yana Panchenko
  *
  */
-public interface NamedEntity extends AnyAtrributes{
+public interface NamedEntity extends ExtraAtrributes{
 
     public String getType();
 }

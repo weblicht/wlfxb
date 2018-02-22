@@ -64,14 +64,14 @@ public class DiscourseConnectivesTest {
         Assert.assertEquals("temporal", layer.getConnective(1).getType());
 
         Integer index = 0;
-        for (String anyAttribute : layer.getConnective(0).getAnyAtrributes().keySet()) {
+        for (String anyAttribute : layer.getConnective(0).getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("expansion1", layer.getConnective(0).getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("expansion1", layer.getConnective(0).getExtraAtrributes().get(anyAttribute));
             }
             if (index == 1) {
                 Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("expansion2", layer.getConnective(0).getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("expansion2", layer.getConnective(0).getExtraAtrributes().get(anyAttribute));
             }
 
             index++;

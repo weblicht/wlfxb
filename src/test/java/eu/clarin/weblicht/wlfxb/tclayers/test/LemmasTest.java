@@ -64,14 +64,14 @@ public class LemmasTest {
         Assert.assertEquals(".", layer.getLemma(layer.size() - 1).getString());
         Assert.assertEquals("l1", layer.getLemma(0).getLemmaId());
         Integer index=0;
-        for (String anyAttribute : layer.getLemma(1).getAnyAtrributes().keySet()) {
+        for (String anyAttribute : layer.getLemma(1).getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("essen", layer.getLemma(1).getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("essen", layer.getLemma(1).getExtraAtrributes().get(anyAttribute));
             }
             if (index == 1) {
                 Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("isst", layer.getLemma(1).getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("isst", layer.getLemma(1).getExtraAtrributes().get(anyAttribute));
             }
 
             index++;

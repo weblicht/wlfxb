@@ -27,7 +27,7 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  * @author Yana Panchenko
  *
  */
-public interface DiscourseConnective extends AnyAtrributes{
+public interface DiscourseConnective extends ExtraAtrributes{
 
     public String getType();
 }

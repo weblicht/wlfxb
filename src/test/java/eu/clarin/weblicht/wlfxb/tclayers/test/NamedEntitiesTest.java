@@ -64,14 +64,14 @@ public class NamedEntitiesTest {
         Assert.assertEquals(1, layer.size());
         Assert.assertEquals("PERSON", layer.getEntity(0).getType());
         Integer index=0;
-         for (String anyAttribute : layer.getEntity(0).getAnyAtrributes().keySet()) {
+         for (String anyAttribute : layer.getEntity(0).getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("PERSON", layer.getEntity(0).getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("PERSON", layer.getEntity(0).getExtraAtrributes().get(anyAttribute));
             }
             if (index == 1) {
                 Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("PERSON", layer.getEntity(0).getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("PERSON", layer.getEntity(0).getExtraAtrributes().get(anyAttribute));
             }
 
             index++;

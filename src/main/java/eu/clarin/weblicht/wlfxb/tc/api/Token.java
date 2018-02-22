@@ -20,7 +20,7 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
-public interface Token extends AnyAtrributes{
+public interface Token extends ExtraAtrributes{
 
     public String getString();
 

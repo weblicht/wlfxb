@@ -72,14 +72,14 @@ public class ConstituentParsingTest {
         System.out.println(layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0]);
         
         Integer index=0;
-         for (String anyAttribute : layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getAnyAtrributes().keySet()) {
+         for (String anyAttribute : layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("NE-HD", layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("NE-HD", layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getExtraAtrributes().get(anyAttribute));
             }
             if (index == 1) {
                 Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("NE-HD-Nom.Sg", layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getAnyAtrributes().get(anyAttribute));
+                Assert.assertEquals("NE-HD-Nom.Sg", layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getExtraAtrributes().get(anyAttribute));
             }
 
             index++;
