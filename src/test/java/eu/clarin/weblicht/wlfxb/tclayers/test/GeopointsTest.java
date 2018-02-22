@@ -23,17 +23,16 @@ import org.junit.rules.TemporaryFolder;
 public class GeopointsTest {
 
     private static final String INPUT = "/data/tc-geo/layer-input.xml";
+    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-geo/layer-inputAnyAtt.xml";
     public static final double DELTA = 1e-15;
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
-
 
     @Test
     public void testReadAndWriteBack() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
-
 
         GeoLayer layer = TestUtils.read(GeoLayerStored.class, is);
         System.out.println(layer);
@@ -48,5 +47,39 @@ public class GeopointsTest {
         Assert.assertEquals(2, layer.size());
         Assert.assertEquals("39.11417", layer.getPoint(0).getLatitude());
         Assert.assertEquals("Europe", layer.getPoint(0).getContinent());
+    }
+
+    @Test
+    public void testReadAndWriteBackAnyAttributes() throws Exception {
+
+        InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
+        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
+
+        GeoLayer layer = TestUtils.read(GeoLayerStored.class, is);
+        System.out.println(layer);
+        TestUtils.write(layer, os);
+
+        is.close();
+        os.close();
+
+        Assert.assertEquals(GeoLongLatFormat.DegDec, layer.getCoordinatesFormat());
+        Assert.assertEquals(GeoContinentFormat.name, layer.getContinentFormat());
+        Assert.assertEquals("http://www.geonames.org/", layer.getSource());
+        Assert.assertEquals(2, layer.size());
+        Assert.assertEquals("39.11417", layer.getPoint(0).getLatitude());
+        Assert.assertEquals("Europe", layer.getPoint(0).getContinent());
+        Integer index=0;
+        for (String anyAttribute : layer.getPoint(0).getAnyAtrributes().keySet()) {
+            if (index == 0) {
+                Assert.assertEquals("language", anyAttribute);
+                Assert.assertEquals("german", layer.getPoint(0).getAnyAtrributes().get(anyAttribute));
+            }
+            if (index == 1) {
+                Assert.assertEquals("country", anyAttribute);
+                Assert.assertEquals("germany", layer.getPoint(0).getAnyAtrributes().get(anyAttribute));
+            }
+
+            index++;
+        }
     }
 }
