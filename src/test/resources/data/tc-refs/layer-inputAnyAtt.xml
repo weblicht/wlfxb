@@ -1,0 +1,11 @@
+<references typetagset="BART" reltagset="TuebaDZ" extrefs="Wikipedia" xmlns="http://www.dspin.de/data/textcorpus">
+  	<entity>
+  		<extref refid="http://de.wikipedia.org/wiki/Wahre_Finnen"/>
+  		<reference ID="rc_0" baseForm="baseFormWordRef" alterForm="alterFormWordRef" rel="cataphoric" target="rc_1" tokenIDs="t1" mintokIDs="t1" type="pro.per3"/>
+  		<reference ID="rc_1" tokenIDs="t18 t19 t20 t21 t22" mintokIDs="t20 t21" type="nam"/>
+  	</entity>
+  	<entity>
+  		<extref refid="http://en.wikipedia.org/wiki/Euro"/>
+  		<reference ID="rc_3" tokenIDs="t4 t5" mintokIDs="t5" type="nom.indef"/>
+  	</entity>
+</references>
