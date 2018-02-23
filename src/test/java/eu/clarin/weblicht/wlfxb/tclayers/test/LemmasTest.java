@@ -59,10 +59,6 @@ public class LemmasTest {
         is.close();
         os.close();
 
-        Assert.assertEquals(9, layer.size());
-        Assert.assertEquals("Peter", layer.getLemma(0).getString());
-        Assert.assertEquals(".", layer.getLemma(layer.size() - 1).getString());
-        Assert.assertEquals("l1", layer.getLemma(0).getLemmaId());
         Integer index=0;
         for (String anyAttribute : layer.getLemma(1).getExtraAtrributes().keySet()) {
             if (index == 0) {

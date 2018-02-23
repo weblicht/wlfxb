@@ -60,9 +60,6 @@ public class NamedEntitiesTest {
         is.close();
         os.close();
 
-        Assert.assertEquals("MUC1990", layer.getType());
-        Assert.assertEquals(1, layer.size());
-        Assert.assertEquals("PERSON", layer.getEntity(0).getType());
         Integer index=0;
          for (String anyAttribute : layer.getEntity(0).getExtraAtrributes().keySet()) {
             if (index == 0) {

@@ -147,20 +147,6 @@ public class MorphologyTest {
 
         is.close();
         os.close();
-
-        Assert.assertEquals(true, layer.hasCharoffsets());
-        Assert.assertEquals(true, layer.hasSegmentation());
-        Assert.assertEquals("STTS", layer.getTagset());
-        Assert.assertNotNull(layer.getAnalysis(0).getTags());
-
-        //reading feature structure from first tag element
-        Assert.assertEquals(true, layer.getAnalysis(0).getTags().get(0).isScore());
-        Assert.assertEquals(new Double(0.8), layer.getAnalysis(0).getTags().get(0).getScore());
-        Assert.assertEquals(true, layer.getAnalysis(0).getTags().get(0).getFeatures()[0].isTerminal());
-        Assert.assertEquals("cat", layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getName());
-        Assert.assertEquals("noun", layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getValue());
-        Assert.assertEquals(false, layer.getAnalysis(0).getTags().get(0).getFeatures()[4].isTerminal());
-        Assert.assertEquals("noun", layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getSubfeatures()[0].getValue());
         
         //testing extra attributes in feature
         Integer index=0;

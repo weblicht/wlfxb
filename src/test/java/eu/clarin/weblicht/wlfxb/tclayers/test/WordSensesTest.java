@@ -32,7 +32,6 @@ public class WordSensesTest {
         InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
 
-
         WordSensesLayer layer = TestUtils.read(WordSensesLayerStored.class, is);
         System.out.println(layer);
         TestUtils.write(layer, os);
@@ -45,13 +44,12 @@ public class WordSensesTest {
         Assert.assertEquals("75197", layer.getWordSense(0).getLexicalUnits().get(1));
         Assert.assertEquals("unbestimmbar", layer.getWordSense(1).getComment());
     }
-    
-     @Test
+
+    @Test
     public void testReadAndWriteBackAnyAttributes() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
-
 
         WordSensesLayer layer = TestUtils.read(WordSensesLayerStored.class, is);
         System.out.println(layer);
@@ -60,7 +58,7 @@ public class WordSensesTest {
         is.close();
         os.close();
 
-         Integer index=0;
+        Integer index = 0;
         for (String anyAttribute : layer.getWordSense(0).getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
@@ -74,6 +72,5 @@ public class WordSensesTest {
             index++;
         }
     }
-    
-    
+
 }

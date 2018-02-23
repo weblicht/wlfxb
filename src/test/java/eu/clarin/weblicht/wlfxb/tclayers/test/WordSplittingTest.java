@@ -32,7 +32,6 @@ public class WordSplittingTest {
         InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
 
-
         WordSplittingLayer layer = TestUtils.read(WordSplittingLayerStored.class, is);
         System.out.println(layer);
         TestUtils.write(layer, os);
@@ -45,13 +44,12 @@ public class WordSplittingTest {
         Assert.assertArrayEquals(new int[]{2, 4, 6}, layer.getSplit(0).getIndices());
 
     }
-    
+
     @Test
     public void testReadAndWriteBackAnyAttributes() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
-
 
         WordSplittingLayer layer = TestUtils.read(WordSplittingLayerStored.class, is);
         System.out.println(layer);
@@ -60,7 +58,7 @@ public class WordSplittingTest {
         is.close();
         os.close();
 
-         Integer index=0;
+        Integer index = 0;
         for (String anyAttribute : layer.getSplit(0).getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
@@ -68,7 +66,7 @@ public class WordSplittingTest {
             }
             if (index == 1) {
                 Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("alterFormSplit",layer.getSplit(0).getExtraAtrributes().get(anyAttribute));
+                Assert.assertEquals("alterFormSplit", layer.getSplit(0).getExtraAtrributes().get(anyAttribute));
             }
 
             index++;

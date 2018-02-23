@@ -56,11 +56,6 @@ public class SentencesTest {
 
         is.close();
         os.close();
-
-        Assert.assertEquals(2, layer.size());
-        Assert.assertEquals(true, layer.hasCharOffsets());
-        Assert.assertEquals(Integer.valueOf(0), layer.getSentence(0).getStartCharOffset());
-        Assert.assertEquals(Integer.valueOf(24), layer.getSentence(0).getEndCharOffset());
         
         Integer index = 0;
         for (String anyAttribute : layer.getSentence(0).getExtraAtrributes().keySet()) {
