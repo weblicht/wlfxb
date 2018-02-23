@@ -26,15 +26,18 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 import eu.clarin.weblicht.wlfxb.tc.api.TextSpan;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlElementRefs;
 import javax.xml.bind.annotation.XmlMixed;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.namespace.QName;
 
 /**
  * @author Yana Panchenko
@@ -69,7 +72,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 //        return sb.toString();
 //    }
 //}
-
 @XmlRootElement(name = TextSpanStored.XML_NAME)
 @XmlAccessorType(XmlAccessType.NONE)
 public class TextSpanStored implements TextSpan {
@@ -85,16 +87,19 @@ public class TextSpanStored implements TextSpan {
     protected String endToken;
     @XmlAttribute(name = CommonAttributes.TYPE)
     protected String type;
-    
+    @XmlAnyAttribute
+    protected LinkedHashMap<QName, String> qnameAttributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
+
     protected String value;
     protected List<TextSpanStored> subspans;
-    
+
     // temporary to hold unmarshalled objects before I can transfer them to fs or value
     private List<Object> content = new ArrayList<Object>();
-    
+
     @XmlMixed
     @XmlElementRefs({
-    @XmlElementRef(name = TextSpanStored.XML_NAME, type = TextSpanStored.class)})
+        @XmlElementRef(name = TextSpanStored.XML_NAME, type = TextSpanStored.class)})
     protected List<Object> getContent() {
         List<Object> contentToMarshal = new ArrayList<Object>();
         if (subspans != null) {
@@ -128,12 +133,10 @@ public class TextSpanStored implements TextSpan {
         }
     }
 
-
     @Override
     public String getType() {
         return type;
     }
-
 
     @Override
     public boolean isTerminal() {
@@ -164,6 +167,14 @@ public class TextSpanStored implements TextSpan {
     }
 
     @Override
+    public LinkedHashMap<String, String> getExtraAtrributes() {
+        for (QName qName : qnameAttributes.keySet()) {
+            extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
+        }
+        return extraAttributes;
+    }
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (type != null) {
@@ -189,5 +200,4 @@ public class TextSpanStored implements TextSpan {
         }
         return sb.toString();
     }
-    
 }

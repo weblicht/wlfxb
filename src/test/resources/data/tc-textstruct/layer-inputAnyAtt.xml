@@ -1,0 +1,13 @@
+<textstructure xmlns="http://www.dspin.de/data/textcorpus">
+    <textspan start="t1" end="t5" type="page">
+        <textspan type="number">1</textspan>
+    </textspan>
+    <textspan type="line"/>
+    <textspan baseForm="baseFormSpan" alterForm="alterFormSpan" type="paragraph" start="t_0" end="t_8" startChar="0" endChar="45"/>
+    <textspan type="line" start="t_0" end="t_2" startChar="0" endChar="13"/>
+    <textspan type="line" start="t_3" end="t_4" startChar="14" endChar="25"/>
+    <textspan type="page" start="t_5" end="t_8" startChar="26" endChar="45"/>
+    <textspan type="line" start="t_5" end="t_6" startChar="26" endChar="39"/>
+    <textspan type="line" start="t_7" end="t_8" startChar="40" endChar="45"/>
+    <textspan type="line"/>
+</textstructure>
