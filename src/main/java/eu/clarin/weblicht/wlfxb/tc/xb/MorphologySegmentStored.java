@@ -26,9 +26,11 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 import eu.clarin.weblicht.wlfxb.tc.api.MorphologySegment;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.*;
+import javax.xml.namespace.QName;
 
 /**
  * @author Yana Panchenko
@@ -53,6 +55,10 @@ public class MorphologySegmentStored implements MorphologySegment {
     private List<Object> content = new ArrayList<Object>();
     protected String value;
     protected List<MorphologySegmentStored> subsegments;
+    @XmlAnyAttribute
+    protected LinkedHashMap<QName, String> qnameAttributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
+
 
     @XmlMixed
     @XmlElementRefs({
@@ -136,6 +142,14 @@ public class MorphologySegmentStored implements MorphologySegment {
             return null;
         }
         return subsegments.toArray(new MorphologySegment[subsegments.size()]);
+    }
+
+    @Override
+    public LinkedHashMap<String, String> getExtraAtrributes() {
+        for (QName qName : qnameAttributes.keySet()) {
+            extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
+        }
+        return extraAttributes;
     }
 
     @Override
