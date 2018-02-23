@@ -29,7 +29,7 @@ import eu.clarin.weblicht.wlfxb.tc.xb.PronunciationType;
  * @author Yana Panchenko
  *
  */
-public interface Pronunciation {
+public interface Pronunciation extends ExtraAtrributes{
 
     public PronunciationType getType();
 

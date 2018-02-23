@@ -26,8 +26,10 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 import eu.clarin.weblicht.wlfxb.tc.api.Pronunciation;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import javax.xml.bind.annotation.*;
+import javax.xml.namespace.QName;
 
 /**
  * @author Yana Panchenko
@@ -50,6 +52,9 @@ public class PronunciationStored implements Pronunciation {
     protected String rp;
     @XmlElement(name = PronunciationStored.XML_NAME)
     protected List<PronunciationStored> children = new ArrayList<PronunciationStored>();
+    @XmlAnyAttribute
+    protected LinkedHashMap<QName, String> qnameAttributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
 
     @Override
     public PronunciationType getType() {
@@ -89,6 +94,14 @@ public class PronunciationStored implements Pronunciation {
     @Override
     public Pronunciation[] getChildren() {
         return children.toArray(new Pronunciation[children.size()]);
+    }
+
+    @Override
+    public LinkedHashMap<String, String> getExtraAtrributes() {
+        for (QName qName : qnameAttributes.keySet()) {
+            extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
+        }
+        return extraAttributes;
     }
 
     @Override
