@@ -26,10 +26,13 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 import eu.clarin.weblicht.wlfxb.tc.api.WordSplit;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlValue;
+import javax.xml.namespace.QName;
 
 /**
  * @author Yana Panchenko
@@ -43,10 +46,21 @@ public class WordSplitStored implements WordSplit {
     protected int[] splitIndices;
     @XmlAttribute(name = CommonAttributes.TOKEN_REFERENCE, required = true)
     protected String tokRef;
+    @XmlAnyAttribute
+    protected LinkedHashMap<QName, String> qnameAttributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
 
     @Override
     public int[] getIndices() {
         return splitIndices;
+    }
+
+    @Override
+    public LinkedHashMap<String, String> getExtraAtrributes() {
+        for (QName qName : qnameAttributes.keySet()) {
+            extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
+        }
+        return extraAttributes;
     }
 
     @Override
@@ -57,4 +71,5 @@ public class WordSplitStored implements WordSplit {
         sb.append(Arrays.toString(splitIndices));
         return sb.toString();
     }
+
 }
