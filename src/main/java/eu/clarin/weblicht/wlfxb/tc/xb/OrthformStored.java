@@ -48,11 +48,22 @@ public class OrthformStored implements Orthform {
     protected String id;
     @XmlAttribute(name = CommonAttributes.NONCONSECUTIVE_LEMMAS_REFERENCE, required = true)
     protected String[] lemmaRefs;
+    @XmlAnyAttribute
+    protected LinkedHashMap<QName, String> qnameAttributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
 
     @Override
     public String[] getValue() {
         String[] splittedValues = values.split(",[ ]*");
         return splittedValues;
+    }
+
+    @Override
+    public LinkedHashMap<String, String> getExtraAtrributes() {
+        for (QName qName : qnameAttributes.keySet()) {
+            extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
+        }
+        return extraAttributes;
     }
 
     @Override

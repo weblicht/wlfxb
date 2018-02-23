@@ -32,12 +32,13 @@ public class LexicalSemanticsTest {
     private static final String INPUT_HYPO = "/data/tc-lexsem/layer-input-hypo.xml";
     private static final String INPUT_HYPER = "/data/tc-lexsem/layer-input-hyper.xml";
 
+    private static final String INPUT_SYN_ANY_ATTRIBUTES = "/data/tc-lexsem/layer-inputSynAnyAtt.xml";
+
     @Test
     public void testReadAndWriteBackSyn() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_SYN);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output-syn.xml"));
-
 
         LexicalSemanticsLayer layer = TestUtils.read(SynonymyLayerStored.class, is);
         System.out.println(layer);
@@ -58,7 +59,6 @@ public class LexicalSemanticsTest {
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANT);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output-ant.xml"));
 
-
         LexicalSemanticsLayer layer = TestUtils.read(AntonymyLayerStored.class, is);
         System.out.println(layer);
         TestUtils.write(layer, os);
@@ -77,7 +77,6 @@ public class LexicalSemanticsTest {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_HYPO);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output-hypo.xml"));
-
 
         LexicalSemanticsLayer layer = TestUtils.read(HyponymyLayerStored.class, is);
         System.out.println(layer);
@@ -100,7 +99,6 @@ public class LexicalSemanticsTest {
         InputStream is = this.getClass().getResourceAsStream(INPUT_HYPER);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output-hyper.xml"));
 
-
         LexicalSemanticsLayer layer = TestUtils.read(HyperonymyLayerStored.class, is);
         System.out.println(layer);
         TestUtils.write(layer, os);
@@ -112,5 +110,32 @@ public class LexicalSemanticsTest {
         //assertEquals("GermaNet", layer.getSource());
         Assert.assertArrayEquals(new String[]{"verzehren"}, layer.getOrthform(0).getValue());
 
+    }
+
+    @Test
+    public void testReadAndWriteBackSynAnyAttributes() throws Exception {
+
+        InputStream is = this.getClass().getResourceAsStream(INPUT_SYN_ANY_ATTRIBUTES);
+        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output-syn.xml"));
+
+        LexicalSemanticsLayer layer = TestUtils.read(SynonymyLayerStored.class, is);
+        System.out.println(layer);
+        TestUtils.write(layer, os);
+        Integer index = 0;
+        for (String anyAttribute : layer.getOrthform(0).getExtraAtrributes().keySet()) {
+            if (index == 0) {
+                Assert.assertEquals("baseForm", anyAttribute);
+                Assert.assertEquals("baseFormSyn", layer.getOrthform(0).getExtraAtrributes().get(anyAttribute));
+            }
+            if (index == 1) {
+                Assert.assertEquals("alterForm", anyAttribute);
+                Assert.assertEquals("alterFormSyn", layer.getOrthform(0).getExtraAtrributes().get(anyAttribute));
+            }
+
+            index++;
+        }
+
+        is.close();
+        os.close();
     }
 }
