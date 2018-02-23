@@ -26,8 +26,10 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 import eu.clarin.weblicht.wlfxb.tc.api.WordSense;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
 import javax.xml.bind.annotation.*;
+import javax.xml.namespace.QName;
 
 /**
  * @author Yana Panchenko
@@ -44,15 +46,26 @@ public class WordSenseStored implements WordSense {
     protected String comment;
     @XmlAttribute(name = CommonAttributes.TOKEN_SEQUENCE_REFERENCE, required = true)
     protected String[] tokRefs;
+    @XmlAnyAttribute
+    protected LinkedHashMap<QName, String> qnameAttributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
 
     @Override
     public String getComment() {
         return comment;
     }
-    
+
     @Override
     public List<String> getLexicalUnits() {
         return Arrays.asList(lexunits);
+    }
+
+    @Override
+    public LinkedHashMap<String, String> getExtraAtrributes() {
+        for (QName qName : qnameAttributes.keySet()) {
+            extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
+        }
+        return extraAttributes;
     }
 
     @Override
@@ -64,4 +77,5 @@ public class WordSenseStored implements WordSense {
         }
         return sb.toString();
     }
+
 }
