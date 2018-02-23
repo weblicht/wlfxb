@@ -18,31 +18,17 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-/**
- *
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
-import java.util.LinkedHashMap;
-import java.util.Set;
-
 /**
- * @author Yana Panchenko
  *
+ * @author felahi
  */
-public interface MatchedItem {
-
-    public String[] getOriginCorpusTokenIds();
-
-    public Set<String> getTargetNames();
-
-    public String getTargetValue(String targetName);
-
-    public Set<String> getCategoriesNames();
-
-    public String getCategoryValue(String categoryName);
-
-    public LinkedHashMap<String, String> getCategoriesExtraAtrributes(String categoryName);
-
-    public LinkedHashMap<String, String> getTargetExtraAtrributes(String targetName);
+public interface MatchedItemCategory extends ExtraAtrributes{
+    
 }

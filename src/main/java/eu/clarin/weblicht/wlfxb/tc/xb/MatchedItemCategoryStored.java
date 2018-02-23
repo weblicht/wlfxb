@@ -23,32 +23,47 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.xb;
 
+import eu.clarin.weblicht.wlfxb.tc.api.MatchedItemCategory;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
+import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.namespace.QName;
 
 /**
  * @author Yana Panchenko
  *
  */
-@XmlRootElement(name = MatchedItemCategory.XML_NAME)
+@XmlRootElement(name = MatchedItemCategoryStored.XML_NAME)
 @XmlAccessorType(XmlAccessType.NONE)
-public class MatchedItemCategory {
+public class MatchedItemCategoryStored implements MatchedItemCategory {
 
     public static final String XML_NAME = "category";
     @XmlAttribute(name = CommonAttributes.NAME, required = true)
     protected String name;
     @XmlAttribute(name = CommonAttributes.VALUE, required = true)
     protected String value;
+    @XmlAnyAttribute
+    protected LinkedHashMap<QName, String> qnameAttributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
 
-    MatchedItemCategory() {
+    MatchedItemCategoryStored() {
     }
 
-    MatchedItemCategory(String name, String value) {
+    MatchedItemCategoryStored(String name, String value) {
         this.name = name;
         this.value = value;
+    }
+
+    @Override
+    public LinkedHashMap<String, String> getExtraAtrributes() {
+        for (QName qName : qnameAttributes.keySet()) {
+            extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
+        }
+        return extraAttributes;
     }
 
     @Override
