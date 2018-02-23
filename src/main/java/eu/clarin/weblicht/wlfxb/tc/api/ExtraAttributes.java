@@ -31,7 +31,7 @@ import java.util.LinkedHashMap;
  *
  * @author Mohammad Fazleh Elahi
  */
-public interface ExtraAtrributes {
+public interface ExtraAttributes {
 
     public LinkedHashMap<String, String> getExtraAtrributes();
 }

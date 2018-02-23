@@ -27,7 +27,7 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  * @author Yana Panchenko
  *
  */
-public interface GeoPoint extends ExtraAtrributes{
+public interface GeoPoint extends ExtraAttributes{
 
     public String getLongitude();
 

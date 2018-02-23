@@ -27,7 +27,7 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  * @author Yana Panchenko
  *
  */
-public interface Feature extends ExtraAtrributes{
+public interface Feature extends ExtraAttributes{
 
     public String getName();
 
