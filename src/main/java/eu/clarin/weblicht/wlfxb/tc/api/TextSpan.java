@@ -29,7 +29,7 @@ import eu.clarin.weblicht.wlfxb.tc.xb.TextSpanStored;
  * @author Yana Panchenko
  *
  */
-public interface TextSpan {
+public interface TextSpan extends ExtraAtrributes{
 
     //public TextSpanType getType();
     public String getType();

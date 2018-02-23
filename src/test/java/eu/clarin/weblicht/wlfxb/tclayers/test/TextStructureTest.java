@@ -22,6 +22,7 @@ import org.junit.rules.TemporaryFolder;
 public class TextStructureTest {
 
     private static final String INPUT = "/data/tc-textstruct/layer-input.xml";
+    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-textstruct/layer-inputAnyAtt.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
@@ -44,5 +45,35 @@ public class TextStructureTest {
         Assert.assertEquals("line", layer.getSpan(1).getType());
         Assert.assertEquals(Integer.valueOf(0), layer.getSpan(2).getStartChar());
         Assert.assertEquals("paragraph", layer.getSpan(2).getType());
+    }
+    
+    @Test
+    public void testReadAndWriteBackAnyAttributes() throws Exception {
+
+        InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
+        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
+
+
+        TextStructureLayer layer = TestUtils.read(TextStructureLayerStored.class, is);
+        System.out.println(layer);
+        TestUtils.write(layer, os);
+
+        is.close();
+        os.close();
+
+          Integer index = 0;
+        for (String anyAttribute : layer.getSpan(2).getExtraAtrributes().keySet()) {
+            if (index == 0) {
+                Assert.assertEquals("baseForm", anyAttribute);
+                Assert.assertEquals("baseFormSpan", layer.getSpan(2).getExtraAtrributes().get(anyAttribute));
+            }
+            if (index == 1) {
+                Assert.assertEquals("alterForm", anyAttribute);
+                Assert.assertEquals("alterFormSpan", layer.getSpan(2).getExtraAtrributes().get(anyAttribute));
+            }
+
+            index++;
+        }
+
     }
 }
