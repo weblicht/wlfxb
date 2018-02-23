@@ -1,0 +1,42 @@
+<morphology tagset="STTS" segmentation="true" charOffsets="true" xmlns="http://www.dspin.de/data/textcorpus">
+    <analysis tokenIDs="t4">
+        <tag score="0.8">
+            <fs>
+                <f baseForm="baseFormFeature" alterForm="alterFormFeature" name="cat">noun</f>
+                <f name="case">acc</f>
+                <f name="gender">fem</f>
+                <f name="number">singular</f>
+                <f name="test1">
+                    <fs>
+                        <f baseForm="baseFormSubFeature" alterForm="alterFormSubFeature" name="cat">noun</f>
+                        <f name="case">acc</f>
+                        <f name="gender">fem</f>
+                        <f name="number">singular</f>
+                    </fs>
+                </f>
+            </fs>
+        </tag>
+        <tag score="0.6">
+            <fs>
+                <f name="cat">pronoun</f>
+                <f name="case">acc</f>
+                <f name="gender">fem</f>
+                <f name="number">plural</f>
+                <f name="test2">
+                    <fs>
+                        <f name="cat">pronoun</f>
+                        <f name="case">acc</f>
+                        <f name="gender">fem</f>
+                        <f name="number">plural</f>
+                    </fs>
+                </f>
+            </fs>
+        </tag>
+        <segmentation>
+            <segment baseForm="baseFormSegment" alterForm="alterFormSegment" type="stem" cat="noun" start="0" end="9">
+                <segment cat="noun" func="comp" start="0" end="4">Käse</segment>
+                <segment type="stem" cat="noun" func="base" start="4" end="9">Pizza</segment>
+            </segment>
+        </segmentation>
+    </analysis>
+</morphology>
