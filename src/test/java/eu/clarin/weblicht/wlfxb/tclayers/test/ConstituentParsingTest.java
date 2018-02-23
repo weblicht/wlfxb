@@ -21,7 +21,7 @@ import org.junit.rules.TemporaryFolder;
 public class ConstituentParsingTest {
 
     private static final String INPUT = "/data/tc-parsing/layer-input.xml";
-    private static final String  INPUT_ANY_ATTRIBUTE  = "/data/tc-parsing/layer-inputAnyAtt.xml";
+    private static final String INPUT_ANY_ATTRIBUTE = "/data/tc-parsing/layer-inputAnyAtt.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
@@ -48,6 +48,7 @@ public class ConstituentParsingTest {
         Assert.assertEquals(true, layer.getParseRoot(1).getChildren()[0].getChildren()[0].getChildren()[0].isTerminal());
 
     }
+
     @Test
     public void testReadAndWriteBackAnyAttributes() throws Exception {
 
@@ -61,18 +62,8 @@ public class ConstituentParsingTest {
         is.close();
         os.close();
 
-        Assert.assertEquals("Tiger", layer.getTagset());
-        Assert.assertEquals("TOP", layer.getParseRoot(0).getCategory());
-        Assert.assertEquals("TOP", layer.getParseRoot(1).getCategory());
-        Assert.assertEquals(2, layer.getParseRoot(0).getChildren().length);
-        Assert.assertEquals(2, layer.getParseRoot(1).getChildren().length);
-        Assert.assertEquals(true, layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].isTerminal());
-        Assert.assertEquals(true, layer.getParseRoot(1).getChildren()[0].getChildren()[0].getChildren()[0].isTerminal());
-        
-        System.out.println(layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0]);
-        
-        Integer index=0;
-         for (String anyAttribute : layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getExtraAtrributes().keySet()) {
+        Integer index = 0;
+        for (String anyAttribute : layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
                 Assert.assertEquals("NE-HD", layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getExtraAtrributes().get(anyAttribute));
@@ -85,7 +76,6 @@ public class ConstituentParsingTest {
             index++;
         }
 
-
     }
-    
+
 }

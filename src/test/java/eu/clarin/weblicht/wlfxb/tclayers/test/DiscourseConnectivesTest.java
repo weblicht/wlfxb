@@ -58,11 +58,6 @@ public class DiscourseConnectivesTest {
         is.close();
         os.close();
 
-        Assert.assertEquals(2, layer.size());
-        Assert.assertEquals("TuebaDZ", layer.getTypesTagset());
-        Assert.assertEquals("expansion", layer.getConnective(0).getType());
-        Assert.assertEquals("temporal", layer.getConnective(1).getType());
-
         Integer index = 0;
         for (String anyAttribute : layer.getConnective(0).getExtraAtrributes().keySet()) {
             if (index == 0) {

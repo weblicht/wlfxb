@@ -59,11 +59,7 @@ public class OrthographyTest {
         is.close();
         os.close();
 
-        Assert.assertEquals(2, layer.size());
-        Assert.assertEquals("will", layer.getCorrection(0).getString());
-        Assert.assertEquals("essen", layer.getCorrection(1).getString());
-        Assert.assertEquals(CorrectionOperation.replace, layer.getCorrection(0).getOperation());
-        Integer index=0;
+        Integer index = 0;
         for (String anyAttribute : layer.getCorrection(0).getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);

@@ -60,15 +60,6 @@ public class DependencyParsingTest {
         is.close();
         os.close();
 
-        Assert.assertEquals("Tiger", layer.getTagset());
-        Assert.assertEquals(true, layer.hasEmptyTokens());
-        Assert.assertEquals(false, layer.hasMultipleGovernors());
-        Assert.assertEquals(2, layer.size());
-        Assert.assertEquals(4, layer.getParse(0).getDependencies().length);
-        Assert.assertEquals("SUBJ", layer.getParse(0).getDependencies()[1].getFunction());
-        
-        System.out.println(layer.getParse(0).getDependencies()[1]);
-        
         Integer index = 0;
         for (String anyAttribute : layer.getParse(0).getDependencies()[1].getExtraAtrributes().keySet()) {
             if (index == 0) {

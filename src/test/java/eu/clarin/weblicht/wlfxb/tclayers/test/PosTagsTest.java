@@ -59,10 +59,6 @@ public class PosTagsTest {
         is.close();
         os.close();
 
-        Assert.assertEquals("STTS", layer.getTagset());
-        Assert.assertEquals(9, layer.size());
-        Assert.assertEquals("NE", layer.getTag(0).getString());
-        Assert.assertEquals("$.", layer.getTag(layer.size() - 1).getString());
         Integer index = 0;
         for (String anyAttribute : layer.getTag(0).getExtraAtrributes().keySet()) {
             if (index == 0) {

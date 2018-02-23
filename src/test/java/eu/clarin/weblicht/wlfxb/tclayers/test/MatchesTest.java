@@ -63,18 +63,6 @@ public class MatchesTest {
         is.close();
         os.close();
 
-        Assert.assertEquals("cqp", layer.getQueryType());
-        Assert.assertEquals("tb_lemma=\"Peter\" | tb_lemma=\"schmecken\"", layer.getQueryString());
-        Assert.assertEquals(1, layer.size());
-        Assert.assertEquals("wcorp-1", layer.getCorpus(0).getName());
-        Assert.assertEquals("some-pid", layer.getCorpus(0).getPID());
-        Assert.assertEquals(2, layer.getCorpus(0).getMatchedItems().length);
-        Assert.assertEquals("5-1023", layer.getCorpus(0).getMatchedItems()[0].getOriginCorpusTokenIds()[0]);
-        Assert.assertEquals("t1", layer.getCorpus(0).getMatchedItems()[0].getTargetValue("tname"));
-        Assert.assertEquals("cval", layer.getCorpus(0).getMatchedItems()[0].getCategoryValue("cname"));
-        
-        System.out.println(layer.getCorpus(0).getMatchedItems()[0].getCategoriesExtraAtrributes("cname"));
-
         Integer index = 0;
         for (String anyAttribute : layer.getCorpus(0).getMatchedItems()[0].getCategoriesExtraAtrributes("cname").keySet()) {
             if (index == 0) {
@@ -88,7 +76,7 @@ public class MatchesTest {
 
             index++;
         }
-        
+
         index = 0;
         for (String anyAttribute : layer.getCorpus(0).getMatchedItems()[0].getTargetExtraAtrributes("tname").keySet()) {
             if (index == 0) {

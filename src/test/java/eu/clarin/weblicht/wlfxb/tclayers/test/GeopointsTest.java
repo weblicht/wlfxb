@@ -62,12 +62,6 @@ public class GeopointsTest {
         is.close();
         os.close();
 
-        Assert.assertEquals(GeoLongLatFormat.DegDec, layer.getCoordinatesFormat());
-        Assert.assertEquals(GeoContinentFormat.name, layer.getContinentFormat());
-        Assert.assertEquals("http://www.geonames.org/", layer.getSource());
-        Assert.assertEquals(2, layer.size());
-        Assert.assertEquals("39.11417", layer.getPoint(0).getLatitude());
-        Assert.assertEquals("Europe", layer.getPoint(0).getContinent());
         Integer index=0;
         for (String anyAttribute : layer.getPoint(0).getExtraAtrributes().keySet()) {
             if (index == 0) {
