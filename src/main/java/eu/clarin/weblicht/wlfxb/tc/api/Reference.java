@@ -27,7 +27,7 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  * @author Yana Panchenko
  *
  */
-public interface Reference extends ExtraAtrributes{
+public interface Reference extends ExtraAttributes{
 
     public String getType();
 

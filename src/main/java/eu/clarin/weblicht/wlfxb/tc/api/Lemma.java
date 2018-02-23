@@ -20,7 +20,7 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
-public interface Lemma extends ExtraAtrributes{
+public interface Lemma extends ExtraAttributes{
 
     public String getString();
     

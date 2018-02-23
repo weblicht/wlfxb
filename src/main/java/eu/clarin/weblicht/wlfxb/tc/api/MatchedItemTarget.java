@@ -29,6 +29,6 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  *
  * @author felahi
  */
-public interface MatchedItemTarget extends ExtraAtrributes{
+public interface MatchedItemTarget extends ExtraAttributes{
     
 }

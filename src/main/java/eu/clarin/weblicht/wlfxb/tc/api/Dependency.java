@@ -27,7 +27,7 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  * @author Yana Panchenko
  *
  */
-public interface Dependency extends ExtraAtrributes{
+public interface Dependency extends ExtraAttributes{
 
     public String getFunction();
 }

@@ -29,7 +29,7 @@ import java.util.List;
  * @author Yana Panchenko
  *
  */
-public interface WordSense extends ExtraAtrributes{
+public interface WordSense extends ExtraAttributes{
 
     public String getComment();
     

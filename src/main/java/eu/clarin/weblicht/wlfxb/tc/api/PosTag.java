@@ -20,7 +20,7 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
-public interface PosTag extends ExtraAtrributes{
+public interface PosTag extends ExtraAttributes{
 
     public String getString();
 }

@@ -27,7 +27,7 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  * @author Yana Panchenko
  *
  */
-public interface WordSplit extends ExtraAtrributes{
+public interface WordSplit extends ExtraAttributes{
 
     public int[] getIndices();
 }

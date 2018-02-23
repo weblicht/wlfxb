@@ -27,7 +27,7 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  * @author Yana Panchenko
  *
  */
-public interface PhoneticsSegment extends ExtraAtrributes{
+public interface PhoneticsSegment extends ExtraAttributes{
 
     public Pronunciation[] getPronunciations();
 }

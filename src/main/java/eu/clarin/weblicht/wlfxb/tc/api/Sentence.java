@@ -20,7 +20,7 @@
  */
 package eu.clarin.weblicht.wlfxb.tc.api;
 
-public interface Sentence extends ExtraAtrributes{
+public interface Sentence extends ExtraAttributes{
 
     //public List<Token> getTokens();
     public Integer getStartCharOffset();
