@@ -1,0 +1,4 @@
+<WordSplittings type="syllables" xmlns="http://www.dspin.de/data/textcorpus">
+    <split tokID="t4" baseForm="baseFormSplit" alterForm="alterFormSplit">2 4 6</split>
+    <split tokID="t7">5</split>
+</WordSplittings> 
