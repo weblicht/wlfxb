@@ -44,21 +44,22 @@ public class ChunkTest {
         Assert.assertEquals("tagset", layer.getTagset());
         Assert.assertEquals(8, layer.size());
 
-        for (Integer index = 0; index < layer.size(); index++) {
-            Chunk chunk = layer.getChunk(index);
-
+        Integer index = 0;
+        for (String anyAttribute : layer.getChunk(1).getTypes().keySet()) {
             if (index == 0) {
-                Assert.assertEquals("NP", chunk.getTypes().get("type"));
+                Assert.assertEquals("type", anyAttribute);
+                Assert.assertEquals("VP", layer.getChunk(1).getTypes().get(anyAttribute));
             }
             if (index == 1) {
-                Assert.assertEquals("VP", chunk.getTypes().get("type"));
-                Assert.assertEquals("none", chunk.getTypes().get("voice"));
-                Assert.assertEquals("present", chunk.getTypes().get("tense"));
+                Assert.assertEquals("voice", anyAttribute);
+                Assert.assertEquals("none", layer.getChunk(1).getTypes().get(anyAttribute));
             }
             if (index == 2) {
-                Assert.assertEquals("NP", chunk.getTypes().get("type"));
+                Assert.assertEquals("tense", anyAttribute);
+                Assert.assertEquals("present", layer.getChunk(1).getTypes().get(anyAttribute));
             }
-        }
 
+            index++;
+        }
     }
 }
