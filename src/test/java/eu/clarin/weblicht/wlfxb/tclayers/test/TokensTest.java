@@ -21,8 +21,8 @@ import org.junit.rules.TemporaryFolder;
 public class TokensTest {
 
     private static final String INPUT = "/data/tc-tokens/layer-input.xml";
-    private static final String INPUT_UD = "/data/tc-tokens/layer-inputUD.xml";
-    private static final String INPUT_SL = "/data/tc-tokens/layer-inputSL.xml";
+    private static final String INPUT_SURFACE_PARTS = "/data/tc-tokens/layer-inputSurfaceParts.xml";
+    private static final String INPUT_SURFACE = "/data/tc-tokens/layer-inputSurface.xml";
     private static final String INPUT_ANY_ATTRIBUTE = "/data/tc-tokens/layer-inputAnyAtt.xml";
 
     @Rule
@@ -52,10 +52,10 @@ public class TokensTest {
     }
 
     @Test
-    public void testReadAndWriteBackMultiWordTokensForUD() throws Exception {
+    public void testReadAndWriteBack_SurfaceForm_Parts() throws Exception {
 
-        InputStream is = this.getClass().getResourceAsStream(INPUT_UD);
-        OutputStream os = new FileOutputStream(testFolder.newFile("layer-outputUD.xml"));
+        InputStream is = this.getClass().getResourceAsStream(INPUT_SURFACE_PARTS);
+        OutputStream os = new FileOutputStream(testFolder.newFile("layer-outputSurfaceParts.xml"));
 
         TokensLayer layer = TestUtils.read(TokensLayerStored.class, is);
         System.out.println(layer);
@@ -63,9 +63,6 @@ public class TokensTest {
 
         is.close();
         os.close();
-
-        Assert.assertEquals(false, layer.hasCharOffsets());
-        Assert.assertEquals(9, layer.size());
 
         Assert.assertEquals("Dan", layer.getToken(0).getString());
         Assert.assertEquals("t_0", layer.getToken(0).getID());
@@ -73,27 +70,13 @@ public class TokensTest {
         Assert.assertEquals("t_0", layer.getToken(0).getParts()[0]);
         Assert.assertEquals("t_1", layer.getToken(0).getParts()[1]);
 
-        Assert.assertEquals("n", layer.getToken(1).getString());
-        Assert.assertEquals("t_1", layer.getToken(1).getID());
-        Assert.assertEquals("schau", layer.getToken(2).getString());
-        Assert.assertEquals("t_2", layer.getToken(2).getID());
-        Assert.assertEquals("doch", layer.getToken(3).getString());
-        Assert.assertEquals("t_3", layer.getToken(3).getID());
-        Assert.assertEquals("mal", layer.getToken(4).getString());
-        Assert.assertEquals("t_4", layer.getToken(4).getID());
-
-        Assert.assertEquals("in", layer.getToken(5).getString());
-        Assert.assertEquals("t_5", layer.getToken(5).getID());
-        Assert.assertEquals("im", layer.getToken(5).getSurfaceForm());
-        Assert.assertEquals("t_5", layer.getToken(5).getParts()[0]);
-        Assert.assertEquals("t_6", layer.getToken(5).getParts()[1]);
     }
 
     @Test
-    public void testReadAndWriteBackMultiWordForSlovanian() throws Exception {
+    public void testReadAndWriteBack_SurfaceForm() throws Exception {
 
-        InputStream is = this.getClass().getResourceAsStream(INPUT_SL);
-        OutputStream os = new FileOutputStream(testFolder.newFile("layer-outputSL.xml"));
+        InputStream is = this.getClass().getResourceAsStream(INPUT_SURFACE);
+        OutputStream os = new FileOutputStream(testFolder.newFile("layer-outputSurface.xml"));
 
         TokensLayer layer = TestUtils.read(TokensLayerStored.class, is);
         System.out.println(layer);
@@ -101,32 +84,17 @@ public class TokensTest {
 
         is.close();
         os.close();
-
-        Assert.assertEquals(false, layer.hasCharOffsets());
-        Assert.assertEquals(4, layer.size());
-
-        Assert.assertEquals("ne", layer.getToken(0).getString());
-        Assert.assertEquals("t_0", layer.getToken(0).getID());
-        Assert.assertEquals("neb", layer.getToken(0).getSurfaceForm());
-        Assert.assertEquals("t_0", layer.getToken(0).getParts()[0]);
-        Assert.assertEquals("t_1", layer.getToken(0).getParts()[1]);
-
-        Assert.assertEquals("bi", layer.getToken(1).getString());
-        Assert.assertEquals("t_1", layer.getToken(1).getID());
 
         Assert.assertEquals("ponoči", layer.getToken(2).getString());
         Assert.assertEquals("t_2", layer.getToken(2).getID());
         Assert.assertEquals("po noči", layer.getToken(2).getSurfaceForm());
-
-        Assert.assertEquals(".", layer.getToken(3).getString());
-        Assert.assertEquals("t_3", layer.getToken(3).getID());
     }
 
     @Test
-    public void testReadAndWriteBackAnyAttribute() throws Exception {
+    public void testReadAndWriteBack_AnyAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTE);
-        OutputStream os = new FileOutputStream(testFolder.newFile("layer-outputSL.xml"));
+        OutputStream os = new FileOutputStream(testFolder.newFile("layer-outputAnyAttribute.xml"));
 
         TokensLayer layer = TestUtils.read(TokensLayerStored.class, is);
         System.out.println(layer);
@@ -134,45 +102,15 @@ public class TokensTest {
 
         is.close();
         os.close();
-
-        Assert.assertEquals(false, layer.hasCharOffsets());
-        Assert.assertEquals(9, layer.size());
-
-        Assert.assertEquals("Dan", layer.getToken(0).getString());
-        Assert.assertEquals("t_0", layer.getToken(0).getID());
-        Assert.assertEquals("Dann", layer.getToken(0).getSurfaceForm());
-        Assert.assertEquals("t_0", layer.getToken(0).getParts()[0]);
-        Assert.assertEquals("t_1", layer.getToken(0).getParts()[1]);
-
-        Assert.assertEquals("n", layer.getToken(1).getString());
-        Assert.assertEquals("t_1", layer.getToken(1).getID());
-        Assert.assertEquals("schau", layer.getToken(2).getString());
-        Assert.assertEquals("t_2", layer.getToken(2).getID());
-        Assert.assertEquals("doch", layer.getToken(3).getString());
-        Assert.assertEquals("t_3", layer.getToken(3).getID());
 
         Integer index = 0;
         for (String anyAttribute : layer.getToken(2).getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
                 Assert.assertEquals("schau", layer.getToken(2).getExtraAtrributes().get(anyAttribute));
+                break;
             }
-            if (index == 1) {
-                Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("schaum", layer.getToken(2).getExtraAtrributes().get(anyAttribute));
-            }
-
-            index++;
         }
-
-        Assert.assertEquals("mal", layer.getToken(4).getString());
-        Assert.assertEquals("t_4", layer.getToken(4).getID());
-
-        Assert.assertEquals("in", layer.getToken(5).getString());
-        Assert.assertEquals("t_5", layer.getToken(5).getID());
-        Assert.assertEquals("im", layer.getToken(5).getSurfaceForm());
-        Assert.assertEquals("t_5", layer.getToken(5).getParts()[0]);
-        Assert.assertEquals("t_6", layer.getToken(5).getParts()[1]);
 
     }
 }
