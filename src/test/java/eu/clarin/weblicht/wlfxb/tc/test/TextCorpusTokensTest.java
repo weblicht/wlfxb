@@ -30,14 +30,16 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
 
     private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-tokens/tcf-before.xml";
     private static final String INPUT_FILE_WITH_LAYER = "/data/tc-tokens/tcf-after.xml";
-    private static final String INPUT_FILE_UD_WITHOUT_LAYER = "/data/tc-tokens/tcf-beforeUD.xml";
-    private static final String INPUT_FILE_UD_WITH_LAYER = "/data/tc-tokens/tcf-afterUD.xml";
-    private static final String INPUT_FILE_SL_WITHOUT_LAYER = "/data/tc-tokens/tcf-beforeSL.xml";
-    private static final String INPUT_FILE_SL_WITH_LAYER = "/data/tc-tokens/tcf-afterSL.xml";
-
     private static final String EXPECTED_OUTPUT_FILE = "/data/tc-tokens/output-expected.xml";
-    private static final String EXPECTED_UD_OUTPUT_FILE = "/data/tc-tokens/output-expectedUD.xml";
-    private static final String EXPECTED_SL_OUTPUT_FILE = "/data/tc-tokens/output-expectedSL.xml";
+    
+    private static final String INPUT_FILE_SUTFACE_PARTS_WITHOUT_LAYER = "/data/tc-tokens/tcf-beforeSurfaceParts.xml";
+    private static final String INPUT_FILE_SUTFACE_PARTS_WITH_LAYER = "/data/tc-tokens/tcf-afterSurfaceParts.xml";
+    private static final String EXPECTED_SUTFACE_PARTS_OUTPUT_FILE = "/data/tc-tokens/output-expectedSurfaceParts.xml";
+    
+    private static final String INPUT_FILE_SURFACE_WITHOUT_LAYER = "/data/tc-tokens/tcf-beforeSurface.xml";
+    private static final String INPUT_FILE_SURFACE_WITH_LAYER = "/data/tc-tokens/tcf-afterSurface.xml";
+    private static final String EXPECTED_SL_OUTPUT_FILE = "/data/tc-tokens/output-expectedSurface.xml";
+    
     private static final String OUTPUT_FILE = "output.xml";
 
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeTokenization
@@ -54,16 +56,16 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
     }
 
     @Test
-    public void testReadUD() throws Exception {
-        TextCorpus tc = read(INPUT_FILE_UD_WITH_LAYER, layersToReadAfterTokenization);
+    public void testRead_SurfaceForm_Parts() throws Exception {
+        TextCorpus tc = read(INPUT_FILE_SUTFACE_PARTS_WITH_LAYER, layersToReadAfterTokenization);
         TokensLayer layer = tc.getTokensLayer();
         Assert.assertEquals(9, layer.size());
         Assert.assertEquals("Dann", layer.getToken(0).getString());
     }
 
     @Test
-    public void testReadSL() throws Exception {
-        TextCorpus tc = read(INPUT_FILE_SL_WITH_LAYER, layersToReadAfterTokenization);
+    public void testRead_SurfaceForm() throws Exception {
+        TextCorpus tc = read(INPUT_FILE_SURFACE_WITH_LAYER, layersToReadAfterTokenization);
         TokensLayer layer = tc.getTokensLayer();
         Assert.assertEquals(4, layer.size());
         Assert.assertEquals("ne", layer.getToken(0).getString());
@@ -89,9 +91,9 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
     }
 
     @Test
-    public void testReadWriteMultiWordTokensForUD() throws Exception {
+    public void testReadWrite_SurfaceForm_Parts() throws Exception {
         String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
-        TextCorpusStreamed tc = open(INPUT_FILE_UD_WITHOUT_LAYER, outfile, layersToReadBeforeTokenization);
+        TextCorpusStreamed tc = open(INPUT_FILE_SUTFACE_PARTS_WITHOUT_LAYER, outfile, layersToReadBeforeTokenization);
         System.out.println(tc);
 
         List<String> tokenstrings = tokenize(tc.getTextLayer().getText());
@@ -119,15 +121,15 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        assertEqualXml(EXPECTED_UD_OUTPUT_FILE, outfile);
+        assertEqualXml(EXPECTED_SUTFACE_PARTS_OUTPUT_FILE, outfile);
     }
 
     @Test
-    public void testReadWriteMultiWordForSlovanian() throws Exception {
+    public void testReadWrite_Surface() throws Exception {
         String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
-        TextCorpusStreamed tc = open(INPUT_FILE_SL_WITHOUT_LAYER, outfile, layersToReadBeforeTokenization);
+        TextCorpusStreamed tc = open(INPUT_FILE_SURFACE_WITHOUT_LAYER, outfile, layersToReadBeforeTokenization);
 
-        List<String> tokenstrings = tokenizeSL(tc.getTextLayer().getText());
+        List<String> tokenstrings = tokenizeSurface(tc.getTextLayer().getText());
         // create tokens layer, it is empty first
         TokensLayer tokens = tc.createTokensLayer();
         Token lastToken = null;
@@ -196,7 +198,7 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
         return tokenstrings;
     }
 
-    private List<String> tokenizeSL(String text) {
+    private List<String> tokenizeSurface(String text) {
         List<String> tokenstrings = new ArrayList<String>();
         StringBuilder tokenBuilder = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
