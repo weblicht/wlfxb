@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.*;
  */
 @XmlRootElement(name = TokenStored.XML_NAME)
 @XmlAccessorType(XmlAccessType.NONE)
-@XmlType(propOrder = {"end", "start", "tokenId"})
+@XmlType(propOrder = {"end", "start", "tokenId", "tokenString"})
 public class TokenStored implements Token {
 
     public static final String XML_NAME = "token";

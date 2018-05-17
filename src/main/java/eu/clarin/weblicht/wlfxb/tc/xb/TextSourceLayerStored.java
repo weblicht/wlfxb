@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.bind.annotation.XmlAttribute;
+import org.eclipse.persistence.oxm.annotations.XmlValueExtension;
 
 /**
  * @author Çağrı Çöltekin
@@ -38,6 +39,7 @@ public class TextSourceLayerStored extends TextCorpusLayerStoredAbstract
         implements TextSourceLayer {
 
     @XmlValue
+    @XmlValueExtension
     private String text;
     @XmlAttribute(name = CommonAttributes.TYPE, required = true)
     private String type;
