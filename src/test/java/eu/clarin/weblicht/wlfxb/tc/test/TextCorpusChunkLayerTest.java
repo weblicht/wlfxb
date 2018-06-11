@@ -22,7 +22,7 @@ import org.junit.rules.TemporaryFolder;
 
 /**
  *
- * @author felahi
+ * @author Mohammad Fazleh Elahi
  */
 public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
 
@@ -30,9 +30,10 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
     public TemporaryFolder testFolder = new TemporaryFolder();
 
     private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-chunk/tcf-before.xml";
-    private static final String INPUT_FILE_WITH_LAYER = "/data/tc-chunk/tcf-after.xml";
-    private static final String EXPECTED_OUTPUT_FILE = "/data/tc-chunk/output-expected.xml";
+    private static final String INPUT_FILE_WITH_LAYER_TAGSET = "/data/tc-chunk/tcf-after.xml";
+    private static final String EXPECTED_OUTPUT_FILE_TAGSET = "/data/tc-chunk/output-expected.xml";
     private static final String OUTPUT_FILE = "output.xml";
+
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeChunkLayer
             = EnumSet.of(TextCorpusLayerTag.TOKENS);
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterChunkLayer
@@ -54,26 +55,11 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
         types.put("voice", "none");
         types.put("tense", "present");
         token2CH.put("reckons", types);
-        /*types = new HashMap<String, String>();
-        types.put("type", "NP");
-        token2CH.put("the", types);
-        types = new HashMap<String, String>();
-        types.put("type", "NP");
-        token2CH.put("current", types);
-        types = new HashMap<String, String>();
-        types.put("type", "NP");
-        token2CH.put("account", types);
-        types = new HashMap<String, String>();
-        types.put("type", "NP");
-        token2CH.put("deficit", types);*/
-        
-        multiword.put("the", "the current account deficit");
     }
- //   <chunk type="NP" tokenIDs="t_2 t_3 t_4 t_5"/>
- 
+
     @Test
     public void testRead() throws Exception {
-        TextCorpus tc = read(INPUT_FILE_WITH_LAYER, layersToReadAfterChunkLayer);
+        TextCorpus tc = read(INPUT_FILE_WITH_LAYER_TAGSET, layersToReadAfterChunkLayer);
         ChunkLayer layer = tc.getChunkLayer();
         Assert.assertEquals(1, layer.size());
         Assert.assertEquals("tagset", layer.getTagset());
@@ -89,11 +75,8 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
         for (int i = 0; i < tc.getTokensLayer().size(); i++) {
             Token token = tc.getTokensLayer().getToken(i);
             LinkedHashMap<String, String> chunkAttributes = recognize(token.getString());
-            
+
             if (chunkAttributes != null) {
-                // create and add chunk to the chunk layer
-                if(!multiword.containsKey(token.getString()))
-                    System.out.println(chunkAttributes.toString());
                 layer.addChunk(chunkAttributes, token);
             }
         }
@@ -101,7 +84,7 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
         tc.close();
         System.out.println(tc);
         // compare output xml with expected xml
-        assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
+        assertEqualXml(EXPECTED_OUTPUT_FILE_TAGSET, outfile);
     }
 
     private LinkedHashMap<String, String> recognize(String tokenString) {
