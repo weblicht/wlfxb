@@ -15,7 +15,7 @@ import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 
 /**
- * @author Yana Panchenko
+ * @author Yana Panchenko and Mohammad Fazleh Elahi
  *
  */
 public class MorphologyTest {
@@ -136,7 +136,7 @@ public class MorphologyTest {
 
     }
      @Test
-    public void testReadAndWriteBackAnyAttributes() throws Exception {
+    public void testReadAndWriteBack_AnyAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
@@ -154,12 +154,8 @@ public class MorphologyTest {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
                 Assert.assertEquals("baseFormFeature", layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getExtraAtrributes().get(anyAttribute));
+                break;
             }
-            if (index == 1) {
-                Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("alterFormFeature", layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getExtraAtrributes().get(anyAttribute));
-            }
-
             index++;
         }
          
@@ -169,12 +165,8 @@ public class MorphologyTest {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
                 Assert.assertEquals("baseFormSubFeature", layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getSubfeatures()[0].getExtraAtrributes().get(anyAttribute));
+                break;
             }
-            if (index == 1) {
-                Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("alterFormSubFeature", layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getSubfeatures()[0].getExtraAtrributes().get(anyAttribute));
-            }
-
             index++;
         }
          
@@ -185,12 +177,8 @@ public class MorphologyTest {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
                 Assert.assertEquals("baseFormSegment", layer.getAnalysis(0).getSegmentation()[0].getExtraAtrributes().get(anyAttribute));
+                break;
             }
-            if (index == 1) {
-                Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("alterFormSegment", layer.getAnalysis(0).getSegmentation()[0].getExtraAtrributes().get(anyAttribute));
-            }
-
             index++;
         }
          

@@ -5,7 +5,6 @@
  */
 package eu.clarin.weblicht.wlfxb.tclayers.test;
 
-import eu.clarin.weblicht.wlfxb.tc.api.Chunk;
 import eu.clarin.weblicht.wlfxb.tc.api.ChunkLayer;
 import eu.clarin.weblicht.wlfxb.tc.xb.ChunkLayerStored;
 import eu.clarin.weblicht.wlfxb.test.utils.TestUtils;
@@ -19,7 +18,7 @@ import org.junit.rules.TemporaryFolder;
 
 /**
  *
- * @author felahi
+ * @author Mohammad Fazleh Elahi
  */
 public class ChunkTest {
 
@@ -54,11 +53,6 @@ public class ChunkTest {
                 Assert.assertEquals("voice", anyAttribute);
                 Assert.assertEquals("none", layer.getChunk(1).getTypes().get(anyAttribute));
             }
-            if (index == 2) {
-                Assert.assertEquals("tense", anyAttribute);
-                Assert.assertEquals("present", layer.getChunk(1).getTypes().get(anyAttribute));
-            }
-
             index++;
         }
     }

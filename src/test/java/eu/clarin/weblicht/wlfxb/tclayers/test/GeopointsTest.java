@@ -17,7 +17,7 @@ import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 
 /**
- * @author Yana Panchenko
+ * @author Yana Panchenko and Mohammad Fazleh Elahi
  *
  */
 public class GeopointsTest {
@@ -50,7 +50,7 @@ public class GeopointsTest {
     }
 
     @Test
-    public void testReadAndWriteBackAnyAttributes() throws Exception {
+    public void testReadAndWriteBack_AnyAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
@@ -67,12 +67,8 @@ public class GeopointsTest {
             if (index == 0) {
                 Assert.assertEquals("language", anyAttribute);
                 Assert.assertEquals("german", layer.getPoint(0).getExtraAtrributes().get(anyAttribute));
+                break;
             }
-            if (index == 1) {
-                Assert.assertEquals("country", anyAttribute);
-                Assert.assertEquals("germany", layer.getPoint(0).getExtraAtrributes().get(anyAttribute));
-            }
-
             index++;
         }
     }

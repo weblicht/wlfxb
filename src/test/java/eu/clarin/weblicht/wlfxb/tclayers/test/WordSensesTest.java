@@ -15,7 +15,7 @@ import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 
 /**
- * @author Yana Panchenko
+ * @author Yana Panchenko and Mohammad Fazleh Elahi
  *
  */
 public class WordSensesTest {
@@ -46,7 +46,7 @@ public class WordSensesTest {
     }
 
     @Test
-    public void testReadAndWriteBackAnyAttributes() throws Exception {
+    public void testReadAndWriteBack_AnyAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
@@ -63,12 +63,8 @@ public class WordSensesTest {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
                 Assert.assertEquals("baseFormSense", layer.getWordSense(0).getExtraAtrributes().get(anyAttribute));
+                break;
             }
-            if (index == 1) {
-                Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("alterFormSense", layer.getWordSense(0).getExtraAtrributes().get(anyAttribute));
-            }
-
             index++;
         }
     }

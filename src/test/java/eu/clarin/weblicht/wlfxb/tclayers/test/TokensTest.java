@@ -15,7 +15,7 @@ import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 
 /**
- * @author Yana Panchenko
+ * @author Yana Panchenko and Mohammad Fazleh Elahi
  *
  */
 public class TokensTest {

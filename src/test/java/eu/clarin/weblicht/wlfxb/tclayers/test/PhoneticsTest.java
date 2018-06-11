@@ -53,7 +53,7 @@ public class PhoneticsTest {
     }
 
     @Test
-    public void testReadAndWriteBackAnyAttributes() throws Exception {
+    public void testReadAndWriteBack_AnyAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
@@ -72,12 +72,8 @@ public class PhoneticsTest {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
                 Assert.assertEquals("baseFormWord", layer.getSegment(0).getPronunciations()[0].getExtraAtrributes().get(anyAttribute));
+                break;
             }
-            if (index == 1) {
-                Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("alterFormWord", layer.getSegment(0).getPronunciations()[0].getExtraAtrributes().get(anyAttribute));
-            }
-
             index++;
         }
 
@@ -87,12 +83,8 @@ public class PhoneticsTest {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
                 Assert.assertEquals("baseFormSyllable", layer.getSegment(0).getPronunciations()[0].getChildren()[0].getExtraAtrributes().get(anyAttribute));
+                break;
             }
-            if (index == 1) {
-                Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("alterFormSyllable", layer.getSegment(0).getPronunciations()[0].getChildren()[0].getExtraAtrributes().get(anyAttribute));
-            }
-
             index++;
         }
 
