@@ -19,7 +19,7 @@ import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 
 /**
- * @author Yana Panchenko
+ * @author Yana Panchenko and Mohammad Fazleh Elahi
  *
  */
 public class LexicalSemanticsTest {
@@ -113,7 +113,7 @@ public class LexicalSemanticsTest {
     }
 
     @Test
-    public void testReadAndWriteBackSynAnyAttributes() throws Exception {
+    public void testReadAndWriteBackSyn_AnyAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_SYN_ANY_ATTRIBUTES);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output-syn.xml"));
@@ -126,12 +126,8 @@ public class LexicalSemanticsTest {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
                 Assert.assertEquals("baseFormSyn", layer.getOrthform(0).getExtraAtrributes().get(anyAttribute));
+                break;
             }
-            if (index == 1) {
-                Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("alterFormSyn", layer.getOrthform(0).getExtraAtrributes().get(anyAttribute));
-            }
-
             index++;
         }
 

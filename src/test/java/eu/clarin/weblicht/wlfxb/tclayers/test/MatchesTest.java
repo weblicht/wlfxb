@@ -15,7 +15,7 @@ import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 
 /**
- * @author Yana Panchenko
+ * @author Yana Panchenko and Mohammad Fazleh Elahi
  *
  */
 public class MatchesTest {
@@ -51,7 +51,7 @@ public class MatchesTest {
     }
 
     @Test
-    public void testReadAndWriteBackAnyAttributes() throws Exception {
+    public void testReadAndWriteBack_AnyAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
@@ -68,10 +68,7 @@ public class MatchesTest {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
                 Assert.assertEquals("baseFormCategory", layer.getCorpus(0).getMatchedItems()[0].getCategoriesExtraAtrributes("cname").get(anyAttribute));
-            }
-            if (index == 1) {
-                Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("alterFormCategory", layer.getCorpus(0).getMatchedItems()[0].getCategoriesExtraAtrributes("cname").get(anyAttribute));
+                break;
             }
 
             index++;
@@ -82,12 +79,8 @@ public class MatchesTest {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
                 Assert.assertEquals("baseFormTarget", layer.getCorpus(0).getMatchedItems()[0].getTargetExtraAtrributes("tname").get(anyAttribute));
+                break;
             }
-            if (index == 1) {
-                Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("alterFormTarget", layer.getCorpus(0).getMatchedItems()[0].getTargetExtraAtrributes("tname").get(anyAttribute));
-            }
-
             index++;
         }
     }

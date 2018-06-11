@@ -15,7 +15,7 @@ import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 
 /**
- * @author Yana Panchenko
+ * @author Yana Panchenko and Mohammad Fazleh Elahi
  *
  */
 public class ConstituentParsingTest {
@@ -50,7 +50,7 @@ public class ConstituentParsingTest {
     }
 
     @Test
-    public void testReadAndWriteBackAnyAttributes() throws Exception {
+    public void testReadAndWriteBack_AnyAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTE);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
@@ -67,12 +67,8 @@ public class ConstituentParsingTest {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
                 Assert.assertEquals("NE-HD", layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getExtraAtrributes().get(anyAttribute));
+                break;
             }
-            if (index == 1) {
-                Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("NE-HD-Nom.Sg", layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getExtraAtrributes().get(anyAttribute));
-            }
-
             index++;
         }
 

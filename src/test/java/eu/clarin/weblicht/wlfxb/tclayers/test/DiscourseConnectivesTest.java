@@ -15,8 +15,7 @@ import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 
 /**
- * @author Yana Panchenko
- *
+ * @author Yana Panchenko and Mohammad Fazleh Elahi
  */
 public class DiscourseConnectivesTest {
 
@@ -46,7 +45,7 @@ public class DiscourseConnectivesTest {
     }
 
     @Test
-    public void testReadAndWriteBackAnyAttributes() throws Exception {
+    public void testReadAndWriteBack_AnyAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
@@ -63,12 +62,8 @@ public class DiscourseConnectivesTest {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
                 Assert.assertEquals("expansion1", layer.getConnective(0).getExtraAtrributes().get(anyAttribute));
+                break;
             }
-            if (index == 1) {
-                Assert.assertEquals("alterForm", anyAttribute);
-                Assert.assertEquals("expansion2", layer.getConnective(0).getExtraAtrributes().get(anyAttribute));
-            }
-
             index++;
         }
     }
