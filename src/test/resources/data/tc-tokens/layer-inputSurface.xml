@@ -1,6 +1,5 @@
 <tokens xmlns="http://www.dspin.de/data/textcorpus">
-        <token ID="t_0" surfaceForm="neb" parts="t_0 t_1">ne</token>
-        <token ID="t_1" >bi</token>
-        <token ID="t_2" surfaceForm="po noči">ponoči</token>
-        <token ID="t_3">.</token>
+        <token ID="t_0" >neb</token>
+        <token ID="t_1" surfaceForm="po noči">ponoči</token>
+        <token ID="t_2">.</token>
 </tokens>

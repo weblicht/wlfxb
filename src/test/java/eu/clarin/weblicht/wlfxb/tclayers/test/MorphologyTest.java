@@ -52,9 +52,9 @@ public class MorphologyTest {
         Assert.assertEquals(1, layer.size());
 
     }
-    
+
     @Test
-    public void testReadAndWriteBackTag() throws Exception {
+    public void testReadAndWriteBack_WhenTagSet() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_TAG);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
@@ -69,9 +69,6 @@ public class MorphologyTest {
         Assert.assertEquals(true, layer.hasCharoffsets());
         Assert.assertEquals(true, layer.hasSegmentation());
         Assert.assertEquals("STTS", layer.getTagset());
-        Assert.assertEquals(true, layer.getAnalysis(0).getFeatures()[0].isTerminal());
-        Assert.assertEquals("cat", layer.getAnalysis(0).getFeatures()[0].getName());
-        Assert.assertEquals("noun", layer.getAnalysis(0).getFeatures()[0].getValue());
         Assert.assertEquals(false, layer.getAnalysis(0).getFeatures()[4].isTerminal());
         Assert.assertEquals("test", layer.getAnalysis(0).getFeatures()[4].getName());
         Assert.assertEquals("noun", layer.getAnalysis(0).getFeatures()[4].getSubfeatures()[0].getValue());
@@ -80,7 +77,7 @@ public class MorphologyTest {
     }
 
     @Test
-    public void testReadAndWriteBackScore() throws Exception {
+    public void testReadAndWriteBack_WhenMultipleAnalysis() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_SCORE);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
@@ -106,36 +103,9 @@ public class MorphologyTest {
         Assert.assertEquals(false, layer.getAnalysis(0).getTags().get(0).getFeatures()[4].isTerminal());
         Assert.assertEquals("test1", layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getName());
         Assert.assertEquals("noun", layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getSubfeatures()[0].getValue());
-        
-        //reading feature structure from second tag element
-        Assert.assertEquals(true, layer.getAnalysis(0).getTags().get(1).isScore());
-        Assert.assertEquals(new Double(0.6), layer.getAnalysis(0).getTags().get(1).getScore());
-        Assert.assertEquals(true, layer.getAnalysis(0).getTags().get(1).getFeatures()[0].isTerminal());
-        Assert.assertEquals("cat", layer.getAnalysis(0).getTags().get(1).getFeatures()[0].getName());
-        Assert.assertEquals("pronoun", layer.getAnalysis(0).getTags().get(1).getFeatures()[0].getValue());
-        Assert.assertEquals(false, layer.getAnalysis(0).getTags().get(1).getFeatures()[4].isTerminal());
-        Assert.assertEquals("test2", layer.getAnalysis(0).getTags().get(1).getFeatures()[4].getName());
-        Assert.assertEquals("pronoun", layer.getAnalysis(0).getTags().get(1).getFeatures()[4].getSubfeatures()[0].getValue());
-
-        //reading first feature structure  layer directly
-        Assert.assertEquals(true, layer.getAnalysis(0).getFeatures(0)[0].isTerminal());
-        Assert.assertEquals("cat", layer.getAnalysis(0).getFeatures(0)[0].getName());
-        Assert.assertEquals("noun", layer.getAnalysis(0).getFeatures(0)[0].getValue());
-        Assert.assertEquals(false, layer.getAnalysis(0).getFeatures(0)[4].isTerminal());
-        Assert.assertEquals("test1", layer.getAnalysis(0).getFeatures(0)[4].getName());
-        Assert.assertEquals("noun", layer.getAnalysis(0).getFeatures(0)[4].getSubfeatures()[0].getValue());
-
-        //reading second feature structure layer directly
-        Assert.assertEquals(true, layer.getAnalysis(0).getFeatures(1)[0].isTerminal());
-        Assert.assertEquals("cat", layer.getAnalysis(0).getFeatures(1)[0].getName());
-        Assert.assertEquals("pronoun", layer.getAnalysis(0).getFeatures(1)[0].getValue());
-        Assert.assertEquals(false, layer.getAnalysis(0).getFeatures(1)[4].isTerminal());
-        Assert.assertEquals("test2", layer.getAnalysis(0).getFeatures(1)[4].getName());
-        Assert.assertEquals("pronoun", layer.getAnalysis(0).getFeatures(1)[4].getSubfeatures()[0].getValue());
-        Assert.assertEquals(1, layer.size());
-
     }
-     @Test
+
+    @Test
     public void testReadAndWriteBack_AnyAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
@@ -147,10 +117,10 @@ public class MorphologyTest {
 
         is.close();
         os.close();
-        
+
         //testing extra attributes in feature
-        Integer index=0;
-         for (String anyAttribute :layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getExtraAtrributes().keySet()) {
+        Integer index = 0;
+        for (String anyAttribute : layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
                 Assert.assertEquals("baseFormFeature", layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getExtraAtrributes().get(anyAttribute));
@@ -158,10 +128,10 @@ public class MorphologyTest {
             }
             index++;
         }
-         
+
         //testing extra attributes in sub features 
-        index=0;
-         for (String anyAttribute :layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getSubfeatures()[0].getExtraAtrributes().keySet()) {
+        index = 0;
+        for (String anyAttribute : layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getSubfeatures()[0].getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
                 Assert.assertEquals("baseFormSubFeature", layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getSubfeatures()[0].getExtraAtrributes().get(anyAttribute));
@@ -169,11 +139,10 @@ public class MorphologyTest {
             }
             index++;
         }
-         
-          //testing extra attributes in segment features 
-         index=0;
-         for (String anyAttribute :layer.getAnalysis(0).getSegmentation()[0].getExtraAtrributes().keySet()) {
-             System.out.println(anyAttribute);
+
+        //testing extra attributes in segment features 
+        index = 0;
+        for (String anyAttribute : layer.getAnalysis(0).getSegmentation()[0].getExtraAtrributes().keySet()) {
             if (index == 0) {
                 Assert.assertEquals("baseForm", anyAttribute);
                 Assert.assertEquals("baseFormSegment", layer.getAnalysis(0).getSegmentation()[0].getExtraAtrributes().get(anyAttribute));
@@ -181,9 +150,7 @@ public class MorphologyTest {
             }
             index++;
         }
-         
-         
-        
+
     }
-    
+
 }

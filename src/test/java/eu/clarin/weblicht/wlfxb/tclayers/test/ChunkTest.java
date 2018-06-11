@@ -40,7 +40,7 @@ public class ChunkTest {
         is.close();
         os.close();
 
-        Assert.assertEquals("tagset", layer.getTagset());
+        Assert.assertEquals(null, layer.getTagset());
         Assert.assertEquals(8, layer.size());
 
         Integer index = 0;
