@@ -63,25 +63,12 @@ public class MatchesTest {
         is.close();
         os.close();
 
-        Integer index = 0;
-        for (String anyAttribute : layer.getCorpus(0).getMatchedItems()[0].getCategoriesExtraAtrributes("cname").keySet()) {
-            if (index == 0) {
-                Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("baseFormCategory", layer.getCorpus(0).getMatchedItems()[0].getCategoriesExtraAtrributes("cname").get(anyAttribute));
-                break;
-            }
+        String anyAttributeCategory = layer.getCorpus(0).getMatchedItems()[0].getCategoriesExtraAtrributes("cname").keySet().iterator().next();
+        Assert.assertEquals("baseForm", anyAttributeCategory);
+        Assert.assertEquals("baseFormCategory", layer.getCorpus(0).getMatchedItems()[0].getCategoriesExtraAtrributes("cname").get(anyAttributeCategory));
 
-            index++;
-        }
-
-        index = 0;
-        for (String anyAttribute : layer.getCorpus(0).getMatchedItems()[0].getTargetExtraAtrributes("tname").keySet()) {
-            if (index == 0) {
-                Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("baseFormTarget", layer.getCorpus(0).getMatchedItems()[0].getTargetExtraAtrributes("tname").get(anyAttribute));
-                break;
-            }
-            index++;
-        }
+        String anyAttributeTarget = layer.getCorpus(0).getMatchedItems()[0].getTargetExtraAtrributes("tname").keySet().iterator().next();
+        Assert.assertEquals("baseForm", anyAttributeTarget);
+        Assert.assertEquals("baseFormTarget", layer.getCorpus(0).getMatchedItems()[0].getTargetExtraAtrributes("tname").get(anyAttributeTarget));
     }
 }

@@ -44,6 +44,7 @@ public class SentencesTest {
         Assert.assertEquals(Integer.valueOf(0), layer.getSentence(0).getStartCharOffset());
         Assert.assertEquals(Integer.valueOf(24), layer.getSentence(0).getEndCharOffset());
     }
+
     @Test
     public void testReadAndWriteBack_AnyAttribute() throws Exception {
 
@@ -56,16 +57,9 @@ public class SentencesTest {
 
         is.close();
         os.close();
-        
-        Integer index = 0;
-        for (String anyAttribute : layer.getSentence(0).getExtraAtrributes().keySet()) {
-            if (index == 0) {
-                Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("base", layer.getSentence(0).getExtraAtrributes().get(anyAttribute));
-                break;
-            }
-            index++;
-        }
 
+        String anyAttribute = layer.getSentence(0).getExtraAtrributes().keySet().iterator().next();
+        Assert.assertEquals("baseForm", anyAttribute);
+        Assert.assertEquals("base", layer.getSentence(0).getExtraAtrributes().get(anyAttribute));
     }
 }

@@ -58,15 +58,8 @@ public class WordSplittingTest {
         is.close();
         os.close();
 
-        Integer index = 0;
-        for (String anyAttribute : layer.getSplit(0).getExtraAtrributes().keySet()) {
-            if (index == 0) {
-                Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("baseFormSplit", layer.getSplit(0).getExtraAtrributes().get(anyAttribute));
-                break;
-            }
-            index++;
-        }
-
+        String anyAttribute = layer.getSplit(0).getExtraAtrributes().keySet().iterator().next();
+        Assert.assertEquals("baseForm", anyAttribute);
+        Assert.assertEquals("baseFormSplit", layer.getSplit(0).getExtraAtrributes().get(anyAttribute));
     }
 }

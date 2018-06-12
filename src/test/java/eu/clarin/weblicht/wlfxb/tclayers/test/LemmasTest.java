@@ -45,7 +45,7 @@ public class LemmasTest {
         Assert.assertEquals("l1", layer.getLemma(0).getLemmaId());
 
     }
-    
+
     @Test
     public void testReadAndWriteBack_AnyAttribute() throws Exception {
 
@@ -59,15 +59,8 @@ public class LemmasTest {
         is.close();
         os.close();
 
-        Integer index=0;
-        for (String anyAttribute : layer.getLemma(1).getExtraAtrributes().keySet()) {
-            if (index == 0) {
-                Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("essen", layer.getLemma(1).getExtraAtrributes().get(anyAttribute));
-                break;
-            }
-            index++;
-        }
-
+        String anyAttribute = layer.getLemma(1).getExtraAtrributes().keySet().iterator().next();
+        Assert.assertEquals("baseForm", anyAttribute);
+        Assert.assertEquals("essen", layer.getLemma(1).getExtraAtrributes().get(anyAttribute));
     }
 }
