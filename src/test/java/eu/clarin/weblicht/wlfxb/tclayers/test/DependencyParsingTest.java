@@ -60,15 +60,9 @@ public class DependencyParsingTest {
         is.close();
         os.close();
 
-        Integer index = 0;
-        for (String anyAttribute : layer.getParse(0).getDependencies()[1].getExtraAtrributes().keySet()) {
-            if (index == 0) {
-                Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("deps", layer.getParse(0).getDependencies()[1].getExtraAtrributes().get(anyAttribute));
-                break;
-            }
-            index++;
-        }
+        String anyAttribute = layer.getParse(0).getDependencies()[1].getExtraAtrributes().keySet().iterator().next();
+        Assert.assertEquals("baseForm", anyAttribute);
+        Assert.assertEquals("deps", layer.getParse(0).getDependencies()[1].getExtraAtrributes().get(anyAttribute));
 
     }
 }

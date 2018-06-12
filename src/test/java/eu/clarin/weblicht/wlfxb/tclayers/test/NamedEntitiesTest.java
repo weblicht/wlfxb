@@ -32,7 +32,6 @@ public class NamedEntitiesTest {
         InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
 
-
         NamedEntitiesLayer layer = TestUtils.read(NamedEntitiesLayerStored.class, is);
         System.out.println(layer);
         TestUtils.write(layer, os);
@@ -45,13 +44,12 @@ public class NamedEntitiesTest {
         Assert.assertEquals("PERSON", layer.getEntity(0).getType());
 
     }
-    
-     @Test
+
+    @Test
     public void testReadAndWriteBack_AnyAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
-
 
         NamedEntitiesLayer layer = TestUtils.read(NamedEntitiesLayerStored.class, is);
         System.out.println(layer);
@@ -60,16 +58,8 @@ public class NamedEntitiesTest {
         is.close();
         os.close();
 
-        Integer index=0;
-         for (String anyAttribute : layer.getEntity(0).getExtraAtrributes().keySet()) {
-            if (index == 0) {
-                Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("PERSON", layer.getEntity(0).getExtraAtrributes().get(anyAttribute));
-                break;
-            }
-            index++;
-        }
-
-
+        String anyAttribute = layer.getEntity(0).getExtraAtrributes().keySet().iterator().next();
+        Assert.assertEquals("baseForm", anyAttribute);
+        Assert.assertEquals("PERSON", layer.getEntity(0).getExtraAtrributes().get(anyAttribute));
     }
 }

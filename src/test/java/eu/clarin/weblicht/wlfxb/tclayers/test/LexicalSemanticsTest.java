@@ -121,17 +121,11 @@ public class LexicalSemanticsTest {
         LexicalSemanticsLayer layer = TestUtils.read(SynonymyLayerStored.class, is);
         System.out.println(layer);
         TestUtils.write(layer, os);
-        Integer index = 0;
-        for (String anyAttribute : layer.getOrthform(0).getExtraAtrributes().keySet()) {
-            if (index == 0) {
-                Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("baseFormSyn", layer.getOrthform(0).getExtraAtrributes().get(anyAttribute));
-                break;
-            }
-            index++;
-        }
-
         is.close();
         os.close();
+
+        String anyAttribute = layer.getOrthform(0).getExtraAtrributes().keySet().iterator().next();
+        Assert.assertEquals("baseForm", anyAttribute);
+        Assert.assertEquals("baseFormSyn", layer.getOrthform(0).getExtraAtrributes().get(anyAttribute));
     }
 }

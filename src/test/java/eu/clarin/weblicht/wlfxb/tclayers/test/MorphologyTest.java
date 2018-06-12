@@ -69,11 +69,6 @@ public class MorphologyTest {
         Assert.assertEquals(true, layer.hasCharoffsets());
         Assert.assertEquals(true, layer.hasSegmentation());
         Assert.assertEquals("STTS", layer.getTagset());
-        Assert.assertEquals(false, layer.getAnalysis(0).getFeatures()[4].isTerminal());
-        Assert.assertEquals("test", layer.getAnalysis(0).getFeatures()[4].getName());
-        Assert.assertEquals("noun", layer.getAnalysis(0).getFeatures()[4].getSubfeatures()[0].getValue());
-        Assert.assertEquals(1, layer.size());
-
     }
 
     @Test
@@ -119,38 +114,17 @@ public class MorphologyTest {
         os.close();
 
         //testing extra attributes in feature
-        Integer index = 0;
-        for (String anyAttribute : layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getExtraAtrributes().keySet()) {
-            if (index == 0) {
-                Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("baseFormFeature", layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getExtraAtrributes().get(anyAttribute));
-                break;
-            }
-            index++;
-        }
-
+        String anyAttributeFeature = layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getExtraAtrributes().keySet().iterator().next();
+        Assert.assertEquals("baseForm", anyAttributeFeature);
+        Assert.assertEquals("baseFormFeature", layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getExtraAtrributes().get(anyAttributeFeature));
         //testing extra attributes in sub features 
-        index = 0;
-        for (String anyAttribute : layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getSubfeatures()[0].getExtraAtrributes().keySet()) {
-            if (index == 0) {
-                Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("baseFormSubFeature", layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getSubfeatures()[0].getExtraAtrributes().get(anyAttribute));
-                break;
-            }
-            index++;
-        }
-
+        String anyAttributeSubFeature = layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getSubfeatures()[0].getExtraAtrributes().keySet().iterator().next();
+        Assert.assertEquals("baseForm", anyAttributeSubFeature);
+        Assert.assertEquals("baseFormSubFeature", layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getSubfeatures()[0].getExtraAtrributes().get(anyAttributeSubFeature));
         //testing extra attributes in segment features 
-        index = 0;
-        for (String anyAttribute : layer.getAnalysis(0).getSegmentation()[0].getExtraAtrributes().keySet()) {
-            if (index == 0) {
-                Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("baseFormSegment", layer.getAnalysis(0).getSegmentation()[0].getExtraAtrributes().get(anyAttribute));
-                break;
-            }
-            index++;
-        }
-
+        String anyAttributeSegment = layer.getAnalysis(0).getSegmentation()[0].getExtraAtrributes().keySet().iterator().next();
+        Assert.assertEquals("baseForm", anyAttributeSegment);
+        Assert.assertEquals("baseFormSegment", layer.getAnalysis(0).getSegmentation()[0].getExtraAtrributes().get(anyAttributeSegment));
     }
 
 }

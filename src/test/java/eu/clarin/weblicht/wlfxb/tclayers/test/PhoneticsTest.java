@@ -65,28 +65,14 @@ public class PhoneticsTest {
         is.close();
         os.close();
 
-        // testing extra attributes in word level
-        Integer index = 0;
-        System.out.println(layer.getSegment(0).getPronunciations()[0].getChildren()[0].getExtraAtrributes());
-        for (String anyAttribute : layer.getSegment(0).getPronunciations()[0].getExtraAtrributes().keySet()) {
-            if (index == 0) {
-                Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("baseFormWord", layer.getSegment(0).getPronunciations()[0].getExtraAtrributes().get(anyAttribute));
-                break;
-            }
-            index++;
-        }
+        // testing extra attributes in word level        
+        String anyAttributeWord = layer.getSegment(0).getPronunciations()[0].getExtraAtrributes().keySet().iterator().next();
+        Assert.assertEquals("baseForm", anyAttributeWord);
+        Assert.assertEquals("baseFormWord", layer.getSegment(0).getPronunciations()[0].getExtraAtrributes().get(anyAttributeWord));
 
         // testing extra attributes in syllable level
-        index = 0;
-        for (String anyAttribute : layer.getSegment(0).getPronunciations()[0].getChildren()[0].getExtraAtrributes().keySet()) {
-            if (index == 0) {
-                Assert.assertEquals("baseForm", anyAttribute);
-                Assert.assertEquals("baseFormSyllable", layer.getSegment(0).getPronunciations()[0].getChildren()[0].getExtraAtrributes().get(anyAttribute));
-                break;
-            }
-            index++;
-        }
-
+        String anyAttribute = layer.getSegment(0).getPronunciations()[0].getChildren()[0].getExtraAtrributes().keySet().iterator().next();
+        Assert.assertEquals("baseForm", anyAttribute);
+        Assert.assertEquals("baseFormSyllable", layer.getSegment(0).getPronunciations()[0].getChildren()[0].getExtraAtrributes().get(anyAttribute));
     }
 }
