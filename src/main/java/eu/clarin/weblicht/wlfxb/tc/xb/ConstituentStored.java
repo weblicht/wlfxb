@@ -26,6 +26,7 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 import eu.clarin.weblicht.wlfxb.tc.api.Constituent;
 import eu.clarin.weblicht.wlfxb.tc.api.ConstituentReference;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
+import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -57,8 +58,7 @@ public class ConstituentStored implements Constituent {
     @XmlElement(name = ConstituentStored.XML_NAME)
     protected List<ConstituentStored> children = new ArrayList<ConstituentStored>();
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> qnameAttributes = new LinkedHashMap<QName, String>();
-    protected LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
+    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
 
     @Override
     public boolean isTerminal() {
@@ -103,10 +103,7 @@ public class ConstituentStored implements Constituent {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-        for (QName qName : qnameAttributes.keySet()) {
-            extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
-        }
-        return extraAttributes;
+       return AttributesProcess.retrieveAtrributes(extraAtrributes);
     }
 
     @Override

@@ -25,6 +25,7 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.Sentence;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
+import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.*;
@@ -49,15 +50,11 @@ public class SentenceStored implements Sentence {
     @XmlAttribute(name = CommonAttributes.END_CHAR_OFFSET)
     protected Integer end;
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> qnameAttributes = new LinkedHashMap<QName, String>();
-    protected LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
+    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-        for (QName qName : qnameAttributes.keySet()) {
-            extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
-        }
-        return extraAttributes;
+        return AttributesProcess.retrieveAtrributes(extraAtrributes);
     }
 
     @Override

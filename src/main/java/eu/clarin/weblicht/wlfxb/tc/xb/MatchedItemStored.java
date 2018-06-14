@@ -24,7 +24,6 @@ import eu.clarin.weblicht.wlfxb.tc.api.MatchedItem;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import javax.xml.namespace.QName;
 
 /**
  * @author Yana Panchenko

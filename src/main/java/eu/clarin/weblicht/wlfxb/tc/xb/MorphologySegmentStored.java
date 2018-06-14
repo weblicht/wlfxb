@@ -25,6 +25,7 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.MorphologySegment;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
+import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -56,8 +57,7 @@ public class MorphologySegmentStored implements MorphologySegment {
     protected String value;
     protected List<MorphologySegmentStored> subsegments;
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> qnameAttributes = new LinkedHashMap<QName, String>();
-    protected LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
+    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
 
 
     @XmlMixed
@@ -146,10 +146,7 @@ public class MorphologySegmentStored implements MorphologySegment {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-        for (QName qName : qnameAttributes.keySet()) {
-            extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
-        }
-        return extraAttributes;
+         return AttributesProcess.retrieveAtrributes(extraAtrributes);
     }
 
     @Override

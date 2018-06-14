@@ -30,10 +30,13 @@ import java.util.List;
 import java.util.Set;
 
 /**
+ * The <tt>ChunkLayer</tt> layer represents chunk annotations on tokens. The
+ * layer specifies the tagset used for chunk categories.A chunk is consists of
+ * one or more tokens.
  *
  * @author Mohammad Fazleh Elahi
  */
-public interface ChunkLayer extends TextCorpusLayer{
+public interface ChunkLayer extends TextCorpusLayer {
 
     public String getTagset();
 
@@ -45,9 +48,9 @@ public interface ChunkLayer extends TextCorpusLayer{
 
     public Token[] getTokens(Chunk chunk);
 
-    public Chunk addChunk(LinkedHashMap<String,String> types, List<Token> chunkTokens);
+    public Chunk addChunk(LinkedHashMap<String, String> types, List<Token> chunkTokens);
 
-    public Chunk addChunk(LinkedHashMap<String,String> types, Token chunkToken);
+    public Chunk addChunk(LinkedHashMap<String, String> types, Token chunkToken);
 
     public Set<String> getFoundTypes();
 }

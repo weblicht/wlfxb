@@ -28,6 +28,9 @@ package eu.clarin.weblicht.wlfxb.tc.api;
 import java.util.LinkedHashMap;
 
 /**
+ * The <tt>ExtraAtrributes</tt> are attributes other than those define in TCF schema. 
+ * With this interface now an element can have any number of extra attributes. 
+ * This interface allows unlimited number of attributes in  all layers in TCF.
  *
  * @author Mohammad Fazleh Elahi
  */

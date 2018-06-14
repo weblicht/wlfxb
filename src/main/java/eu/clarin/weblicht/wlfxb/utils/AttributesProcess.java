@@ -23,18 +23,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eu.clarin.weblicht.wlfxb.tc.api;
+package eu.clarin.weblicht.wlfxb.utils;
 
 import java.util.LinkedHashMap;
+import javax.xml.namespace.QName;
 
 /**
- * The <tt>Chunk</tt> is consists of one or more tokens. A chunk is described by
- * one or more categories (such as NP-chunk, VP-chunk). The categories are
- * represented as attributes. Any number of attributes can be added in a chunk.
  *
  * @author Mohammad Fazleh Elahi
  */
-public interface Chunk {
+public class AttributesProcess {
 
-    public LinkedHashMap<String, String> getTypes();
+    public static LinkedHashMap<String, String> retrieveAtrributes(LinkedHashMap<QName, String> qnameAttributes) {
+        LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
+        for (QName qName : qnameAttributes.keySet()) {
+            extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
+        }
+        return extraAttributes;
+    }
 }
