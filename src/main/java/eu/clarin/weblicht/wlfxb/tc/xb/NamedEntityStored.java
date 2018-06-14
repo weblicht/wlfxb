@@ -25,6 +25,7 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.NamedEntity;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
+import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -50,8 +51,7 @@ public class NamedEntityStored implements NamedEntity {
     @XmlAttribute(name = CommonAttributes.TOKEN_SEQUENCE_REFERENCE, required = true)
     protected String[] tokRefs;
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> qnameAttributes = new LinkedHashMap<QName, String>();
-    protected LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
+    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
 
     @Override
     public String getType() {
@@ -60,10 +60,7 @@ public class NamedEntityStored implements NamedEntity {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-        for (QName qName : qnameAttributes.keySet()) {
-            extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
-        }
-        return extraAttributes;
+        return AttributesProcess.retrieveAtrributes(extraAtrributes);
     }
 
     @Override

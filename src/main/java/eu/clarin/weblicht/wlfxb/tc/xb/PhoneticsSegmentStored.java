@@ -26,6 +26,7 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 import eu.clarin.weblicht.wlfxb.tc.api.PhoneticsSegment;
 import eu.clarin.weblicht.wlfxb.tc.api.Pronunciation;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
+import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -46,8 +47,7 @@ public class PhoneticsSegmentStored implements PhoneticsSegment {
     @XmlElement(name = PronunciationStored.XML_NAME, required = true)
     protected List<PronunciationStored> prons = new ArrayList<PronunciationStored>();
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> qnameAttributes = new LinkedHashMap<QName, String>();
-    protected LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
+    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
 
 
     @Override
@@ -57,10 +57,7 @@ public class PhoneticsSegmentStored implements PhoneticsSegment {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-        for (QName qName : qnameAttributes.keySet()) {
-            extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
-        }
-        return extraAttributes;
+        return AttributesProcess.retrieveAtrributes(extraAtrributes);
     }
 
     @Override

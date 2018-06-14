@@ -25,9 +25,8 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.Token;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
-import java.util.HashMap;
+import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.LinkedHashMap;
-import java.util.Map;
 import javax.xml.bind.annotation.*;
 import javax.xml.namespace.QName;
 
@@ -57,9 +56,8 @@ public class TokenStored implements Token {
     @XmlAttribute(name = CommonAttributes.PARTS, required = true)
     protected String[] parts;
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> qnameAttributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
     protected int order;
-    protected LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
 
     @Override
     public String getString() {
@@ -102,10 +100,7 @@ public class TokenStored implements Token {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-        for (QName qName : qnameAttributes.keySet()) {
-            extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
-        }
-        return extraAttributes;
+       return AttributesProcess.retrieveAtrributes(extraAtrributes);
     }
 
     @Override

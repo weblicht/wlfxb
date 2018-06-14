@@ -26,6 +26,7 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 import eu.clarin.weblicht.wlfxb.tc.api.CorrectionOperation;
 import eu.clarin.weblicht.wlfxb.tc.api.OrthCorrection;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
+import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.*;
@@ -47,8 +48,7 @@ public class OrthCorrectionStored implements OrthCorrection {
     @XmlAttribute(name = "operation", required = true)
     protected CorrectionOperation operation;
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> qnameattributes = new LinkedHashMap<QName, String>();
-    protected LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
+    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
 
     @Override
     public String getString() {
@@ -62,10 +62,7 @@ public class OrthCorrectionStored implements OrthCorrection {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-        for (QName qName : qnameattributes.keySet()) {
-            extraAttributes.put(qName.toString(), qnameattributes.get(qName).toString());
-        }
-        return extraAttributes;
+       return AttributesProcess.retrieveAtrributes(extraAtrributes);
     }
 
     @Override
