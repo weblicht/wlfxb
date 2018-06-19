@@ -288,13 +288,13 @@ public interface TextCorpus {
     public NamedEntitiesLayer createNamedEntitiesLayer(String entitiesType);
 
     /**
-     * Creates empty {@link ChunkLayer} with the given tagset for named entity
+     * Creates empty {@link ChunksLayer} with the given tagset for named entity
      * types in this <tt>TextCorpus</tt>.
      *
      * @param entitiesType tagset of the chunk annotations.
      * @return annotation layer that has been created.
      */
-    public ChunkLayer createChunkLayer(String entitiesType);
+    public ChunksLayer createChunksLayer(String entitiesType);
 
     /**
      * Gets chunks layer of this <tt>TextCorpus</tt>.
@@ -302,7 +302,7 @@ public interface TextCorpus {
      * @return layer containing chunk annotations on {@link Token} objects from
      * {@link TokensLayer}.
      */
-    public ChunkLayer getChunkLayer();
+    public ChunksLayer getChunksLayer();
 
     /**
      * Gets references layer of this <tt>TextCorpus</tt>.

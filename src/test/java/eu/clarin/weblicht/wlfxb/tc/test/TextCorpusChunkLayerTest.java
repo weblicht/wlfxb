@@ -6,7 +6,6 @@
 package eu.clarin.weblicht.wlfxb.tc.test;
 
 import eu.clarin.weblicht.wlfxb.io.TextCorpusStreamed;
-import eu.clarin.weblicht.wlfxb.tc.api.ChunkLayer;
 import eu.clarin.weblicht.wlfxb.tc.api.TextCorpus;
 import eu.clarin.weblicht.wlfxb.tc.api.Token;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
@@ -19,6 +18,7 @@ import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+import eu.clarin.weblicht.wlfxb.tc.api.ChunksLayer;
 
 /**
  *
@@ -60,7 +60,7 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
     @Test
     public void testRead() throws Exception {
         TextCorpus tc = read(INPUT_FILE_WITH_LAYER_TAGSET, layersToReadAfterChunkLayer);
-        ChunkLayer layer = tc.getChunkLayer();
+        ChunksLayer layer = tc.getChunksLayer();
         Assert.assertEquals(1, layer.size());
         Assert.assertEquals("tagset", layer.getTagset());
         Assert.assertEquals(tc.getTokensLayer().getToken(0), layer.getTokens(layer.getChunk(0))[0]);
@@ -71,7 +71,7 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
         String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
         TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeChunkLayer);
         // create chunk layer, it's empty at first
-        ChunkLayer layer = tc.createChunkLayer("tagset");
+        ChunksLayer layer = tc.createChunksLayer("tagset");
         for (int i = 0; i < tc.getTokensLayer().size(); i++) {
             Token token = tc.getTokensLayer().getToken(i);
             LinkedHashMap<String, String> chunkAttributes = recognize(token.getString());

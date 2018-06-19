@@ -49,6 +49,7 @@ import javax.xml.bind.annotation.*;
     "dependencyParsingLayer",
     "morphologyLayer",
     "namedEntitiesLayer",
+    "chunksLayer",
     "referencesLayer",
     "relationsLayer",
     "matchesLayer",
@@ -190,8 +191,8 @@ public class TextCorpusStored implements TextCorpus {
     }
 
     @Override
-    public ChunkLayer createChunkLayer(String entitiesType) {
-        return initializeLayer(ChunkLayerStored.class, entitiesType);
+    public ChunksLayer createChunksLayer(String entitiesType) {
+        return initializeLayer(ChunksLayerStored.class, entitiesType);
     }
 
     @Override
@@ -440,10 +441,15 @@ public class TextCorpusStored implements TextCorpus {
     public NamedEntitiesLayerStored getNamedEntitiesLayer() {
         return ((NamedEntitiesLayerStored) layersInOrder[TextCorpusLayerTag.NAMED_ENTITIES.ordinal()]);
     }
+    
+    @XmlElement(name = ChunksLayerStored.XML_NAME)
+    protected void setChunksLayer(ChunksLayerStored layer) {
+        layersInOrder[TextCorpusLayerTag.CHUNKS.ordinal()] = layer;
+    }
 
     @Override
-    public ChunkLayerStored getChunkLayer() {
-        return ((ChunkLayerStored) layersInOrder[TextCorpusLayerTag.CHUNKS.ordinal()]);
+    public ChunksLayerStored getChunksLayer() {
+        return ((ChunksLayerStored) layersInOrder[TextCorpusLayerTag.CHUNKS.ordinal()]);
     }
 
     @XmlElement(name = ReferencesLayerStored.XML_NAME)
