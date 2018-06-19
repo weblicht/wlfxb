@@ -36,7 +36,7 @@ import java.util.Set;
  *
  * @author Mohammad Fazleh Elahi
  */
-public interface ChunkLayer extends TextCorpusLayer {
+public interface ChunksLayer extends TextCorpusLayer {
 
     public String getTagset();
 

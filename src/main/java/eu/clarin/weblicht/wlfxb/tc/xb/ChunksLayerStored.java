@@ -26,7 +26,6 @@
 package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.Chunk;
-import eu.clarin.weblicht.wlfxb.tc.api.ChunkLayer;
 import eu.clarin.weblicht.wlfxb.tc.api.Token;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
 import eu.clarin.weblicht.wlfxb.utils.WlfUtilities;
@@ -41,13 +40,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import eu.clarin.weblicht.wlfxb.tc.api.ChunksLayer;
 /**
  *
  * @author felahi
  */
-@XmlRootElement(name = ChunkLayerStored.XML_NAME)
+@XmlRootElement(name = ChunksLayerStored.XML_NAME)
 @XmlAccessorType(XmlAccessType.NONE)
-public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements ChunkLayer {
+public class ChunksLayerStored extends TextCorpusLayerStoredAbstract implements ChunksLayer {
 
     public static final String XML_NAME = "chunks";
     @XmlAttribute(name = CommonAttributes.TAGSET, required = true)
@@ -57,14 +57,14 @@ public class ChunkLayerStored extends TextCorpusLayerStoredAbstract implements C
     private Set<String> foundTypes = new HashSet<String>();
     private TextCorpusLayersConnector connector;
 
-    protected ChunkLayerStored() {
+    protected ChunksLayerStored() {
     }
 
-    protected ChunkLayerStored(String tagset) {
+    protected ChunksLayerStored(String tagset) {
         this.tagset = tagset;
     }
 
-    protected ChunkLayerStored(TextCorpusLayersConnector connector) {
+    protected ChunksLayerStored(TextCorpusLayersConnector connector) {
         this.connector = connector;
     }
 

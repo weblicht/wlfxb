@@ -5,8 +5,7 @@
  */
 package eu.clarin.weblicht.wlfxb.tclayers.test;
 
-import eu.clarin.weblicht.wlfxb.tc.api.ChunkLayer;
-import eu.clarin.weblicht.wlfxb.tc.xb.ChunkLayerStored;
+import eu.clarin.weblicht.wlfxb.tc.xb.ChunksLayerStored;
 import eu.clarin.weblicht.wlfxb.test.utils.TestUtils;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -15,6 +14,7 @@ import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+import eu.clarin.weblicht.wlfxb.tc.api.ChunksLayer;
 
 /**
  *
@@ -33,7 +33,7 @@ public class ChunkTest {
         InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
 
-        ChunkLayer layer = TestUtils.read(ChunkLayerStored.class, is);
+        ChunksLayer layer = TestUtils.read(ChunksLayerStored.class, is);
         System.out.println(layer);
         TestUtils.write(layer, os);
 
