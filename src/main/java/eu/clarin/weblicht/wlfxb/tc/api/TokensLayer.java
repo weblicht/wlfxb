@@ -29,7 +29,7 @@ package eu.clarin.weblicht.wlfxb.tc.api;
  * of the text layer) directly or indirectly (via other layers) reference
  * tokens.
  *
- * @author Yana Panchenko
+ * @author Yana Panchenko and Mohammad Fazleh Elahi
  */
 public interface TokensLayer extends TextCorpusLayer {
 
@@ -46,9 +46,21 @@ public interface TokensLayer extends TextCorpusLayer {
     public Token addToken(String tokenString, long start, long end);
 
     public Token addToken(String tokenString, long start, long end, String tokenId);
-
-    public Token addToken(String tokenString, String surfaceForm, Long start, Long end);
     
-    public Token addToken(String tokenString, String tokenId, Long start, Long end, String surfaceForm, String[] parts);
+    public Token addTokenWithSurfaceForm(String tokenString, String surfaceForm);
+    
+    public Token addTokenWithSurfaceForm(String tokenString, String surfaceForm, String tokenId);
+    
+    public Token addTokenWithSurfaceForm(String tokenString, String surfaceForm, Long start, Long end);
+
+    public Token addTokenWithSurfaceForm(String tokenString, String surfaceForm, Long start, Long end,String tokenId);
+    
+    public Token addTokenWithSurfaceFormParts(String tokenString, String surfaceForm, String[] parts);
+        
+    public Token addTokenWithSurfaceFormParts(String tokenString, String surfaceForm, String[] parts, String tokenId);
+    
+    public Token addTokenWithSurfaceFormParts(String tokenString, String surfaceForm, String[] parts, Long start, Long end);
+    
+    public Token addTokenWithSurfaceFormParts(String tokenString, String surfaceForm, String[] parts, Long start, Long end, String tokenId);
 
 }

@@ -37,6 +37,9 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterTokenization
             = EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.TEXT);
 
+    /**
+     * This is a test of reading token from token layer.
+     */
     @Test
     public void testRead() throws Exception {
         TextCorpus tc = read(INPUT_FILE_WITH_LAYER, layersToReadAfterTokenization);
@@ -45,6 +48,9 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
         Assert.assertEquals("Peter", layer.getToken(0).getString());
     }
 
+    /**
+     * This is a test of writing token layer.
+     */
     @Test
     public void testReadWrite() throws Exception {
         String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;

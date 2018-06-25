@@ -115,12 +115,30 @@ public class TokensLayerStored extends TextCorpusLayerStoredAbstract implements 
         tokens.add(token);
         return token;
     }
-    
+
     @Override
-    public Token addToken(String tokenString, String surfaceForm, Long start, Long end) {
-        TokenStored token = new TokenStored();
+    public Token addTokenWithSurfaceForm(String tokenString, String surfaceForm) {
         int tokenCount = tokens.size();
-        token.tokenId = TokenStored.ID_PREFIX + tokenCount;
+        String tokenId = TokenStored.ID_PREFIX + tokenCount;
+        return addTokenWithSurfaceForm(tokenString, surfaceForm, null, null, tokenId);
+    }
+
+    @Override
+    public Token addTokenWithSurfaceForm(String tokenString, String surfaceForm, String tokenId) {
+        return addTokenWithSurfaceForm(tokenString, surfaceForm, null, null, tokenId);
+    }
+
+    @Override
+    public Token addTokenWithSurfaceForm(String tokenString, String surfaceForm, Long start, Long end) {
+        int tokenCount = tokens.size();
+        String tokenId = TokenStored.ID_PREFIX + tokenCount;
+        return addTokenWithSurfaceForm(tokenString, surfaceForm, start, end, tokenId);
+    }
+
+    @Override
+    public Token addTokenWithSurfaceForm(String tokenString, String surfaceForm, Long start, Long end, String tokenId) {
+        TokenStored token = new TokenStored();
+        token.tokenId = tokenId;
         token.tokenString = tokenString;
         token.surfaceForm = surfaceForm;
         if (start != null && end != null) {
@@ -134,12 +152,31 @@ public class TokensLayerStored extends TextCorpusLayerStoredAbstract implements 
     }
 
     @Override
-    public Token addToken(String tokenString, String tokenId,Long start, Long end, String surfaceForm, String[] tokenParts) {
+    public Token addTokenWithSurfaceFormParts(String tokenString, String surfaceForm, String[] parts) {
+        int tokenCount = tokens.size();
+        String tokenId = TokenStored.ID_PREFIX + tokenCount;
+        return addTokenWithSurfaceFormParts(tokenString, surfaceForm, parts, null, null, tokenId);
+    }
+
+    @Override
+    public Token addTokenWithSurfaceFormParts(String tokenString, String surfaceForm, String[] parts, String tokenId) {
+        return addTokenWithSurfaceFormParts(tokenString, surfaceForm, parts, null, null, tokenId);
+    }
+
+    @Override
+    public Token addTokenWithSurfaceFormParts(String tokenString, String surfaceForm, String[] parts, Long start, Long end) {
+        int tokenCount = tokens.size();
+        String tokenId = TokenStored.ID_PREFIX + tokenCount;
+        return addTokenWithSurfaceFormParts(tokenString, surfaceForm, parts, start, end, tokenId);
+    }
+
+    @Override
+    public Token addTokenWithSurfaceFormParts(String tokenString, String surfaceForm, String[] parts, Long start, Long end, String tokenId) {
         TokenStored token = new TokenStored();
         token.tokenId = tokenId;
         token.tokenString = tokenString;
         token.surfaceForm = surfaceForm;
-        token.parts = tokenParts;
+        token.parts = parts;
         if (start != null && end != null) {
             token.start = start;
             this.charOffsets = true;
