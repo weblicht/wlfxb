@@ -26,15 +26,15 @@ public class TextCorpusTokensMultiWordTest extends AbstractTextCorpusTest {
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
-    
+
     private static final String INPUT_FILE_SUTFACE_PARTS_WITHOUT_LAYER = "/data/tc-tokens/tcf-beforeSurfaceParts.xml";
     private static final String INPUT_FILE_SUTFACE_PARTS_WITH_LAYER = "/data/tc-tokens/tcf-afterSurfaceParts.xml";
     private static final String EXPECTED_SUTFACE_PARTS_OUTPUT_FILE = "/data/tc-tokens/output-expectedSurfaceParts.xml";
-    
+
     private static final String INPUT_FILE_SURFACE_WITHOUT_LAYER = "/data/tc-tokens/tcf-beforeSurface.xml";
     private static final String INPUT_FILE_SURFACE_WITH_LAYER = "/data/tc-tokens/tcf-afterSurface.xml";
     private static final String EXPECTED_SL_OUTPUT_FILE = "/data/tc-tokens/output-expectedSurface.xml";
-    
+
     private static final String OUTPUT_FILE = "output.xml";
 
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeTokenization
@@ -42,26 +42,39 @@ public class TextCorpusTokensMultiWordTest extends AbstractTextCorpusTest {
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterTokenization
             = EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.TEXT);
 
+    /**
+     * This is a test of reading multiword token from token layer.
+     */
     @Test
     public void testRead_SurfaceForm_Parts() throws Exception {
         TextCorpus tc = read(INPUT_FILE_SUTFACE_PARTS_WITH_LAYER, layersToReadAfterTokenization);
         TokensLayer layer = tc.getTokensLayer();
-        Assert.assertEquals(9, layer.size());
-        Assert.assertEquals("in", layer.getToken(5).getString());
-        Assert.assertEquals("im", layer.getToken(5).getSurfaceForm());
-        Assert.assertEquals("t_5", layer.getToken(5).getParts()[0]);
-        Assert.assertEquals("t_6", layer.getToken(5).getParts()[1]);
+        Assert.assertEquals(8, layer.size());
+        Assert.assertEquals("t_4", layer.getToken(4).getID());
+        Assert.assertEquals("in", layer.getToken(4).getString());
+        Assert.assertEquals("im", layer.getToken(4).getSurfaceForm());
+        Assert.assertEquals("t_4", layer.getToken(4).getParts()[0]);
+        Assert.assertEquals("t_5", layer.getToken(4).getParts()[1]);
+        Assert.assertEquals("dem", layer.getToken(5).getString());
     }
 
+    /**
+     * This is a test of reading normalized token from token layer.
+     */
     @Test
     public void testRead_SurfaceForm() throws Exception {
         TextCorpus tc = read(INPUT_FILE_SURFACE_WITH_LAYER, layersToReadAfterTokenization);
         TokensLayer layer = tc.getTokensLayer();
         Assert.assertEquals(3, layer.size());
+        Assert.assertEquals("t_1", layer.getToken(1).getID());
         Assert.assertEquals("ponoči", layer.getToken(1).getString());
         Assert.assertEquals("po noči", layer.getToken(1).getSurfaceForm());
+        Assert.assertNull(layer.getToken(1).getParts());
     }
 
+    /**
+     * This is a test of writing token layer which contains multiword tokens.
+     */
     @Test
     public void testReadWrite_SurfaceForm_Parts() throws Exception {
         String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
@@ -75,13 +88,13 @@ public class TextCorpusTokensMultiWordTest extends AbstractTextCorpusTest {
         for (String tokenString : tokenstrings) {
             // create and add Token objects to the tokens layer
             if (TestUtilCompositeTokenizer.isCompositeToken(tokenString)) {
-                List<String> tokenPartStrings = TestUtilCompositeTokenizer.getParts();
-                String[] nexttokenIDs = getNextIDs(lastToken, new Integer(tokenPartStrings.size()));
+                List<String> parts = TestUtilCompositeTokenizer.getParts();
+                String[] nexttokenIDs = getNextIDs(lastToken, new Integer(parts.size()));
                 for (int i = 0; i < nexttokenIDs.length; i++) {
                     if (i == 0) {
-                        tokens.addToken(tokenPartStrings.get(i), nexttokenIDs[i], null, null, tokenString, nexttokenIDs);
+                        tokens.addTokenWithSurfaceFormParts(parts.get(i), tokenString, nexttokenIDs, nexttokenIDs[i]);
                     } else {
-                        tokens.addToken(tokenPartStrings.get(i), nexttokenIDs[i]);
+                        tokens.addToken(parts.get(i), nexttokenIDs[i]);
                     }
                 }
 
@@ -96,34 +109,24 @@ public class TextCorpusTokensMultiWordTest extends AbstractTextCorpusTest {
         assertEqualXml(EXPECTED_SUTFACE_PARTS_OUTPUT_FILE, outfile);
     }
 
+    /**
+     * This is a test of writing token layer which contains normalized tokens.
+     */
     @Test
-    public void testReadWrite_Surface() throws Exception {
+    public void testReadWrite_SurfaceForm() throws Exception {
         String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
         TextCorpusStreamed tc = open(INPUT_FILE_SURFACE_WITHOUT_LAYER, outfile, layersToReadBeforeTokenization);
 
         List<String> tokenstrings = tokenizeSurface(tc.getTextLayer().getText());
         // create tokens layer, it is empty first
         TokensLayer tokens = tc.createTokensLayer();
-        Token lastToken = null;
         for (String tokenString : tokenstrings) {
-            // create and add Token objects to the tokens layer
-            if (TestUtilCompositeTokenizer.isCompositeToken(tokenString)) {
-                List<String> tokenPartStrings = TestUtilCompositeTokenizer.getParts();
-                String[] nexttokenIDs = getNextIDs(lastToken, new Integer(tokenPartStrings.size()));
-                for (int i = 0; i < nexttokenIDs.length; i++) {
-                    if (i == 0) {
-                        tokens.addToken(tokenPartStrings.get(i), nexttokenIDs[i], null, null, tokenString, nexttokenIDs);
-                    } else {
-                        tokens.addToken(tokenPartStrings.get(i), nexttokenIDs[i]);
-                    }
-                }
-
-            } else if (TestUtilCompositeTokenizer.isNoncompoundTokens(tokenString)) {
-                tokens.addToken(TestUtilCompositeTokenizer.getCompositeForm(), TestUtilCompositeTokenizer.getSurFaceForm(), null, null);
+            if (TestUtilCompositeTokenizer.isNoncompoundTokens(tokenString)) {
+                tokens.addTokenWithSurfaceForm(TestUtilCompositeTokenizer.getCompositeForm(), TestUtilCompositeTokenizer.getSurFaceForm(), null, null);
             } else if (TestUtilCompositeTokenizer.isNoncompoundTokenParts(tokenString)) {
                 ;
             } else {
-                lastToken = tokens.addToken(tokenString);
+                tokens.addToken(tokenString);
             }
         }
         // IMPORTANT close the streams!!!

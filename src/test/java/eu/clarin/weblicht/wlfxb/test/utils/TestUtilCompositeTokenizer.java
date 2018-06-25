@@ -25,7 +25,7 @@ public class TestUtilCompositeTokenizer {
 
     static {
         compositeTokens.put("im", Arrays.asList("in", "dem"));
-        compositeTokens.put("Dann", Arrays.asList("Dan", "n"));
+        //compositeTokens.put("Dann", Arrays.asList("Dan", "n"));
         noncompoundTokens.put("po", Arrays.asList("po", "noči"));
     }
 
