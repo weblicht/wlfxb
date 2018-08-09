@@ -25,7 +25,6 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.PosTag;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
-import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.*;
@@ -52,7 +51,7 @@ public class PosTagStored implements PosTag {
   
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-        return AttributesProcess.retrieveAtrributes(extraAtrributes);
+        return PosTag.super.retrieveAtrributes(extraAtrributes);
     }
 
     @Override

@@ -25,7 +25,6 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.DiscourseConnective;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
-import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -59,7 +58,7 @@ public class DiscourseConnectiveStored implements DiscourseConnective {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-        return AttributesProcess.retrieveAtrributes(extraAtrributes);
+        return DiscourseConnective.super.retrieveAtrributes(extraAtrributes);
     }
 
     @Override

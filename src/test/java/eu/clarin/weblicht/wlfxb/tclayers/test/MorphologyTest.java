@@ -23,7 +23,7 @@ public class MorphologyTest {
     private static final String INPUT = "/data/tc-morph/layer-input.xml";
     private static final String INPUT_TAG = "/data/tc-morph/layer-inputTagSet.xml";
     private static final String INPUT_SCORE = "/data/tc-morph/layer-inputScore.xml";
-    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-morph/layer-inputAnyAtt.xml";
+    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-morph/layer-inputExtraAtt.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
@@ -101,7 +101,7 @@ public class MorphologyTest {
     }
 
     @Test
-    public void testReadAndWriteBack_AnyAttribute() throws Exception {
+    public void testReadAndWriteBack_ExtraAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));

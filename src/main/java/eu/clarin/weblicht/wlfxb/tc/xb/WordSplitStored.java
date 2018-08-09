@@ -25,7 +25,6 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.WordSplit;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
-import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -57,7 +56,7 @@ public class WordSplitStored implements WordSplit {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-        return AttributesProcess.retrieveAtrributes(extraAtrributes);
+        return WordSplit.super.retrieveAtrributes(extraAtrributes);
     }
 
     @Override

@@ -23,7 +23,7 @@ import org.junit.rules.TemporaryFolder;
 public class GeopointsTest {
 
     private static final String INPUT = "/data/tc-geo/layer-input.xml";
-    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-geo/layer-inputAnyAtt.xml";
+    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-geo/layer-inputExtraAtt.xml";
     public static final double DELTA = 1e-15;
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
@@ -50,7 +50,7 @@ public class GeopointsTest {
     }
 
     @Test
-    public void testReadAndWriteBack_AnyAttribute() throws Exception {
+    public void testReadAndWriteBack_ExtraAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));

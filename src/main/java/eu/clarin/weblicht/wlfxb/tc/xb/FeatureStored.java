@@ -25,7 +25,6 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.Feature;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
-import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -113,7 +112,7 @@ public class FeatureStored implements Feature {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-        return AttributesProcess.retrieveAtrributes(extraAtrributes);
+        return Feature.super.retrieveAtrributes(extraAtrributes);
     }
 
     @Override

@@ -21,7 +21,7 @@ import org.junit.rules.TemporaryFolder;
 public class MatchesTest {
 
     private static final String INPUT = "/data/tc-matches/layer-input.xml";
-    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-matches/layer-inputAnyAtt.xml";
+    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-matches/layer-inputExtraAtt.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
@@ -51,7 +51,7 @@ public class MatchesTest {
     }
 
     @Test
-    public void testReadAndWriteBack_AnyAttribute() throws Exception {
+    public void testReadAndWriteBack_ExtraAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));

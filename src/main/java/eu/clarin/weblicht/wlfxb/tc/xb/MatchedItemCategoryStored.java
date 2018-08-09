@@ -25,7 +25,6 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.MatchedItemCategory;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
-import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -60,7 +59,7 @@ public class MatchedItemCategoryStored implements MatchedItemCategory {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-         return AttributesProcess.retrieveAtrributes(extraAtrributes);
+         return MatchedItemCategory.super.retrieveAtrributes(extraAtrributes);
     }
 
     @Override

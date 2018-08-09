@@ -26,7 +26,6 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 import eu.clarin.weblicht.wlfxb.tc.api.Constituent;
 import eu.clarin.weblicht.wlfxb.tc.api.ConstituentReference;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
-import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -103,7 +102,7 @@ public class ConstituentStored implements Constituent {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-       return AttributesProcess.retrieveAtrributes(extraAtrributes);
+       return Constituent.super.retrieveAtrributes(extraAtrributes);
     }
 
     @Override

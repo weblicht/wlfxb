@@ -22,7 +22,7 @@ import org.junit.rules.TemporaryFolder;
 public class TextStructureTest {
 
     private static final String INPUT = "/data/tc-textstruct/layer-input.xml";
-    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-textstruct/layer-inputAnyAtt.xml";
+    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-textstruct/layer-inputExtraAtt.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
@@ -47,7 +47,7 @@ public class TextStructureTest {
     }
 
     @Test
-    public void testReadAndWriteBack_AnyAttribute() throws Exception {
+    public void testReadAndWriteBack_ExtraAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));

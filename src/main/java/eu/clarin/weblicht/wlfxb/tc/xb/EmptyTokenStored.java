@@ -25,7 +25,6 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.Token;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
-import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -97,7 +96,7 @@ public class EmptyTokenStored implements Token {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-         return AttributesProcess.retrieveAtrributes(extraAtrributes);
+         return Token.super.retrieveAtrributes(extraAtrributes);
     }
 
 }

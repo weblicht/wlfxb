@@ -25,7 +25,6 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.Token;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
-import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.*;
 import javax.xml.namespace.QName;
@@ -100,7 +99,7 @@ public class TokenStored implements Token {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-       return AttributesProcess.retrieveAtrributes(extraAtrributes);
+       return Token.super.retrieveAtrributes(extraAtrributes);
     }
 
     @Override
