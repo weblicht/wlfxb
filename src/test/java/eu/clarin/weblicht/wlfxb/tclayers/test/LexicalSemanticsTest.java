@@ -32,7 +32,7 @@ public class LexicalSemanticsTest {
     private static final String INPUT_HYPO = "/data/tc-lexsem/layer-input-hypo.xml";
     private static final String INPUT_HYPER = "/data/tc-lexsem/layer-input-hyper.xml";
 
-    private static final String INPUT_SYN_ANY_ATTRIBUTES = "/data/tc-lexsem/layer-inputSynAnyAtt.xml";
+    private static final String INPUT_SYN_ANY_ATTRIBUTES = "/data/tc-lexsem/layer-inputExtraAtt.xml";
 
     @Test
     public void testReadAndWriteBackSyn() throws Exception {
@@ -113,7 +113,7 @@ public class LexicalSemanticsTest {
     }
 
     @Test
-    public void testReadAndWriteBackSyn_AnyAttribute() throws Exception {
+    public void testReadAndWriteBackSyn_ExtraAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_SYN_ANY_ATTRIBUTES);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output-syn.xml"));

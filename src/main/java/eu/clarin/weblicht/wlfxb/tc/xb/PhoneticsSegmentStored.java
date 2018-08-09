@@ -26,7 +26,6 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 import eu.clarin.weblicht.wlfxb.tc.api.PhoneticsSegment;
 import eu.clarin.weblicht.wlfxb.tc.api.Pronunciation;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
-import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -57,7 +56,7 @@ public class PhoneticsSegmentStored implements PhoneticsSegment {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-        return AttributesProcess.retrieveAtrributes(extraAtrributes);
+        return PhoneticsSegment.super.retrieveAtrributes(extraAtrributes);
     }
 
     @Override

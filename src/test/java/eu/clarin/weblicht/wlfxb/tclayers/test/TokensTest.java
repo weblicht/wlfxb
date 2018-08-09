@@ -23,7 +23,7 @@ public class TokensTest {
     private static final String INPUT = "/data/tc-tokens/layer-input.xml";
     private static final String INPUT_SURFACE_PARTS = "/data/tc-tokens/layer-inputSurfaceParts.xml";
     private static final String INPUT_SURFACE = "/data/tc-tokens/layer-inputSurface.xml";
-    private static final String INPUT_ANY_ATTRIBUTE = "/data/tc-tokens/layer-inputAnyAtt.xml";
+    private static final String INPUT_ANY_ATTRIBUTE = "/data/tc-tokens/layer-inputExtraAtt.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
@@ -93,7 +93,7 @@ public class TokensTest {
     }
 
     @Test
-    public void testReadAndWriteBack_AnyAttribute() throws Exception {
+    public void testReadAndWriteBack_ExtraAttribute() throws Exception {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTE);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-outputAnyAttribute.xml"));

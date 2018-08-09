@@ -25,7 +25,6 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.Sentence;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
-import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.*;
@@ -54,7 +53,7 @@ public class SentenceStored implements Sentence {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-        return AttributesProcess.retrieveAtrributes(extraAtrributes);
+        return Sentence.super.retrieveAtrributes(extraAtrributes);
     }
 
     @Override

@@ -26,15 +26,25 @@
 package eu.clarin.weblicht.wlfxb.tc.api;
 
 import java.util.LinkedHashMap;
+import javax.xml.namespace.QName;
 
 /**
- * The <tt>ExtraAtrributes</tt> are attributes other than those define in TCF schema. 
- * With this interface now an element can have any number of extra attributes. 
- * This interface allows unlimited number of attributes in  all layers in TCF.
+ * The <tt>ExtraAtrributes</tt> are attributes other than those define in TCF
+ * schema. With this interface now an element can have any number of extra
+ * attributes. This interface allows unlimited number of attributes in all
+ * layers in TCF.
  *
  * @author Mohammad Fazleh Elahi
  */
 public interface ExtraAttributes {
 
     public LinkedHashMap<String, String> getExtraAtrributes();
+
+    default LinkedHashMap<String, String> retrieveAtrributes(LinkedHashMap<QName, String> qnameAttributes) {
+        LinkedHashMap<String, String> extraAttributes = new LinkedHashMap<String, String>();
+        for (QName qName : qnameAttributes.keySet()) {
+            extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
+        }
+        return extraAttributes;
+    }
 }

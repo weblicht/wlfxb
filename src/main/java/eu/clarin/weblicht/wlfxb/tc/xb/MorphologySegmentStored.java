@@ -25,7 +25,6 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.MorphologySegment;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
-import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -146,7 +145,7 @@ public class MorphologySegmentStored implements MorphologySegment {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-         return AttributesProcess.retrieveAtrributes(extraAtrributes);
+         return MorphologySegment.super.retrieveAtrributes(extraAtrributes);
     }
 
     @Override

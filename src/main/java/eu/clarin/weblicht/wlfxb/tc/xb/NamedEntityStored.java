@@ -25,7 +25,6 @@ package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.NamedEntity;
 import eu.clarin.weblicht.wlfxb.utils.CommonAttributes;
-import eu.clarin.weblicht.wlfxb.utils.AttributesProcess;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -60,7 +59,7 @@ public class NamedEntityStored implements NamedEntity {
 
     @Override
     public LinkedHashMap<String, String> getExtraAtrributes() {
-        return AttributesProcess.retrieveAtrributes(extraAtrributes);
+        return NamedEntity.super.retrieveAtrributes(extraAtrributes);
     }
 
     @Override
