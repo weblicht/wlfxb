@@ -15,13 +15,12 @@ import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 
 /**
- * @author Yana Panchenko and Mohammad Fazleh Elahi
+ * @author Yana Panchenko
  *
  */
 public class MatchesTest {
 
     private static final String INPUT = "/data/tc-matches/layer-input.xml";
-    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-matches/layer-inputExtraAtt.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
@@ -31,6 +30,7 @@ public class MatchesTest {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
+
 
         MatchesLayer layer = TestUtils.read(MatchesLayerStored.class, is);
         System.out.println(layer);
@@ -48,27 +48,5 @@ public class MatchesTest {
         Assert.assertEquals("5-1023", layer.getCorpus(0).getMatchedItems()[0].getOriginCorpusTokenIds()[0]);
         Assert.assertEquals("t1", layer.getCorpus(0).getMatchedItems()[0].getTargetValue("tname"));
         Assert.assertEquals("cval", layer.getCorpus(0).getMatchedItems()[0].getCategoryValue("cname"));
-    }
-
-    @Test
-    public void testReadAndWriteBack_ExtraAttribute() throws Exception {
-
-        InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
-        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
-
-        MatchesLayer layer = TestUtils.read(MatchesLayerStored.class, is);
-        System.out.println(layer);
-        TestUtils.write(layer, os);
-
-        is.close();
-        os.close();
-
-        String anyAttributeCategory = layer.getCorpus(0).getMatchedItems()[0].getCategoriesExtraAtrributes("cname").keySet().iterator().next();
-        Assert.assertEquals("baseForm", anyAttributeCategory);
-        Assert.assertEquals("baseFormCategory", layer.getCorpus(0).getMatchedItems()[0].getCategoriesExtraAtrributes("cname").get(anyAttributeCategory));
-
-        String anyAttributeTarget = layer.getCorpus(0).getMatchedItems()[0].getTargetExtraAtrributes("tname").keySet().iterator().next();
-        Assert.assertEquals("baseForm", anyAttributeTarget);
-        Assert.assertEquals("baseFormTarget", layer.getCorpus(0).getMatchedItems()[0].getTargetExtraAtrributes("tname").get(anyAttributeTarget));
     }
 }

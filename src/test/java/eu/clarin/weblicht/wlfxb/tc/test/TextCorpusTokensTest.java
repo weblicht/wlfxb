@@ -4,7 +4,6 @@
 package eu.clarin.weblicht.wlfxb.tc.test;
 
 import eu.clarin.weblicht.wlfxb.io.TextCorpusStreamed;
-import eu.clarin.weblicht.wlfxb.io.WLFormatException;
 import eu.clarin.weblicht.wlfxb.tc.api.TextCorpus;
 import eu.clarin.weblicht.wlfxb.tc.api.TokensLayer;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
@@ -18,7 +17,7 @@ import org.junit.rules.TemporaryFolder;
 import java.io.File;
 
 /**
- * @author Yana Panchenko and Mohammad Fazleh Elahi
+ * @author Yana Panchenko
  *
  */
 public class TextCorpusTokensTest extends AbstractTextCorpusTest {
@@ -29,17 +28,12 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
     private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-tokens/tcf-before.xml";
     private static final String INPUT_FILE_WITH_LAYER = "/data/tc-tokens/tcf-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/tc-tokens/output-expected.xml";
-
     private static final String OUTPUT_FILE = "output.xml";
+    private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeTokenization =
+            EnumSet.of(TextCorpusLayerTag.TEXT);
+    private static final EnumSet<TextCorpusLayerTag> layersToReadAfterTokenization =
+            EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.TEXT);
 
-    private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeTokenization
-            = EnumSet.of(TextCorpusLayerTag.TEXT);
-    private static final EnumSet<TextCorpusLayerTag> layersToReadAfterTokenization
-            = EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.TEXT);
-
-    /**
-     * This is a test of reading token from token layer.
-     */
     @Test
     public void testRead() throws Exception {
         TextCorpus tc = read(INPUT_FILE_WITH_LAYER, layersToReadAfterTokenization);
@@ -48,9 +42,6 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
         Assert.assertEquals("Peter", layer.getToken(0).getString());
     }
 
-    /**
-     * This is a test of writing token layer.
-     */
     @Test
     public void testReadWrite() throws Exception {
         String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
@@ -68,23 +59,6 @@ public class TextCorpusTokensTest extends AbstractTextCorpusTest {
         System.out.println(tc);
         // compare output xml with expected xml
         assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
-    }
-
-    @Test(expected = WLFormatException.class)
-    public void testTokenLayerOverWrite() throws Exception {
-        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
-        TextCorpusStreamed tc = open(INPUT_FILE_WITH_LAYER, outfile, layersToReadBeforeTokenization);
-        System.out.println(tc);
-        List<String> tokenstrings = tokenize(tc.getTextLayer().getText());
-        // create tokens layer, it is empty first
-        TokensLayer tokens = tc.createTokensLayer();
-        for (String tokenString : tokenstrings) {
-            // create and add Token objects to the tokens layer
-            tokens.addToken(tokenString);
-        }
-        // IMPORTANT close the streams!!!
-        tc.close();
-        System.out.println(tc);
     }
 
     private List<String> tokenize(String text) {

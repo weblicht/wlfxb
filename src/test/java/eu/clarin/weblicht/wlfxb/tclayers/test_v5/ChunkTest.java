@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eu.clarin.weblicht.wlfxb.tclayers.test;
+package eu.clarin.weblicht.wlfxb.tclayers.test_v5;
 
 import eu.clarin.weblicht.wlfxb.tc.xb.ChunksLayerStored;
 import eu.clarin.weblicht.wlfxb.test.utils.TestUtils;
@@ -22,7 +22,7 @@ import eu.clarin.weblicht.wlfxb.tc.api.ChunksLayer;
  */
 public class ChunkTest {
 
-    private static final String INPUT = "/data/tc-chunk/layer-input.xml";
+    private static final String INPUT = "/data_v5/tc-chunk/layer-input.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();

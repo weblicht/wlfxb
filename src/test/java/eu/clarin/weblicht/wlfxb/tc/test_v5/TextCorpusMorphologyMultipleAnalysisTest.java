@@ -1,10 +1,11 @@
 /**
  *
  */
-package eu.clarin.weblicht.wlfxb.tc.test;
+package eu.clarin.weblicht.wlfxb.tc.test_v5;
 
 import eu.clarin.weblicht.wlfxb.io.TextCorpusStreamed;
 import eu.clarin.weblicht.wlfxb.tc.api.*;
+import eu.clarin.weblicht.wlfxb.tc.test.AbstractTextCorpusTest;
 import eu.clarin.weblicht.wlfxb.tc.xb.MorphologyTagStored;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
 import java.util.ArrayList;
@@ -25,9 +26,9 @@ public class TextCorpusMorphologyMultipleAnalysisTest extends AbstractTextCorpus
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
 
-    private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-morph/tcf-before.xml";
-    private static final String INPUT_FILE_WITH_LAYER_SCORE = "/data/tc-morph/tcf-afterScore.xml";
-    private static final String EXPECTED_OUTPUT_FILE_SCORE = "/data/tc-morph/output-expectedScore.xml";
+    private static final String INPUT_FILE_WITHOUT_LAYER = "/data_v5/tc-morph/tcf-before.xml";
+    private static final String INPUT_FILE_WITH_LAYER_SCORE = "/data_v5/tc-morph/tcf-afterScore.xml";
+    private static final String EXPECTED_OUTPUT_FILE_SCORE = "/data_v5/tc-morph/output-expectedScore.xml";
     private static final String OUTPUT_FILE = "output.xml";
 
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeMorphologyAnnotation

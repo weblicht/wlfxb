@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eu.clarin.weblicht.wlfxb.tc.test;
+package eu.clarin.weblicht.wlfxb.tc.test_v5;
 
 import eu.clarin.weblicht.wlfxb.io.TextCorpusStreamed;
 import eu.clarin.weblicht.wlfxb.tc.api.TextCorpus;
 import eu.clarin.weblicht.wlfxb.tc.api.Token;
+import eu.clarin.weblicht.wlfxb.tc.test.AbstractTextCorpusTest;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
 import java.io.File;
 import java.util.EnumSet;
@@ -29,9 +30,9 @@ public class TextCorpusChunkLayerTest extends AbstractTextCorpusTest {
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
 
-    private static final String INPUT_FILE_WITHOUT_LAYER = "/data/tc-chunk/tcf-before.xml";
-    private static final String INPUT_FILE_WITH_LAYER_TAGSET = "/data/tc-chunk/tcf-after.xml";
-    private static final String EXPECTED_OUTPUT_FILE_TAGSET = "/data/tc-chunk/output-expected.xml";
+    private static final String INPUT_FILE_WITHOUT_LAYER = "/data_v5/tc-chunk/tcf-before.xml";
+    private static final String INPUT_FILE_WITH_LAYER_TAGSET = "/data_v5/tc-chunk/tcf-after.xml";
+    private static final String EXPECTED_OUTPUT_FILE_TAGSET = "/data_v5/tc-chunk/output-expected.xml";
     private static final String OUTPUT_FILE = "output.xml";
 
     private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeChunkLayer

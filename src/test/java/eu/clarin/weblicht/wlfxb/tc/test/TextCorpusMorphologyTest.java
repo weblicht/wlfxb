@@ -28,14 +28,10 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
     private static final String INPUT_FILE_WITH_LAYER = "/data/tc-morph/tcf-after.xml";
     private static final String EXPECTED_OUTPUT_FILE = "/data/tc-morph/output-expected.xml";
     private static final String OUTPUT_FILE = "output.xml";
-
-    private static final String INPUT_FILE_WITH_LAYER_TAGSET = "/data/tc-morph/tcf-afterTagSet.xml";
-    private static final String EXPECTED_OUTPUT_FILE_TAGSET = "/data/tc-morph/output-expectedTagSet.xml";
-
-    private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeMorphologyAnnotation
-            = EnumSet.of(TextCorpusLayerTag.TOKENS);
-    private static final EnumSet<TextCorpusLayerTag> layersToReadAfterMorphologyAnnotation
-            = EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.MORPHOLOGY);
+    private static final EnumSet<TextCorpusLayerTag> layersToReadBeforeMorphologyAnnotation =
+            EnumSet.of(TextCorpusLayerTag.TOKENS);
+    private static final EnumSet<TextCorpusLayerTag> layersToReadAfterMorphologyAnnotation =
+            EnumSet.of(TextCorpusLayerTag.TOKENS, TextCorpusLayerTag.MORPHOLOGY);
 
     @Test
     public void testRead() throws Exception {
@@ -43,24 +39,10 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
         MorphologyLayer layer = tc.getMorphologyLayer();
         Assert.assertEquals(true, layer.hasCharoffsets());
         Assert.assertEquals(true, layer.hasSegmentation());
-        Assert.assertEquals(null, layer.getTagset());
         Assert.assertEquals(tc.getTokensLayer().getToken(3), layer.getTokens(layer.getAnalysis(0))[0]);
         Assert.assertEquals(true, layer.getAnalysis(0).getFeatures()[0].isTerminal());
         Assert.assertEquals("cat", layer.getAnalysis(0).getFeatures()[0].getName());
         Assert.assertEquals("noun", layer.getAnalysis(0).getFeatures()[0].getValue());
-        Assert.assertEquals(false, layer.getAnalysis(0).getFeatures()[4].isTerminal());
-        Assert.assertEquals("test", layer.getAnalysis(0).getFeatures()[4].getName());
-        Assert.assertEquals("noun", layer.getAnalysis(0).getFeatures()[4].getSubfeatures()[0].getValue());
-        Assert.assertEquals(1, layer.size());
-    }
-
-    @Test
-    public void testRead_WhenTagSet() throws Exception {
-        TextCorpus tc = read(INPUT_FILE_WITH_LAYER_TAGSET, layersToReadAfterMorphologyAnnotation);
-        MorphologyLayer layer = tc.getMorphologyLayer();
-        Assert.assertEquals(true, layer.hasCharoffsets());
-        Assert.assertEquals(true, layer.hasSegmentation());
-        Assert.assertEquals("STTS", layer.getTagset());
         Assert.assertEquals(false, layer.getAnalysis(0).getFeatures()[4].isTerminal());
         Assert.assertEquals("test", layer.getAnalysis(0).getFeatures()[4].getName());
         Assert.assertEquals("noun", layer.getAnalysis(0).getFeatures()[4].getSubfeatures()[0].getValue());
@@ -84,25 +66,6 @@ public class TextCorpusMorphologyTest extends AbstractTextCorpusTest {
         System.out.println(tc);
         // compare output xml with expected xml
         assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
-    }
-
-    @Test
-    public void testReadWrite_WhenTagSet() throws Exception {
-        String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
-        TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeMorphologyAnnotation);
-        System.out.println(tc);
-        MorphologyLayer morphology = tc.createMorphologyLayer("STTS", true, true);
-        for (int i = 0; i < tc.getTokensLayer().size(); i++) {
-            Token token = tc.getTokensLayer().getToken(i);
-            // create morphology annotation for the test token (for the 4th token)
-            if (i == 3) {
-                addAnalysis(token, morphology);
-            }
-        }
-        tc.close();
-        System.out.println(tc);
-        // compare output xml with expected xml
-        assertEqualXml(EXPECTED_OUTPUT_FILE_TAGSET, outfile);
     }
 
     private void addAnalysis(Token token, MorphologyLayer morphology) {

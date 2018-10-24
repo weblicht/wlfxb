@@ -15,13 +15,12 @@ import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 
 /**
- * @author Yana Panchenko and Mohammad Fazleh Elahi
+ * @author Yana Panchenko
  *
  */
 public class NamedEntitiesTest {
 
     private static final String INPUT = "/data/tc-nes/layer-input.xml";
-    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-nes/layer-inputExtraAtt.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
@@ -31,6 +30,7 @@ public class NamedEntitiesTest {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
+
 
         NamedEntitiesLayer layer = TestUtils.read(NamedEntitiesLayerStored.class, is);
         System.out.println(layer);
@@ -43,23 +43,5 @@ public class NamedEntitiesTest {
         Assert.assertEquals(1, layer.size());
         Assert.assertEquals("PERSON", layer.getEntity(0).getType());
 
-    }
-
-    @Test
-    public void testReadAndWriteBack_ExtraAttribute() throws Exception {
-
-        InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
-        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
-
-        NamedEntitiesLayer layer = TestUtils.read(NamedEntitiesLayerStored.class, is);
-        System.out.println(layer);
-        TestUtils.write(layer, os);
-
-        is.close();
-        os.close();
-
-        String anyAttribute = layer.getEntity(0).getExtraAtrributes().keySet().iterator().next();
-        Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("PERSON", layer.getEntity(0).getExtraAtrributes().get(anyAttribute));
     }
 }

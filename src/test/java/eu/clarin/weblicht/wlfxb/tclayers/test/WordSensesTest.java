@@ -15,13 +15,12 @@ import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 
 /**
- * @author Yana Panchenko and Mohammad Fazleh Elahi
+ * @author Yana Panchenko
  *
  */
 public class WordSensesTest {
 
     private static final String INPUT = "/data/tc-ws/layer-input.xml";
-    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-ws/layer-inputExtraAtt.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
@@ -31,6 +30,7 @@ public class WordSensesTest {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
+
 
         WordSensesLayer layer = TestUtils.read(WordSensesLayerStored.class, is);
         System.out.println(layer);
@@ -44,23 +44,4 @@ public class WordSensesTest {
         Assert.assertEquals("75197", layer.getWordSense(0).getLexicalUnits().get(1));
         Assert.assertEquals("unbestimmbar", layer.getWordSense(1).getComment());
     }
-
-    @Test
-    public void testReadAndWriteBack_ExtraAttribute() throws Exception {
-
-        InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
-        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
-
-        WordSensesLayer layer = TestUtils.read(WordSensesLayerStored.class, is);
-        System.out.println(layer);
-        TestUtils.write(layer, os);
-
-        is.close();
-        os.close();
-
-        String anyAttribute = layer.getWordSense(0).getExtraAtrributes().keySet().iterator().next();
-        Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("baseFormSense", layer.getWordSense(0).getExtraAtrributes().get(anyAttribute));
-    }
-
 }

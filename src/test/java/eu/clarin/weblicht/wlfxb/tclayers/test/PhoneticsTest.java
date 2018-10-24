@@ -10,7 +10,6 @@ import eu.clarin.weblicht.wlfxb.test.utils.TestUtils;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import org.junit.Assert;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Rule;
@@ -23,7 +22,6 @@ import org.junit.rules.TemporaryFolder;
 public class PhoneticsTest {
 
     private static final String INPUT = "/data/tc-phon/layer-input.xml";
-    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-phon/layer-inputExtraAtt.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
@@ -33,6 +31,7 @@ public class PhoneticsTest {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
+
 
         PhoneticsLayer layer = TestUtils.read(PhoneticsLayerStored.class, is);
         System.out.println(layer);
@@ -50,29 +49,5 @@ public class PhoneticsTest {
         assertEquals("Sm'E.kN", layer.getSegment(0).getPronunciations()[0].getRealized());
         assertEquals(0, layer.getSegment(0).getPronunciations()[0].getChildren()[0].getOnsetInSeconds(), 0.00001);
         assertEquals(0.0002, layer.getSegment(0).getPronunciations()[0].getChildren()[0].getOffsetInSeconds(), 0.00001);
-    }
-
-    @Test
-    public void testReadAndWriteBack_ExtraAttribute() throws Exception {
-
-        InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
-        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
-
-        PhoneticsLayer layer = TestUtils.read(PhoneticsLayerStored.class, is);
-        System.out.println(layer);
-        TestUtils.write(layer, os);
-
-        is.close();
-        os.close();
-
-        // testing extra attributes in word level        
-        String anyAttributeWord = layer.getSegment(0).getPronunciations()[0].getExtraAtrributes().keySet().iterator().next();
-        Assert.assertEquals("baseForm", anyAttributeWord);
-        Assert.assertEquals("baseFormWord", layer.getSegment(0).getPronunciations()[0].getExtraAtrributes().get(anyAttributeWord));
-
-        // testing extra attributes in syllable level
-        String anyAttribute = layer.getSegment(0).getPronunciations()[0].getChildren()[0].getExtraAtrributes().keySet().iterator().next();
-        Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("baseFormSyllable", layer.getSegment(0).getPronunciations()[0].getChildren()[0].getExtraAtrributes().get(anyAttribute));
     }
 }

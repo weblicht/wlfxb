@@ -21,7 +21,6 @@ import org.junit.rules.TemporaryFolder;
 public class ReferencesTest {
 
     private static final String INPUT = "/data/tc-refs/layer-input.xml";
-    private static final String INPUT_ANY_ATTRIBUTES = "/data/tc-refs/layer-inputExtraAtt.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
@@ -31,6 +30,7 @@ public class ReferencesTest {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
+
 
         ReferencesLayer layer = TestUtils.read(ReferencesLayerStored.class, is);
         System.out.println(layer);
@@ -48,22 +48,5 @@ public class ReferencesTest {
         Assert.assertEquals(2, layer.getReferencedEntity(0).getReferences().length);
         Assert.assertEquals("pro.per3", layer.getReferencedEntity(0).getReferences()[0].getType());
         Assert.assertEquals("cataphoric", layer.getReferencedEntity(0).getReferences()[0].getRelation());
-    }
-
-    @Test
-    public void testReadAndWriteBack_ExtraAttribute() throws Exception {
-
-        InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTES);
-        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
-
-        ReferencesLayer layer = TestUtils.read(ReferencesLayerStored.class, is);
-        System.out.println(layer);
-        TestUtils.write(layer, os);
-
-        is.close();
-        os.close();
-        String anyAttribute = layer.getReferencedEntity(0).getReferences()[0].getExtraAtrributes().keySet().iterator().next();
-        Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("baseFormWordRef", layer.getReferencedEntity(0).getReferences()[0].getExtraAtrributes().get(anyAttribute));
     }
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eu.clarin.weblicht.wlfxb.test.utils;
+package eu.clarin.weblicht.wlfxb.test_v5.utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;

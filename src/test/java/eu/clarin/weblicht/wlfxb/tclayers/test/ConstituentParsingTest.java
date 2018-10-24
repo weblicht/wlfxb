@@ -15,13 +15,12 @@ import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 
 /**
- * @author Yana Panchenko and Mohammad Fazleh Elahi
+ * @author Yana Panchenko
  *
  */
 public class ConstituentParsingTest {
 
     private static final String INPUT = "/data/tc-parsing/layer-input.xml";
-    private static final String INPUT_ANY_ATTRIBUTE = "/data/tc-parsing/layer-inputExtraAtt.xml";
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
@@ -31,6 +30,8 @@ public class ConstituentParsingTest {
 
         InputStream is = this.getClass().getResourceAsStream(INPUT);
         OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
+
+
 
         ConstituentParsingLayer layer = TestUtils.read(ConstituentParsingLayerStored.class, is);
         System.out.println(layer);
@@ -48,22 +49,4 @@ public class ConstituentParsingTest {
         Assert.assertEquals(true, layer.getParseRoot(1).getChildren()[0].getChildren()[0].getChildren()[0].isTerminal());
 
     }
-
-    @Test
-    public void testReadAndWriteBack_ExtraAttribute() throws Exception {
-
-        InputStream is = this.getClass().getResourceAsStream(INPUT_ANY_ATTRIBUTE);
-        OutputStream os = new FileOutputStream(testFolder.newFile("layer-output.xml"));
-
-        ConstituentParsingLayer layer = TestUtils.read(ConstituentParsingLayerStored.class, is);
-        System.out.println(layer);
-        TestUtils.write(layer, os);
-
-        is.close();
-        os.close();
-        String anyAttribute = layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getExtraAtrributes().keySet().iterator().next();
-        Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("NE-HD", layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getExtraAtrributes().get(anyAttribute));
-    }
-
 }

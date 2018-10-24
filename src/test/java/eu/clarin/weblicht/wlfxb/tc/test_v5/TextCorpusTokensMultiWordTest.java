@@ -1,14 +1,15 @@
 /**
  *
  */
-package eu.clarin.weblicht.wlfxb.tc.test;
+package eu.clarin.weblicht.wlfxb.tc.test_v5;
 
 import eu.clarin.weblicht.wlfxb.io.TextCorpusStreamed;
 import eu.clarin.weblicht.wlfxb.tc.api.TextCorpus;
 import eu.clarin.weblicht.wlfxb.tc.api.Token;
 import eu.clarin.weblicht.wlfxb.tc.api.TokensLayer;
+import eu.clarin.weblicht.wlfxb.tc.test.AbstractTextCorpusTest;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
-import eu.clarin.weblicht.wlfxb.test.utils.TestUtilCompositeTokenizer;
+import eu.clarin.weblicht.wlfxb.test_v5.utils.TestUtilCompositeTokenizer;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
@@ -27,13 +28,13 @@ public class TextCorpusTokensMultiWordTest extends AbstractTextCorpusTest {
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
 
-    private static final String INPUT_FILE_SUTFACE_PARTS_WITHOUT_LAYER = "/data/tc-tokens/tcf-beforeSurfaceParts.xml";
-    private static final String INPUT_FILE_SUTFACE_PARTS_WITH_LAYER = "/data/tc-tokens/tcf-afterSurfaceParts.xml";
-    private static final String EXPECTED_SUTFACE_PARTS_OUTPUT_FILE = "/data/tc-tokens/output-expectedSurfaceParts.xml";
+    private static final String INPUT_FILE_SUTFACE_PARTS_WITHOUT_LAYER = "/data_v5/tc-tokens/tcf-beforeSurfaceParts.xml";
+    private static final String INPUT_FILE_SUTFACE_PARTS_WITH_LAYER = "/data_v5/tc-tokens/tcf-afterSurfaceParts.xml";
+    private static final String EXPECTED_SUTFACE_PARTS_OUTPUT_FILE = "/data_v5/tc-tokens/output-expectedSurfaceParts.xml";
 
-    private static final String INPUT_FILE_SURFACE_WITHOUT_LAYER = "/data/tc-tokens/tcf-beforeSurface.xml";
-    private static final String INPUT_FILE_SURFACE_WITH_LAYER = "/data/tc-tokens/tcf-afterSurface.xml";
-    private static final String EXPECTED_SL_OUTPUT_FILE = "/data/tc-tokens/output-expectedSurface.xml";
+    private static final String INPUT_FILE_SURFACE_WITHOUT_LAYER = "/data_v5/tc-tokens/tcf-beforeSurface.xml";
+    private static final String INPUT_FILE_SURFACE_WITH_LAYER = "/data_v5/tc-tokens/tcf-afterSurface.xml";
+    private static final String EXPECTED_SL_OUTPUT_FILE = "/data_v5/tc-tokens/output-expectedSurface.xml";
 
     private static final String OUTPUT_FILE = "output.xml";
 
