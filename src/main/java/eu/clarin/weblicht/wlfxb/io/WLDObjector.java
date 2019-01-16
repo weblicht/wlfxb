@@ -20,6 +20,8 @@
  */
 package eu.clarin.weblicht.wlfxb.io;
 
+import eu.clarin.weblicht.wlfxb.lx.api.Lexicon;
+import eu.clarin.weblicht.wlfxb.lx.xb.LexiconStored;
 import eu.clarin.weblicht.wlfxb.md.xb.MetaData;
 import eu.clarin.weblicht.wlfxb.tc.api.TextCorpus;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusStored;
@@ -95,29 +97,47 @@ public class WLDObjector {
     }
 
     public static void write(WLData wlData, OutputStream outputStream) throws WLFormatException {
-        write(wlData.getMetaData(), wlData.getTextCorpus(), outputStream, false);
+        write(wlData.getMetaData(), wlData.getTextCorpus(), wlData.getLexicon(), outputStream, false);
     }
 
     public static void write(WLData wlData, File file) throws WLFormatException {
-        write(wlData.getMetaData(), wlData.getTextCorpus(), file, false);
+        write(wlData.getMetaData(), wlData.getTextCorpus(), wlData.getLexicon(), file, false);
     }
 
     public static void write(WLData wlData, OutputStream outputStream, boolean outputAsXmlFragment) throws WLFormatException {
-        write(wlData.getMetaData(), wlData.getTextCorpus(), outputStream, outputAsXmlFragment);
+        write(wlData.getMetaData(), wlData.getTextCorpus(), wlData.getLexicon(), outputStream, outputAsXmlFragment);
     }
 
     public static void write(WLData wlData, File file, boolean outputAsXmlFragment) throws WLFormatException {
-        write(wlData.getMetaData(), wlData.getTextCorpus(), file, outputAsXmlFragment);
+        write(wlData.getMetaData(), wlData.getTextCorpus(), wlData.getLexicon(), file, outputAsXmlFragment);
     }
 
     public static void write(MetaData md, TextCorpus tc, File file, boolean outputAsXmlFragment) throws WLFormatException {
+        write(md, tc, null, file, outputAsXmlFragment);
+    }
+
+    public static void write(MetaData md, TextCorpus tc, OutputStream outputStream, boolean outputAsXmlFragment)
+            throws WLFormatException {
+        write(md, tc, null, outputStream, outputAsXmlFragment);
+    }
+
+    public static void write(MetaData md, Lexicon lex, File file, boolean outputAsXmlFragment) throws WLFormatException {
+        write(md, null, lex, file, outputAsXmlFragment);
+    }
+
+    public static void write(MetaData md, Lexicon lex, OutputStream outputStream, boolean outputAsXmlFragment)
+            throws WLFormatException {
+        write(md, null, lex, outputStream, outputAsXmlFragment);
+    }
+
+    public static void write(MetaData md, TextCorpus tc, Lexicon lex, File file, boolean outputAsXmlFragment) throws WLFormatException {
         // IMPORTANT: using JAXB marshaller for marshalling directly into File or FileOutputStream
         // replaces quotes with &quot; entities which is not desirable for linguistic data, therefore
         // XMLEventWriter should be used...
         OutputStream outputStream = null;
         try {
             outputStream = new FileOutputStream(file);
-            write(md, tc, outputStream, outputAsXmlFragment);
+            write(md, tc, lex, outputStream, outputAsXmlFragment);
         } catch (Exception e) {
             throw new WLFormatException(e);
         } finally {
@@ -131,9 +151,12 @@ public class WLDObjector {
         }
     }
 
-    public static void write(MetaData md, TextCorpus tc,
-            OutputStream outputStream, boolean outputAsXmlFragment)
-            throws WLFormatException {
+    public static void write(MetaData md, TextCorpus tc, Lexicon lex, OutputStream outputStream, boolean outputAsXmlFragment) throws WLFormatException {
+        if (tc == null && lex == null) {
+            throw new WLFormatException("cannot write tcf: both textcorpus and lexicon formats are missing");
+        } else if (tc != null && lex != null) {
+            throw new WLFormatException("cannot write tcf: both textcorpus and lexicon formats are present, but only one is allowed");
+        }
 
         XMLEventFactory eventFactory = XMLEventFactory.newInstance();
         XMLOutputFactory xmlOututFactory = XMLOutputFactory.newInstance();
@@ -178,12 +201,15 @@ public class WLDObjector {
             e = eventFactory.createIgnorableSpace(XmlReaderWriter.NEW_LINE);
             xmlEventWriter.add(e);
 
-            JAXBContext tcContext = JAXBContext.newInstance(TextCorpusStored.class);
-            Marshaller tcMarshaller = tcContext.createMarshaller();
-            //does not work with XMLEventWriter:
-            //tcMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            tcMarshaller.setProperty(Marshaller.JAXB_FRAGMENT, true);
-            tcMarshaller.marshal(tc, xmlEventWriter);
+            // marshalling textcorpus or lexicon
+            {
+                JAXBContext context = JAXBContext.newInstance(tc != null ? TextCorpusStored.class : LexiconStored.class);
+                Marshaller marshaller = context.createMarshaller();
+                //does not work with XMLEventWriter:
+                //tcMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+                marshaller.setProperty(Marshaller.JAXB_FRAGMENT, true);
+                marshaller.marshal(tc != null ? tc : lex, xmlEventWriter);
+            }
             
             e = eventFactory.createIgnorableSpace(XmlReaderWriter.NEW_LINE);
             xmlEventWriter.add(e);
