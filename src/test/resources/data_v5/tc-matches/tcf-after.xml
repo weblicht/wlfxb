@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="https://raw.githubusercontent.com/weblicht/tcf-spec/master/src/main/rnc-schema/d-spin_5.rnc" type="application/relax-ng-compact-syntax"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="5">
+ <MetaData xmlns="http://www.dspin.de/data/metadata">
+  <source>IMS, Uni Stuttgart</source>
+ </MetaData>
+ <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+  <tokens>
+   <token ID="t1">Peter</token>
+   <token ID="t2">aß</token>
+   <token ID="t3">eine</token>
+   <token ID="t4">Käsepizza</token>
+   <token ID="t5">.</token>
+   <token ID="t6">Sie</token>
+   <token ID="t7">schmeckte</token>
+   <token ID="t8">ihm</token>
+   <token ID="t9">.</token>
+  </tokens>
+  <sentences>
+   <sentence ID="s1" tokenIDs="t1 t2 t3 t4 t5"/>
+   <sentence ID="s2" tokenIDs="t6 t7 t8 t9"/>
+  </sentences>
+  
+ <matches>
+   <query type="sqp">tb_lemma=&quot;Peter&quot; | tb_lemma=&quot;schmecken&quot;</query>
+   <corpus name="wcorp-1" pid="some-pid">
+    <item tokenIDs="t1" srcIDs="5-1023">
+     <target name="tname" value="t1"></target>
+     <category name="cname" value="cval"></category>
+    </item>
+    <item tokenIDs="t7" srcIDs="16-117">
+     <target name="tname" value="t7"></target>
+     <category name="cname" value="cval"></category>
+    </item>
+   </corpus>
+  </matches>
+  
+ </TextCorpus>
+</D-Spin>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/weblicht/tcf-spec/master/src/main/rnc-schema/d-spin_5.rnc" type="application/relax-ng-compact-syntax"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="5">
+<md:MetaData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cmd="http://www.clarin.eu/cmd/" xmlns:md="http://www.dspin.de/data/metadata" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd">
+    <md:md value="lexicon write test" name="title"></md:md>
+    <md:md value="HAL 9000" name="author"></md:md>
+  </md:MetaData>
+<lx:Lexicon xmlns:lx="http://www.dspin.de/data/lexicon" lang="en">
+    <lx:entries type="lemmas">
+      <lx:entry ID="e_0">This</lx:entry>
+      <lx:entry ID="e_1">is</lx:entry>
+      <lx:entry ID="e_2">a</lx:entry>
+      <lx:entry ID="e_3">test</lx:entry>
+      <lx:entry ID="e_4">.</lx:entry>
+      <lx:entry ID="e_5">This</lx:entry>
+      <lx:entry ID="e_6">is</lx:entry>
+      <lx:entry ID="e_7">the</lx:entry>
+      <lx:entry ID="e_8">second</lx:entry>
+      <lx:entry ID="e_9">sentence</lx:entry>
+      <lx:entry ID="e_10">.</lx:entry>
+    </lx:entries>
+    <lx:POStags tagset="stts">
+      <lx:tag entryID="e_0">This</lx:tag>
+      <lx:tag entryID="e_1">is</lx:tag>
+      <lx:tag entryID="e_2">a</lx:tag>
+      <lx:tag entryID="e_3">test</lx:tag>
+      <lx:tag entryID="e_4">.</lx:tag>
+      <lx:tag entryID="e_5">This</lx:tag>
+      <lx:tag entryID="e_6">is</lx:tag>
+      <lx:tag entryID="e_7">the</lx:tag>
+      <lx:tag entryID="e_8">second</lx:tag>
+      <lx:tag entryID="e_9">sentence</lx:tag>
+      <lx:tag entryID="e_10">.</lx:tag>
+    </lx:POStags>
+    <lx:frequencies type="absolute">
+      <lx:frequency entryID="e_0">1.0</lx:frequency>
+      <lx:frequency entryID="e_1">1.0</lx:frequency>
+      <lx:frequency entryID="e_2">1.0</lx:frequency>
+      <lx:frequency entryID="e_3">1.0</lx:frequency>
+      <lx:frequency entryID="e_4">1.0</lx:frequency>
+      <lx:frequency entryID="e_5">1.0</lx:frequency>
+      <lx:frequency entryID="e_6">1.0</lx:frequency>
+      <lx:frequency entryID="e_7">1.0</lx:frequency>
+      <lx:frequency entryID="e_8">1.0</lx:frequency>
+      <lx:frequency entryID="e_9">1.0</lx:frequency>
+      <lx:frequency entryID="e_10">1.0</lx:frequency>
+    </lx:frequencies>
+    <lx:cooccurrences>
+      <lx:cooccurrence func="left-neighbour">
+        <lx:term entryID="e_0"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="right-neighbour">
+        <lx:term entryID="e_0"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="left-neighbour">
+        <lx:term entryID="e_1"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="right-neighbour">
+        <lx:term entryID="e_1"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="left-neighbour">
+        <lx:term entryID="e_2"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="right-neighbour">
+        <lx:term entryID="e_2"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="left-neighbour">
+        <lx:term entryID="e_3"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="right-neighbour">
+        <lx:term entryID="e_3"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="left-neighbour">
+        <lx:term entryID="e_4"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="right-neighbour">
+        <lx:term entryID="e_4"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="left-neighbour">
+        <lx:term entryID="e_5"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="right-neighbour">
+        <lx:term entryID="e_5"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="left-neighbour">
+        <lx:term entryID="e_6"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="right-neighbour">
+        <lx:term entryID="e_6"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="left-neighbour">
+        <lx:term entryID="e_7"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="right-neighbour">
+        <lx:term entryID="e_7"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="left-neighbour">
+        <lx:term entryID="e_8"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="right-neighbour">
+        <lx:term entryID="e_8"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="left-neighbour">
+        <lx:term entryID="e_9"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="right-neighbour">
+        <lx:term entryID="e_9"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="left-neighbour">
+        <lx:term entryID="e_10"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+      <lx:cooccurrence func="right-neighbour">
+        <lx:term entryID="e_10"></lx:term>
+        <lx:term>coocurence1</lx:term>
+        <lx:term>coocurence2</lx:term>
+      </lx:cooccurrence>
+    </lx:cooccurrences>
+    <lx:synonyms>
+      <lx:synonym>
+        <lx:term entryID="e_0"></lx:term>
+        <lx:term>synonym1</lx:term>
+        <lx:term>synonym2</lx:term>
+      </lx:synonym>
+      <lx:synonym>
+        <lx:term entryID="e_1"></lx:term>
+        <lx:term>synonym1</lx:term>
+        <lx:term>synonym2</lx:term>
+      </lx:synonym>
+      <lx:synonym>
+        <lx:term entryID="e_2"></lx:term>
+        <lx:term>synonym1</lx:term>
+        <lx:term>synonym2</lx:term>
+      </lx:synonym>
+      <lx:synonym>
+        <lx:term entryID="e_3"></lx:term>
+        <lx:term>synonym1</lx:term>
+        <lx:term>synonym2</lx:term>
+      </lx:synonym>
+      <lx:synonym>
+        <lx:term entryID="e_4"></lx:term>
+        <lx:term>synonym1</lx:term>
+        <lx:term>synonym2</lx:term>
+      </lx:synonym>
+      <lx:synonym>
+        <lx:term entryID="e_5"></lx:term>
+        <lx:term>synonym1</lx:term>
+        <lx:term>synonym2</lx:term>
+      </lx:synonym>
+      <lx:synonym>
+        <lx:term entryID="e_6"></lx:term>
+        <lx:term>synonym1</lx:term>
+        <lx:term>synonym2</lx:term>
+      </lx:synonym>
+      <lx:synonym>
+        <lx:term entryID="e_7"></lx:term>
+        <lx:term>synonym1</lx:term>
+        <lx:term>synonym2</lx:term>
+      </lx:synonym>
+      <lx:synonym>
+        <lx:term entryID="e_8"></lx:term>
+        <lx:term>synonym1</lx:term>
+        <lx:term>synonym2</lx:term>
+      </lx:synonym>
+      <lx:synonym>
+        <lx:term entryID="e_9"></lx:term>
+        <lx:term>synonym1</lx:term>
+        <lx:term>synonym2</lx:term>
+      </lx:synonym>
+      <lx:synonym>
+        <lx:term entryID="e_10"></lx:term>
+        <lx:term>synonym1</lx:term>
+        <lx:term>synonym2</lx:term>
+      </lx:synonym>
+    </lx:synonyms>
+    <lx:syllabifications>
+      <lx:syllabification entryID="e_0">This</lx:syllabification>
+      <lx:syllabification entryID="e_1">is</lx:syllabification>
+      <lx:syllabification entryID="e_2">a</lx:syllabification>
+      <lx:syllabification entryID="e_3">test</lx:syllabification>
+      <lx:syllabification entryID="e_4">.</lx:syllabification>
+      <lx:syllabification entryID="e_5">This</lx:syllabification>
+      <lx:syllabification entryID="e_6">is</lx:syllabification>
+      <lx:syllabification entryID="e_7">the</lx:syllabification>
+      <lx:syllabification entryID="e_8">second</lx:syllabification>
+      <lx:syllabification entryID="e_9">sentence</lx:syllabification>
+      <lx:syllabification entryID="e_10">.</lx:syllabification>
+    </lx:syllabifications>
+  </lx:Lexicon>
+</D-Spin>

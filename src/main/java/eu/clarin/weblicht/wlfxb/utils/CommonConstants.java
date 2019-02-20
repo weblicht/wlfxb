@@ -29,9 +29,12 @@ package eu.clarin.weblicht.wlfxb.utils;
  */
 public class CommonConstants {
 
-    public static final String XML_WL1_MODEL_PI_CONTENT =
-            "href=\"http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/"
-            + "latest/d-spin_0_4.rnc\" type=\"application/relax-ng-compact-syntax\"";
+    public static final String XML_WL1_MODEL_PI_CONTENT_FOR_VERSION_5 = String.format("href=\"%s\" type=\"%s\"",
+            "https://raw.githubusercontent.com/weblicht/tcf-spec/master/src/main/rnc-schema/d-spin_5.rnc",
+            "application/relax-ng-compact-syntax");
+    public static final String XML_WL1_MODEL_PI_CONTENT_FOR_VERSION_04 = String.format("href=\"%s\" type=\"%s\"",
+            "http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/d-spin_0_4.rnc",
+            "application/relax-ng-compact-syntax");
     public static final String XML_MODEL_DECLARATION_WITH_WL1_PI_CONTENT = "\n<?xml-model "
             + "href=\"http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/"
             + "latest/d-spin_0_4.rnc\" "

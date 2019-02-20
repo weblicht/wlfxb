@@ -21,7 +21,7 @@ public class WLDObjectorEmptyLayersTest {
 
 
     private static final String INPUT_FILE_Textcorpus = "/data/objector/input_textcorpus.xml";
-    private static final String INPUT_FILE_Lexicon = "/data/objector/input_lexicon.xml";
+    private static final String INPUT_FILE_Lexicon = "/data_v5/objector/input_lexicon.xml";
     private static final String OUTPUT_FILE_1 = "wld-output-empty.xml";
     private static final String OUTPUT_FILE_2 = "wld-min-prefix-output-empty.xml";
 

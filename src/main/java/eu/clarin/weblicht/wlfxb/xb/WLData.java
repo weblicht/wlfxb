@@ -49,7 +49,9 @@ public class WLData {
 
     public static final String XML_NAME = "D-Spin";
     public static final String XML_NAMESPACE = "http://www.dspin.de/data";
-    public static final String XML_VERSION = "0.4";
+    public static final String XML_VERSION_5 = "5";
+    public static final String XML_VERSION_04 = "0.4";
+    public static final String XML_DEFAULT_VERSION = XML_VERSION_5;
     @XmlAttribute
     private String version;
     @XmlElement(name = "MetaData", namespace = "http://www.dspin.de/data/metadata")
@@ -117,7 +119,7 @@ public class WLData {
      * @param extData external data
      */
     public WLData(MetaData metaData, ExternalDataStored extData) {
-        this.version = XML_VERSION;
+        this.version = XML_DEFAULT_VERSION;
         this.metaData = metaData;
         this.extData = extData;
     }
@@ -130,7 +132,7 @@ public class WLData {
      * @param textCorpus text corpus
      */
     public WLData(MetaData metaData, TextCorpusStored textCorpus) {
-        this.version = XML_VERSION;
+        this.version = XML_DEFAULT_VERSION;
         this.metaData = metaData;
         this.textCorpus = textCorpus;
     }
@@ -144,7 +146,7 @@ public class WLData {
      * @param textCorpus text corpus
      */
     public WLData(MetaData metaData, ExternalDataStored extData, TextCorpusStored textCorpus) {
-        this.version = XML_VERSION;
+        this.version = XML_DEFAULT_VERSION;
         this.metaData = metaData;
         this.extData = extData;
         this.textCorpus = textCorpus;
@@ -156,7 +158,7 @@ public class WLData {
      * @param textCorpus text corpus
      */
     public WLData(TextCorpusStored textCorpus) {
-        this.version = XML_VERSION;
+        this.version = XML_DEFAULT_VERSION;
         this.metaData = new MetaData();
         this.textCorpus = textCorpus;
     }
@@ -167,7 +169,7 @@ public class WLData {
      * @param extData external data
      */
     public WLData(ExternalDataStored extData) {
-        this.version = XML_VERSION;
+        this.version = XML_DEFAULT_VERSION;
         this.metaData = new MetaData();
         this.extData = extData;
     }
@@ -180,7 +182,7 @@ public class WLData {
      * @param textCorpus text corpus
      */
     public WLData(ExternalDataStored extData, TextCorpusStored textCorpus) {
-        this.version = XML_VERSION;
+        this.version = XML_DEFAULT_VERSION;
         this.metaData = new MetaData();
         this.extData = extData;
         this.textCorpus = textCorpus;
@@ -193,7 +195,7 @@ public class WLData {
      * @param lexicon lexicon
      */
     public WLData(MetaData metaData, LexiconStored lexicon) {
-        this.version = XML_VERSION;
+        this.version = XML_DEFAULT_VERSION;
         this.metaData = metaData;
         this.lexicon = lexicon;
     }
@@ -204,8 +206,22 @@ public class WLData {
      * @param lexicon lexicon
      */
     public WLData(LexiconStored lexicon) {
-        this.version = XML_VERSION;
+        this.version = XML_DEFAULT_VERSION;
         this.metaData = new MetaData();
         this.lexicon = lexicon;
+    }
+
+    /**
+     * Sets version of the <tt>WLData</tt>.
+     *
+     * @param version the version string
+     */
+    public void setVersion(String version) {
+        if (version.equals(XML_VERSION_5) || version.equals(XML_VERSION_04)) {
+            this.version = version;
+        } else {
+            throw new IllegalArgumentException("Unsupported version. Supported versions are " +
+                    WLData.XML_VERSION_5 + " and " + WLData.XML_VERSION_04 + ".");
+        }
     }
 }

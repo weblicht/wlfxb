@@ -12,6 +12,7 @@ import org.junit.rules.TemporaryFolder;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +42,7 @@ public class WLDObjectorTestLexicon {
     public void testWriteUsingMinimumNsPrefixes_File() throws Exception {
         File file = testFolder.newFile("wld-lexicon-write-minns.xml");
         WLData data = createWLLexiconTestData();
-        WLDObjector.write(data.getMetaData(), data.getLexicon(), file, false);
+        WLDObjector.write(data.getMetaData(), null, data.getLexicon(), file, false, data.getVersion());
         TestUtils.assertEqualXml(this.getClass().getResourceAsStream(INPUT_FILE_Lexicon), new FileInputStream(file));
     }
 
@@ -49,6 +50,7 @@ public class WLDObjectorTestLexicon {
     public void testReadWrite_Lexicon() throws Exception {
         InputStream is = this.getClass().getResourceAsStream(INPUT_FILE_Lexicon);
         WLData wld = WLDObjector.read(is);
+        wld.setVersion("0.4");
         File file = testFolder.newFile("wld-lexicon-readwrite.xml");
         WLDObjector.write(wld, file);
         TestUtils.assertEqualXml(this.getClass().getResourceAsStream(INPUT_FILE_Lexicon), new FileInputStream(file));
@@ -95,6 +97,8 @@ public class WLDObjectorTestLexicon {
             }
         }
 
-        return new WLData(md, lexicon);
+        WLData wldata = new WLData(md, lexicon);
+        wldata.setVersion("0.4");
+        return wldata;
     }
 }

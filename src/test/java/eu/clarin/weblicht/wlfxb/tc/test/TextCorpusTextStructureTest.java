@@ -126,7 +126,7 @@ public class TextCorpusTextStructureTest extends AbstractTextCorpusTest {
         textstructure.addSpan(tokens.getToken(7), tokens.getToken(8), "line", 40, 45);
         textstructure.addSpan(null, null, "line");
 
-        WLDObjector.write(md, tc, ofile, false);
+        WLDObjector.write(md, tc, null, ofile, false, "0.4");
 
         System.out.println(tc);
         // compare output xml with expected xml

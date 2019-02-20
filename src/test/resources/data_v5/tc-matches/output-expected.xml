@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/weblicht/tcf-spec/master/src/main/rnc-schema/d-spin_5.rnc" type="application/relax-ng-compact-syntax"?>
+<ds:D-Spin xmlns:ds="http://www.dspin.de/data" version="5" xmlns="http://www.dspin.de/data/textcorpus" >
+<MetaData xmlns="http://www.dspin.de/data/metadata" xmlns:cmd="http://www.clarin.eu/cmd/"/>
+<TextCorpus lang="de">
+    <tokens>
+        <token ID="t_0">Peter</token>
+        <token ID="t_1">aß</token>
+        <token ID="t_2">eine</token>
+        <token ID="t_3">Käsepizza</token>
+        <token ID="t_4">.</token>
+        <token ID="t_5">Sie</token>
+        <token ID="t_6">schmeckte</token>
+        <token ID="t_7">ihm</token>
+    </tokens>
+    <matches>
+        <query type="sqp">tb_lemma=&quot;Peter&quot; | tb_lemma=&quot;schmecken&quot;</query>
+        <corpus pid="some-pid" name="wcorp-1">
+            <item srcIDs="5-1023" tokenIDs="t_0">
+                <target value="t_0" name="tname"/>
+                <category value="cval" name="cname"/>
+            </item>
+            <item srcIDs="16-117" tokenIDs="t_6">
+                <target value="t_6" name="tname"/>
+                <category value="cval" name="cname"/>
+            </item>
+        </corpus>
+    </matches>
+</TextCorpus>
+</ds:D-Spin>

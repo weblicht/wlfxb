@@ -1,21 +1,23 @@
 /**
  *
  */
-package eu.clarin.weblicht.wlfxb.tc.test;
+package eu.clarin.weblicht.wlfxb.tc.test_v5;
 
 import eu.clarin.weblicht.wlfxb.io.WLDObjector;
 import eu.clarin.weblicht.wlfxb.md.xb.MetaData;
 import eu.clarin.weblicht.wlfxb.tc.api.*;
+import eu.clarin.weblicht.wlfxb.tc.test.AbstractTextCorpusTest;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusLayerTag;
 import eu.clarin.weblicht.wlfxb.tc.xb.TextCorpusStored;
+import org.junit.Assert;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
+
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.*;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.Rule;
-import org.junit.rules.TemporaryFolder;
-import java.io.File;
 
 /**
  * @author Yana Panchenko
@@ -26,8 +28,8 @@ public class TextCorpusMatchesTest extends AbstractTextCorpusTest {
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
 
-    private static final String INPUT_FILE_WITH_LAYER = "/data/tc-matches/tcf-after.xml";
-    private static final String EXPECTED_OUTPUT_FILE = "/data/tc-matches/output-expected.xml";
+    private static final String INPUT_FILE_WITH_LAYER = "/data_v5/tc-matches/tcf-after.xml";
+    private static final String EXPECTED_OUTPUT_FILE = "/data_v5/tc-matches/output-expected.xml";
     private static final String OUTPUT_FILE = "output.xml";
 
     private static final EnumSet<TextCorpusLayerTag> layersToReadAfterQuery =
@@ -50,7 +52,7 @@ public class TextCorpusMatchesTest extends AbstractTextCorpusTest {
 
         queryCorporaAndAddMatchesToTextCorpus(tc);
 
-        WLDObjector.write(new MetaData(), tc, null, os, false, "0.4");
+        WLDObjector.write(new MetaData(), tc, os, false);
         os.close();
 
         System.out.println(tc);

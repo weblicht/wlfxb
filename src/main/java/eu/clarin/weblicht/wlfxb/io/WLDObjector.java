@@ -97,47 +97,47 @@ public class WLDObjector {
     }
 
     public static void write(WLData wlData, OutputStream outputStream) throws WLFormatException {
-        write(wlData.getMetaData(), wlData.getTextCorpus(), wlData.getLexicon(), outputStream, false);
+        write(wlData.getMetaData(), wlData.getTextCorpus(), wlData.getLexicon(), outputStream, false, wlData.getVersion());
     }
 
     public static void write(WLData wlData, File file) throws WLFormatException {
-        write(wlData.getMetaData(), wlData.getTextCorpus(), wlData.getLexicon(), file, false);
+        write(wlData.getMetaData(), wlData.getTextCorpus(), wlData.getLexicon(), file, false, wlData.getVersion());
     }
 
     public static void write(WLData wlData, OutputStream outputStream, boolean outputAsXmlFragment) throws WLFormatException {
-        write(wlData.getMetaData(), wlData.getTextCorpus(), wlData.getLexicon(), outputStream, outputAsXmlFragment);
+        write(wlData.getMetaData(), wlData.getTextCorpus(), wlData.getLexicon(), outputStream, outputAsXmlFragment, wlData.getVersion());
     }
 
     public static void write(WLData wlData, File file, boolean outputAsXmlFragment) throws WLFormatException {
-        write(wlData.getMetaData(), wlData.getTextCorpus(), wlData.getLexicon(), file, outputAsXmlFragment);
+        write(wlData.getMetaData(), wlData.getTextCorpus(), wlData.getLexicon(), file, outputAsXmlFragment, wlData.getVersion());
     }
 
     public static void write(MetaData md, TextCorpus tc, File file, boolean outputAsXmlFragment) throws WLFormatException {
-        write(md, tc, null, file, outputAsXmlFragment);
+        write(md, tc, null, file, outputAsXmlFragment, WLData.XML_DEFAULT_VERSION);
     }
 
     public static void write(MetaData md, TextCorpus tc, OutputStream outputStream, boolean outputAsXmlFragment)
             throws WLFormatException {
-        write(md, tc, null, outputStream, outputAsXmlFragment);
+        write(md, tc, null, outputStream, outputAsXmlFragment, WLData.XML_DEFAULT_VERSION);
     }
 
     public static void write(MetaData md, Lexicon lex, File file, boolean outputAsXmlFragment) throws WLFormatException {
-        write(md, null, lex, file, outputAsXmlFragment);
+        write(md, null, lex, file, outputAsXmlFragment, WLData.XML_DEFAULT_VERSION);
     }
 
     public static void write(MetaData md, Lexicon lex, OutputStream outputStream, boolean outputAsXmlFragment)
             throws WLFormatException {
-        write(md, null, lex, outputStream, outputAsXmlFragment);
+        write(md, null, lex, outputStream, outputAsXmlFragment, WLData.XML_DEFAULT_VERSION);
     }
 
-    public static void write(MetaData md, TextCorpus tc, Lexicon lex, File file, boolean outputAsXmlFragment) throws WLFormatException {
+    public static void write(MetaData md, TextCorpus tc, Lexicon lex, File file, boolean outputAsXmlFragment, String version) throws WLFormatException {
         // IMPORTANT: using JAXB marshaller for marshalling directly into File or FileOutputStream
         // replaces quotes with &quot; entities which is not desirable for linguistic data, therefore
         // XMLEventWriter should be used...
         OutputStream outputStream = null;
         try {
             outputStream = new FileOutputStream(file);
-            write(md, tc, lex, outputStream, outputAsXmlFragment);
+            write(md, tc, lex, outputStream, outputAsXmlFragment, version);
         } catch (Exception e) {
             throw new WLFormatException(e);
         } finally {
@@ -151,11 +151,24 @@ public class WLDObjector {
         }
     }
 
-    public static void write(MetaData md, TextCorpus tc, Lexicon lex, OutputStream outputStream, boolean outputAsXmlFragment) throws WLFormatException {
+    public static void write(MetaData md, TextCorpus tc, Lexicon lex, OutputStream outputStream, boolean outputAsXmlFragment, String version) throws WLFormatException {
         if (tc == null && lex == null) {
             throw new WLFormatException("cannot write tcf: both textcorpus and lexicon formats are missing");
         } else if (tc != null && lex != null) {
             throw new WLFormatException("cannot write tcf: both textcorpus and lexicon formats are present, but only one is allowed");
+        }
+
+        String xmlModel;
+        switch (version) {
+            case WLData.XML_VERSION_5:
+                xmlModel = CommonConstants.XML_WL1_MODEL_PI_CONTENT_FOR_VERSION_5;
+                break;
+            case WLData.XML_VERSION_04:
+                xmlModel = CommonConstants.XML_WL1_MODEL_PI_CONTENT_FOR_VERSION_04;
+                break;
+            default:
+                throw new WLFormatException("Unsupported version. Supported versions are " +
+                        WLData.XML_VERSION_5 + " and " + WLData.XML_VERSION_04 + ".");
         }
 
         XMLEventFactory eventFactory = XMLEventFactory.newInstance();
@@ -171,15 +184,13 @@ public class WLDObjector {
                 xmlEventWriter.add(e);
                 e = eventFactory.createIgnorableSpace(XmlReaderWriter.NEW_LINE);
                 xmlEventWriter.add(e);
-                e = eventFactory.createProcessingInstruction(
-                        XmlReaderWriter.XML_WL1_MODEL_PI_NAME,
-                        CommonConstants.XML_WL1_MODEL_PI_CONTENT);
+                e = eventFactory.createProcessingInstruction(XmlReaderWriter.XML_WL1_MODEL_PI_NAME, xmlModel);
                 xmlEventWriter.add(e);
                 e = eventFactory.createIgnorableSpace(XmlReaderWriter.NEW_LINE);
                 xmlEventWriter.add(e);
             }
 
-            Attribute versionAttr = eventFactory.createAttribute("version", WLData.XML_VERSION);
+            Attribute versionAttr = eventFactory.createAttribute("version", version);
             List<Attribute> attrs = new ArrayList<Attribute>();
             attrs.add(versionAttr);
             Namespace ns = eventFactory.createNamespace(WLData.XML_NAMESPACE);
