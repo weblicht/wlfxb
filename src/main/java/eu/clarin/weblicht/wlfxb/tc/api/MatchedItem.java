@@ -42,7 +42,7 @@ public interface MatchedItem {
 
     public String getCategoryValue(String categoryName);
 
-    public LinkedHashMap<String, String> getCategoriesExtraAtrributes(String categoryName);
+    public LinkedHashMap<String, String> getCategoriesExtraAttributes(String categoryName);
 
-    public LinkedHashMap<String, String> getTargetExtraAtrributes(String targetName);
+    public LinkedHashMap<String, String> getTargetExtraAttributes(String targetName);
 }

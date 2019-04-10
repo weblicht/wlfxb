@@ -58,8 +58,8 @@ public class SentencesTest {
         is.close();
         os.close();
 
-        String anyAttribute = layer.getSentence(0).getExtraAtrributes().keySet().iterator().next();
+        String anyAttribute = layer.getSentence(0).getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("base", layer.getSentence(0).getExtraAtrributes().get(anyAttribute));
+        Assert.assertEquals("base", layer.getSentence(0).getExtraAttributes().get(anyAttribute));
     }
 }

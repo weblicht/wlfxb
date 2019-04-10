@@ -50,7 +50,7 @@ public class EmptyTokenStored implements Token {
     @XmlAttribute(name = CommonAttributes.ID, required = true)
     protected String id;
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<QName, String> extraAttributes = new LinkedHashMap<QName, String>();
     protected int order;
 
     @Override
@@ -95,8 +95,8 @@ public class EmptyTokenStored implements Token {
     }
 
     @Override
-    public LinkedHashMap<String, String> getExtraAtrributes() {
-         return Token.super.retrieveAtrributes(extraAtrributes);
+    public LinkedHashMap<String, String> getExtraAttributes() {
+         return Token.super.retrieveAttributes(extraAttributes);
     }
 
 }

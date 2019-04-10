@@ -48,7 +48,7 @@ public class FeatureStored implements Feature {
     protected FeatureStructureStored fs;
     protected String value;
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<QName, String> extraAttributes = new LinkedHashMap<QName, String>();
 
     @Override
     public String getName() {
@@ -111,8 +111,8 @@ public class FeatureStored implements Feature {
     }
 
     @Override
-    public LinkedHashMap<String, String> getExtraAtrributes() {
-        return Feature.super.retrieveAtrributes(extraAtrributes);
+    public LinkedHashMap<String, String> getExtraAttributes() {
+        return Feature.super.retrieveAttributes(extraAttributes);
     }
 
     @Override

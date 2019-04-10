@@ -49,7 +49,7 @@ public class OrthformStored implements Orthform {
     @XmlAttribute(name = CommonAttributes.NONCONSECUTIVE_LEMMAS_REFERENCE, required = true)
     protected String[] lemmaRefs;
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<QName, String> extraAttributes = new LinkedHashMap<QName, String>();
 
     @Override
     public String[] getValue() {
@@ -58,8 +58,8 @@ public class OrthformStored implements Orthform {
     }
 
     @Override
-    public LinkedHashMap<String, String> getExtraAtrributes() {
-       return Orthform.super.retrieveAtrributes(extraAtrributes);
+    public LinkedHashMap<String, String> getExtraAttributes() {
+       return Orthform.super.retrieveAttributes(extraAttributes);
     }
 
     @Override

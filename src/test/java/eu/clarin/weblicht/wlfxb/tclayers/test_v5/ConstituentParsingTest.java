@@ -61,9 +61,9 @@ public class ConstituentParsingTest {
 
         is.close();
         os.close();
-        String anyAttribute = layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getExtraAtrributes().keySet().iterator().next();
+        String anyAttribute = layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("NE-HD", layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getExtraAtrributes().get(anyAttribute));
+        Assert.assertEquals("NE-HD", layer.getParseRoot(0).getChildren()[0].getChildren()[0].getChildren()[0].getChildren()[0].getExtraAttributes().get(anyAttribute));
     }
 
 }

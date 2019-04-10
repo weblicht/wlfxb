@@ -62,8 +62,8 @@ public class GeopointsTest {
         is.close();
         os.close();
 
-        String anyAttribute = layer.getPoint(0).getExtraAtrributes().keySet().iterator().next();
+        String anyAttribute = layer.getPoint(0).getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("language", anyAttribute);
-        Assert.assertEquals("german", layer.getPoint(0).getExtraAtrributes().get(anyAttribute));
+        Assert.assertEquals("german", layer.getPoint(0).getExtraAttributes().get(anyAttribute));
     }
 }

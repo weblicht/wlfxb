@@ -59,9 +59,9 @@ public class PosTagsTest {
         is.close();
         os.close();
 
-        String anyAttribute = layer.getTag(0).getExtraAtrributes().keySet().iterator().next();
+        String anyAttribute = layer.getTag(0).getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("NE", layer.getTag(0).getExtraAtrributes().get(anyAttribute));
+        Assert.assertEquals("NE", layer.getTag(0).getExtraAttributes().get(anyAttribute));
     }
 
 }

@@ -59,8 +59,8 @@ public class OrthographyTest {
         is.close();
         os.close();
 
-        String anyAttribute = layer.getCorrection(0).getExtraAtrributes().keySet().iterator().next();
+        String anyAttribute = layer.getCorrection(0).getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("correction1", layer.getCorrection(0).getExtraAtrributes().get(anyAttribute));
+        Assert.assertEquals("correction1", layer.getCorrection(0).getExtraAttributes().get(anyAttribute));
     }
 }

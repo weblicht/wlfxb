@@ -46,7 +46,7 @@ public class PhoneticsSegmentStored implements PhoneticsSegment {
     @XmlElement(name = PronunciationStored.XML_NAME, required = true)
     protected List<PronunciationStored> prons = new ArrayList<PronunciationStored>();
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<QName, String> extraAttributes = new LinkedHashMap<QName, String>();
 
 
     @Override
@@ -55,8 +55,8 @@ public class PhoneticsSegmentStored implements PhoneticsSegment {
     }
 
     @Override
-    public LinkedHashMap<String, String> getExtraAtrributes() {
-        return PhoneticsSegment.super.retrieveAtrributes(extraAtrributes);
+    public LinkedHashMap<String, String> getExtraAttributes() {
+        return PhoneticsSegment.super.retrieveAttributes(extraAttributes);
     }
 
     @Override

@@ -114,17 +114,17 @@ public class MorphologyTest {
         os.close();
 
         //testing extra attributes in feature
-        String anyAttributeFeature = layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getExtraAtrributes().keySet().iterator().next();
+        String anyAttributeFeature = layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("baseForm", anyAttributeFeature);
-        Assert.assertEquals("baseFormFeature", layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getExtraAtrributes().get(anyAttributeFeature));
+        Assert.assertEquals("baseFormFeature", layer.getAnalysis(0).getTags().get(0).getFeatures()[0].getExtraAttributes().get(anyAttributeFeature));
         //testing extra attributes in sub features
-        String anyAttributeSubFeature = layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getSubfeatures()[0].getExtraAtrributes().keySet().iterator().next();
+        String anyAttributeSubFeature = layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getSubfeatures()[0].getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("baseForm", anyAttributeSubFeature);
-        Assert.assertEquals("baseFormSubFeature", layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getSubfeatures()[0].getExtraAtrributes().get(anyAttributeSubFeature));
+        Assert.assertEquals("baseFormSubFeature", layer.getAnalysis(0).getTags().get(0).getFeatures()[4].getSubfeatures()[0].getExtraAttributes().get(anyAttributeSubFeature));
         //testing extra attributes in segment features
-        String anyAttributeSegment = layer.getAnalysis(0).getSegmentation()[0].getExtraAtrributes().keySet().iterator().next();
+        String anyAttributeSegment = layer.getAnalysis(0).getSegmentation()[0].getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("baseForm", anyAttributeSegment);
-        Assert.assertEquals("baseFormSegment", layer.getAnalysis(0).getSegmentation()[0].getExtraAtrributes().get(anyAttributeSegment));
+        Assert.assertEquals("baseFormSegment", layer.getAnalysis(0).getSegmentation()[0].getExtraAttributes().get(anyAttributeSegment));
     }
 
 }

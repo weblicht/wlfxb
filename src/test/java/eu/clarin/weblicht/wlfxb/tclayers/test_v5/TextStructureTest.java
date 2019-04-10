@@ -59,8 +59,8 @@ public class TextStructureTest {
         is.close();
         os.close();
 
-        String anyAttribute = layer.getSpan(2).getExtraAtrributes().keySet().iterator().next();
+        String anyAttribute = layer.getSpan(2).getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("baseFormSpan", layer.getSpan(2).getExtraAtrributes().get(anyAttribute));
+        Assert.assertEquals("baseFormSpan", layer.getSpan(2).getExtraAttributes().get(anyAttribute));
     }
 }

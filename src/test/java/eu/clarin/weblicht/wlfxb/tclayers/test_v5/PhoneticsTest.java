@@ -66,13 +66,13 @@ public class PhoneticsTest {
         os.close();
 
         // testing extra attributes in word level
-        String anyAttributeWord = layer.getSegment(0).getPronunciations()[0].getExtraAtrributes().keySet().iterator().next();
+        String anyAttributeWord = layer.getSegment(0).getPronunciations()[0].getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("baseForm", anyAttributeWord);
-        Assert.assertEquals("baseFormWord", layer.getSegment(0).getPronunciations()[0].getExtraAtrributes().get(anyAttributeWord));
+        Assert.assertEquals("baseFormWord", layer.getSegment(0).getPronunciations()[0].getExtraAttributes().get(anyAttributeWord));
 
         // testing extra attributes in syllable level
-        String anyAttribute = layer.getSegment(0).getPronunciations()[0].getChildren()[0].getExtraAtrributes().keySet().iterator().next();
+        String anyAttribute = layer.getSegment(0).getPronunciations()[0].getChildren()[0].getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("baseFormSyllable", layer.getSegment(0).getPronunciations()[0].getChildren()[0].getExtraAtrributes().get(anyAttribute));
+        Assert.assertEquals("baseFormSyllable", layer.getSegment(0).getPronunciations()[0].getChildren()[0].getExtraAttributes().get(anyAttribute));
     }
 }

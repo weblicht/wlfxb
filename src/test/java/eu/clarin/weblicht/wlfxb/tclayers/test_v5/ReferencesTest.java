@@ -62,8 +62,8 @@ public class ReferencesTest {
 
         is.close();
         os.close();
-        String anyAttribute = layer.getReferencedEntity(0).getReferences()[0].getExtraAtrributes().keySet().iterator().next();
+        String anyAttribute = layer.getReferencedEntity(0).getReferences()[0].getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("baseFormWordRef", layer.getReferencedEntity(0).getReferences()[0].getExtraAtrributes().get(anyAttribute));
+        Assert.assertEquals("baseFormWordRef", layer.getReferencedEntity(0).getReferences()[0].getExtraAttributes().get(anyAttribute));
     }
 }

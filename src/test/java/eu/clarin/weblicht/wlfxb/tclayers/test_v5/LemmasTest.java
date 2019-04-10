@@ -59,8 +59,8 @@ public class LemmasTest {
         is.close();
         os.close();
 
-        String anyAttribute = layer.getLemma(1).getExtraAtrributes().keySet().iterator().next();
+        String anyAttribute = layer.getLemma(1).getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("essen", layer.getLemma(1).getExtraAtrributes().get(anyAttribute));
+        Assert.assertEquals("essen", layer.getLemma(1).getExtraAttributes().get(anyAttribute));
     }
 }

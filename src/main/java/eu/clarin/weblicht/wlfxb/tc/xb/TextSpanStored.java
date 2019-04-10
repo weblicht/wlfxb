@@ -167,7 +167,7 @@ public class TextSpanStored implements TextSpan {
     }
 
     @Override
-    public LinkedHashMap<String, String> getExtraAtrributes() {
+    public LinkedHashMap<String, String> getExtraAttributes() {
         for (QName qName : qnameAttributes.keySet()) {
             extraAttributes.put(qName.toString(), qnameAttributes.get(qName).toString());
         }

@@ -58,9 +58,9 @@ public class WordSensesTest {
         is.close();
         os.close();
 
-        String anyAttribute = layer.getWordSense(0).getExtraAtrributes().keySet().iterator().next();
+        String anyAttribute = layer.getWordSense(0).getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("baseFormSense", layer.getWordSense(0).getExtraAtrributes().get(anyAttribute));
+        Assert.assertEquals("baseFormSense", layer.getWordSense(0).getExtraAttributes().get(anyAttribute));
     }
 
 }

@@ -107,20 +107,20 @@ public class MatchedItemStored implements MatchedItem {
     }
 
     @Override
-    public LinkedHashMap<String, String> getCategoriesExtraAtrributes(String categoryName) {
+    public LinkedHashMap<String, String> getCategoriesExtraAttributes(String categoryName) {
         for (MatchedItemCategoryStored cat : this.categories) {
             if (categoryName.equals(cat.name)) {
-                return cat.getExtraAtrributes();
+                return cat.getExtraAttributes();
             }
         }
         return null;
     }
 
     @Override
-    public LinkedHashMap<String, String> getTargetExtraAtrributes(String targetName) {
+    public LinkedHashMap<String, String> getTargetExtraAttributes(String targetName) {
         for (MatchedItemTargetStored target : this.targets) {
             if (targetName.equals(target.name)) {
-                return target.getExtraAtrributes();
+                return target.getExtraAttributes();
             }
         }
         return null;

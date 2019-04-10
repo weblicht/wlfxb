@@ -105,8 +105,8 @@ public class TokensTest {
         is.close();
         os.close();
 
-        String anyAttribute = layer.getToken(2).getExtraAtrributes().keySet().iterator().next();
+        String anyAttribute = layer.getToken(2).getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("schau", layer.getToken(2).getExtraAtrributes().get(anyAttribute));
+        Assert.assertEquals("schau", layer.getToken(2).getExtraAttributes().get(anyAttribute));
     }
 }

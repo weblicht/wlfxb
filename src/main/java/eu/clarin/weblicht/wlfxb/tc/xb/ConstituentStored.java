@@ -57,7 +57,7 @@ public class ConstituentStored implements Constituent {
     @XmlElement(name = ConstituentStored.XML_NAME)
     protected List<ConstituentStored> children = new ArrayList<ConstituentStored>();
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<QName, String> extraAttributes = new LinkedHashMap<QName, String>();
 
     @Override
     public boolean isTerminal() {
@@ -101,8 +101,8 @@ public class ConstituentStored implements Constituent {
     }
 
     @Override
-    public LinkedHashMap<String, String> getExtraAtrributes() {
-       return Constituent.super.retrieveAtrributes(extraAtrributes);
+    public LinkedHashMap<String, String> getExtraAttributes() {
+       return Constituent.super.retrieveAttributes(extraAttributes);
     }
 
     @Override

@@ -56,7 +56,7 @@ public class MorphologySegmentStored implements MorphologySegment {
     protected String value;
     protected List<MorphologySegmentStored> subsegments;
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<QName, String> extraAttributes = new LinkedHashMap<QName, String>();
 
 
     @XmlMixed
@@ -144,8 +144,8 @@ public class MorphologySegmentStored implements MorphologySegment {
     }
 
     @Override
-    public LinkedHashMap<String, String> getExtraAtrributes() {
-         return MorphologySegment.super.retrieveAtrributes(extraAtrributes);
+    public LinkedHashMap<String, String> getExtraAttributes() {
+         return MorphologySegment.super.retrieveAttributes(extraAttributes);
     }
 
     @Override

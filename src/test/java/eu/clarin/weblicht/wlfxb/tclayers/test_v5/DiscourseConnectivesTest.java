@@ -57,8 +57,8 @@ public class DiscourseConnectivesTest {
         is.close();
         os.close();
 
-        String anyAttribute = layer.getConnective(0).getExtraAtrributes().keySet().iterator().next();
+        String anyAttribute = layer.getConnective(0).getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("expansion1", layer.getConnective(0).getExtraAtrributes().get(anyAttribute));
+        Assert.assertEquals("expansion1", layer.getConnective(0).getExtraAttributes().get(anyAttribute));
     }
 }

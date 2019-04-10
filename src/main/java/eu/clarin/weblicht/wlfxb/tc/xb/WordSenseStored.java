@@ -47,7 +47,7 @@ public class WordSenseStored implements WordSense {
     @XmlAttribute(name = CommonAttributes.TOKEN_SEQUENCE_REFERENCE, required = true)
     protected String[] tokRefs;
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<QName, String> extraAttributes = new LinkedHashMap<QName, String>();
 
     @Override
     public String getComment() {
@@ -60,8 +60,8 @@ public class WordSenseStored implements WordSense {
     }
 
     @Override
-    public LinkedHashMap<String, String> getExtraAtrributes() {
-       return WordSense.super.retrieveAtrributes(extraAtrributes);
+    public LinkedHashMap<String, String> getExtraAttributes() {
+       return WordSense.super.retrieveAttributes(extraAttributes);
     }
 
     @Override

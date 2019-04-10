@@ -55,7 +55,7 @@ public class TokenStored implements Token {
     @XmlAttribute(name = CommonAttributes.PARTS, required = true)
     protected String[] parts;
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<QName, String> extraAttributes = new LinkedHashMap<QName, String>();
     protected int order;
 
     @Override
@@ -98,8 +98,8 @@ public class TokenStored implements Token {
     }
 
     @Override
-    public LinkedHashMap<String, String> getExtraAtrributes() {
-       return Token.super.retrieveAtrributes(extraAtrributes);
+    public LinkedHashMap<String, String> getExtraAttributes() {
+       return Token.super.retrieveAttributes(extraAttributes);
     }
 
     @Override

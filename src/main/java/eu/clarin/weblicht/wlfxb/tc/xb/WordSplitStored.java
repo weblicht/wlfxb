@@ -47,7 +47,7 @@ public class WordSplitStored implements WordSplit {
     @XmlAttribute(name = CommonAttributes.TOKEN_REFERENCE, required = true)
     protected String tokRef;
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<QName, String> extraAttributes = new LinkedHashMap<QName, String>();
 
     @Override
     public int[] getIndices() {
@@ -55,8 +55,8 @@ public class WordSplitStored implements WordSplit {
     }
 
     @Override
-    public LinkedHashMap<String, String> getExtraAtrributes() {
-        return WordSplit.super.retrieveAtrributes(extraAtrributes);
+    public LinkedHashMap<String, String> getExtraAttributes() {
+        return WordSplit.super.retrieveAttributes(extraAttributes);
     }
 
     @Override

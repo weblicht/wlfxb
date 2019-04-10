@@ -124,8 +124,8 @@ public class LexicalSemanticsTest {
         is.close();
         os.close();
 
-        String anyAttribute = layer.getOrthform(0).getExtraAtrributes().keySet().iterator().next();
+        String anyAttribute = layer.getOrthform(0).getExtraAttributes().keySet().iterator().next();
         Assert.assertEquals("baseForm", anyAttribute);
-        Assert.assertEquals("baseFormSyn", layer.getOrthform(0).getExtraAtrributes().get(anyAttribute));
+        Assert.assertEquals("baseFormSyn", layer.getOrthform(0).getExtraAttributes().get(anyAttribute));
     }
 }

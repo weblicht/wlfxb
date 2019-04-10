@@ -53,7 +53,7 @@ public class PronunciationStored implements Pronunciation {
     @XmlElement(name = PronunciationStored.XML_NAME)
     protected List<PronunciationStored> children = new ArrayList<PronunciationStored>();
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<QName, String> extraAttributes = new LinkedHashMap<QName, String>();
 
     @Override
     public PronunciationType getType() {
@@ -96,8 +96,8 @@ public class PronunciationStored implements Pronunciation {
     }
 
     @Override
-    public LinkedHashMap<String, String> getExtraAtrributes() {
-       return Pronunciation.super.retrieveAtrributes(extraAtrributes);
+    public LinkedHashMap<String, String> getExtraAttributes() {
+       return Pronunciation.super.retrieveAttributes(extraAttributes);
     }
 
     @Override

@@ -49,11 +49,11 @@ public class SentenceStored implements Sentence {
     @XmlAttribute(name = CommonAttributes.END_CHAR_OFFSET)
     protected Integer end;
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<QName, String> extraAttributes = new LinkedHashMap<QName, String>();
 
     @Override
-    public LinkedHashMap<String, String> getExtraAtrributes() {
-        return Sentence.super.retrieveAtrributes(extraAtrributes);
+    public LinkedHashMap<String, String> getExtraAttributes() {
+        return Sentence.super.retrieveAttributes(extraAttributes);
     }
 
     @Override

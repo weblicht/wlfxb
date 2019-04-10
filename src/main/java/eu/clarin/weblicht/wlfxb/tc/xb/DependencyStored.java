@@ -52,7 +52,7 @@ public class DependencyStored implements Dependency {
     protected String[] govIds;
 
     @XmlAnyAttribute
-    protected LinkedHashMap<QName, String> extraAtrributes = new LinkedHashMap<QName, String>();
+    protected LinkedHashMap<QName, String> extraAttributes = new LinkedHashMap<QName, String>();
     
     @Override
     public String getFunction() {
@@ -60,8 +60,8 @@ public class DependencyStored implements Dependency {
     }
 
     @Override
-    public LinkedHashMap<String, String> getExtraAtrributes() {
-        return Dependency.super.retrieveAtrributes(extraAtrributes);
+    public LinkedHashMap<String, String> getExtraAttributes() {
+        return Dependency.super.retrieveAttributes(extraAttributes);
     }
 
     @Override
