@@ -45,6 +45,7 @@ import javax.xml.bind.annotation.*;
     "sentencesLayer",
     "lemmasLayer",
     "posTagsLayer",
+    "topologicalFieldsLayer",
     "constituentParsingLayer",
     "dependencyParsingLayer",
     "morphologyLayer",
@@ -124,6 +125,11 @@ public class TextCorpusStored implements TextCorpus {
     @Override
     public PosTagsLayer createPosTagsLayer(String tagset) {
         return initializeLayer(PosTagsLayerStored.class, tagset);
+    }
+
+    @Override
+    public TopologicalFieldsLayer createTopologicalFieldsLayer (String tagset) { 
+    	return initializeLayer(TopologicalFieldsLayerStored.class, tagset); 
     }
 
     @Override
@@ -400,6 +406,16 @@ public class TextCorpusStored implements TextCorpus {
     @Override
     public PosTagsLayerStored getPosTagsLayer() {
         return ((PosTagsLayerStored) layersInOrder[TextCorpusLayerTag.POSTAGS.ordinal()]);
+    }
+    
+    @XmlElement(name = TopologicalFieldsLayerStored.XML_NAME)
+    protected void setTopologicalFieldsLayer(TopologicalFieldsLayerStored layer) {
+        layersInOrder[TextCorpusLayerTag.TOPOLOGICAL_FIELDS.ordinal()] = layer;
+    }
+
+    @Override
+    public TopologicalFieldsLayerStored getTopologicalFieldsLayer() {
+        return ((TopologicalFieldsLayerStored) layersInOrder[TextCorpusLayerTag.TOPOLOGICAL_FIELDS.ordinal()]);
     }
 
     @XmlElement(name = ConstituentParsingLayerStored.XML_NAME)

@@ -40,6 +40,7 @@ public enum TextCorpusLayerTag {
     SENTENCES(SentencesLayerStored.XML_NAME, SentencesLayerStored.class),
     LEMMAS(LemmasLayerStored.XML_NAME, LemmasLayerStored.class),
     POSTAGS(PosTagsLayerStored.XML_NAME, PosTagsLayerStored.class),
+    TOPOLOGICAL_FIELDS(TopologicalFieldsLayerStored.XML_NAME, TopologicalFieldsLayerStored.class),
     MORPHOLOGY(MorphologyLayerStored.XML_NAME, MorphologyLayerStored.class),
     PARSING_CONSTITUENT(ConstituentParsingLayerStored.XML_NAME, ConstituentParsingLayerStored.class),
     PARSING_DEPENDENCY(DependencyParsingLayerStored.XML_NAME, DependencyParsingLayerStored.class),
@@ -98,6 +99,7 @@ public enum TextCorpusLayerTag {
         layerDependencies.put(TextCorpusLayerTag.TOKENS, EnumSet.noneOf(TextCorpusLayerTag.class));
         layerDependencies.put(TextCorpusLayerTag.LEMMAS, EnumSet.of(TextCorpusLayerTag.TOKENS));
         layerDependencies.put(TextCorpusLayerTag.POSTAGS, EnumSet.of(TextCorpusLayerTag.TOKENS));
+        layerDependencies.put(TextCorpusLayerTag.TOPOLOGICAL_FIELDS, EnumSet.of(TextCorpusLayerTag.TOKENS));
         layerDependencies.put(TextCorpusLayerTag.SENTENCES, EnumSet.of(TextCorpusLayerTag.TOKENS));
         layerDependencies.put(TextCorpusLayerTag.NAMED_ENTITIES, EnumSet.of(TextCorpusLayerTag.TOKENS));
         layerDependencies.put(TextCorpusLayerTag.CHUNKS, EnumSet.of(TextCorpusLayerTag.TOKENS));

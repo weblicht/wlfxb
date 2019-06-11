@@ -21,7 +21,7 @@
 package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.*;
-import java.util.EnumMap;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,6 +35,7 @@ public class TextCorpusLayersConnector {
     protected Map<String, Lemma> lemmaId2ItsLemma = new HashMap<String, Lemma>();
     protected Map<Token, Lemma> token2ItsLemma = new HashMap<Token, Lemma>();
     protected Map<Token, PosTag> token2ItsPosTag = new HashMap<Token, PosTag>();
+    protected Map<Token, TopologicalField> token2ItsTopoField = new HashMap<>();
     protected Map<Token, Sentence> token2ItsSentence = new HashMap<Token, Sentence>();
     protected Map<Token, MorphologyAnalysis> token2ItsAnalysis = new HashMap<Token, MorphologyAnalysis>();
     //Map<Token,NamedEntity> token2ItsNE = new HashMap<Token,NamedEntity>();
