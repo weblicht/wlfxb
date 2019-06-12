@@ -97,7 +97,7 @@ public class TopologicalFieldsLayerStored extends TextCorpusLayerStoredAbstract 
 
     @Override
     public Token[] getTokens(TopologicalField tag) {
-        if (tag instanceof PosTagStored) {
+        if (tag instanceof TopologicalFieldStored) {
             TopologicalFieldStored tagStored = (TopologicalFieldStored) tag;
             return WlfUtilities.tokenIdsToTokens(tagStored.tokRefs, connector.tokenId2ItsToken);
         } else {
