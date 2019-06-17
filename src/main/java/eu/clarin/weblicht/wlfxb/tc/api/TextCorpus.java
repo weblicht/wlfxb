@@ -147,7 +147,7 @@ public interface TextCorpus {
     /**
      * Gets sentences layer of this <tt>TextCorpus</tt>.
      *
-     * layer containing sentence boundary annotations on {@link Token}
+     * @return layer containing sentence boundary annotations on {@link Token}
      * objects from {@link TokensLayer}.
      */
     public SentencesLayer getSentencesLayer();
