@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-model href="http://de.clarin.eu/images/weblicht-tutorials/resources/tcf-04/schemas/latest/d-spin_0_4.rnc" type="application/relax-ng-compact-syntax"?>
+<D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+ <MetaData xmlns="http://www.dspin.de/data/metadata">
+  <source>IMS, Uni Stuttgart</source>
+ </MetaData>
+ <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="de">
+  <text>Peter aß eine Käsepizza. Sie schmeckte ihm.</text>
+  <tokens>
+   <token ID="t1">Peter</token>
+   <token ID="t2">aß</token>
+   <token ID="t3">eine</token>
+   <token ID="t4">Käsepizza</token>
+   <token ID="t5">.</token>
+   <token ID="t6">Sie</token>
+   <token ID="t7">schmeckte</token>
+   <token ID="t8">ihm</token>
+   <token ID="t9">.</token>
+  </tokens>
+  <sentences>
+   <sentence ID="s1" tokenIDs="t1 t2 t3 t4 t5"/>
+   <sentence ID="s2" tokenIDs="t6 t7 t8 t9"/>
+  </sentences>
+  <lemmas>
+   <lemma ID="l1" tokenIDs="t1">Peter</lemma>
+   <lemma ID="l2" tokenIDs="t2">essen</lemma>
+   <lemma ID="l3" tokenIDs="t3">ein</lemma>
+   <lemma ID="l4" tokenIDs="t4">Käsepizza</lemma>
+   <lemma ID="l5" tokenIDs="t5">.</lemma>
+   <lemma ID="l6" tokenIDs="t6">sie</lemma>
+   <lemma ID="l7" tokenIDs="t7">schmecken</lemma>
+   <lemma ID="l8" tokenIDs="t8">er</lemma>
+   <lemma ID="l9" tokenIDs="t9">.</lemma>
+ </lemmas>
+ <POStags tagset="STTS">
+   <tag tokenIDs="t1">NE</tag>
+   <tag tokenIDs="t2">VVFIN</tag>
+   <tag tokenIDs="t3">ART</tag>
+   <tag tokenIDs="t4">NE</tag>
+   <tag tokenIDs="t5">$.</tag>
+   <tag tokenIDs="t6">PPER</tag>
+   <tag tokenIDs="t7">VVFIN</tag>
+   <tag tokenIDs="t8">PPER</tag>
+   <tag tokenIDs="t9">$.</tag>
+  </POStags>
+<topologicalFields tagset="DANIELDK">
+   <field tokenIDs="t1">VF</field>
+   <field tokenIDs="t2">LK</field>
+   <field tokenIDs="t3">MF</field>
+   <field tokenIDs="t4">MF</field>
+   <field tokenIDs="t5">UNK</field>
+   <field tokenIDs="t6">VF</field>
+   <field tokenIDs="t7">LK</field>
+   <field tokenIDs="t8">MF</field>
+   <field tokenIDs="t9">UNK</field>
+</topologicalFields>
+ </TextCorpus>
+</D-Spin>

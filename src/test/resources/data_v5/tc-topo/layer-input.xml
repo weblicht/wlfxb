@@ -1,0 +1,11 @@
+<topologicalFields tagset="DANIELDK" xmlns="http://www.dspin.de/data/textcorpus">
+   <field tokenIDs="t1">VF</field>
+   <field tokenIDs="t2">LK</field>
+   <field tokenIDs="t3">MF</field>
+   <field tokenIDs="t4">MF</field>
+   <field tokenIDs="t5">UNK</field>
+   <field tokenIDs="t6">VF</field>
+   <field tokenIDs="t7">LK</field>
+   <field tokenIDs="t8">MF</field>
+   <field tokenIDs="t9">UNK</field>
+</topologicalFields>
