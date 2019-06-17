@@ -118,7 +118,6 @@ public interface TextCorpus {
      */
     public PosTagsLayer getPosTagsLayer();
 
-
     /**
      * Creates empty {@link PosTagsLayer} with the given tagset in this
      * <tt>TextCorpus</tt>.
@@ -129,11 +128,10 @@ public interface TextCorpus {
     public PosTagsLayer createPosTagsLayer(String tagset);
 
     /**
-     * Creates empty {@link PosTagsLayer} with the given tagset in this
-     * <tt>TextCorpus</tt>.
+     * Gets topological fields layer of this <tt>TextCorpus</tt>.
      *
-     * @param tagset of the part-of-speech annotations.
-     * @return annotation layer that has been created.
+     * @return layer containing topological field annotations on {@link Token}
+     * objects from {@link TokensLayer}.
      */
     public TopologicalFieldsLayer getTopologicalFieldsLayer();
 
@@ -141,20 +139,17 @@ public interface TextCorpus {
      * Creates empty {@link TopologicalFieldsLayer} with the given tagset in this
      * <tt>TextCorpus</tt>.
      *
-     * @param tagset of the part-of-speech annotations.
+     * @param tagset of the topological fields.
      * @return annotation layer that has been created.
      */
-    
     public TopologicalFieldsLayer createTopologicalFieldsLayer(String tagset);
 
     /**
-     * Creates empty {@link TopologicalFieldsLayer} with the given tagset in this
-     * <tt>TextCorpus</tt>.
+     * Gets sentences layer of this <tt>TextCorpus</tt>.
      *
-     * @param tagset of the topological field annotations.
-     * @return annotation layer that has been created.
+     * layer containing sentence boundary annotations on {@link Token}
+     * objects from {@link TokensLayer}.
      */
-
     public SentencesLayer getSentencesLayer();
 
     /**

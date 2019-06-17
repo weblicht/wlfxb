@@ -21,7 +21,7 @@
 package eu.clarin.weblicht.wlfxb.tc.xb;
 
 import eu.clarin.weblicht.wlfxb.tc.api.*;
-
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

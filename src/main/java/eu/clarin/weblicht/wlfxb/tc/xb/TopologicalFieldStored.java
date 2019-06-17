@@ -41,7 +41,6 @@ import java.util.LinkedHashMap;
 public class TopologicalFieldStored implements TopologicalField {
 
     public static final String XML_NAME = "field";
-    //public static final String ID_PREFIX = "p_";
     @XmlValue
     protected String tagString;
     @XmlAttribute(name = CommonAttributes.ID)

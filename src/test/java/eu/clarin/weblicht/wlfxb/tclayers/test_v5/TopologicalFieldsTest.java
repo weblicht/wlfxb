@@ -4,7 +4,6 @@
 package eu.clarin.weblicht.wlfxb.tclayers.test;
 
 import eu.clarin.weblicht.wlfxb.tc.api.TopologicalFieldsLayer;
-import eu.clarin.weblicht.wlfxb.tc.xb.PosTagsLayerStored;
 import eu.clarin.weblicht.wlfxb.tc.xb.TopologicalFieldsLayerStored;
 import eu.clarin.weblicht.wlfxb.test.utils.TestUtils;
 import java.io.FileOutputStream;
@@ -34,12 +33,16 @@ public class TopologicalFieldsTest {
 
 
         TopologicalFieldsLayer layer = TestUtils.read(TopologicalFieldsLayerStored.class, is);
-        System.out.println(layer);
         TestUtils.write(layer, os);
 
         is.close();
         os.close();
 
+        /**
+         * Checks if the topolofical field tagset matches the expected tagset: DANEIKDK
+         * Checks if there are 9 topological fields that have been tagged
+         * Checks if the first topological field is VF (Vorfeld) and the last field is UNK (topo field for punctuation)
+         */
         Assert.assertEquals("DANIELDK", layer.getTagset());
         Assert.assertEquals(9, layer.size());
         Assert.assertEquals("VF", layer.getTag(0).getString());

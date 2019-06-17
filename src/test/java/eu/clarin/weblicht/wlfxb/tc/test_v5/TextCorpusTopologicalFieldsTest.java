@@ -4,8 +4,6 @@
 package eu.clarin.weblicht.wlfxb.tc.test_v5;
 
 import eu.clarin.weblicht.wlfxb.io.TextCorpusStreamed;
-import eu.clarin.weblicht.wlfxb.tc.api.ChunksLayer;
-import eu.clarin.weblicht.wlfxb.tc.api.PosTagsLayer;
 import eu.clarin.weblicht.wlfxb.tc.api.TextCorpus;
 import eu.clarin.weblicht.wlfxb.tc.api.Token;
 import eu.clarin.weblicht.wlfxb.tc.api.TopologicalFieldsLayer;
@@ -53,6 +51,11 @@ public class TextCorpusTopologicalFieldsTest extends AbstractTextCorpusTest {
     	token2Topo.put(".", "UNK");
     }
 
+    /**
+     * Checks if the new topological field layer can be read from TCF, if it has the expected size and if the first
+     * and the last topological field match the expected tag
+     * @throws Exception
+     */
     @Test
     public void testRead() throws Exception {
         TextCorpus tc = read(INPUT_FILE_WITH_LAYER, layersToReadAfterTopoTagging);
@@ -62,23 +65,24 @@ public class TextCorpusTopologicalFieldsTest extends AbstractTextCorpusTest {
         Assert.assertEquals(tc.getTokensLayer().getToken(0), layer.getTokens(layer.getTag(0))[0]);
     }
 
+    /**
+     * Checks if a TCF can be read and a the new topological field layer can be added. The layer specifies a tagset
+     * and adds a topological field for each token. Checks if the new XML file created with the library matches the
+     * expected XML file.
+     * @throws Exception
+     */
     @Test
     public void testReadWrite() throws Exception {
         String outfile = testFolder.getRoot() + File.separator + OUTPUT_FILE;
         TextCorpusStreamed tc = open(INPUT_FILE_WITHOUT_LAYER, outfile, layersToReadBeforeTopoTagging);
-        System.out.println(tc);
-        // create topological fields layer, it's empty at first
         TopologicalFieldsLayer tags = tc.createTopologicalFieldsLayer("DANIELDK");
         for (int i = 0; i < tc.getTokensLayer().size(); i++) {
             Token token = tc.getTokensLayer().getToken(i);
             String topoTag = tag(token.getString());
-            // create and add topological field to the tags layer
             tags.addTag(topoTag, token);
         }
         // IMPORTANT close the streams!!!
         tc.close();
-        System.out.println(tc);
-        // compare output xml with expected xml
         assertEqualXml(EXPECTED_OUTPUT_FILE, outfile);
     }
 
