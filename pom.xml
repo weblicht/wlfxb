@@ -25,7 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
 
     <groupId>eu.clarin.weblicht</groupId>
     <artifactId>wlfxb</artifactId>
-    <version>1.4.2</version>
+    <version>1.4.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>wlfxb</name>
