@@ -105,6 +105,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
             <artifactId>org.eclipse.persistence.moxy</artifactId>
             <version>2.7.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -118,6 +125,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
             <version>1.5</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-core</artifactId>
+            <version>2.3.0.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.3.1</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -141,7 +161,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9</version>
+                <version>3.0.1</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -149,7 +169,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
                             <goal>jar</goal>
                         </goals>
                         <configuration>
-                            <additionalparam>${javadoc.opts}</additionalparam>
+                            <additionalOptions>${javadoc.opts}</additionalOptions>
+                            <source>8</source>
                         </configuration>
                     </execution>
                 </executions>
