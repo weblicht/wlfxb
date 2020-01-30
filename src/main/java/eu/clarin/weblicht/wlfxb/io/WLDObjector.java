@@ -51,11 +51,12 @@ import javax.xml.stream.events.XMLEvent;
  * @author Yana Panchenko
  */
 public class WLDObjector {
-    
+    public static JAXBContextFactory JAXB_CONTEXT_FACTORY = JAXBContext::newInstance;
+
     public static WLData read(InputStream inputStream) throws WLFormatException {
         WLData data = null;
         try {
-            JAXBContext context = JAXBContext.newInstance(WLData.class);
+            JAXBContext context = JAXB_CONTEXT_FACTORY.newInstance(WLData.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
             data = ((WLData) unmarshaller.unmarshal(inputStream));
         } catch (JAXBException e) {
@@ -67,7 +68,7 @@ public class WLDObjector {
     public static WLData read(Reader reader) throws WLFormatException {
         WLData data = null;
         try {
-            JAXBContext context = JAXBContext.newInstance(WLData.class);
+            JAXBContext context = JAXB_CONTEXT_FACTORY.newInstance(WLData.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
             data = ((WLData) unmarshaller.unmarshal(reader));
         } catch (JAXBException e) {
@@ -175,7 +176,7 @@ public class WLDObjector {
         XMLOutputFactory xmlOututFactory = XMLOutputFactory.newInstance();
         XMLEvent e;
         XMLEventWriter xmlEventWriter = null;
-        
+
         try {
             xmlEventWriter = new IndentingXMLEventWriter(xmlOututFactory.createXMLEventWriter(outputStream, "UTF-8"));
 
@@ -201,27 +202,27 @@ public class WLDObjector {
             e = eventFactory.createIgnorableSpace(XmlReaderWriter.NEW_LINE);
             xmlEventWriter.add(e);
 
-            JAXBContext mdContext = JAXBContext.newInstance(MetaData.class);
+            JAXBContext mdContext = JAXB_CONTEXT_FACTORY.newInstance(MetaData.class);
             Marshaller mdMarshaller = mdContext.createMarshaller();
             //does not work with XMLEventWriter:
             //mdMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             mdMarshaller.setProperty(Marshaller.JAXB_FRAGMENT, true);
             mdMarshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, CommonConstants.CMD_SCHEMA_LOCATION);
             mdMarshaller.marshal(md, xmlEventWriter);
-            
+
             e = eventFactory.createIgnorableSpace(XmlReaderWriter.NEW_LINE);
             xmlEventWriter.add(e);
 
             // marshalling textcorpus or lexicon
             {
-                JAXBContext context = JAXBContext.newInstance(tc != null ? TextCorpusStored.class : LexiconStored.class);
+                JAXBContext context = JAXB_CONTEXT_FACTORY.newInstance(tc != null ? TextCorpusStored.class : LexiconStored.class);
                 Marshaller marshaller = context.createMarshaller();
                 //does not work with XMLEventWriter:
                 //tcMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
                 marshaller.setProperty(Marshaller.JAXB_FRAGMENT, true);
                 marshaller.marshal(tc != null ? tc : lex, xmlEventWriter);
             }
-            
+
             e = eventFactory.createIgnorableSpace(XmlReaderWriter.NEW_LINE);
             xmlEventWriter.add(e);
 
