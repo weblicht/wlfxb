@@ -85,7 +85,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>oaipmh-cmdi-bindings</artifactId>
-            <version>1.0.5</version>
+            <version>1.0.9</version>
         </dependency>
         <dependency>
             <groupId>net.java.dev.stax-utils</groupId>
