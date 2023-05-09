@@ -1,7 +1,7 @@
 /**
  *
  */
-package eu.clarin.weblicht.wlfxb.tclayers.test;
+package eu.clarin.weblicht.wlfxb.tclayers.test_v5;
 
 import eu.clarin.weblicht.wlfxb.tc.api.TopologicalFieldsLayer;
 import eu.clarin.weblicht.wlfxb.tc.xb.TopologicalFieldsLayerStored;
